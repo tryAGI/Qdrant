@@ -3,15 +3,19 @@ namespace Qdrant.IntegrationTests;
 [TestClass]
 public partial class Tests
 {
-    private static QdrantClient GetAuthenticatedClient()
-    {
-        var apiKey =
-            Environment.GetEnvironmentVariable("QDRANT_API_KEY") is { Length: > 0 } apiKeyValue
-                ? apiKeyValue
-                : throw new AssertInconclusiveException("QDRANT_API_KEY environment variable is not found.");
+    private static Environment _environment = null!;
 
-        var client = new QdrantClient(apiKey);
-        
-        return client;
+    public static QdrantClient Client => _environment.Client;
+
+    [AssemblyInitialize]
+    public static async Task AssemblyInit(TestContext context)
+    {
+        _environment = await Environment.PrepareAsync();
+    }
+
+    [AssemblyCleanup]
+    public static async Task AssemblyCleanup()
+    {
+        await _environment.DisposeAsync();
     }
 }

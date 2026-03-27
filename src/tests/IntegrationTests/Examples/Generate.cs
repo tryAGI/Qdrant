@@ -1,9 +1,7 @@
 /*
-order: 10
-title: Generate
-slug: generate
-
-Basic example showing how to create a client and make a request.
+order: 1
+title: Test
+slug: test
 */
 
 namespace Qdrant.IntegrationTests;
@@ -11,8 +9,15 @@ namespace Qdrant.IntegrationTests;
 public partial class Tests
 {
     [TestMethod]
-    public async Task Example_Generate()
+    public void Generate()
     {
-        using var client = GetAuthenticatedClient();
+        var client = Client;
+
+        client.Aliases.HttpClient.Should().BeSameAs(client.HttpClient);
+        client.Collections.HttpClient.Should().BeSameAs(client.HttpClient);
+        client.Points.HttpClient.Should().BeSameAs(client.HttpClient);
+        client.Search.HttpClient.Should().BeSameAs(client.HttpClient);
+        client.Service.HttpClient.Should().BeSameAs(client.HttpClient);
+        client.Snapshots.HttpClient.Should().BeSameAs(client.HttpClient);
     }
 }
