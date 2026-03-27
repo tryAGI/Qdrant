@@ -43,31 +43,31 @@ public partial class Tests
                     {
                         Id = 1,
                         Vector = new VectorStruct { Value1 = new[] { 0.05f, 0.61f, 0.76f, 0.74f } },
-                        Payload = new { city = "Berlin" },
+                        Payload = new Dictionary<string, string> { ["city"] = "Berlin" },
                     },
                     new PointStruct
                     {
                         Id = 2,
                         Vector = new VectorStruct { Value1 = new[] { 0.19f, 0.81f, 0.75f, 0.11f } },
-                        Payload = new { city = "London" },
+                        Payload = new Dictionary<string, string> { ["city"] = "London" },
                     },
                     new PointStruct
                     {
                         Id = 3,
                         Vector = new VectorStruct { Value1 = new[] { 0.36f, 0.55f, 0.47f, 0.94f } },
-                        Payload = new { city = "Moscow" },
+                        Payload = new Dictionary<string, string> { ["city"] = "Moscow" },
                     },
                     new PointStruct
                     {
                         Id = 4,
                         Vector = new VectorStruct { Value1 = new[] { 0.18f, 0.01f, 0.85f, 0.80f } },
-                        Payload = new { city = "New York" },
+                        Payload = new Dictionary<string, string> { ["city"] = "New York" },
                     },
                     new PointStruct
                     {
                         Id = 5,
                         Vector = new VectorStruct { Value1 = new[] { 0.24f, 0.18f, 0.22f, 0.44f } },
-                        Payload = new { city = "Tokyo" },
+                        Payload = new Dictionary<string, string> { ["city"] = "Tokyo" },
                     },
                 ],
             });
