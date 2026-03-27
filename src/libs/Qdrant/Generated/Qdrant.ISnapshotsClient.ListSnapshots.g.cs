@@ -1,0 +1,18 @@
+#nullable enable
+
+namespace Qdrant
+{
+    public partial interface ISnapshotsClient
+    {
+        /// <summary>
+        /// List collection snapshots<br/>
+        /// Get list of snapshots for a collection
+        /// </summary>
+        /// <param name="collectionName"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Qdrant.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Qdrant.ListSnapshotsResponse> ListSnapshotsAsync(
+            string collectionName,
+            global::System.Threading.CancellationToken cancellationToken = default);
+    }
+}
