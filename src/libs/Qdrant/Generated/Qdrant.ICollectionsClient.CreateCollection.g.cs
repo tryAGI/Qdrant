@@ -92,7 +92,7 @@ namespace Qdrant
             global::Qdrant.QuantizationConfig? quantizationConfig = default,
             global::System.Collections.Generic.Dictionary<string, global::Qdrant.SparseVectorParams>? sparseVectors = default,
             global::Qdrant.StrictModeConfig? strictModeConfig = default,
-            object? metadata = default,
+            global::Qdrant.Payload? metadata = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -55,7 +55,7 @@ namespace Qdrant
         /// Metadata to update for the collection. If provided, this will merge with existing metadata. To remove metadata, set it to an empty object.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
-        public object? Metadata { get; set; }
+        public global::Qdrant.Payload? Metadata { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -100,7 +100,7 @@ namespace Qdrant
             global::Qdrant.QuantizationConfigDiff? quantizationConfig,
             global::System.Collections.Generic.Dictionary<string, global::Qdrant.SparseVectorParams>? sparseVectors,
             global::Qdrant.StrictModeConfig? strictModeConfig,
-            object? metadata)
+            global::Qdrant.Payload? metadata)
         {
             this.Vectors = vectors;
             this.OptimizersConfig = optimizersConfig;

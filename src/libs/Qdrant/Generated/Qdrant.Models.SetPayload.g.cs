@@ -14,7 +14,7 @@ namespace Qdrant
         /// <example>{"city":"London","color":"green"}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("payload")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required object Payload { get; set; }
+        public required global::Qdrant.Payload Payload { get; set; }
 
         /// <summary>
         /// Assigns payload to each point in this list
@@ -66,7 +66,7 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public SetPayload(
-            object payload,
+            global::Qdrant.Payload payload,
             global::System.Collections.Generic.IList<global::Qdrant.ExtendedPointId>? points,
             global::Qdrant.Filter? filter,
             global::Qdrant.ShardKeySelector? shardKey,
