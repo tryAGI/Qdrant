@@ -38,6 +38,8 @@ partial void PrepareRequest(HttpClient client, HttpRequestMessage request)
 
 This `PrepareRequest` pattern is also used by other SDKs with non-standard auth headers (Deepgram `Token`, BraveSearch `X-Subscription-Token`, Serper `X-API-KEY`, DeepL `DeepL-Auth-Key`).
 
+> **Alternative:** Could use `--security-scheme ApiKey:Header:api-key` CLI arg instead of the jq auth conversion + PrepareRequest hook.
+
 ## Key Files
 
 - `src/libs/Qdrant/openapi.json` -- OpenAPI spec (downloaded from qdrant/qdrant repo)
