@@ -6806,8 +6806,12 @@
   "openapi": "3.0.1",
   "security": [
     {
+      "api-key": []
+    },
+    {
       "bearerAuth": []
-    }
+    },
+    {}
   ],
   "info": {
     "title": "Qdrant API",
@@ -6870,6 +6874,12 @@
   ],
   "components": {
     "securitySchemes": {
+      "api-key": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "api-key",
+        "description": "Authorization key, either read-write or read-only"
+      },
       "bearerAuth": {
         "type": "http",
         "scheme": "bearer"

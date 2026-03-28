@@ -22,30 +22,13 @@ var client = new QdrantClient(apiKey); // QDRANT_API_KEY env var
 
 Default base URL: `http://localhost:6333` (local Qdrant instance).
 
-**Important:** Qdrant uses an `api-key` header instead of `Authorization: Bearer`. The SDK accepts the key as a Bearer token and `PrepareRequest` converts it to the `api-key` header automatically:
-
-```csharp
-// In Extensions/QdrantClient.Auth.cs
-partial void PrepareRequest(HttpClient client, HttpRequestMessage request)
-{
-    if (request.Headers.Authorization is { Scheme: "Bearer", Parameter: { } apiKey })
-    {
-        request.Headers.Authorization = null;
-        request.Headers.TryAddWithoutValidation("api-key", apiKey);
-    }
-}
-```
-
-This `PrepareRequest` pattern is also used by other SDKs with non-standard auth headers (Deepgram `Token`, BraveSearch `X-Subscription-Token`, Serper `X-API-KEY`, DeepL `DeepL-Auth-Key`).
-
-> **Alternative:** Could use `--security-scheme ApiKey:Header:api-key` CLI arg instead of the jq auth conversion + PrepareRequest hook.
+**Important:** Qdrant uses an `api-key` header instead of `Authorization: Bearer`. The `--security-scheme ApiKey:Header:api-key` CLI arg in `generate.sh` generates code that sends the key directly as the `api-key` header — no `PrepareRequest` hook needed.
 
 ## Key Files
 
 - `src/libs/Qdrant/openapi.json` -- OpenAPI spec (downloaded from qdrant/qdrant repo)
-- `src/libs/Qdrant/generate.sh` -- Downloads spec, replaces auth with http/bearer, simplifies servers, renames colliding schemas, runs autosdk
+- `src/libs/Qdrant/generate.sh` -- Downloads spec, simplifies servers, renames colliding schemas, runs autosdk with `--security-scheme`
 - `src/libs/Qdrant/Generated/` -- **Never edit** -- auto-generated code
-- `src/libs/Qdrant/Extensions/QdrantClient.Auth.cs` -- Converts Bearer to `api-key` header
 - `src/tests/IntegrationTests/Tests.cs` -- Test helper with bearer auth
 - `src/tests/IntegrationTests/Examples/` -- Example tests (also generate docs)
 
@@ -53,13 +36,14 @@ This `PrepareRequest` pattern is also used by other SDKs with non-standard auth 
 
 The `generate.sh` applies several fixes via `jq`:
 
-1. **Auth conversion:** Replaces `apiKey` security scheme with `http/bearer` and adds top-level `security` array
-2. **Server simplification:** Replaces template-based server URLs with plain `http://localhost:6333` (AutoSDK does not support server URL templates)
-3. **Schema renames to avoid collisions:**
+1. **Server simplification:** Replaces template-based server URLs with plain `http://localhost:6333` (AutoSDK does not support server URL templates)
+2. **Schema renames to avoid collisions:**
    - `Disabled` -> `DisabledType` (single-value enum where value matches type name generates empty identifier)
    - `Snowball` -> `SnowballType` (same issue)
    - `Match` -> `MatchCondition` (member name collides with type name, CS0542)
-4. All `$ref` pointers are updated via `walk()` to reflect the renamed schemas
+3. All `$ref` pointers are updated via `walk()` to reflect the renamed schemas
+
+Auth is handled via `--security-scheme ApiKey:Header:api-key` CLI arg (no spec modification needed).
 
 Uses `--exclude-deprecated-operations` flag.
 
