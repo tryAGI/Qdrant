@@ -22,7 +22,21 @@ var client = new QdrantClient(apiKey); // QDRANT_API_KEY env var
 
 Default base URL: `http://localhost:6333` (local Qdrant instance).
 
-**Important:** Qdrant uses an `api-key` header instead of `Authorization: Bearer`. The SDK accepts the key as a Bearer token and `PrepareRequest` converts it to the `api-key` header automatically.
+**Important:** Qdrant uses an `api-key` header instead of `Authorization: Bearer`. The SDK accepts the key as a Bearer token and `PrepareRequest` converts it to the `api-key` header automatically:
+
+```csharp
+// In Extensions/QdrantClient.Auth.cs
+partial void PrepareRequest(HttpClient client, HttpRequestMessage request)
+{
+    if (request.Headers.Authorization is { Scheme: "Bearer", Parameter: { } apiKey })
+    {
+        request.Headers.Authorization = null;
+        request.Headers.TryAddWithoutValidation("api-key", apiKey);
+    }
+}
+```
+
+This `PrepareRequest` pattern is also used by other SDKs with non-standard auth headers (Deepgram `Token`, BraveSearch `X-Subscription-Token`, Serper `X-API-KEY`, DeepL `DeepL-Auth-Key`).
 
 ## Key Files
 
