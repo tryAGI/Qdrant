@@ -38,7 +38,7 @@ namespace Qdrant
         /// Payload - values assigned to the point
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("payload")]
-        public object? Payload { get; set; }
+        public global::Qdrant.Payload? Payload { get; set; }
 
         /// <summary>
         /// Vector of the point
@@ -97,7 +97,7 @@ namespace Qdrant
             global::Qdrant.ExtendedPointId id,
             int version,
             float score,
-            object? payload,
+            global::Qdrant.Payload? payload,
             global::Qdrant.VectorStructOutput? vector,
             global::Qdrant.ShardKey? shardKey,
             global::Qdrant.OrderValue? orderValue)

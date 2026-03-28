@@ -58,7 +58,7 @@ namespace Qdrant
         /// Arbitrary JSON metadata for the collection
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
-        public object? Metadata { get; set; }
+        public global::Qdrant.Payload? Metadata { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -96,7 +96,7 @@ namespace Qdrant
             global::Qdrant.QuantizationConfig? quantizationConfig,
             global::Qdrant.StrictModeConfigOutput? strictModeConfig,
             global::System.Guid? uuid,
-            object? metadata)
+            global::Qdrant.Payload? metadata)
         {
             this.Params = @params ?? throw new global::System.ArgumentNullException(nameof(@params));
             this.HnswConfig = hnswConfig ?? throw new global::System.ArgumentNullException(nameof(hnswConfig));

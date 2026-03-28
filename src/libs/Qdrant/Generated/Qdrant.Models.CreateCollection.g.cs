@@ -96,7 +96,7 @@ namespace Qdrant
         /// Arbitrary JSON metadata for the collection This can be used to store application-specific information such as creation time, migration data, inference model info, etc.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
-        public object? Metadata { get; set; }
+        public global::Qdrant.Payload? Metadata { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -173,7 +173,7 @@ namespace Qdrant
             global::Qdrant.QuantizationConfig? quantizationConfig,
             global::System.Collections.Generic.Dictionary<string, global::Qdrant.SparseVectorParams>? sparseVectors,
             global::Qdrant.StrictModeConfig? strictModeConfig,
-            object? metadata)
+            global::Qdrant.Payload? metadata)
         {
             this.Vectors = vectors;
             this.ShardNumber = shardNumber;

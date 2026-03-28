@@ -320,7 +320,7 @@ namespace Qdrant
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::Qdrant.OverwritePayloadResponse> OverwritePayloadAsync(
             string collectionName,
-            object payload,
+            global::Qdrant.Payload payload,
             bool? wait = default,
             global::Qdrant.WriteOrdering? ordering = default,
             int? timeout = default,

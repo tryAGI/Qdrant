@@ -27,7 +27,7 @@ namespace Qdrant
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("payloads")]
-        public global::System.Collections.Generic.IList<object>? Payloads { get; set; }
+        public global::System.Collections.Generic.IList<global::Qdrant.Payload>? Payloads { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -47,7 +47,7 @@ namespace Qdrant
         public Batch(
             global::System.Collections.Generic.IList<global::Qdrant.ExtendedPointId> ids,
             global::Qdrant.BatchVectorStruct vectors,
-            global::System.Collections.Generic.IList<object>? payloads)
+            global::System.Collections.Generic.IList<global::Qdrant.Payload>? payloads)
         {
             this.Ids = ids ?? throw new global::System.ArgumentNullException(nameof(ids));
             this.Vectors = vectors;

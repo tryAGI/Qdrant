@@ -13,7 +13,7 @@ namespace Qdrant
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("abort_resharding")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required object AbortResharding { get; set; }
+        public required global::Qdrant.AbortResharding AbortResharding { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -29,7 +29,7 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public AbortReshardingOperation(
-            object abortResharding)
+            global::Qdrant.AbortResharding abortResharding)
         {
             this.AbortResharding = abortResharding ?? throw new global::System.ArgumentNullException(nameof(abortResharding));
         }

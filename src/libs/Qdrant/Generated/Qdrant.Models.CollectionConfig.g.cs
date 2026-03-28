@@ -51,7 +51,7 @@ namespace Qdrant
         /// Arbitrary JSON metadata for the collection This can be used to store application-specific information such as creation time, migration data, inference model info, etc.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
-        public object? Metadata { get; set; }
+        public global::Qdrant.Payload? Metadata { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -85,7 +85,7 @@ namespace Qdrant
             global::Qdrant.WalConfig? walConfig,
             global::Qdrant.QuantizationConfig? quantizationConfig,
             global::Qdrant.StrictModeConfigOutput? strictModeConfig,
-            object? metadata)
+            global::Qdrant.Payload? metadata)
         {
             this.Params = @params ?? throw new global::System.ArgumentNullException(nameof(@params));
             this.HnswConfig = hnswConfig ?? throw new global::System.ArgumentNullException(nameof(hnswConfig));

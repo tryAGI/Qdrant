@@ -28,7 +28,7 @@ namespace Qdrant
         /// Payload values (optional)
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("payload")]
-        public object? Payload { get; set; }
+        public global::Qdrant.Payload? Payload { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -54,7 +54,7 @@ namespace Qdrant
         public PointStruct(
             global::Qdrant.ExtendedPointId id,
             global::Qdrant.VectorStruct vector,
-            object? payload)
+            global::Qdrant.Payload? payload)
         {
             this.Id = id;
             this.Vector = vector;
