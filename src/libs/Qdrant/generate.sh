@@ -3,7 +3,7 @@ set -euo pipefail
 
 dotnet tool install --global autosdk.cli --prerelease
 rm -rf Generated
-curl -o openapi.json https://raw.githubusercontent.com/qdrant/qdrant/master/docs/redoc/master/openapi.json
+curl --fail --silent --show-error -o openapi.json https://raw.githubusercontent.com/qdrant/qdrant/master/docs/redoc/master/openapi.json
 
 # Fix 1: Simplify servers (template variables not supported by AutoSDK).
 # Fix 2: Schema renames to avoid collisions:
