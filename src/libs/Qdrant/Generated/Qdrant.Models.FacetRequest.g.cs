@@ -48,10 +48,10 @@ namespace Qdrant
         /// <summary>
         /// Initializes a new instance of the <see cref="FacetRequest" /> class.
         /// </summary>
-        /// <param name="shardKey"></param>
         /// <param name="key">
         /// Payload key to use for faceting.
         /// </param>
+        /// <param name="shardKey"></param>
         /// <param name="limit">
         /// Max number of hits to return. Default is 10.
         /// </param>
@@ -71,8 +71,8 @@ namespace Qdrant
             global::Qdrant.Filter? filter,
             bool? exact)
         {
-            this.Key = key ?? throw new global::System.ArgumentNullException(nameof(key));
             this.ShardKey = shardKey;
+            this.Key = key ?? throw new global::System.ArgumentNullException(nameof(key));
             this.Limit = limit;
             this.Filter = filter;
             this.Exact = exact;

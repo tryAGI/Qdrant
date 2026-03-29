@@ -90,6 +90,9 @@ namespace Qdrant
         /// <summary>
         /// Initializes a new instance of the <see cref="DiscoverRequest" /> class.
         /// </summary>
+        /// <param name="limit">
+        /// Max number of result to return
+        /// </param>
         /// <param name="shardKey">
         /// Specify in which shards to look for the points, if not specified - look in all shards
         /// </param>
@@ -108,9 +111,6 @@ namespace Qdrant
         /// </param>
         /// <param name="params">
         /// Additional search params
-        /// </param>
-        /// <param name="limit">
-        /// Max number of result to return
         /// </param>
         /// <param name="offset">
         /// Offset of the first result to return. May be used to paginate results. Note: large offset values may cause performance issues.
@@ -145,12 +145,12 @@ namespace Qdrant
             global::Qdrant.UsingVector? @using,
             global::Qdrant.LookupLocation? lookupFrom)
         {
-            this.Limit = limit;
             this.ShardKey = shardKey;
             this.Target = target;
             this.Context = context;
             this.Filter = filter;
             this.Params = @params;
+            this.Limit = limit;
             this.Offset = offset;
             this.WithPayload = withPayload;
             this.WithVector = withVector;

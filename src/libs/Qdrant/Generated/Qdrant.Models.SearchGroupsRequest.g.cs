@@ -92,14 +92,23 @@ namespace Qdrant
         /// <summary>
         /// Initializes a new instance of the <see cref="SearchGroupsRequest" /> class.
         /// </summary>
-        /// <param name="shardKey">
-        /// Specify in which shards to look for the points, if not specified - look in all shards
-        /// </param>
         /// <param name="vector">
         /// Vector data separator for named and unnamed modes Unnamed mode:<br/>
         /// { "vector": [1.0, 2.0, 3.0] }<br/>
         /// or named mode:<br/>
         /// { "vector": { "vector": [1.0, 2.0, 3.0], "name": "image-embeddings" } }
+        /// </param>
+        /// <param name="groupBy">
+        /// Payload field to group by, must be a string or number field. If the field contains more than 1 value, all values will be used for grouping. One point can be in multiple groups.
+        /// </param>
+        /// <param name="groupSize">
+        /// Maximum amount of points to return per group
+        /// </param>
+        /// <param name="limit">
+        /// Maximum amount of groups to return
+        /// </param>
+        /// <param name="shardKey">
+        /// Specify in which shards to look for the points, if not specified - look in all shards
         /// </param>
         /// <param name="filter">
         /// Look only for points which satisfies this conditions
@@ -116,15 +125,6 @@ namespace Qdrant
         /// </param>
         /// <param name="scoreThreshold">
         /// Define a minimal score threshold for the result. If defined, less similar results will not be returned. Score of the returned result might be higher or smaller than the threshold depending on the Distance function used. E.g. for cosine similarity only higher scores will be returned.
-        /// </param>
-        /// <param name="groupBy">
-        /// Payload field to group by, must be a string or number field. If the field contains more than 1 value, all values will be used for grouping. One point can be in multiple groups.
-        /// </param>
-        /// <param name="groupSize">
-        /// Maximum amount of points to return per group
-        /// </param>
-        /// <param name="limit">
-        /// Maximum amount of groups to return
         /// </param>
         /// <param name="withLookup">
         /// Look for points in another collection using the group ids
@@ -145,16 +145,16 @@ namespace Qdrant
             float? scoreThreshold,
             global::Qdrant.WithLookupInterface? withLookup)
         {
-            this.Vector = vector;
-            this.GroupBy = groupBy ?? throw new global::System.ArgumentNullException(nameof(groupBy));
-            this.GroupSize = groupSize;
-            this.Limit = limit;
             this.ShardKey = shardKey;
+            this.Vector = vector;
             this.Filter = filter;
             this.Params = @params;
             this.WithPayload = withPayload;
             this.WithVector = withVector;
             this.ScoreThreshold = scoreThreshold;
+            this.GroupBy = groupBy ?? throw new global::System.ArgumentNullException(nameof(groupBy));
+            this.GroupSize = groupSize;
+            this.Limit = limit;
             this.WithLookup = withLookup;
         }
 

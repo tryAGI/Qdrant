@@ -32,10 +32,10 @@ namespace Qdrant
         /// <summary>
         /// Initializes a new instance of the <see cref="SnowballParams" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="language">
         /// Languages supported by snowball stemmer.
         /// </param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -43,8 +43,8 @@ namespace Qdrant
             global::Qdrant.SnowballLanguage language,
             global::Qdrant.SnowballType type)
         {
-            this.Language = language;
             this.Type = type;
+            this.Language = language;
         }
 
         /// <summary>

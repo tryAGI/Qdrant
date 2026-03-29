@@ -42,14 +42,14 @@ namespace Qdrant
         /// <summary>
         /// Initializes a new instance of the <see cref="DeleteVectors" /> class.
         /// </summary>
+        /// <param name="vector">
+        /// Vector names
+        /// </param>
         /// <param name="points">
         /// Deletes values from each point in this list
         /// </param>
         /// <param name="filter">
         /// Deletes values from points that satisfy this filter condition
-        /// </param>
-        /// <param name="vector">
-        /// Vector names
         /// </param>
         /// <param name="shardKey"></param>
 #if NET7_0_OR_GREATER
@@ -61,9 +61,9 @@ namespace Qdrant
             global::Qdrant.Filter? filter,
             global::Qdrant.ShardKeySelector? shardKey)
         {
-            this.Vector = vector ?? throw new global::System.ArgumentNullException(nameof(vector));
             this.Points = points;
             this.Filter = filter;
+            this.Vector = vector ?? throw new global::System.ArgumentNullException(nameof(vector));
             this.ShardKey = shardKey;
         }
 

@@ -62,8 +62,8 @@ namespace Qdrant
         /// Initializes a new instance of the <see cref="TelemetryData" /> class.
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="app"></param>
         /// <param name="collections"></param>
+        /// <param name="app"></param>
         /// <param name="cluster"></param>
         /// <param name="requests"></param>
         /// <param name="memory"></param>
@@ -81,8 +81,8 @@ namespace Qdrant
             global::Qdrant.HardwareTelemetry? hardware)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.Collections = collections ?? throw new global::System.ArgumentNullException(nameof(collections));
             this.App = app;
+            this.Collections = collections ?? throw new global::System.ArgumentNullException(nameof(collections));
             this.Cluster = cluster;
             this.Requests = requests;
             this.Memory = memory;

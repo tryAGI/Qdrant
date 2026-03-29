@@ -73,13 +73,13 @@ namespace Qdrant
         /// <summary>
         /// Initializes a new instance of the <see cref="RunningEnvironmentTelemetry" /> class.
         /// </summary>
+        /// <param name="isDocker"></param>
+        /// <param name="cpuFlags"></param>
         /// <param name="distribution"></param>
         /// <param name="distributionVersion"></param>
-        /// <param name="isDocker"></param>
         /// <param name="cores"></param>
         /// <param name="ramSize"></param>
         /// <param name="diskSize"></param>
-        /// <param name="cpuFlags"></param>
         /// <param name="cpuEndian"></param>
         /// <param name="gpuDevices"></param>
 #if NET7_0_OR_GREATER
@@ -96,13 +96,13 @@ namespace Qdrant
             global::Qdrant.CpuEndian? cpuEndian,
             global::System.Collections.Generic.IList<global::Qdrant.GpuDeviceTelemetry>? gpuDevices)
         {
-            this.IsDocker = isDocker;
-            this.CpuFlags = cpuFlags ?? throw new global::System.ArgumentNullException(nameof(cpuFlags));
             this.Distribution = distribution;
             this.DistributionVersion = distributionVersion;
+            this.IsDocker = isDocker;
             this.Cores = cores;
             this.RamSize = ramSize;
             this.DiskSize = diskSize;
+            this.CpuFlags = cpuFlags ?? throw new global::System.ArgumentNullException(nameof(cpuFlags));
             this.CpuEndian = cpuEndian;
             this.GpuDevices = gpuDevices;
         }

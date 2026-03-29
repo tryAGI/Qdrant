@@ -96,11 +96,11 @@ namespace Qdrant
         /// <summary>
         /// Initializes a new instance of the <see cref="LocalShardTelemetry" /> class.
         /// </summary>
-        /// <param name="variantName"></param>
-        /// <param name="status"></param>
         /// <param name="totalOptimizedPoints">
         /// Total number of optimized points since the last start.
         /// </param>
+        /// <param name="variantName"></param>
+        /// <param name="status"></param>
         /// <param name="vectorsSizeBytes">
         /// An ESTIMATION of effective amount of bytes used for vectors Do NOT rely on this number unless you know what you are doing
         /// </param>
@@ -141,9 +141,9 @@ namespace Qdrant
             global::System.Collections.Generic.Dictionary<string, int>? indexedOnlyExcludedVectors,
             global::Qdrant.ShardUpdateQueueInfo? updateQueue)
         {
-            this.TotalOptimizedPoints = totalOptimizedPoints;
             this.VariantName = variantName;
             this.Status = status;
+            this.TotalOptimizedPoints = totalOptimizedPoints;
             this.VectorsSizeBytes = vectorsSizeBytes;
             this.PayloadsSizeBytes = payloadsSizeBytes;
             this.NumPoints = numPoints;

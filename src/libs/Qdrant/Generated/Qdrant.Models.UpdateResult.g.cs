@@ -31,11 +31,11 @@ namespace Qdrant
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateResult" /> class.
         /// </summary>
-        /// <param name="operationId">
-        /// Sequential number of the operation
-        /// </param>
         /// <param name="status">
         /// `Acknowledged` - Request is saved to WAL and will be process in a queue. `Completed` - Request is completed, changes are actual. `WaitTimeout` - Request is waiting for timeout.
+        /// </param>
+        /// <param name="operationId">
+        /// Sequential number of the operation
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -44,8 +44,8 @@ namespace Qdrant
             global::Qdrant.UpdateStatus status,
             int? operationId)
         {
-            this.Status = status;
             this.OperationId = operationId;
+            this.Status = status;
         }
 
         /// <summary>

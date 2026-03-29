@@ -43,11 +43,11 @@ namespace Qdrant
         /// <summary>
         /// Initializes a new instance of the <see cref="PointRequest" /> class.
         /// </summary>
-        /// <param name="shardKey">
-        /// Specify in which shards to look for the points, if not specified - look in all shards
-        /// </param>
         /// <param name="ids">
         /// Look for points with ids
+        /// </param>
+        /// <param name="shardKey">
+        /// Specify in which shards to look for the points, if not specified - look in all shards
         /// </param>
         /// <param name="withPayload">
         /// Select which payload to return with the response. Default is true.
@@ -64,8 +64,8 @@ namespace Qdrant
             global::Qdrant.WithPayloadInterface? withPayload,
             global::Qdrant.WithVector? withVector)
         {
-            this.Ids = ids ?? throw new global::System.ArgumentNullException(nameof(ids));
             this.ShardKey = shardKey;
+            this.Ids = ids ?? throw new global::System.ArgumentNullException(nameof(ids));
             this.WithPayload = withPayload;
             this.WithVector = withVector;
         }

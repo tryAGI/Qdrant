@@ -78,23 +78,23 @@ namespace Qdrant
         /// <summary>
         /// Initializes a new instance of the <see cref="SearchRequest" /> class.
         /// </summary>
-        /// <param name="shardKey">
-        /// Specify in which shards to look for the points, if not specified - look in all shards
-        /// </param>
         /// <param name="vector">
         /// Vector data separator for named and unnamed modes Unnamed mode:<br/>
         /// { "vector": [1.0, 2.0, 3.0] }<br/>
         /// or named mode:<br/>
         /// { "vector": { "vector": [1.0, 2.0, 3.0], "name": "image-embeddings" } }
         /// </param>
+        /// <param name="limit">
+        /// Max number of result to return
+        /// </param>
+        /// <param name="shardKey">
+        /// Specify in which shards to look for the points, if not specified - look in all shards
+        /// </param>
         /// <param name="filter">
         /// Look only for points which satisfies this conditions
         /// </param>
         /// <param name="params">
         /// Additional search params
-        /// </param>
-        /// <param name="limit">
-        /// Max number of result to return
         /// </param>
         /// <param name="offset">
         /// Offset of the first result to return. May be used to paginate results. Note: large offset values may cause performance issues.
@@ -123,11 +123,11 @@ namespace Qdrant
             global::Qdrant.WithVector? withVector,
             float? scoreThreshold)
         {
-            this.Vector = vector;
-            this.Limit = limit;
             this.ShardKey = shardKey;
+            this.Vector = vector;
             this.Filter = filter;
             this.Params = @params;
+            this.Limit = limit;
             this.Offset = offset;
             this.WithPayload = withPayload;
             this.WithVector = withVector;

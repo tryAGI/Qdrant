@@ -31,8 +31,8 @@ namespace Qdrant
         /// <summary>
         /// Initializes a new instance of the <see cref="ConsensusThreadStatusVariant1" /> class.
         /// </summary>
-        /// <param name="consensusThreadStatus"></param>
         /// <param name="lastUpdate"></param>
+        /// <param name="consensusThreadStatus"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -40,8 +40,8 @@ namespace Qdrant
             global::System.DateTime lastUpdate,
             global::Qdrant.ConsensusThreadStatusVariant1ConsensusThreadStatus consensusThreadStatus)
         {
-            this.LastUpdate = lastUpdate;
             this.ConsensusThreadStatus = consensusThreadStatus;
+            this.LastUpdate = lastUpdate;
         }
 
         /// <summary>

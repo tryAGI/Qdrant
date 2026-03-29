@@ -40,11 +40,11 @@ namespace Qdrant
         /// <param name="id">
         /// Shard ID
         /// </param>
-        /// <param name="key">
-        /// Optional shard key
-        /// </param>
         /// <param name="replicas">
         /// Replica information
+        /// </param>
+        /// <param name="key">
+        /// Optional shard key
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -55,8 +55,8 @@ namespace Qdrant
             global::Qdrant.ShardKey? key)
         {
             this.Id = id;
-            this.Replicas = replicas ?? throw new global::System.ArgumentNullException(nameof(replicas));
             this.Key = key;
+            this.Replicas = replicas ?? throw new global::System.ArgumentNullException(nameof(replicas));
         }
 
         /// <summary>

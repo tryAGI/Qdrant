@@ -65,10 +65,6 @@ namespace Qdrant
         /// Initializes a new instance of the <see cref="ShardTransferInfo" /> class.
         /// </summary>
         /// <param name="shardId"></param>
-        /// <param name="toShardId">
-        /// Target shard ID if different than source shard ID<br/>
-        /// Used exclusively with `ReshardingStreamRecords` transfer method.
-        /// </param>
         /// <param name="from">
         /// Source peer id
         /// </param>
@@ -77,6 +73,10 @@ namespace Qdrant
         /// </param>
         /// <param name="sync">
         /// If `true` transfer is a synchronization of a replicas If `false` transfer is a moving of a shard from one peer to another
+        /// </param>
+        /// <param name="toShardId">
+        /// Target shard ID if different than source shard ID<br/>
+        /// Used exclusively with `ReshardingStreamRecords` transfer method.
         /// </param>
         /// <param name="method"></param>
         /// <param name="comment">
@@ -95,10 +95,10 @@ namespace Qdrant
             string? comment)
         {
             this.ShardId = shardId;
+            this.ToShardId = toShardId;
             this.From = from;
             this.To = to;
             this.Sync = sync;
-            this.ToShardId = toShardId;
             this.Method = method;
             this.Comment = comment;
         }

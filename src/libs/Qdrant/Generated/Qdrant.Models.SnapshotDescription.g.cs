@@ -44,8 +44,8 @@ namespace Qdrant
         /// Initializes a new instance of the <see cref="SnapshotDescription" /> class.
         /// </summary>
         /// <param name="name"></param>
-        /// <param name="creationTime"></param>
         /// <param name="size"></param>
+        /// <param name="creationTime"></param>
         /// <param name="checksum"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -57,8 +57,8 @@ namespace Qdrant
             string? checksum)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Size = size;
             this.CreationTime = creationTime;
+            this.Size = size;
             this.Checksum = checksum;
         }
 

@@ -69,9 +69,6 @@ namespace Qdrant
         /// <param name="version">
         /// Qdrant version
         /// </param>
-        /// <param name="role">
-        /// Consensus role for the peer
-        /// </param>
         /// <param name="isVoter">
         /// Whether it can participate in leader elections
         /// </param>
@@ -87,6 +84,9 @@ namespace Qdrant
         /// <param name="consensusThreadStatus">
         /// Information about current consensus thread status
         /// </param>
+        /// <param name="role">
+        /// Consensus role for the peer
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -100,12 +100,12 @@ namespace Qdrant
             global::Qdrant.StateRole? role)
         {
             this.Version = version ?? throw new global::System.ArgumentNullException(nameof(version));
+            this.Role = role;
             this.IsVoter = isVoter;
             this.Term = term;
             this.Commit = commit;
             this.NumPendingOperations = numPendingOperations;
             this.ConsensusThreadStatus = consensusThreadStatus;
-            this.Role = role;
         }
 
         /// <summary>
