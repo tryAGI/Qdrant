@@ -133,8 +133,6 @@ namespace Qdrant
         /// </param>
         /// <param name="numVectors"></param>
         /// <param name="numPoints"></param>
-        /// <param name="numDeferredPoints"></param>
-        /// <param name="numDeletedDeferredPoints"></param>
         /// <param name="numIndexedVectors"></param>
         /// <param name="numDeletedVectors"></param>
         /// <param name="vectorsSizeBytes">
@@ -148,6 +146,8 @@ namespace Qdrant
         /// <param name="isAppendable"></param>
         /// <param name="indexSchema"></param>
         /// <param name="vectorData"></param>
+        /// <param name="numDeferredPoints"></param>
+        /// <param name="numDeletedDeferredPoints"></param>
         /// <param name="deferredInternalId">
         /// Internal ID from which points are deferred (hidden from reads). Only set for appendable segments.
         /// </param>
@@ -176,6 +176,8 @@ namespace Qdrant
             this.SegmentType = segmentType;
             this.NumVectors = numVectors;
             this.NumPoints = numPoints;
+            this.NumDeferredPoints = numDeferredPoints;
+            this.NumDeletedDeferredPoints = numDeletedDeferredPoints;
             this.NumIndexedVectors = numIndexedVectors;
             this.NumDeletedVectors = numDeletedVectors;
             this.VectorsSizeBytes = vectorsSizeBytes;
@@ -185,8 +187,6 @@ namespace Qdrant
             this.IsAppendable = isAppendable;
             this.IndexSchema = indexSchema ?? throw new global::System.ArgumentNullException(nameof(indexSchema));
             this.VectorData = vectorData ?? throw new global::System.ArgumentNullException(nameof(vectorData));
-            this.NumDeferredPoints = numDeferredPoints;
-            this.NumDeletedDeferredPoints = numDeletedDeferredPoints;
             this.DeferredInternalId = deferredInternalId;
         }
 

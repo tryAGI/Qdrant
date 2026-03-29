@@ -37,13 +37,13 @@ namespace Qdrant
         /// <summary>
         /// Initializes a new instance of the <see cref="SegmentConfig" /> class.
         /// </summary>
+        /// <param name="payloadStorageType">
+        /// Type of payload storage
+        /// </param>
         /// <param name="vectorData">
         /// Default Value: {}
         /// </param>
         /// <param name="sparseVectorData"></param>
-        /// <param name="payloadStorageType">
-        /// Type of payload storage
-        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -52,9 +52,9 @@ namespace Qdrant
             global::System.Collections.Generic.Dictionary<string, global::Qdrant.VectorDataConfig>? vectorData,
             global::System.Collections.Generic.Dictionary<string, global::Qdrant.SparseVectorDataConfig>? sparseVectorData)
         {
-            this.PayloadStorageType = payloadStorageType;
             this.VectorData = vectorData;
             this.SparseVectorData = sparseVectorData;
+            this.PayloadStorageType = payloadStorageType;
         }
 
         /// <summary>

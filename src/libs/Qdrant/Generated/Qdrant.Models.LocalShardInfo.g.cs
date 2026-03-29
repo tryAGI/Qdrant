@@ -48,14 +48,14 @@ namespace Qdrant
         /// <param name="shardId">
         /// Local shard id
         /// </param>
-        /// <param name="shardKey">
-        /// User-defined sharding key
-        /// </param>
         /// <param name="pointsCount">
         /// Number of points in the shard
         /// </param>
         /// <param name="state">
         /// State of the single shard within a replica set.
+        /// </param>
+        /// <param name="shardKey">
+        /// User-defined sharding key
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -67,9 +67,9 @@ namespace Qdrant
             global::Qdrant.ShardKey? shardKey)
         {
             this.ShardId = shardId;
+            this.ShardKey = shardKey;
             this.PointsCount = pointsCount;
             this.State = state;
-            this.ShardKey = shardKey;
         }
 
         /// <summary>

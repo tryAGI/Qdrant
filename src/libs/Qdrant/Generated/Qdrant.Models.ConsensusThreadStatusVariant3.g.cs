@@ -31,8 +31,8 @@ namespace Qdrant
         /// <summary>
         /// Initializes a new instance of the <see cref="ConsensusThreadStatusVariant3" /> class.
         /// </summary>
-        /// <param name="consensusThreadStatus"></param>
         /// <param name="err"></param>
+        /// <param name="consensusThreadStatus"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -40,8 +40,8 @@ namespace Qdrant
             string err,
             global::Qdrant.ConsensusThreadStatusVariant3ConsensusThreadStatus consensusThreadStatus)
         {
-            this.Err = err ?? throw new global::System.ArgumentNullException(nameof(err));
             this.ConsensusThreadStatus = consensusThreadStatus;
+            this.Err = err ?? throw new global::System.ArgumentNullException(nameof(err));
         }
 
         /// <summary>

@@ -31,10 +31,10 @@ namespace Qdrant
         /// <summary>
         /// Initializes a new instance of the <see cref="IndexesVariant2" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="options">
         /// Config of HNSW index
         /// </param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -42,8 +42,8 @@ namespace Qdrant
             global::Qdrant.HnswConfig options,
             global::Qdrant.IndexesVariant2Type type)
         {
-            this.Options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             this.Type = type;
+            this.Options = options ?? throw new global::System.ArgumentNullException(nameof(options));
         }
 
         /// <summary>

@@ -86,7 +86,6 @@ namespace Qdrant
         /// <summary>
         /// Initializes a new instance of the <see cref="VectorIndexSearchesTelemetry" /> class.
         /// </summary>
-        /// <param name="indexName"></param>
         /// <param name="unfilteredPlain"></param>
         /// <param name="unfilteredHnsw"></param>
         /// <param name="unfilteredSparse"></param>
@@ -96,6 +95,7 @@ namespace Qdrant
         /// <param name="filteredExact"></param>
         /// <param name="filteredSparse"></param>
         /// <param name="unfilteredExact"></param>
+        /// <param name="indexName"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -111,6 +111,7 @@ namespace Qdrant
             global::Qdrant.OperationDurationStatistics unfilteredExact,
             string? indexName)
         {
+            this.IndexName = indexName;
             this.UnfilteredPlain = unfilteredPlain ?? throw new global::System.ArgumentNullException(nameof(unfilteredPlain));
             this.UnfilteredHnsw = unfilteredHnsw ?? throw new global::System.ArgumentNullException(nameof(unfilteredHnsw));
             this.UnfilteredSparse = unfilteredSparse ?? throw new global::System.ArgumentNullException(nameof(unfilteredSparse));
@@ -120,7 +121,6 @@ namespace Qdrant
             this.FilteredExact = filteredExact ?? throw new global::System.ArgumentNullException(nameof(filteredExact));
             this.FilteredSparse = filteredSparse ?? throw new global::System.ArgumentNullException(nameof(filteredSparse));
             this.UnfilteredExact = unfilteredExact ?? throw new global::System.ArgumentNullException(nameof(unfilteredExact));
-            this.IndexName = indexName;
         }
 
         /// <summary>

@@ -39,9 +39,9 @@ namespace Qdrant
         /// <summary>
         /// Initializes a new instance of the <see cref="ReplicatePoints" /> class.
         /// </summary>
-        /// <param name="filter"></param>
         /// <param name="fromShardKey"></param>
         /// <param name="toShardKey"></param>
+        /// <param name="filter"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -50,9 +50,9 @@ namespace Qdrant
             global::Qdrant.ShardKey toShardKey,
             global::Qdrant.Filter? filter)
         {
+            this.Filter = filter;
             this.FromShardKey = fromShardKey;
             this.ToShardKey = toShardKey;
-            this.Filter = filter;
         }
 
         /// <summary>

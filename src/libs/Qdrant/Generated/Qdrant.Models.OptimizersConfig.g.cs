@@ -91,6 +91,13 @@ namespace Qdrant
         /// <summary>
         /// Initializes a new instance of the <see cref="OptimizersConfig" /> class.
         /// </summary>
+        /// <param name="defaultSegmentNumber">
+        /// Target amount of segments optimizer will try to keep. Real amount of segments may vary depending on multiple parameters: - Amount of stored points - Current write RPS<br/>
+        /// It is recommended to select default number of segments as a factor of the number of search threads, so that each segment would be handled evenly by one of the threads. If `default_segment_number = 0`, will be automatically selected by the number of available CPUs.
+        /// </param>
+        /// <param name="flushIntervalSec">
+        /// Minimum interval between forced flushes.
+        /// </param>
         /// <param name="deletedThreshold">
         /// The minimal fraction of deleted vectors in a segment, required to perform segment optimization<br/>
         /// Default Value: 0.2F
@@ -98,10 +105,6 @@ namespace Qdrant
         /// <param name="vacuumMinVectorNumber">
         /// The minimal number of vectors in a segment, required to perform segment optimization<br/>
         /// Default Value: 1000
-        /// </param>
-        /// <param name="defaultSegmentNumber">
-        /// Target amount of segments optimizer will try to keep. Real amount of segments may vary depending on multiple parameters: - Amount of stored points - Current write RPS<br/>
-        /// It is recommended to select default number of segments as a factor of the number of search threads, so that each segment would be handled evenly by one of the threads. If `default_segment_number = 0`, will be automatically selected by the number of available CPUs.
         /// </param>
         /// <param name="maxSegmentSize">
         /// Do not create segments larger this size (in kilobytes). Large segments might require disproportionately long indexation times, therefore it makes sense to limit the size of segments.<br/>
@@ -114,9 +117,6 @@ namespace Qdrant
         /// To disable vector indexing, set to `0`.<br/>
         /// Note: 1kB = 1 vector of size 256.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
-        /// </param>
-        /// <param name="flushIntervalSec">
-        /// Minimum interval between forced flushes.
         /// </param>
         /// <param name="maxOptimizationThreads">
         /// Max number of threads (jobs) for running optimizations per shard. Note: each optimization job will also use `max_indexing_threads` threads by itself for index building. If null - have no limit and choose dynamically to saturate CPU. If 0 - no optimization threads, optimizations will be disabled.<br/>
@@ -139,12 +139,12 @@ namespace Qdrant
             int? maxOptimizationThreads,
             bool? preventUnoptimized)
         {
-            this.DefaultSegmentNumber = defaultSegmentNumber;
-            this.FlushIntervalSec = flushIntervalSec;
             this.DeletedThreshold = deletedThreshold;
             this.VacuumMinVectorNumber = vacuumMinVectorNumber;
+            this.DefaultSegmentNumber = defaultSegmentNumber;
             this.MaxSegmentSize = maxSegmentSize;
             this.IndexingThreshold = indexingThreshold;
+            this.FlushIntervalSec = flushIntervalSec;
             this.MaxOptimizationThreads = maxOptimizationThreads;
             this.PreventUnoptimized = preventUnoptimized;
         }

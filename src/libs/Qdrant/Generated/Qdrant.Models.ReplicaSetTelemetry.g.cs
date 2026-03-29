@@ -57,10 +57,10 @@ namespace Qdrant
         /// Initializes a new instance of the <see cref="ReplicaSetTelemetry" /> class.
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="key"></param>
-        /// <param name="local"></param>
         /// <param name="remote"></param>
         /// <param name="replicateStates"></param>
+        /// <param name="key"></param>
+        /// <param name="local"></param>
         /// <param name="partialSnapshot"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -74,10 +74,10 @@ namespace Qdrant
             global::Qdrant.PartialSnapshotTelemetry? partialSnapshot)
         {
             this.Id = id;
-            this.Remote = remote ?? throw new global::System.ArgumentNullException(nameof(remote));
-            this.ReplicateStates = replicateStates ?? throw new global::System.ArgumentNullException(nameof(replicateStates));
             this.Key = key;
             this.Local = local;
+            this.Remote = remote ?? throw new global::System.ArgumentNullException(nameof(remote));
+            this.ReplicateStates = replicateStates ?? throw new global::System.ArgumentNullException(nameof(replicateStates));
             this.PartialSnapshot = partialSnapshot;
         }
 

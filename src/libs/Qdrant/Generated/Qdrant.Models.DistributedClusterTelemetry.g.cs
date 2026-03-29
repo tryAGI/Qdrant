@@ -38,8 +38,8 @@ namespace Qdrant
         /// Initializes a new instance of the <see cref="DistributedClusterTelemetry" /> class.
         /// </summary>
         /// <param name="enabled"></param>
-        /// <param name="numberOfPeers"></param>
         /// <param name="peers"></param>
+        /// <param name="numberOfPeers"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -49,8 +49,8 @@ namespace Qdrant
             int? numberOfPeers)
         {
             this.Enabled = enabled;
-            this.Peers = peers ?? throw new global::System.ArgumentNullException(nameof(peers));
             this.NumberOfPeers = numberOfPeers;
+            this.Peers = peers ?? throw new global::System.ArgumentNullException(nameof(peers));
         }
 
         /// <summary>

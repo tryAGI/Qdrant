@@ -60,7 +60,6 @@ namespace Qdrant
         /// <summary>
         /// Initializes a new instance of the <see cref="ClusterStatusVariant2" /> class.
         /// </summary>
-        /// <param name="status"></param>
         /// <param name="peerId">
         /// ID of this peer
         /// </param>
@@ -76,6 +75,7 @@ namespace Qdrant
         /// <param name="messageSendFailures">
         /// Consequent failures of message send operations in consensus by peer address. On the first success to send to that peer - entry is removed from this hashmap.
         /// </param>
+        /// <param name="status"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -87,12 +87,12 @@ namespace Qdrant
             global::System.Collections.Generic.Dictionary<string, global::Qdrant.MessageSendErrors> messageSendFailures,
             global::Qdrant.ClusterStatusVariant2Status status)
         {
+            this.Status = status;
             this.PeerId = peerId;
             this.Peers = peers ?? throw new global::System.ArgumentNullException(nameof(peers));
             this.RaftInfo = raftInfo ?? throw new global::System.ArgumentNullException(nameof(raftInfo));
             this.ConsensusThreadStatus = consensusThreadStatus;
             this.MessageSendFailures = messageSendFailures ?? throw new global::System.ArgumentNullException(nameof(messageSendFailures));
-            this.Status = status;
         }
 
         /// <summary>

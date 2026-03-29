@@ -84,15 +84,6 @@ namespace Qdrant
         /// <param name="optimizerStatus">
         /// Current state of the collection
         /// </param>
-        /// <param name="warnings">
-        /// Warnings related to the collection
-        /// </param>
-        /// <param name="indexedVectorsCount">
-        /// Approximate number of indexed vectors in the collection. Indexed vectors in large segments are faster to query, as it is stored in a specialized vector index.
-        /// </param>
-        /// <param name="pointsCount">
-        /// Approximate number of points (vectors + payloads) in collection. Each point could be accessed by unique id.
-        /// </param>
         /// <param name="segmentsCount">
         /// Number of segments in collection. Each segment has independent vector as payload indexes
         /// </param>
@@ -101,6 +92,15 @@ namespace Qdrant
         /// </param>
         /// <param name="payloadSchema">
         /// Types of stored payload
+        /// </param>
+        /// <param name="warnings">
+        /// Warnings related to the collection
+        /// </param>
+        /// <param name="indexedVectorsCount">
+        /// Approximate number of indexed vectors in the collection. Indexed vectors in large segments are faster to query, as it is stored in a specialized vector index.
+        /// </param>
+        /// <param name="pointsCount">
+        /// Approximate number of points (vectors + payloads) in collection. Each point could be accessed by unique id.
         /// </param>
         /// <param name="updateQueue">
         /// Update queue info
@@ -121,12 +121,12 @@ namespace Qdrant
         {
             this.Status = status;
             this.OptimizerStatus = optimizerStatus;
-            this.SegmentsCount = segmentsCount;
-            this.Config = config ?? throw new global::System.ArgumentNullException(nameof(config));
-            this.PayloadSchema = payloadSchema ?? throw new global::System.ArgumentNullException(nameof(payloadSchema));
             this.Warnings = warnings;
             this.IndexedVectorsCount = indexedVectorsCount;
             this.PointsCount = pointsCount;
+            this.SegmentsCount = segmentsCount;
+            this.Config = config ?? throw new global::System.ArgumentNullException(nameof(config));
+            this.PayloadSchema = payloadSchema ?? throw new global::System.ArgumentNullException(nameof(payloadSchema));
             this.UpdateQueue = updateQueue;
         }
 

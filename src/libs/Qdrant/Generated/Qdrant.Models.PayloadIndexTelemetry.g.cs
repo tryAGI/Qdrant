@@ -50,7 +50,6 @@ namespace Qdrant
         /// <summary>
         /// Initializes a new instance of the <see cref="PayloadIndexTelemetry" /> class.
         /// </summary>
-        /// <param name="fieldName"></param>
         /// <param name="indexType"></param>
         /// <param name="pointsValuesCount">
         /// The amount of values indexed for all points.
@@ -58,6 +57,7 @@ namespace Qdrant
         /// <param name="pointsCount">
         /// The amount of points that have at least one value indexed.
         /// </param>
+        /// <param name="fieldName"></param>
         /// <param name="histogramBucketSize"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -69,10 +69,10 @@ namespace Qdrant
             string? fieldName,
             int? histogramBucketSize)
         {
+            this.FieldName = fieldName;
             this.IndexType = indexType ?? throw new global::System.ArgumentNullException(nameof(indexType));
             this.PointsValuesCount = pointsValuesCount;
             this.PointsCount = pointsCount;
-            this.FieldName = fieldName;
             this.HistogramBucketSize = histogramBucketSize;
         }
 

@@ -66,14 +66,14 @@ namespace Qdrant
         /// <param name="pendingOperations">
         /// Number of consensus operations pending to be applied on this peer
         /// </param>
+        /// <param name="isVoter">
+        /// Is this peer a voter or a learner
+        /// </param>
         /// <param name="leader">
         /// Leader of the current term
         /// </param>
         /// <param name="role">
         /// Role of this peer in the current term
-        /// </param>
-        /// <param name="isVoter">
-        /// Is this peer a voter or a learner
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -89,9 +89,9 @@ namespace Qdrant
             this.Term = term;
             this.Commit = commit;
             this.PendingOperations = pendingOperations;
-            this.IsVoter = isVoter;
             this.Leader = leader;
             this.Role = role;
+            this.IsVoter = isVoter;
         }
 
         /// <summary>

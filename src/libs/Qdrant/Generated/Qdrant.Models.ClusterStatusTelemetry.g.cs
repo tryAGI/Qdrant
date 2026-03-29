@@ -76,12 +76,12 @@ namespace Qdrant
         /// <param name="term"></param>
         /// <param name="commit"></param>
         /// <param name="pendingOperations"></param>
-        /// <param name="role"></param>
         /// <param name="isVoter"></param>
-        /// <param name="peerId"></param>
         /// <param name="consensusThreadStatus">
         /// Information about current consensus thread status
         /// </param>
+        /// <param name="role"></param>
+        /// <param name="peerId"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -99,10 +99,10 @@ namespace Qdrant
             this.Term = term;
             this.Commit = commit;
             this.PendingOperations = pendingOperations;
-            this.IsVoter = isVoter;
-            this.ConsensusThreadStatus = consensusThreadStatus;
             this.Role = role;
+            this.IsVoter = isVoter;
             this.PeerId = peerId;
+            this.ConsensusThreadStatus = consensusThreadStatus;
         }
 
         /// <summary>

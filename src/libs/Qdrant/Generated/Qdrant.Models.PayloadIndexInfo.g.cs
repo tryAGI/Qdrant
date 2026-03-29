@@ -41,10 +41,10 @@ namespace Qdrant
         /// <param name="dataType">
         /// All possible names of payload types
         /// </param>
-        /// <param name="params"></param>
         /// <param name="points">
         /// Number of points indexed with this index
         /// </param>
+        /// <param name="params"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -54,8 +54,8 @@ namespace Qdrant
             global::Qdrant.PayloadSchemaParams? @params)
         {
             this.DataType = dataType;
-            this.Points = points;
             this.Params = @params;
+            this.Points = points;
         }
 
         /// <summary>

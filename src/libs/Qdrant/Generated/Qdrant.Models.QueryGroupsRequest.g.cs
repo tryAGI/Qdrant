@@ -105,6 +105,9 @@ namespace Qdrant
         /// <summary>
         /// Initializes a new instance of the <see cref="QueryGroupsRequest" /> class.
         /// </summary>
+        /// <param name="groupBy">
+        /// Payload field to group by, must be a string or number field. If the field contains more than 1 value, all values will be used for grouping. One point can be in multiple groups.
+        /// </param>
         /// <param name="shardKey"></param>
         /// <param name="prefetch">
         /// Sub-requests to perform first. If present, the query will be performed on the results of the prefetch(es).<br/>
@@ -135,9 +138,6 @@ namespace Qdrant
         /// The location to use for IDs lookup, if not specified - use the current collection and the 'using' vector Note: the other collection vectors should have the same vector size as the 'using' vector in the current collection<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
-        /// <param name="groupBy">
-        /// Payload field to group by, must be a string or number field. If the field contains more than 1 value, all values will be used for grouping. One point can be in multiple groups.
-        /// </param>
         /// <param name="groupSize">
         /// Maximum amount of points to return per group. Default is 3.
         /// </param>
@@ -166,7 +166,6 @@ namespace Qdrant
             int? limit,
             global::Qdrant.WithLookupInterface? withLookup)
         {
-            this.GroupBy = groupBy ?? throw new global::System.ArgumentNullException(nameof(groupBy));
             this.ShardKey = shardKey;
             this.Prefetch = prefetch;
             this.Query = query;
@@ -177,6 +176,7 @@ namespace Qdrant
             this.WithVector = withVector;
             this.WithPayload = withPayload;
             this.LookupFrom = lookupFrom;
+            this.GroupBy = groupBy ?? throw new global::System.ArgumentNullException(nameof(groupBy));
             this.GroupSize = groupSize;
             this.Limit = limit;
             this.WithLookup = withLookup;

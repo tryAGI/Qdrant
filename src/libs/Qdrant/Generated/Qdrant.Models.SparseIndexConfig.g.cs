@@ -38,12 +38,12 @@ namespace Qdrant
         /// <summary>
         /// Initializes a new instance of the <see cref="SparseIndexConfig" /> class.
         /// </summary>
+        /// <param name="indexType">
+        /// Sparse index types
+        /// </param>
         /// <param name="fullScanThreshold">
         /// We prefer a full scan search upto (excluding) this number of vectors.<br/>
         /// Note: this is number of vectors, not KiloBytes.
-        /// </param>
-        /// <param name="indexType">
-        /// Sparse index types
         /// </param>
         /// <param name="datatype">
         /// Datatype used to store weights in the index.
@@ -56,8 +56,8 @@ namespace Qdrant
             int? fullScanThreshold,
             global::Qdrant.VectorStorageDatatype? datatype)
         {
-            this.IndexType = indexType;
             this.FullScanThreshold = fullScanThreshold;
+            this.IndexType = indexType;
             this.Datatype = datatype;
         }
 

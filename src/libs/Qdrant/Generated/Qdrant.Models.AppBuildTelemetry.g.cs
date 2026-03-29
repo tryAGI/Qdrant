@@ -76,13 +76,13 @@ namespace Qdrant
         /// </summary>
         /// <param name="name"></param>
         /// <param name="version"></param>
+        /// <param name="startup"></param>
         /// <param name="features"></param>
         /// <param name="runtimeFeatures"></param>
         /// <param name="hnswGlobalConfig"></param>
         /// <param name="system"></param>
         /// <param name="jwtRbac"></param>
         /// <param name="hideJwtDashboard"></param>
-        /// <param name="startup"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -99,13 +99,13 @@ namespace Qdrant
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Version = version ?? throw new global::System.ArgumentNullException(nameof(version));
-            this.Startup = startup;
             this.Features = features;
             this.RuntimeFeatures = runtimeFeatures;
             this.HnswGlobalConfig = hnswGlobalConfig;
             this.System = system;
             this.JwtRbac = jwtRbac;
             this.HideJwtDashboard = hideJwtDashboard;
+            this.Startup = startup;
         }
 
         /// <summary>
