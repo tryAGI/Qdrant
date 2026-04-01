@@ -156,19 +156,19 @@ namespace Qdrant.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.ScalarQuantization), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.ScalarQuantization?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.ScalarQuantization).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Scalar, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Scalar!, typeInfo);
             }
             else if (value.IsProduct)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.ProductQuantization), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.ProductQuantization?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.ProductQuantization).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Product, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Product!, typeInfo);
             }
             else if (value.IsBinary)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.BinaryQuantization), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.BinaryQuantization?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.BinaryQuantization).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Binary, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Binary!, typeInfo);
             }
         }
     }

@@ -156,19 +156,19 @@ namespace Qdrant.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.CreateAliasOperation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.CreateAliasOperation?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.CreateAliasOperation).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CreateOperation, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CreateOperation!, typeInfo);
             }
             else if (value.IsDeleteOperation)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.DeleteAliasOperation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.DeleteAliasOperation?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.DeleteAliasOperation).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DeleteOperation, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DeleteOperation!, typeInfo);
             }
             else if (value.IsRenameOperation)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.RenameAliasOperation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.RenameAliasOperation?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.RenameAliasOperation).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RenameOperation, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RenameOperation!, typeInfo);
             }
         }
     }

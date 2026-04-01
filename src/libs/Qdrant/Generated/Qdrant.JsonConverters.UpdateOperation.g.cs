@@ -326,49 +326,49 @@ namespace Qdrant.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.UpsertOperation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.UpsertOperation?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.UpsertOperation).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Upsert, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Upsert!, typeInfo);
             }
             else if (value.IsDelete)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.DeleteOperation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.DeleteOperation?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.DeleteOperation).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Delete, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Delete!, typeInfo);
             }
             else if (value.IsSetPayload)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.SetPayloadOperation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.SetPayloadOperation?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.SetPayloadOperation).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SetPayload, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SetPayload!, typeInfo);
             }
             else if (value.IsOverwritePayload)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.OverwritePayloadOperation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.OverwritePayloadOperation?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.OverwritePayloadOperation).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OverwritePayload, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OverwritePayload!, typeInfo);
             }
             else if (value.IsDeletePayload)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.DeletePayloadOperation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.DeletePayloadOperation?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.DeletePayloadOperation).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DeletePayload, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DeletePayload!, typeInfo);
             }
             else if (value.IsClearPayload)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.ClearPayloadOperation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.ClearPayloadOperation?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.ClearPayloadOperation).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ClearPayload, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ClearPayload!, typeInfo);
             }
             else if (value.IsVectors)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.UpdateVectorsOperation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.UpdateVectorsOperation?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.UpdateVectorsOperation).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Vectors, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Vectors!, typeInfo);
             }
             else if (value.IsDeleteVectors)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.DeleteVectorsOperation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.DeleteVectorsOperation?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.DeleteVectorsOperation).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DeleteVectors, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DeleteVectors!, typeInfo);
             }
         }
     }

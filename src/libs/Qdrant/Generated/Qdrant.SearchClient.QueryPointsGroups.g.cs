@@ -365,6 +365,7 @@ namespace Qdrant
             global::Qdrant.WithLookupInterface? withLookup = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::Qdrant.QueryGroupsRequest
             {
                 ShardKey = shardKey,

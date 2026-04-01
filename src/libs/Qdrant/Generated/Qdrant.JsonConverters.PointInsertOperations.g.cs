@@ -128,13 +128,13 @@ namespace Qdrant.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.PointsBatch), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.PointsBatch?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.PointsBatch).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PointsBatch, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PointsBatch!, typeInfo);
             }
             else if (value.IsPointsList)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.PointsList), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.PointsList?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.PointsList).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PointsList, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PointsList!, typeInfo);
             }
         }
     }

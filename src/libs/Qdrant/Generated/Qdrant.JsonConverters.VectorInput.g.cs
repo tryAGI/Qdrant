@@ -296,43 +296,43 @@ namespace Qdrant.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.IList<float>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.IList<float>?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.IList<float>).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value1, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value1!, typeInfo);
             }
             else if (value.IsValue2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.SparseVector), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.SparseVector?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.SparseVector).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2!, typeInfo);
             }
             else if (value.IsValue3)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value3, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value3!, typeInfo);
             }
             else if (value.IsValue4)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.ExtendedPointId), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.ExtendedPointId> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.ExtendedPointId).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value4, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value4!.Value, typeInfo);
             }
             else if (value.IsValue5)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.Document), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.Document?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.Document).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value5, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value5!, typeInfo);
             }
             else if (value.IsValue6)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.Image), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.Image?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.Image).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value6, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value6!, typeInfo);
             }
             else if (value.IsValue7)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.InferenceObject), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.InferenceObject?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.InferenceObject).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value7, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value7!, typeInfo);
             }
         }
     }

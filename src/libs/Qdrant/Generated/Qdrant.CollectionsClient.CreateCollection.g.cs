@@ -347,6 +347,7 @@ namespace Qdrant
             global::Qdrant.Payload? metadata = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::Qdrant.CreateCollection
             {
                 Vectors = vectors,
