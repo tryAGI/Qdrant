@@ -357,7 +357,6 @@ namespace Qdrant
             global::Qdrant.LookupLocation? lookupFrom = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::Qdrant.QueryRequest
             {
                 ShardKey = shardKey,

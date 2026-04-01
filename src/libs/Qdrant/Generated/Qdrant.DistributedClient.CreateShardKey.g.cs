@@ -300,7 +300,6 @@ namespace Qdrant
             global::Qdrant.ReplicaState? initialState = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::Qdrant.CreateShardingKey
             {
                 ShardKey = shardKey,

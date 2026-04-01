@@ -356,7 +356,6 @@ namespace Qdrant
             string? snapshotname = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::Qdrant.RecoverShardFromUploadedSnapshotRequest
             {
                 Snapshot = snapshot,

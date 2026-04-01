@@ -320,7 +320,6 @@ namespace Qdrant
             global::Qdrant.Filter? updateFilter = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::Qdrant.UpdateVectors
             {
                 Points = points,
