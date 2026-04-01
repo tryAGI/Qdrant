@@ -258,37 +258,37 @@ namespace Qdrant.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.MatchValue), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.MatchValue?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.MatchValue).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value!, typeInfo);
             }
             else if (value.IsText)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.MatchText), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.MatchText?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.MatchText).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Text, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Text!, typeInfo);
             }
             else if (value.IsTextAny)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.MatchTextAny), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.MatchTextAny?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.MatchTextAny).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TextAny, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TextAny!, typeInfo);
             }
             else if (value.IsPhrase)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.MatchPhrase), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.MatchPhrase?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.MatchPhrase).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Phrase, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Phrase!, typeInfo);
             }
             else if (value.IsAny)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.MatchAny), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.MatchAny?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.MatchAny).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Any, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Any!, typeInfo);
             }
             else if (value.IsExcept)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.MatchExcept), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.MatchExcept?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.MatchExcept).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Except, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Except!, typeInfo);
             }
         }
     }

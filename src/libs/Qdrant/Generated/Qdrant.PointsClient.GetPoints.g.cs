@@ -325,6 +325,7 @@ namespace Qdrant
             global::Qdrant.WithVector? withVector = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::Qdrant.PointRequest
             {
                 ShardKey = shardKey,

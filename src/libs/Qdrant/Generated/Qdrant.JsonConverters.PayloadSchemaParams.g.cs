@@ -357,49 +357,49 @@ namespace Qdrant.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.KeywordIndexParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.KeywordIndexParams?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.KeywordIndexParams).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.KeywordIndex, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.KeywordIndex!, typeInfo);
             }
             else if (value.IsIntegerIndex)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.IntegerIndexParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.IntegerIndexParams?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.IntegerIndexParams).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.IntegerIndex, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.IntegerIndex!, typeInfo);
             }
             else if (value.IsFloatIndex)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.FloatIndexParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.FloatIndexParams?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.FloatIndexParams).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FloatIndex, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FloatIndex!, typeInfo);
             }
             else if (value.IsGeoIndex)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.GeoIndexParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.GeoIndexParams?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.GeoIndexParams).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.GeoIndex, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.GeoIndex!, typeInfo);
             }
             else if (value.IsTextIndex)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.TextIndexParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.TextIndexParams?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.TextIndexParams).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TextIndex, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TextIndex!, typeInfo);
             }
             else if (value.IsBoolIndex)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.BoolIndexParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.BoolIndexParams?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.BoolIndexParams).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BoolIndex, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BoolIndex!, typeInfo);
             }
             else if (value.IsDatetimeIndex)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.DatetimeIndexParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.DatetimeIndexParams?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.DatetimeIndexParams).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DatetimeIndex, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DatetimeIndex!, typeInfo);
             }
             else if (value.IsUuidIndex)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.UuidIndexParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.UuidIndexParams?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.UuidIndexParams).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.UuidIndex, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.UuidIndex!, typeInfo);
             }
         }
     }

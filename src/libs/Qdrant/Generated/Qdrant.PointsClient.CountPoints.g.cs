@@ -322,6 +322,7 @@ namespace Qdrant
             bool? exact = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::Qdrant.CountRequest
             {
                 ShardKey = shardKey,

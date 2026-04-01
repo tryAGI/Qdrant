@@ -303,43 +303,43 @@ namespace Qdrant.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.FieldCondition), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.FieldCondition?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.FieldCondition).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Field, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Field!, typeInfo);
             }
             else if (value.IsIsEmpty)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.IsEmptyCondition), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.IsEmptyCondition?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.IsEmptyCondition).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.IsEmpty, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.IsEmpty!, typeInfo);
             }
             else if (value.IsIsNull)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.IsNullCondition), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.IsNullCondition?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.IsNullCondition).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.IsNull, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.IsNull!, typeInfo);
             }
             else if (value.IsHasId)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.HasIdCondition), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.HasIdCondition?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.HasIdCondition).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.HasId, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.HasId!, typeInfo);
             }
             else if (value.IsHasVector)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.HasVectorCondition), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.HasVectorCondition?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.HasVectorCondition).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.HasVector, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.HasVector!, typeInfo);
             }
             else if (value.IsNested)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.NestedCondition), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.NestedCondition?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.NestedCondition).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Nested, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Nested!, typeInfo);
             }
             else if (value.IsFilter)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.Filter), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.Filter?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.Filter).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Filter, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Filter!, typeInfo);
             }
         }
     }

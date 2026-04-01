@@ -122,13 +122,13 @@ namespace Qdrant.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.Language), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.Language> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.Language).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Language, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Language!.Value, typeInfo);
             }
             else if (value.IsSet)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.StopwordsSet), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.StopwordsSet?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.StopwordsSet).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Set, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Set!, typeInfo);
             }
         }
     }
