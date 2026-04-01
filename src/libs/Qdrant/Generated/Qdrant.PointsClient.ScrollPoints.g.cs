@@ -337,7 +337,6 @@ namespace Qdrant
             global::Qdrant.OrderByInterface? orderBy = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::Qdrant.ScrollRequest
             {
                 ShardKey = shardKey,
