@@ -13,35 +13,35 @@ namespace Qdrant
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Qdrant.MaxOptimizationThreadsSetting? Value1 { get; init; }
+        public global::Qdrant.MaxOptimizationThreadsSetting? Setting { get; init; }
 #else
-        public global::Qdrant.MaxOptimizationThreadsSetting? Value1 { get; }
+        public global::Qdrant.MaxOptimizationThreadsSetting? Setting { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Setting))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsSetting => Setting != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public int? Value2 { get; init; }
+        public int? MaxOptimizationThreadsVariant2 { get; init; }
 #else
-        public int? Value2 { get; }
+        public int? MaxOptimizationThreadsVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MaxOptimizationThreadsVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsMaxOptimizationThreadsVariant2 => MaxOptimizationThreadsVariant2 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -50,14 +50,14 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Qdrant.MaxOptimizationThreadsSetting?(MaxOptimizationThreads @this) => @this.Value1;
+        public static implicit operator global::Qdrant.MaxOptimizationThreadsSetting?(MaxOptimizationThreads @this) => @this.Setting;
 
         /// <summary>
         /// 
         /// </summary>
         public MaxOptimizationThreads(global::Qdrant.MaxOptimizationThreadsSetting? value)
         {
-            Value1 = value;
+            Setting = value;
         }
 
         /// <summary>
@@ -68,42 +68,42 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator int?(MaxOptimizationThreads @this) => @this.Value2;
+        public static implicit operator int?(MaxOptimizationThreads @this) => @this.MaxOptimizationThreadsVariant2;
 
         /// <summary>
         /// 
         /// </summary>
         public MaxOptimizationThreads(int? value)
         {
-            Value2 = value;
+            MaxOptimizationThreadsVariant2 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public MaxOptimizationThreads(
-            global::Qdrant.MaxOptimizationThreadsSetting? value1,
-            int? value2
+            global::Qdrant.MaxOptimizationThreadsSetting? setting,
+            int? maxOptimizationThreadsVariant2
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            Setting = setting;
+            MaxOptimizationThreadsVariant2 = maxOptimizationThreadsVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            MaxOptimizationThreadsVariant2 as object ??
+            Setting as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToValueString() ??
-            Value2?.ToString() 
+            Setting?.ToValueString() ??
+            MaxOptimizationThreadsVariant2?.ToString() 
             ;
 
         /// <summary>
@@ -111,15 +111,15 @@ namespace Qdrant
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 || IsValue2;
+            return IsSetting || IsMaxOptimizationThreadsVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Qdrant.MaxOptimizationThreadsSetting?, TResult>? value1 = null,
-            global::System.Func<int?, TResult>? value2 = null,
+            global::System.Func<global::Qdrant.MaxOptimizationThreadsSetting?, TResult>? setting = null,
+            global::System.Func<int?, TResult>? maxOptimizationThreadsVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -127,13 +127,13 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsSetting && setting != null)
             {
-                return value1(Value1!);
+                return setting(Setting!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsMaxOptimizationThreadsVariant2 && maxOptimizationThreadsVariant2 != null)
             {
-                return value2(Value2!);
+                return maxOptimizationThreadsVariant2(MaxOptimizationThreadsVariant2!);
             }
 
             return default(TResult);
@@ -143,8 +143,8 @@ namespace Qdrant
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Qdrant.MaxOptimizationThreadsSetting?>? value1 = null,
-            global::System.Action<int?>? value2 = null,
+            global::System.Action<global::Qdrant.MaxOptimizationThreadsSetting?>? setting = null,
+            global::System.Action<int?>? maxOptimizationThreadsVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -152,13 +152,13 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsSetting)
             {
-                value1?.Invoke(Value1!);
+                setting?.Invoke(Setting!);
             }
-            else if (IsValue2)
+            else if (IsMaxOptimizationThreadsVariant2)
             {
-                value2?.Invoke(Value2!);
+                maxOptimizationThreadsVariant2?.Invoke(MaxOptimizationThreadsVariant2!);
             }
         }
 
@@ -169,9 +169,9 @@ namespace Qdrant
         {
             var fields = new object?[]
             {
-                Value1,
+                Setting,
                 typeof(global::Qdrant.MaxOptimizationThreadsSetting),
-                Value2,
+                MaxOptimizationThreadsVariant2,
                 typeof(int),
             };
             const int offset = unchecked((int)2166136261);
@@ -189,8 +189,8 @@ namespace Qdrant
         public bool Equals(MaxOptimizationThreads other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::Qdrant.MaxOptimizationThreadsSetting?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<int?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::Qdrant.MaxOptimizationThreadsSetting?>.Default.Equals(Setting, other.Setting) &&
+                global::System.Collections.Generic.EqualityComparer<int?>.Default.Equals(MaxOptimizationThreadsVariant2, other.MaxOptimizationThreadsVariant2) 
                 ;
         }
 

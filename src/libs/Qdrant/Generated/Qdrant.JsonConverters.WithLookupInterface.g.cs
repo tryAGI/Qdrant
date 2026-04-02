@@ -36,8 +36,8 @@ namespace Qdrant.JsonConverters
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
             if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
 
-            string? value1 = default;
-            global::Qdrant.WithLookup? value2 = default;
+            string? withLookupInterfaceVariant1 = default;
+            global::Qdrant.WithLookup? withLookup = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -46,7 +46,7 @@ namespace Qdrant.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                        value1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        withLookupInterfaceVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -61,7 +61,7 @@ namespace Qdrant.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.WithLookup), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.WithLookup> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.WithLookup).Name}");
-                        value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        withLookup = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -72,13 +72,13 @@ namespace Qdrant.JsonConverters
                 }
             }
 
-            if (value1 == null && value2 == null)
+            if (withLookupInterfaceVariant1 == null && withLookup == null)
             {
                 try
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                    value1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    withLookupInterfaceVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -91,7 +91,7 @@ namespace Qdrant.JsonConverters
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.WithLookup), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.WithLookup> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.WithLookup).Name}");
-                    value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    withLookup = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -102,9 +102,9 @@ namespace Qdrant.JsonConverters
             }
 
             var __value = new global::Qdrant.WithLookupInterface(
-                value1,
+                withLookupInterfaceVariant1,
 
-                value2
+                withLookup
                 );
 
             return __value;
@@ -119,17 +119,17 @@ namespace Qdrant.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsValue1)
+            if (value.IsWithLookupInterfaceVariant1)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value1!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.WithLookupInterfaceVariant1!, typeInfo);
             }
-            else if (value.IsValue2)
+            else if (value.IsWithLookup)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.WithLookup), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.WithLookup?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.WithLookup).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.WithLookup!, typeInfo);
             }
         }
     }

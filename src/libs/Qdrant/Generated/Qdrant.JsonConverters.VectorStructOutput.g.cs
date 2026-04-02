@@ -66,9 +66,9 @@ namespace Qdrant.JsonConverters
             if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
             if (__score2 > __bestScore) { __bestScore = __score2; __bestIndex = 2; }
 
-            global::System.Collections.Generic.IList<float>? value1 = default;
-            global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>? value2 = default;
-            object? value3 = default;
+            global::System.Collections.Generic.IList<float>? vectorStructOutputVariant1 = default;
+            global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>? vectorStructOutputVariant2 = default;
+            object? vectorStructOutputVariant3 = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -78,7 +78,7 @@ namespace Qdrant.JsonConverters
 
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.IList<float>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.IList<float>> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.IList<float>).Name}");
-                        value1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        vectorStructOutputVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -95,7 +95,7 @@ namespace Qdrant.JsonConverters
 
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>).Name}");
-                        value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        vectorStructOutputVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -112,7 +112,7 @@ namespace Qdrant.JsonConverters
 
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                        value3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        vectorStructOutputVariant3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -123,14 +123,14 @@ namespace Qdrant.JsonConverters
                 }
             }
 
-            if (value1 == null && value2 == null && value3 == null)
+            if (vectorStructOutputVariant1 == null && vectorStructOutputVariant2 == null && vectorStructOutputVariant3 == null)
             {
                 try
                 {
 
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.IList<float>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.IList<float>> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.IList<float>).Name}");
-                    value1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    vectorStructOutputVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -144,7 +144,7 @@ namespace Qdrant.JsonConverters
 
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>).Name}");
-                    value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    vectorStructOutputVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -158,7 +158,7 @@ namespace Qdrant.JsonConverters
 
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                    value3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    vectorStructOutputVariant3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -169,11 +169,11 @@ namespace Qdrant.JsonConverters
             }
 
             var __value = new global::Qdrant.VectorStructOutput(
-                value1,
+                vectorStructOutputVariant1,
 
-                value2,
+                vectorStructOutputVariant2,
 
-                value3
+                vectorStructOutputVariant3
                 );
 
             return __value;
@@ -188,23 +188,23 @@ namespace Qdrant.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsValue1)
+            if (value.IsVectorStructOutputVariant1)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.IList<float>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.IList<float>?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.IList<float>).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value1!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.VectorStructOutputVariant1!, typeInfo);
             }
-            else if (value.IsValue2)
+            else if (value.IsVectorStructOutputVariant2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.VectorStructOutputVariant2!, typeInfo);
             }
-            else if (value.IsValue3)
+            else if (value.IsVectorStructOutputVariant3)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value3!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.VectorStructOutputVariant3!, typeInfo);
             }
         }
     }

@@ -13,18 +13,18 @@ namespace Qdrant
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public string? Value1 { get; init; }
+        public string? UsingVectorVariant1 { get; init; }
 #else
-        public string? Value1 { get; }
+        public string? UsingVectorVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(UsingVectorVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsUsingVectorVariant1 => UsingVectorVariant1 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -33,28 +33,28 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator string?(UsingVector @this) => @this.Value1;
+        public static implicit operator string?(UsingVector @this) => @this.UsingVectorVariant1;
 
         /// <summary>
         /// 
         /// </summary>
         public UsingVector(string? value)
         {
-            Value1 = value;
+            UsingVectorVariant1 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value1 as object 
+            UsingVectorVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() 
+            UsingVectorVariant1?.ToString() 
             ;
 
         /// <summary>
@@ -62,14 +62,14 @@ namespace Qdrant
         /// </summary>
         public bool Validate()
         {
-            return IsValue1;
+            return IsUsingVectorVariant1;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? value1 = null,
+            global::System.Func<string?, TResult>? usingVectorVariant1 = null,
             bool validate = true)
         {
             if (validate)
@@ -77,9 +77,9 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsUsingVectorVariant1 && usingVectorVariant1 != null)
             {
-                return value1(Value1!);
+                return usingVectorVariant1(UsingVectorVariant1!);
             }
 
             return default(TResult);
@@ -89,7 +89,7 @@ namespace Qdrant
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? value1 = null,
+            global::System.Action<string?>? usingVectorVariant1 = null,
             bool validate = true)
         {
             if (validate)
@@ -97,9 +97,9 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsUsingVectorVariant1)
             {
-                value1?.Invoke(Value1!);
+                usingVectorVariant1?.Invoke(UsingVectorVariant1!);
             }
         }
 
@@ -110,7 +110,7 @@ namespace Qdrant
         {
             var fields = new object?[]
             {
-                Value1,
+                UsingVectorVariant1,
                 typeof(string),
             };
             const int offset = unchecked((int)2166136261);
@@ -128,7 +128,7 @@ namespace Qdrant
         public bool Equals(UsingVector other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value1, other.Value1) 
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(UsingVectorVariant1, other.UsingVectorVariant1) 
                 ;
         }
 

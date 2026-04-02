@@ -13,52 +13,52 @@ namespace Qdrant
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Qdrant.ContextPair? Value1 { get; init; }
+        public global::Qdrant.ContextPair? Pair { get; init; }
 #else
-        public global::Qdrant.ContextPair? Value1 { get; }
+        public global::Qdrant.ContextPair? Pair { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Pair))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsPair => Pair != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::System.Collections.Generic.IList<global::Qdrant.ContextPair>? Value2 { get; init; }
+        public global::System.Collections.Generic.IList<global::Qdrant.ContextPair>? ContextInputVariant2 { get; init; }
 #else
-        public global::System.Collections.Generic.IList<global::Qdrant.ContextPair>? Value2 { get; }
+        public global::System.Collections.Generic.IList<global::Qdrant.ContextPair>? ContextInputVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ContextInputVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsContextInputVariant2 => ContextInputVariant2 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public object? Value3 { get; init; }
+        public object? ContextInputVariant3 { get; init; }
 #else
-        public object? Value3 { get; }
+        public object? ContextInputVariant3 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value3))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ContextInputVariant3))]
 #endif
-        public bool IsValue3 => Value3 != null;
+        public bool IsContextInputVariant3 => ContextInputVariant3 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -67,46 +67,46 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Qdrant.ContextPair?(ContextInput @this) => @this.Value1;
+        public static implicit operator global::Qdrant.ContextPair?(ContextInput @this) => @this.Pair;
 
         /// <summary>
         /// 
         /// </summary>
         public ContextInput(global::Qdrant.ContextPair? value)
         {
-            Value1 = value;
+            Pair = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public ContextInput(
-            global::Qdrant.ContextPair? value1,
-            global::System.Collections.Generic.IList<global::Qdrant.ContextPair>? value2,
-            object? value3
+            global::Qdrant.ContextPair? pair,
+            global::System.Collections.Generic.IList<global::Qdrant.ContextPair>? contextInputVariant2,
+            object? contextInputVariant3
             )
         {
-            Value1 = value1;
-            Value2 = value2;
-            Value3 = value3;
+            Pair = pair;
+            ContextInputVariant2 = contextInputVariant2;
+            ContextInputVariant3 = contextInputVariant3;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value3 as object ??
-            Value2 as object ??
-            Value1 as object 
+            ContextInputVariant3 as object ??
+            ContextInputVariant2 as object ??
+            Pair as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() ??
-            Value3?.ToString() 
+            Pair?.ToString() ??
+            ContextInputVariant2?.ToString() ??
+            ContextInputVariant3?.ToString() 
             ;
 
         /// <summary>
@@ -114,16 +114,16 @@ namespace Qdrant
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 || IsValue2 || IsValue3;
+            return IsPair || IsContextInputVariant2 || IsContextInputVariant3;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Qdrant.ContextPair?, TResult>? value1 = null,
-            global::System.Func<global::System.Collections.Generic.IList<global::Qdrant.ContextPair>?, TResult>? value2 = null,
-            global::System.Func<object?, TResult>? value3 = null,
+            global::System.Func<global::Qdrant.ContextPair?, TResult>? pair = null,
+            global::System.Func<global::System.Collections.Generic.IList<global::Qdrant.ContextPair>?, TResult>? contextInputVariant2 = null,
+            global::System.Func<object?, TResult>? contextInputVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -131,17 +131,17 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsPair && pair != null)
             {
-                return value1(Value1!);
+                return pair(Pair!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsContextInputVariant2 && contextInputVariant2 != null)
             {
-                return value2(Value2!);
+                return contextInputVariant2(ContextInputVariant2!);
             }
-            else if (IsValue3 && value3 != null)
+            else if (IsContextInputVariant3 && contextInputVariant3 != null)
             {
-                return value3(Value3!);
+                return contextInputVariant3(ContextInputVariant3!);
             }
 
             return default(TResult);
@@ -151,9 +151,9 @@ namespace Qdrant
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Qdrant.ContextPair?>? value1 = null,
-            global::System.Action<global::System.Collections.Generic.IList<global::Qdrant.ContextPair>?>? value2 = null,
-            global::System.Action<object?>? value3 = null,
+            global::System.Action<global::Qdrant.ContextPair?>? pair = null,
+            global::System.Action<global::System.Collections.Generic.IList<global::Qdrant.ContextPair>?>? contextInputVariant2 = null,
+            global::System.Action<object?>? contextInputVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -161,17 +161,17 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsPair)
             {
-                value1?.Invoke(Value1!);
+                pair?.Invoke(Pair!);
             }
-            else if (IsValue2)
+            else if (IsContextInputVariant2)
             {
-                value2?.Invoke(Value2!);
+                contextInputVariant2?.Invoke(ContextInputVariant2!);
             }
-            else if (IsValue3)
+            else if (IsContextInputVariant3)
             {
-                value3?.Invoke(Value3!);
+                contextInputVariant3?.Invoke(ContextInputVariant3!);
             }
         }
 
@@ -182,11 +182,11 @@ namespace Qdrant
         {
             var fields = new object?[]
             {
-                Value1,
+                Pair,
                 typeof(global::Qdrant.ContextPair),
-                Value2,
+                ContextInputVariant2,
                 typeof(global::System.Collections.Generic.IList<global::Qdrant.ContextPair>),
-                Value3,
+                ContextInputVariant3,
                 typeof(object),
             };
             const int offset = unchecked((int)2166136261);
@@ -204,9 +204,9 @@ namespace Qdrant
         public bool Equals(ContextInput other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::Qdrant.ContextPair?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::Qdrant.ContextPair>?>.Default.Equals(Value2, other.Value2) &&
-                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(Value3, other.Value3) 
+                global::System.Collections.Generic.EqualityComparer<global::Qdrant.ContextPair?>.Default.Equals(Pair, other.Pair) &&
+                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::Qdrant.ContextPair>?>.Default.Equals(ContextInputVariant2, other.ContextInputVariant2) &&
+                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(ContextInputVariant3, other.ContextInputVariant3) 
                 ;
         }
 

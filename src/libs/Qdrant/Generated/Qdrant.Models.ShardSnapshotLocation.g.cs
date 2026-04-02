@@ -13,35 +13,35 @@ namespace Qdrant
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public string? Value1 { get; init; }
+        public string? ShardSnapshotLocationVariant1 { get; init; }
 #else
-        public string? Value1 { get; }
+        public string? ShardSnapshotLocationVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ShardSnapshotLocationVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsShardSnapshotLocationVariant1 => ShardSnapshotLocationVariant1 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public string? Value2 { get; init; }
+        public string? ShardSnapshotLocationVariant2 { get; init; }
 #else
-        public string? Value2 { get; }
+        public string? ShardSnapshotLocationVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ShardSnapshotLocationVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsShardSnapshotLocationVariant2 => ShardSnapshotLocationVariant2 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -50,42 +50,42 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator string?(ShardSnapshotLocation @this) => @this.Value1;
+        public static implicit operator string?(ShardSnapshotLocation @this) => @this.ShardSnapshotLocationVariant1;
 
         /// <summary>
         /// 
         /// </summary>
         public ShardSnapshotLocation(string? value)
         {
-            Value1 = value;
+            ShardSnapshotLocationVariant1 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public ShardSnapshotLocation(
-            string? value1,
-            string? value2
+            string? shardSnapshotLocationVariant1,
+            string? shardSnapshotLocationVariant2
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            ShardSnapshotLocationVariant1 = shardSnapshotLocationVariant1;
+            ShardSnapshotLocationVariant2 = shardSnapshotLocationVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            ShardSnapshotLocationVariant2 as object ??
+            ShardSnapshotLocationVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() 
+            ShardSnapshotLocationVariant1?.ToString() ??
+            ShardSnapshotLocationVariant2?.ToString() 
             ;
 
         /// <summary>
@@ -93,15 +93,15 @@ namespace Qdrant
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 || IsValue2;
+            return IsShardSnapshotLocationVariant1 || IsShardSnapshotLocationVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? value1 = null,
-            global::System.Func<string?, TResult>? value2 = null,
+            global::System.Func<string?, TResult>? shardSnapshotLocationVariant1 = null,
+            global::System.Func<string?, TResult>? shardSnapshotLocationVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -109,13 +109,13 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsShardSnapshotLocationVariant1 && shardSnapshotLocationVariant1 != null)
             {
-                return value1(Value1!);
+                return shardSnapshotLocationVariant1(ShardSnapshotLocationVariant1!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsShardSnapshotLocationVariant2 && shardSnapshotLocationVariant2 != null)
             {
-                return value2(Value2!);
+                return shardSnapshotLocationVariant2(ShardSnapshotLocationVariant2!);
             }
 
             return default(TResult);
@@ -125,8 +125,8 @@ namespace Qdrant
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? value1 = null,
-            global::System.Action<string?>? value2 = null,
+            global::System.Action<string?>? shardSnapshotLocationVariant1 = null,
+            global::System.Action<string?>? shardSnapshotLocationVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -134,13 +134,13 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsShardSnapshotLocationVariant1)
             {
-                value1?.Invoke(Value1!);
+                shardSnapshotLocationVariant1?.Invoke(ShardSnapshotLocationVariant1!);
             }
-            else if (IsValue2)
+            else if (IsShardSnapshotLocationVariant2)
             {
-                value2?.Invoke(Value2!);
+                shardSnapshotLocationVariant2?.Invoke(ShardSnapshotLocationVariant2!);
             }
         }
 
@@ -151,9 +151,9 @@ namespace Qdrant
         {
             var fields = new object?[]
             {
-                Value1,
+                ShardSnapshotLocationVariant1,
                 typeof(string),
-                Value2,
+                ShardSnapshotLocationVariant2,
                 typeof(string),
             };
             const int offset = unchecked((int)2166136261);
@@ -171,8 +171,8 @@ namespace Qdrant
         public bool Equals(ShardSnapshotLocation other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(ShardSnapshotLocationVariant1, other.ShardSnapshotLocationVariant1) &&
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(ShardSnapshotLocationVariant2, other.ShardSnapshotLocationVariant2) 
                 ;
         }
 

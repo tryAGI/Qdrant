@@ -13,35 +13,35 @@ namespace Qdrant
         /// If `true` - return all vector, If `false` - do not return vector
         /// </summary>
 #if NET6_0_OR_GREATER
-        public bool? Value1 { get; init; }
+        public bool? WithVectorVariant1 { get; init; }
 #else
-        public bool? Value1 { get; }
+        public bool? WithVectorVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WithVectorVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsWithVectorVariant1 => WithVectorVariant1 != null;
 
         /// <summary>
         /// Specify which vector to return
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::System.Collections.Generic.IList<string>? Value2 { get; init; }
+        public global::System.Collections.Generic.IList<string>? WithVectorVariant2 { get; init; }
 #else
-        public global::System.Collections.Generic.IList<string>? Value2 { get; }
+        public global::System.Collections.Generic.IList<string>? WithVectorVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WithVectorVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsWithVectorVariant2 => WithVectorVariant2 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -50,42 +50,42 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator bool?(WithVector @this) => @this.Value1;
+        public static implicit operator bool?(WithVector @this) => @this.WithVectorVariant1;
 
         /// <summary>
         /// 
         /// </summary>
         public WithVector(bool? value)
         {
-            Value1 = value;
+            WithVectorVariant1 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public WithVector(
-            bool? value1,
-            global::System.Collections.Generic.IList<string>? value2
+            bool? withVectorVariant1,
+            global::System.Collections.Generic.IList<string>? withVectorVariant2
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            WithVectorVariant1 = withVectorVariant1;
+            WithVectorVariant2 = withVectorVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            WithVectorVariant2 as object ??
+            WithVectorVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString().ToLowerInvariant() ??
-            Value2?.ToString() 
+            WithVectorVariant1?.ToString().ToLowerInvariant() ??
+            WithVectorVariant2?.ToString() 
             ;
 
         /// <summary>
@@ -93,15 +93,15 @@ namespace Qdrant
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 || IsValue2;
+            return IsWithVectorVariant1 || IsWithVectorVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<bool?, TResult>? value1 = null,
-            global::System.Func<global::System.Collections.Generic.IList<string>?, TResult>? value2 = null,
+            global::System.Func<bool?, TResult>? withVectorVariant1 = null,
+            global::System.Func<global::System.Collections.Generic.IList<string>?, TResult>? withVectorVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -109,13 +109,13 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsWithVectorVariant1 && withVectorVariant1 != null)
             {
-                return value1(Value1!);
+                return withVectorVariant1(WithVectorVariant1!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsWithVectorVariant2 && withVectorVariant2 != null)
             {
-                return value2(Value2!);
+                return withVectorVariant2(WithVectorVariant2!);
             }
 
             return default(TResult);
@@ -125,8 +125,8 @@ namespace Qdrant
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<bool?>? value1 = null,
-            global::System.Action<global::System.Collections.Generic.IList<string>?>? value2 = null,
+            global::System.Action<bool?>? withVectorVariant1 = null,
+            global::System.Action<global::System.Collections.Generic.IList<string>?>? withVectorVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -134,13 +134,13 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsWithVectorVariant1)
             {
-                value1?.Invoke(Value1!);
+                withVectorVariant1?.Invoke(WithVectorVariant1!);
             }
-            else if (IsValue2)
+            else if (IsWithVectorVariant2)
             {
-                value2?.Invoke(Value2!);
+                withVectorVariant2?.Invoke(WithVectorVariant2!);
             }
         }
 
@@ -151,9 +151,9 @@ namespace Qdrant
         {
             var fields = new object?[]
             {
-                Value1,
+                WithVectorVariant1,
                 typeof(bool),
-                Value2,
+                WithVectorVariant2,
                 typeof(global::System.Collections.Generic.IList<string>),
             };
             const int offset = unchecked((int)2166136261);
@@ -171,8 +171,8 @@ namespace Qdrant
         public bool Equals(WithVector other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<bool?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<string>?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<bool?>.Default.Equals(WithVectorVariant1, other.WithVectorVariant1) &&
+                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<string>?>.Default.Equals(WithVectorVariant2, other.WithVectorVariant2) 
                 ;
         }
 

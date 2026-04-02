@@ -37,9 +37,9 @@ namespace Qdrant.JsonConverters
             if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
             if (__score2 > __bestScore) { __bestScore = __score2; __bestIndex = 2; }
 
-            global::Qdrant.ShardCleanStatusTelemetryEnum? value1 = default;
-            global::Qdrant.ShardCleanStatusTelemetryEnum2? value2 = default;
-            global::Qdrant.ShardCleanStatusTelemetryEnum3? value3 = default;
+            global::Qdrant.ShardCleanStatusTelemetryEnum? @enum = default;
+            global::Qdrant.ShardCleanStatusTelemetryEnum2? enum2 = default;
+            global::Qdrant.ShardCleanStatusTelemetryEnum3? enum3 = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -48,7 +48,7 @@ namespace Qdrant.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.ShardCleanStatusTelemetryEnum), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.ShardCleanStatusTelemetryEnum> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.ShardCleanStatusTelemetryEnum).Name}");
-                        value1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        @enum = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -63,7 +63,7 @@ namespace Qdrant.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.ShardCleanStatusTelemetryEnum2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.ShardCleanStatusTelemetryEnum2> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.ShardCleanStatusTelemetryEnum2).Name}");
-                        value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        enum2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -78,7 +78,7 @@ namespace Qdrant.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.ShardCleanStatusTelemetryEnum3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.ShardCleanStatusTelemetryEnum3> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.ShardCleanStatusTelemetryEnum3).Name}");
-                        value3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        enum3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -89,13 +89,13 @@ namespace Qdrant.JsonConverters
                 }
             }
 
-            if (value1 == null && value2 == null && value3 == null)
+            if (@enum == null && enum2 == null && enum3 == null)
             {
                 try
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.ShardCleanStatusTelemetryEnum), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.ShardCleanStatusTelemetryEnum> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.ShardCleanStatusTelemetryEnum).Name}");
-                    value1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    @enum = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -108,7 +108,7 @@ namespace Qdrant.JsonConverters
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.ShardCleanStatusTelemetryEnum2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.ShardCleanStatusTelemetryEnum2> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.ShardCleanStatusTelemetryEnum2).Name}");
-                    value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    enum2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -121,7 +121,7 @@ namespace Qdrant.JsonConverters
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.ShardCleanStatusTelemetryEnum3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.ShardCleanStatusTelemetryEnum3> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.ShardCleanStatusTelemetryEnum3).Name}");
-                    value3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    enum3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -132,11 +132,11 @@ namespace Qdrant.JsonConverters
             }
 
             var __value = new global::Qdrant.ShardCleanStatusTelemetry(
-                value1,
+                @enum,
 
-                value2,
+                enum2,
 
-                value3
+                enum3
                 );
 
             return __value;
@@ -151,23 +151,23 @@ namespace Qdrant.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsValue1)
+            if (value.IsEnum)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.ShardCleanStatusTelemetryEnum), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.ShardCleanStatusTelemetryEnum> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.ShardCleanStatusTelemetryEnum).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value1!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Enum!.Value, typeInfo);
             }
-            else if (value.IsValue2)
+            else if (value.IsEnum2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.ShardCleanStatusTelemetryEnum2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.ShardCleanStatusTelemetryEnum2?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.ShardCleanStatusTelemetryEnum2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Enum2!, typeInfo);
             }
-            else if (value.IsValue3)
+            else if (value.IsEnum3)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.ShardCleanStatusTelemetryEnum3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.ShardCleanStatusTelemetryEnum3?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.ShardCleanStatusTelemetryEnum3).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value3!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Enum3!, typeInfo);
             }
         }
     }

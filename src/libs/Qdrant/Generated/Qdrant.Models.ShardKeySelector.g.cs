@@ -13,52 +13,52 @@ namespace Qdrant
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Qdrant.ShardKey? Value1 { get; init; }
+        public global::Qdrant.ShardKey? ShardKey { get; init; }
 #else
-        public global::Qdrant.ShardKey? Value1 { get; }
+        public global::Qdrant.ShardKey? ShardKey { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ShardKey))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsShardKey => ShardKey != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::System.Collections.Generic.IList<global::Qdrant.ShardKey>? Value2 { get; init; }
+        public global::System.Collections.Generic.IList<global::Qdrant.ShardKey>? ShardKeySelectorVariant2 { get; init; }
 #else
-        public global::System.Collections.Generic.IList<global::Qdrant.ShardKey>? Value2 { get; }
+        public global::System.Collections.Generic.IList<global::Qdrant.ShardKey>? ShardKeySelectorVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ShardKeySelectorVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsShardKeySelectorVariant2 => ShardKeySelectorVariant2 != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Qdrant.ShardKeyWithFallback? Value3 { get; init; }
+        public global::Qdrant.ShardKeyWithFallback? WithFallback { get; init; }
 #else
-        public global::Qdrant.ShardKeyWithFallback? Value3 { get; }
+        public global::Qdrant.ShardKeyWithFallback? WithFallback { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value3))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WithFallback))]
 #endif
-        public bool IsValue3 => Value3 != null;
+        public bool IsWithFallback => WithFallback != null;
         /// <summary>
         /// 
         /// </summary>
@@ -67,14 +67,14 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Qdrant.ShardKey?(ShardKeySelector @this) => @this.Value1;
+        public static implicit operator global::Qdrant.ShardKey?(ShardKeySelector @this) => @this.ShardKey;
 
         /// <summary>
         /// 
         /// </summary>
         public ShardKeySelector(global::Qdrant.ShardKey? value)
         {
-            Value1 = value;
+            ShardKey = value;
         }
 
         /// <summary>
@@ -85,46 +85,46 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Qdrant.ShardKeyWithFallback?(ShardKeySelector @this) => @this.Value3;
+        public static implicit operator global::Qdrant.ShardKeyWithFallback?(ShardKeySelector @this) => @this.WithFallback;
 
         /// <summary>
         /// 
         /// </summary>
         public ShardKeySelector(global::Qdrant.ShardKeyWithFallback? value)
         {
-            Value3 = value;
+            WithFallback = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public ShardKeySelector(
-            global::Qdrant.ShardKey? value1,
-            global::System.Collections.Generic.IList<global::Qdrant.ShardKey>? value2,
-            global::Qdrant.ShardKeyWithFallback? value3
+            global::Qdrant.ShardKey? shardKey,
+            global::System.Collections.Generic.IList<global::Qdrant.ShardKey>? shardKeySelectorVariant2,
+            global::Qdrant.ShardKeyWithFallback? withFallback
             )
         {
-            Value1 = value1;
-            Value2 = value2;
-            Value3 = value3;
+            ShardKey = shardKey;
+            ShardKeySelectorVariant2 = shardKeySelectorVariant2;
+            WithFallback = withFallback;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value3 as object ??
-            Value2 as object ??
-            Value1 as object 
+            WithFallback as object ??
+            ShardKeySelectorVariant2 as object ??
+            ShardKey as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() ??
-            Value3?.ToString() 
+            ShardKey?.ToString() ??
+            ShardKeySelectorVariant2?.ToString() ??
+            WithFallback?.ToString() 
             ;
 
         /// <summary>
@@ -132,16 +132,16 @@ namespace Qdrant
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 || IsValue2 || IsValue3;
+            return IsShardKey || IsShardKeySelectorVariant2 || IsWithFallback;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Qdrant.ShardKey?, TResult>? value1 = null,
-            global::System.Func<global::System.Collections.Generic.IList<global::Qdrant.ShardKey>?, TResult>? value2 = null,
-            global::System.Func<global::Qdrant.ShardKeyWithFallback?, TResult>? value3 = null,
+            global::System.Func<global::Qdrant.ShardKey?, TResult>? shardKey = null,
+            global::System.Func<global::System.Collections.Generic.IList<global::Qdrant.ShardKey>?, TResult>? shardKeySelectorVariant2 = null,
+            global::System.Func<global::Qdrant.ShardKeyWithFallback?, TResult>? withFallback = null,
             bool validate = true)
         {
             if (validate)
@@ -149,17 +149,17 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsShardKey && shardKey != null)
             {
-                return value1(Value1!);
+                return shardKey(ShardKey!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsShardKeySelectorVariant2 && shardKeySelectorVariant2 != null)
             {
-                return value2(Value2!);
+                return shardKeySelectorVariant2(ShardKeySelectorVariant2!);
             }
-            else if (IsValue3 && value3 != null)
+            else if (IsWithFallback && withFallback != null)
             {
-                return value3(Value3!);
+                return withFallback(WithFallback!);
             }
 
             return default(TResult);
@@ -169,9 +169,9 @@ namespace Qdrant
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Qdrant.ShardKey?>? value1 = null,
-            global::System.Action<global::System.Collections.Generic.IList<global::Qdrant.ShardKey>?>? value2 = null,
-            global::System.Action<global::Qdrant.ShardKeyWithFallback?>? value3 = null,
+            global::System.Action<global::Qdrant.ShardKey?>? shardKey = null,
+            global::System.Action<global::System.Collections.Generic.IList<global::Qdrant.ShardKey>?>? shardKeySelectorVariant2 = null,
+            global::System.Action<global::Qdrant.ShardKeyWithFallback?>? withFallback = null,
             bool validate = true)
         {
             if (validate)
@@ -179,17 +179,17 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsShardKey)
             {
-                value1?.Invoke(Value1!);
+                shardKey?.Invoke(ShardKey!);
             }
-            else if (IsValue2)
+            else if (IsShardKeySelectorVariant2)
             {
-                value2?.Invoke(Value2!);
+                shardKeySelectorVariant2?.Invoke(ShardKeySelectorVariant2!);
             }
-            else if (IsValue3)
+            else if (IsWithFallback)
             {
-                value3?.Invoke(Value3!);
+                withFallback?.Invoke(WithFallback!);
             }
         }
 
@@ -200,11 +200,11 @@ namespace Qdrant
         {
             var fields = new object?[]
             {
-                Value1,
+                ShardKey,
                 typeof(global::Qdrant.ShardKey),
-                Value2,
+                ShardKeySelectorVariant2,
                 typeof(global::System.Collections.Generic.IList<global::Qdrant.ShardKey>),
-                Value3,
+                WithFallback,
                 typeof(global::Qdrant.ShardKeyWithFallback),
             };
             const int offset = unchecked((int)2166136261);
@@ -222,9 +222,9 @@ namespace Qdrant
         public bool Equals(ShardKeySelector other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::Qdrant.ShardKey?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::Qdrant.ShardKey>?>.Default.Equals(Value2, other.Value2) &&
-                global::System.Collections.Generic.EqualityComparer<global::Qdrant.ShardKeyWithFallback?>.Default.Equals(Value3, other.Value3) 
+                global::System.Collections.Generic.EqualityComparer<global::Qdrant.ShardKey?>.Default.Equals(ShardKey, other.ShardKey) &&
+                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::Qdrant.ShardKey>?>.Default.Equals(ShardKeySelectorVariant2, other.ShardKeySelectorVariant2) &&
+                global::System.Collections.Generic.EqualityComparer<global::Qdrant.ShardKeyWithFallback?>.Default.Equals(WithFallback, other.WithFallback) 
                 ;
         }
 
