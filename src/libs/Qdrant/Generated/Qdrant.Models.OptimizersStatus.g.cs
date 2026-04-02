@@ -13,35 +13,35 @@ namespace Qdrant
         /// Optimizers are reporting as expected
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Qdrant.OptimizersStatusEnum? Value1 { get; init; }
+        public global::Qdrant.OptimizersStatusEnum? Enum { get; init; }
 #else
-        public global::Qdrant.OptimizersStatusEnum? Value1 { get; }
+        public global::Qdrant.OptimizersStatusEnum? Enum { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Enum))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsEnum => Enum != null;
 
         /// <summary>
         /// Something wrong happened with optimizers
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Qdrant.OptimizersStatusEnum2? Value2 { get; init; }
+        public global::Qdrant.OptimizersStatusEnum2? Enum2 { get; init; }
 #else
-        public global::Qdrant.OptimizersStatusEnum2? Value2 { get; }
+        public global::Qdrant.OptimizersStatusEnum2? Enum2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Enum2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsEnum2 => Enum2 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -50,14 +50,14 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Qdrant.OptimizersStatusEnum?(OptimizersStatus @this) => @this.Value1;
+        public static implicit operator global::Qdrant.OptimizersStatusEnum?(OptimizersStatus @this) => @this.Enum;
 
         /// <summary>
         /// 
         /// </summary>
         public OptimizersStatus(global::Qdrant.OptimizersStatusEnum? value)
         {
-            Value1 = value;
+            Enum = value;
         }
 
         /// <summary>
@@ -68,42 +68,42 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Qdrant.OptimizersStatusEnum2?(OptimizersStatus @this) => @this.Value2;
+        public static implicit operator global::Qdrant.OptimizersStatusEnum2?(OptimizersStatus @this) => @this.Enum2;
 
         /// <summary>
         /// 
         /// </summary>
         public OptimizersStatus(global::Qdrant.OptimizersStatusEnum2? value)
         {
-            Value2 = value;
+            Enum2 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public OptimizersStatus(
-            global::Qdrant.OptimizersStatusEnum? value1,
-            global::Qdrant.OptimizersStatusEnum2? value2
+            global::Qdrant.OptimizersStatusEnum? @enum,
+            global::Qdrant.OptimizersStatusEnum2? enum2
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            Enum = @enum;
+            Enum2 = enum2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            Enum2 as object ??
+            Enum as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToValueString() ??
-            Value2?.ToString() 
+            Enum?.ToValueString() ??
+            Enum2?.ToString() 
             ;
 
         /// <summary>
@@ -111,15 +111,15 @@ namespace Qdrant
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && !IsValue2 || !IsValue1 && IsValue2;
+            return IsEnum && !IsEnum2 || !IsEnum && IsEnum2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Qdrant.OptimizersStatusEnum?, TResult>? value1 = null,
-            global::System.Func<global::Qdrant.OptimizersStatusEnum2?, TResult>? value2 = null,
+            global::System.Func<global::Qdrant.OptimizersStatusEnum?, TResult>? @enum = null,
+            global::System.Func<global::Qdrant.OptimizersStatusEnum2?, TResult>? enum2 = null,
             bool validate = true)
         {
             if (validate)
@@ -127,13 +127,13 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsEnum && @enum != null)
             {
-                return value1(Value1!);
+                return @enum(Enum!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsEnum2 && enum2 != null)
             {
-                return value2(Value2!);
+                return enum2(Enum2!);
             }
 
             return default(TResult);
@@ -143,8 +143,8 @@ namespace Qdrant
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Qdrant.OptimizersStatusEnum?>? value1 = null,
-            global::System.Action<global::Qdrant.OptimizersStatusEnum2?>? value2 = null,
+            global::System.Action<global::Qdrant.OptimizersStatusEnum?>? @enum = null,
+            global::System.Action<global::Qdrant.OptimizersStatusEnum2?>? enum2 = null,
             bool validate = true)
         {
             if (validate)
@@ -152,13 +152,13 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsEnum)
             {
-                value1?.Invoke(Value1!);
+                @enum?.Invoke(Enum!);
             }
-            else if (IsValue2)
+            else if (IsEnum2)
             {
-                value2?.Invoke(Value2!);
+                enum2?.Invoke(Enum2!);
             }
         }
 
@@ -169,9 +169,9 @@ namespace Qdrant
         {
             var fields = new object?[]
             {
-                Value1,
+                Enum,
                 typeof(global::Qdrant.OptimizersStatusEnum),
-                Value2,
+                Enum2,
                 typeof(global::Qdrant.OptimizersStatusEnum2),
             };
             const int offset = unchecked((int)2166136261);
@@ -189,8 +189,8 @@ namespace Qdrant
         public bool Equals(OptimizersStatus other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::Qdrant.OptimizersStatusEnum?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::Qdrant.OptimizersStatusEnum2?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::Qdrant.OptimizersStatusEnum?>.Default.Equals(Enum, other.Enum) &&
+                global::System.Collections.Generic.EqualityComparer<global::Qdrant.OptimizersStatusEnum2?>.Default.Equals(Enum2, other.Enum2) 
                 ;
         }
 

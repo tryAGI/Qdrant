@@ -13,35 +13,35 @@ namespace Qdrant
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Qdrant.CollectionTelemetry? Value1 { get; init; }
+        public global::Qdrant.CollectionTelemetry? CollectionTelemetry { get; init; }
 #else
-        public global::Qdrant.CollectionTelemetry? Value1 { get; }
+        public global::Qdrant.CollectionTelemetry? CollectionTelemetry { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CollectionTelemetry))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsCollectionTelemetry => CollectionTelemetry != null;
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Qdrant.CollectionsAggregatedTelemetry? Value2 { get; init; }
+        public global::Qdrant.CollectionsAggregatedTelemetry? CollectionsAggregated { get; init; }
 #else
-        public global::Qdrant.CollectionsAggregatedTelemetry? Value2 { get; }
+        public global::Qdrant.CollectionsAggregatedTelemetry? CollectionsAggregated { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CollectionsAggregated))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsCollectionsAggregated => CollectionsAggregated != null;
         /// <summary>
         /// 
         /// </summary>
@@ -50,14 +50,14 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Qdrant.CollectionTelemetry?(CollectionTelemetryEnum @this) => @this.Value1;
+        public static implicit operator global::Qdrant.CollectionTelemetry?(CollectionTelemetryEnum @this) => @this.CollectionTelemetry;
 
         /// <summary>
         /// 
         /// </summary>
         public CollectionTelemetryEnum(global::Qdrant.CollectionTelemetry? value)
         {
-            Value1 = value;
+            CollectionTelemetry = value;
         }
 
         /// <summary>
@@ -68,42 +68,42 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Qdrant.CollectionsAggregatedTelemetry?(CollectionTelemetryEnum @this) => @this.Value2;
+        public static implicit operator global::Qdrant.CollectionsAggregatedTelemetry?(CollectionTelemetryEnum @this) => @this.CollectionsAggregated;
 
         /// <summary>
         /// 
         /// </summary>
         public CollectionTelemetryEnum(global::Qdrant.CollectionsAggregatedTelemetry? value)
         {
-            Value2 = value;
+            CollectionsAggregated = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public CollectionTelemetryEnum(
-            global::Qdrant.CollectionTelemetry? value1,
-            global::Qdrant.CollectionsAggregatedTelemetry? value2
+            global::Qdrant.CollectionTelemetry? collectionTelemetry,
+            global::Qdrant.CollectionsAggregatedTelemetry? collectionsAggregated
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            CollectionTelemetry = collectionTelemetry;
+            CollectionsAggregated = collectionsAggregated;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            CollectionsAggregated as object ??
+            CollectionTelemetry as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() 
+            CollectionTelemetry?.ToString() ??
+            CollectionsAggregated?.ToString() 
             ;
 
         /// <summary>
@@ -111,15 +111,15 @@ namespace Qdrant
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 || IsValue2;
+            return IsCollectionTelemetry || IsCollectionsAggregated;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Qdrant.CollectionTelemetry?, TResult>? value1 = null,
-            global::System.Func<global::Qdrant.CollectionsAggregatedTelemetry?, TResult>? value2 = null,
+            global::System.Func<global::Qdrant.CollectionTelemetry?, TResult>? collectionTelemetry = null,
+            global::System.Func<global::Qdrant.CollectionsAggregatedTelemetry?, TResult>? collectionsAggregated = null,
             bool validate = true)
         {
             if (validate)
@@ -127,13 +127,13 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsCollectionTelemetry && collectionTelemetry != null)
             {
-                return value1(Value1!);
+                return collectionTelemetry(CollectionTelemetry!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsCollectionsAggregated && collectionsAggregated != null)
             {
-                return value2(Value2!);
+                return collectionsAggregated(CollectionsAggregated!);
             }
 
             return default(TResult);
@@ -143,8 +143,8 @@ namespace Qdrant
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Qdrant.CollectionTelemetry?>? value1 = null,
-            global::System.Action<global::Qdrant.CollectionsAggregatedTelemetry?>? value2 = null,
+            global::System.Action<global::Qdrant.CollectionTelemetry?>? collectionTelemetry = null,
+            global::System.Action<global::Qdrant.CollectionsAggregatedTelemetry?>? collectionsAggregated = null,
             bool validate = true)
         {
             if (validate)
@@ -152,13 +152,13 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsCollectionTelemetry)
             {
-                value1?.Invoke(Value1!);
+                collectionTelemetry?.Invoke(CollectionTelemetry!);
             }
-            else if (IsValue2)
+            else if (IsCollectionsAggregated)
             {
-                value2?.Invoke(Value2!);
+                collectionsAggregated?.Invoke(CollectionsAggregated!);
             }
         }
 
@@ -169,9 +169,9 @@ namespace Qdrant
         {
             var fields = new object?[]
             {
-                Value1,
+                CollectionTelemetry,
                 typeof(global::Qdrant.CollectionTelemetry),
-                Value2,
+                CollectionsAggregated,
                 typeof(global::Qdrant.CollectionsAggregatedTelemetry),
             };
             const int offset = unchecked((int)2166136261);
@@ -189,8 +189,8 @@ namespace Qdrant
         public bool Equals(CollectionTelemetryEnum other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::Qdrant.CollectionTelemetry?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::Qdrant.CollectionsAggregatedTelemetry?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::Qdrant.CollectionTelemetry?>.Default.Equals(CollectionTelemetry, other.CollectionTelemetry) &&
+                global::System.Collections.Generic.EqualityComparer<global::Qdrant.CollectionsAggregatedTelemetry?>.Default.Equals(CollectionsAggregated, other.CollectionsAggregated) 
                 ;
         }
 

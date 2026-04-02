@@ -90,11 +90,11 @@ namespace Qdrant.JsonConverters
             if (__score3 > __bestScore) { __bestScore = __score3; __bestIndex = 3; }
             if (__score4 > __bestScore) { __bestScore = __score4; __bestIndex = 4; }
 
-            global::Qdrant.VectorStorageTypeVariant1? value1 = default;
-            global::Qdrant.VectorStorageTypeVariant2? value2 = default;
-            global::Qdrant.VectorStorageTypeVariant3? value3 = default;
-            global::Qdrant.VectorStorageTypeVariant4? value4 = default;
-            global::Qdrant.VectorStorageTypeVariant5? value5 = default;
+            global::Qdrant.VectorStorageTypeVariant1? vectorStorageTypeVariant1 = default;
+            global::Qdrant.VectorStorageTypeVariant2? vectorStorageTypeVariant2 = default;
+            global::Qdrant.VectorStorageTypeVariant3? vectorStorageTypeVariant3 = default;
+            global::Qdrant.VectorStorageTypeVariant4? vectorStorageTypeVariant4 = default;
+            global::Qdrant.VectorStorageTypeVariant5? vectorStorageTypeVariant5 = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -104,7 +104,7 @@ namespace Qdrant.JsonConverters
 
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.VectorStorageTypeVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.VectorStorageTypeVariant1> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.VectorStorageTypeVariant1).Name}");
-                        value1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        vectorStorageTypeVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -121,7 +121,7 @@ namespace Qdrant.JsonConverters
 
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.VectorStorageTypeVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.VectorStorageTypeVariant2> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.VectorStorageTypeVariant2).Name}");
-                        value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        vectorStorageTypeVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -138,7 +138,7 @@ namespace Qdrant.JsonConverters
 
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.VectorStorageTypeVariant3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.VectorStorageTypeVariant3> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.VectorStorageTypeVariant3).Name}");
-                        value3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        vectorStorageTypeVariant3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -155,7 +155,7 @@ namespace Qdrant.JsonConverters
 
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.VectorStorageTypeVariant4), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.VectorStorageTypeVariant4> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.VectorStorageTypeVariant4).Name}");
-                        value4 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        vectorStorageTypeVariant4 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -172,7 +172,7 @@ namespace Qdrant.JsonConverters
 
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.VectorStorageTypeVariant5), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.VectorStorageTypeVariant5> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.VectorStorageTypeVariant5).Name}");
-                        value5 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        vectorStorageTypeVariant5 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -183,14 +183,14 @@ namespace Qdrant.JsonConverters
                 }
             }
 
-            if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null)
+            if (vectorStorageTypeVariant1 == null && vectorStorageTypeVariant2 == null && vectorStorageTypeVariant3 == null && vectorStorageTypeVariant4 == null && vectorStorageTypeVariant5 == null)
             {
                 try
                 {
 
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.VectorStorageTypeVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.VectorStorageTypeVariant1> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.VectorStorageTypeVariant1).Name}");
-                    value1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    vectorStorageTypeVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -204,7 +204,7 @@ namespace Qdrant.JsonConverters
 
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.VectorStorageTypeVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.VectorStorageTypeVariant2> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.VectorStorageTypeVariant2).Name}");
-                    value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    vectorStorageTypeVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -218,7 +218,7 @@ namespace Qdrant.JsonConverters
 
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.VectorStorageTypeVariant3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.VectorStorageTypeVariant3> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.VectorStorageTypeVariant3).Name}");
-                    value3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    vectorStorageTypeVariant3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -232,7 +232,7 @@ namespace Qdrant.JsonConverters
 
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.VectorStorageTypeVariant4), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.VectorStorageTypeVariant4> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.VectorStorageTypeVariant4).Name}");
-                    value4 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    vectorStorageTypeVariant4 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -246,7 +246,7 @@ namespace Qdrant.JsonConverters
 
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.VectorStorageTypeVariant5), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.VectorStorageTypeVariant5> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.VectorStorageTypeVariant5).Name}");
-                    value5 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    vectorStorageTypeVariant5 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -257,15 +257,15 @@ namespace Qdrant.JsonConverters
             }
 
             var __value = new global::Qdrant.VectorStorageType(
-                value1,
+                vectorStorageTypeVariant1,
 
-                value2,
+                vectorStorageTypeVariant2,
 
-                value3,
+                vectorStorageTypeVariant3,
 
-                value4,
+                vectorStorageTypeVariant4,
 
-                value5
+                vectorStorageTypeVariant5
                 );
 
             return __value;
@@ -280,35 +280,35 @@ namespace Qdrant.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsValue1)
+            if (value.IsVectorStorageTypeVariant1)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.VectorStorageTypeVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.VectorStorageTypeVariant1> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.VectorStorageTypeVariant1).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value1!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.VectorStorageTypeVariant1!.Value, typeInfo);
             }
-            else if (value.IsValue2)
+            else if (value.IsVectorStorageTypeVariant2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.VectorStorageTypeVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.VectorStorageTypeVariant2> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.VectorStorageTypeVariant2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.VectorStorageTypeVariant2!.Value, typeInfo);
             }
-            else if (value.IsValue3)
+            else if (value.IsVectorStorageTypeVariant3)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.VectorStorageTypeVariant3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.VectorStorageTypeVariant3> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.VectorStorageTypeVariant3).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value3!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.VectorStorageTypeVariant3!.Value, typeInfo);
             }
-            else if (value.IsValue4)
+            else if (value.IsVectorStorageTypeVariant4)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.VectorStorageTypeVariant4), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.VectorStorageTypeVariant4> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.VectorStorageTypeVariant4).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value4!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.VectorStorageTypeVariant4!.Value, typeInfo);
             }
-            else if (value.IsValue5)
+            else if (value.IsVectorStorageTypeVariant5)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.VectorStorageTypeVariant5), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.VectorStorageTypeVariant5> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.VectorStorageTypeVariant5).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value5!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.VectorStorageTypeVariant5!.Value, typeInfo);
             }
         }
     }

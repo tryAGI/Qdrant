@@ -13,35 +13,35 @@ namespace Qdrant
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Qdrant.ClusterStatusVariant1? Value1 { get; init; }
+        public global::Qdrant.ClusterStatusVariant1? ClusterStatusVariant1 { get; init; }
 #else
-        public global::Qdrant.ClusterStatusVariant1? Value1 { get; }
+        public global::Qdrant.ClusterStatusVariant1? ClusterStatusVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ClusterStatusVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsClusterStatusVariant1 => ClusterStatusVariant1 != null;
 
         /// <summary>
         /// Description of enabled cluster
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Qdrant.ClusterStatusVariant2? Value2 { get; init; }
+        public global::Qdrant.ClusterStatusVariant2? ClusterStatusVariant2 { get; init; }
 #else
-        public global::Qdrant.ClusterStatusVariant2? Value2 { get; }
+        public global::Qdrant.ClusterStatusVariant2? ClusterStatusVariant2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ClusterStatusVariant2))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsClusterStatusVariant2 => ClusterStatusVariant2 != null;
         /// <summary>
         /// 
         /// </summary>
@@ -50,14 +50,14 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Qdrant.ClusterStatusVariant1?(ClusterStatus @this) => @this.Value1;
+        public static implicit operator global::Qdrant.ClusterStatusVariant1?(ClusterStatus @this) => @this.ClusterStatusVariant1;
 
         /// <summary>
         /// 
         /// </summary>
         public ClusterStatus(global::Qdrant.ClusterStatusVariant1? value)
         {
-            Value1 = value;
+            ClusterStatusVariant1 = value;
         }
 
         /// <summary>
@@ -68,42 +68,42 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::Qdrant.ClusterStatusVariant2?(ClusterStatus @this) => @this.Value2;
+        public static implicit operator global::Qdrant.ClusterStatusVariant2?(ClusterStatus @this) => @this.ClusterStatusVariant2;
 
         /// <summary>
         /// 
         /// </summary>
         public ClusterStatus(global::Qdrant.ClusterStatusVariant2? value)
         {
-            Value2 = value;
+            ClusterStatusVariant2 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public ClusterStatus(
-            global::Qdrant.ClusterStatusVariant1? value1,
-            global::Qdrant.ClusterStatusVariant2? value2
+            global::Qdrant.ClusterStatusVariant1? clusterStatusVariant1,
+            global::Qdrant.ClusterStatusVariant2? clusterStatusVariant2
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            ClusterStatusVariant1 = clusterStatusVariant1;
+            ClusterStatusVariant2 = clusterStatusVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            ClusterStatusVariant2 as object ??
+            ClusterStatusVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() 
+            ClusterStatusVariant1?.ToString() ??
+            ClusterStatusVariant2?.ToString() 
             ;
 
         /// <summary>
@@ -111,15 +111,15 @@ namespace Qdrant
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && !IsValue2 || !IsValue1 && IsValue2;
+            return IsClusterStatusVariant1 && !IsClusterStatusVariant2 || !IsClusterStatusVariant1 && IsClusterStatusVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Qdrant.ClusterStatusVariant1?, TResult>? value1 = null,
-            global::System.Func<global::Qdrant.ClusterStatusVariant2?, TResult>? value2 = null,
+            global::System.Func<global::Qdrant.ClusterStatusVariant1?, TResult>? clusterStatusVariant1 = null,
+            global::System.Func<global::Qdrant.ClusterStatusVariant2?, TResult>? clusterStatusVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -127,13 +127,13 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsClusterStatusVariant1 && clusterStatusVariant1 != null)
             {
-                return value1(Value1!);
+                return clusterStatusVariant1(ClusterStatusVariant1!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsClusterStatusVariant2 && clusterStatusVariant2 != null)
             {
-                return value2(Value2!);
+                return clusterStatusVariant2(ClusterStatusVariant2!);
             }
 
             return default(TResult);
@@ -143,8 +143,8 @@ namespace Qdrant
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Qdrant.ClusterStatusVariant1?>? value1 = null,
-            global::System.Action<global::Qdrant.ClusterStatusVariant2?>? value2 = null,
+            global::System.Action<global::Qdrant.ClusterStatusVariant1?>? clusterStatusVariant1 = null,
+            global::System.Action<global::Qdrant.ClusterStatusVariant2?>? clusterStatusVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -152,13 +152,13 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsClusterStatusVariant1)
             {
-                value1?.Invoke(Value1!);
+                clusterStatusVariant1?.Invoke(ClusterStatusVariant1!);
             }
-            else if (IsValue2)
+            else if (IsClusterStatusVariant2)
             {
-                value2?.Invoke(Value2!);
+                clusterStatusVariant2?.Invoke(ClusterStatusVariant2!);
             }
         }
 
@@ -169,9 +169,9 @@ namespace Qdrant
         {
             var fields = new object?[]
             {
-                Value1,
+                ClusterStatusVariant1,
                 typeof(global::Qdrant.ClusterStatusVariant1),
-                Value2,
+                ClusterStatusVariant2,
                 typeof(global::Qdrant.ClusterStatusVariant2),
             };
             const int offset = unchecked((int)2166136261);
@@ -189,8 +189,8 @@ namespace Qdrant
         public bool Equals(ClusterStatus other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::Qdrant.ClusterStatusVariant1?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::Qdrant.ClusterStatusVariant2?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::Qdrant.ClusterStatusVariant1?>.Default.Equals(ClusterStatusVariant1, other.ClusterStatusVariant1) &&
+                global::System.Collections.Generic.EqualityComparer<global::Qdrant.ClusterStatusVariant2?>.Default.Equals(ClusterStatusVariant2, other.ClusterStatusVariant2) 
                 ;
         }
 

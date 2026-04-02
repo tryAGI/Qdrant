@@ -43,8 +43,8 @@ namespace Qdrant.JsonConverters
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
             if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
 
-            global::Qdrant.CollectionTelemetry? value1 = default;
-            global::Qdrant.CollectionsAggregatedTelemetry? value2 = default;
+            global::Qdrant.CollectionTelemetry? collectionTelemetry = default;
+            global::Qdrant.CollectionsAggregatedTelemetry? collectionsAggregated = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -53,7 +53,7 @@ namespace Qdrant.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.CollectionTelemetry), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.CollectionTelemetry> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.CollectionTelemetry).Name}");
-                        value1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        collectionTelemetry = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -68,7 +68,7 @@ namespace Qdrant.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.CollectionsAggregatedTelemetry), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.CollectionsAggregatedTelemetry> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.CollectionsAggregatedTelemetry).Name}");
-                        value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        collectionsAggregated = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -79,13 +79,13 @@ namespace Qdrant.JsonConverters
                 }
             }
 
-            if (value1 == null && value2 == null)
+            if (collectionTelemetry == null && collectionsAggregated == null)
             {
                 try
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.CollectionTelemetry), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.CollectionTelemetry> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.CollectionTelemetry).Name}");
-                    value1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    collectionTelemetry = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -98,7 +98,7 @@ namespace Qdrant.JsonConverters
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.CollectionsAggregatedTelemetry), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.CollectionsAggregatedTelemetry> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.CollectionsAggregatedTelemetry).Name}");
-                    value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    collectionsAggregated = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -109,9 +109,9 @@ namespace Qdrant.JsonConverters
             }
 
             var __value = new global::Qdrant.CollectionTelemetryEnum(
-                value1,
+                collectionTelemetry,
 
-                value2
+                collectionsAggregated
                 );
 
             return __value;
@@ -126,17 +126,17 @@ namespace Qdrant.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsValue1)
+            if (value.IsCollectionTelemetry)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.CollectionTelemetry), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.CollectionTelemetry?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.CollectionTelemetry).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value1!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CollectionTelemetry!, typeInfo);
             }
-            else if (value.IsValue2)
+            else if (value.IsCollectionsAggregated)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.CollectionsAggregatedTelemetry), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.CollectionsAggregatedTelemetry?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.CollectionsAggregatedTelemetry).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CollectionsAggregated!, typeInfo);
             }
         }
     }

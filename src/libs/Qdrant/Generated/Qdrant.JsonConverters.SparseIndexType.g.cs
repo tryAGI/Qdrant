@@ -66,9 +66,9 @@ namespace Qdrant.JsonConverters
             if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
             if (__score2 > __bestScore) { __bestScore = __score2; __bestIndex = 2; }
 
-            global::Qdrant.SparseIndexTypeVariant1? value1 = default;
-            global::Qdrant.SparseIndexTypeVariant2? value2 = default;
-            global::Qdrant.SparseIndexTypeVariant3? value3 = default;
+            global::Qdrant.SparseIndexTypeVariant1? sparseIndexTypeVariant1 = default;
+            global::Qdrant.SparseIndexTypeVariant2? sparseIndexTypeVariant2 = default;
+            global::Qdrant.SparseIndexTypeVariant3? sparseIndexTypeVariant3 = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -78,7 +78,7 @@ namespace Qdrant.JsonConverters
 
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.SparseIndexTypeVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.SparseIndexTypeVariant1> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.SparseIndexTypeVariant1).Name}");
-                        value1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        sparseIndexTypeVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -95,7 +95,7 @@ namespace Qdrant.JsonConverters
 
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.SparseIndexTypeVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.SparseIndexTypeVariant2> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.SparseIndexTypeVariant2).Name}");
-                        value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        sparseIndexTypeVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -112,7 +112,7 @@ namespace Qdrant.JsonConverters
 
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.SparseIndexTypeVariant3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.SparseIndexTypeVariant3> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.SparseIndexTypeVariant3).Name}");
-                        value3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        sparseIndexTypeVariant3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -123,14 +123,14 @@ namespace Qdrant.JsonConverters
                 }
             }
 
-            if (value1 == null && value2 == null && value3 == null)
+            if (sparseIndexTypeVariant1 == null && sparseIndexTypeVariant2 == null && sparseIndexTypeVariant3 == null)
             {
                 try
                 {
 
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.SparseIndexTypeVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.SparseIndexTypeVariant1> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.SparseIndexTypeVariant1).Name}");
-                    value1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    sparseIndexTypeVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -144,7 +144,7 @@ namespace Qdrant.JsonConverters
 
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.SparseIndexTypeVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.SparseIndexTypeVariant2> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.SparseIndexTypeVariant2).Name}");
-                    value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    sparseIndexTypeVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -158,7 +158,7 @@ namespace Qdrant.JsonConverters
 
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.SparseIndexTypeVariant3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.SparseIndexTypeVariant3> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.SparseIndexTypeVariant3).Name}");
-                    value3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    sparseIndexTypeVariant3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -169,11 +169,11 @@ namespace Qdrant.JsonConverters
             }
 
             var __value = new global::Qdrant.SparseIndexType(
-                value1,
+                sparseIndexTypeVariant1,
 
-                value2,
+                sparseIndexTypeVariant2,
 
-                value3
+                sparseIndexTypeVariant3
                 );
 
             return __value;
@@ -188,23 +188,23 @@ namespace Qdrant.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsValue1)
+            if (value.IsSparseIndexTypeVariant1)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.SparseIndexTypeVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.SparseIndexTypeVariant1> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.SparseIndexTypeVariant1).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value1!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SparseIndexTypeVariant1!.Value, typeInfo);
             }
-            else if (value.IsValue2)
+            else if (value.IsSparseIndexTypeVariant2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.SparseIndexTypeVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.SparseIndexTypeVariant2> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.SparseIndexTypeVariant2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SparseIndexTypeVariant2!.Value, typeInfo);
             }
-            else if (value.IsValue3)
+            else if (value.IsSparseIndexTypeVariant3)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.SparseIndexTypeVariant3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.SparseIndexTypeVariant3> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.SparseIndexTypeVariant3).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value3!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SparseIndexTypeVariant3!.Value, typeInfo);
             }
         }
     }
