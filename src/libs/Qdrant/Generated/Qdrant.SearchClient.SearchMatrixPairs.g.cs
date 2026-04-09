@@ -5,6 +5,25 @@ namespace Qdrant
 {
     public partial class SearchClient
     {
+
+
+        private static readonly global::Qdrant.EndPointSecurityRequirement s_SearchMatrixPairsSecurityRequirement0 =
+            new global::Qdrant.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Qdrant.EndPointAuthorizationRequirement[]
+                {                    new global::Qdrant.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "api-key",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::Qdrant.EndPointSecurityRequirement[] s_SearchMatrixPairsSecurityRequirements =
+            new global::Qdrant.EndPointSecurityRequirement[]
+            {                s_SearchMatrixPairsSecurityRequirement0,
+            };
         partial void PrepareSearchMatrixPairsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string collectionName,
@@ -64,13 +83,19 @@ namespace Qdrant
                 timeout: ref timeout,
                 request: request);
 
+
+            var __authorizations = global::Qdrant.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_SearchMatrixPairsSecurityRequirements,
+                operationName: "SearchMatrixPairsAsync");
+
             var __pathBuilder = new global::Qdrant.PathBuilder(
                 path: $"/collections/{collectionName}/points/search/matrix/pairs",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
                 .AddOptionalParameter("consistency", consistency?.ToString())
                 .AddOptionalParameter("timeout", timeout?.ToString()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
@@ -80,7 +105,7 @@ namespace Qdrant
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

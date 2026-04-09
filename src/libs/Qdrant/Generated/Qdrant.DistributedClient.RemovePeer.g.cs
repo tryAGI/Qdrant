@@ -5,6 +5,25 @@ namespace Qdrant
 {
     public partial class DistributedClient
     {
+
+
+        private static readonly global::Qdrant.EndPointSecurityRequirement s_RemovePeerSecurityRequirement0 =
+            new global::Qdrant.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Qdrant.EndPointAuthorizationRequirement[]
+                {                    new global::Qdrant.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "api-key",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::Qdrant.EndPointSecurityRequirement[] s_RemovePeerSecurityRequirements =
+            new global::Qdrant.EndPointSecurityRequirement[]
+            {                s_RemovePeerSecurityRequirement0,
+            };
         partial void PrepareRemovePeerArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref int peerId,
@@ -50,13 +69,19 @@ namespace Qdrant
                 timeout: ref timeout,
                 force: ref force);
 
+
+            var __authorizations = global::Qdrant.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_RemovePeerSecurityRequirements,
+                operationName: "RemovePeerAsync");
+
             var __pathBuilder = new global::Qdrant.PathBuilder(
                 path: $"/cluster/peer/{peerId}",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
                 .AddOptionalParameter("timeout", timeout?.ToString())
                 .AddOptionalParameter("force", force?.ToString().ToLowerInvariant()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Delete,
@@ -66,7 +91,7 @@ namespace Qdrant
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

@@ -5,6 +5,25 @@ namespace Qdrant
 {
     public partial class SnapshotsClient
     {
+
+
+        private static readonly global::Qdrant.EndPointSecurityRequirement s_CreateSnapshotSecurityRequirement0 =
+            new global::Qdrant.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Qdrant.EndPointAuthorizationRequirement[]
+                {                    new global::Qdrant.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "api-key",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::Qdrant.EndPointSecurityRequirement[] s_CreateSnapshotSecurityRequirements =
+            new global::Qdrant.EndPointSecurityRequirement[]
+            {                s_CreateSnapshotSecurityRequirement0,
+            };
         partial void PrepareCreateSnapshotArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string collectionName,
@@ -43,12 +62,18 @@ namespace Qdrant
                 collectionName: ref collectionName,
                 wait: ref wait);
 
+
+            var __authorizations = global::Qdrant.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_CreateSnapshotSecurityRequirements,
+                operationName: "CreateSnapshotAsync");
+
             var __pathBuilder = new global::Qdrant.PathBuilder(
                 path: $"/collections/{collectionName}/snapshots",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
                 .AddOptionalParameter("wait", wait?.ToString().ToLowerInvariant()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
@@ -58,7 +83,7 @@ namespace Qdrant
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

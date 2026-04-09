@@ -5,6 +5,25 @@ namespace Qdrant
 {
     public partial class IndexesClient
     {
+
+
+        private static readonly global::Qdrant.EndPointSecurityRequirement s_DeleteFieldIndexSecurityRequirement0 =
+            new global::Qdrant.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Qdrant.EndPointAuthorizationRequirement[]
+                {                    new global::Qdrant.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "api-key",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::Qdrant.EndPointSecurityRequirement[] s_DeleteFieldIndexSecurityRequirements =
+            new global::Qdrant.EndPointSecurityRequirement[]
+            {                s_DeleteFieldIndexSecurityRequirement0,
+            };
         partial void PrepareDeleteFieldIndexArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string collectionName,
@@ -63,6 +82,12 @@ namespace Qdrant
                 ordering: ref ordering,
                 timeout: ref timeout);
 
+
+            var __authorizations = global::Qdrant.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_DeleteFieldIndexSecurityRequirements,
+                operationName: "DeleteFieldIndexAsync");
+
             var __pathBuilder = new global::Qdrant.PathBuilder(
                 path: $"/collections/{collectionName}/index/{fieldName}",
                 baseUri: HttpClient.BaseAddress); 
@@ -70,7 +95,7 @@ namespace Qdrant
                 .AddOptionalParameter("wait", wait?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("ordering", ordering?.ToValueString())
                 .AddOptionalParameter("timeout", timeout?.ToString()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Delete,
@@ -80,7 +105,7 @@ namespace Qdrant
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

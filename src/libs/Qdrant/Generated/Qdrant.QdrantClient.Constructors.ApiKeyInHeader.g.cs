@@ -6,6 +6,7 @@ namespace Qdrant
     public sealed partial class QdrantClient
     {
         /// <inheritdoc cref="QdrantClient(global::System.Net.Http.HttpClient?, global::System.Uri?, global::System.Collections.Generic.List{global::Qdrant.EndPointAuthorization}?, bool)"/>
+
         public QdrantClient(
             string apiKey,
             global::System.Net.Http.HttpClient? httpClient = null,
