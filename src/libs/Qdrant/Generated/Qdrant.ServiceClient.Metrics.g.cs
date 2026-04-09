@@ -5,6 +5,25 @@ namespace Qdrant
 {
     public partial class ServiceClient
     {
+
+
+        private static readonly global::Qdrant.EndPointSecurityRequirement s_MetricsSecurityRequirement0 =
+            new global::Qdrant.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Qdrant.EndPointAuthorizationRequirement[]
+                {                    new global::Qdrant.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "api-key",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::Qdrant.EndPointSecurityRequirement[] s_MetricsSecurityRequirements =
+            new global::Qdrant.EndPointSecurityRequirement[]
+            {                s_MetricsSecurityRequirement0,
+            };
         partial void PrepareMetricsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref bool? anonymize,
@@ -50,6 +69,12 @@ namespace Qdrant
                 perCollection: ref perCollection,
                 timeout: ref timeout);
 
+
+            var __authorizations = global::Qdrant.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_MetricsSecurityRequirements,
+                operationName: "MetricsAsync");
+
             var __pathBuilder = new global::Qdrant.PathBuilder(
                 path: "/metrics",
                 baseUri: HttpClient.BaseAddress); 
@@ -57,7 +82,7 @@ namespace Qdrant
                 .AddOptionalParameter("anonymize", anonymize?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("per_collection", perCollection?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("timeout", timeout?.ToString()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -67,7 +92,7 @@ namespace Qdrant
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

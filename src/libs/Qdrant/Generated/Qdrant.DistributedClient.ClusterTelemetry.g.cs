@@ -5,6 +5,25 @@ namespace Qdrant
 {
     public partial class DistributedClient
     {
+
+
+        private static readonly global::Qdrant.EndPointSecurityRequirement s_ClusterTelemetrySecurityRequirement0 =
+            new global::Qdrant.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Qdrant.EndPointAuthorizationRequirement[]
+                {                    new global::Qdrant.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "api-key",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::Qdrant.EndPointSecurityRequirement[] s_ClusterTelemetrySecurityRequirements =
+            new global::Qdrant.EndPointSecurityRequirement[]
+            {                s_ClusterTelemetrySecurityRequirement0,
+            };
         partial void PrepareClusterTelemetryArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref int? detailsLevel,
@@ -45,13 +64,19 @@ namespace Qdrant
                 detailsLevel: ref detailsLevel,
                 timeout: ref timeout);
 
+
+            var __authorizations = global::Qdrant.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_ClusterTelemetrySecurityRequirements,
+                operationName: "ClusterTelemetryAsync");
+
             var __pathBuilder = new global::Qdrant.PathBuilder(
                 path: "/cluster/telemetry",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
                 .AddOptionalParameter("details_level", detailsLevel?.ToString())
                 .AddOptionalParameter("timeout", timeout?.ToString()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -61,7 +86,7 @@ namespace Qdrant
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

@@ -5,6 +5,25 @@ namespace Qdrant
 {
     public partial class DistributedClient
     {
+
+
+        private static readonly global::Qdrant.EndPointSecurityRequirement s_DeleteShardKeySecurityRequirement0 =
+            new global::Qdrant.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Qdrant.EndPointAuthorizationRequirement[]
+                {                    new global::Qdrant.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "api-key",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::Qdrant.EndPointSecurityRequirement[] s_DeleteShardKeySecurityRequirements =
+            new global::Qdrant.EndPointSecurityRequirement[]
+            {                s_DeleteShardKeySecurityRequirement0,
+            };
         partial void PrepareDeleteShardKeyArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string collectionName,
@@ -50,12 +69,18 @@ namespace Qdrant
                 timeout: ref timeout,
                 request: request);
 
+
+            var __authorizations = global::Qdrant.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_DeleteShardKeySecurityRequirements,
+                operationName: "DeleteShardKeyAsync");
+
             var __pathBuilder = new global::Qdrant.PathBuilder(
                 path: $"/collections/{collectionName}/shards/delete",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
                 .AddOptionalParameter("timeout", timeout?.ToString()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
@@ -65,7 +90,7 @@ namespace Qdrant
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

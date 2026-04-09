@@ -5,6 +5,25 @@ namespace Qdrant
 {
     public partial class SnapshotsClient
     {
+
+
+        private static readonly global::Qdrant.EndPointSecurityRequirement s_DeleteFullSnapshotSecurityRequirement0 =
+            new global::Qdrant.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Qdrant.EndPointAuthorizationRequirement[]
+                {                    new global::Qdrant.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "api-key",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::Qdrant.EndPointSecurityRequirement[] s_DeleteFullSnapshotSecurityRequirements =
+            new global::Qdrant.EndPointSecurityRequirement[]
+            {                s_DeleteFullSnapshotSecurityRequirement0,
+            };
         partial void PrepareDeleteFullSnapshotArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string snapshotName,
@@ -43,12 +62,18 @@ namespace Qdrant
                 snapshotName: ref snapshotName,
                 wait: ref wait);
 
+
+            var __authorizations = global::Qdrant.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_DeleteFullSnapshotSecurityRequirements,
+                operationName: "DeleteFullSnapshotAsync");
+
             var __pathBuilder = new global::Qdrant.PathBuilder(
                 path: $"/snapshots/{snapshotName}",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
                 .AddOptionalParameter("wait", wait?.ToString().ToLowerInvariant()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Delete,
@@ -58,7 +83,7 @@ namespace Qdrant
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

@@ -5,6 +5,25 @@ namespace Qdrant
 {
     public partial class SnapshotsClient
     {
+
+
+        private static readonly global::Qdrant.EndPointSecurityRequirement s_RecoverShardFromSnapshotSecurityRequirement0 =
+            new global::Qdrant.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Qdrant.EndPointAuthorizationRequirement[]
+                {                    new global::Qdrant.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "api-key",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::Qdrant.EndPointSecurityRequirement[] s_RecoverShardFromSnapshotSecurityRequirements =
+            new global::Qdrant.EndPointSecurityRequirement[]
+            {                s_RecoverShardFromSnapshotSecurityRequirement0,
+            };
         partial void PrepareRecoverShardFromSnapshotArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string collectionName,
@@ -56,12 +75,18 @@ namespace Qdrant
                 wait: ref wait,
                 request: request);
 
+
+            var __authorizations = global::Qdrant.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_RecoverShardFromSnapshotSecurityRequirements,
+                operationName: "RecoverShardFromSnapshotAsync");
+
             var __pathBuilder = new global::Qdrant.PathBuilder(
                 path: $"/collections/{collectionName}/shards/{shardId}/snapshots/recover",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder
                 .AddOptionalParameter("wait", wait?.ToString().ToLowerInvariant()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Put,
@@ -71,7 +96,7 @@ namespace Qdrant
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

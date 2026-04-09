@@ -5,6 +5,25 @@ namespace Qdrant
 {
     public partial class SnapshotsClient
     {
+
+
+        private static readonly global::Qdrant.EndPointSecurityRequirement s_RecoverShardFromUploadedSnapshotSecurityRequirement0 =
+            new global::Qdrant.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Qdrant.EndPointAuthorizationRequirement[]
+                {                    new global::Qdrant.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "api-key",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::Qdrant.EndPointSecurityRequirement[] s_RecoverShardFromUploadedSnapshotSecurityRequirements =
+            new global::Qdrant.EndPointSecurityRequirement[]
+            {                s_RecoverShardFromUploadedSnapshotSecurityRequirement0,
+            };
         partial void PrepareRecoverShardFromUploadedSnapshotArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string collectionName,
@@ -69,6 +88,12 @@ namespace Qdrant
                 checksum: ref checksum,
                 request: request);
 
+
+            var __authorizations = global::Qdrant.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_RecoverShardFromUploadedSnapshotSecurityRequirements,
+                operationName: "RecoverShardFromUploadedSnapshotAsync");
+
             var __pathBuilder = new global::Qdrant.PathBuilder(
                 path: $"/collections/{collectionName}/shards/{shardId}/snapshots/upload",
                 baseUri: HttpClient.BaseAddress); 
@@ -76,7 +101,7 @@ namespace Qdrant
                 .AddOptionalParameter("wait", wait?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("priority", priority?.ToValueString())
                 .AddOptionalParameter("checksum", checksum) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
@@ -86,7 +111,7 @@ namespace Qdrant
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

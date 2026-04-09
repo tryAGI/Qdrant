@@ -5,6 +5,25 @@ namespace Qdrant
 {
     public partial class ServiceClient
     {
+
+
+        private static readonly global::Qdrant.EndPointSecurityRequirement s_HealthzSecurityRequirement0 =
+            new global::Qdrant.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Qdrant.EndPointAuthorizationRequirement[]
+                {                    new global::Qdrant.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Header",
+                        Name = "api-key",
+                        FriendlyName = "ApiKeyInHeader",
+                    },
+                },
+            };
+        private static readonly global::Qdrant.EndPointSecurityRequirement[] s_HealthzSecurityRequirements =
+            new global::Qdrant.EndPointSecurityRequirement[]
+            {                s_HealthzSecurityRequirement0,
+            };
         partial void PrepareHealthzArguments(
             global::System.Net.Http.HttpClient httpClient);
         partial void PrepareHealthzRequest(
@@ -33,9 +52,15 @@ namespace Qdrant
             PrepareHealthzArguments(
                 httpClient: HttpClient);
 
+
+            var __authorizations = global::Qdrant.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_HealthzSecurityRequirements,
+                operationName: "HealthzAsync");
+
             var __pathBuilder = new global::Qdrant.PathBuilder(
                 path: "/healthz",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -45,7 +70,7 @@ namespace Qdrant
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")
