@@ -18,6 +18,7 @@ namespace Qdrant
         /// </param>
         /// <param name="timeout"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Qdrant.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Qdrant.DeleteVectorsResponse> DeleteVectorsAsync(
@@ -27,6 +28,7 @@ namespace Qdrant
             bool? wait = default,
             global::Qdrant.WriteOrdering? ordering = default,
             int? timeout = default,
+            global::Qdrant.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Delete vectors<br/>
@@ -51,6 +53,7 @@ namespace Qdrant
         /// Vector names
         /// </param>
         /// <param name="shardKey"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Qdrant.DeleteVectorsResponse> DeleteVectorsAsync(
@@ -62,6 +65,7 @@ namespace Qdrant
             global::System.Collections.Generic.IList<global::Qdrant.ExtendedPointId>? points = default,
             global::Qdrant.Filter? filter = default,
             global::Qdrant.ShardKeySelector? shardKey = default,
+            global::Qdrant.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

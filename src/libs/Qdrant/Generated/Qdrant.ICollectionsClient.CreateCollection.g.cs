@@ -11,6 +11,7 @@ namespace Qdrant
         /// <param name="collectionName"></param>
         /// <param name="timeout"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Qdrant.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Qdrant.CreateCollectionResponse> CreateCollectionAsync(
@@ -18,6 +19,7 @@ namespace Qdrant
 
             global::Qdrant.CreateCollection request,
             int? timeout = default,
+            global::Qdrant.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create collection<br/>
@@ -75,6 +77,7 @@ namespace Qdrant
         /// <param name="metadata">
         /// Arbitrary JSON metadata for the collection This can be used to store application-specific information such as creation time, migration data, inference model info, etc.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Qdrant.CreateCollectionResponse> CreateCollectionAsync(
@@ -93,6 +96,7 @@ namespace Qdrant
             global::System.Collections.Generic.Dictionary<string, global::Qdrant.SparseVectorParams>? sparseVectors = default,
             global::Qdrant.StrictModeConfig? strictModeConfig = default,
             global::Qdrant.Payload? metadata = default,
+            global::Qdrant.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -26,6 +26,7 @@ namespace Qdrant
             Authorizations.Add(new global::Qdrant.EndPointAuthorization
             {
                 Type = "ApiKey",
+                SchemeId = "ApikeyApiKey",
                 Location = "Header",
                 Name = "api-key",
                 Value = apiKey,
