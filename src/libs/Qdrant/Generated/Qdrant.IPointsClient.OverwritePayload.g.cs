@@ -18,6 +18,7 @@ namespace Qdrant
         /// </param>
         /// <param name="timeout"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Qdrant.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Qdrant.OverwritePayloadResponse> OverwritePayloadAsync(
@@ -27,6 +28,7 @@ namespace Qdrant
             bool? wait = default,
             global::Qdrant.WriteOrdering? ordering = default,
             int? timeout = default,
+            global::Qdrant.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Overwrite payload<br/>
@@ -54,6 +56,7 @@ namespace Qdrant
         /// <param name="key">
         /// Assigns payload to each point that satisfy this path of property
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Qdrant.OverwritePayloadResponse> OverwritePayloadAsync(
@@ -66,6 +69,7 @@ namespace Qdrant
             global::Qdrant.Filter? filter = default,
             global::Qdrant.ShardKeySelector? shardKey = default,
             string? key = default,
+            global::Qdrant.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

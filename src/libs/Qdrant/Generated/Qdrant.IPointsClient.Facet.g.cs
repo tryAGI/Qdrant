@@ -20,6 +20,7 @@ namespace Qdrant
         /// </param>
         /// <param name="timeout"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Qdrant.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Qdrant.FacetResponse2> FacetAsync(
@@ -28,6 +29,7 @@ namespace Qdrant
             global::Qdrant.FacetRequest request,
             global::Qdrant.ReadConsistency? consistency = default,
             int? timeout = default,
+            global::Qdrant.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Facet a payload key with a given filter.<br/>
@@ -57,6 +59,7 @@ namespace Qdrant
         /// <param name="exact">
         /// Whether to do a more expensive exact count for each of the values in the facet. Default is false.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Qdrant.FacetResponse2> FacetAsync(
@@ -68,6 +71,7 @@ namespace Qdrant
             int? limit = default,
             global::Qdrant.Filter? filter = default,
             bool? exact = default,
+            global::Qdrant.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

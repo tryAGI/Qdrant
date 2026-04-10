@@ -20,6 +20,7 @@ namespace Qdrant
         /// </param>
         /// <param name="timeout"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Qdrant.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Qdrant.ScrollPointsResponse> ScrollPointsAsync(
@@ -28,6 +29,7 @@ namespace Qdrant
             global::Qdrant.ScrollRequest request,
             global::Qdrant.ReadConsistency? consistency = default,
             int? timeout = default,
+            global::Qdrant.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Scroll points<br/>
@@ -65,6 +67,7 @@ namespace Qdrant
         /// <param name="orderBy">
         /// Order the records by a payload field.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Qdrant.ScrollPointsResponse> ScrollPointsAsync(
@@ -78,6 +81,7 @@ namespace Qdrant
             global::Qdrant.WithPayloadInterface? withPayload = default,
             global::Qdrant.WithVector? withVector = default,
             global::Qdrant.OrderByInterface? orderBy = default,
+            global::Qdrant.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

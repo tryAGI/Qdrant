@@ -20,6 +20,7 @@ namespace Qdrant
         /// </param>
         /// <param name="timeout"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Qdrant.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Qdrant.CountPointsResponse> CountPointsAsync(
@@ -28,6 +29,7 @@ namespace Qdrant
             global::Qdrant.CountRequest request,
             global::Qdrant.ReadConsistency? consistency = default,
             int? timeout = default,
+            global::Qdrant.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Count points<br/>
@@ -54,6 +56,7 @@ namespace Qdrant
         /// If true, count exact number of points. If false, count approximate number of points faster. Approximate count might be unreliable during the indexing process. Default: true<br/>
         /// Default Value: true
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Qdrant.CountPointsResponse> CountPointsAsync(
@@ -63,6 +66,7 @@ namespace Qdrant
             global::Qdrant.ShardKeySelector? shardKey = default,
             global::Qdrant.Filter? filter = default,
             bool? exact = default,
+            global::Qdrant.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }
