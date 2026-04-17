@@ -23,6 +23,14 @@ namespace Qdrant.JsonConverters
                 foreach (var __jsonProp in __jsonDocument.RootElement.EnumerateObject())
                 {
                     __jsonProps.Add(__jsonProp.Name);
+                    if (__jsonProp.Value.ValueKind == global::System.Text.Json.JsonValueKind.Object)
+                    {
+                        foreach (var __nestedJsonProp in __jsonProp.Value.EnumerateObject())
+                        {
+                            __jsonProps.Add(__jsonProp.Name + "." + __nestedJsonProp.Name);
+                        }
+                    }
+
                 }
             }
 
@@ -34,6 +42,12 @@ namespace Qdrant.JsonConverters
             if (__jsonProps.Contains("peer_id")) __score1++;
             if (__jsonProps.Contains("peers")) __score1++;
             if (__jsonProps.Contains("raft_info")) __score1++;
+            if (__jsonProps.Contains("raft_info.commit")) __score1++;
+            if (__jsonProps.Contains("raft_info.is_voter")) __score1++;
+            if (__jsonProps.Contains("raft_info.leader")) __score1++;
+            if (__jsonProps.Contains("raft_info.pending_operations")) __score1++;
+            if (__jsonProps.Contains("raft_info.role")) __score1++;
+            if (__jsonProps.Contains("raft_info.term")) __score1++;
             if (__jsonProps.Contains("status")) __score1++;
             var __bestScore = 0;
             var __bestIndex = -1;
