@@ -161,7 +161,7 @@ namespace Qdrant
                 PrepareCountPointsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    collectionName: collectionName,
+                    collectionName: collectionName!,
                     consistency: consistency,
                     timeout: timeout,
                     request: request);

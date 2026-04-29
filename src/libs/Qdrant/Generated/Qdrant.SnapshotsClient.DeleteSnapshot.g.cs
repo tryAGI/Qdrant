@@ -138,8 +138,8 @@ namespace Qdrant
                 PrepareDeleteSnapshotRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    collectionName: collectionName,
-                    snapshotName: snapshotName,
+                    collectionName: collectionName!,
+                    snapshotName: snapshotName!,
                     wait: wait);
 
                 return __httpRequest;

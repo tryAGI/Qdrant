@@ -125,7 +125,7 @@ namespace Qdrant
                 PrepareGetFullSnapshotRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    snapshotName: snapshotName);
+                    snapshotName: snapshotName!);
 
                 return __httpRequest;
             }

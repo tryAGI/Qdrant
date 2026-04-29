@@ -130,8 +130,8 @@ namespace Qdrant
                 PrepareGetSnapshotRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    collectionName: collectionName,
-                    snapshotName: snapshotName);
+                    collectionName: collectionName!,
+                    snapshotName: snapshotName!);
 
                 return __httpRequest;
             }

@@ -162,7 +162,7 @@ namespace Qdrant
                 PrepareClearPayloadRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    collectionName: collectionName,
+                    collectionName: collectionName!,
                     wait: wait,
                     ordering: ordering,
                     timeout: timeout,

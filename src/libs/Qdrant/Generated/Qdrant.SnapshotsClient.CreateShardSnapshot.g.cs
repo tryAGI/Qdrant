@@ -138,8 +138,8 @@ namespace Qdrant
                 PrepareCreateShardSnapshotRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    collectionName: collectionName,
-                    shardId: shardId,
+                    collectionName: collectionName!,
+                    shardId: shardId!,
                     wait: wait);
 
                 return __httpRequest;

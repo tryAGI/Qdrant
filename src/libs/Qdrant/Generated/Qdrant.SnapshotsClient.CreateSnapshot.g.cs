@@ -133,7 +133,7 @@ namespace Qdrant
                 PrepareCreateSnapshotRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    collectionName: collectionName,
+                    collectionName: collectionName!,
                     wait: wait);
 
                 return __httpRequest;

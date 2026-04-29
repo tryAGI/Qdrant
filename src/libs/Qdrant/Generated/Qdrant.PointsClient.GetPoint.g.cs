@@ -148,8 +148,8 @@ namespace Qdrant
                 PrepareGetPointRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    collectionName: collectionName,
-                    id: id,
+                    collectionName: collectionName!,
+                    id: id!,
                     consistency: consistency);
 
                 return __httpRequest;

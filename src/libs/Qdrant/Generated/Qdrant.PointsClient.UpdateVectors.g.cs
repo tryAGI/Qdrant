@@ -164,7 +164,7 @@ namespace Qdrant
                 PrepareUpdateVectorsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    collectionName: collectionName,
+                    collectionName: collectionName!,
                     wait: wait,
                     ordering: ordering,
                     timeout: timeout,

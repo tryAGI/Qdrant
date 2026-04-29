@@ -133,7 +133,7 @@ namespace Qdrant
                 PrepareDeleteCollectionRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    collectionName: collectionName,
+                    collectionName: collectionName!,
                     timeout: timeout);
 
                 return __httpRequest;

@@ -125,7 +125,7 @@ namespace Qdrant
                 PrepareCollectionClusterInfoRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    collectionName: collectionName);
+                    collectionName: collectionName!);
 
                 return __httpRequest;
             }
