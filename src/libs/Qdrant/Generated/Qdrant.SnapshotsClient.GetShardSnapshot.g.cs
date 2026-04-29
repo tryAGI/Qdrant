@@ -135,9 +135,9 @@ namespace Qdrant
                 PrepareGetShardSnapshotRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    collectionName: collectionName,
-                    shardId: shardId,
-                    snapshotName: snapshotName);
+                    collectionName: collectionName!,
+                    shardId: shardId!,
+                    snapshotName: snapshotName!);
 
                 return __httpRequest;
             }

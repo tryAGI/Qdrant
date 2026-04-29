@@ -155,8 +155,8 @@ namespace Qdrant
                 PrepareDeleteFieldIndexRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    collectionName: collectionName,
-                    fieldName: fieldName,
+                    collectionName: collectionName!,
+                    fieldName: fieldName!,
                     wait: wait,
                     ordering: ordering,
                     timeout: timeout);

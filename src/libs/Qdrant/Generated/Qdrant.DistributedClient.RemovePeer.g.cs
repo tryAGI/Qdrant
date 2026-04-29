@@ -141,7 +141,7 @@ namespace Qdrant
                 PrepareRemovePeerRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    peerId: peerId,
+                    peerId: peerId!,
                     timeout: timeout,
                     force: force);
 

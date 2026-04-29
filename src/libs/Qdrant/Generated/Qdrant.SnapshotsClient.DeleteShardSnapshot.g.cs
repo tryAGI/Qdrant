@@ -143,9 +143,9 @@ namespace Qdrant
                 PrepareDeleteShardSnapshotRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    collectionName: collectionName,
-                    shardId: shardId,
-                    snapshotName: snapshotName,
+                    collectionName: collectionName!,
+                    shardId: shardId!,
+                    snapshotName: snapshotName!,
                     wait: wait);
 
                 return __httpRequest;

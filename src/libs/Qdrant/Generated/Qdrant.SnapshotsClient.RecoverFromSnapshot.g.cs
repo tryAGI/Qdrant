@@ -147,7 +147,7 @@ namespace Qdrant
                 PrepareRecoverFromSnapshotRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    collectionName: collectionName,
+                    collectionName: collectionName!,
                     wait: wait,
                     request: request);
 

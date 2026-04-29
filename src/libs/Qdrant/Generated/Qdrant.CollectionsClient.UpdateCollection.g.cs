@@ -147,7 +147,7 @@ namespace Qdrant
                 PrepareUpdateCollectionRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    collectionName: collectionName,
+                    collectionName: collectionName!,
                     timeout: timeout,
                     request: request);
 

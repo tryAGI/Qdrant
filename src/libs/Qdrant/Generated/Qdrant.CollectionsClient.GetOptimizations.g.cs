@@ -141,7 +141,7 @@ namespace Qdrant
                 PrepareGetOptimizationsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    collectionName: collectionName,
+                    collectionName: collectionName!,
                     with: with,
                     completedLimit: completedLimit);
 

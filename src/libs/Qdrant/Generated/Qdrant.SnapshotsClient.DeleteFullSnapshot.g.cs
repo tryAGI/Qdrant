@@ -133,7 +133,7 @@ namespace Qdrant
                 PrepareDeleteFullSnapshotRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    snapshotName: snapshotName,
+                    snapshotName: snapshotName!,
                     wait: wait);
 
                 return __httpRequest;
