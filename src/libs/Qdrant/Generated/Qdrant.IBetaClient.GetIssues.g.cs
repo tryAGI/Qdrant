@@ -14,5 +14,15 @@ namespace Qdrant
         global::System.Threading.Tasks.Task<string> GetIssuesAsync(
             global::Qdrant.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Get issues<br/>
+        /// Get a report of performance issues and configuration suggestions
+        /// </summary>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Qdrant.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Qdrant.AutoSDKHttpResponse<string>> GetIssuesAsResponseAsync(
+            global::Qdrant.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

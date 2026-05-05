@@ -27,6 +27,23 @@ namespace Qdrant
         /// </summary>
         /// <param name="collectionName"></param>
         /// <param name="wait"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Qdrant.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Qdrant.AutoSDKHttpResponse<global::Qdrant.RecoverFromSnapshotResponse>> RecoverFromSnapshotAsResponseAsync(
+            string collectionName,
+
+            global::Qdrant.SnapshotRecover request,
+            bool? wait = default,
+            global::Qdrant.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Recover from a snapshot<br/>
+        /// Recover local collection data from a snapshot. This will overwrite any data, stored on this node, for the collection. If collection does not exist - it will be created.
+        /// </summary>
+        /// <param name="collectionName"></param>
+        /// <param name="wait"></param>
         /// <param name="location">
         /// Examples: - URL `http://localhost:8080/collections/my_collection/snapshots/my_snapshot` - Local path `file:///qdrant/snapshots/test_collection-2022-08-04-10-49-10.snapshot`
         /// </param>

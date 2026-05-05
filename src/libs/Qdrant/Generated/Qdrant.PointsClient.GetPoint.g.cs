@@ -72,6 +72,43 @@ namespace Qdrant
             global::Qdrant.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await GetPointAsResponseAsync(
+                collectionName: collectionName,
+                id: id,
+                consistency: consistency,
+                requestOptions: requestOptions,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// Get point<br/>
+        /// Retrieve full information of single point by id
+        /// </summary>
+        /// <param name="collectionName"></param>
+        /// <param name="id">
+        /// Type, used for specifying point ID in user interface
+        /// </param>
+        /// <param name="consistency">
+        /// Read consistency parameter<br/>
+        /// Defines how many replicas should be queried to get the result<br/>
+        /// * `N` - send N random request and return points, which present on all of them<br/>
+        /// * `majority` - send N/2+1 random request and return points, which present on all of them<br/>
+        /// * `quorum` - send requests to all nodes and return points which present on majority of them<br/>
+        /// * `all` - send requests to all nodes and return points which present on all of them<br/>
+        /// Default value is `Factor(1)`
+        /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Qdrant.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::Qdrant.AutoSDKHttpResponse<global::Qdrant.GetPointResponse>> GetPointAsResponseAsync(
+            string collectionName,
+            global::Qdrant.ExtendedPointId id,
+            global::Qdrant.ReadConsistency? consistency = default,
+            global::Qdrant.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             PrepareArguments(
                 client: HttpClient);
             PrepareGetPointArguments(
@@ -102,11 +139,12 @@ namespace Qdrant
 
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
+
                             var __pathBuilder = new global::Qdrant.PathBuilder(
                                 path: $"/collections/{collectionName}/points/{id}",
-                                baseUri: HttpClient.BaseAddress); 
+                                baseUri: HttpClient.BaseAddress);
                             __pathBuilder
-                                .AddOptionalParameter("consistency", consistency?.ToString()) 
+                                .AddOptionalParameter("consistency", consistency?.ToString())
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::Qdrant.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -180,6 +218,8 @@ namespace Qdrant
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                     try
                     {
@@ -190,6 +230,11 @@ namespace Qdrant
                     }
                     catch (global::System.Net.Http.HttpRequestException __exception)
                     {
+                        var __retryDelay = global::Qdrant.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: null,
+                            attempt: __attempt);
                         var __willRetry = __attempt < __maxAttempts && !__effectiveCancellationToken.IsCancellationRequested;
                         await global::Qdrant.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
@@ -207,6 +252,8 @@ namespace Qdrant
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: __willRetry,
+                                retryDelay: __willRetry ? __retryDelay : (global::System.TimeSpan?)null,
+                                retryReason: "exception",
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         if (!__willRetry)
                         {
@@ -216,8 +263,7 @@ namespace Qdrant
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::Qdrant.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -226,6 +272,11 @@ namespace Qdrant
                         __attempt < __maxAttempts &&
                         global::Qdrant.AutoSDKRequestOptionsSupport.ShouldRetryStatusCode(__response.StatusCode))
                     {
+                        var __retryDelay = global::Qdrant.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: __response,
+                            attempt: __attempt);
                         await global::Qdrant.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::Qdrant.AutoSDKRequestOptionsSupport.CreateHookContext(
@@ -242,14 +293,15 @@ namespace Qdrant
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: true,
+                                retryDelay: __retryDelay,
+                                retryReason: "status:" + ((int)__response.StatusCode).ToString(global::System.Globalization.CultureInfo.InvariantCulture),
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         __response.Dispose();
                         __response = null;
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::Qdrant.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -289,6 +341,8 @@ namespace Qdrant
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                 else
@@ -309,6 +363,8 @@ namespace Qdrant
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                             // error
@@ -409,9 +465,13 @@ namespace Qdrant
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    return
-                                        global::Qdrant.GetPointResponse.FromJson(__content, JsonSerializerContext) ??
+                                    var __value = global::Qdrant.GetPointResponse.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                                    return new global::Qdrant.AutoSDKHttpResponse<global::Qdrant.GetPointResponse>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::Qdrant.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {
@@ -439,9 +499,13 @@ namespace Qdrant
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    return
-                                        await global::Qdrant.GetPointResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::Qdrant.GetPointResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                                    return new global::Qdrant.AutoSDKHttpResponse<global::Qdrant.GetPointResponse>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::Qdrant.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {

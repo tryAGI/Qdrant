@@ -27,6 +27,23 @@ namespace Qdrant
         /// </summary>
         /// <param name="collectionName"></param>
         /// <param name="timeout"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Qdrant.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Qdrant.AutoSDKHttpResponse<global::Qdrant.UpdateCollectionResponse>> UpdateCollectionAsResponseAsync(
+            string collectionName,
+
+            global::Qdrant.UpdateCollection request,
+            int? timeout = default,
+            global::Qdrant.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Update collection parameters<br/>
+        /// Update parameters of the existing collection
+        /// </summary>
+        /// <param name="collectionName"></param>
+        /// <param name="timeout"></param>
         /// <param name="vectors">
         /// Map of vector data parameters to update for each named vector. To update parameters in a collection having a single unnamed vector, use an empty string as name.
         /// </param>
