@@ -18,5 +18,33 @@ namespace Qdrant
             int shardId,
             global::Qdrant.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Download shard snapshot<br/>
+        /// Stream the current state of a shard as a snapshot file
+        /// </summary>
+        /// <param name="collectionName"></param>
+        /// <param name="shardId"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Qdrant.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::System.IO.Stream> StreamShardSnapshotAsStreamAsync(
+            string collectionName,
+            int shardId,
+            global::Qdrant.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Download shard snapshot<br/>
+        /// Stream the current state of a shard as a snapshot file
+        /// </summary>
+        /// <param name="collectionName"></param>
+        /// <param name="shardId"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Qdrant.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Qdrant.AutoSDKHttpResponse<byte[]>> StreamShardSnapshotAsResponseAsync(
+            string collectionName,
+            int shardId,
+            global::Qdrant.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

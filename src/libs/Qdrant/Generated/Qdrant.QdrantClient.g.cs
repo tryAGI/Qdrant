@@ -184,7 +184,7 @@ namespace Qdrant
         /// <summary>
         /// Additional names for existing collections.
         /// </summary>
-        public AliasesClient Aliases => new AliasesClient(HttpClient, authorizations: Authorizations, options: Options)
+        public AliasesClient Aliases => new AliasesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -193,7 +193,7 @@ namespace Qdrant
         /// <summary>
         /// Beta features, do not depend on these yet.
         /// </summary>
-        public BetaClient Beta => new BetaClient(HttpClient, authorizations: Authorizations, options: Options)
+        public BetaClient Beta => new BetaClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -202,7 +202,7 @@ namespace Qdrant
         /// <summary>
         /// Searchable collections of points.
         /// </summary>
-        public CollectionsClient Collections => new CollectionsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public CollectionsClient Collections => new CollectionsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -211,7 +211,7 @@ namespace Qdrant
         /// <summary>
         /// Service distributed setup.
         /// </summary>
-        public DistributedClient Distributed => new DistributedClient(HttpClient, authorizations: Authorizations, options: Options)
+        public DistributedClient Distributed => new DistributedClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -220,7 +220,7 @@ namespace Qdrant
         /// <summary>
         /// Indexes for payloads associated with points.
         /// </summary>
-        public IndexesClient Indexes => new IndexesClient(HttpClient, authorizations: Authorizations, options: Options)
+        public IndexesClient Indexes => new IndexesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -229,7 +229,7 @@ namespace Qdrant
         /// <summary>
         /// Float-point vectors with payload.
         /// </summary>
-        public PointsClient Points => new PointsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public PointsClient Points => new PointsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -238,7 +238,7 @@ namespace Qdrant
         /// <summary>
         /// Find points in a collection.
         /// </summary>
-        public SearchClient Search => new SearchClient(HttpClient, authorizations: Authorizations, options: Options)
+        public SearchClient Search => new SearchClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -247,7 +247,7 @@ namespace Qdrant
         /// <summary>
         /// Qdrant service utilities.
         /// </summary>
-        public ServiceClient Service => new ServiceClient(HttpClient, authorizations: Authorizations, options: Options)
+        public ServiceClient Service => new ServiceClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -256,7 +256,7 @@ namespace Qdrant
         /// <summary>
         /// Storage and collections snapshots.
         /// </summary>
-        public SnapshotsClient Snapshots => new SnapshotsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public SnapshotsClient Snapshots => new SnapshotsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -295,10 +295,10 @@ namespace Qdrant
         /// <param name="options">Client-wide request defaults such as headers, query parameters, retries, and timeout.</param>
         /// <param name="disposeHttpClient">Dispose the HttpClient when the instance is disposed. True by default.</param>
         public QdrantClient(
-            global::System.Net.Http.HttpClient? httpClient = null,
-            global::System.Uri? baseUri = null,
-            global::System.Collections.Generic.List<global::Qdrant.EndPointAuthorization>? authorizations = null,
-            global::Qdrant.AutoSDKClientOptions? options = null,
+            global::System.Net.Http.HttpClient? httpClient,
+            global::System.Uri? baseUri,
+            global::System.Collections.Generic.List<global::Qdrant.EndPointAuthorization>? authorizations,
+            global::Qdrant.AutoSDKClientOptions? options,
             bool disposeHttpClient = true)
         {
 
