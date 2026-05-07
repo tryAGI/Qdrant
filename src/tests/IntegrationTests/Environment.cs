@@ -7,6 +7,7 @@ public sealed class Environment : IAsyncDisposable
 {
     private const string QdrantImage = "qdrant/qdrant:latest";
     private const ushort QdrantPort = 6333;
+    private const string DefaultApiKey = "test-api-key";
     private static readonly TimeSpan StartupTimeout = TimeSpan.FromMinutes(2);
 
     public IContainer? Container { get; init; }
@@ -29,6 +30,7 @@ public sealed class Environment : IAsyncDisposable
             case EnvironmentType.Local:
             {
                 var client = new QdrantClient(
+                    apiKey: GetApiKey(),
                     baseUri: new Uri($"http://127.0.0.1:{QdrantPort}"));
 
                 return new Environment
@@ -51,6 +53,7 @@ public sealed class Environment : IAsyncDisposable
                 await container.StartAsync(cts.Token);
 
                 var client = new QdrantClient(
+                    apiKey: GetApiKey(),
                     baseUri: new UriBuilder(
                         Uri.UriSchemeHttp,
                         container.Hostname,
@@ -65,6 +68,13 @@ public sealed class Environment : IAsyncDisposable
             default:
                 throw new ArgumentOutOfRangeException(nameof(environmentType), environmentType, null);
         }
+    }
+
+    private static string GetApiKey()
+    {
+        return System.Environment.GetEnvironmentVariable("QDRANT_API_KEY") is { Length: > 0 } apiKey
+            ? apiKey
+            : DefaultApiKey;
     }
 
     private static EnvironmentType InferEnvironment()
