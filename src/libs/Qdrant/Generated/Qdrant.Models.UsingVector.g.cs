@@ -25,6 +25,19 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(UsingVectorVariant1))]
 #endif
         public bool IsUsingVectorVariant1 => UsingVectorVariant1 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickUsingVectorVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = UsingVectorVariant1;
+            return IsUsingVectorVariant1;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -69,7 +82,7 @@ namespace Qdrant
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? usingVectorVariant1 = null,
+            global::System.Func<string, TResult>? usingVectorVariant1 = null,
             bool validate = true)
         {
             if (validate)
@@ -89,7 +102,25 @@ namespace Qdrant
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? usingVectorVariant1 = null,
+            global::System.Action<string>? usingVectorVariant1 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsUsingVectorVariant1)
+            {
+                usingVectorVariant1?.Invoke(UsingVectorVariant1!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<string>? usingVectorVariant1 = null,
             bool validate = true)
         {
             if (validate)

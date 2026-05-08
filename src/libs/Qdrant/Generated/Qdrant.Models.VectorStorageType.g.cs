@@ -28,6 +28,19 @@ namespace Qdrant
         public bool IsVectorStorageTypeVariant1 => VectorStorageTypeVariant1 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickVectorStorageTypeVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.VectorStorageTypeVariant1? value)
+        {
+            value = VectorStorageTypeVariant1;
+            return IsVectorStorageTypeVariant1;
+        }
+
+        /// <summary>
         /// Storage in mmap file, not appendable<br/>
         /// Search performance is defined by disk speed and the fraction of vectors that fit in memory.
         /// </summary>
@@ -44,6 +57,19 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(VectorStorageTypeVariant2))]
 #endif
         public bool IsVectorStorageTypeVariant2 => VectorStorageTypeVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickVectorStorageTypeVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.VectorStorageTypeVariant2? value)
+        {
+            value = VectorStorageTypeVariant2;
+            return IsVectorStorageTypeVariant2;
+        }
 
         /// <summary>
         /// Storage in chunked mmap files, appendable<br/>
@@ -64,6 +90,19 @@ namespace Qdrant
         public bool IsVectorStorageTypeVariant3 => VectorStorageTypeVariant3 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickVectorStorageTypeVariant3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.VectorStorageTypeVariant3? value)
+        {
+            value = VectorStorageTypeVariant3;
+            return IsVectorStorageTypeVariant3;
+        }
+
+        /// <summary>
         /// Same as `ChunkedMmap`, but vectors are forced to be locked in RAM In this way we avoid cold requests to disk, but risk to run out of memory<br/>
         /// Designed as a replacement for `Memory`, which doesn't depend on RocksDB
         /// </summary>
@@ -82,6 +121,19 @@ namespace Qdrant
         public bool IsVectorStorageTypeVariant4 => VectorStorageTypeVariant4 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickVectorStorageTypeVariant4(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.VectorStorageTypeVariant4? value)
+        {
+            value = VectorStorageTypeVariant4;
+            return IsVectorStorageTypeVariant4;
+        }
+
+        /// <summary>
         /// Storage in a single mmap file, not appendable Pre-fetched into RAM on load
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -97,6 +149,19 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(VectorStorageTypeVariant5))]
 #endif
         public bool IsVectorStorageTypeVariant5 => VectorStorageTypeVariant5 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickVectorStorageTypeVariant5(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.VectorStorageTypeVariant5? value)
+        {
+            value = VectorStorageTypeVariant5;
+            return IsVectorStorageTypeVariant5;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -279,6 +344,48 @@ namespace Qdrant
         /// 
         /// </summary>
         public void Match(
+            global::System.Action<global::Qdrant.VectorStorageTypeVariant1?>? vectorStorageTypeVariant1 = null,
+
+            global::System.Action<global::Qdrant.VectorStorageTypeVariant2?>? vectorStorageTypeVariant2 = null,
+
+            global::System.Action<global::Qdrant.VectorStorageTypeVariant3?>? vectorStorageTypeVariant3 = null,
+
+            global::System.Action<global::Qdrant.VectorStorageTypeVariant4?>? vectorStorageTypeVariant4 = null,
+
+            global::System.Action<global::Qdrant.VectorStorageTypeVariant5?>? vectorStorageTypeVariant5 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsVectorStorageTypeVariant1)
+            {
+                vectorStorageTypeVariant1?.Invoke(VectorStorageTypeVariant1!);
+            }
+            else if (IsVectorStorageTypeVariant2)
+            {
+                vectorStorageTypeVariant2?.Invoke(VectorStorageTypeVariant2!);
+            }
+            else if (IsVectorStorageTypeVariant3)
+            {
+                vectorStorageTypeVariant3?.Invoke(VectorStorageTypeVariant3!);
+            }
+            else if (IsVectorStorageTypeVariant4)
+            {
+                vectorStorageTypeVariant4?.Invoke(VectorStorageTypeVariant4!);
+            }
+            else if (IsVectorStorageTypeVariant5)
+            {
+                vectorStorageTypeVariant5?.Invoke(VectorStorageTypeVariant5!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
             global::System.Action<global::Qdrant.VectorStorageTypeVariant1?>? vectorStorageTypeVariant1 = null,
             global::System.Action<global::Qdrant.VectorStorageTypeVariant2?>? vectorStorageTypeVariant2 = null,
             global::System.Action<global::Qdrant.VectorStorageTypeVariant3?>? vectorStorageTypeVariant3 = null,

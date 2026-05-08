@@ -29,6 +29,19 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickScalar(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.ScalarQuantization? value)
+        {
+            value = Scalar;
+            return IsScalar;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.ProductQuantization? Product { get; init; }
 #else
@@ -46,6 +59,19 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickProduct(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.ProductQuantization? value)
+        {
+            value = Product;
+            return IsProduct;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.BinaryQuantization? Binary { get; init; }
 #else
@@ -59,6 +85,19 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Binary))]
 #endif
         public bool IsBinary => Binary != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickBinary(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.BinaryQuantization? value)
+        {
+            value = Binary;
+            return IsBinary;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -157,9 +196,9 @@ namespace Qdrant
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Qdrant.ScalarQuantization?, TResult>? scalar = null,
-            global::System.Func<global::Qdrant.ProductQuantization?, TResult>? product = null,
-            global::System.Func<global::Qdrant.BinaryQuantization?, TResult>? binary = null,
+            global::System.Func<global::Qdrant.ScalarQuantization, TResult>? scalar = null,
+            global::System.Func<global::Qdrant.ProductQuantization, TResult>? product = null,
+            global::System.Func<global::Qdrant.BinaryQuantization, TResult>? binary = null,
             bool validate = true)
         {
             if (validate)
@@ -187,9 +226,39 @@ namespace Qdrant
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Qdrant.ScalarQuantization?>? scalar = null,
-            global::System.Action<global::Qdrant.ProductQuantization?>? product = null,
-            global::System.Action<global::Qdrant.BinaryQuantization?>? binary = null,
+            global::System.Action<global::Qdrant.ScalarQuantization>? scalar = null,
+
+            global::System.Action<global::Qdrant.ProductQuantization>? product = null,
+
+            global::System.Action<global::Qdrant.BinaryQuantization>? binary = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsScalar)
+            {
+                scalar?.Invoke(Scalar!);
+            }
+            else if (IsProduct)
+            {
+                product?.Invoke(Product!);
+            }
+            else if (IsBinary)
+            {
+                binary?.Invoke(Binary!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Qdrant.ScalarQuantization>? scalar = null,
+            global::System.Action<global::Qdrant.ProductQuantization>? product = null,
+            global::System.Action<global::Qdrant.BinaryQuantization>? binary = null,
             bool validate = true)
         {
             if (validate)

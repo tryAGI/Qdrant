@@ -29,6 +29,19 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickCollectionTelemetry(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.CollectionTelemetry? value)
+        {
+            value = CollectionTelemetry;
+            return IsCollectionTelemetry;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.CollectionsAggregatedTelemetry? CollectionsAggregated { get; init; }
 #else
@@ -42,6 +55,19 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CollectionsAggregated))]
 #endif
         public bool IsCollectionsAggregated => CollectionsAggregated != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCollectionsAggregated(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.CollectionsAggregatedTelemetry? value)
+        {
+            value = CollectionsAggregated;
+            return IsCollectionsAggregated;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -118,8 +144,8 @@ namespace Qdrant
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Qdrant.CollectionTelemetry?, TResult>? collectionTelemetry = null,
-            global::System.Func<global::Qdrant.CollectionsAggregatedTelemetry?, TResult>? collectionsAggregated = null,
+            global::System.Func<global::Qdrant.CollectionTelemetry, TResult>? collectionTelemetry = null,
+            global::System.Func<global::Qdrant.CollectionsAggregatedTelemetry, TResult>? collectionsAggregated = null,
             bool validate = true)
         {
             if (validate)
@@ -143,8 +169,32 @@ namespace Qdrant
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Qdrant.CollectionTelemetry?>? collectionTelemetry = null,
-            global::System.Action<global::Qdrant.CollectionsAggregatedTelemetry?>? collectionsAggregated = null,
+            global::System.Action<global::Qdrant.CollectionTelemetry>? collectionTelemetry = null,
+
+            global::System.Action<global::Qdrant.CollectionsAggregatedTelemetry>? collectionsAggregated = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsCollectionTelemetry)
+            {
+                collectionTelemetry?.Invoke(CollectionTelemetry!);
+            }
+            else if (IsCollectionsAggregated)
+            {
+                collectionsAggregated?.Invoke(CollectionsAggregated!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Qdrant.CollectionTelemetry>? collectionTelemetry = null,
+            global::System.Action<global::Qdrant.CollectionsAggregatedTelemetry>? collectionsAggregated = null,
             bool validate = true)
         {
             if (validate)

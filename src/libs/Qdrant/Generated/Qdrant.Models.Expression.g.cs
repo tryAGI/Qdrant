@@ -29,6 +29,19 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickExpressionVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out float? value)
+        {
+            value = ExpressionVariant1;
+            return IsExpressionVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public string? ExpressionVariant2 { get; init; }
 #else
@@ -42,6 +55,19 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ExpressionVariant2))]
 #endif
         public bool IsExpressionVariant2 => ExpressionVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickExpressionVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = ExpressionVariant2;
+            return IsExpressionVariant2;
+        }
 
         /// <summary>
         /// 
@@ -63,6 +89,19 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickCondition(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.Condition? value)
+        {
+            value = Condition;
+            return IsCondition;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.GeoDistance? GeoDistance { get; init; }
 #else
@@ -76,6 +115,19 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(GeoDistance))]
 #endif
         public bool IsGeoDistance => GeoDistance != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickGeoDistance(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.GeoDistance? value)
+        {
+            value = GeoDistance;
+            return IsGeoDistance;
+        }
 
         /// <summary>
         /// 
@@ -97,6 +149,19 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickDatetime(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.DatetimeExpression? value)
+        {
+            value = Datetime;
+            return IsDatetime;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.DatetimeKeyExpression? DatetimeKey { get; init; }
 #else
@@ -110,6 +175,19 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(DatetimeKey))]
 #endif
         public bool IsDatetimeKey => DatetimeKey != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickDatetimeKey(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.DatetimeKeyExpression? value)
+        {
+            value = DatetimeKey;
+            return IsDatetimeKey;
+        }
 
         /// <summary>
         /// 
@@ -131,6 +209,19 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickMult(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.MultExpression? value)
+        {
+            value = Mult;
+            return IsMult;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.SumExpression? Sum { get; init; }
 #else
@@ -144,6 +235,19 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Sum))]
 #endif
         public bool IsSum => Sum != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSum(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.SumExpression? value)
+        {
+            value = Sum;
+            return IsSum;
+        }
 
         /// <summary>
         /// 
@@ -165,6 +269,19 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickNeg(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.NegExpression? value)
+        {
+            value = Neg;
+            return IsNeg;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.AbsExpression? Abs { get; init; }
 #else
@@ -178,6 +295,19 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Abs))]
 #endif
         public bool IsAbs => Abs != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAbs(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.AbsExpression? value)
+        {
+            value = Abs;
+            return IsAbs;
+        }
 
         /// <summary>
         /// 
@@ -199,6 +329,19 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickDiv(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.DivExpression? value)
+        {
+            value = Div;
+            return IsDiv;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.SqrtExpression? Sqrt { get; init; }
 #else
@@ -212,6 +355,19 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Sqrt))]
 #endif
         public bool IsSqrt => Sqrt != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSqrt(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.SqrtExpression? value)
+        {
+            value = Sqrt;
+            return IsSqrt;
+        }
 
         /// <summary>
         /// 
@@ -233,6 +389,19 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickPow(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.PowExpression? value)
+        {
+            value = Pow;
+            return IsPow;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.ExpExpression? Exp { get; init; }
 #else
@@ -246,6 +415,19 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Exp))]
 #endif
         public bool IsExp => Exp != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickExp(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.ExpExpression? value)
+        {
+            value = Exp;
+            return IsExp;
+        }
 
         /// <summary>
         /// 
@@ -267,6 +449,19 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickLog10(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.Log10Expression? value)
+        {
+            value = Log10;
+            return IsLog10;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.LnExpression? Ln { get; init; }
 #else
@@ -280,6 +475,19 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Ln))]
 #endif
         public bool IsLn => Ln != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickLn(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.LnExpression? value)
+        {
+            value = Ln;
+            return IsLn;
+        }
 
         /// <summary>
         /// 
@@ -301,6 +509,19 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickLinDecay(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.LinDecayExpression? value)
+        {
+            value = LinDecay;
+            return IsLinDecay;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.ExpDecayExpression? ExpDecay { get; init; }
 #else
@@ -318,6 +539,19 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickExpDecay(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.ExpDecayExpression? value)
+        {
+            value = ExpDecay;
+            return IsExpDecay;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.GaussDecayExpression? GaussDecay { get; init; }
 #else
@@ -331,6 +565,19 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(GaussDecay))]
 #endif
         public bool IsGaussDecay => GaussDecay != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickGaussDecay(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.GaussDecayExpression? value)
+        {
+            value = GaussDecay;
+            return IsGaussDecay;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -782,24 +1029,24 @@ namespace Qdrant
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<float?, TResult>? expressionVariant1 = null,
-            global::System.Func<string?, TResult>? expressionVariant2 = null,
+            global::System.Func<string, TResult>? expressionVariant2 = null,
             global::System.Func<global::Qdrant.Condition?, TResult>? condition = null,
-            global::System.Func<global::Qdrant.GeoDistance?, TResult>? geoDistance = null,
-            global::System.Func<global::Qdrant.DatetimeExpression?, TResult>? datetime = null,
-            global::System.Func<global::Qdrant.DatetimeKeyExpression?, TResult>? datetimeKey = null,
-            global::System.Func<global::Qdrant.MultExpression?, TResult>? mult = null,
-            global::System.Func<global::Qdrant.SumExpression?, TResult>? sum = null,
-            global::System.Func<global::Qdrant.NegExpression?, TResult>? neg = null,
-            global::System.Func<global::Qdrant.AbsExpression?, TResult>? abs = null,
-            global::System.Func<global::Qdrant.DivExpression?, TResult>? div = null,
-            global::System.Func<global::Qdrant.SqrtExpression?, TResult>? sqrt = null,
-            global::System.Func<global::Qdrant.PowExpression?, TResult>? pow = null,
-            global::System.Func<global::Qdrant.ExpExpression?, TResult>? exp = null,
-            global::System.Func<global::Qdrant.Log10Expression?, TResult>? log10 = null,
-            global::System.Func<global::Qdrant.LnExpression?, TResult>? ln = null,
-            global::System.Func<global::Qdrant.LinDecayExpression?, TResult>? linDecay = null,
-            global::System.Func<global::Qdrant.ExpDecayExpression?, TResult>? expDecay = null,
-            global::System.Func<global::Qdrant.GaussDecayExpression?, TResult>? gaussDecay = null,
+            global::System.Func<global::Qdrant.GeoDistance, TResult>? geoDistance = null,
+            global::System.Func<global::Qdrant.DatetimeExpression, TResult>? datetime = null,
+            global::System.Func<global::Qdrant.DatetimeKeyExpression, TResult>? datetimeKey = null,
+            global::System.Func<global::Qdrant.MultExpression, TResult>? mult = null,
+            global::System.Func<global::Qdrant.SumExpression, TResult>? sum = null,
+            global::System.Func<global::Qdrant.NegExpression, TResult>? neg = null,
+            global::System.Func<global::Qdrant.AbsExpression, TResult>? abs = null,
+            global::System.Func<global::Qdrant.DivExpression, TResult>? div = null,
+            global::System.Func<global::Qdrant.SqrtExpression, TResult>? sqrt = null,
+            global::System.Func<global::Qdrant.PowExpression, TResult>? pow = null,
+            global::System.Func<global::Qdrant.ExpExpression, TResult>? exp = null,
+            global::System.Func<global::Qdrant.Log10Expression, TResult>? log10 = null,
+            global::System.Func<global::Qdrant.LnExpression, TResult>? ln = null,
+            global::System.Func<global::Qdrant.LinDecayExpression, TResult>? linDecay = null,
+            global::System.Func<global::Qdrant.ExpDecayExpression, TResult>? expDecay = null,
+            global::System.Func<global::Qdrant.GaussDecayExpression, TResult>? gaussDecay = null,
             bool validate = true)
         {
             if (validate)
@@ -892,24 +1139,150 @@ namespace Qdrant
         /// </summary>
         public void Match(
             global::System.Action<float?>? expressionVariant1 = null,
-            global::System.Action<string?>? expressionVariant2 = null,
+
+            global::System.Action<string>? expressionVariant2 = null,
+
             global::System.Action<global::Qdrant.Condition?>? condition = null,
-            global::System.Action<global::Qdrant.GeoDistance?>? geoDistance = null,
-            global::System.Action<global::Qdrant.DatetimeExpression?>? datetime = null,
-            global::System.Action<global::Qdrant.DatetimeKeyExpression?>? datetimeKey = null,
-            global::System.Action<global::Qdrant.MultExpression?>? mult = null,
-            global::System.Action<global::Qdrant.SumExpression?>? sum = null,
-            global::System.Action<global::Qdrant.NegExpression?>? neg = null,
-            global::System.Action<global::Qdrant.AbsExpression?>? abs = null,
-            global::System.Action<global::Qdrant.DivExpression?>? div = null,
-            global::System.Action<global::Qdrant.SqrtExpression?>? sqrt = null,
-            global::System.Action<global::Qdrant.PowExpression?>? pow = null,
-            global::System.Action<global::Qdrant.ExpExpression?>? exp = null,
-            global::System.Action<global::Qdrant.Log10Expression?>? log10 = null,
-            global::System.Action<global::Qdrant.LnExpression?>? ln = null,
-            global::System.Action<global::Qdrant.LinDecayExpression?>? linDecay = null,
-            global::System.Action<global::Qdrant.ExpDecayExpression?>? expDecay = null,
-            global::System.Action<global::Qdrant.GaussDecayExpression?>? gaussDecay = null,
+
+            global::System.Action<global::Qdrant.GeoDistance>? geoDistance = null,
+
+            global::System.Action<global::Qdrant.DatetimeExpression>? datetime = null,
+
+            global::System.Action<global::Qdrant.DatetimeKeyExpression>? datetimeKey = null,
+
+            global::System.Action<global::Qdrant.MultExpression>? mult = null,
+
+            global::System.Action<global::Qdrant.SumExpression>? sum = null,
+
+            global::System.Action<global::Qdrant.NegExpression>? neg = null,
+
+            global::System.Action<global::Qdrant.AbsExpression>? abs = null,
+
+            global::System.Action<global::Qdrant.DivExpression>? div = null,
+
+            global::System.Action<global::Qdrant.SqrtExpression>? sqrt = null,
+
+            global::System.Action<global::Qdrant.PowExpression>? pow = null,
+
+            global::System.Action<global::Qdrant.ExpExpression>? exp = null,
+
+            global::System.Action<global::Qdrant.Log10Expression>? log10 = null,
+
+            global::System.Action<global::Qdrant.LnExpression>? ln = null,
+
+            global::System.Action<global::Qdrant.LinDecayExpression>? linDecay = null,
+
+            global::System.Action<global::Qdrant.ExpDecayExpression>? expDecay = null,
+
+            global::System.Action<global::Qdrant.GaussDecayExpression>? gaussDecay = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsExpressionVariant1)
+            {
+                expressionVariant1?.Invoke(ExpressionVariant1!);
+            }
+            else if (IsExpressionVariant2)
+            {
+                expressionVariant2?.Invoke(ExpressionVariant2!);
+            }
+            else if (IsCondition)
+            {
+                condition?.Invoke(Condition!);
+            }
+            else if (IsGeoDistance)
+            {
+                geoDistance?.Invoke(GeoDistance!);
+            }
+            else if (IsDatetime)
+            {
+                datetime?.Invoke(Datetime!);
+            }
+            else if (IsDatetimeKey)
+            {
+                datetimeKey?.Invoke(DatetimeKey!);
+            }
+            else if (IsMult)
+            {
+                mult?.Invoke(Mult!);
+            }
+            else if (IsSum)
+            {
+                sum?.Invoke(Sum!);
+            }
+            else if (IsNeg)
+            {
+                neg?.Invoke(Neg!);
+            }
+            else if (IsAbs)
+            {
+                abs?.Invoke(Abs!);
+            }
+            else if (IsDiv)
+            {
+                div?.Invoke(Div!);
+            }
+            else if (IsSqrt)
+            {
+                sqrt?.Invoke(Sqrt!);
+            }
+            else if (IsPow)
+            {
+                pow?.Invoke(Pow!);
+            }
+            else if (IsExp)
+            {
+                exp?.Invoke(Exp!);
+            }
+            else if (IsLog10)
+            {
+                log10?.Invoke(Log10!);
+            }
+            else if (IsLn)
+            {
+                ln?.Invoke(Ln!);
+            }
+            else if (IsLinDecay)
+            {
+                linDecay?.Invoke(LinDecay!);
+            }
+            else if (IsExpDecay)
+            {
+                expDecay?.Invoke(ExpDecay!);
+            }
+            else if (IsGaussDecay)
+            {
+                gaussDecay?.Invoke(GaussDecay!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<float?>? expressionVariant1 = null,
+            global::System.Action<string>? expressionVariant2 = null,
+            global::System.Action<global::Qdrant.Condition?>? condition = null,
+            global::System.Action<global::Qdrant.GeoDistance>? geoDistance = null,
+            global::System.Action<global::Qdrant.DatetimeExpression>? datetime = null,
+            global::System.Action<global::Qdrant.DatetimeKeyExpression>? datetimeKey = null,
+            global::System.Action<global::Qdrant.MultExpression>? mult = null,
+            global::System.Action<global::Qdrant.SumExpression>? sum = null,
+            global::System.Action<global::Qdrant.NegExpression>? neg = null,
+            global::System.Action<global::Qdrant.AbsExpression>? abs = null,
+            global::System.Action<global::Qdrant.DivExpression>? div = null,
+            global::System.Action<global::Qdrant.SqrtExpression>? sqrt = null,
+            global::System.Action<global::Qdrant.PowExpression>? pow = null,
+            global::System.Action<global::Qdrant.ExpExpression>? exp = null,
+            global::System.Action<global::Qdrant.Log10Expression>? log10 = null,
+            global::System.Action<global::Qdrant.LnExpression>? ln = null,
+            global::System.Action<global::Qdrant.LinDecayExpression>? linDecay = null,
+            global::System.Action<global::Qdrant.ExpDecayExpression>? expDecay = null,
+            global::System.Action<global::Qdrant.GaussDecayExpression>? gaussDecay = null,
             bool validate = true)
         {
             if (validate)

@@ -32,6 +32,19 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickVectorParams(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.VectorParams? value)
+        {
+            value = VectorParams;
+            return IsVectorParams;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.Dictionary<string, global::Qdrant.VectorParams>? VectorsConfigVariant2 { get; init; }
 #else
@@ -45,6 +58,19 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(VectorsConfigVariant2))]
 #endif
         public bool IsVectorsConfigVariant2 => VectorsConfigVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickVectorsConfigVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::System.Collections.Generic.Dictionary<string, global::Qdrant.VectorParams>? value)
+        {
+            value = VectorsConfigVariant2;
+            return IsVectorsConfigVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -121,8 +147,8 @@ namespace Qdrant
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Qdrant.VectorParams?, TResult>? vectorParams = null,
-            global::System.Func<global::System.Collections.Generic.Dictionary<string, global::Qdrant.VectorParams>?, TResult>? vectorsConfigVariant2 = null,
+            global::System.Func<global::Qdrant.VectorParams, TResult>? vectorParams = null,
+            global::System.Func<global::System.Collections.Generic.Dictionary<string, global::Qdrant.VectorParams>, TResult>? vectorsConfigVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -146,8 +172,32 @@ namespace Qdrant
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Qdrant.VectorParams?>? vectorParams = null,
-            global::System.Action<global::System.Collections.Generic.Dictionary<string, global::Qdrant.VectorParams>?>? vectorsConfigVariant2 = null,
+            global::System.Action<global::Qdrant.VectorParams>? vectorParams = null,
+
+            global::System.Action<global::System.Collections.Generic.Dictionary<string, global::Qdrant.VectorParams>>? vectorsConfigVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsVectorParams)
+            {
+                vectorParams?.Invoke(VectorParams!);
+            }
+            else if (IsVectorsConfigVariant2)
+            {
+                vectorsConfigVariant2?.Invoke(VectorsConfigVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Qdrant.VectorParams>? vectorParams = null,
+            global::System.Action<global::System.Collections.Generic.Dictionary<string, global::Qdrant.VectorParams>>? vectorsConfigVariant2 = null,
             bool validate = true)
         {
             if (validate)

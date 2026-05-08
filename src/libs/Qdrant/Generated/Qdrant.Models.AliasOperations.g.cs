@@ -27,6 +27,19 @@ namespace Qdrant
         public bool IsCreateOperation => CreateOperation != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickCreateOperation(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.CreateAliasOperation? value)
+        {
+            value = CreateOperation;
+            return IsCreateOperation;
+        }
+
+        /// <summary>
         /// Delete alias if exists
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -44,6 +57,19 @@ namespace Qdrant
         public bool IsDeleteOperation => DeleteOperation != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickDeleteOperation(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.DeleteAliasOperation? value)
+        {
+            value = DeleteOperation;
+            return IsDeleteOperation;
+        }
+
+        /// <summary>
         /// Change alias to a new one
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -59,6 +85,19 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RenameOperation))]
 #endif
         public bool IsRenameOperation => RenameOperation != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickRenameOperation(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.RenameAliasOperation? value)
+        {
+            value = RenameOperation;
+            return IsRenameOperation;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -157,9 +196,9 @@ namespace Qdrant
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Qdrant.CreateAliasOperation?, TResult>? createOperation = null,
-            global::System.Func<global::Qdrant.DeleteAliasOperation?, TResult>? deleteOperation = null,
-            global::System.Func<global::Qdrant.RenameAliasOperation?, TResult>? renameOperation = null,
+            global::System.Func<global::Qdrant.CreateAliasOperation, TResult>? createOperation = null,
+            global::System.Func<global::Qdrant.DeleteAliasOperation, TResult>? deleteOperation = null,
+            global::System.Func<global::Qdrant.RenameAliasOperation, TResult>? renameOperation = null,
             bool validate = true)
         {
             if (validate)
@@ -187,9 +226,39 @@ namespace Qdrant
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Qdrant.CreateAliasOperation?>? createOperation = null,
-            global::System.Action<global::Qdrant.DeleteAliasOperation?>? deleteOperation = null,
-            global::System.Action<global::Qdrant.RenameAliasOperation?>? renameOperation = null,
+            global::System.Action<global::Qdrant.CreateAliasOperation>? createOperation = null,
+
+            global::System.Action<global::Qdrant.DeleteAliasOperation>? deleteOperation = null,
+
+            global::System.Action<global::Qdrant.RenameAliasOperation>? renameOperation = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsCreateOperation)
+            {
+                createOperation?.Invoke(CreateOperation!);
+            }
+            else if (IsDeleteOperation)
+            {
+                deleteOperation?.Invoke(DeleteOperation!);
+            }
+            else if (IsRenameOperation)
+            {
+                renameOperation?.Invoke(RenameOperation!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Qdrant.CreateAliasOperation>? createOperation = null,
+            global::System.Action<global::Qdrant.DeleteAliasOperation>? deleteOperation = null,
+            global::System.Action<global::Qdrant.RenameAliasOperation>? renameOperation = null,
             bool validate = true)
         {
             if (validate)

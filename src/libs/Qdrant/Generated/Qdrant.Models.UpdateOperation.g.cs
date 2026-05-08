@@ -29,6 +29,19 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickUpsert(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.UpsertOperation? value)
+        {
+            value = Upsert;
+            return IsUpsert;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.DeleteOperation? Delete { get; init; }
 #else
@@ -42,6 +55,19 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Delete))]
 #endif
         public bool IsDelete => Delete != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickDelete(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.DeleteOperation? value)
+        {
+            value = Delete;
+            return IsDelete;
+        }
 
         /// <summary>
         /// 
@@ -63,6 +89,19 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickSetPayload(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.SetPayloadOperation? value)
+        {
+            value = SetPayload;
+            return IsSetPayload;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.OverwritePayloadOperation? OverwritePayload { get; init; }
 #else
@@ -76,6 +115,19 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OverwritePayload))]
 #endif
         public bool IsOverwritePayload => OverwritePayload != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOverwritePayload(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.OverwritePayloadOperation? value)
+        {
+            value = OverwritePayload;
+            return IsOverwritePayload;
+        }
 
         /// <summary>
         /// 
@@ -97,6 +149,19 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickDeletePayload(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.DeletePayloadOperation? value)
+        {
+            value = DeletePayload;
+            return IsDeletePayload;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.ClearPayloadOperation? ClearPayload { get; init; }
 #else
@@ -110,6 +175,19 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ClearPayload))]
 #endif
         public bool IsClearPayload => ClearPayload != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickClearPayload(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.ClearPayloadOperation? value)
+        {
+            value = ClearPayload;
+            return IsClearPayload;
+        }
 
         /// <summary>
         /// 
@@ -131,6 +209,19 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickVectors(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.UpdateVectorsOperation? value)
+        {
+            value = Vectors;
+            return IsVectors;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.DeleteVectorsOperation? DeleteVectors { get; init; }
 #else
@@ -144,6 +235,19 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(DeleteVectors))]
 #endif
         public bool IsDeleteVectors => DeleteVectors != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickDeleteVectors(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.DeleteVectorsOperation? value)
+        {
+            value = DeleteVectors;
+            return IsDeleteVectors;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -352,14 +456,14 @@ namespace Qdrant
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Qdrant.UpsertOperation?, TResult>? upsert = null,
-            global::System.Func<global::Qdrant.DeleteOperation?, TResult>? delete = null,
-            global::System.Func<global::Qdrant.SetPayloadOperation?, TResult>? setPayload = null,
-            global::System.Func<global::Qdrant.OverwritePayloadOperation?, TResult>? overwritePayload = null,
-            global::System.Func<global::Qdrant.DeletePayloadOperation?, TResult>? deletePayload = null,
-            global::System.Func<global::Qdrant.ClearPayloadOperation?, TResult>? clearPayload = null,
-            global::System.Func<global::Qdrant.UpdateVectorsOperation?, TResult>? vectors = null,
-            global::System.Func<global::Qdrant.DeleteVectorsOperation?, TResult>? deleteVectors = null,
+            global::System.Func<global::Qdrant.UpsertOperation, TResult>? upsert = null,
+            global::System.Func<global::Qdrant.DeleteOperation, TResult>? delete = null,
+            global::System.Func<global::Qdrant.SetPayloadOperation, TResult>? setPayload = null,
+            global::System.Func<global::Qdrant.OverwritePayloadOperation, TResult>? overwritePayload = null,
+            global::System.Func<global::Qdrant.DeletePayloadOperation, TResult>? deletePayload = null,
+            global::System.Func<global::Qdrant.ClearPayloadOperation, TResult>? clearPayload = null,
+            global::System.Func<global::Qdrant.UpdateVectorsOperation, TResult>? vectors = null,
+            global::System.Func<global::Qdrant.DeleteVectorsOperation, TResult>? deleteVectors = null,
             bool validate = true)
         {
             if (validate)
@@ -407,14 +511,74 @@ namespace Qdrant
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Qdrant.UpsertOperation?>? upsert = null,
-            global::System.Action<global::Qdrant.DeleteOperation?>? delete = null,
-            global::System.Action<global::Qdrant.SetPayloadOperation?>? setPayload = null,
-            global::System.Action<global::Qdrant.OverwritePayloadOperation?>? overwritePayload = null,
-            global::System.Action<global::Qdrant.DeletePayloadOperation?>? deletePayload = null,
-            global::System.Action<global::Qdrant.ClearPayloadOperation?>? clearPayload = null,
-            global::System.Action<global::Qdrant.UpdateVectorsOperation?>? vectors = null,
-            global::System.Action<global::Qdrant.DeleteVectorsOperation?>? deleteVectors = null,
+            global::System.Action<global::Qdrant.UpsertOperation>? upsert = null,
+
+            global::System.Action<global::Qdrant.DeleteOperation>? delete = null,
+
+            global::System.Action<global::Qdrant.SetPayloadOperation>? setPayload = null,
+
+            global::System.Action<global::Qdrant.OverwritePayloadOperation>? overwritePayload = null,
+
+            global::System.Action<global::Qdrant.DeletePayloadOperation>? deletePayload = null,
+
+            global::System.Action<global::Qdrant.ClearPayloadOperation>? clearPayload = null,
+
+            global::System.Action<global::Qdrant.UpdateVectorsOperation>? vectors = null,
+
+            global::System.Action<global::Qdrant.DeleteVectorsOperation>? deleteVectors = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsUpsert)
+            {
+                upsert?.Invoke(Upsert!);
+            }
+            else if (IsDelete)
+            {
+                delete?.Invoke(Delete!);
+            }
+            else if (IsSetPayload)
+            {
+                setPayload?.Invoke(SetPayload!);
+            }
+            else if (IsOverwritePayload)
+            {
+                overwritePayload?.Invoke(OverwritePayload!);
+            }
+            else if (IsDeletePayload)
+            {
+                deletePayload?.Invoke(DeletePayload!);
+            }
+            else if (IsClearPayload)
+            {
+                clearPayload?.Invoke(ClearPayload!);
+            }
+            else if (IsVectors)
+            {
+                vectors?.Invoke(Vectors!);
+            }
+            else if (IsDeleteVectors)
+            {
+                deleteVectors?.Invoke(DeleteVectors!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Qdrant.UpsertOperation>? upsert = null,
+            global::System.Action<global::Qdrant.DeleteOperation>? delete = null,
+            global::System.Action<global::Qdrant.SetPayloadOperation>? setPayload = null,
+            global::System.Action<global::Qdrant.OverwritePayloadOperation>? overwritePayload = null,
+            global::System.Action<global::Qdrant.DeletePayloadOperation>? deletePayload = null,
+            global::System.Action<global::Qdrant.ClearPayloadOperation>? clearPayload = null,
+            global::System.Action<global::Qdrant.UpdateVectorsOperation>? vectors = null,
+            global::System.Action<global::Qdrant.DeleteVectorsOperation>? deleteVectors = null,
             bool validate = true)
         {
             if (validate)

@@ -29,6 +29,19 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickPointsBatch(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.PointsBatch? value)
+        {
+            value = PointsBatch;
+            return IsPointsBatch;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.PointsList? PointsList { get; init; }
 #else
@@ -42,6 +55,19 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(PointsList))]
 #endif
         public bool IsPointsList => PointsList != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickPointsList(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.PointsList? value)
+        {
+            value = PointsList;
+            return IsPointsList;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -118,8 +144,8 @@ namespace Qdrant
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Qdrant.PointsBatch?, TResult>? pointsBatch = null,
-            global::System.Func<global::Qdrant.PointsList?, TResult>? pointsList = null,
+            global::System.Func<global::Qdrant.PointsBatch, TResult>? pointsBatch = null,
+            global::System.Func<global::Qdrant.PointsList, TResult>? pointsList = null,
             bool validate = true)
         {
             if (validate)
@@ -143,8 +169,32 @@ namespace Qdrant
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Qdrant.PointsBatch?>? pointsBatch = null,
-            global::System.Action<global::Qdrant.PointsList?>? pointsList = null,
+            global::System.Action<global::Qdrant.PointsBatch>? pointsBatch = null,
+
+            global::System.Action<global::Qdrant.PointsList>? pointsList = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsPointsBatch)
+            {
+                pointsBatch?.Invoke(PointsBatch!);
+            }
+            else if (IsPointsList)
+            {
+                pointsList?.Invoke(PointsList!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Qdrant.PointsBatch>? pointsBatch = null,
+            global::System.Action<global::Qdrant.PointsList>? pointsList = null,
             bool validate = true)
         {
             if (validate)

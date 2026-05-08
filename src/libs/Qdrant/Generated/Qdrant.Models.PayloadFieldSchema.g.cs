@@ -27,6 +27,19 @@ namespace Qdrant
         public bool IsType => Type != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickType(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.PayloadSchemaType? value)
+        {
+            value = Type;
+            return IsType;
+        }
+
+        /// <summary>
         /// Payload type with parameters
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -42,6 +55,19 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Params))]
 #endif
         public bool IsParams => Params != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickParams(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.PayloadSchemaParams? value)
+        {
+            value = Params;
+            return IsParams;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -143,6 +169,30 @@ namespace Qdrant
         /// 
         /// </summary>
         public void Match(
+            global::System.Action<global::Qdrant.PayloadSchemaType?>? type = null,
+
+            global::System.Action<global::Qdrant.PayloadSchemaParams?>? @params = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsType)
+            {
+                type?.Invoke(Type!);
+            }
+            else if (IsParams)
+            {
+                @params?.Invoke(Params!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
             global::System.Action<global::Qdrant.PayloadSchemaType?>? type = null,
             global::System.Action<global::Qdrant.PayloadSchemaParams?>? @params = null,
             bool validate = true)

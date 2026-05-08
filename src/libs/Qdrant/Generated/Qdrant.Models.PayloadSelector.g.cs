@@ -29,6 +29,19 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickInclude(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.PayloadSelectorInclude? value)
+        {
+            value = Include;
+            return IsInclude;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.PayloadSelectorExclude? Exclude { get; init; }
 #else
@@ -42,6 +55,19 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Exclude))]
 #endif
         public bool IsExclude => Exclude != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickExclude(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.PayloadSelectorExclude? value)
+        {
+            value = Exclude;
+            return IsExclude;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -118,8 +144,8 @@ namespace Qdrant
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Qdrant.PayloadSelectorInclude?, TResult>? include = null,
-            global::System.Func<global::Qdrant.PayloadSelectorExclude?, TResult>? exclude = null,
+            global::System.Func<global::Qdrant.PayloadSelectorInclude, TResult>? include = null,
+            global::System.Func<global::Qdrant.PayloadSelectorExclude, TResult>? exclude = null,
             bool validate = true)
         {
             if (validate)
@@ -143,8 +169,32 @@ namespace Qdrant
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Qdrant.PayloadSelectorInclude?>? include = null,
-            global::System.Action<global::Qdrant.PayloadSelectorExclude?>? exclude = null,
+            global::System.Action<global::Qdrant.PayloadSelectorInclude>? include = null,
+
+            global::System.Action<global::Qdrant.PayloadSelectorExclude>? exclude = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsInclude)
+            {
+                include?.Invoke(Include!);
+            }
+            else if (IsExclude)
+            {
+                exclude?.Invoke(Exclude!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Qdrant.PayloadSelectorInclude>? include = null,
+            global::System.Action<global::Qdrant.PayloadSelectorExclude>? exclude = null,
             bool validate = true)
         {
             if (validate)

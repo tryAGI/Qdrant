@@ -29,6 +29,19 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickExtendedPointId(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.ExtendedPointId? value)
+        {
+            value = ExtendedPointId;
+            return IsExtendedPointId;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<float>? RecommendExampleVariant2 { get; init; }
 #else
@@ -42,6 +55,19 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RecommendExampleVariant2))]
 #endif
         public bool IsRecommendExampleVariant2 => RecommendExampleVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickRecommendExampleVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::System.Collections.Generic.IList<float>? value)
+        {
+            value = RecommendExampleVariant2;
+            return IsRecommendExampleVariant2;
+        }
 
         /// <summary>
         /// Sparse vector structure
@@ -59,6 +85,19 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SparseVector))]
 #endif
         public bool IsSparseVector => SparseVector != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSparseVector(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.SparseVector? value)
+        {
+            value = SparseVector;
+            return IsSparseVector;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -140,8 +179,8 @@ namespace Qdrant
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Qdrant.ExtendedPointId?, TResult>? extendedPointId = null,
-            global::System.Func<global::System.Collections.Generic.IList<float>?, TResult>? recommendExampleVariant2 = null,
-            global::System.Func<global::Qdrant.SparseVector?, TResult>? sparseVector = null,
+            global::System.Func<global::System.Collections.Generic.IList<float>, TResult>? recommendExampleVariant2 = null,
+            global::System.Func<global::Qdrant.SparseVector, TResult>? sparseVector = null,
             bool validate = true)
         {
             if (validate)
@@ -170,8 +209,38 @@ namespace Qdrant
         /// </summary>
         public void Match(
             global::System.Action<global::Qdrant.ExtendedPointId?>? extendedPointId = null,
-            global::System.Action<global::System.Collections.Generic.IList<float>?>? recommendExampleVariant2 = null,
-            global::System.Action<global::Qdrant.SparseVector?>? sparseVector = null,
+
+            global::System.Action<global::System.Collections.Generic.IList<float>>? recommendExampleVariant2 = null,
+
+            global::System.Action<global::Qdrant.SparseVector>? sparseVector = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsExtendedPointId)
+            {
+                extendedPointId?.Invoke(ExtendedPointId!);
+            }
+            else if (IsRecommendExampleVariant2)
+            {
+                recommendExampleVariant2?.Invoke(RecommendExampleVariant2!);
+            }
+            else if (IsSparseVector)
+            {
+                sparseVector?.Invoke(SparseVector!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Qdrant.ExtendedPointId?>? extendedPointId = null,
+            global::System.Action<global::System.Collections.Generic.IList<float>>? recommendExampleVariant2 = null,
+            global::System.Action<global::Qdrant.SparseVector>? sparseVector = null,
             bool validate = true)
         {
             if (validate)

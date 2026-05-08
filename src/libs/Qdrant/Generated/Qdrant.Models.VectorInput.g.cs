@@ -27,6 +27,19 @@ namespace Qdrant
         public bool IsVectorInputVariant1 => VectorInputVariant1 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickVectorInputVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::System.Collections.Generic.IList<float>? value)
+        {
+            value = VectorInputVariant1;
+            return IsVectorInputVariant1;
+        }
+
+        /// <summary>
         /// Sparse vector structure
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -46,6 +59,19 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickSparse(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.SparseVector? value)
+        {
+            value = Sparse;
+            return IsSparse;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>? VectorInputVariant3 { get; init; }
 #else
@@ -59,6 +85,19 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(VectorInputVariant3))]
 #endif
         public bool IsVectorInputVariant3 => VectorInputVariant3 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickVectorInputVariant3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>? value)
+        {
+            value = VectorInputVariant3;
+            return IsVectorInputVariant3;
+        }
 
         /// <summary>
         /// Type, used for specifying point ID in user interface
@@ -76,6 +115,19 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ExtendedPointId))]
 #endif
         public bool IsExtendedPointId => ExtendedPointId != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickExtendedPointId(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.ExtendedPointId? value)
+        {
+            value = ExtendedPointId;
+            return IsExtendedPointId;
+        }
 
         /// <summary>
         /// WARN: Work-in-progress, unimplemented<br/>
@@ -96,6 +148,19 @@ namespace Qdrant
         public bool IsDocument => Document != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickDocument(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.Document? value)
+        {
+            value = Document;
+            return IsDocument;
+        }
+
+        /// <summary>
         /// WARN: Work-in-progress, unimplemented<br/>
         /// Image object for embedding. Requires inference infrastructure, unimplemented.
         /// </summary>
@@ -114,6 +179,19 @@ namespace Qdrant
         public bool IsImage => Image != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickImage(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.Image? value)
+        {
+            value = Image;
+            return IsImage;
+        }
+
+        /// <summary>
         /// WARN: Work-in-progress, unimplemented<br/>
         /// Custom object for embedding. Requires inference infrastructure, unimplemented.
         /// </summary>
@@ -130,6 +208,19 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InferenceObject))]
 #endif
         public bool IsInferenceObject => InferenceObject != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickInferenceObject(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.InferenceObject? value)
+        {
+            value = InferenceObject;
+            return IsInferenceObject;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -280,13 +371,13 @@ namespace Qdrant
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::System.Collections.Generic.IList<float>?, TResult>? vectorInputVariant1 = null,
-            global::System.Func<global::Qdrant.SparseVector?, TResult>? sparse = null,
-            global::System.Func<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>?, TResult>? vectorInputVariant3 = null,
+            global::System.Func<global::System.Collections.Generic.IList<float>, TResult>? vectorInputVariant1 = null,
+            global::System.Func<global::Qdrant.SparseVector, TResult>? sparse = null,
+            global::System.Func<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>, TResult>? vectorInputVariant3 = null,
             global::System.Func<global::Qdrant.ExtendedPointId?, TResult>? extendedPointId = null,
-            global::System.Func<global::Qdrant.Document?, TResult>? document = null,
-            global::System.Func<global::Qdrant.Image?, TResult>? image = null,
-            global::System.Func<global::Qdrant.InferenceObject?, TResult>? inferenceObject = null,
+            global::System.Func<global::Qdrant.Document, TResult>? document = null,
+            global::System.Func<global::Qdrant.Image, TResult>? image = null,
+            global::System.Func<global::Qdrant.InferenceObject, TResult>? inferenceObject = null,
             bool validate = true)
         {
             if (validate)
@@ -330,13 +421,67 @@ namespace Qdrant
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::System.Collections.Generic.IList<float>?>? vectorInputVariant1 = null,
-            global::System.Action<global::Qdrant.SparseVector?>? sparse = null,
-            global::System.Action<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>?>? vectorInputVariant3 = null,
+            global::System.Action<global::System.Collections.Generic.IList<float>>? vectorInputVariant1 = null,
+
+            global::System.Action<global::Qdrant.SparseVector>? sparse = null,
+
+            global::System.Action<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>>? vectorInputVariant3 = null,
+
             global::System.Action<global::Qdrant.ExtendedPointId?>? extendedPointId = null,
-            global::System.Action<global::Qdrant.Document?>? document = null,
-            global::System.Action<global::Qdrant.Image?>? image = null,
-            global::System.Action<global::Qdrant.InferenceObject?>? inferenceObject = null,
+
+            global::System.Action<global::Qdrant.Document>? document = null,
+
+            global::System.Action<global::Qdrant.Image>? image = null,
+
+            global::System.Action<global::Qdrant.InferenceObject>? inferenceObject = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsVectorInputVariant1)
+            {
+                vectorInputVariant1?.Invoke(VectorInputVariant1!);
+            }
+            else if (IsSparse)
+            {
+                sparse?.Invoke(Sparse!);
+            }
+            else if (IsVectorInputVariant3)
+            {
+                vectorInputVariant3?.Invoke(VectorInputVariant3!);
+            }
+            else if (IsExtendedPointId)
+            {
+                extendedPointId?.Invoke(ExtendedPointId!);
+            }
+            else if (IsDocument)
+            {
+                document?.Invoke(Document!);
+            }
+            else if (IsImage)
+            {
+                image?.Invoke(Image!);
+            }
+            else if (IsInferenceObject)
+            {
+                inferenceObject?.Invoke(InferenceObject!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::System.Collections.Generic.IList<float>>? vectorInputVariant1 = null,
+            global::System.Action<global::Qdrant.SparseVector>? sparse = null,
+            global::System.Action<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>>? vectorInputVariant3 = null,
+            global::System.Action<global::Qdrant.ExtendedPointId?>? extendedPointId = null,
+            global::System.Action<global::Qdrant.Document>? document = null,
+            global::System.Action<global::Qdrant.Image>? image = null,
+            global::System.Action<global::Qdrant.InferenceObject>? inferenceObject = null,
             bool validate = true)
         {
             if (validate)

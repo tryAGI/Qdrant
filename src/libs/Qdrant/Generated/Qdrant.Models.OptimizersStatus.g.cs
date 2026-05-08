@@ -27,6 +27,19 @@ namespace Qdrant
         public bool IsEnum => Enum != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickEnum(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.OptimizersStatusEnum? value)
+        {
+            value = Enum;
+            return IsEnum;
+        }
+
+        /// <summary>
         /// Something wrong happened with optimizers
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -42,6 +55,19 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Enum2))]
 #endif
         public bool IsEnum2 => Enum2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickEnum2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.OptimizersStatusEnum2? value)
+        {
+            value = Enum2;
+            return IsEnum2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,7 +145,7 @@ namespace Qdrant
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Qdrant.OptimizersStatusEnum?, TResult>? @enum = null,
-            global::System.Func<global::Qdrant.OptimizersStatusEnum2?, TResult>? enum2 = null,
+            global::System.Func<global::Qdrant.OptimizersStatusEnum2, TResult>? enum2 = null,
             bool validate = true)
         {
             if (validate)
@@ -144,7 +170,31 @@ namespace Qdrant
         /// </summary>
         public void Match(
             global::System.Action<global::Qdrant.OptimizersStatusEnum?>? @enum = null,
-            global::System.Action<global::Qdrant.OptimizersStatusEnum2?>? enum2 = null,
+
+            global::System.Action<global::Qdrant.OptimizersStatusEnum2>? enum2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsEnum)
+            {
+                @enum?.Invoke(Enum!);
+            }
+            else if (IsEnum2)
+            {
+                enum2?.Invoke(Enum2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Qdrant.OptimizersStatusEnum?>? @enum = null,
+            global::System.Action<global::Qdrant.OptimizersStatusEnum2>? enum2 = null,
             bool validate = true)
         {
             if (validate)

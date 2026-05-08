@@ -27,6 +27,19 @@ namespace Qdrant
         public bool IsRange => Range != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickRange(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.Range? value)
+        {
+            value = Range;
+            return IsRange;
+        }
+
+        /// <summary>
         /// Range filter request
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -42,6 +55,19 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Datetime))]
 #endif
         public bool IsDatetime => Datetime != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickDatetime(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.DatetimeRange? value)
+        {
+            value = Datetime;
+            return IsDatetime;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -118,8 +144,8 @@ namespace Qdrant
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Qdrant.Range?, TResult>? range = null,
-            global::System.Func<global::Qdrant.DatetimeRange?, TResult>? datetime = null,
+            global::System.Func<global::Qdrant.Range, TResult>? range = null,
+            global::System.Func<global::Qdrant.DatetimeRange, TResult>? datetime = null,
             bool validate = true)
         {
             if (validate)
@@ -143,8 +169,32 @@ namespace Qdrant
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Qdrant.Range?>? range = null,
-            global::System.Action<global::Qdrant.DatetimeRange?>? datetime = null,
+            global::System.Action<global::Qdrant.Range>? range = null,
+
+            global::System.Action<global::Qdrant.DatetimeRange>? datetime = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsRange)
+            {
+                range?.Invoke(Range!);
+            }
+            else if (IsDatetime)
+            {
+                datetime?.Invoke(Datetime!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Qdrant.Range>? range = null,
+            global::System.Action<global::Qdrant.DatetimeRange>? datetime = null,
             bool validate = true)
         {
             if (validate)

@@ -29,6 +29,19 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickEnum(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.ShardCleanStatusTelemetryEnum? value)
+        {
+            value = Enum;
+            return IsEnum;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.ShardCleanStatusTelemetryEnum2? Enum2 { get; init; }
 #else
@@ -46,6 +59,19 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickEnum2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.ShardCleanStatusTelemetryEnum2? value)
+        {
+            value = Enum2;
+            return IsEnum2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.ShardCleanStatusTelemetryEnum3? Enum3 { get; init; }
 #else
@@ -59,6 +85,19 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Enum3))]
 #endif
         public bool IsEnum3 => Enum3 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickEnum3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.ShardCleanStatusTelemetryEnum3? value)
+        {
+            value = Enum3;
+            return IsEnum3;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -158,8 +197,8 @@ namespace Qdrant
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Qdrant.ShardCleanStatusTelemetryEnum?, TResult>? @enum = null,
-            global::System.Func<global::Qdrant.ShardCleanStatusTelemetryEnum2?, TResult>? enum2 = null,
-            global::System.Func<global::Qdrant.ShardCleanStatusTelemetryEnum3?, TResult>? enum3 = null,
+            global::System.Func<global::Qdrant.ShardCleanStatusTelemetryEnum2, TResult>? enum2 = null,
+            global::System.Func<global::Qdrant.ShardCleanStatusTelemetryEnum3, TResult>? enum3 = null,
             bool validate = true)
         {
             if (validate)
@@ -188,8 +227,38 @@ namespace Qdrant
         /// </summary>
         public void Match(
             global::System.Action<global::Qdrant.ShardCleanStatusTelemetryEnum?>? @enum = null,
-            global::System.Action<global::Qdrant.ShardCleanStatusTelemetryEnum2?>? enum2 = null,
-            global::System.Action<global::Qdrant.ShardCleanStatusTelemetryEnum3?>? enum3 = null,
+
+            global::System.Action<global::Qdrant.ShardCleanStatusTelemetryEnum2>? enum2 = null,
+
+            global::System.Action<global::Qdrant.ShardCleanStatusTelemetryEnum3>? enum3 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsEnum)
+            {
+                @enum?.Invoke(Enum!);
+            }
+            else if (IsEnum2)
+            {
+                enum2?.Invoke(Enum2!);
+            }
+            else if (IsEnum3)
+            {
+                enum3?.Invoke(Enum3!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Qdrant.ShardCleanStatusTelemetryEnum?>? @enum = null,
+            global::System.Action<global::Qdrant.ShardCleanStatusTelemetryEnum2>? enum2 = null,
+            global::System.Action<global::Qdrant.ShardCleanStatusTelemetryEnum3>? enum3 = null,
             bool validate = true)
         {
             if (validate)
