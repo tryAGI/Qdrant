@@ -29,6 +29,19 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickLanguage(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.Language? value)
+        {
+            value = Language;
+            return IsLanguage;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.StopwordsSet? Set { get; init; }
 #else
@@ -42,6 +55,19 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Set))]
 #endif
         public bool IsSet => Set != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSet(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.StopwordsSet? value)
+        {
+            value = Set;
+            return IsSet;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -119,7 +145,7 @@ namespace Qdrant
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Qdrant.Language?, TResult>? language = null,
-            global::System.Func<global::Qdrant.StopwordsSet?, TResult>? set = null,
+            global::System.Func<global::Qdrant.StopwordsSet, TResult>? set = null,
             bool validate = true)
         {
             if (validate)
@@ -144,7 +170,31 @@ namespace Qdrant
         /// </summary>
         public void Match(
             global::System.Action<global::Qdrant.Language?>? language = null,
-            global::System.Action<global::Qdrant.StopwordsSet?>? set = null,
+
+            global::System.Action<global::Qdrant.StopwordsSet>? set = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsLanguage)
+            {
+                language?.Invoke(Language!);
+            }
+            else if (IsSet)
+            {
+                set?.Invoke(Set!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Qdrant.Language?>? language = null,
+            global::System.Action<global::Qdrant.StopwordsSet>? set = null,
             bool validate = true)
         {
             if (validate)

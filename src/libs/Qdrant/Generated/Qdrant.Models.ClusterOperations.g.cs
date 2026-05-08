@@ -29,6 +29,19 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickMoveShardOperation(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.MoveShardOperation? value)
+        {
+            value = MoveShardOperation;
+            return IsMoveShardOperation;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.ReplicateShardOperation? ReplicateShardOperation { get; init; }
 #else
@@ -42,6 +55,19 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ReplicateShardOperation))]
 #endif
         public bool IsReplicateShardOperation => ReplicateShardOperation != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickReplicateShardOperation(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.ReplicateShardOperation? value)
+        {
+            value = ReplicateShardOperation;
+            return IsReplicateShardOperation;
+        }
 
         /// <summary>
         /// 
@@ -63,6 +89,19 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickAbortTransferOperation(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.AbortTransferOperation? value)
+        {
+            value = AbortTransferOperation;
+            return IsAbortTransferOperation;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.DropReplicaOperation? DropReplicaOperation { get; init; }
 #else
@@ -76,6 +115,19 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(DropReplicaOperation))]
 #endif
         public bool IsDropReplicaOperation => DropReplicaOperation != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickDropReplicaOperation(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.DropReplicaOperation? value)
+        {
+            value = DropReplicaOperation;
+            return IsDropReplicaOperation;
+        }
 
         /// <summary>
         /// 
@@ -97,6 +149,19 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickCreateShardingKeyOperation(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.CreateShardingKeyOperation? value)
+        {
+            value = CreateShardingKeyOperation;
+            return IsCreateShardingKeyOperation;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.DropShardingKeyOperation? DropShardingKeyOperation { get; init; }
 #else
@@ -110,6 +175,19 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(DropShardingKeyOperation))]
 #endif
         public bool IsDropShardingKeyOperation => DropShardingKeyOperation != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickDropShardingKeyOperation(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.DropShardingKeyOperation? value)
+        {
+            value = DropShardingKeyOperation;
+            return IsDropShardingKeyOperation;
+        }
 
         /// <summary>
         /// 
@@ -131,6 +209,19 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickRestartTransferOperation(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.RestartTransferOperation? value)
+        {
+            value = RestartTransferOperation;
+            return IsRestartTransferOperation;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.StartReshardingOperation? StartReshardingOperation { get; init; }
 #else
@@ -144,6 +235,19 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(StartReshardingOperation))]
 #endif
         public bool IsStartReshardingOperation => StartReshardingOperation != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickStartReshardingOperation(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.StartReshardingOperation? value)
+        {
+            value = StartReshardingOperation;
+            return IsStartReshardingOperation;
+        }
 
         /// <summary>
         /// 
@@ -165,6 +269,19 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickAbortReshardingOperation(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.AbortReshardingOperation? value)
+        {
+            value = AbortReshardingOperation;
+            return IsAbortReshardingOperation;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.ReplicatePointsOperation? ReplicatePointsOperation { get; init; }
 #else
@@ -178,6 +295,19 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ReplicatePointsOperation))]
 #endif
         public bool IsReplicatePointsOperation => ReplicatePointsOperation != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickReplicatePointsOperation(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.ReplicatePointsOperation? value)
+        {
+            value = ReplicatePointsOperation;
+            return IsReplicatePointsOperation;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -430,16 +560,16 @@ namespace Qdrant
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Qdrant.MoveShardOperation?, TResult>? moveShardOperation = null,
-            global::System.Func<global::Qdrant.ReplicateShardOperation?, TResult>? replicateShardOperation = null,
-            global::System.Func<global::Qdrant.AbortTransferOperation?, TResult>? abortTransferOperation = null,
-            global::System.Func<global::Qdrant.DropReplicaOperation?, TResult>? dropReplicaOperation = null,
-            global::System.Func<global::Qdrant.CreateShardingKeyOperation?, TResult>? createShardingKeyOperation = null,
-            global::System.Func<global::Qdrant.DropShardingKeyOperation?, TResult>? dropShardingKeyOperation = null,
-            global::System.Func<global::Qdrant.RestartTransferOperation?, TResult>? restartTransferOperation = null,
-            global::System.Func<global::Qdrant.StartReshardingOperation?, TResult>? startReshardingOperation = null,
-            global::System.Func<global::Qdrant.AbortReshardingOperation?, TResult>? abortReshardingOperation = null,
-            global::System.Func<global::Qdrant.ReplicatePointsOperation?, TResult>? replicatePointsOperation = null,
+            global::System.Func<global::Qdrant.MoveShardOperation, TResult>? moveShardOperation = null,
+            global::System.Func<global::Qdrant.ReplicateShardOperation, TResult>? replicateShardOperation = null,
+            global::System.Func<global::Qdrant.AbortTransferOperation, TResult>? abortTransferOperation = null,
+            global::System.Func<global::Qdrant.DropReplicaOperation, TResult>? dropReplicaOperation = null,
+            global::System.Func<global::Qdrant.CreateShardingKeyOperation, TResult>? createShardingKeyOperation = null,
+            global::System.Func<global::Qdrant.DropShardingKeyOperation, TResult>? dropShardingKeyOperation = null,
+            global::System.Func<global::Qdrant.RestartTransferOperation, TResult>? restartTransferOperation = null,
+            global::System.Func<global::Qdrant.StartReshardingOperation, TResult>? startReshardingOperation = null,
+            global::System.Func<global::Qdrant.AbortReshardingOperation, TResult>? abortReshardingOperation = null,
+            global::System.Func<global::Qdrant.ReplicatePointsOperation, TResult>? replicatePointsOperation = null,
             bool validate = true)
         {
             if (validate)
@@ -495,16 +625,88 @@ namespace Qdrant
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Qdrant.MoveShardOperation?>? moveShardOperation = null,
-            global::System.Action<global::Qdrant.ReplicateShardOperation?>? replicateShardOperation = null,
-            global::System.Action<global::Qdrant.AbortTransferOperation?>? abortTransferOperation = null,
-            global::System.Action<global::Qdrant.DropReplicaOperation?>? dropReplicaOperation = null,
-            global::System.Action<global::Qdrant.CreateShardingKeyOperation?>? createShardingKeyOperation = null,
-            global::System.Action<global::Qdrant.DropShardingKeyOperation?>? dropShardingKeyOperation = null,
-            global::System.Action<global::Qdrant.RestartTransferOperation?>? restartTransferOperation = null,
-            global::System.Action<global::Qdrant.StartReshardingOperation?>? startReshardingOperation = null,
-            global::System.Action<global::Qdrant.AbortReshardingOperation?>? abortReshardingOperation = null,
-            global::System.Action<global::Qdrant.ReplicatePointsOperation?>? replicatePointsOperation = null,
+            global::System.Action<global::Qdrant.MoveShardOperation>? moveShardOperation = null,
+
+            global::System.Action<global::Qdrant.ReplicateShardOperation>? replicateShardOperation = null,
+
+            global::System.Action<global::Qdrant.AbortTransferOperation>? abortTransferOperation = null,
+
+            global::System.Action<global::Qdrant.DropReplicaOperation>? dropReplicaOperation = null,
+
+            global::System.Action<global::Qdrant.CreateShardingKeyOperation>? createShardingKeyOperation = null,
+
+            global::System.Action<global::Qdrant.DropShardingKeyOperation>? dropShardingKeyOperation = null,
+
+            global::System.Action<global::Qdrant.RestartTransferOperation>? restartTransferOperation = null,
+
+            global::System.Action<global::Qdrant.StartReshardingOperation>? startReshardingOperation = null,
+
+            global::System.Action<global::Qdrant.AbortReshardingOperation>? abortReshardingOperation = null,
+
+            global::System.Action<global::Qdrant.ReplicatePointsOperation>? replicatePointsOperation = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsMoveShardOperation)
+            {
+                moveShardOperation?.Invoke(MoveShardOperation!);
+            }
+            else if (IsReplicateShardOperation)
+            {
+                replicateShardOperation?.Invoke(ReplicateShardOperation!);
+            }
+            else if (IsAbortTransferOperation)
+            {
+                abortTransferOperation?.Invoke(AbortTransferOperation!);
+            }
+            else if (IsDropReplicaOperation)
+            {
+                dropReplicaOperation?.Invoke(DropReplicaOperation!);
+            }
+            else if (IsCreateShardingKeyOperation)
+            {
+                createShardingKeyOperation?.Invoke(CreateShardingKeyOperation!);
+            }
+            else if (IsDropShardingKeyOperation)
+            {
+                dropShardingKeyOperation?.Invoke(DropShardingKeyOperation!);
+            }
+            else if (IsRestartTransferOperation)
+            {
+                restartTransferOperation?.Invoke(RestartTransferOperation!);
+            }
+            else if (IsStartReshardingOperation)
+            {
+                startReshardingOperation?.Invoke(StartReshardingOperation!);
+            }
+            else if (IsAbortReshardingOperation)
+            {
+                abortReshardingOperation?.Invoke(AbortReshardingOperation!);
+            }
+            else if (IsReplicatePointsOperation)
+            {
+                replicatePointsOperation?.Invoke(ReplicatePointsOperation!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Qdrant.MoveShardOperation>? moveShardOperation = null,
+            global::System.Action<global::Qdrant.ReplicateShardOperation>? replicateShardOperation = null,
+            global::System.Action<global::Qdrant.AbortTransferOperation>? abortTransferOperation = null,
+            global::System.Action<global::Qdrant.DropReplicaOperation>? dropReplicaOperation = null,
+            global::System.Action<global::Qdrant.CreateShardingKeyOperation>? createShardingKeyOperation = null,
+            global::System.Action<global::Qdrant.DropShardingKeyOperation>? dropShardingKeyOperation = null,
+            global::System.Action<global::Qdrant.RestartTransferOperation>? restartTransferOperation = null,
+            global::System.Action<global::Qdrant.StartReshardingOperation>? startReshardingOperation = null,
+            global::System.Action<global::Qdrant.AbortReshardingOperation>? abortReshardingOperation = null,
+            global::System.Action<global::Qdrant.ReplicatePointsOperation>? replicatePointsOperation = null,
             bool validate = true)
         {
             if (validate)

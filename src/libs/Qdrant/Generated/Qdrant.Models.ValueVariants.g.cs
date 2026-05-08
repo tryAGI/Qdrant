@@ -29,6 +29,19 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickValueVariantsVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = ValueVariantsVariant1;
+            return IsValueVariantsVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public long? ValueVariantsVariant2 { get; init; }
 #else
@@ -46,6 +59,19 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickValueVariantsVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out long? value)
+        {
+            value = ValueVariantsVariant2;
+            return IsValueVariantsVariant2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public bool? ValueVariantsVariant3 { get; init; }
 #else
@@ -59,6 +85,19 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ValueVariantsVariant3))]
 #endif
         public bool IsValueVariantsVariant3 => ValueVariantsVariant3 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickValueVariantsVariant3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out bool? value)
+        {
+            value = ValueVariantsVariant3;
+            return IsValueVariantsVariant3;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -157,7 +196,7 @@ namespace Qdrant
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? valueVariantsVariant1 = null,
+            global::System.Func<string, TResult>? valueVariantsVariant1 = null,
             global::System.Func<long?, TResult>? valueVariantsVariant2 = null,
             global::System.Func<bool?, TResult>? valueVariantsVariant3 = null,
             bool validate = true)
@@ -187,7 +226,37 @@ namespace Qdrant
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? valueVariantsVariant1 = null,
+            global::System.Action<string>? valueVariantsVariant1 = null,
+
+            global::System.Action<long?>? valueVariantsVariant2 = null,
+
+            global::System.Action<bool?>? valueVariantsVariant3 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsValueVariantsVariant1)
+            {
+                valueVariantsVariant1?.Invoke(ValueVariantsVariant1!);
+            }
+            else if (IsValueVariantsVariant2)
+            {
+                valueVariantsVariant2?.Invoke(ValueVariantsVariant2!);
+            }
+            else if (IsValueVariantsVariant3)
+            {
+                valueVariantsVariant3?.Invoke(ValueVariantsVariant3!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<string>? valueVariantsVariant1 = null,
             global::System.Action<long?>? valueVariantsVariant2 = null,
             global::System.Action<bool?>? valueVariantsVariant3 = null,
             bool validate = true)

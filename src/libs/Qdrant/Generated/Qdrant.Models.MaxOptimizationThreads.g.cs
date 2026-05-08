@@ -29,6 +29,19 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickSetting(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.MaxOptimizationThreadsSetting? value)
+        {
+            value = Setting;
+            return IsSetting;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public int? MaxOptimizationThreadsVariant2 { get; init; }
 #else
@@ -42,6 +55,19 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MaxOptimizationThreadsVariant2))]
 #endif
         public bool IsMaxOptimizationThreadsVariant2 => MaxOptimizationThreadsVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMaxOptimizationThreadsVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out int? value)
+        {
+            value = MaxOptimizationThreadsVariant2;
+            return IsMaxOptimizationThreadsVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -143,6 +169,30 @@ namespace Qdrant
         /// 
         /// </summary>
         public void Match(
+            global::System.Action<global::Qdrant.MaxOptimizationThreadsSetting?>? setting = null,
+
+            global::System.Action<int?>? maxOptimizationThreadsVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsSetting)
+            {
+                setting?.Invoke(Setting!);
+            }
+            else if (IsMaxOptimizationThreadsVariant2)
+            {
+                maxOptimizationThreadsVariant2?.Invoke(MaxOptimizationThreadsVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
             global::System.Action<global::Qdrant.MaxOptimizationThreadsSetting?>? setting = null,
             global::System.Action<int?>? maxOptimizationThreadsVariant2 = null,
             bool validate = true)

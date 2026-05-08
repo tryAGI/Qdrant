@@ -29,6 +29,19 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickVectorInput(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.VectorInput? value)
+        {
+            value = VectorInput;
+            return IsVectorInput;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.Query? Query { get; init; }
 #else
@@ -42,6 +55,19 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Query))]
 #endif
         public bool IsQuery => Query != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickQuery(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.Query? value)
+        {
+            value = Query;
+            return IsQuery;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -143,6 +169,30 @@ namespace Qdrant
         /// 
         /// </summary>
         public void Match(
+            global::System.Action<global::Qdrant.VectorInput?>? vectorInput = null,
+
+            global::System.Action<global::Qdrant.Query?>? query = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsVectorInput)
+            {
+                vectorInput?.Invoke(VectorInput!);
+            }
+            else if (IsQuery)
+            {
+                query?.Invoke(Query!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
             global::System.Action<global::Qdrant.VectorInput?>? vectorInput = null,
             global::System.Action<global::Qdrant.Query?>? query = null,
             bool validate = true)

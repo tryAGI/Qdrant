@@ -29,6 +29,19 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickScalar(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.ScalarQuantization? value)
+        {
+            value = Scalar;
+            return IsScalar;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.ProductQuantization? Product { get; init; }
 #else
@@ -42,6 +55,19 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Product))]
 #endif
         public bool IsProduct => Product != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickProduct(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.ProductQuantization? value)
+        {
+            value = Product;
+            return IsProduct;
+        }
 
         /// <summary>
         /// 
@@ -63,6 +89,19 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickBinary(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.BinaryQuantization? value)
+        {
+            value = Binary;
+            return IsBinary;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.DisabledType? DisabledType { get; init; }
 #else
@@ -76,6 +115,19 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(DisabledType))]
 #endif
         public bool IsDisabledType => DisabledType != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickDisabledType(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.DisabledType? value)
+        {
+            value = DisabledType;
+            return IsDisabledType;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -196,9 +248,9 @@ namespace Qdrant
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Qdrant.ScalarQuantization?, TResult>? scalar = null,
-            global::System.Func<global::Qdrant.ProductQuantization?, TResult>? product = null,
-            global::System.Func<global::Qdrant.BinaryQuantization?, TResult>? binary = null,
+            global::System.Func<global::Qdrant.ScalarQuantization, TResult>? scalar = null,
+            global::System.Func<global::Qdrant.ProductQuantization, TResult>? product = null,
+            global::System.Func<global::Qdrant.BinaryQuantization, TResult>? binary = null,
             global::System.Func<global::Qdrant.DisabledType?, TResult>? disabledType = null,
             bool validate = true)
         {
@@ -231,9 +283,45 @@ namespace Qdrant
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Qdrant.ScalarQuantization?>? scalar = null,
-            global::System.Action<global::Qdrant.ProductQuantization?>? product = null,
-            global::System.Action<global::Qdrant.BinaryQuantization?>? binary = null,
+            global::System.Action<global::Qdrant.ScalarQuantization>? scalar = null,
+
+            global::System.Action<global::Qdrant.ProductQuantization>? product = null,
+
+            global::System.Action<global::Qdrant.BinaryQuantization>? binary = null,
+
+            global::System.Action<global::Qdrant.DisabledType?>? disabledType = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsScalar)
+            {
+                scalar?.Invoke(Scalar!);
+            }
+            else if (IsProduct)
+            {
+                product?.Invoke(Product!);
+            }
+            else if (IsBinary)
+            {
+                binary?.Invoke(Binary!);
+            }
+            else if (IsDisabledType)
+            {
+                disabledType?.Invoke(DisabledType!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Qdrant.ScalarQuantization>? scalar = null,
+            global::System.Action<global::Qdrant.ProductQuantization>? product = null,
+            global::System.Action<global::Qdrant.BinaryQuantization>? binary = null,
             global::System.Action<global::Qdrant.DisabledType?>? disabledType = null,
             bool validate = true)
         {

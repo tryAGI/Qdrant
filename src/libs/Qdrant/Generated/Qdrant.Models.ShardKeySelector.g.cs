@@ -29,6 +29,19 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickShardKey(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.ShardKey? value)
+        {
+            value = ShardKey;
+            return IsShardKey;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<global::Qdrant.ShardKey>? ShardKeySelectorVariant2 { get; init; }
 #else
@@ -46,6 +59,19 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickShardKeySelectorVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::System.Collections.Generic.IList<global::Qdrant.ShardKey>? value)
+        {
+            value = ShardKeySelectorVariant2;
+            return IsShardKeySelectorVariant2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.ShardKeyWithFallback? WithFallback { get; init; }
 #else
@@ -59,6 +85,19 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WithFallback))]
 #endif
         public bool IsWithFallback => WithFallback != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickWithFallback(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.ShardKeyWithFallback? value)
+        {
+            value = WithFallback;
+            return IsWithFallback;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -140,8 +179,8 @@ namespace Qdrant
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Qdrant.ShardKey?, TResult>? shardKey = null,
-            global::System.Func<global::System.Collections.Generic.IList<global::Qdrant.ShardKey>?, TResult>? shardKeySelectorVariant2 = null,
-            global::System.Func<global::Qdrant.ShardKeyWithFallback?, TResult>? withFallback = null,
+            global::System.Func<global::System.Collections.Generic.IList<global::Qdrant.ShardKey>, TResult>? shardKeySelectorVariant2 = null,
+            global::System.Func<global::Qdrant.ShardKeyWithFallback, TResult>? withFallback = null,
             bool validate = true)
         {
             if (validate)
@@ -170,8 +209,38 @@ namespace Qdrant
         /// </summary>
         public void Match(
             global::System.Action<global::Qdrant.ShardKey?>? shardKey = null,
-            global::System.Action<global::System.Collections.Generic.IList<global::Qdrant.ShardKey>?>? shardKeySelectorVariant2 = null,
-            global::System.Action<global::Qdrant.ShardKeyWithFallback?>? withFallback = null,
+
+            global::System.Action<global::System.Collections.Generic.IList<global::Qdrant.ShardKey>>? shardKeySelectorVariant2 = null,
+
+            global::System.Action<global::Qdrant.ShardKeyWithFallback>? withFallback = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsShardKey)
+            {
+                shardKey?.Invoke(ShardKey!);
+            }
+            else if (IsShardKeySelectorVariant2)
+            {
+                shardKeySelectorVariant2?.Invoke(ShardKeySelectorVariant2!);
+            }
+            else if (IsWithFallback)
+            {
+                withFallback?.Invoke(WithFallback!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Qdrant.ShardKey?>? shardKey = null,
+            global::System.Action<global::System.Collections.Generic.IList<global::Qdrant.ShardKey>>? shardKeySelectorVariant2 = null,
+            global::System.Action<global::Qdrant.ShardKeyWithFallback>? withFallback = null,
             bool validate = true)
         {
             if (validate)

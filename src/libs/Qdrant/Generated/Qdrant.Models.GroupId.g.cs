@@ -29,6 +29,19 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickGroupIdVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = GroupIdVariant1;
+            return IsGroupIdVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public int? GroupIdVariant2 { get; init; }
 #else
@@ -46,6 +59,19 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickGroupIdVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out int? value)
+        {
+            value = GroupIdVariant2;
+            return IsGroupIdVariant2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public long? GroupIdVariant3 { get; init; }
 #else
@@ -59,6 +85,19 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(GroupIdVariant3))]
 #endif
         public bool IsGroupIdVariant3 => GroupIdVariant3 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickGroupIdVariant3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out long? value)
+        {
+            value = GroupIdVariant3;
+            return IsGroupIdVariant3;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -157,7 +196,7 @@ namespace Qdrant
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? groupIdVariant1 = null,
+            global::System.Func<string, TResult>? groupIdVariant1 = null,
             global::System.Func<int?, TResult>? groupIdVariant2 = null,
             global::System.Func<long?, TResult>? groupIdVariant3 = null,
             bool validate = true)
@@ -187,7 +226,37 @@ namespace Qdrant
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? groupIdVariant1 = null,
+            global::System.Action<string>? groupIdVariant1 = null,
+
+            global::System.Action<int?>? groupIdVariant2 = null,
+
+            global::System.Action<long?>? groupIdVariant3 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsGroupIdVariant1)
+            {
+                groupIdVariant1?.Invoke(GroupIdVariant1!);
+            }
+            else if (IsGroupIdVariant2)
+            {
+                groupIdVariant2?.Invoke(GroupIdVariant2!);
+            }
+            else if (IsGroupIdVariant3)
+            {
+                groupIdVariant3?.Invoke(GroupIdVariant3!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<string>? groupIdVariant1 = null,
             global::System.Action<int?>? groupIdVariant2 = null,
             global::System.Action<long?>? groupIdVariant3 = null,
             bool validate = true)

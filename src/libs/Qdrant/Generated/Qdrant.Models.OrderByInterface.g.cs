@@ -29,6 +29,19 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickOrderByInterfaceVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = OrderByInterfaceVariant1;
+            return IsOrderByInterfaceVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.OrderBy? OrderBy { get; init; }
 #else
@@ -42,6 +55,19 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OrderBy))]
 #endif
         public bool IsOrderBy => OrderBy != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOrderBy(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.OrderBy? value)
+        {
+            value = OrderBy;
+            return IsOrderBy;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -118,8 +144,8 @@ namespace Qdrant
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? orderByInterfaceVariant1 = null,
-            global::System.Func<global::Qdrant.OrderBy?, TResult>? orderBy = null,
+            global::System.Func<string, TResult>? orderByInterfaceVariant1 = null,
+            global::System.Func<global::Qdrant.OrderBy, TResult>? orderBy = null,
             bool validate = true)
         {
             if (validate)
@@ -143,8 +169,32 @@ namespace Qdrant
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? orderByInterfaceVariant1 = null,
-            global::System.Action<global::Qdrant.OrderBy?>? orderBy = null,
+            global::System.Action<string>? orderByInterfaceVariant1 = null,
+
+            global::System.Action<global::Qdrant.OrderBy>? orderBy = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsOrderByInterfaceVariant1)
+            {
+                orderByInterfaceVariant1?.Invoke(OrderByInterfaceVariant1!);
+            }
+            else if (IsOrderBy)
+            {
+                orderBy?.Invoke(OrderBy!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<string>? orderByInterfaceVariant1 = null,
+            global::System.Action<global::Qdrant.OrderBy>? orderBy = null,
             bool validate = true)
         {
             if (validate)

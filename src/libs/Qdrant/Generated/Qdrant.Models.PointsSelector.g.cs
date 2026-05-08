@@ -29,6 +29,19 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickPointIdsList(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.PointIdsList? value)
+        {
+            value = PointIdsList;
+            return IsPointIdsList;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.FilterSelector? Filter { get; init; }
 #else
@@ -42,6 +55,19 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Filter))]
 #endif
         public bool IsFilter => Filter != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFilter(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.FilterSelector? value)
+        {
+            value = Filter;
+            return IsFilter;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -118,8 +144,8 @@ namespace Qdrant
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Qdrant.PointIdsList?, TResult>? pointIdsList = null,
-            global::System.Func<global::Qdrant.FilterSelector?, TResult>? filter = null,
+            global::System.Func<global::Qdrant.PointIdsList, TResult>? pointIdsList = null,
+            global::System.Func<global::Qdrant.FilterSelector, TResult>? filter = null,
             bool validate = true)
         {
             if (validate)
@@ -143,8 +169,32 @@ namespace Qdrant
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Qdrant.PointIdsList?>? pointIdsList = null,
-            global::System.Action<global::Qdrant.FilterSelector?>? filter = null,
+            global::System.Action<global::Qdrant.PointIdsList>? pointIdsList = null,
+
+            global::System.Action<global::Qdrant.FilterSelector>? filter = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsPointIdsList)
+            {
+                pointIdsList?.Invoke(PointIdsList!);
+            }
+            else if (IsFilter)
+            {
+                filter?.Invoke(Filter!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Qdrant.PointIdsList>? pointIdsList = null,
+            global::System.Action<global::Qdrant.FilterSelector>? filter = null,
             bool validate = true)
         {
             if (validate)
