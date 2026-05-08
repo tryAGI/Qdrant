@@ -162,6 +162,36 @@ namespace Qdrant
             value = VectorStorageTypeVariant5;
             return IsVectorStorageTypeVariant5;
         }
+
+        /// <summary>
+        /// Placeholder storage: contains no data, all vectors reported as deleted. Used for newly created named vectors on immutable segments. No files on disk, reconstructed from config on load.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Qdrant.VectorStorageTypeVariant6? VectorStorageTypeVariant6 { get; init; }
+#else
+        public global::Qdrant.VectorStorageTypeVariant6? VectorStorageTypeVariant6 { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(VectorStorageTypeVariant6))]
+#endif
+        public bool IsVectorStorageTypeVariant6 => VectorStorageTypeVariant6 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickVectorStorageTypeVariant6(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.VectorStorageTypeVariant6? value)
+        {
+            value = VectorStorageTypeVariant6;
+            return IsVectorStorageTypeVariant6;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -255,12 +285,31 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static implicit operator VectorStorageType(global::Qdrant.VectorStorageTypeVariant6 value) => new VectorStorageType((global::Qdrant.VectorStorageTypeVariant6?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Qdrant.VectorStorageTypeVariant6?(VectorStorageType @this) => @this.VectorStorageTypeVariant6;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public VectorStorageType(global::Qdrant.VectorStorageTypeVariant6? value)
+        {
+            VectorStorageTypeVariant6 = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public VectorStorageType(
             global::Qdrant.VectorStorageTypeVariant1? vectorStorageTypeVariant1,
             global::Qdrant.VectorStorageTypeVariant2? vectorStorageTypeVariant2,
             global::Qdrant.VectorStorageTypeVariant3? vectorStorageTypeVariant3,
             global::Qdrant.VectorStorageTypeVariant4? vectorStorageTypeVariant4,
-            global::Qdrant.VectorStorageTypeVariant5? vectorStorageTypeVariant5
+            global::Qdrant.VectorStorageTypeVariant5? vectorStorageTypeVariant5,
+            global::Qdrant.VectorStorageTypeVariant6? vectorStorageTypeVariant6
             )
         {
             VectorStorageTypeVariant1 = vectorStorageTypeVariant1;
@@ -268,12 +317,14 @@ namespace Qdrant
             VectorStorageTypeVariant3 = vectorStorageTypeVariant3;
             VectorStorageTypeVariant4 = vectorStorageTypeVariant4;
             VectorStorageTypeVariant5 = vectorStorageTypeVariant5;
+            VectorStorageTypeVariant6 = vectorStorageTypeVariant6;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
+            VectorStorageTypeVariant6 as object ??
             VectorStorageTypeVariant5 as object ??
             VectorStorageTypeVariant4 as object ??
             VectorStorageTypeVariant3 as object ??
@@ -289,7 +340,8 @@ namespace Qdrant
             VectorStorageTypeVariant2?.ToValueString() ??
             VectorStorageTypeVariant3?.ToValueString() ??
             VectorStorageTypeVariant4?.ToValueString() ??
-            VectorStorageTypeVariant5?.ToValueString() 
+            VectorStorageTypeVariant5?.ToValueString() ??
+            VectorStorageTypeVariant6?.ToValueString() 
             ;
 
         /// <summary>
@@ -297,7 +349,7 @@ namespace Qdrant
         /// </summary>
         public bool Validate()
         {
-            return IsVectorStorageTypeVariant1 && !IsVectorStorageTypeVariant2 && !IsVectorStorageTypeVariant3 && !IsVectorStorageTypeVariant4 && !IsVectorStorageTypeVariant5 || !IsVectorStorageTypeVariant1 && IsVectorStorageTypeVariant2 && !IsVectorStorageTypeVariant3 && !IsVectorStorageTypeVariant4 && !IsVectorStorageTypeVariant5 || !IsVectorStorageTypeVariant1 && !IsVectorStorageTypeVariant2 && IsVectorStorageTypeVariant3 && !IsVectorStorageTypeVariant4 && !IsVectorStorageTypeVariant5 || !IsVectorStorageTypeVariant1 && !IsVectorStorageTypeVariant2 && !IsVectorStorageTypeVariant3 && IsVectorStorageTypeVariant4 && !IsVectorStorageTypeVariant5 || !IsVectorStorageTypeVariant1 && !IsVectorStorageTypeVariant2 && !IsVectorStorageTypeVariant3 && !IsVectorStorageTypeVariant4 && IsVectorStorageTypeVariant5;
+            return IsVectorStorageTypeVariant1 && !IsVectorStorageTypeVariant2 && !IsVectorStorageTypeVariant3 && !IsVectorStorageTypeVariant4 && !IsVectorStorageTypeVariant5 && !IsVectorStorageTypeVariant6 || !IsVectorStorageTypeVariant1 && IsVectorStorageTypeVariant2 && !IsVectorStorageTypeVariant3 && !IsVectorStorageTypeVariant4 && !IsVectorStorageTypeVariant5 && !IsVectorStorageTypeVariant6 || !IsVectorStorageTypeVariant1 && !IsVectorStorageTypeVariant2 && IsVectorStorageTypeVariant3 && !IsVectorStorageTypeVariant4 && !IsVectorStorageTypeVariant5 && !IsVectorStorageTypeVariant6 || !IsVectorStorageTypeVariant1 && !IsVectorStorageTypeVariant2 && !IsVectorStorageTypeVariant3 && IsVectorStorageTypeVariant4 && !IsVectorStorageTypeVariant5 && !IsVectorStorageTypeVariant6 || !IsVectorStorageTypeVariant1 && !IsVectorStorageTypeVariant2 && !IsVectorStorageTypeVariant3 && !IsVectorStorageTypeVariant4 && IsVectorStorageTypeVariant5 && !IsVectorStorageTypeVariant6 || !IsVectorStorageTypeVariant1 && !IsVectorStorageTypeVariant2 && !IsVectorStorageTypeVariant3 && !IsVectorStorageTypeVariant4 && !IsVectorStorageTypeVariant5 && IsVectorStorageTypeVariant6;
         }
 
         /// <summary>
@@ -309,6 +361,7 @@ namespace Qdrant
             global::System.Func<global::Qdrant.VectorStorageTypeVariant3?, TResult>? vectorStorageTypeVariant3 = null,
             global::System.Func<global::Qdrant.VectorStorageTypeVariant4?, TResult>? vectorStorageTypeVariant4 = null,
             global::System.Func<global::Qdrant.VectorStorageTypeVariant5?, TResult>? vectorStorageTypeVariant5 = null,
+            global::System.Func<global::Qdrant.VectorStorageTypeVariant6?, TResult>? vectorStorageTypeVariant6 = null,
             bool validate = true)
         {
             if (validate)
@@ -336,6 +389,10 @@ namespace Qdrant
             {
                 return vectorStorageTypeVariant5(VectorStorageTypeVariant5!);
             }
+            else if (IsVectorStorageTypeVariant6 && vectorStorageTypeVariant6 != null)
+            {
+                return vectorStorageTypeVariant6(VectorStorageTypeVariant6!);
+            }
 
             return default(TResult);
         }
@@ -353,6 +410,8 @@ namespace Qdrant
             global::System.Action<global::Qdrant.VectorStorageTypeVariant4?>? vectorStorageTypeVariant4 = null,
 
             global::System.Action<global::Qdrant.VectorStorageTypeVariant5?>? vectorStorageTypeVariant5 = null,
+
+            global::System.Action<global::Qdrant.VectorStorageTypeVariant6?>? vectorStorageTypeVariant6 = null,
             bool validate = true)
         {
             if (validate)
@@ -379,6 +438,10 @@ namespace Qdrant
             else if (IsVectorStorageTypeVariant5)
             {
                 vectorStorageTypeVariant5?.Invoke(VectorStorageTypeVariant5!);
+            }
+            else if (IsVectorStorageTypeVariant6)
+            {
+                vectorStorageTypeVariant6?.Invoke(VectorStorageTypeVariant6!);
             }
         }
 
@@ -391,6 +454,7 @@ namespace Qdrant
             global::System.Action<global::Qdrant.VectorStorageTypeVariant3?>? vectorStorageTypeVariant3 = null,
             global::System.Action<global::Qdrant.VectorStorageTypeVariant4?>? vectorStorageTypeVariant4 = null,
             global::System.Action<global::Qdrant.VectorStorageTypeVariant5?>? vectorStorageTypeVariant5 = null,
+            global::System.Action<global::Qdrant.VectorStorageTypeVariant6?>? vectorStorageTypeVariant6 = null,
             bool validate = true)
         {
             if (validate)
@@ -417,6 +481,10 @@ namespace Qdrant
             else if (IsVectorStorageTypeVariant5)
             {
                 vectorStorageTypeVariant5?.Invoke(VectorStorageTypeVariant5!);
+            }
+            else if (IsVectorStorageTypeVariant6)
+            {
+                vectorStorageTypeVariant6?.Invoke(VectorStorageTypeVariant6!);
             }
         }
 
@@ -437,6 +505,8 @@ namespace Qdrant
                 typeof(global::Qdrant.VectorStorageTypeVariant4),
                 VectorStorageTypeVariant5,
                 typeof(global::Qdrant.VectorStorageTypeVariant5),
+                VectorStorageTypeVariant6,
+                typeof(global::Qdrant.VectorStorageTypeVariant6),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -457,7 +527,8 @@ namespace Qdrant
                 global::System.Collections.Generic.EqualityComparer<global::Qdrant.VectorStorageTypeVariant2?>.Default.Equals(VectorStorageTypeVariant2, other.VectorStorageTypeVariant2) &&
                 global::System.Collections.Generic.EqualityComparer<global::Qdrant.VectorStorageTypeVariant3?>.Default.Equals(VectorStorageTypeVariant3, other.VectorStorageTypeVariant3) &&
                 global::System.Collections.Generic.EqualityComparer<global::Qdrant.VectorStorageTypeVariant4?>.Default.Equals(VectorStorageTypeVariant4, other.VectorStorageTypeVariant4) &&
-                global::System.Collections.Generic.EqualityComparer<global::Qdrant.VectorStorageTypeVariant5?>.Default.Equals(VectorStorageTypeVariant5, other.VectorStorageTypeVariant5) 
+                global::System.Collections.Generic.EqualityComparer<global::Qdrant.VectorStorageTypeVariant5?>.Default.Equals(VectorStorageTypeVariant5, other.VectorStorageTypeVariant5) &&
+                global::System.Collections.Generic.EqualityComparer<global::Qdrant.VectorStorageTypeVariant6?>.Default.Equals(VectorStorageTypeVariant6, other.VectorStorageTypeVariant6) 
                 ;
         }
 

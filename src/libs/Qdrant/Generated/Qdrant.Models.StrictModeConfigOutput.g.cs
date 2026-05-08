@@ -129,6 +129,12 @@ namespace Qdrant
         public int? MaxPayloadIndexCount { get; set; }
 
         /// <summary>
+        /// Reject memory-consuming update operations when resident memory exceeds this percentage of total RAM (1-100)
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("max_resident_memory_percent")]
+        public byte? MaxResidentMemoryPercent { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -197,6 +203,9 @@ namespace Qdrant
         /// <param name="maxPayloadIndexCount">
         /// Max number of payload indexes in a collection
         /// </param>
+        /// <param name="maxResidentMemoryPercent">
+        /// Reject memory-consuming update operations when resident memory exceeds this percentage of total RAM (1-100)
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -220,7 +229,8 @@ namespace Qdrant
             int? conditionMaxSize,
             global::System.Collections.Generic.Dictionary<string, global::Qdrant.StrictModeMultivectorOutput>? multivectorConfig,
             global::System.Collections.Generic.Dictionary<string, global::Qdrant.StrictModeSparseOutput>? sparseConfig,
-            int? maxPayloadIndexCount)
+            int? maxPayloadIndexCount,
+            byte? maxResidentMemoryPercent)
         {
             this.Enabled = enabled;
             this.MaxQueryLimit = maxQueryLimit;
@@ -242,6 +252,7 @@ namespace Qdrant
             this.MultivectorConfig = multivectorConfig;
             this.SparseConfig = sparseConfig;
             this.MaxPayloadIndexCount = maxPayloadIndexCount;
+            this.MaxResidentMemoryPercent = maxResidentMemoryPercent;
         }
 
         /// <summary>

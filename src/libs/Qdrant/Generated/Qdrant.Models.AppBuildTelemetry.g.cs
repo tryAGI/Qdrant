@@ -37,6 +37,12 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("low_memory_mode")]
+        public global::Qdrant.LowMemoryMode? LowMemoryMode { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("hnsw_global_config")]
         public global::Qdrant.HnswGlobalConfig? HnswGlobalConfig { get; set; }
 
@@ -61,6 +67,12 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("audit")]
+        public global::Qdrant.AuditTelemetry? Audit { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("startup")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.DateTime Startup { get; set; }
@@ -79,10 +91,12 @@ namespace Qdrant
         /// <param name="startup"></param>
         /// <param name="features"></param>
         /// <param name="runtimeFeatures"></param>
+        /// <param name="lowMemoryMode"></param>
         /// <param name="hnswGlobalConfig"></param>
         /// <param name="system"></param>
         /// <param name="jwtRbac"></param>
         /// <param name="hideJwtDashboard"></param>
+        /// <param name="audit"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -92,19 +106,23 @@ namespace Qdrant
             global::System.DateTime startup,
             global::Qdrant.AppFeaturesTelemetry? features,
             global::Qdrant.FeatureFlags? runtimeFeatures,
+            global::Qdrant.LowMemoryMode? lowMemoryMode,
             global::Qdrant.HnswGlobalConfig? hnswGlobalConfig,
             global::Qdrant.RunningEnvironmentTelemetry? system,
             bool? jwtRbac,
-            bool? hideJwtDashboard)
+            bool? hideJwtDashboard,
+            global::Qdrant.AuditTelemetry? audit)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Version = version ?? throw new global::System.ArgumentNullException(nameof(version));
             this.Features = features;
             this.RuntimeFeatures = runtimeFeatures;
+            this.LowMemoryMode = lowMemoryMode;
             this.HnswGlobalConfig = hnswGlobalConfig;
             this.System = system;
             this.JwtRbac = jwtRbac;
             this.HideJwtDashboard = hideJwtDashboard;
+            this.Audit = audit;
             this.Startup = startup;
         }
 
