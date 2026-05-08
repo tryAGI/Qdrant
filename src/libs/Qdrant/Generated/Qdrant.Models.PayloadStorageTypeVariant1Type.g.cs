@@ -11,7 +11,7 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
-        InMemory,
+        Mmap,
     }
 
     /// <summary>
@@ -26,7 +26,7 @@ namespace Qdrant
         {
             return value switch
             {
-                PayloadStorageTypeVariant1Type.InMemory => "in_memory",
+                PayloadStorageTypeVariant1Type.Mmap => "mmap",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -37,7 +37,7 @@ namespace Qdrant
         {
             return value switch
             {
-                "in_memory" => PayloadStorageTypeVariant1Type.InMemory,
+                "mmap" => PayloadStorageTypeVariant1Type.Mmap,
                 _ => null,
             };
         }

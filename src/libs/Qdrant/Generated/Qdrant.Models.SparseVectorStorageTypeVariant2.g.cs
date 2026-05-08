@@ -4,14 +4,14 @@
 namespace Qdrant
 {
     /// <summary>
-    /// Storage in memory maps (gridstore storage)
+    /// Placeholder storage: contains no data, all vectors reported as deleted. Used for newly created sparse named vectors on immutable segments.
     /// </summary>
     public enum SparseVectorStorageTypeVariant2
     {
         /// <summary>
         /// 
         /// </summary>
-        Mmap,
+        Empty,
     }
 
     /// <summary>
@@ -26,7 +26,7 @@ namespace Qdrant
         {
             return value switch
             {
-                SparseVectorStorageTypeVariant2.Mmap => "mmap",
+                SparseVectorStorageTypeVariant2.Empty => "empty",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -37,7 +37,7 @@ namespace Qdrant
         {
             return value switch
             {
-                "mmap" => SparseVectorStorageTypeVariant2.Mmap,
+                "empty" => SparseVectorStorageTypeVariant2.Empty,
                 _ => null,
             };
         }

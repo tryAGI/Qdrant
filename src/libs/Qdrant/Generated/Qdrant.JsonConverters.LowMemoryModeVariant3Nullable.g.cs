@@ -3,10 +3,10 @@
 namespace Qdrant.JsonConverters
 {
     /// <inheritdoc />
-    public sealed class PayloadStorageTypeVariant3TypeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::Qdrant.PayloadStorageTypeVariant3Type>
+    public sealed class LowMemoryModeVariant3NullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::Qdrant.LowMemoryModeVariant3?>
     {
         /// <inheritdoc />
-        public override global::Qdrant.PayloadStorageTypeVariant3Type Read(
+        public override global::Qdrant.LowMemoryModeVariant3? Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -18,7 +18,7 @@ namespace Qdrant.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::Qdrant.PayloadStorageTypeVariant3TypeExtensions.ToEnum(stringValue) ?? default;
+                        return global::Qdrant.LowMemoryModeVariant3Extensions.ToEnum(stringValue);
                     }
                     
                     break;
@@ -26,11 +26,11 @@ namespace Qdrant.JsonConverters
                 case global::System.Text.Json.JsonTokenType.Number:
                 {
                     var numValue = reader.GetInt32();
-                    return (global::Qdrant.PayloadStorageTypeVariant3Type)numValue;
+                    return (global::Qdrant.LowMemoryModeVariant3)numValue;
                 }
                 case global::System.Text.Json.JsonTokenType.Null:
                 {
-                    return default(global::Qdrant.PayloadStorageTypeVariant3Type);
+                    return default(global::Qdrant.LowMemoryModeVariant3?);
                 }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
@@ -42,12 +42,19 @@ namespace Qdrant.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::Qdrant.PayloadStorageTypeVariant3Type value,
+            global::Qdrant.LowMemoryModeVariant3? value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
 
-            writer.WriteStringValue(global::Qdrant.PayloadStorageTypeVariant3TypeExtensions.ToValueString(value));
+            if (value == null)
+            {
+                writer.WriteNullValue();
+            }
+            else
+            {
+                writer.WriteStringValue(global::Qdrant.LowMemoryModeVariant3Extensions.ToValueString(value.Value));
+            }
         }
     }
 }

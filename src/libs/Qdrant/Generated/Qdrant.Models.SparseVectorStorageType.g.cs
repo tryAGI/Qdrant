@@ -10,7 +10,7 @@ namespace Qdrant
     public readonly partial struct SparseVectorStorageType : global::System.IEquatable<SparseVectorStorageType>
     {
         /// <summary>
-        /// Storage on disk (rocksdb storage)
+        /// Storage in memory maps (gridstore storage)
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.SparseVectorStorageTypeVariant1? SparseVectorStorageTypeVariant1 { get; init; }
@@ -40,7 +40,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// Storage in memory maps (gridstore storage)
+        /// Placeholder storage: contains no data, all vectors reported as deleted. Used for newly created sparse named vectors on immutable segments.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.SparseVectorStorageTypeVariant2? SparseVectorStorageTypeVariant2 { get; init; }

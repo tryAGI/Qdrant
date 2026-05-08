@@ -4,14 +4,14 @@
 namespace Qdrant
 {
     /// <summary>
-    /// Storage on disk (rocksdb storage)
+    /// Storage in memory maps (gridstore storage)
     /// </summary>
     public enum SparseVectorStorageTypeVariant1
     {
         /// <summary>
         /// 
         /// </summary>
-        OnDisk,
+        Mmap,
     }
 
     /// <summary>
@@ -26,7 +26,7 @@ namespace Qdrant
         {
             return value switch
             {
-                SparseVectorStorageTypeVariant1.OnDisk => "on_disk",
+                SparseVectorStorageTypeVariant1.Mmap => "mmap",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -37,7 +37,7 @@ namespace Qdrant
         {
             return value switch
             {
-                "on_disk" => SparseVectorStorageTypeVariant1.OnDisk,
+                "mmap" => SparseVectorStorageTypeVariant1.Mmap,
                 _ => null,
             };
         }
