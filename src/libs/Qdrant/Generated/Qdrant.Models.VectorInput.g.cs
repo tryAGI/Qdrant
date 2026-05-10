@@ -242,6 +242,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static VectorInput FromSparse(global::Qdrant.SparseVector? value) => new VectorInput(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator VectorInput(global::Qdrant.ExtendedPointId value) => new VectorInput((global::Qdrant.ExtendedPointId?)value);
 
         /// <summary>
@@ -256,6 +261,11 @@ namespace Qdrant
         {
             ExtendedPointId = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static VectorInput FromExtendedPointId(global::Qdrant.ExtendedPointId? value) => new VectorInput(value);
 
         /// <summary>
         /// 
@@ -278,6 +288,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static VectorInput FromDocument(global::Qdrant.Document? value) => new VectorInput(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator VectorInput(global::Qdrant.Image value) => new VectorInput((global::Qdrant.Image?)value);
 
         /// <summary>
@@ -296,6 +311,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static VectorInput FromImage(global::Qdrant.Image? value) => new VectorInput(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator VectorInput(global::Qdrant.InferenceObject value) => new VectorInput((global::Qdrant.InferenceObject?)value);
 
         /// <summary>
@@ -310,6 +330,11 @@ namespace Qdrant
         {
             InferenceObject = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static VectorInput FromInferenceObject(global::Qdrant.InferenceObject? value) => new VectorInput(value);
 
         /// <summary>
         /// 

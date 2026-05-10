@@ -92,6 +92,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static VectorsConfig FromVectorParams(global::Qdrant.VectorParams? value) => new VectorsConfig(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator VectorsConfig(global::System.Collections.Generic.Dictionary<string, global::Qdrant.VectorParams> value) => new VectorsConfig((global::System.Collections.Generic.Dictionary<string, global::Qdrant.VectorParams>?)value);
 
         /// <summary>
@@ -106,6 +111,11 @@ namespace Qdrant
         {
             VectorsConfigVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static VectorsConfig FromVectorsConfigVariant2(global::System.Collections.Generic.Dictionary<string, global::Qdrant.VectorParams>? value) => new VectorsConfig(value);
 
         /// <summary>
         /// 

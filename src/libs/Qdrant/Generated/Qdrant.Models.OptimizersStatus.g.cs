@@ -89,6 +89,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static OptimizersStatus FromEnum(global::Qdrant.OptimizersStatusEnum? value) => new OptimizersStatus(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator OptimizersStatus(global::Qdrant.OptimizersStatusEnum2 value) => new OptimizersStatus((global::Qdrant.OptimizersStatusEnum2?)value);
 
         /// <summary>
@@ -103,6 +108,11 @@ namespace Qdrant
         {
             Enum2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OptimizersStatus FromEnum2(global::Qdrant.OptimizersStatusEnum2? value) => new OptimizersStatus(value);
 
         /// <summary>
         /// 

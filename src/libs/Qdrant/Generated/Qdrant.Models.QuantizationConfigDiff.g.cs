@@ -179,6 +179,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static QuantizationConfigDiff FromScalar(global::Qdrant.ScalarQuantization? value) => new QuantizationConfigDiff(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator QuantizationConfigDiff(global::Qdrant.ProductQuantization value) => new QuantizationConfigDiff((global::Qdrant.ProductQuantization?)value);
 
         /// <summary>
@@ -193,6 +198,11 @@ namespace Qdrant
         {
             Product = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static QuantizationConfigDiff FromProduct(global::Qdrant.ProductQuantization? value) => new QuantizationConfigDiff(value);
 
         /// <summary>
         /// 
@@ -215,6 +225,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static QuantizationConfigDiff FromBinary(global::Qdrant.BinaryQuantization? value) => new QuantizationConfigDiff(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator QuantizationConfigDiff(global::Qdrant.TurboQuantization value) => new QuantizationConfigDiff((global::Qdrant.TurboQuantization?)value);
 
         /// <summary>
@@ -233,6 +248,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static QuantizationConfigDiff FromTurbo(global::Qdrant.TurboQuantization? value) => new QuantizationConfigDiff(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator QuantizationConfigDiff(global::Qdrant.DisabledType value) => new QuantizationConfigDiff((global::Qdrant.DisabledType?)value);
 
         /// <summary>
@@ -247,6 +267,11 @@ namespace Qdrant
         {
             DisabledType = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static QuantizationConfigDiff FromDisabledType(global::Qdrant.DisabledType? value) => new QuantizationConfigDiff(value);
 
         /// <summary>
         /// 

@@ -59,6 +59,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static StemmingAlgorithm FromSnowballParams(global::Qdrant.SnowballParams? value) => new StemmingAlgorithm(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public object? Object =>
             SnowballParams as object 
             ;

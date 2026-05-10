@@ -59,6 +59,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static FeedbackStrategy FromNaive(global::Qdrant.NaiveFeedbackStrategy? value) => new FeedbackStrategy(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public object? Object =>
             Naive as object 
             ;

@@ -89,6 +89,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static PayloadStorageType FromPayloadStorageTypeVariant1(global::Qdrant.PayloadStorageTypeVariant1? value) => new PayloadStorageType(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator PayloadStorageType(global::Qdrant.PayloadStorageTypeVariant2 value) => new PayloadStorageType((global::Qdrant.PayloadStorageTypeVariant2?)value);
 
         /// <summary>
@@ -103,6 +108,11 @@ namespace Qdrant
         {
             PayloadStorageTypeVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static PayloadStorageType FromPayloadStorageTypeVariant2(global::Qdrant.PayloadStorageTypeVariant2? value) => new PayloadStorageType(value);
 
         /// <summary>
         /// 

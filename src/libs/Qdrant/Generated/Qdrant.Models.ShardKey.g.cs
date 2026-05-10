@@ -89,6 +89,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static ShardKey FromShardKeyVariant1(string? value) => new ShardKey(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ShardKey(int value) => new ShardKey((int?)value);
 
         /// <summary>
@@ -103,6 +108,11 @@ namespace Qdrant
         {
             ShardKeyVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ShardKey FromShardKeyVariant2(int? value) => new ShardKey(value);
 
         /// <summary>
         /// 

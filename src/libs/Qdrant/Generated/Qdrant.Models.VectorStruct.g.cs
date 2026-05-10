@@ -212,6 +212,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static VectorStruct FromDocument(global::Qdrant.Document? value) => new VectorStruct(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator VectorStruct(global::Qdrant.Image value) => new VectorStruct((global::Qdrant.Image?)value);
 
         /// <summary>
@@ -230,6 +235,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static VectorStruct FromImage(global::Qdrant.Image? value) => new VectorStruct(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator VectorStruct(global::Qdrant.InferenceObject value) => new VectorStruct((global::Qdrant.InferenceObject?)value);
 
         /// <summary>
@@ -244,6 +254,11 @@ namespace Qdrant
         {
             InferenceObject = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static VectorStruct FromInferenceObject(global::Qdrant.InferenceObject? value) => new VectorStruct(value);
 
         /// <summary>
         /// 

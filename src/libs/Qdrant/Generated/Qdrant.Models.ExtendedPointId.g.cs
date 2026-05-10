@@ -89,6 +89,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static ExtendedPointId FromExtendedPointIdVariant1(int? value) => new ExtendedPointId(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ExtendedPointId(global::System.Guid value) => new ExtendedPointId((global::System.Guid?)value);
 
         /// <summary>
@@ -103,6 +108,11 @@ namespace Qdrant
         {
             Guid = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ExtendedPointId FromGuid(global::System.Guid? value) => new ExtendedPointId(value);
 
         /// <summary>
         /// 

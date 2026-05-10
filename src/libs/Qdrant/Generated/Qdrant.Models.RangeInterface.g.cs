@@ -89,6 +89,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static RangeInterface FromRange(global::Qdrant.Range? value) => new RangeInterface(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator RangeInterface(global::Qdrant.DatetimeRange value) => new RangeInterface((global::Qdrant.DatetimeRange?)value);
 
         /// <summary>
@@ -103,6 +108,11 @@ namespace Qdrant
         {
             Datetime = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static RangeInterface FromDatetime(global::Qdrant.DatetimeRange? value) => new RangeInterface(value);
 
         /// <summary>
         /// 

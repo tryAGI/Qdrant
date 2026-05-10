@@ -97,6 +97,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static ReadConsistency FromReadConsistencyVariant1(int? value) => new ReadConsistency(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ReadConsistency(global::Qdrant.ReadConsistencyType value) => new ReadConsistency((global::Qdrant.ReadConsistencyType?)value);
 
         /// <summary>
@@ -111,6 +116,11 @@ namespace Qdrant
         {
             Type = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ReadConsistency FromType(global::Qdrant.ReadConsistencyType? value) => new ReadConsistency(value);
 
         /// <summary>
         /// 

@@ -92,6 +92,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static VectorNameConfig FromDense(global::Qdrant.DenseVectorNameConfig? value) => new VectorNameConfig(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator VectorNameConfig(global::Qdrant.SparseVectorNameConfig value) => new VectorNameConfig((global::Qdrant.SparseVectorNameConfig?)value);
 
         /// <summary>
@@ -106,6 +111,11 @@ namespace Qdrant
         {
             Sparse = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static VectorNameConfig FromSparse(global::Qdrant.SparseVectorNameConfig? value) => new VectorNameConfig(value);
 
         /// <summary>
         /// 

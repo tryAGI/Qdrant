@@ -329,6 +329,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static ClusterOperations FromMoveShardOperation(global::Qdrant.MoveShardOperation? value) => new ClusterOperations(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ClusterOperations(global::Qdrant.ReplicateShardOperation value) => new ClusterOperations((global::Qdrant.ReplicateShardOperation?)value);
 
         /// <summary>
@@ -343,6 +348,11 @@ namespace Qdrant
         {
             ReplicateShardOperation = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ClusterOperations FromReplicateShardOperation(global::Qdrant.ReplicateShardOperation? value) => new ClusterOperations(value);
 
         /// <summary>
         /// 
@@ -365,6 +375,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static ClusterOperations FromAbortTransferOperation(global::Qdrant.AbortTransferOperation? value) => new ClusterOperations(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ClusterOperations(global::Qdrant.DropReplicaOperation value) => new ClusterOperations((global::Qdrant.DropReplicaOperation?)value);
 
         /// <summary>
@@ -379,6 +394,11 @@ namespace Qdrant
         {
             DropReplicaOperation = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ClusterOperations FromDropReplicaOperation(global::Qdrant.DropReplicaOperation? value) => new ClusterOperations(value);
 
         /// <summary>
         /// 
@@ -401,6 +421,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static ClusterOperations FromCreateShardingKeyOperation(global::Qdrant.CreateShardingKeyOperation? value) => new ClusterOperations(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ClusterOperations(global::Qdrant.DropShardingKeyOperation value) => new ClusterOperations((global::Qdrant.DropShardingKeyOperation?)value);
 
         /// <summary>
@@ -415,6 +440,11 @@ namespace Qdrant
         {
             DropShardingKeyOperation = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ClusterOperations FromDropShardingKeyOperation(global::Qdrant.DropShardingKeyOperation? value) => new ClusterOperations(value);
 
         /// <summary>
         /// 
@@ -437,6 +467,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static ClusterOperations FromRestartTransferOperation(global::Qdrant.RestartTransferOperation? value) => new ClusterOperations(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ClusterOperations(global::Qdrant.StartReshardingOperation value) => new ClusterOperations((global::Qdrant.StartReshardingOperation?)value);
 
         /// <summary>
@@ -451,6 +486,11 @@ namespace Qdrant
         {
             StartReshardingOperation = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ClusterOperations FromStartReshardingOperation(global::Qdrant.StartReshardingOperation? value) => new ClusterOperations(value);
 
         /// <summary>
         /// 
@@ -473,6 +513,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static ClusterOperations FromAbortReshardingOperation(global::Qdrant.AbortReshardingOperation? value) => new ClusterOperations(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ClusterOperations(global::Qdrant.ReplicatePointsOperation value) => new ClusterOperations((global::Qdrant.ReplicatePointsOperation?)value);
 
         /// <summary>
@@ -487,6 +532,11 @@ namespace Qdrant
         {
             ReplicatePointsOperation = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ClusterOperations FromReplicatePointsOperation(global::Qdrant.ReplicatePointsOperation? value) => new ClusterOperations(value);
 
         /// <summary>
         /// 

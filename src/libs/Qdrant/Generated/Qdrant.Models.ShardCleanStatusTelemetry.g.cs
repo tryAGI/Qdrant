@@ -119,6 +119,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static ShardCleanStatusTelemetry FromEnum(global::Qdrant.ShardCleanStatusTelemetryEnum? value) => new ShardCleanStatusTelemetry(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ShardCleanStatusTelemetry(global::Qdrant.ShardCleanStatusTelemetryEnum2 value) => new ShardCleanStatusTelemetry((global::Qdrant.ShardCleanStatusTelemetryEnum2?)value);
 
         /// <summary>
@@ -137,6 +142,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static ShardCleanStatusTelemetry FromEnum2(global::Qdrant.ShardCleanStatusTelemetryEnum2? value) => new ShardCleanStatusTelemetry(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ShardCleanStatusTelemetry(global::Qdrant.ShardCleanStatusTelemetryEnum3 value) => new ShardCleanStatusTelemetry((global::Qdrant.ShardCleanStatusTelemetryEnum3?)value);
 
         /// <summary>
@@ -151,6 +161,11 @@ namespace Qdrant
         {
             Enum3 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ShardCleanStatusTelemetry FromEnum3(global::Qdrant.ShardCleanStatusTelemetryEnum3? value) => new ShardCleanStatusTelemetry(value);
 
         /// <summary>
         /// 

@@ -122,6 +122,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static NamedVectorStruct FromNamedVector(global::Qdrant.NamedVector? value) => new NamedVectorStruct(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator NamedVectorStruct(global::Qdrant.NamedSparseVector value) => new NamedVectorStruct((global::Qdrant.NamedSparseVector?)value);
 
         /// <summary>
@@ -136,6 +141,11 @@ namespace Qdrant
         {
             Sparse = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static NamedVectorStruct FromSparse(global::Qdrant.NamedSparseVector? value) => new NamedVectorStruct(value);
 
         /// <summary>
         /// 

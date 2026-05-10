@@ -89,6 +89,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static PointsSelector FromPointIdsList(global::Qdrant.PointIdsList? value) => new PointsSelector(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator PointsSelector(global::Qdrant.FilterSelector value) => new PointsSelector((global::Qdrant.FilterSelector?)value);
 
         /// <summary>
@@ -103,6 +108,11 @@ namespace Qdrant
         {
             Filter = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static PointsSelector FromFilter(global::Qdrant.FilterSelector? value) => new PointsSelector(value);
 
         /// <summary>
         /// 

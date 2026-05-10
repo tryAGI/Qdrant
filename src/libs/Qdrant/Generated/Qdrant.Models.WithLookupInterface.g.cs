@@ -89,6 +89,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static WithLookupInterface FromWithLookupInterfaceVariant1(string? value) => new WithLookupInterface(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator WithLookupInterface(global::Qdrant.WithLookup value) => new WithLookupInterface((global::Qdrant.WithLookup?)value);
 
         /// <summary>
@@ -103,6 +108,11 @@ namespace Qdrant
         {
             WithLookup = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static WithLookupInterface FromWithLookup(global::Qdrant.WithLookup? value) => new WithLookupInterface(value);
 
         /// <summary>
         /// 

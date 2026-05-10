@@ -89,6 +89,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static ShardSnapshotLocation FromShardSnapshotLocationVariant1(string? value) => new ShardSnapshotLocation(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public ShardSnapshotLocation(
             string? shardSnapshotLocationVariant1,
             string? shardSnapshotLocationVariant2

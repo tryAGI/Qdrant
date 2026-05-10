@@ -269,6 +269,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static PayloadSchemaParams FromKeywordIndex(global::Qdrant.KeywordIndexParams? value) => new PayloadSchemaParams(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator PayloadSchemaParams(global::Qdrant.IntegerIndexParams value) => new PayloadSchemaParams((global::Qdrant.IntegerIndexParams?)value);
 
         /// <summary>
@@ -283,6 +288,11 @@ namespace Qdrant
         {
             IntegerIndex = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static PayloadSchemaParams FromIntegerIndex(global::Qdrant.IntegerIndexParams? value) => new PayloadSchemaParams(value);
 
         /// <summary>
         /// 
@@ -305,6 +315,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static PayloadSchemaParams FromFloatIndex(global::Qdrant.FloatIndexParams? value) => new PayloadSchemaParams(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator PayloadSchemaParams(global::Qdrant.GeoIndexParams value) => new PayloadSchemaParams((global::Qdrant.GeoIndexParams?)value);
 
         /// <summary>
@@ -319,6 +334,11 @@ namespace Qdrant
         {
             GeoIndex = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static PayloadSchemaParams FromGeoIndex(global::Qdrant.GeoIndexParams? value) => new PayloadSchemaParams(value);
 
         /// <summary>
         /// 
@@ -341,6 +361,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static PayloadSchemaParams FromTextIndex(global::Qdrant.TextIndexParams? value) => new PayloadSchemaParams(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator PayloadSchemaParams(global::Qdrant.BoolIndexParams value) => new PayloadSchemaParams((global::Qdrant.BoolIndexParams?)value);
 
         /// <summary>
@@ -355,6 +380,11 @@ namespace Qdrant
         {
             BoolIndex = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static PayloadSchemaParams FromBoolIndex(global::Qdrant.BoolIndexParams? value) => new PayloadSchemaParams(value);
 
         /// <summary>
         /// 
@@ -377,6 +407,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static PayloadSchemaParams FromDatetimeIndex(global::Qdrant.DatetimeIndexParams? value) => new PayloadSchemaParams(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator PayloadSchemaParams(global::Qdrant.UuidIndexParams value) => new PayloadSchemaParams((global::Qdrant.UuidIndexParams?)value);
 
         /// <summary>
@@ -391,6 +426,11 @@ namespace Qdrant
         {
             UuidIndex = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static PayloadSchemaParams FromUuidIndex(global::Qdrant.UuidIndexParams? value) => new PayloadSchemaParams(value);
 
         /// <summary>
         /// 

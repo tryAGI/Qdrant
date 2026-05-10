@@ -89,6 +89,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static SparseVectorStorageType FromSparseVectorStorageTypeVariant1(global::Qdrant.SparseVectorStorageTypeVariant1? value) => new SparseVectorStorageType(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator SparseVectorStorageType(global::Qdrant.SparseVectorStorageTypeVariant2 value) => new SparseVectorStorageType((global::Qdrant.SparseVectorStorageTypeVariant2?)value);
 
         /// <summary>
@@ -103,6 +108,11 @@ namespace Qdrant
         {
             SparseVectorStorageTypeVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static SparseVectorStorageType FromSparseVectorStorageTypeVariant2(global::Qdrant.SparseVectorStorageTypeVariant2? value) => new SparseVectorStorageType(value);
 
         /// <summary>
         /// 

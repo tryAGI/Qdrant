@@ -212,6 +212,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static Vector FromSparse(global::Qdrant.SparseVector? value) => new Vector(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Vector(global::Qdrant.Document value) => new Vector((global::Qdrant.Document?)value);
 
         /// <summary>
@@ -226,6 +231,11 @@ namespace Qdrant
         {
             Document = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Vector FromDocument(global::Qdrant.Document? value) => new Vector(value);
 
         /// <summary>
         /// 
@@ -248,6 +258,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static Vector FromImage(global::Qdrant.Image? value) => new Vector(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Vector(global::Qdrant.InferenceObject value) => new Vector((global::Qdrant.InferenceObject?)value);
 
         /// <summary>
@@ -262,6 +277,11 @@ namespace Qdrant
         {
             InferenceObject = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Vector FromInferenceObject(global::Qdrant.InferenceObject? value) => new Vector(value);
 
         /// <summary>
         /// 

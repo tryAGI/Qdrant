@@ -119,6 +119,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static ContextInput FromPair(global::Qdrant.ContextPair? value) => new ContextInput(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public ContextInput(
             global::Qdrant.ContextPair? pair,
             global::System.Collections.Generic.IList<global::Qdrant.ContextPair>? contextInputVariant2,

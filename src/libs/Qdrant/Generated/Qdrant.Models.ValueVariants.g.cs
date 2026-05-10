@@ -119,6 +119,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static ValueVariants FromValueVariantsVariant1(string? value) => new ValueVariants(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ValueVariants(long value) => new ValueVariants((long?)value);
 
         /// <summary>
@@ -137,6 +142,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static ValueVariants FromValueVariantsVariant2(long? value) => new ValueVariants(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ValueVariants(bool value) => new ValueVariants((bool?)value);
 
         /// <summary>
@@ -151,6 +161,11 @@ namespace Qdrant
         {
             ValueVariantsVariant3 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ValueVariants FromValueVariantsVariant3(bool? value) => new ValueVariants(value);
 
         /// <summary>
         /// 

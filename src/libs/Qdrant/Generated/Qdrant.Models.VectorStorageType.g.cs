@@ -213,6 +213,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static VectorStorageType FromVectorStorageTypeVariant1(global::Qdrant.VectorStorageTypeVariant1? value) => new VectorStorageType(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator VectorStorageType(global::Qdrant.VectorStorageTypeVariant2 value) => new VectorStorageType((global::Qdrant.VectorStorageTypeVariant2?)value);
 
         /// <summary>
@@ -227,6 +232,11 @@ namespace Qdrant
         {
             VectorStorageTypeVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static VectorStorageType FromVectorStorageTypeVariant2(global::Qdrant.VectorStorageTypeVariant2? value) => new VectorStorageType(value);
 
         /// <summary>
         /// 
@@ -249,6 +259,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static VectorStorageType FromVectorStorageTypeVariant3(global::Qdrant.VectorStorageTypeVariant3? value) => new VectorStorageType(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator VectorStorageType(global::Qdrant.VectorStorageTypeVariant4 value) => new VectorStorageType((global::Qdrant.VectorStorageTypeVariant4?)value);
 
         /// <summary>
@@ -263,6 +278,11 @@ namespace Qdrant
         {
             VectorStorageTypeVariant4 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static VectorStorageType FromVectorStorageTypeVariant4(global::Qdrant.VectorStorageTypeVariant4? value) => new VectorStorageType(value);
 
         /// <summary>
         /// 
@@ -285,6 +305,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static VectorStorageType FromVectorStorageTypeVariant5(global::Qdrant.VectorStorageTypeVariant5? value) => new VectorStorageType(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator VectorStorageType(global::Qdrant.VectorStorageTypeVariant6 value) => new VectorStorageType((global::Qdrant.VectorStorageTypeVariant6?)value);
 
         /// <summary>
@@ -299,6 +324,11 @@ namespace Qdrant
         {
             VectorStorageTypeVariant6 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static VectorStorageType FromVectorStorageTypeVariant6(global::Qdrant.VectorStorageTypeVariant6? value) => new VectorStorageType(value);
 
         /// <summary>
         /// 

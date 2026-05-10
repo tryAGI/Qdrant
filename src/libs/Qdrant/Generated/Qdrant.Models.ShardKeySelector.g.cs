@@ -119,6 +119,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static ShardKeySelector FromShardKey(global::Qdrant.ShardKey? value) => new ShardKeySelector(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ShardKeySelector(global::Qdrant.ShardKeyWithFallback value) => new ShardKeySelector((global::Qdrant.ShardKeyWithFallback?)value);
 
         /// <summary>
@@ -133,6 +138,11 @@ namespace Qdrant
         {
             WithFallback = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ShardKeySelector FromWithFallback(global::Qdrant.ShardKeyWithFallback? value) => new ShardKeySelector(value);
 
         /// <summary>
         /// 

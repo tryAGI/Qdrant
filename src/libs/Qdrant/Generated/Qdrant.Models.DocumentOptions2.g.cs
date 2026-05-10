@@ -89,6 +89,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static DocumentOptions2 FromBm25Config(global::Qdrant.Bm25Config? value) => new DocumentOptions2(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public DocumentOptions2(
             object? optionsVariant1,
             global::Qdrant.Bm25Config? bm25Config

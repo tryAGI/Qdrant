@@ -269,6 +269,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static UpdateOperation FromUpsert(global::Qdrant.UpsertOperation? value) => new UpdateOperation(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator UpdateOperation(global::Qdrant.DeleteOperation value) => new UpdateOperation((global::Qdrant.DeleteOperation?)value);
 
         /// <summary>
@@ -283,6 +288,11 @@ namespace Qdrant
         {
             Delete = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static UpdateOperation FromDelete(global::Qdrant.DeleteOperation? value) => new UpdateOperation(value);
 
         /// <summary>
         /// 
@@ -305,6 +315,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static UpdateOperation FromSetPayload(global::Qdrant.SetPayloadOperation? value) => new UpdateOperation(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator UpdateOperation(global::Qdrant.OverwritePayloadOperation value) => new UpdateOperation((global::Qdrant.OverwritePayloadOperation?)value);
 
         /// <summary>
@@ -319,6 +334,11 @@ namespace Qdrant
         {
             OverwritePayload = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static UpdateOperation FromOverwritePayload(global::Qdrant.OverwritePayloadOperation? value) => new UpdateOperation(value);
 
         /// <summary>
         /// 
@@ -341,6 +361,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static UpdateOperation FromDeletePayload(global::Qdrant.DeletePayloadOperation? value) => new UpdateOperation(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator UpdateOperation(global::Qdrant.ClearPayloadOperation value) => new UpdateOperation((global::Qdrant.ClearPayloadOperation?)value);
 
         /// <summary>
@@ -355,6 +380,11 @@ namespace Qdrant
         {
             ClearPayload = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static UpdateOperation FromClearPayload(global::Qdrant.ClearPayloadOperation? value) => new UpdateOperation(value);
 
         /// <summary>
         /// 
@@ -377,6 +407,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static UpdateOperation FromVectors(global::Qdrant.UpdateVectorsOperation? value) => new UpdateOperation(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator UpdateOperation(global::Qdrant.DeleteVectorsOperation value) => new UpdateOperation((global::Qdrant.DeleteVectorsOperation?)value);
 
         /// <summary>
@@ -391,6 +426,11 @@ namespace Qdrant
         {
             DeleteVectors = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static UpdateOperation FromDeleteVectors(global::Qdrant.DeleteVectorsOperation? value) => new UpdateOperation(value);
 
         /// <summary>
         /// 

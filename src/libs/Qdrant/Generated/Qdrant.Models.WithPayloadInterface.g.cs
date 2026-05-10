@@ -119,6 +119,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static WithPayloadInterface FromWithPayloadInterfaceVariant1(bool? value) => new WithPayloadInterface(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator WithPayloadInterface(global::Qdrant.PayloadSelector value) => new WithPayloadInterface((global::Qdrant.PayloadSelector?)value);
 
         /// <summary>
@@ -133,6 +138,11 @@ namespace Qdrant
         {
             Selector = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static WithPayloadInterface FromSelector(global::Qdrant.PayloadSelector? value) => new WithPayloadInterface(value);
 
         /// <summary>
         /// 
