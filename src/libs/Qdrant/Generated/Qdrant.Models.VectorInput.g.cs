@@ -40,6 +40,13 @@ namespace Qdrant
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<float> PickVectorInputVariant1() => IsVectorInputVariant1
+            ? VectorInputVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'VectorInputVariant1' but the value was {ToString()}.");
+
+        /// <summary>
         /// Sparse vector structure
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -72,6 +79,13 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public global::Qdrant.SparseVector PickSparse() => IsSparse
+            ? Sparse!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Sparse' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>? VectorInputVariant3 { get; init; }
 #else
@@ -98,6 +112,13 @@ namespace Qdrant
             value = VectorInputVariant3;
             return IsVectorInputVariant3;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>> PickVectorInputVariant3() => IsVectorInputVariant3
+            ? VectorInputVariant3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'VectorInputVariant3' but the value was {ToString()}.");
 
         /// <summary>
         /// Type, used for specifying point ID in user interface
@@ -128,6 +149,13 @@ namespace Qdrant
             value = ExtendedPointId;
             return IsExtendedPointId;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.ExtendedPointId PickExtendedPointId() => IsExtendedPointId
+            ? ExtendedPointId!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ExtendedPointId' but the value was {ToString()}.");
 
         /// <summary>
         /// WARN: Work-in-progress, unimplemented<br/>
@@ -161,6 +189,13 @@ namespace Qdrant
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.Document PickDocument() => IsDocument
+            ? Document!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Document' but the value was {ToString()}.");
+
+        /// <summary>
         /// WARN: Work-in-progress, unimplemented<br/>
         /// Image object for embedding. Requires inference infrastructure, unimplemented.
         /// </summary>
@@ -192,6 +227,13 @@ namespace Qdrant
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.Image PickImage() => IsImage
+            ? Image!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Image' but the value was {ToString()}.");
+
+        /// <summary>
         /// WARN: Work-in-progress, unimplemented<br/>
         /// Custom object for embedding. Requires inference infrastructure, unimplemented.
         /// </summary>
@@ -221,6 +263,13 @@ namespace Qdrant
             value = InferenceObject;
             return IsInferenceObject;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.InferenceObject PickInferenceObject() => IsInferenceObject
+            ? InferenceObject!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InferenceObject' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

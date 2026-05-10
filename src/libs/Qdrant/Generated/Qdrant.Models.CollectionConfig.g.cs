@@ -102,5 +102,6 @@ namespace Qdrant
         public CollectionConfig()
         {
         }
+
     }
 }

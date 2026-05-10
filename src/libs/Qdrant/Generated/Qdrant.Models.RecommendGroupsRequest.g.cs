@@ -210,5 +210,6 @@ namespace Qdrant
         public RecommendGroupsRequest()
         {
         }
+
     }
 }

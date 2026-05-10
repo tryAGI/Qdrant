@@ -89,5 +89,6 @@ namespace Qdrant
         public SearchParams()
         {
         }
+
     }
 }

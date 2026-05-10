@@ -40,6 +40,13 @@ namespace Qdrant
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.OptimizersStatusEnum PickEnum() => IsEnum
+            ? Enum!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Enum' but the value was {ToString()}.");
+
+        /// <summary>
         /// Something wrong happened with optimizers
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -68,6 +75,13 @@ namespace Qdrant
             value = Enum2;
             return IsEnum2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.OptimizersStatusEnum2 PickEnum2() => IsEnum2
+            ? Enum2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Enum2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

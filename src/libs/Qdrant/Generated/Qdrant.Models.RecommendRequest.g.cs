@@ -185,5 +185,6 @@ namespace Qdrant
         public RecommendRequest()
         {
         }
+
     }
 }

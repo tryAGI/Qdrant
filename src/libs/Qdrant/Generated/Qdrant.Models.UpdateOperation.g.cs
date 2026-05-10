@@ -42,6 +42,13 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public global::Qdrant.UpsertOperation PickUpsert() => IsUpsert
+            ? Upsert!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Upsert' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.DeleteOperation? Delete { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace Qdrant
             value = Delete;
             return IsDelete;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.DeleteOperation PickDelete() => IsDelete
+            ? Delete!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Delete' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -102,6 +116,13 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public global::Qdrant.SetPayloadOperation PickSetPayload() => IsSetPayload
+            ? SetPayload!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SetPayload' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.OverwritePayloadOperation? OverwritePayload { get; init; }
 #else
@@ -128,6 +149,13 @@ namespace Qdrant
             value = OverwritePayload;
             return IsOverwritePayload;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.OverwritePayloadOperation PickOverwritePayload() => IsOverwritePayload
+            ? OverwritePayload!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OverwritePayload' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -162,6 +190,13 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public global::Qdrant.DeletePayloadOperation PickDeletePayload() => IsDeletePayload
+            ? DeletePayload!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'DeletePayload' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.ClearPayloadOperation? ClearPayload { get; init; }
 #else
@@ -188,6 +223,13 @@ namespace Qdrant
             value = ClearPayload;
             return IsClearPayload;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.ClearPayloadOperation PickClearPayload() => IsClearPayload
+            ? ClearPayload!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ClearPayload' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -222,6 +264,13 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public global::Qdrant.UpdateVectorsOperation PickVectors() => IsVectors
+            ? Vectors!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Vectors' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.DeleteVectorsOperation? DeleteVectors { get; init; }
 #else
@@ -248,6 +297,13 @@ namespace Qdrant
             value = DeleteVectors;
             return IsDeleteVectors;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.DeleteVectorsOperation PickDeleteVectors() => IsDeleteVectors
+            ? DeleteVectors!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'DeleteVectors' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

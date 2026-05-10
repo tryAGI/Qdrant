@@ -104,5 +104,6 @@ namespace Qdrant
         public TelemetryData()
         {
         }
+
     }
 }

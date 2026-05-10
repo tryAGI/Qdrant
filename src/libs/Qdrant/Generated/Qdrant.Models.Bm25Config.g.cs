@@ -156,5 +156,6 @@ namespace Qdrant
         public Bm25Config()
         {
         }
+
     }
 }

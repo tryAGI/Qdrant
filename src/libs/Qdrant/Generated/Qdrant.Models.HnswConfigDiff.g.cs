@@ -107,5 +107,6 @@ namespace Qdrant
         public HnswConfigDiff()
         {
         }
+
     }
 }

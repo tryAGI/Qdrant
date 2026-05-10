@@ -40,6 +40,13 @@ namespace Qdrant
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.SparseVectorStorageTypeVariant1 PickSparseVectorStorageTypeVariant1() => IsSparseVectorStorageTypeVariant1
+            ? SparseVectorStorageTypeVariant1!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SparseVectorStorageTypeVariant1' but the value was {ToString()}.");
+
+        /// <summary>
         /// Placeholder storage: contains no data, all vectors reported as deleted. Used for newly created sparse named vectors on immutable segments.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -68,6 +75,13 @@ namespace Qdrant
             value = SparseVectorStorageTypeVariant2;
             return IsSparseVectorStorageTypeVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.SparseVectorStorageTypeVariant2 PickSparseVectorStorageTypeVariant2() => IsSparseVectorStorageTypeVariant2
+            ? SparseVectorStorageTypeVariant2!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SparseVectorStorageTypeVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

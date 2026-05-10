@@ -42,6 +42,13 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public string PickOrderByInterfaceVariant1() => IsOrderByInterfaceVariant1
+            ? OrderByInterfaceVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OrderByInterfaceVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.OrderBy? OrderBy { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace Qdrant
             value = OrderBy;
             return IsOrderBy;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.OrderBy PickOrderBy() => IsOrderBy
+            ? OrderBy!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OrderBy' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

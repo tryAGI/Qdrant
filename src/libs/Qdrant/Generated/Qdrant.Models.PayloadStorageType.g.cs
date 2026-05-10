@@ -42,6 +42,13 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public global::Qdrant.PayloadStorageTypeVariant1 PickPayloadStorageTypeVariant1() => IsPayloadStorageTypeVariant1
+            ? PayloadStorageTypeVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'PayloadStorageTypeVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.PayloadStorageTypeVariant2? PayloadStorageTypeVariant2 { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace Qdrant
             value = PayloadStorageTypeVariant2;
             return IsPayloadStorageTypeVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.PayloadStorageTypeVariant2 PickPayloadStorageTypeVariant2() => IsPayloadStorageTypeVariant2
+            ? PayloadStorageTypeVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'PayloadStorageTypeVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

@@ -42,6 +42,13 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public global::Qdrant.ScalarQuantization PickScalar() => IsScalar
+            ? Scalar!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Scalar' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.ProductQuantization? Product { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace Qdrant
             value = Product;
             return IsProduct;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.ProductQuantization PickProduct() => IsProduct
+            ? Product!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Product' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -102,6 +116,13 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public global::Qdrant.BinaryQuantization PickBinary() => IsBinary
+            ? Binary!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Binary' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.TurboQuantization? Turbo { get; init; }
 #else
@@ -128,6 +149,13 @@ namespace Qdrant
             value = Turbo;
             return IsTurbo;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.TurboQuantization PickTurbo() => IsTurbo
+            ? Turbo!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Turbo' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

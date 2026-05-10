@@ -72,5 +72,6 @@ namespace Qdrant
         public SegmentTelemetry()
         {
         }
+
     }
 }

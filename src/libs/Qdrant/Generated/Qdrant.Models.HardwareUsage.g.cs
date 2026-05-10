@@ -100,5 +100,6 @@ namespace Qdrant
         public HardwareUsage()
         {
         }
+
     }
 }

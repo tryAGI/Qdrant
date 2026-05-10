@@ -87,5 +87,6 @@ namespace Qdrant
         public CollectionParamsDiff()
         {
         }
+
     }
 }

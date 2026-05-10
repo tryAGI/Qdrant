@@ -40,5 +40,6 @@ namespace Qdrant
         public ShardCleanStatusProgressTelemetry()
         {
         }
+
     }
 }

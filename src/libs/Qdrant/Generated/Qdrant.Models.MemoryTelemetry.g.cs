@@ -90,5 +90,6 @@ namespace Qdrant
         public MemoryTelemetry()
         {
         }
+
     }
 }

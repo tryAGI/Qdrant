@@ -110,5 +110,6 @@ namespace Qdrant
         public VectorParams()
         {
         }
+
     }
 }

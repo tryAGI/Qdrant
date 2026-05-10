@@ -40,6 +40,13 @@ namespace Qdrant
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.IndexesVariant1 PickIndexesVariant1() => IsIndexesVariant1
+            ? IndexesVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'IndexesVariant1' but the value was {ToString()}.");
+
+        /// <summary>
         /// Use filterable HNSW index for approximate search. Is very fast even on a very huge collections, but require additional space to store index and additional time to build it.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -68,6 +75,13 @@ namespace Qdrant
             value = IndexesVariant2;
             return IsIndexesVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.IndexesVariant2 PickIndexesVariant2() => IsIndexesVariant2
+            ? IndexesVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'IndexesVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

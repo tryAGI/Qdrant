@@ -43,6 +43,13 @@ namespace Qdrant
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.DenseVectorNameConfig PickDense() => IsDense
+            ? Dense!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Dense' but the value was {ToString()}.");
+
+        /// <summary>
         /// Wrapper for sparse vector creation config.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -71,6 +78,13 @@ namespace Qdrant
             value = Sparse;
             return IsSparse;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.SparseVectorNameConfig PickSparse() => IsSparse
+            ? Sparse!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Sparse' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

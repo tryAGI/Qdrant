@@ -42,6 +42,13 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public global::Qdrant.ContextPair PickPair() => IsPair
+            ? Pair!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Pair' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<global::Qdrant.ContextPair>? ContextInputVariant2 { get; init; }
 #else
@@ -72,6 +79,13 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public global::System.Collections.Generic.IList<global::Qdrant.ContextPair> PickContextInputVariant2() => IsContextInputVariant2
+            ? ContextInputVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ContextInputVariant2' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public object? ContextInputVariant3 { get; init; }
 #else
@@ -98,6 +112,13 @@ namespace Qdrant
             value = ContextInputVariant3;
             return IsContextInputVariant3;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public object PickContextInputVariant3() => IsContextInputVariant3
+            ? ContextInputVariant3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ContextInputVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

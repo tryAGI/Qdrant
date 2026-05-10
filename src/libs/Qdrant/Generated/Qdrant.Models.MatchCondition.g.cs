@@ -40,6 +40,13 @@ namespace Qdrant
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.MatchValue PickValue() => IsValue
+            ? Value!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value' but the value was {ToString()}.");
+
+        /// <summary>
         /// Full-text match of the strings.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -68,6 +75,13 @@ namespace Qdrant
             value = Text;
             return IsText;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.MatchText PickText() => IsText
+            ? Text!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
 
         /// <summary>
         /// Full-text match of at least one token of the string.
@@ -100,6 +114,13 @@ namespace Qdrant
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.MatchTextAny PickTextAny() => IsTextAny
+            ? TextAny!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TextAny' but the value was {ToString()}.");
+
+        /// <summary>
         /// Full-text phrase match of the string.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -128,6 +149,13 @@ namespace Qdrant
             value = Phrase;
             return IsPhrase;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.MatchPhrase PickPhrase() => IsPhrase
+            ? Phrase!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Phrase' but the value was {ToString()}.");
 
         /// <summary>
         /// Exact match on any of the given values
@@ -160,6 +188,13 @@ namespace Qdrant
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.MatchAny PickAny() => IsAny
+            ? Any!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Any' but the value was {ToString()}.");
+
+        /// <summary>
         /// Should have at least one value not matching the any given values
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -188,6 +223,13 @@ namespace Qdrant
             value = Except;
             return IsExcept;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.MatchExcept PickExcept() => IsExcept
+            ? Except!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Except' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

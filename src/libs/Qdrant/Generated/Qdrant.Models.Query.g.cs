@@ -42,6 +42,13 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public global::Qdrant.NearestQuery PickNearest() => IsNearest
+            ? Nearest!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Nearest' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.RecommendQuery? Recommend { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace Qdrant
             value = Recommend;
             return IsRecommend;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.RecommendQuery PickRecommend() => IsRecommend
+            ? Recommend!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Recommend' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -102,6 +116,13 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public global::Qdrant.DiscoverQuery PickDiscover() => IsDiscover
+            ? Discover!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Discover' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.ContextQuery? Context { get; init; }
 #else
@@ -128,6 +149,13 @@ namespace Qdrant
             value = Context;
             return IsContext;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.ContextQuery PickContext() => IsContext
+            ? Context!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Context' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -162,6 +190,13 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public global::Qdrant.OrderByQuery PickOrderBy() => IsOrderBy
+            ? OrderBy!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OrderBy' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.FusionQuery? Fusion { get; init; }
 #else
@@ -188,6 +223,13 @@ namespace Qdrant
             value = Fusion;
             return IsFusion;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.FusionQuery PickFusion() => IsFusion
+            ? Fusion!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Fusion' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -222,6 +264,13 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public global::Qdrant.RrfQuery PickRrf() => IsRrf
+            ? Rrf!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Rrf' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.FormulaQuery? Formula { get; init; }
 #else
@@ -248,6 +297,13 @@ namespace Qdrant
             value = Formula;
             return IsFormula;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.FormulaQuery PickFormula() => IsFormula
+            ? Formula!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Formula' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -282,6 +338,13 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public global::Qdrant.SampleQuery PickSample() => IsSample
+            ? Sample!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Sample' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.RelevanceFeedbackQuery? RelevanceFeedback { get; init; }
 #else
@@ -308,6 +371,13 @@ namespace Qdrant
             value = RelevanceFeedback;
             return IsRelevanceFeedback;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.RelevanceFeedbackQuery PickRelevanceFeedback() => IsRelevanceFeedback
+            ? RelevanceFeedback!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RelevanceFeedback' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

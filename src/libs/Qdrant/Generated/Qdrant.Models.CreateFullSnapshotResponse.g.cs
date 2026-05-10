@@ -68,5 +68,6 @@ namespace Qdrant
         public CreateFullSnapshotResponse()
         {
         }
+
     }
 }

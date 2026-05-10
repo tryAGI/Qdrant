@@ -42,6 +42,13 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public global::Qdrant.PointsBatch PickPointsBatch() => IsPointsBatch
+            ? PointsBatch!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'PointsBatch' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.PointsList? PointsList { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace Qdrant
             value = PointsList;
             return IsPointsList;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.PointsList PickPointsList() => IsPointsList
+            ? PointsList!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'PointsList' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

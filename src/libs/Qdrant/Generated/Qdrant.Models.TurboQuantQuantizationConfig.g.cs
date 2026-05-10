@@ -48,5 +48,6 @@ namespace Qdrant
         public TurboQuantQuantizationConfig()
         {
         }
+
     }
 }

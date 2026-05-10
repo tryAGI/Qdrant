@@ -74,5 +74,6 @@ namespace Qdrant
         public DecayParamsExpression()
         {
         }
+
     }
 }

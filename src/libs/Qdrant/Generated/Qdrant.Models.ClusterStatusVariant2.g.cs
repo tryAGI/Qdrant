@@ -101,5 +101,6 @@ namespace Qdrant
         public ClusterStatusVariant2()
         {
         }
+
     }
 }

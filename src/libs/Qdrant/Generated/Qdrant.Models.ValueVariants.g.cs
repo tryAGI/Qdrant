@@ -42,6 +42,13 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public string PickValueVariantsVariant1() => IsValueVariantsVariant1
+            ? ValueVariantsVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ValueVariantsVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public long? ValueVariantsVariant2 { get; init; }
 #else
@@ -72,6 +79,13 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public long PickValueVariantsVariant2() => IsValueVariantsVariant2
+            ? ValueVariantsVariant2!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ValueVariantsVariant2' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public bool? ValueVariantsVariant3 { get; init; }
 #else
@@ -98,6 +112,13 @@ namespace Qdrant
             value = ValueVariantsVariant3;
             return IsValueVariantsVariant3;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool PickValueVariantsVariant3() => IsValueVariantsVariant3
+            ? ValueVariantsVariant3!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ValueVariantsVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

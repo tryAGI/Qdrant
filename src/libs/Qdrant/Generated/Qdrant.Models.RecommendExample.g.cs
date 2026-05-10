@@ -42,6 +42,13 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public global::Qdrant.ExtendedPointId PickExtendedPointId() => IsExtendedPointId
+            ? ExtendedPointId!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ExtendedPointId' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<float>? RecommendExampleVariant2 { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace Qdrant
             value = RecommendExampleVariant2;
             return IsRecommendExampleVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<float> PickRecommendExampleVariant2() => IsRecommendExampleVariant2
+            ? RecommendExampleVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RecommendExampleVariant2' but the value was {ToString()}.");
 
         /// <summary>
         /// Sparse vector structure
@@ -98,6 +112,13 @@ namespace Qdrant
             value = SparseVector;
             return IsSparseVector;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.SparseVector PickSparseVector() => IsSparseVector
+            ? SparseVector!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SparseVector' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

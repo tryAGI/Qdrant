@@ -154,5 +154,6 @@ namespace Qdrant
         public DistributedReplicaTelemetry()
         {
         }
+
     }
 }

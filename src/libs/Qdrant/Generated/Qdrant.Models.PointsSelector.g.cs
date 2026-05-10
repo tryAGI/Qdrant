@@ -42,6 +42,13 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public global::Qdrant.PointIdsList PickPointIdsList() => IsPointIdsList
+            ? PointIdsList!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'PointIdsList' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.FilterSelector? Filter { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace Qdrant
             value = Filter;
             return IsFilter;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.FilterSelector PickFilter() => IsFilter
+            ? Filter!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Filter' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

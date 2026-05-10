@@ -42,6 +42,13 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public float PickExpressionVariant1() => IsExpressionVariant1
+            ? ExpressionVariant1!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ExpressionVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public string? ExpressionVariant2 { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace Qdrant
             value = ExpressionVariant2;
             return IsExpressionVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string PickExpressionVariant2() => IsExpressionVariant2
+            ? ExpressionVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ExpressionVariant2' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -102,6 +116,13 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public global::Qdrant.Condition PickCondition() => IsCondition
+            ? Condition!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Condition' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.GeoDistance? GeoDistance { get; init; }
 #else
@@ -128,6 +149,13 @@ namespace Qdrant
             value = GeoDistance;
             return IsGeoDistance;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.GeoDistance PickGeoDistance() => IsGeoDistance
+            ? GeoDistance!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'GeoDistance' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -162,6 +190,13 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public global::Qdrant.DatetimeExpression PickDatetime() => IsDatetime
+            ? Datetime!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Datetime' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.DatetimeKeyExpression? DatetimeKey { get; init; }
 #else
@@ -188,6 +223,13 @@ namespace Qdrant
             value = DatetimeKey;
             return IsDatetimeKey;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.DatetimeKeyExpression PickDatetimeKey() => IsDatetimeKey
+            ? DatetimeKey!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'DatetimeKey' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -222,6 +264,13 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public global::Qdrant.MultExpression PickMult() => IsMult
+            ? Mult!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Mult' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.SumExpression? Sum { get; init; }
 #else
@@ -248,6 +297,13 @@ namespace Qdrant
             value = Sum;
             return IsSum;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.SumExpression PickSum() => IsSum
+            ? Sum!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Sum' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -282,6 +338,13 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public global::Qdrant.NegExpression PickNeg() => IsNeg
+            ? Neg!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Neg' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.AbsExpression? Abs { get; init; }
 #else
@@ -308,6 +371,13 @@ namespace Qdrant
             value = Abs;
             return IsAbs;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.AbsExpression PickAbs() => IsAbs
+            ? Abs!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Abs' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -342,6 +412,13 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public global::Qdrant.DivExpression PickDiv() => IsDiv
+            ? Div!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Div' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.SqrtExpression? Sqrt { get; init; }
 #else
@@ -368,6 +445,13 @@ namespace Qdrant
             value = Sqrt;
             return IsSqrt;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.SqrtExpression PickSqrt() => IsSqrt
+            ? Sqrt!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Sqrt' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -402,6 +486,13 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public global::Qdrant.PowExpression PickPow() => IsPow
+            ? Pow!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Pow' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.ExpExpression? Exp { get; init; }
 #else
@@ -428,6 +519,13 @@ namespace Qdrant
             value = Exp;
             return IsExp;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.ExpExpression PickExp() => IsExp
+            ? Exp!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Exp' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -462,6 +560,13 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public global::Qdrant.Log10Expression PickLog10() => IsLog10
+            ? Log10!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Log10' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.LnExpression? Ln { get; init; }
 #else
@@ -488,6 +593,13 @@ namespace Qdrant
             value = Ln;
             return IsLn;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.LnExpression PickLn() => IsLn
+            ? Ln!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Ln' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -522,6 +634,13 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public global::Qdrant.LinDecayExpression PickLinDecay() => IsLinDecay
+            ? LinDecay!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'LinDecay' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.ExpDecayExpression? ExpDecay { get; init; }
 #else
@@ -552,6 +671,13 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public global::Qdrant.ExpDecayExpression PickExpDecay() => IsExpDecay
+            ? ExpDecay!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ExpDecay' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.GaussDecayExpression? GaussDecay { get; init; }
 #else
@@ -578,6 +704,13 @@ namespace Qdrant
             value = GaussDecay;
             return IsGaussDecay;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.GaussDecayExpression PickGaussDecay() => IsGaussDecay
+            ? GaussDecay!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'GaussDecay' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

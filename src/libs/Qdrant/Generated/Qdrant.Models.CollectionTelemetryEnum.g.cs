@@ -42,6 +42,13 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public global::Qdrant.CollectionTelemetry PickCollectionTelemetry() => IsCollectionTelemetry
+            ? CollectionTelemetry!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CollectionTelemetry' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.CollectionsAggregatedTelemetry? CollectionsAggregated { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace Qdrant
             value = CollectionsAggregated;
             return IsCollectionsAggregated;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.CollectionsAggregatedTelemetry PickCollectionsAggregated() => IsCollectionsAggregated
+            ? CollectionsAggregated!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CollectionsAggregated' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

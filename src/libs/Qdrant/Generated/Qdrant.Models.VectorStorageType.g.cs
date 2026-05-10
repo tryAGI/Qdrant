@@ -41,6 +41,13 @@ namespace Qdrant
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.VectorStorageTypeVariant1 PickVectorStorageTypeVariant1() => IsVectorStorageTypeVariant1
+            ? VectorStorageTypeVariant1!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'VectorStorageTypeVariant1' but the value was {ToString()}.");
+
+        /// <summary>
         /// Storage in mmap file, not appendable<br/>
         /// Search performance is defined by disk speed and the fraction of vectors that fit in memory.
         /// </summary>
@@ -70,6 +77,13 @@ namespace Qdrant
             value = VectorStorageTypeVariant2;
             return IsVectorStorageTypeVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.VectorStorageTypeVariant2 PickVectorStorageTypeVariant2() => IsVectorStorageTypeVariant2
+            ? VectorStorageTypeVariant2!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'VectorStorageTypeVariant2' but the value was {ToString()}.");
 
         /// <summary>
         /// Storage in chunked mmap files, appendable<br/>
@@ -103,6 +117,13 @@ namespace Qdrant
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.VectorStorageTypeVariant3 PickVectorStorageTypeVariant3() => IsVectorStorageTypeVariant3
+            ? VectorStorageTypeVariant3!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'VectorStorageTypeVariant3' but the value was {ToString()}.");
+
+        /// <summary>
         /// Same as `ChunkedMmap`, but vectors are forced to be locked in RAM In this way we avoid cold requests to disk, but risk to run out of memory<br/>
         /// Designed as a replacement for `Memory`, which doesn't depend on RocksDB
         /// </summary>
@@ -132,6 +153,13 @@ namespace Qdrant
             value = VectorStorageTypeVariant4;
             return IsVectorStorageTypeVariant4;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.VectorStorageTypeVariant4 PickVectorStorageTypeVariant4() => IsVectorStorageTypeVariant4
+            ? VectorStorageTypeVariant4!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'VectorStorageTypeVariant4' but the value was {ToString()}.");
 
         /// <summary>
         /// Storage in a single mmap file, not appendable Pre-fetched into RAM on load
@@ -164,6 +192,13 @@ namespace Qdrant
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.VectorStorageTypeVariant5 PickVectorStorageTypeVariant5() => IsVectorStorageTypeVariant5
+            ? VectorStorageTypeVariant5!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'VectorStorageTypeVariant5' but the value was {ToString()}.");
+
+        /// <summary>
         /// Placeholder storage: contains no data, all vectors reported as deleted. Used for newly created named vectors on immutable segments. No files on disk, reconstructed from config on load.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -192,6 +227,13 @@ namespace Qdrant
             value = VectorStorageTypeVariant6;
             return IsVectorStorageTypeVariant6;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.VectorStorageTypeVariant6 PickVectorStorageTypeVariant6() => IsVectorStorageTypeVariant6
+            ? VectorStorageTypeVariant6!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'VectorStorageTypeVariant6' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

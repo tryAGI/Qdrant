@@ -42,6 +42,13 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public global::Qdrant.ConsensusThreadStatusVariant1 PickConsensusThreadStatusVariant1() => IsConsensusThreadStatusVariant1
+            ? ConsensusThreadStatusVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ConsensusThreadStatusVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.ConsensusThreadStatusVariant2? ConsensusThreadStatusVariant2 { get; init; }
 #else
@@ -72,6 +79,13 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public global::Qdrant.ConsensusThreadStatusVariant2 PickConsensusThreadStatusVariant2() => IsConsensusThreadStatusVariant2
+            ? ConsensusThreadStatusVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ConsensusThreadStatusVariant2' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.ConsensusThreadStatusVariant3? ConsensusThreadStatusVariant3 { get; init; }
 #else
@@ -98,6 +112,13 @@ namespace Qdrant
             value = ConsensusThreadStatusVariant3;
             return IsConsensusThreadStatusVariant3;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.ConsensusThreadStatusVariant3 PickConsensusThreadStatusVariant3() => IsConsensusThreadStatusVariant3
+            ? ConsensusThreadStatusVariant3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ConsensusThreadStatusVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

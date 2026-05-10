@@ -42,6 +42,13 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public global::Qdrant.PayloadSelectorInclude PickInclude() => IsInclude
+            ? Include!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Include' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.PayloadSelectorExclude? Exclude { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace Qdrant
             value = Exclude;
             return IsExclude;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.PayloadSelectorExclude PickExclude() => IsExclude
+            ? Exclude!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Exclude' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

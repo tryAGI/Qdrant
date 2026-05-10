@@ -38,6 +38,13 @@ namespace Qdrant
             value = Naive;
             return IsNaive;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.NaiveFeedbackStrategy PickNaive() => IsNaive
+            ? Naive!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Naive' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

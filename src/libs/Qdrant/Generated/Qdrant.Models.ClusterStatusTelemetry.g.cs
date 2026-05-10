@@ -111,5 +111,6 @@ namespace Qdrant
         public ClusterStatusTelemetry()
         {
         }
+
     }
 }

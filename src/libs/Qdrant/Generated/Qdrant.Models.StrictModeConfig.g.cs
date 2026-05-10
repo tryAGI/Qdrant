@@ -261,5 +261,6 @@ namespace Qdrant
         public StrictModeConfig()
         {
         }
+
     }
 }

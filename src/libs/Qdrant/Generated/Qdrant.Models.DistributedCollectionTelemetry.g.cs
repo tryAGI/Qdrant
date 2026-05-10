@@ -75,5 +75,6 @@ namespace Qdrant
         public DistributedCollectionTelemetry()
         {
         }
+
     }
 }

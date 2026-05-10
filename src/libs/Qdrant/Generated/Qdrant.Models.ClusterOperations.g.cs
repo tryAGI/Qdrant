@@ -42,6 +42,13 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public global::Qdrant.MoveShardOperation PickMoveShardOperation() => IsMoveShardOperation
+            ? MoveShardOperation!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MoveShardOperation' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.ReplicateShardOperation? ReplicateShardOperation { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace Qdrant
             value = ReplicateShardOperation;
             return IsReplicateShardOperation;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.ReplicateShardOperation PickReplicateShardOperation() => IsReplicateShardOperation
+            ? ReplicateShardOperation!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ReplicateShardOperation' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -102,6 +116,13 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public global::Qdrant.AbortTransferOperation PickAbortTransferOperation() => IsAbortTransferOperation
+            ? AbortTransferOperation!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AbortTransferOperation' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.DropReplicaOperation? DropReplicaOperation { get; init; }
 #else
@@ -128,6 +149,13 @@ namespace Qdrant
             value = DropReplicaOperation;
             return IsDropReplicaOperation;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.DropReplicaOperation PickDropReplicaOperation() => IsDropReplicaOperation
+            ? DropReplicaOperation!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'DropReplicaOperation' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -162,6 +190,13 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public global::Qdrant.CreateShardingKeyOperation PickCreateShardingKeyOperation() => IsCreateShardingKeyOperation
+            ? CreateShardingKeyOperation!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CreateShardingKeyOperation' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.DropShardingKeyOperation? DropShardingKeyOperation { get; init; }
 #else
@@ -188,6 +223,13 @@ namespace Qdrant
             value = DropShardingKeyOperation;
             return IsDropShardingKeyOperation;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.DropShardingKeyOperation PickDropShardingKeyOperation() => IsDropShardingKeyOperation
+            ? DropShardingKeyOperation!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'DropShardingKeyOperation' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -222,6 +264,13 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public global::Qdrant.RestartTransferOperation PickRestartTransferOperation() => IsRestartTransferOperation
+            ? RestartTransferOperation!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RestartTransferOperation' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.StartReshardingOperation? StartReshardingOperation { get; init; }
 #else
@@ -248,6 +297,13 @@ namespace Qdrant
             value = StartReshardingOperation;
             return IsStartReshardingOperation;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.StartReshardingOperation PickStartReshardingOperation() => IsStartReshardingOperation
+            ? StartReshardingOperation!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'StartReshardingOperation' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -282,6 +338,13 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public global::Qdrant.AbortReshardingOperation PickAbortReshardingOperation() => IsAbortReshardingOperation
+            ? AbortReshardingOperation!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AbortReshardingOperation' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.ReplicatePointsOperation? ReplicatePointsOperation { get; init; }
 #else
@@ -308,6 +371,13 @@ namespace Qdrant
             value = ReplicatePointsOperation;
             return IsReplicatePointsOperation;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.ReplicatePointsOperation PickReplicatePointsOperation() => IsReplicatePointsOperation
+            ? ReplicatePointsOperation!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ReplicatePointsOperation' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

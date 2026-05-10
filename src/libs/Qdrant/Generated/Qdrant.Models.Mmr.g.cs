@@ -58,5 +58,6 @@ namespace Qdrant
         public Mmr()
         {
         }
+
     }
 }

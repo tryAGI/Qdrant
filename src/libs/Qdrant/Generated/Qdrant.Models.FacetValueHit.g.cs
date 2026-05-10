@@ -51,5 +51,6 @@ namespace Qdrant
         public FacetValueHit()
         {
         }
+
     }
 }

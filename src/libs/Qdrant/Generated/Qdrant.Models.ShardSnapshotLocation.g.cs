@@ -42,6 +42,13 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public string PickShardSnapshotLocationVariant1() => IsShardSnapshotLocationVariant1
+            ? ShardSnapshotLocationVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ShardSnapshotLocationVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public string? ShardSnapshotLocationVariant2 { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace Qdrant
             value = ShardSnapshotLocationVariant2;
             return IsShardSnapshotLocationVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string PickShardSnapshotLocationVariant2() => IsShardSnapshotLocationVariant2
+            ? ShardSnapshotLocationVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ShardSnapshotLocationVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
