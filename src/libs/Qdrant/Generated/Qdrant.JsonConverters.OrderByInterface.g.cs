@@ -77,6 +77,7 @@ namespace Qdrant.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
                     orderByInterfaceVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -87,9 +88,13 @@ namespace Qdrant.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (orderByInterfaceVariant1 == null && orderBy == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.OrderBy), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.OrderBy> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.OrderBy).Name}");
                     orderBy = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

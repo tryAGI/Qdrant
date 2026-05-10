@@ -76,6 +76,7 @@ namespace Qdrant.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.Language), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.Language> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.Language).Name}");
                     language = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -86,9 +87,13 @@ namespace Qdrant.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (language == null && set == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.StopwordsSet), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.StopwordsSet> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.StopwordsSet).Name}");
                     set = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

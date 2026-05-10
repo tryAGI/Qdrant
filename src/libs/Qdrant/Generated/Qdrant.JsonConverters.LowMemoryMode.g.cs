@@ -138,7 +138,10 @@ namespace Qdrant.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (lowMemoryModeVariant1 == null && lowMemoryModeVariant2 == null && lowMemoryModeVariant3 == null)
+            {
                 try
                 {
 
@@ -152,7 +155,10 @@ namespace Qdrant.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (lowMemoryModeVariant1 == null && lowMemoryModeVariant2 == null && lowMemoryModeVariant3 == null)
+            {
                 try
                 {
 

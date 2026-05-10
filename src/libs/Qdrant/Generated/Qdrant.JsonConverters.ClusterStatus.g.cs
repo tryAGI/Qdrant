@@ -94,6 +94,7 @@ namespace Qdrant.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.ClusterStatusVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.ClusterStatusVariant1> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.ClusterStatusVariant1).Name}");
                     clusterStatusVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -104,9 +105,13 @@ namespace Qdrant.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (clusterStatusVariant1 == null && clusterStatusVariant2 == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.ClusterStatusVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.ClusterStatusVariant2> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.ClusterStatusVariant2).Name}");
                     clusterStatusVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

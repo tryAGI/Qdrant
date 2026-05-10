@@ -94,6 +94,7 @@ namespace Qdrant.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.ShardKey), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.ShardKey> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.ShardKey).Name}");
                     shardKey = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -104,9 +105,13 @@ namespace Qdrant.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (shardKey == null && shardKeySelectorVariant2 == null && withFallback == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.IList<global::Qdrant.ShardKey>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.IList<global::Qdrant.ShardKey>> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.IList<global::Qdrant.ShardKey>).Name}");
                     shardKeySelectorVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -117,9 +122,13 @@ namespace Qdrant.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (shardKey == null && shardKeySelectorVariant2 == null && withFallback == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.ShardKeyWithFallback), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.ShardKeyWithFallback> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.ShardKeyWithFallback).Name}");
                     withFallback = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

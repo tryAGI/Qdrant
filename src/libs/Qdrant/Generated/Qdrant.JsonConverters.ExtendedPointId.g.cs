@@ -108,7 +108,10 @@ namespace Qdrant.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (extendedPointIdVariant1 == null && guid == null)
+            {
                 try
                 {
 

@@ -108,7 +108,10 @@ namespace Qdrant.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (shardKeyVariant1 == null && shardKeyVariant2 == null)
+            {
                 try
                 {
 

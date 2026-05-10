@@ -228,7 +228,10 @@ namespace Qdrant.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (vectorStorageTypeVariant1 == null && vectorStorageTypeVariant2 == null && vectorStorageTypeVariant3 == null && vectorStorageTypeVariant4 == null && vectorStorageTypeVariant5 == null && vectorStorageTypeVariant6 == null)
+            {
                 try
                 {
 
@@ -242,7 +245,10 @@ namespace Qdrant.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (vectorStorageTypeVariant1 == null && vectorStorageTypeVariant2 == null && vectorStorageTypeVariant3 == null && vectorStorageTypeVariant4 == null && vectorStorageTypeVariant5 == null && vectorStorageTypeVariant6 == null)
+            {
                 try
                 {
 
@@ -256,7 +262,10 @@ namespace Qdrant.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (vectorStorageTypeVariant1 == null && vectorStorageTypeVariant2 == null && vectorStorageTypeVariant3 == null && vectorStorageTypeVariant4 == null && vectorStorageTypeVariant5 == null && vectorStorageTypeVariant6 == null)
+            {
                 try
                 {
 
@@ -270,7 +279,10 @@ namespace Qdrant.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (vectorStorageTypeVariant1 == null && vectorStorageTypeVariant2 == null && vectorStorageTypeVariant3 == null && vectorStorageTypeVariant4 == null && vectorStorageTypeVariant5 == null && vectorStorageTypeVariant6 == null)
+            {
                 try
                 {
 
@@ -284,7 +296,10 @@ namespace Qdrant.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (vectorStorageTypeVariant1 == null && vectorStorageTypeVariant2 == null && vectorStorageTypeVariant3 == null && vectorStorageTypeVariant4 == null && vectorStorageTypeVariant5 == null && vectorStorageTypeVariant6 == null)
+            {
                 try
                 {
 

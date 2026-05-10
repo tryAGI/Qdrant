@@ -422,6 +422,7 @@ namespace Qdrant.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(float), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<float> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(float).Name}");
                     expressionVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -432,9 +433,13 @@ namespace Qdrant.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (expressionVariant1 == null && expressionVariant2 == null && condition == null && geoDistance == null && datetime == null && datetimeKey == null && mult == null && sum == null && neg == null && abs == null && div == null && sqrt == null && pow == null && exp == null && log10 == null && ln == null && linDecay == null && expDecay == null && gaussDecay == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
                     expressionVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -445,9 +450,13 @@ namespace Qdrant.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (expressionVariant1 == null && expressionVariant2 == null && condition == null && geoDistance == null && datetime == null && datetimeKey == null && mult == null && sum == null && neg == null && abs == null && div == null && sqrt == null && pow == null && exp == null && log10 == null && ln == null && linDecay == null && expDecay == null && gaussDecay == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.Condition), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.Condition> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.Condition).Name}");
                     condition = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -458,9 +467,13 @@ namespace Qdrant.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (expressionVariant1 == null && expressionVariant2 == null && condition == null && geoDistance == null && datetime == null && datetimeKey == null && mult == null && sum == null && neg == null && abs == null && div == null && sqrt == null && pow == null && exp == null && log10 == null && ln == null && linDecay == null && expDecay == null && gaussDecay == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.GeoDistance), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.GeoDistance> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.GeoDistance).Name}");
                     geoDistance = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -471,9 +484,13 @@ namespace Qdrant.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (expressionVariant1 == null && expressionVariant2 == null && condition == null && geoDistance == null && datetime == null && datetimeKey == null && mult == null && sum == null && neg == null && abs == null && div == null && sqrt == null && pow == null && exp == null && log10 == null && ln == null && linDecay == null && expDecay == null && gaussDecay == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.DatetimeExpression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.DatetimeExpression> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.DatetimeExpression).Name}");
                     datetime = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -484,9 +501,13 @@ namespace Qdrant.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (expressionVariant1 == null && expressionVariant2 == null && condition == null && geoDistance == null && datetime == null && datetimeKey == null && mult == null && sum == null && neg == null && abs == null && div == null && sqrt == null && pow == null && exp == null && log10 == null && ln == null && linDecay == null && expDecay == null && gaussDecay == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.DatetimeKeyExpression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.DatetimeKeyExpression> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.DatetimeKeyExpression).Name}");
                     datetimeKey = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -497,9 +518,13 @@ namespace Qdrant.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (expressionVariant1 == null && expressionVariant2 == null && condition == null && geoDistance == null && datetime == null && datetimeKey == null && mult == null && sum == null && neg == null && abs == null && div == null && sqrt == null && pow == null && exp == null && log10 == null && ln == null && linDecay == null && expDecay == null && gaussDecay == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.MultExpression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.MultExpression> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.MultExpression).Name}");
                     mult = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -510,9 +535,13 @@ namespace Qdrant.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (expressionVariant1 == null && expressionVariant2 == null && condition == null && geoDistance == null && datetime == null && datetimeKey == null && mult == null && sum == null && neg == null && abs == null && div == null && sqrt == null && pow == null && exp == null && log10 == null && ln == null && linDecay == null && expDecay == null && gaussDecay == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.SumExpression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.SumExpression> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.SumExpression).Name}");
                     sum = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -523,9 +552,13 @@ namespace Qdrant.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (expressionVariant1 == null && expressionVariant2 == null && condition == null && geoDistance == null && datetime == null && datetimeKey == null && mult == null && sum == null && neg == null && abs == null && div == null && sqrt == null && pow == null && exp == null && log10 == null && ln == null && linDecay == null && expDecay == null && gaussDecay == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.NegExpression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.NegExpression> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.NegExpression).Name}");
                     neg = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -536,9 +569,13 @@ namespace Qdrant.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (expressionVariant1 == null && expressionVariant2 == null && condition == null && geoDistance == null && datetime == null && datetimeKey == null && mult == null && sum == null && neg == null && abs == null && div == null && sqrt == null && pow == null && exp == null && log10 == null && ln == null && linDecay == null && expDecay == null && gaussDecay == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.AbsExpression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.AbsExpression> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.AbsExpression).Name}");
                     abs = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -549,9 +586,13 @@ namespace Qdrant.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (expressionVariant1 == null && expressionVariant2 == null && condition == null && geoDistance == null && datetime == null && datetimeKey == null && mult == null && sum == null && neg == null && abs == null && div == null && sqrt == null && pow == null && exp == null && log10 == null && ln == null && linDecay == null && expDecay == null && gaussDecay == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.DivExpression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.DivExpression> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.DivExpression).Name}");
                     div = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -562,9 +603,13 @@ namespace Qdrant.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (expressionVariant1 == null && expressionVariant2 == null && condition == null && geoDistance == null && datetime == null && datetimeKey == null && mult == null && sum == null && neg == null && abs == null && div == null && sqrt == null && pow == null && exp == null && log10 == null && ln == null && linDecay == null && expDecay == null && gaussDecay == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.SqrtExpression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.SqrtExpression> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.SqrtExpression).Name}");
                     sqrt = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -575,9 +620,13 @@ namespace Qdrant.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (expressionVariant1 == null && expressionVariant2 == null && condition == null && geoDistance == null && datetime == null && datetimeKey == null && mult == null && sum == null && neg == null && abs == null && div == null && sqrt == null && pow == null && exp == null && log10 == null && ln == null && linDecay == null && expDecay == null && gaussDecay == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.PowExpression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.PowExpression> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.PowExpression).Name}");
                     pow = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -588,9 +637,13 @@ namespace Qdrant.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (expressionVariant1 == null && expressionVariant2 == null && condition == null && geoDistance == null && datetime == null && datetimeKey == null && mult == null && sum == null && neg == null && abs == null && div == null && sqrt == null && pow == null && exp == null && log10 == null && ln == null && linDecay == null && expDecay == null && gaussDecay == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.ExpExpression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.ExpExpression> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.ExpExpression).Name}");
                     exp = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -601,9 +654,13 @@ namespace Qdrant.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (expressionVariant1 == null && expressionVariant2 == null && condition == null && geoDistance == null && datetime == null && datetimeKey == null && mult == null && sum == null && neg == null && abs == null && div == null && sqrt == null && pow == null && exp == null && log10 == null && ln == null && linDecay == null && expDecay == null && gaussDecay == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.Log10Expression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.Log10Expression> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.Log10Expression).Name}");
                     log10 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -614,9 +671,13 @@ namespace Qdrant.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (expressionVariant1 == null && expressionVariant2 == null && condition == null && geoDistance == null && datetime == null && datetimeKey == null && mult == null && sum == null && neg == null && abs == null && div == null && sqrt == null && pow == null && exp == null && log10 == null && ln == null && linDecay == null && expDecay == null && gaussDecay == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.LnExpression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.LnExpression> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.LnExpression).Name}");
                     ln = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -627,9 +688,13 @@ namespace Qdrant.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (expressionVariant1 == null && expressionVariant2 == null && condition == null && geoDistance == null && datetime == null && datetimeKey == null && mult == null && sum == null && neg == null && abs == null && div == null && sqrt == null && pow == null && exp == null && log10 == null && ln == null && linDecay == null && expDecay == null && gaussDecay == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.LinDecayExpression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.LinDecayExpression> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.LinDecayExpression).Name}");
                     linDecay = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -640,9 +705,13 @@ namespace Qdrant.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (expressionVariant1 == null && expressionVariant2 == null && condition == null && geoDistance == null && datetime == null && datetimeKey == null && mult == null && sum == null && neg == null && abs == null && div == null && sqrt == null && pow == null && exp == null && log10 == null && ln == null && linDecay == null && expDecay == null && gaussDecay == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.ExpDecayExpression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.ExpDecayExpression> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.ExpDecayExpression).Name}");
                     expDecay = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -653,9 +722,13 @@ namespace Qdrant.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (expressionVariant1 == null && expressionVariant2 == null && condition == null && geoDistance == null && datetime == null && datetimeKey == null && mult == null && sum == null && neg == null && abs == null && div == null && sqrt == null && pow == null && exp == null && log10 == null && ln == null && linDecay == null && expDecay == null && gaussDecay == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.GaussDecayExpression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.GaussDecayExpression> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.GaussDecayExpression).Name}");
                     gaussDecay = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

@@ -75,6 +75,7 @@ namespace Qdrant.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.OptimizersStatusEnum), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.OptimizersStatusEnum> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.OptimizersStatusEnum).Name}");
                     @enum = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -85,9 +86,13 @@ namespace Qdrant.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (@enum == null && enum2 == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.OptimizersStatusEnum2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.OptimizersStatusEnum2> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.OptimizersStatusEnum2).Name}");
                     enum2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

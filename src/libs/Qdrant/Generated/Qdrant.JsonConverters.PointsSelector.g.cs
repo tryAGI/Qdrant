@@ -89,6 +89,7 @@ namespace Qdrant.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.PointIdsList), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.PointIdsList> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.PointIdsList).Name}");
                     pointIdsList = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -99,9 +100,13 @@ namespace Qdrant.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (pointIdsList == null && filter == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.FilterSelector), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.FilterSelector> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.FilterSelector).Name}");
                     filter = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
