@@ -40,6 +40,13 @@ namespace Qdrant
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.PayloadSchemaType PickType() => IsType
+            ? Type!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Type' but the value was {ToString()}.");
+
+        /// <summary>
         /// Payload type with parameters
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -68,6 +75,13 @@ namespace Qdrant
             value = Params;
             return IsParams;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.PayloadSchemaParams PickParams() => IsParams
+            ? Params!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Params' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

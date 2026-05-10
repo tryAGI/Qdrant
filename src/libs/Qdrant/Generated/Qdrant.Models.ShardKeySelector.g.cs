@@ -42,6 +42,13 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public global::Qdrant.ShardKey PickShardKey() => IsShardKey
+            ? ShardKey!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ShardKey' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<global::Qdrant.ShardKey>? ShardKeySelectorVariant2 { get; init; }
 #else
@@ -72,6 +79,13 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public global::System.Collections.Generic.IList<global::Qdrant.ShardKey> PickShardKeySelectorVariant2() => IsShardKeySelectorVariant2
+            ? ShardKeySelectorVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ShardKeySelectorVariant2' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.ShardKeyWithFallback? WithFallback { get; init; }
 #else
@@ -98,6 +112,13 @@ namespace Qdrant
             value = WithFallback;
             return IsWithFallback;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.ShardKeyWithFallback PickWithFallback() => IsWithFallback
+            ? WithFallback!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'WithFallback' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

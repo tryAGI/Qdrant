@@ -67,5 +67,6 @@ namespace Qdrant
         public SparseIndexConfig()
         {
         }
+
     }
 }

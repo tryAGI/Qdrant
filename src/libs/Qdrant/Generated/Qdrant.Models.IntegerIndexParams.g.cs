@@ -95,5 +95,6 @@ namespace Qdrant
         public IntegerIndexParams()
         {
         }
+
     }
 }

@@ -114,5 +114,6 @@ namespace Qdrant
         public DistributedPeerDetails()
         {
         }
+
     }
 }

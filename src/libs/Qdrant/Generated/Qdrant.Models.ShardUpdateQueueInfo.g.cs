@@ -64,5 +64,6 @@ namespace Qdrant
         public ShardUpdateQueueInfo()
         {
         }
+
     }
 }

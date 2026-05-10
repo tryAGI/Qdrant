@@ -61,5 +61,6 @@ namespace Qdrant
         public RelevanceFeedbackInput()
         {
         }
+
     }
 }

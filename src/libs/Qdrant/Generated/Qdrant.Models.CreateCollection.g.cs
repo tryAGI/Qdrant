@@ -196,5 +196,6 @@ namespace Qdrant
         public CreateCollection()
         {
         }
+
     }
 }

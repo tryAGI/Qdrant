@@ -124,5 +124,6 @@ namespace Qdrant
         public RunningEnvironmentTelemetry()
         {
         }
+
     }
 }

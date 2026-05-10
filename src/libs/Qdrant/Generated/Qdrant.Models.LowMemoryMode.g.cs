@@ -42,6 +42,13 @@ namespace Qdrant
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.LowMemoryModeVariant1 PickLowMemoryModeVariant1() => IsLowMemoryModeVariant1
+            ? LowMemoryModeVariant1!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'LowMemoryModeVariant1' but the value was {ToString()}.");
+
+        /// <summary>
         /// Load RAM-friendly components as their on-disk variants where possible:<br/>
         /// * Quantization is loaded as if `always_ram = false`. * Payload field indexes are loaded as if `on_disk = true`. * Payload storage is loaded as the mmap variant (lazy populate).
         /// </summary>
@@ -73,6 +80,13 @@ namespace Qdrant
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.LowMemoryModeVariant2 PickLowMemoryModeVariant2() => IsLowMemoryModeVariant2
+            ? LowMemoryModeVariant2!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'LowMemoryModeVariant2' but the value was {ToString()}.");
+
+        /// <summary>
         /// Same as [`LowMemoryMode::NoResident`], plus mmap page population is skipped on load (for original vectors, HNSW graph and payload storage).
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -101,6 +115,13 @@ namespace Qdrant
             value = LowMemoryModeVariant3;
             return IsLowMemoryModeVariant3;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.LowMemoryModeVariant3 PickLowMemoryModeVariant3() => IsLowMemoryModeVariant3
+            ? LowMemoryModeVariant3!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'LowMemoryModeVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

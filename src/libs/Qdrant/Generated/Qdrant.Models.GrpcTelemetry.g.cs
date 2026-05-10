@@ -49,5 +49,6 @@ namespace Qdrant
         public GrpcTelemetry()
         {
         }
+
     }
 }

@@ -109,5 +109,6 @@ namespace Qdrant
         public ShardTransferInfo()
         {
         }
+
     }
 }

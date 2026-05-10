@@ -130,5 +130,6 @@ namespace Qdrant
         public FieldCondition()
         {
         }
+
     }
 }

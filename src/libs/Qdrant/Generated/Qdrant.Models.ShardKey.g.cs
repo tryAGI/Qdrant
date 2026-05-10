@@ -40,6 +40,13 @@ namespace Qdrant
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public string PickShardKeyVariant1() => IsShardKeyVariant1
+            ? ShardKeyVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ShardKeyVariant1' but the value was {ToString()}.");
+
+        /// <summary>
         /// Example: 12
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -68,6 +75,13 @@ namespace Qdrant
             value = ShardKeyVariant2;
             return IsShardKeyVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public int PickShardKeyVariant2() => IsShardKeyVariant2
+            ? ShardKeyVariant2!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ShardKeyVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

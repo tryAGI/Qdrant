@@ -40,6 +40,13 @@ namespace Qdrant
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool PickWithPayloadInterfaceVariant1() => IsWithPayloadInterfaceVariant1
+            ? WithPayloadInterfaceVariant1!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'WithPayloadInterfaceVariant1' but the value was {ToString()}.");
+
+        /// <summary>
         /// Specify which fields to return
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -70,6 +77,13 @@ namespace Qdrant
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<string> PickWithPayloadInterfaceVariant2() => IsWithPayloadInterfaceVariant2
+            ? WithPayloadInterfaceVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'WithPayloadInterfaceVariant2' but the value was {ToString()}.");
+
+        /// <summary>
         /// Specifies how to treat payload selector
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -98,6 +112,13 @@ namespace Qdrant
             value = Selector;
             return IsSelector;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.PayloadSelector PickSelector() => IsSelector
+            ? Selector!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Selector' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

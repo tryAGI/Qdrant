@@ -42,6 +42,13 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public global::Qdrant.KeywordIndexParams PickKeywordIndex() => IsKeywordIndex
+            ? KeywordIndex!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'KeywordIndex' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.IntegerIndexParams? IntegerIndex { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace Qdrant
             value = IntegerIndex;
             return IsIntegerIndex;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.IntegerIndexParams PickIntegerIndex() => IsIntegerIndex
+            ? IntegerIndex!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'IntegerIndex' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -102,6 +116,13 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public global::Qdrant.FloatIndexParams PickFloatIndex() => IsFloatIndex
+            ? FloatIndex!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FloatIndex' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.GeoIndexParams? GeoIndex { get; init; }
 #else
@@ -128,6 +149,13 @@ namespace Qdrant
             value = GeoIndex;
             return IsGeoIndex;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.GeoIndexParams PickGeoIndex() => IsGeoIndex
+            ? GeoIndex!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'GeoIndex' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -162,6 +190,13 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public global::Qdrant.TextIndexParams PickTextIndex() => IsTextIndex
+            ? TextIndex!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TextIndex' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.BoolIndexParams? BoolIndex { get; init; }
 #else
@@ -188,6 +223,13 @@ namespace Qdrant
             value = BoolIndex;
             return IsBoolIndex;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.BoolIndexParams PickBoolIndex() => IsBoolIndex
+            ? BoolIndex!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BoolIndex' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -222,6 +264,13 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public global::Qdrant.DatetimeIndexParams PickDatetimeIndex() => IsDatetimeIndex
+            ? DatetimeIndex!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'DatetimeIndex' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.UuidIndexParams? UuidIndex { get; init; }
 #else
@@ -248,6 +297,13 @@ namespace Qdrant
             value = UuidIndex;
             return IsUuidIndex;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.UuidIndexParams PickUuidIndex() => IsUuidIndex
+            ? UuidIndex!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'UuidIndex' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

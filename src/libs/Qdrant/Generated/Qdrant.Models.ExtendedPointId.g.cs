@@ -40,6 +40,13 @@ namespace Qdrant
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public int PickExtendedPointIdVariant1() => IsExtendedPointIdVariant1
+            ? ExtendedPointIdVariant1!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ExtendedPointIdVariant1' but the value was {ToString()}.");
+
+        /// <summary>
         /// Example: 550e8400-e29b-41d4-a716-446655440000
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -68,6 +75,13 @@ namespace Qdrant
             value = Guid;
             return IsGuid;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Guid PickGuid() => IsGuid
+            ? Guid!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Guid' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

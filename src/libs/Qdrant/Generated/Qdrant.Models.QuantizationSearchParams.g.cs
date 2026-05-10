@@ -69,5 +69,6 @@ namespace Qdrant
         public QuantizationSearchParams()
         {
         }
+
     }
 }

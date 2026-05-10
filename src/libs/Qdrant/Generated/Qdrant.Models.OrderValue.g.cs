@@ -40,6 +40,13 @@ namespace Qdrant
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public long PickOrderValueVariant1() => IsOrderValueVariant1
+            ? OrderValueVariant1!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OrderValueVariant1' but the value was {ToString()}.");
+
+        /// <summary>
         /// Example: 42.5F
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -68,6 +75,13 @@ namespace Qdrant
             value = OrderValueVariant2;
             return IsOrderValueVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public double PickOrderValueVariant2() => IsOrderValueVariant2
+            ? OrderValueVariant2!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OrderValueVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

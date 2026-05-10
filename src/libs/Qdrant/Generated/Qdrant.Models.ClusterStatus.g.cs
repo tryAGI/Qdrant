@@ -40,6 +40,13 @@ namespace Qdrant
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.ClusterStatusVariant1 PickClusterStatusVariant1() => IsClusterStatusVariant1
+            ? ClusterStatusVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ClusterStatusVariant1' but the value was {ToString()}.");
+
+        /// <summary>
         /// Description of enabled cluster
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -68,6 +75,13 @@ namespace Qdrant
             value = ClusterStatusVariant2;
             return IsClusterStatusVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.ClusterStatusVariant2 PickClusterStatusVariant2() => IsClusterStatusVariant2
+            ? ClusterStatusVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ClusterStatusVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

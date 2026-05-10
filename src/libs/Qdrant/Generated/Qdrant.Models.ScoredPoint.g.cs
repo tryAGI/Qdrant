@@ -117,5 +117,6 @@ namespace Qdrant
         public ScoredPoint()
         {
         }
+
     }
 }

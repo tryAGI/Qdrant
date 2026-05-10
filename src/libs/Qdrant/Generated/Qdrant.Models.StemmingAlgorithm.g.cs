@@ -38,6 +38,13 @@ namespace Qdrant
             value = SnowballParams;
             return IsSnowballParams;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.SnowballParams PickSnowballParams() => IsSnowballParams
+            ? SnowballParams!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SnowballParams' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

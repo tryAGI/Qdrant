@@ -44,5 +44,6 @@ namespace Qdrant
         public SparseVectorNameConfig()
         {
         }
+
     }
 }

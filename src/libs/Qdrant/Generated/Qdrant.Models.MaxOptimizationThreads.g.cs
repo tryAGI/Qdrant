@@ -42,6 +42,13 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public global::Qdrant.MaxOptimizationThreadsSetting PickSetting() => IsSetting
+            ? Setting!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Setting' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public int? MaxOptimizationThreadsVariant2 { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace Qdrant
             value = MaxOptimizationThreadsVariant2;
             return IsMaxOptimizationThreadsVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public int PickMaxOptimizationThreadsVariant2() => IsMaxOptimizationThreadsVariant2
+            ? MaxOptimizationThreadsVariant2!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MaxOptimizationThreadsVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

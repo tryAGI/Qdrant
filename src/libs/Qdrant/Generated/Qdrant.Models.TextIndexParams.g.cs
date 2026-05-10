@@ -149,5 +149,6 @@ namespace Qdrant
         public TextIndexParams()
         {
         }
+
     }
 }

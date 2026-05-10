@@ -42,6 +42,13 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public global::Qdrant.VectorInput PickVectorInput() => IsVectorInput
+            ? VectorInput!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'VectorInput' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.Query? Query { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace Qdrant
             value = Query;
             return IsQuery;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.Query PickQuery() => IsQuery
+            ? Query!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Query' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

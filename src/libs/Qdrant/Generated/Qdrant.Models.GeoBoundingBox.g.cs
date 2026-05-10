@@ -55,5 +55,6 @@ namespace Qdrant
         public GeoBoundingBox()
         {
         }
+
     }
 }

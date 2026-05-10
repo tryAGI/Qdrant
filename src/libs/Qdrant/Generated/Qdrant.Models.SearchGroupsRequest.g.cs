@@ -164,5 +164,6 @@ namespace Qdrant
         public SearchGroupsRequest()
         {
         }
+
     }
 }

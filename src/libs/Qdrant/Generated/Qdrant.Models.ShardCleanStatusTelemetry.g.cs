@@ -42,6 +42,13 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public global::Qdrant.ShardCleanStatusTelemetryEnum PickEnum() => IsEnum
+            ? Enum!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Enum' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.ShardCleanStatusTelemetryEnum2? Enum2 { get; init; }
 #else
@@ -72,6 +79,13 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public global::Qdrant.ShardCleanStatusTelemetryEnum2 PickEnum2() => IsEnum2
+            ? Enum2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Enum2' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.ShardCleanStatusTelemetryEnum3? Enum3 { get; init; }
 #else
@@ -98,6 +112,13 @@ namespace Qdrant
             value = Enum3;
             return IsEnum3;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.ShardCleanStatusTelemetryEnum3 PickEnum3() => IsEnum3
+            ? Enum3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Enum3' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

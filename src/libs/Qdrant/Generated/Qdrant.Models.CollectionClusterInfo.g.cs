@@ -101,5 +101,6 @@ namespace Qdrant
         public CollectionClusterInfo()
         {
         }
+
     }
 }

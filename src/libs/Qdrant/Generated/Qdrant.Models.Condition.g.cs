@@ -40,6 +40,13 @@ namespace Qdrant
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.FieldCondition PickField() => IsField
+            ? Field!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Field' but the value was {ToString()}.");
+
+        /// <summary>
         /// Select points with empty payload for a specified field
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -68,6 +75,13 @@ namespace Qdrant
             value = IsEmpty;
             return IsIsEmpty;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.IsEmptyCondition PickIsEmpty() => IsIsEmpty
+            ? IsEmpty!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'IsEmpty' but the value was {ToString()}.");
 
         /// <summary>
         /// Select points with null payload for a specified field
@@ -100,6 +114,13 @@ namespace Qdrant
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.IsNullCondition PickIsNull() => IsIsNull
+            ? IsNull!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'IsNull' but the value was {ToString()}.");
+
+        /// <summary>
         /// ID-based filtering condition
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -128,6 +149,13 @@ namespace Qdrant
             value = HasId;
             return IsHasId;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.HasIdCondition PickHasId() => IsHasId
+            ? HasId!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'HasId' but the value was {ToString()}.");
 
         /// <summary>
         /// Filter points which have specific vector assigned
@@ -162,6 +190,13 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public global::Qdrant.HasVectorCondition PickHasVector() => IsHasVector
+            ? HasVector!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'HasVector' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.NestedCondition? Nested { get; init; }
 #else
@@ -192,6 +227,13 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public global::Qdrant.NestedCondition PickNested() => IsNested
+            ? Nested!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Nested' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.Filter? Filter { get; init; }
 #else
@@ -218,6 +260,13 @@ namespace Qdrant
             value = Filter;
             return IsFilter;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.Filter PickFilter() => IsFilter
+            ? Filter!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Filter' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

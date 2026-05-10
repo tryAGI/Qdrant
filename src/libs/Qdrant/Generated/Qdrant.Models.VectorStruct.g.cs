@@ -40,6 +40,13 @@ namespace Qdrant
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<float> PickVectorStructVariant1() => IsVectorStructVariant1
+            ? VectorStructVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'VectorStructVariant1' but the value was {ToString()}.");
+
+        /// <summary>
         /// Example: [[0.875F, 0.140625F, 0.1102F], [0.758F, 0.28126F, 0.96871F], [0.621F, 0.421878F, 0.9375F]]
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -70,6 +77,13 @@ namespace Qdrant
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>> PickVectorStructVariant2() => IsVectorStructVariant2
+            ? VectorStructVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'VectorStructVariant2' but the value was {ToString()}.");
+
+        /// <summary>
         /// Example: {"image-embeddings":[0.8730000257492065,0.140625,0.897599995136261]}
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -98,6 +112,13 @@ namespace Qdrant
             value = VectorStructVariant3;
             return IsVectorStructVariant3;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public object PickVectorStructVariant3() => IsVectorStructVariant3
+            ? VectorStructVariant3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'VectorStructVariant3' but the value was {ToString()}.");
 
         /// <summary>
         /// WARN: Work-in-progress, unimplemented<br/>
@@ -131,6 +152,13 @@ namespace Qdrant
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.Document PickDocument() => IsDocument
+            ? Document!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Document' but the value was {ToString()}.");
+
+        /// <summary>
         /// WARN: Work-in-progress, unimplemented<br/>
         /// Image object for embedding. Requires inference infrastructure, unimplemented.
         /// </summary>
@@ -162,6 +190,13 @@ namespace Qdrant
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.Image PickImage() => IsImage
+            ? Image!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Image' but the value was {ToString()}.");
+
+        /// <summary>
         /// WARN: Work-in-progress, unimplemented<br/>
         /// Custom object for embedding. Requires inference infrastructure, unimplemented.
         /// </summary>
@@ -191,6 +226,13 @@ namespace Qdrant
             value = InferenceObject;
             return IsInferenceObject;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.InferenceObject PickInferenceObject() => IsInferenceObject
+            ? InferenceObject!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InferenceObject' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

@@ -60,5 +60,6 @@ namespace Qdrant
         public AbortShardTransfer()
         {
         }
+
     }
 }

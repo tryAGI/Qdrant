@@ -63,5 +63,6 @@ namespace Qdrant
         public SparseVectorDataConfig()
         {
         }
+
     }
 }

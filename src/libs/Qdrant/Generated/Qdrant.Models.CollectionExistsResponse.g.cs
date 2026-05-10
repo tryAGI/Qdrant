@@ -78,5 +78,6 @@ namespace Qdrant
         public CollectionExistsResponse()
         {
         }
+
     }
 }

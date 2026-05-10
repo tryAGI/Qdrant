@@ -42,6 +42,13 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public string PickWithLookupInterfaceVariant1() => IsWithLookupInterfaceVariant1
+            ? WithLookupInterfaceVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'WithLookupInterfaceVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.WithLookup? WithLookup { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace Qdrant
             value = WithLookup;
             return IsWithLookup;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.WithLookup PickWithLookup() => IsWithLookup
+            ? WithLookup!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'WithLookup' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
