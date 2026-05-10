@@ -89,6 +89,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static PointInsertOperations FromPointsBatch(global::Qdrant.PointsBatch? value) => new PointInsertOperations(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator PointInsertOperations(global::Qdrant.PointsList value) => new PointInsertOperations((global::Qdrant.PointsList?)value);
 
         /// <summary>
@@ -103,6 +108,11 @@ namespace Qdrant
         {
             PointsList = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static PointInsertOperations FromPointsList(global::Qdrant.PointsList? value) => new PointInsertOperations(value);
 
         /// <summary>
         /// 

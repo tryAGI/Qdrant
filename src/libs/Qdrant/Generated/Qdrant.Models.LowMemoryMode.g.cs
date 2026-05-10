@@ -122,6 +122,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static LowMemoryMode FromLowMemoryModeVariant1(global::Qdrant.LowMemoryModeVariant1? value) => new LowMemoryMode(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator LowMemoryMode(global::Qdrant.LowMemoryModeVariant2 value) => new LowMemoryMode((global::Qdrant.LowMemoryModeVariant2?)value);
 
         /// <summary>
@@ -140,6 +145,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static LowMemoryMode FromLowMemoryModeVariant2(global::Qdrant.LowMemoryModeVariant2? value) => new LowMemoryMode(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator LowMemoryMode(global::Qdrant.LowMemoryModeVariant3 value) => new LowMemoryMode((global::Qdrant.LowMemoryModeVariant3?)value);
 
         /// <summary>
@@ -154,6 +164,11 @@ namespace Qdrant
         {
             LowMemoryModeVariant3 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static LowMemoryMode FromLowMemoryModeVariant3(global::Qdrant.LowMemoryModeVariant3? value) => new LowMemoryMode(value);
 
         /// <summary>
         /// 

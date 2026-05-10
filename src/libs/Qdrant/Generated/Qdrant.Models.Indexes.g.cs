@@ -89,6 +89,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static Indexes FromIndexesVariant1(global::Qdrant.IndexesVariant1? value) => new Indexes(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Indexes(global::Qdrant.IndexesVariant2 value) => new Indexes((global::Qdrant.IndexesVariant2?)value);
 
         /// <summary>
@@ -103,6 +108,11 @@ namespace Qdrant
         {
             IndexesVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Indexes FromIndexesVariant2(global::Qdrant.IndexesVariant2? value) => new Indexes(value);
 
         /// <summary>
         /// 

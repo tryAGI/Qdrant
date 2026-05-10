@@ -119,6 +119,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static TrackerStatus FromEnum(global::Qdrant.TrackerStatusEnum? value) => new TrackerStatus(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator TrackerStatus(global::Qdrant.TrackerStatusEnum2 value) => new TrackerStatus((global::Qdrant.TrackerStatusEnum2?)value);
 
         /// <summary>
@@ -137,6 +142,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static TrackerStatus FromEnum2(global::Qdrant.TrackerStatusEnum2? value) => new TrackerStatus(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator TrackerStatus(global::Qdrant.TrackerStatusEnum3 value) => new TrackerStatus((global::Qdrant.TrackerStatusEnum3?)value);
 
         /// <summary>
@@ -151,6 +161,11 @@ namespace Qdrant
         {
             Enum3 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static TrackerStatus FromEnum3(global::Qdrant.TrackerStatusEnum3? value) => new TrackerStatus(value);
 
         /// <summary>
         /// 

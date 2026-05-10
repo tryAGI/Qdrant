@@ -89,6 +89,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static PayloadSelector FromInclude(global::Qdrant.PayloadSelectorInclude? value) => new PayloadSelector(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator PayloadSelector(global::Qdrant.PayloadSelectorExclude value) => new PayloadSelector((global::Qdrant.PayloadSelectorExclude?)value);
 
         /// <summary>
@@ -103,6 +108,11 @@ namespace Qdrant
         {
             Exclude = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static PayloadSelector FromExclude(global::Qdrant.PayloadSelectorExclude? value) => new PayloadSelector(value);
 
         /// <summary>
         /// 

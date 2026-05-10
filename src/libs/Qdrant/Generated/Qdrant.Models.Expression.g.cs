@@ -599,6 +599,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static Expression FromExpressionVariant1(float? value) => new Expression(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Expression(string value) => new Expression((string?)value);
 
         /// <summary>
@@ -613,6 +618,11 @@ namespace Qdrant
         {
             ExpressionVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Expression FromExpressionVariant2(string? value) => new Expression(value);
 
         /// <summary>
         /// 
@@ -635,6 +645,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static Expression FromCondition(global::Qdrant.Condition? value) => new Expression(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Expression(global::Qdrant.GeoDistance value) => new Expression((global::Qdrant.GeoDistance?)value);
 
         /// <summary>
@@ -649,6 +664,11 @@ namespace Qdrant
         {
             GeoDistance = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Expression FromGeoDistance(global::Qdrant.GeoDistance? value) => new Expression(value);
 
         /// <summary>
         /// 
@@ -671,6 +691,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static Expression FromDatetime(global::Qdrant.DatetimeExpression? value) => new Expression(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Expression(global::Qdrant.DatetimeKeyExpression value) => new Expression((global::Qdrant.DatetimeKeyExpression?)value);
 
         /// <summary>
@@ -685,6 +710,11 @@ namespace Qdrant
         {
             DatetimeKey = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Expression FromDatetimeKey(global::Qdrant.DatetimeKeyExpression? value) => new Expression(value);
 
         /// <summary>
         /// 
@@ -707,6 +737,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static Expression FromMult(global::Qdrant.MultExpression? value) => new Expression(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Expression(global::Qdrant.SumExpression value) => new Expression((global::Qdrant.SumExpression?)value);
 
         /// <summary>
@@ -721,6 +756,11 @@ namespace Qdrant
         {
             Sum = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Expression FromSum(global::Qdrant.SumExpression? value) => new Expression(value);
 
         /// <summary>
         /// 
@@ -743,6 +783,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static Expression FromNeg(global::Qdrant.NegExpression? value) => new Expression(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Expression(global::Qdrant.AbsExpression value) => new Expression((global::Qdrant.AbsExpression?)value);
 
         /// <summary>
@@ -757,6 +802,11 @@ namespace Qdrant
         {
             Abs = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Expression FromAbs(global::Qdrant.AbsExpression? value) => new Expression(value);
 
         /// <summary>
         /// 
@@ -779,6 +829,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static Expression FromDiv(global::Qdrant.DivExpression? value) => new Expression(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Expression(global::Qdrant.SqrtExpression value) => new Expression((global::Qdrant.SqrtExpression?)value);
 
         /// <summary>
@@ -793,6 +848,11 @@ namespace Qdrant
         {
             Sqrt = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Expression FromSqrt(global::Qdrant.SqrtExpression? value) => new Expression(value);
 
         /// <summary>
         /// 
@@ -815,6 +875,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static Expression FromPow(global::Qdrant.PowExpression? value) => new Expression(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Expression(global::Qdrant.ExpExpression value) => new Expression((global::Qdrant.ExpExpression?)value);
 
         /// <summary>
@@ -829,6 +894,11 @@ namespace Qdrant
         {
             Exp = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Expression FromExp(global::Qdrant.ExpExpression? value) => new Expression(value);
 
         /// <summary>
         /// 
@@ -851,6 +921,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static Expression FromLog10(global::Qdrant.Log10Expression? value) => new Expression(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Expression(global::Qdrant.LnExpression value) => new Expression((global::Qdrant.LnExpression?)value);
 
         /// <summary>
@@ -865,6 +940,11 @@ namespace Qdrant
         {
             Ln = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Expression FromLn(global::Qdrant.LnExpression? value) => new Expression(value);
 
         /// <summary>
         /// 
@@ -887,6 +967,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static Expression FromLinDecay(global::Qdrant.LinDecayExpression? value) => new Expression(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Expression(global::Qdrant.ExpDecayExpression value) => new Expression((global::Qdrant.ExpDecayExpression?)value);
 
         /// <summary>
@@ -905,6 +990,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static Expression FromExpDecay(global::Qdrant.ExpDecayExpression? value) => new Expression(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Expression(global::Qdrant.GaussDecayExpression value) => new Expression((global::Qdrant.GaussDecayExpression?)value);
 
         /// <summary>
@@ -919,6 +1009,11 @@ namespace Qdrant
         {
             GaussDecay = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Expression FromGaussDecay(global::Qdrant.GaussDecayExpression? value) => new Expression(value);
 
         /// <summary>
         /// 

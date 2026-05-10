@@ -89,6 +89,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static StopwordsInterface FromLanguage(global::Qdrant.Language? value) => new StopwordsInterface(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator StopwordsInterface(global::Qdrant.StopwordsSet value) => new StopwordsInterface((global::Qdrant.StopwordsSet?)value);
 
         /// <summary>
@@ -103,6 +108,11 @@ namespace Qdrant
         {
             Set = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static StopwordsInterface FromSet(global::Qdrant.StopwordsSet? value) => new StopwordsInterface(value);
 
         /// <summary>
         /// 

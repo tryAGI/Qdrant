@@ -119,6 +119,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static AliasOperations FromCreateOperation(global::Qdrant.CreateAliasOperation? value) => new AliasOperations(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AliasOperations(global::Qdrant.DeleteAliasOperation value) => new AliasOperations((global::Qdrant.DeleteAliasOperation?)value);
 
         /// <summary>
@@ -137,6 +142,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static AliasOperations FromDeleteOperation(global::Qdrant.DeleteAliasOperation? value) => new AliasOperations(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator AliasOperations(global::Qdrant.RenameAliasOperation value) => new AliasOperations((global::Qdrant.RenameAliasOperation?)value);
 
         /// <summary>
@@ -151,6 +161,11 @@ namespace Qdrant
         {
             RenameOperation = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static AliasOperations FromRenameOperation(global::Qdrant.RenameAliasOperation? value) => new AliasOperations(value);
 
         /// <summary>
         /// 

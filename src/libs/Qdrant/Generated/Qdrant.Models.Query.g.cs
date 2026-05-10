@@ -329,6 +329,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static Query FromNearest(global::Qdrant.NearestQuery? value) => new Query(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Query(global::Qdrant.RecommendQuery value) => new Query((global::Qdrant.RecommendQuery?)value);
 
         /// <summary>
@@ -343,6 +348,11 @@ namespace Qdrant
         {
             Recommend = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Query FromRecommend(global::Qdrant.RecommendQuery? value) => new Query(value);
 
         /// <summary>
         /// 
@@ -365,6 +375,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static Query FromDiscover(global::Qdrant.DiscoverQuery? value) => new Query(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Query(global::Qdrant.ContextQuery value) => new Query((global::Qdrant.ContextQuery?)value);
 
         /// <summary>
@@ -379,6 +394,11 @@ namespace Qdrant
         {
             Context = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Query FromContext(global::Qdrant.ContextQuery? value) => new Query(value);
 
         /// <summary>
         /// 
@@ -401,6 +421,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static Query FromOrderBy(global::Qdrant.OrderByQuery? value) => new Query(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Query(global::Qdrant.FusionQuery value) => new Query((global::Qdrant.FusionQuery?)value);
 
         /// <summary>
@@ -415,6 +440,11 @@ namespace Qdrant
         {
             Fusion = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Query FromFusion(global::Qdrant.FusionQuery? value) => new Query(value);
 
         /// <summary>
         /// 
@@ -437,6 +467,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static Query FromRrf(global::Qdrant.RrfQuery? value) => new Query(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Query(global::Qdrant.FormulaQuery value) => new Query((global::Qdrant.FormulaQuery?)value);
 
         /// <summary>
@@ -451,6 +486,11 @@ namespace Qdrant
         {
             Formula = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Query FromFormula(global::Qdrant.FormulaQuery? value) => new Query(value);
 
         /// <summary>
         /// 
@@ -473,6 +513,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static Query FromSample(global::Qdrant.SampleQuery? value) => new Query(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Query(global::Qdrant.RelevanceFeedbackQuery value) => new Query((global::Qdrant.RelevanceFeedbackQuery?)value);
 
         /// <summary>
@@ -487,6 +532,11 @@ namespace Qdrant
         {
             RelevanceFeedback = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Query FromRelevanceFeedback(global::Qdrant.RelevanceFeedbackQuery? value) => new Query(value);
 
         /// <summary>
         /// 

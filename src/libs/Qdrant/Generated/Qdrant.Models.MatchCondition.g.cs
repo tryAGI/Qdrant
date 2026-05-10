@@ -209,6 +209,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static MatchCondition FromValue(global::Qdrant.MatchValue? value) => new MatchCondition(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator MatchCondition(global::Qdrant.MatchText value) => new MatchCondition((global::Qdrant.MatchText?)value);
 
         /// <summary>
@@ -223,6 +228,11 @@ namespace Qdrant
         {
             Text = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static MatchCondition FromText(global::Qdrant.MatchText? value) => new MatchCondition(value);
 
         /// <summary>
         /// 
@@ -245,6 +255,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static MatchCondition FromTextAny(global::Qdrant.MatchTextAny? value) => new MatchCondition(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator MatchCondition(global::Qdrant.MatchPhrase value) => new MatchCondition((global::Qdrant.MatchPhrase?)value);
 
         /// <summary>
@@ -259,6 +274,11 @@ namespace Qdrant
         {
             Phrase = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static MatchCondition FromPhrase(global::Qdrant.MatchPhrase? value) => new MatchCondition(value);
 
         /// <summary>
         /// 
@@ -281,6 +301,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static MatchCondition FromAny(global::Qdrant.MatchAny? value) => new MatchCondition(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator MatchCondition(global::Qdrant.MatchExcept value) => new MatchCondition((global::Qdrant.MatchExcept?)value);
 
         /// <summary>
@@ -295,6 +320,11 @@ namespace Qdrant
         {
             Except = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static MatchCondition FromExcept(global::Qdrant.MatchExcept? value) => new MatchCondition(value);
 
         /// <summary>
         /// 

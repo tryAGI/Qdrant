@@ -119,6 +119,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static ConsensusThreadStatus FromConsensusThreadStatusVariant1(global::Qdrant.ConsensusThreadStatusVariant1? value) => new ConsensusThreadStatus(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ConsensusThreadStatus(global::Qdrant.ConsensusThreadStatusVariant2 value) => new ConsensusThreadStatus((global::Qdrant.ConsensusThreadStatusVariant2?)value);
 
         /// <summary>
@@ -137,6 +142,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static ConsensusThreadStatus FromConsensusThreadStatusVariant2(global::Qdrant.ConsensusThreadStatusVariant2? value) => new ConsensusThreadStatus(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ConsensusThreadStatus(global::Qdrant.ConsensusThreadStatusVariant3 value) => new ConsensusThreadStatus((global::Qdrant.ConsensusThreadStatusVariant3?)value);
 
         /// <summary>
@@ -151,6 +161,11 @@ namespace Qdrant
         {
             ConsensusThreadStatusVariant3 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ConsensusThreadStatus FromConsensusThreadStatusVariant3(global::Qdrant.ConsensusThreadStatusVariant3? value) => new ConsensusThreadStatus(value);
 
         /// <summary>
         /// 

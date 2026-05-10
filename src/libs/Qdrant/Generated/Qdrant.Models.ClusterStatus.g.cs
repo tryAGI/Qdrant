@@ -89,6 +89,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static ClusterStatus FromClusterStatusVariant1(global::Qdrant.ClusterStatusVariant1? value) => new ClusterStatus(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ClusterStatus(global::Qdrant.ClusterStatusVariant2 value) => new ClusterStatus((global::Qdrant.ClusterStatusVariant2?)value);
 
         /// <summary>
@@ -103,6 +108,11 @@ namespace Qdrant
         {
             ClusterStatusVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ClusterStatus FromClusterStatusVariant2(global::Qdrant.ClusterStatusVariant2? value) => new ClusterStatus(value);
 
         /// <summary>
         /// 

@@ -89,6 +89,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static QueryInterface FromVectorInput(global::Qdrant.VectorInput? value) => new QueryInterface(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator QueryInterface(global::Qdrant.Query value) => new QueryInterface((global::Qdrant.Query?)value);
 
         /// <summary>
@@ -103,6 +108,11 @@ namespace Qdrant
         {
             Query = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static QueryInterface FromQuery(global::Qdrant.Query? value) => new QueryInterface(value);
 
         /// <summary>
         /// 

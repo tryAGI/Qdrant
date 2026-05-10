@@ -209,6 +209,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static BatchVectorStruct FromBatchVectorStructVariant3(global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<global::Qdrant.Vector>>? value) => new BatchVectorStruct(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public BatchVectorStruct(
             global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>? batchVectorStructVariant1,
             global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>>? batchVectorStructVariant2,

@@ -119,6 +119,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static SparseIndexType FromSparseIndexTypeVariant1(global::Qdrant.SparseIndexTypeVariant1? value) => new SparseIndexType(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator SparseIndexType(global::Qdrant.SparseIndexTypeVariant2 value) => new SparseIndexType((global::Qdrant.SparseIndexTypeVariant2?)value);
 
         /// <summary>
@@ -137,6 +142,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static SparseIndexType FromSparseIndexTypeVariant2(global::Qdrant.SparseIndexTypeVariant2? value) => new SparseIndexType(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator SparseIndexType(global::Qdrant.SparseIndexTypeVariant3 value) => new SparseIndexType((global::Qdrant.SparseIndexTypeVariant3?)value);
 
         /// <summary>
@@ -151,6 +161,11 @@ namespace Qdrant
         {
             SparseIndexTypeVariant3 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static SparseIndexType FromSparseIndexTypeVariant3(global::Qdrant.SparseIndexTypeVariant3? value) => new SparseIndexType(value);
 
         /// <summary>
         /// 

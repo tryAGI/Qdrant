@@ -89,6 +89,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static PayloadFieldSchema FromType(global::Qdrant.PayloadSchemaType? value) => new PayloadFieldSchema(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator PayloadFieldSchema(global::Qdrant.PayloadSchemaParams value) => new PayloadFieldSchema((global::Qdrant.PayloadSchemaParams?)value);
 
         /// <summary>
@@ -103,6 +108,11 @@ namespace Qdrant
         {
             Params = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static PayloadFieldSchema FromParams(global::Qdrant.PayloadSchemaParams? value) => new PayloadFieldSchema(value);
 
         /// <summary>
         /// 

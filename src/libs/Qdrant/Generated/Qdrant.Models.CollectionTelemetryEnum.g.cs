@@ -89,6 +89,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static CollectionTelemetryEnum FromCollectionTelemetry(global::Qdrant.CollectionTelemetry? value) => new CollectionTelemetryEnum(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CollectionTelemetryEnum(global::Qdrant.CollectionsAggregatedTelemetry value) => new CollectionTelemetryEnum((global::Qdrant.CollectionsAggregatedTelemetry?)value);
 
         /// <summary>
@@ -103,6 +108,11 @@ namespace Qdrant
         {
             CollectionsAggregated = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static CollectionTelemetryEnum FromCollectionsAggregated(global::Qdrant.CollectionsAggregatedTelemetry? value) => new CollectionTelemetryEnum(value);
 
         /// <summary>
         /// 

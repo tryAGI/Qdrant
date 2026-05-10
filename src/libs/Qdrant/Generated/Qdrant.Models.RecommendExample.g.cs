@@ -119,6 +119,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static RecommendExample FromExtendedPointId(global::Qdrant.ExtendedPointId? value) => new RecommendExample(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator RecommendExample(global::Qdrant.SparseVector value) => new RecommendExample((global::Qdrant.SparseVector?)value);
 
         /// <summary>
@@ -133,6 +138,11 @@ namespace Qdrant
         {
             SparseVector = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static RecommendExample FromSparseVector(global::Qdrant.SparseVector? value) => new RecommendExample(value);
 
         /// <summary>
         /// 

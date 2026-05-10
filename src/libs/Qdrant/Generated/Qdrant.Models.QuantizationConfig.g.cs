@@ -149,6 +149,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static QuantizationConfig FromScalar(global::Qdrant.ScalarQuantization? value) => new QuantizationConfig(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator QuantizationConfig(global::Qdrant.ProductQuantization value) => new QuantizationConfig((global::Qdrant.ProductQuantization?)value);
 
         /// <summary>
@@ -163,6 +168,11 @@ namespace Qdrant
         {
             Product = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static QuantizationConfig FromProduct(global::Qdrant.ProductQuantization? value) => new QuantizationConfig(value);
 
         /// <summary>
         /// 
@@ -185,6 +195,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static QuantizationConfig FromBinary(global::Qdrant.BinaryQuantization? value) => new QuantizationConfig(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator QuantizationConfig(global::Qdrant.TurboQuantization value) => new QuantizationConfig((global::Qdrant.TurboQuantization?)value);
 
         /// <summary>
@@ -199,6 +214,11 @@ namespace Qdrant
         {
             Turbo = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static QuantizationConfig FromTurbo(global::Qdrant.TurboQuantization? value) => new QuantizationConfig(value);
 
         /// <summary>
         /// 

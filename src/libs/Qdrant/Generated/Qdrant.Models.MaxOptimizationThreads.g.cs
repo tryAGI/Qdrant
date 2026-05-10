@@ -89,6 +89,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static MaxOptimizationThreads FromSetting(global::Qdrant.MaxOptimizationThreadsSetting? value) => new MaxOptimizationThreads(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator MaxOptimizationThreads(int value) => new MaxOptimizationThreads((int?)value);
 
         /// <summary>
@@ -103,6 +108,11 @@ namespace Qdrant
         {
             MaxOptimizationThreadsVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static MaxOptimizationThreads FromMaxOptimizationThreadsVariant2(int? value) => new MaxOptimizationThreads(value);
 
         /// <summary>
         /// 

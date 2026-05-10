@@ -89,6 +89,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static OrderValue FromOrderValueVariant1(long? value) => new OrderValue(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator OrderValue(double value) => new OrderValue((double?)value);
 
         /// <summary>
@@ -103,6 +108,11 @@ namespace Qdrant
         {
             OrderValueVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OrderValue FromOrderValueVariant2(double? value) => new OrderValue(value);
 
         /// <summary>
         /// 

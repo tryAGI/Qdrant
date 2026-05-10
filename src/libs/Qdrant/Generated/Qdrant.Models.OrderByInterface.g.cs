@@ -89,6 +89,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static OrderByInterface FromOrderByInterfaceVariant1(string? value) => new OrderByInterface(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator OrderByInterface(global::Qdrant.OrderBy value) => new OrderByInterface((global::Qdrant.OrderBy?)value);
 
         /// <summary>
@@ -103,6 +108,11 @@ namespace Qdrant
         {
             OrderBy = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OrderByInterface FromOrderBy(global::Qdrant.OrderBy? value) => new OrderByInterface(value);
 
         /// <summary>
         /// 

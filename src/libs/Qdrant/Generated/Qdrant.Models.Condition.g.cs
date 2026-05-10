@@ -239,6 +239,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static Condition FromField(global::Qdrant.FieldCondition? value) => new Condition(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Condition(global::Qdrant.IsEmptyCondition value) => new Condition((global::Qdrant.IsEmptyCondition?)value);
 
         /// <summary>
@@ -253,6 +258,11 @@ namespace Qdrant
         {
             IsEmpty = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Condition FromIsEmpty(global::Qdrant.IsEmptyCondition? value) => new Condition(value);
 
         /// <summary>
         /// 
@@ -275,6 +285,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static Condition FromIsNull(global::Qdrant.IsNullCondition? value) => new Condition(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Condition(global::Qdrant.HasIdCondition value) => new Condition((global::Qdrant.HasIdCondition?)value);
 
         /// <summary>
@@ -289,6 +304,11 @@ namespace Qdrant
         {
             HasId = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Condition FromHasId(global::Qdrant.HasIdCondition? value) => new Condition(value);
 
         /// <summary>
         /// 
@@ -311,6 +331,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static Condition FromHasVector(global::Qdrant.HasVectorCondition? value) => new Condition(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Condition(global::Qdrant.NestedCondition value) => new Condition((global::Qdrant.NestedCondition?)value);
 
         /// <summary>
@@ -329,6 +354,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static Condition FromNested(global::Qdrant.NestedCondition? value) => new Condition(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Condition(global::Qdrant.Filter value) => new Condition((global::Qdrant.Filter?)value);
 
         /// <summary>
@@ -343,6 +373,11 @@ namespace Qdrant
         {
             Filter = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Condition FromFilter(global::Qdrant.Filter? value) => new Condition(value);
 
         /// <summary>
         /// 
