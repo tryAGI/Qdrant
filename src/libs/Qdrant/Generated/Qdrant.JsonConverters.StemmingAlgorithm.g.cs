@@ -58,6 +58,7 @@ namespace Qdrant.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.SnowballParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.SnowballParams> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.SnowballParams).Name}");
                     snowballParams = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

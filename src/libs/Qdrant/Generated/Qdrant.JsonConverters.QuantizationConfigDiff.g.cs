@@ -149,6 +149,7 @@ namespace Qdrant.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.ScalarQuantization), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.ScalarQuantization> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.ScalarQuantization).Name}");
                     scalar = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -159,9 +160,13 @@ namespace Qdrant.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (scalar == null && product == null && binary == null && turbo == null && disabledType == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.ProductQuantization), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.ProductQuantization> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.ProductQuantization).Name}");
                     product = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -172,9 +177,13 @@ namespace Qdrant.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (scalar == null && product == null && binary == null && turbo == null && disabledType == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.BinaryQuantization), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.BinaryQuantization> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.BinaryQuantization).Name}");
                     binary = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -185,9 +194,13 @@ namespace Qdrant.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (scalar == null && product == null && binary == null && turbo == null && disabledType == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.TurboQuantization), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.TurboQuantization> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.TurboQuantization).Name}");
                     turbo = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -198,9 +211,13 @@ namespace Qdrant.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (scalar == null && product == null && binary == null && turbo == null && disabledType == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.DisabledType), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.DisabledType> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.DisabledType).Name}");
                     disabledType = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

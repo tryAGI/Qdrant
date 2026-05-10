@@ -228,7 +228,10 @@ namespace Qdrant.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (batchVectorStructVariant1 == null && batchVectorStructVariant2 == null && batchVectorStructVariant3 == null && batchVectorStructVariant4 == null && batchVectorStructVariant5 == null && batchVectorStructVariant6 == null)
+            {
                 try
                 {
 
@@ -242,7 +245,10 @@ namespace Qdrant.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (batchVectorStructVariant1 == null && batchVectorStructVariant2 == null && batchVectorStructVariant3 == null && batchVectorStructVariant4 == null && batchVectorStructVariant5 == null && batchVectorStructVariant6 == null)
+            {
                 try
                 {
 
@@ -256,7 +262,10 @@ namespace Qdrant.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (batchVectorStructVariant1 == null && batchVectorStructVariant2 == null && batchVectorStructVariant3 == null && batchVectorStructVariant4 == null && batchVectorStructVariant5 == null && batchVectorStructVariant6 == null)
+            {
                 try
                 {
 
@@ -270,7 +279,10 @@ namespace Qdrant.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (batchVectorStructVariant1 == null && batchVectorStructVariant2 == null && batchVectorStructVariant3 == null && batchVectorStructVariant4 == null && batchVectorStructVariant5 == null && batchVectorStructVariant6 == null)
+            {
                 try
                 {
 
@@ -284,7 +296,10 @@ namespace Qdrant.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (batchVectorStructVariant1 == null && batchVectorStructVariant2 == null && batchVectorStructVariant3 == null && batchVectorStructVariant4 == null && batchVectorStructVariant5 == null && batchVectorStructVariant6 == null)
+            {
                 try
                 {
 

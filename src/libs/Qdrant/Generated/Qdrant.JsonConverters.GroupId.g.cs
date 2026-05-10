@@ -138,7 +138,10 @@ namespace Qdrant.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (groupIdVariant1 == null && groupIdVariant2 == null && groupIdVariant3 == null)
+            {
                 try
                 {
 
@@ -152,7 +155,10 @@ namespace Qdrant.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (groupIdVariant1 == null && groupIdVariant2 == null && groupIdVariant3 == null)
+            {
                 try
                 {
 

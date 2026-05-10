@@ -138,7 +138,10 @@ namespace Qdrant.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (sparseIndexTypeVariant1 == null && sparseIndexTypeVariant2 == null && sparseIndexTypeVariant3 == null)
+            {
                 try
                 {
 
@@ -152,7 +155,10 @@ namespace Qdrant.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (sparseIndexTypeVariant1 == null && sparseIndexTypeVariant2 == null && sparseIndexTypeVariant3 == null)
+            {
                 try
                 {
 
