@@ -11,7 +11,7 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
-        OnDisk,
+        InRamMmap,
     }
 
     /// <summary>
@@ -26,7 +26,7 @@ namespace Qdrant
         {
             return value switch
             {
-                PayloadStorageTypeVariant2Type.OnDisk => "on_disk",
+                PayloadStorageTypeVariant2Type.InRamMmap => "in_ram_mmap",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -37,7 +37,7 @@ namespace Qdrant
         {
             return value switch
             {
-                "on_disk" => PayloadStorageTypeVariant2Type.OnDisk,
+                "in_ram_mmap" => PayloadStorageTypeVariant2Type.InRamMmap,
                 _ => null,
             };
         }

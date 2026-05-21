@@ -41,5 +41,6 @@ namespace Qdrant
         public Log10Expression()
         {
         }
+
     }
 }

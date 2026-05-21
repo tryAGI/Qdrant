@@ -33,6 +33,26 @@ namespace Qdrant
         public bool IsReadConsistencyVariant1 => ReadConsistencyVariant1 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickReadConsistencyVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out int? value)
+        {
+            value = ReadConsistencyVariant1;
+            return IsReadConsistencyVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public int PickReadConsistencyVariant1() => IsReadConsistencyVariant1
+            ? ReadConsistencyVariant1!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ReadConsistencyVariant1' but the value was {ToString()}.");
+
+        /// <summary>
         /// * `majority` - send N/2+1 random request and return points, which present on all of them<br/>
         /// * `quorum` - send requests to all nodes and return points which present on majority of nodes<br/>
         /// * `all` - send requests to all nodes and return points which present on all nodes
@@ -50,6 +70,26 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Type))]
 #endif
         public bool IsType => Type != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickType(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.ReadConsistencyType? value)
+        {
+            value = Type;
+            return IsType;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.ReadConsistencyType PickType() => IsType
+            ? Type!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Type' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -71,6 +111,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static ReadConsistency FromReadConsistencyVariant1(int? value) => new ReadConsistency(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ReadConsistency(global::Qdrant.ReadConsistencyType value) => new ReadConsistency((global::Qdrant.ReadConsistencyType?)value);
 
         /// <summary>
@@ -85,6 +130,11 @@ namespace Qdrant
         {
             Type = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ReadConsistency FromType(global::Qdrant.ReadConsistencyType? value) => new ReadConsistency(value);
 
         /// <summary>
         /// 
@@ -151,6 +201,30 @@ namespace Qdrant
         /// 
         /// </summary>
         public void Match(
+            global::System.Action<int?>? readConsistencyVariant1 = null,
+
+            global::System.Action<global::Qdrant.ReadConsistencyType?>? type = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsReadConsistencyVariant1)
+            {
+                readConsistencyVariant1?.Invoke(ReadConsistencyVariant1!);
+            }
+            else if (IsType)
+            {
+                type?.Invoke(Type!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
             global::System.Action<int?>? readConsistencyVariant1 = null,
             global::System.Action<global::Qdrant.ReadConsistencyType?>? type = null,
             bool validate = true)

@@ -27,6 +27,26 @@ namespace Qdrant
         public bool IsWithPayloadInterfaceVariant1 => WithPayloadInterfaceVariant1 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickWithPayloadInterfaceVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out bool? value)
+        {
+            value = WithPayloadInterfaceVariant1;
+            return IsWithPayloadInterfaceVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool PickWithPayloadInterfaceVariant1() => IsWithPayloadInterfaceVariant1
+            ? WithPayloadInterfaceVariant1!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'WithPayloadInterfaceVariant1' but the value was {ToString()}.");
+
+        /// <summary>
         /// Specify which fields to return
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -44,6 +64,26 @@ namespace Qdrant
         public bool IsWithPayloadInterfaceVariant2 => WithPayloadInterfaceVariant2 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickWithPayloadInterfaceVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::System.Collections.Generic.IList<string>? value)
+        {
+            value = WithPayloadInterfaceVariant2;
+            return IsWithPayloadInterfaceVariant2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<string> PickWithPayloadInterfaceVariant2() => IsWithPayloadInterfaceVariant2
+            ? WithPayloadInterfaceVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'WithPayloadInterfaceVariant2' but the value was {ToString()}.");
+
+        /// <summary>
         /// Specifies how to treat payload selector
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -59,6 +99,26 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Selector))]
 #endif
         public bool IsSelector => Selector != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSelector(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.PayloadSelector? value)
+        {
+            value = Selector;
+            return IsSelector;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.PayloadSelector PickSelector() => IsSelector
+            ? Selector!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Selector' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -80,6 +140,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static WithPayloadInterface FromWithPayloadInterfaceVariant1(bool? value) => new WithPayloadInterface(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator WithPayloadInterface(global::Qdrant.PayloadSelector value) => new WithPayloadInterface((global::Qdrant.PayloadSelector?)value);
 
         /// <summary>
@@ -94,6 +159,11 @@ namespace Qdrant
         {
             Selector = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static WithPayloadInterface FromSelector(global::Qdrant.PayloadSelector? value) => new WithPayloadInterface(value);
 
         /// <summary>
         /// 
@@ -140,7 +210,7 @@ namespace Qdrant
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<bool?, TResult>? withPayloadInterfaceVariant1 = null,
-            global::System.Func<global::System.Collections.Generic.IList<string>?, TResult>? withPayloadInterfaceVariant2 = null,
+            global::System.Func<global::System.Collections.Generic.IList<string>, TResult>? withPayloadInterfaceVariant2 = null,
             global::System.Func<global::Qdrant.PayloadSelector?, TResult>? selector = null,
             bool validate = true)
         {
@@ -170,7 +240,37 @@ namespace Qdrant
         /// </summary>
         public void Match(
             global::System.Action<bool?>? withPayloadInterfaceVariant1 = null,
-            global::System.Action<global::System.Collections.Generic.IList<string>?>? withPayloadInterfaceVariant2 = null,
+
+            global::System.Action<global::System.Collections.Generic.IList<string>>? withPayloadInterfaceVariant2 = null,
+
+            global::System.Action<global::Qdrant.PayloadSelector?>? selector = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsWithPayloadInterfaceVariant1)
+            {
+                withPayloadInterfaceVariant1?.Invoke(WithPayloadInterfaceVariant1!);
+            }
+            else if (IsWithPayloadInterfaceVariant2)
+            {
+                withPayloadInterfaceVariant2?.Invoke(WithPayloadInterfaceVariant2!);
+            }
+            else if (IsSelector)
+            {
+                selector?.Invoke(Selector!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<bool?>? withPayloadInterfaceVariant1 = null,
+            global::System.Action<global::System.Collections.Generic.IList<string>>? withPayloadInterfaceVariant2 = null,
             global::System.Action<global::Qdrant.PayloadSelector?>? selector = null,
             bool validate = true)
         {

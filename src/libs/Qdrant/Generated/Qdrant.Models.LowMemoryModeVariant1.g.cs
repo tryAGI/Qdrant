@@ -4,40 +4,40 @@
 namespace Qdrant
 {
     /// <summary>
-    /// 
+    /// No special handling. Every component loads as persisted.
     /// </summary>
-    public enum PayloadStorageTypeVariant3Type
+    public enum LowMemoryModeVariant1
     {
         /// <summary>
         /// 
         /// </summary>
-        Mmap,
+        Disabled,
     }
 
     /// <summary>
     /// Enum extensions to do fast conversions without the reflection.
     /// </summary>
-    public static class PayloadStorageTypeVariant3TypeExtensions
+    public static class LowMemoryModeVariant1Extensions
     {
         /// <summary>
         /// Converts an enum to a string.
         /// </summary>
-        public static string ToValueString(this PayloadStorageTypeVariant3Type value)
+        public static string ToValueString(this LowMemoryModeVariant1 value)
         {
             return value switch
             {
-                PayloadStorageTypeVariant3Type.Mmap => "mmap",
+                LowMemoryModeVariant1.Disabled => "disabled",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static PayloadStorageTypeVariant3Type? ToEnum(string value)
+        public static LowMemoryModeVariant1? ToEnum(string value)
         {
             return value switch
             {
-                "mmap" => PayloadStorageTypeVariant3Type.Mmap,
+                "disabled" => LowMemoryModeVariant1.Disabled,
                 _ => null,
             };
         }

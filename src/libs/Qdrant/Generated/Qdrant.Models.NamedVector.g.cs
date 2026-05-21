@@ -54,5 +54,6 @@ namespace Qdrant
         public NamedVector()
         {
         }
+
     }
 }

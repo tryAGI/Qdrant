@@ -27,6 +27,26 @@ namespace Qdrant
         public bool IsValue => Value != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickValue(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.MatchValue? value)
+        {
+            value = Value;
+            return IsValue;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.MatchValue PickValue() => IsValue
+            ? Value!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value' but the value was {ToString()}.");
+
+        /// <summary>
         /// Full-text match of the strings.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -42,6 +62,26 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Text))]
 #endif
         public bool IsText => Text != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickText(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.MatchText? value)
+        {
+            value = Text;
+            return IsText;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.MatchText PickText() => IsText
+            ? Text!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
 
         /// <summary>
         /// Full-text match of at least one token of the string.
@@ -61,6 +101,26 @@ namespace Qdrant
         public bool IsTextAny => TextAny != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickTextAny(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.MatchTextAny? value)
+        {
+            value = TextAny;
+            return IsTextAny;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.MatchTextAny PickTextAny() => IsTextAny
+            ? TextAny!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TextAny' but the value was {ToString()}.");
+
+        /// <summary>
         /// Full-text phrase match of the string.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -76,6 +136,26 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Phrase))]
 #endif
         public bool IsPhrase => Phrase != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickPhrase(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.MatchPhrase? value)
+        {
+            value = Phrase;
+            return IsPhrase;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.MatchPhrase PickPhrase() => IsPhrase
+            ? Phrase!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Phrase' but the value was {ToString()}.");
 
         /// <summary>
         /// Exact match on any of the given values
@@ -95,6 +175,26 @@ namespace Qdrant
         public bool IsAny => Any != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAny(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.MatchAny? value)
+        {
+            value = Any;
+            return IsAny;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.MatchAny PickAny() => IsAny
+            ? Any!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Any' but the value was {ToString()}.");
+
+        /// <summary>
         /// Should have at least one value not matching the any given values
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -110,6 +210,26 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Except))]
 #endif
         public bool IsExcept => Except != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickExcept(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.MatchExcept? value)
+        {
+            value = Except;
+            return IsExcept;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.MatchExcept PickExcept() => IsExcept
+            ? Except!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Except' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -127,6 +247,11 @@ namespace Qdrant
         {
             Value = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static MatchCondition FromValue(global::Qdrant.MatchValue? value) => new MatchCondition(value);
 
         /// <summary>
         /// 
@@ -149,6 +274,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static MatchCondition FromText(global::Qdrant.MatchText? value) => new MatchCondition(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator MatchCondition(global::Qdrant.MatchTextAny value) => new MatchCondition((global::Qdrant.MatchTextAny?)value);
 
         /// <summary>
@@ -163,6 +293,11 @@ namespace Qdrant
         {
             TextAny = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static MatchCondition FromTextAny(global::Qdrant.MatchTextAny? value) => new MatchCondition(value);
 
         /// <summary>
         /// 
@@ -185,6 +320,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static MatchCondition FromPhrase(global::Qdrant.MatchPhrase? value) => new MatchCondition(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator MatchCondition(global::Qdrant.MatchAny value) => new MatchCondition((global::Qdrant.MatchAny?)value);
 
         /// <summary>
@@ -203,6 +343,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static MatchCondition FromAny(global::Qdrant.MatchAny? value) => new MatchCondition(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator MatchCondition(global::Qdrant.MatchExcept value) => new MatchCondition((global::Qdrant.MatchExcept?)value);
 
         /// <summary>
@@ -217,6 +362,11 @@ namespace Qdrant
         {
             Except = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static MatchCondition FromExcept(global::Qdrant.MatchExcept? value) => new MatchCondition(value);
 
         /// <summary>
         /// 
@@ -274,12 +424,12 @@ namespace Qdrant
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Qdrant.MatchValue?, TResult>? value = null,
-            global::System.Func<global::Qdrant.MatchText?, TResult>? text = null,
-            global::System.Func<global::Qdrant.MatchTextAny?, TResult>? textAny = null,
-            global::System.Func<global::Qdrant.MatchPhrase?, TResult>? phrase = null,
-            global::System.Func<global::Qdrant.MatchAny?, TResult>? any = null,
-            global::System.Func<global::Qdrant.MatchExcept?, TResult>? except = null,
+            global::System.Func<global::Qdrant.MatchValue, TResult>? value = null,
+            global::System.Func<global::Qdrant.MatchText, TResult>? text = null,
+            global::System.Func<global::Qdrant.MatchTextAny, TResult>? textAny = null,
+            global::System.Func<global::Qdrant.MatchPhrase, TResult>? phrase = null,
+            global::System.Func<global::Qdrant.MatchAny, TResult>? any = null,
+            global::System.Func<global::Qdrant.MatchExcept, TResult>? except = null,
             bool validate = true)
         {
             if (validate)
@@ -319,12 +469,60 @@ namespace Qdrant
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Qdrant.MatchValue?>? value = null,
-            global::System.Action<global::Qdrant.MatchText?>? text = null,
-            global::System.Action<global::Qdrant.MatchTextAny?>? textAny = null,
-            global::System.Action<global::Qdrant.MatchPhrase?>? phrase = null,
-            global::System.Action<global::Qdrant.MatchAny?>? any = null,
-            global::System.Action<global::Qdrant.MatchExcept?>? except = null,
+            global::System.Action<global::Qdrant.MatchValue>? value = null,
+
+            global::System.Action<global::Qdrant.MatchText>? text = null,
+
+            global::System.Action<global::Qdrant.MatchTextAny>? textAny = null,
+
+            global::System.Action<global::Qdrant.MatchPhrase>? phrase = null,
+
+            global::System.Action<global::Qdrant.MatchAny>? any = null,
+
+            global::System.Action<global::Qdrant.MatchExcept>? except = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsValue)
+            {
+                value?.Invoke(Value!);
+            }
+            else if (IsText)
+            {
+                text?.Invoke(Text!);
+            }
+            else if (IsTextAny)
+            {
+                textAny?.Invoke(TextAny!);
+            }
+            else if (IsPhrase)
+            {
+                phrase?.Invoke(Phrase!);
+            }
+            else if (IsAny)
+            {
+                any?.Invoke(Any!);
+            }
+            else if (IsExcept)
+            {
+                except?.Invoke(Except!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Qdrant.MatchValue>? value = null,
+            global::System.Action<global::Qdrant.MatchText>? text = null,
+            global::System.Action<global::Qdrant.MatchTextAny>? textAny = null,
+            global::System.Action<global::Qdrant.MatchPhrase>? phrase = null,
+            global::System.Action<global::Qdrant.MatchAny>? any = null,
+            global::System.Action<global::Qdrant.MatchExcept>? except = null,
             bool validate = true)
         {
             if (validate)

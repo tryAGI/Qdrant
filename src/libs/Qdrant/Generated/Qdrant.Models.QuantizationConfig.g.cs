@@ -29,6 +29,26 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickScalar(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.ScalarQuantization? value)
+        {
+            value = Scalar;
+            return IsScalar;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.ScalarQuantization PickScalar() => IsScalar
+            ? Scalar!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Scalar' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.ProductQuantization? Product { get; init; }
 #else
@@ -46,6 +66,26 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickProduct(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.ProductQuantization? value)
+        {
+            value = Product;
+            return IsProduct;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.ProductQuantization PickProduct() => IsProduct
+            ? Product!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Product' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.BinaryQuantization? Binary { get; init; }
 #else
@@ -59,6 +99,63 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Binary))]
 #endif
         public bool IsBinary => Binary != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickBinary(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.BinaryQuantization? value)
+        {
+            value = Binary;
+            return IsBinary;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.BinaryQuantization PickBinary() => IsBinary
+            ? Binary!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Binary' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Qdrant.TurboQuantization? Turbo { get; init; }
+#else
+        public global::Qdrant.TurboQuantization? Turbo { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Turbo))]
+#endif
+        public bool IsTurbo => Turbo != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickTurbo(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.TurboQuantization? value)
+        {
+            value = Turbo;
+            return IsTurbo;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.TurboQuantization PickTurbo() => IsTurbo
+            ? Turbo!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Turbo' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -76,6 +173,11 @@ namespace Qdrant
         {
             Scalar = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static QuantizationConfig FromScalar(global::Qdrant.ScalarQuantization? value) => new QuantizationConfig(value);
 
         /// <summary>
         /// 
@@ -98,6 +200,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static QuantizationConfig FromProduct(global::Qdrant.ProductQuantization? value) => new QuantizationConfig(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator QuantizationConfig(global::Qdrant.BinaryQuantization value) => new QuantizationConfig((global::Qdrant.BinaryQuantization?)value);
 
         /// <summary>
@@ -116,21 +223,52 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static QuantizationConfig FromBinary(global::Qdrant.BinaryQuantization? value) => new QuantizationConfig(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator QuantizationConfig(global::Qdrant.TurboQuantization value) => new QuantizationConfig((global::Qdrant.TurboQuantization?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Qdrant.TurboQuantization?(QuantizationConfig @this) => @this.Turbo;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public QuantizationConfig(global::Qdrant.TurboQuantization? value)
+        {
+            Turbo = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static QuantizationConfig FromTurbo(global::Qdrant.TurboQuantization? value) => new QuantizationConfig(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public QuantizationConfig(
             global::Qdrant.ScalarQuantization? scalar,
             global::Qdrant.ProductQuantization? product,
-            global::Qdrant.BinaryQuantization? binary
+            global::Qdrant.BinaryQuantization? binary,
+            global::Qdrant.TurboQuantization? turbo
             )
         {
             Scalar = scalar;
             Product = product;
             Binary = binary;
+            Turbo = turbo;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
+            Turbo as object ??
             Binary as object ??
             Product as object ??
             Scalar as object 
@@ -142,7 +280,8 @@ namespace Qdrant
         public override string? ToString() =>
             Scalar?.ToString() ??
             Product?.ToString() ??
-            Binary?.ToString() 
+            Binary?.ToString() ??
+            Turbo?.ToString() 
             ;
 
         /// <summary>
@@ -150,16 +289,17 @@ namespace Qdrant
         /// </summary>
         public bool Validate()
         {
-            return IsScalar || IsProduct || IsBinary;
+            return IsScalar || IsProduct || IsBinary || IsTurbo;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Qdrant.ScalarQuantization?, TResult>? scalar = null,
-            global::System.Func<global::Qdrant.ProductQuantization?, TResult>? product = null,
-            global::System.Func<global::Qdrant.BinaryQuantization?, TResult>? binary = null,
+            global::System.Func<global::Qdrant.ScalarQuantization, TResult>? scalar = null,
+            global::System.Func<global::Qdrant.ProductQuantization, TResult>? product = null,
+            global::System.Func<global::Qdrant.BinaryQuantization, TResult>? binary = null,
+            global::System.Func<global::Qdrant.TurboQuantization, TResult>? turbo = null,
             bool validate = true)
         {
             if (validate)
@@ -179,6 +319,10 @@ namespace Qdrant
             {
                 return binary(Binary!);
             }
+            else if (IsTurbo && turbo != null)
+            {
+                return turbo(Turbo!);
+            }
 
             return default(TResult);
         }
@@ -187,9 +331,13 @@ namespace Qdrant
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Qdrant.ScalarQuantization?>? scalar = null,
-            global::System.Action<global::Qdrant.ProductQuantization?>? product = null,
-            global::System.Action<global::Qdrant.BinaryQuantization?>? binary = null,
+            global::System.Action<global::Qdrant.ScalarQuantization>? scalar = null,
+
+            global::System.Action<global::Qdrant.ProductQuantization>? product = null,
+
+            global::System.Action<global::Qdrant.BinaryQuantization>? binary = null,
+
+            global::System.Action<global::Qdrant.TurboQuantization>? turbo = null,
             bool validate = true)
         {
             if (validate)
@@ -209,6 +357,43 @@ namespace Qdrant
             {
                 binary?.Invoke(Binary!);
             }
+            else if (IsTurbo)
+            {
+                turbo?.Invoke(Turbo!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Qdrant.ScalarQuantization>? scalar = null,
+            global::System.Action<global::Qdrant.ProductQuantization>? product = null,
+            global::System.Action<global::Qdrant.BinaryQuantization>? binary = null,
+            global::System.Action<global::Qdrant.TurboQuantization>? turbo = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsScalar)
+            {
+                scalar?.Invoke(Scalar!);
+            }
+            else if (IsProduct)
+            {
+                product?.Invoke(Product!);
+            }
+            else if (IsBinary)
+            {
+                binary?.Invoke(Binary!);
+            }
+            else if (IsTurbo)
+            {
+                turbo?.Invoke(Turbo!);
+            }
         }
 
         /// <summary>
@@ -224,6 +409,8 @@ namespace Qdrant
                 typeof(global::Qdrant.ProductQuantization),
                 Binary,
                 typeof(global::Qdrant.BinaryQuantization),
+                Turbo,
+                typeof(global::Qdrant.TurboQuantization),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -242,7 +429,8 @@ namespace Qdrant
             return
                 global::System.Collections.Generic.EqualityComparer<global::Qdrant.ScalarQuantization?>.Default.Equals(Scalar, other.Scalar) &&
                 global::System.Collections.Generic.EqualityComparer<global::Qdrant.ProductQuantization?>.Default.Equals(Product, other.Product) &&
-                global::System.Collections.Generic.EqualityComparer<global::Qdrant.BinaryQuantization?>.Default.Equals(Binary, other.Binary) 
+                global::System.Collections.Generic.EqualityComparer<global::Qdrant.BinaryQuantization?>.Default.Equals(Binary, other.Binary) &&
+                global::System.Collections.Generic.EqualityComparer<global::Qdrant.TurboQuantization?>.Default.Equals(Turbo, other.Turbo) 
                 ;
         }
 

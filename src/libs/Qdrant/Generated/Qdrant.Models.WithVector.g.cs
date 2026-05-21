@@ -27,6 +27,26 @@ namespace Qdrant
         public bool IsWithVectorVariant1 => WithVectorVariant1 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickWithVectorVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out bool? value)
+        {
+            value = WithVectorVariant1;
+            return IsWithVectorVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool PickWithVectorVariant1() => IsWithVectorVariant1
+            ? WithVectorVariant1!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'WithVectorVariant1' but the value was {ToString()}.");
+
+        /// <summary>
         /// Specify which vector to return
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -42,6 +62,26 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WithVectorVariant2))]
 #endif
         public bool IsWithVectorVariant2 => WithVectorVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickWithVectorVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::System.Collections.Generic.IList<string>? value)
+        {
+            value = WithVectorVariant2;
+            return IsWithVectorVariant2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<string> PickWithVectorVariant2() => IsWithVectorVariant2
+            ? WithVectorVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'WithVectorVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -59,6 +99,11 @@ namespace Qdrant
         {
             WithVectorVariant1 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static WithVector FromWithVectorVariant1(bool? value) => new WithVector(value);
 
         /// <summary>
         /// 
@@ -101,7 +146,7 @@ namespace Qdrant
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<bool?, TResult>? withVectorVariant1 = null,
-            global::System.Func<global::System.Collections.Generic.IList<string>?, TResult>? withVectorVariant2 = null,
+            global::System.Func<global::System.Collections.Generic.IList<string>, TResult>? withVectorVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -126,7 +171,31 @@ namespace Qdrant
         /// </summary>
         public void Match(
             global::System.Action<bool?>? withVectorVariant1 = null,
-            global::System.Action<global::System.Collections.Generic.IList<string>?>? withVectorVariant2 = null,
+
+            global::System.Action<global::System.Collections.Generic.IList<string>>? withVectorVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsWithVectorVariant1)
+            {
+                withVectorVariant1?.Invoke(WithVectorVariant1!);
+            }
+            else if (IsWithVectorVariant2)
+            {
+                withVectorVariant2?.Invoke(WithVectorVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<bool?>? withVectorVariant1 = null,
+            global::System.Action<global::System.Collections.Generic.IList<string>>? withVectorVariant2 = null,
             bool validate = true)
         {
             if (validate)

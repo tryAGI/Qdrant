@@ -108,7 +108,10 @@ namespace Qdrant.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (readConsistencyVariant1 == null && type == null)
+            {
                 try
                 {
 

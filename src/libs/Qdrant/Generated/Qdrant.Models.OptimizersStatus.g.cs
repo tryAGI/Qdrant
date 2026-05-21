@@ -27,6 +27,26 @@ namespace Qdrant
         public bool IsEnum => Enum != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickEnum(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.OptimizersStatusEnum? value)
+        {
+            value = Enum;
+            return IsEnum;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.OptimizersStatusEnum PickEnum() => IsEnum
+            ? Enum!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Enum' but the value was {ToString()}.");
+
+        /// <summary>
         /// Something wrong happened with optimizers
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -42,6 +62,26 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Enum2))]
 #endif
         public bool IsEnum2 => Enum2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickEnum2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.OptimizersStatusEnum2? value)
+        {
+            value = Enum2;
+            return IsEnum2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.OptimizersStatusEnum2 PickEnum2() => IsEnum2
+            ? Enum2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Enum2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -63,6 +103,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static OptimizersStatus FromEnum(global::Qdrant.OptimizersStatusEnum? value) => new OptimizersStatus(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator OptimizersStatus(global::Qdrant.OptimizersStatusEnum2 value) => new OptimizersStatus((global::Qdrant.OptimizersStatusEnum2?)value);
 
         /// <summary>
@@ -77,6 +122,11 @@ namespace Qdrant
         {
             Enum2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static OptimizersStatus FromEnum2(global::Qdrant.OptimizersStatusEnum2? value) => new OptimizersStatus(value);
 
         /// <summary>
         /// 
@@ -119,7 +169,7 @@ namespace Qdrant
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Qdrant.OptimizersStatusEnum?, TResult>? @enum = null,
-            global::System.Func<global::Qdrant.OptimizersStatusEnum2?, TResult>? enum2 = null,
+            global::System.Func<global::Qdrant.OptimizersStatusEnum2, TResult>? enum2 = null,
             bool validate = true)
         {
             if (validate)
@@ -144,7 +194,31 @@ namespace Qdrant
         /// </summary>
         public void Match(
             global::System.Action<global::Qdrant.OptimizersStatusEnum?>? @enum = null,
-            global::System.Action<global::Qdrant.OptimizersStatusEnum2?>? enum2 = null,
+
+            global::System.Action<global::Qdrant.OptimizersStatusEnum2>? enum2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsEnum)
+            {
+                @enum?.Invoke(Enum!);
+            }
+            else if (IsEnum2)
+            {
+                enum2?.Invoke(Enum2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Qdrant.OptimizersStatusEnum?>? @enum = null,
+            global::System.Action<global::Qdrant.OptimizersStatusEnum2>? enum2 = null,
             bool validate = true)
         {
             if (validate)

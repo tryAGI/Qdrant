@@ -30,6 +30,26 @@ namespace Qdrant
         public bool IsNamedVectorStructVariant1 => NamedVectorStructVariant1 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickNamedVectorStructVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::System.Collections.Generic.IList<float>? value)
+        {
+            value = NamedVectorStructVariant1;
+            return IsNamedVectorStructVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<float> PickNamedVectorStructVariant1() => IsNamedVectorStructVariant1
+            ? NamedVectorStructVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'NamedVectorStructVariant1' but the value was {ToString()}.");
+
+        /// <summary>
         /// Dense vector data with name
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -47,6 +67,26 @@ namespace Qdrant
         public bool IsNamedVector => NamedVector != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickNamedVector(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.NamedVector? value)
+        {
+            value = NamedVector;
+            return IsNamedVector;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.NamedVector PickNamedVector() => IsNamedVector
+            ? NamedVector!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'NamedVector' but the value was {ToString()}.");
+
+        /// <summary>
         /// Sparse vector data with name
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -62,6 +102,26 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Sparse))]
 #endif
         public bool IsSparse => Sparse != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSparse(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.NamedSparseVector? value)
+        {
+            value = Sparse;
+            return IsSparse;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.NamedSparseVector PickSparse() => IsSparse
+            ? Sparse!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Sparse' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -83,6 +143,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static NamedVectorStruct FromNamedVector(global::Qdrant.NamedVector? value) => new NamedVectorStruct(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator NamedVectorStruct(global::Qdrant.NamedSparseVector value) => new NamedVectorStruct((global::Qdrant.NamedSparseVector?)value);
 
         /// <summary>
@@ -97,6 +162,11 @@ namespace Qdrant
         {
             Sparse = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static NamedVectorStruct FromSparse(global::Qdrant.NamedSparseVector? value) => new NamedVectorStruct(value);
 
         /// <summary>
         /// 
@@ -142,9 +212,9 @@ namespace Qdrant
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::System.Collections.Generic.IList<float>?, TResult>? namedVectorStructVariant1 = null,
-            global::System.Func<global::Qdrant.NamedVector?, TResult>? namedVector = null,
-            global::System.Func<global::Qdrant.NamedSparseVector?, TResult>? sparse = null,
+            global::System.Func<global::System.Collections.Generic.IList<float>, TResult>? namedVectorStructVariant1 = null,
+            global::System.Func<global::Qdrant.NamedVector, TResult>? namedVector = null,
+            global::System.Func<global::Qdrant.NamedSparseVector, TResult>? sparse = null,
             bool validate = true)
         {
             if (validate)
@@ -172,9 +242,39 @@ namespace Qdrant
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::System.Collections.Generic.IList<float>?>? namedVectorStructVariant1 = null,
-            global::System.Action<global::Qdrant.NamedVector?>? namedVector = null,
-            global::System.Action<global::Qdrant.NamedSparseVector?>? sparse = null,
+            global::System.Action<global::System.Collections.Generic.IList<float>>? namedVectorStructVariant1 = null,
+
+            global::System.Action<global::Qdrant.NamedVector>? namedVector = null,
+
+            global::System.Action<global::Qdrant.NamedSparseVector>? sparse = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsNamedVectorStructVariant1)
+            {
+                namedVectorStructVariant1?.Invoke(NamedVectorStructVariant1!);
+            }
+            else if (IsNamedVector)
+            {
+                namedVector?.Invoke(NamedVector!);
+            }
+            else if (IsSparse)
+            {
+                sparse?.Invoke(Sparse!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::System.Collections.Generic.IList<float>>? namedVectorStructVariant1 = null,
+            global::System.Action<global::Qdrant.NamedVector>? namedVector = null,
+            global::System.Action<global::Qdrant.NamedSparseVector>? sparse = null,
             bool validate = true)
         {
             if (validate)

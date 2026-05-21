@@ -29,6 +29,26 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickVectorInput(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.VectorInput? value)
+        {
+            value = VectorInput;
+            return IsVectorInput;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.VectorInput PickVectorInput() => IsVectorInput
+            ? VectorInput!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'VectorInput' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.Query? Query { get; init; }
 #else
@@ -42,6 +62,26 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Query))]
 #endif
         public bool IsQuery => Query != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickQuery(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.Query? value)
+        {
+            value = Query;
+            return IsQuery;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.Query PickQuery() => IsQuery
+            ? Query!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Query' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -63,6 +103,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static QueryInterface FromVectorInput(global::Qdrant.VectorInput? value) => new QueryInterface(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator QueryInterface(global::Qdrant.Query value) => new QueryInterface((global::Qdrant.Query?)value);
 
         /// <summary>
@@ -77,6 +122,11 @@ namespace Qdrant
         {
             Query = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static QueryInterface FromQuery(global::Qdrant.Query? value) => new QueryInterface(value);
 
         /// <summary>
         /// 
@@ -143,6 +193,30 @@ namespace Qdrant
         /// 
         /// </summary>
         public void Match(
+            global::System.Action<global::Qdrant.VectorInput?>? vectorInput = null,
+
+            global::System.Action<global::Qdrant.Query?>? query = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsVectorInput)
+            {
+                vectorInput?.Invoke(VectorInput!);
+            }
+            else if (IsQuery)
+            {
+                query?.Invoke(Query!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
             global::System.Action<global::Qdrant.VectorInput?>? vectorInput = null,
             global::System.Action<global::Qdrant.Query?>? query = null,
             bool validate = true)

@@ -27,6 +27,26 @@ namespace Qdrant
         public bool IsOptionsVariant1 => OptionsVariant1 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOptionsVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out object? value)
+        {
+            value = OptionsVariant1;
+            return IsOptionsVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public object PickOptionsVariant1() => IsOptionsVariant1
+            ? OptionsVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OptionsVariant1' but the value was {ToString()}.");
+
+        /// <summary>
         /// Configuration of the local bm25 models.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -42,6 +62,26 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Bm25Config))]
 #endif
         public bool IsBm25Config => Bm25Config != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickBm25Config(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.Bm25Config? value)
+        {
+            value = Bm25Config;
+            return IsBm25Config;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.Bm25Config PickBm25Config() => IsBm25Config
+            ? Bm25Config!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Bm25Config' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -59,6 +99,11 @@ namespace Qdrant
         {
             Bm25Config = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static DocumentOptions2 FromBm25Config(global::Qdrant.Bm25Config? value) => new DocumentOptions2(value);
 
         /// <summary>
         /// 
@@ -100,8 +145,8 @@ namespace Qdrant
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<object?, TResult>? optionsVariant1 = null,
-            global::System.Func<global::Qdrant.Bm25Config?, TResult>? bm25Config = null,
+            global::System.Func<object, TResult>? optionsVariant1 = null,
+            global::System.Func<global::Qdrant.Bm25Config, TResult>? bm25Config = null,
             bool validate = true)
         {
             if (validate)
@@ -125,8 +170,32 @@ namespace Qdrant
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<object?>? optionsVariant1 = null,
-            global::System.Action<global::Qdrant.Bm25Config?>? bm25Config = null,
+            global::System.Action<object>? optionsVariant1 = null,
+
+            global::System.Action<global::Qdrant.Bm25Config>? bm25Config = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsOptionsVariant1)
+            {
+                optionsVariant1?.Invoke(OptionsVariant1!);
+            }
+            else if (IsBm25Config)
+            {
+                bm25Config?.Invoke(Bm25Config!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<object>? optionsVariant1 = null,
+            global::System.Action<global::Qdrant.Bm25Config>? bm25Config = null,
             bool validate = true)
         {
             if (validate)

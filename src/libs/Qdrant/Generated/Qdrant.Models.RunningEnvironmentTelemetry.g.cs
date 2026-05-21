@@ -34,6 +34,12 @@ namespace Qdrant
         public int? Cores { get; set; }
 
         /// <summary>
+        /// Average number of CPU cores used by this process over roughly the last two seconds. `None` on unsupported platforms, before two samples are collected, or on transient failures reading process CPU time.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("cpu_cores_used")]
+        public float? CpuCoresUsed { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("ram_size")]
@@ -78,6 +84,9 @@ namespace Qdrant
         /// <param name="distribution"></param>
         /// <param name="distributionVersion"></param>
         /// <param name="cores"></param>
+        /// <param name="cpuCoresUsed">
+        /// Average number of CPU cores used by this process over roughly the last two seconds. `None` on unsupported platforms, before two samples are collected, or on transient failures reading process CPU time.
+        /// </param>
         /// <param name="ramSize"></param>
         /// <param name="diskSize"></param>
         /// <param name="cpuEndian"></param>
@@ -91,6 +100,7 @@ namespace Qdrant
             string? distribution,
             string? distributionVersion,
             int? cores,
+            float? cpuCoresUsed,
             int? ramSize,
             int? diskSize,
             global::Qdrant.CpuEndian? cpuEndian,
@@ -100,6 +110,7 @@ namespace Qdrant
             this.DistributionVersion = distributionVersion;
             this.IsDocker = isDocker;
             this.Cores = cores;
+            this.CpuCoresUsed = cpuCoresUsed;
             this.RamSize = ramSize;
             this.DiskSize = diskSize;
             this.CpuFlags = cpuFlags ?? throw new global::System.ArgumentNullException(nameof(cpuFlags));
@@ -113,5 +124,6 @@ namespace Qdrant
         public RunningEnvironmentTelemetry()
         {
         }
+
     }
 }

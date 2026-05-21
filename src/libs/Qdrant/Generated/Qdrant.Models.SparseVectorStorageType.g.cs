@@ -10,7 +10,7 @@ namespace Qdrant
     public readonly partial struct SparseVectorStorageType : global::System.IEquatable<SparseVectorStorageType>
     {
         /// <summary>
-        /// Storage on disk (rocksdb storage)
+        /// Storage in memory maps (gridstore storage)
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.SparseVectorStorageTypeVariant1? SparseVectorStorageTypeVariant1 { get; init; }
@@ -27,7 +27,27 @@ namespace Qdrant
         public bool IsSparseVectorStorageTypeVariant1 => SparseVectorStorageTypeVariant1 != null;
 
         /// <summary>
-        /// Storage in memory maps (gridstore storage)
+        /// 
+        /// </summary>
+        public bool TryPickSparseVectorStorageTypeVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.SparseVectorStorageTypeVariant1? value)
+        {
+            value = SparseVectorStorageTypeVariant1;
+            return IsSparseVectorStorageTypeVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.SparseVectorStorageTypeVariant1 PickSparseVectorStorageTypeVariant1() => IsSparseVectorStorageTypeVariant1
+            ? SparseVectorStorageTypeVariant1!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SparseVectorStorageTypeVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// Placeholder storage: contains no data, all vectors reported as deleted. Used for newly created sparse named vectors on immutable segments.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.SparseVectorStorageTypeVariant2? SparseVectorStorageTypeVariant2 { get; init; }
@@ -42,6 +62,26 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SparseVectorStorageTypeVariant2))]
 #endif
         public bool IsSparseVectorStorageTypeVariant2 => SparseVectorStorageTypeVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSparseVectorStorageTypeVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.SparseVectorStorageTypeVariant2? value)
+        {
+            value = SparseVectorStorageTypeVariant2;
+            return IsSparseVectorStorageTypeVariant2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.SparseVectorStorageTypeVariant2 PickSparseVectorStorageTypeVariant2() => IsSparseVectorStorageTypeVariant2
+            ? SparseVectorStorageTypeVariant2!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SparseVectorStorageTypeVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -63,6 +103,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static SparseVectorStorageType FromSparseVectorStorageTypeVariant1(global::Qdrant.SparseVectorStorageTypeVariant1? value) => new SparseVectorStorageType(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator SparseVectorStorageType(global::Qdrant.SparseVectorStorageTypeVariant2 value) => new SparseVectorStorageType((global::Qdrant.SparseVectorStorageTypeVariant2?)value);
 
         /// <summary>
@@ -77,6 +122,11 @@ namespace Qdrant
         {
             SparseVectorStorageTypeVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static SparseVectorStorageType FromSparseVectorStorageTypeVariant2(global::Qdrant.SparseVectorStorageTypeVariant2? value) => new SparseVectorStorageType(value);
 
         /// <summary>
         /// 
@@ -143,6 +193,30 @@ namespace Qdrant
         /// 
         /// </summary>
         public void Match(
+            global::System.Action<global::Qdrant.SparseVectorStorageTypeVariant1?>? sparseVectorStorageTypeVariant1 = null,
+
+            global::System.Action<global::Qdrant.SparseVectorStorageTypeVariant2?>? sparseVectorStorageTypeVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsSparseVectorStorageTypeVariant1)
+            {
+                sparseVectorStorageTypeVariant1?.Invoke(SparseVectorStorageTypeVariant1!);
+            }
+            else if (IsSparseVectorStorageTypeVariant2)
+            {
+                sparseVectorStorageTypeVariant2?.Invoke(SparseVectorStorageTypeVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
             global::System.Action<global::Qdrant.SparseVectorStorageTypeVariant1?>? sparseVectorStorageTypeVariant1 = null,
             global::System.Action<global::Qdrant.SparseVectorStorageTypeVariant2?>? sparseVectorStorageTypeVariant2 = null,
             bool validate = true)

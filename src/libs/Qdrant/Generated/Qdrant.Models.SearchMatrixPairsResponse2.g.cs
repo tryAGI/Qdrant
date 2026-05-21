@@ -76,5 +76,6 @@ namespace Qdrant
         public SearchMatrixPairsResponse2()
         {
         }
+
     }
 }

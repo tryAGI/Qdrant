@@ -136,5 +136,6 @@ namespace Qdrant
         public CollectionInfo()
         {
         }
+
     }
 }

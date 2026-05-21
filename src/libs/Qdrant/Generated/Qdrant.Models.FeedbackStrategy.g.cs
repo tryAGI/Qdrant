@@ -25,6 +25,26 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Naive))]
 #endif
         public bool IsNaive => Naive != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickNaive(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.NaiveFeedbackStrategy? value)
+        {
+            value = Naive;
+            return IsNaive;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.NaiveFeedbackStrategy PickNaive() => IsNaive
+            ? Naive!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Naive' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -42,6 +62,11 @@ namespace Qdrant
         {
             Naive = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static FeedbackStrategy FromNaive(global::Qdrant.NaiveFeedbackStrategy? value) => new FeedbackStrategy(value);
 
         /// <summary>
         /// 
@@ -69,7 +94,7 @@ namespace Qdrant
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Qdrant.NaiveFeedbackStrategy?, TResult>? naive = null,
+            global::System.Func<global::Qdrant.NaiveFeedbackStrategy, TResult>? naive = null,
             bool validate = true)
         {
             if (validate)
@@ -89,7 +114,25 @@ namespace Qdrant
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Qdrant.NaiveFeedbackStrategy?>? naive = null,
+            global::System.Action<global::Qdrant.NaiveFeedbackStrategy>? naive = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsNaive)
+            {
+                naive?.Invoke(Naive!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Qdrant.NaiveFeedbackStrategy>? naive = null,
             bool validate = true)
         {
             if (validate)

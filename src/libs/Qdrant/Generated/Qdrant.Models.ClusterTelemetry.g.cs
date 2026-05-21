@@ -94,5 +94,6 @@ namespace Qdrant
         public ClusterTelemetry()
         {
         }
+
     }
 }

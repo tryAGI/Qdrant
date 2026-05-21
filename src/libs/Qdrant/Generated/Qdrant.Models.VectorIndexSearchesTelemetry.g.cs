@@ -129,5 +129,6 @@ namespace Qdrant
         public VectorIndexSearchesTelemetry()
         {
         }
+
     }
 }

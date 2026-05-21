@@ -29,6 +29,26 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickFacetValueVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = FacetValueVariant1;
+            return IsFacetValueVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string PickFacetValueVariant1() => IsFacetValueVariant1
+            ? FacetValueVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FacetValueVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public long? FacetValueVariant2 { get; init; }
 #else
@@ -46,6 +66,26 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickFacetValueVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out long? value)
+        {
+            value = FacetValueVariant2;
+            return IsFacetValueVariant2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public long PickFacetValueVariant2() => IsFacetValueVariant2
+            ? FacetValueVariant2!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FacetValueVariant2' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public bool? FacetValueVariant3 { get; init; }
 #else
@@ -59,6 +99,26 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FacetValueVariant3))]
 #endif
         public bool IsFacetValueVariant3 => FacetValueVariant3 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFacetValueVariant3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out bool? value)
+        {
+            value = FacetValueVariant3;
+            return IsFacetValueVariant3;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool PickFacetValueVariant3() => IsFacetValueVariant3
+            ? FacetValueVariant3!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FacetValueVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -76,6 +136,11 @@ namespace Qdrant
         {
             FacetValueVariant1 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static FacetValue FromFacetValueVariant1(string? value) => new FacetValue(value);
 
         /// <summary>
         /// 
@@ -98,6 +163,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static FacetValue FromFacetValueVariant2(long? value) => new FacetValue(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator FacetValue(bool value) => new FacetValue((bool?)value);
 
         /// <summary>
@@ -112,6 +182,11 @@ namespace Qdrant
         {
             FacetValueVariant3 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static FacetValue FromFacetValueVariant3(bool? value) => new FacetValue(value);
 
         /// <summary>
         /// 
@@ -157,7 +232,7 @@ namespace Qdrant
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? facetValueVariant1 = null,
+            global::System.Func<string, TResult>? facetValueVariant1 = null,
             global::System.Func<long?, TResult>? facetValueVariant2 = null,
             global::System.Func<bool?, TResult>? facetValueVariant3 = null,
             bool validate = true)
@@ -187,7 +262,37 @@ namespace Qdrant
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? facetValueVariant1 = null,
+            global::System.Action<string>? facetValueVariant1 = null,
+
+            global::System.Action<long?>? facetValueVariant2 = null,
+
+            global::System.Action<bool?>? facetValueVariant3 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsFacetValueVariant1)
+            {
+                facetValueVariant1?.Invoke(FacetValueVariant1!);
+            }
+            else if (IsFacetValueVariant2)
+            {
+                facetValueVariant2?.Invoke(FacetValueVariant2!);
+            }
+            else if (IsFacetValueVariant3)
+            {
+                facetValueVariant3?.Invoke(FacetValueVariant3!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<string>? facetValueVariant1 = null,
             global::System.Action<long?>? facetValueVariant2 = null,
             global::System.Action<bool?>? facetValueVariant3 = null,
             bool validate = true)

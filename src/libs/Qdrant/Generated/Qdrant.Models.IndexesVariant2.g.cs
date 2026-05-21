@@ -52,5 +52,6 @@ namespace Qdrant
         public IndexesVariant2()
         {
         }
+
     }
 }

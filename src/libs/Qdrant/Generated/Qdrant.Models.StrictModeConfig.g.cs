@@ -129,6 +129,12 @@ namespace Qdrant
         public int? MaxPayloadIndexCount { get; set; }
 
         /// <summary>
+        /// Reject memory-consuming update operations (e.g. upsert, set payload) when the process resident memory exceeds this percentage of total system memory (or cgroup limit). Value in [1, 100]. Applied uniformly to external and internal (replication) traffic — rejection is deterministic so it does not cause replica divergence. Delete operations are not affected, so callers can still free memory.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("max_resident_memory_percent")]
+        public byte? MaxResidentMemoryPercent { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -197,6 +203,9 @@ namespace Qdrant
         /// <param name="maxPayloadIndexCount">
         /// Max number of payload indexes in a collection
         /// </param>
+        /// <param name="maxResidentMemoryPercent">
+        /// Reject memory-consuming update operations (e.g. upsert, set payload) when the process resident memory exceeds this percentage of total system memory (or cgroup limit). Value in [1, 100]. Applied uniformly to external and internal (replication) traffic — rejection is deterministic so it does not cause replica divergence. Delete operations are not affected, so callers can still free memory.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -220,7 +229,8 @@ namespace Qdrant
             int? conditionMaxSize,
             global::System.Collections.Generic.Dictionary<string, global::Qdrant.StrictModeMultivector>? multivectorConfig,
             global::System.Collections.Generic.Dictionary<string, global::Qdrant.StrictModeSparse>? sparseConfig,
-            int? maxPayloadIndexCount)
+            int? maxPayloadIndexCount,
+            byte? maxResidentMemoryPercent)
         {
             this.Enabled = enabled;
             this.MaxQueryLimit = maxQueryLimit;
@@ -242,6 +252,7 @@ namespace Qdrant
             this.MultivectorConfig = multivectorConfig;
             this.SparseConfig = sparseConfig;
             this.MaxPayloadIndexCount = maxPayloadIndexCount;
+            this.MaxResidentMemoryPercent = maxResidentMemoryPercent;
         }
 
         /// <summary>
@@ -250,5 +261,6 @@ namespace Qdrant
         public StrictModeConfig()
         {
         }
+
     }
 }

@@ -29,6 +29,26 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickConsensusThreadStatusVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.ConsensusThreadStatusVariant1? value)
+        {
+            value = ConsensusThreadStatusVariant1;
+            return IsConsensusThreadStatusVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.ConsensusThreadStatusVariant1 PickConsensusThreadStatusVariant1() => IsConsensusThreadStatusVariant1
+            ? ConsensusThreadStatusVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ConsensusThreadStatusVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.ConsensusThreadStatusVariant2? ConsensusThreadStatusVariant2 { get; init; }
 #else
@@ -46,6 +66,26 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickConsensusThreadStatusVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.ConsensusThreadStatusVariant2? value)
+        {
+            value = ConsensusThreadStatusVariant2;
+            return IsConsensusThreadStatusVariant2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.ConsensusThreadStatusVariant2 PickConsensusThreadStatusVariant2() => IsConsensusThreadStatusVariant2
+            ? ConsensusThreadStatusVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ConsensusThreadStatusVariant2' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.ConsensusThreadStatusVariant3? ConsensusThreadStatusVariant3 { get; init; }
 #else
@@ -59,6 +99,26 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ConsensusThreadStatusVariant3))]
 #endif
         public bool IsConsensusThreadStatusVariant3 => ConsensusThreadStatusVariant3 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickConsensusThreadStatusVariant3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.ConsensusThreadStatusVariant3? value)
+        {
+            value = ConsensusThreadStatusVariant3;
+            return IsConsensusThreadStatusVariant3;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.ConsensusThreadStatusVariant3 PickConsensusThreadStatusVariant3() => IsConsensusThreadStatusVariant3
+            ? ConsensusThreadStatusVariant3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ConsensusThreadStatusVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -76,6 +136,11 @@ namespace Qdrant
         {
             ConsensusThreadStatusVariant1 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ConsensusThreadStatus FromConsensusThreadStatusVariant1(global::Qdrant.ConsensusThreadStatusVariant1? value) => new ConsensusThreadStatus(value);
 
         /// <summary>
         /// 
@@ -98,6 +163,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static ConsensusThreadStatus FromConsensusThreadStatusVariant2(global::Qdrant.ConsensusThreadStatusVariant2? value) => new ConsensusThreadStatus(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ConsensusThreadStatus(global::Qdrant.ConsensusThreadStatusVariant3 value) => new ConsensusThreadStatus((global::Qdrant.ConsensusThreadStatusVariant3?)value);
 
         /// <summary>
@@ -112,6 +182,11 @@ namespace Qdrant
         {
             ConsensusThreadStatusVariant3 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ConsensusThreadStatus FromConsensusThreadStatusVariant3(global::Qdrant.ConsensusThreadStatusVariant3? value) => new ConsensusThreadStatus(value);
 
         /// <summary>
         /// 
@@ -157,9 +232,9 @@ namespace Qdrant
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Qdrant.ConsensusThreadStatusVariant1?, TResult>? consensusThreadStatusVariant1 = null,
-            global::System.Func<global::Qdrant.ConsensusThreadStatusVariant2?, TResult>? consensusThreadStatusVariant2 = null,
-            global::System.Func<global::Qdrant.ConsensusThreadStatusVariant3?, TResult>? consensusThreadStatusVariant3 = null,
+            global::System.Func<global::Qdrant.ConsensusThreadStatusVariant1, TResult>? consensusThreadStatusVariant1 = null,
+            global::System.Func<global::Qdrant.ConsensusThreadStatusVariant2, TResult>? consensusThreadStatusVariant2 = null,
+            global::System.Func<global::Qdrant.ConsensusThreadStatusVariant3, TResult>? consensusThreadStatusVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -187,9 +262,39 @@ namespace Qdrant
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Qdrant.ConsensusThreadStatusVariant1?>? consensusThreadStatusVariant1 = null,
-            global::System.Action<global::Qdrant.ConsensusThreadStatusVariant2?>? consensusThreadStatusVariant2 = null,
-            global::System.Action<global::Qdrant.ConsensusThreadStatusVariant3?>? consensusThreadStatusVariant3 = null,
+            global::System.Action<global::Qdrant.ConsensusThreadStatusVariant1>? consensusThreadStatusVariant1 = null,
+
+            global::System.Action<global::Qdrant.ConsensusThreadStatusVariant2>? consensusThreadStatusVariant2 = null,
+
+            global::System.Action<global::Qdrant.ConsensusThreadStatusVariant3>? consensusThreadStatusVariant3 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsConsensusThreadStatusVariant1)
+            {
+                consensusThreadStatusVariant1?.Invoke(ConsensusThreadStatusVariant1!);
+            }
+            else if (IsConsensusThreadStatusVariant2)
+            {
+                consensusThreadStatusVariant2?.Invoke(ConsensusThreadStatusVariant2!);
+            }
+            else if (IsConsensusThreadStatusVariant3)
+            {
+                consensusThreadStatusVariant3?.Invoke(ConsensusThreadStatusVariant3!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Qdrant.ConsensusThreadStatusVariant1>? consensusThreadStatusVariant1 = null,
+            global::System.Action<global::Qdrant.ConsensusThreadStatusVariant2>? consensusThreadStatusVariant2 = null,
+            global::System.Action<global::Qdrant.ConsensusThreadStatusVariant3>? consensusThreadStatusVariant3 = null,
             bool validate = true)
         {
             if (validate)

@@ -27,6 +27,26 @@ namespace Qdrant
         public bool IsField => Field != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickField(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.FieldCondition? value)
+        {
+            value = Field;
+            return IsField;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.FieldCondition PickField() => IsField
+            ? Field!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Field' but the value was {ToString()}.");
+
+        /// <summary>
         /// Select points with empty payload for a specified field
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -42,6 +62,26 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(IsEmpty))]
 #endif
         public bool IsIsEmpty => IsEmpty != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickIsEmpty(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.IsEmptyCondition? value)
+        {
+            value = IsEmpty;
+            return IsIsEmpty;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.IsEmptyCondition PickIsEmpty() => IsIsEmpty
+            ? IsEmpty!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'IsEmpty' but the value was {ToString()}.");
 
         /// <summary>
         /// Select points with null payload for a specified field
@@ -61,6 +101,26 @@ namespace Qdrant
         public bool IsIsNull => IsNull != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickIsNull(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.IsNullCondition? value)
+        {
+            value = IsNull;
+            return IsIsNull;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.IsNullCondition PickIsNull() => IsIsNull
+            ? IsNull!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'IsNull' but the value was {ToString()}.");
+
+        /// <summary>
         /// ID-based filtering condition
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -76,6 +136,26 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(HasId))]
 #endif
         public bool IsHasId => HasId != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickHasId(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.HasIdCondition? value)
+        {
+            value = HasId;
+            return IsHasId;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.HasIdCondition PickHasId() => IsHasId
+            ? HasId!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'HasId' but the value was {ToString()}.");
 
         /// <summary>
         /// Filter points which have specific vector assigned
@@ -97,6 +177,26 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickHasVector(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.HasVectorCondition? value)
+        {
+            value = HasVector;
+            return IsHasVector;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.HasVectorCondition PickHasVector() => IsHasVector
+            ? HasVector!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'HasVector' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.NestedCondition? Nested { get; init; }
 #else
@@ -114,6 +214,26 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickNested(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.NestedCondition? value)
+        {
+            value = Nested;
+            return IsNested;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.NestedCondition PickNested() => IsNested
+            ? Nested!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Nested' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.Filter? Filter { get; init; }
 #else
@@ -127,6 +247,26 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Filter))]
 #endif
         public bool IsFilter => Filter != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFilter(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.Filter? value)
+        {
+            value = Filter;
+            return IsFilter;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.Filter PickFilter() => IsFilter
+            ? Filter!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Filter' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -144,6 +284,11 @@ namespace Qdrant
         {
             Field = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Condition FromField(global::Qdrant.FieldCondition? value) => new Condition(value);
 
         /// <summary>
         /// 
@@ -166,6 +311,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static Condition FromIsEmpty(global::Qdrant.IsEmptyCondition? value) => new Condition(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Condition(global::Qdrant.IsNullCondition value) => new Condition((global::Qdrant.IsNullCondition?)value);
 
         /// <summary>
@@ -180,6 +330,11 @@ namespace Qdrant
         {
             IsNull = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Condition FromIsNull(global::Qdrant.IsNullCondition? value) => new Condition(value);
 
         /// <summary>
         /// 
@@ -202,6 +357,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static Condition FromHasId(global::Qdrant.HasIdCondition? value) => new Condition(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Condition(global::Qdrant.HasVectorCondition value) => new Condition((global::Qdrant.HasVectorCondition?)value);
 
         /// <summary>
@@ -216,6 +376,11 @@ namespace Qdrant
         {
             HasVector = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Condition FromHasVector(global::Qdrant.HasVectorCondition? value) => new Condition(value);
 
         /// <summary>
         /// 
@@ -238,6 +403,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static Condition FromNested(global::Qdrant.NestedCondition? value) => new Condition(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Condition(global::Qdrant.Filter value) => new Condition((global::Qdrant.Filter?)value);
 
         /// <summary>
@@ -252,6 +422,11 @@ namespace Qdrant
         {
             Filter = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Condition FromFilter(global::Qdrant.Filter? value) => new Condition(value);
 
         /// <summary>
         /// 
@@ -313,13 +488,13 @@ namespace Qdrant
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Qdrant.FieldCondition?, TResult>? field = null,
-            global::System.Func<global::Qdrant.IsEmptyCondition?, TResult>? isEmpty = null,
-            global::System.Func<global::Qdrant.IsNullCondition?, TResult>? isNull = null,
-            global::System.Func<global::Qdrant.HasIdCondition?, TResult>? hasId = null,
-            global::System.Func<global::Qdrant.HasVectorCondition?, TResult>? hasVector = null,
-            global::System.Func<global::Qdrant.NestedCondition?, TResult>? nested = null,
-            global::System.Func<global::Qdrant.Filter?, TResult>? filter = null,
+            global::System.Func<global::Qdrant.FieldCondition, TResult>? field = null,
+            global::System.Func<global::Qdrant.IsEmptyCondition, TResult>? isEmpty = null,
+            global::System.Func<global::Qdrant.IsNullCondition, TResult>? isNull = null,
+            global::System.Func<global::Qdrant.HasIdCondition, TResult>? hasId = null,
+            global::System.Func<global::Qdrant.HasVectorCondition, TResult>? hasVector = null,
+            global::System.Func<global::Qdrant.NestedCondition, TResult>? nested = null,
+            global::System.Func<global::Qdrant.Filter, TResult>? filter = null,
             bool validate = true)
         {
             if (validate)
@@ -363,13 +538,67 @@ namespace Qdrant
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Qdrant.FieldCondition?>? field = null,
-            global::System.Action<global::Qdrant.IsEmptyCondition?>? isEmpty = null,
-            global::System.Action<global::Qdrant.IsNullCondition?>? isNull = null,
-            global::System.Action<global::Qdrant.HasIdCondition?>? hasId = null,
-            global::System.Action<global::Qdrant.HasVectorCondition?>? hasVector = null,
-            global::System.Action<global::Qdrant.NestedCondition?>? nested = null,
-            global::System.Action<global::Qdrant.Filter?>? filter = null,
+            global::System.Action<global::Qdrant.FieldCondition>? field = null,
+
+            global::System.Action<global::Qdrant.IsEmptyCondition>? isEmpty = null,
+
+            global::System.Action<global::Qdrant.IsNullCondition>? isNull = null,
+
+            global::System.Action<global::Qdrant.HasIdCondition>? hasId = null,
+
+            global::System.Action<global::Qdrant.HasVectorCondition>? hasVector = null,
+
+            global::System.Action<global::Qdrant.NestedCondition>? nested = null,
+
+            global::System.Action<global::Qdrant.Filter>? filter = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsField)
+            {
+                field?.Invoke(Field!);
+            }
+            else if (IsIsEmpty)
+            {
+                isEmpty?.Invoke(IsEmpty!);
+            }
+            else if (IsIsNull)
+            {
+                isNull?.Invoke(IsNull!);
+            }
+            else if (IsHasId)
+            {
+                hasId?.Invoke(HasId!);
+            }
+            else if (IsHasVector)
+            {
+                hasVector?.Invoke(HasVector!);
+            }
+            else if (IsNested)
+            {
+                nested?.Invoke(Nested!);
+            }
+            else if (IsFilter)
+            {
+                filter?.Invoke(Filter!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Qdrant.FieldCondition>? field = null,
+            global::System.Action<global::Qdrant.IsEmptyCondition>? isEmpty = null,
+            global::System.Action<global::Qdrant.IsNullCondition>? isNull = null,
+            global::System.Action<global::Qdrant.HasIdCondition>? hasId = null,
+            global::System.Action<global::Qdrant.HasVectorCondition>? hasVector = null,
+            global::System.Action<global::Qdrant.NestedCondition>? nested = null,
+            global::System.Action<global::Qdrant.Filter>? filter = null,
             bool validate = true)
         {
             if (validate)

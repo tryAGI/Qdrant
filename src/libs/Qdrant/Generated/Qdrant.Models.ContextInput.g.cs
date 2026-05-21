@@ -29,6 +29,26 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickPair(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.ContextPair? value)
+        {
+            value = Pair;
+            return IsPair;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.ContextPair PickPair() => IsPair
+            ? Pair!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Pair' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<global::Qdrant.ContextPair>? ContextInputVariant2 { get; init; }
 #else
@@ -46,6 +66,26 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickContextInputVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::System.Collections.Generic.IList<global::Qdrant.ContextPair>? value)
+        {
+            value = ContextInputVariant2;
+            return IsContextInputVariant2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::Qdrant.ContextPair> PickContextInputVariant2() => IsContextInputVariant2
+            ? ContextInputVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ContextInputVariant2' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public object? ContextInputVariant3 { get; init; }
 #else
@@ -59,6 +99,26 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ContextInputVariant3))]
 #endif
         public bool IsContextInputVariant3 => ContextInputVariant3 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickContextInputVariant3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out object? value)
+        {
+            value = ContextInputVariant3;
+            return IsContextInputVariant3;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public object PickContextInputVariant3() => IsContextInputVariant3
+            ? ContextInputVariant3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ContextInputVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -76,6 +136,11 @@ namespace Qdrant
         {
             Pair = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ContextInput FromPair(global::Qdrant.ContextPair? value) => new ContextInput(value);
 
         /// <summary>
         /// 
@@ -121,9 +186,9 @@ namespace Qdrant
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Qdrant.ContextPair?, TResult>? pair = null,
-            global::System.Func<global::System.Collections.Generic.IList<global::Qdrant.ContextPair>?, TResult>? contextInputVariant2 = null,
-            global::System.Func<object?, TResult>? contextInputVariant3 = null,
+            global::System.Func<global::Qdrant.ContextPair, TResult>? pair = null,
+            global::System.Func<global::System.Collections.Generic.IList<global::Qdrant.ContextPair>, TResult>? contextInputVariant2 = null,
+            global::System.Func<object, TResult>? contextInputVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -151,9 +216,39 @@ namespace Qdrant
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Qdrant.ContextPair?>? pair = null,
-            global::System.Action<global::System.Collections.Generic.IList<global::Qdrant.ContextPair>?>? contextInputVariant2 = null,
-            global::System.Action<object?>? contextInputVariant3 = null,
+            global::System.Action<global::Qdrant.ContextPair>? pair = null,
+
+            global::System.Action<global::System.Collections.Generic.IList<global::Qdrant.ContextPair>>? contextInputVariant2 = null,
+
+            global::System.Action<object>? contextInputVariant3 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsPair)
+            {
+                pair?.Invoke(Pair!);
+            }
+            else if (IsContextInputVariant2)
+            {
+                contextInputVariant2?.Invoke(ContextInputVariant2!);
+            }
+            else if (IsContextInputVariant3)
+            {
+                contextInputVariant3?.Invoke(ContextInputVariant3!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Qdrant.ContextPair>? pair = null,
+            global::System.Action<global::System.Collections.Generic.IList<global::Qdrant.ContextPair>>? contextInputVariant2 = null,
+            global::System.Action<object>? contextInputVariant3 = null,
             bool validate = true)
         {
             if (validate)

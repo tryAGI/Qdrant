@@ -27,6 +27,26 @@ namespace Qdrant
         public bool IsVectorStructVariant1 => VectorStructVariant1 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickVectorStructVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::System.Collections.Generic.IList<float>? value)
+        {
+            value = VectorStructVariant1;
+            return IsVectorStructVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<float> PickVectorStructVariant1() => IsVectorStructVariant1
+            ? VectorStructVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'VectorStructVariant1' but the value was {ToString()}.");
+
+        /// <summary>
         /// Example: [[0.875F, 0.140625F, 0.1102F], [0.758F, 0.28126F, 0.96871F], [0.621F, 0.421878F, 0.9375F]]
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -44,6 +64,26 @@ namespace Qdrant
         public bool IsVectorStructVariant2 => VectorStructVariant2 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickVectorStructVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>? value)
+        {
+            value = VectorStructVariant2;
+            return IsVectorStructVariant2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>> PickVectorStructVariant2() => IsVectorStructVariant2
+            ? VectorStructVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'VectorStructVariant2' but the value was {ToString()}.");
+
+        /// <summary>
         /// Example: {"image-embeddings":[0.8730000257492065,0.140625,0.897599995136261]}
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -59,6 +99,26 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(VectorStructVariant3))]
 #endif
         public bool IsVectorStructVariant3 => VectorStructVariant3 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickVectorStructVariant3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out object? value)
+        {
+            value = VectorStructVariant3;
+            return IsVectorStructVariant3;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public object PickVectorStructVariant3() => IsVectorStructVariant3
+            ? VectorStructVariant3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'VectorStructVariant3' but the value was {ToString()}.");
 
         /// <summary>
         /// WARN: Work-in-progress, unimplemented<br/>
@@ -79,6 +139,26 @@ namespace Qdrant
         public bool IsDocument => Document != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickDocument(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.Document? value)
+        {
+            value = Document;
+            return IsDocument;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.Document PickDocument() => IsDocument
+            ? Document!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Document' but the value was {ToString()}.");
+
+        /// <summary>
         /// WARN: Work-in-progress, unimplemented<br/>
         /// Image object for embedding. Requires inference infrastructure, unimplemented.
         /// </summary>
@@ -97,6 +177,26 @@ namespace Qdrant
         public bool IsImage => Image != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickImage(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.Image? value)
+        {
+            value = Image;
+            return IsImage;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.Image PickImage() => IsImage
+            ? Image!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Image' but the value was {ToString()}.");
+
+        /// <summary>
         /// WARN: Work-in-progress, unimplemented<br/>
         /// Custom object for embedding. Requires inference infrastructure, unimplemented.
         /// </summary>
@@ -113,6 +213,26 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InferenceObject))]
 #endif
         public bool IsInferenceObject => InferenceObject != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickInferenceObject(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.InferenceObject? value)
+        {
+            value = InferenceObject;
+            return IsInferenceObject;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.InferenceObject PickInferenceObject() => IsInferenceObject
+            ? InferenceObject!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InferenceObject' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -130,6 +250,11 @@ namespace Qdrant
         {
             Document = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static VectorStruct FromDocument(global::Qdrant.Document? value) => new VectorStruct(value);
 
         /// <summary>
         /// 
@@ -152,6 +277,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static VectorStruct FromImage(global::Qdrant.Image? value) => new VectorStruct(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator VectorStruct(global::Qdrant.InferenceObject value) => new VectorStruct((global::Qdrant.InferenceObject?)value);
 
         /// <summary>
@@ -166,6 +296,11 @@ namespace Qdrant
         {
             InferenceObject = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static VectorStruct FromInferenceObject(global::Qdrant.InferenceObject? value) => new VectorStruct(value);
 
         /// <summary>
         /// 
@@ -223,12 +358,12 @@ namespace Qdrant
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::System.Collections.Generic.IList<float>?, TResult>? vectorStructVariant1 = null,
-            global::System.Func<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>?, TResult>? vectorStructVariant2 = null,
-            global::System.Func<object?, TResult>? vectorStructVariant3 = null,
-            global::System.Func<global::Qdrant.Document?, TResult>? document = null,
-            global::System.Func<global::Qdrant.Image?, TResult>? image = null,
-            global::System.Func<global::Qdrant.InferenceObject?, TResult>? inferenceObject = null,
+            global::System.Func<global::System.Collections.Generic.IList<float>, TResult>? vectorStructVariant1 = null,
+            global::System.Func<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>, TResult>? vectorStructVariant2 = null,
+            global::System.Func<object, TResult>? vectorStructVariant3 = null,
+            global::System.Func<global::Qdrant.Document, TResult>? document = null,
+            global::System.Func<global::Qdrant.Image, TResult>? image = null,
+            global::System.Func<global::Qdrant.InferenceObject, TResult>? inferenceObject = null,
             bool validate = true)
         {
             if (validate)
@@ -268,12 +403,60 @@ namespace Qdrant
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::System.Collections.Generic.IList<float>?>? vectorStructVariant1 = null,
-            global::System.Action<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>?>? vectorStructVariant2 = null,
-            global::System.Action<object?>? vectorStructVariant3 = null,
-            global::System.Action<global::Qdrant.Document?>? document = null,
-            global::System.Action<global::Qdrant.Image?>? image = null,
-            global::System.Action<global::Qdrant.InferenceObject?>? inferenceObject = null,
+            global::System.Action<global::System.Collections.Generic.IList<float>>? vectorStructVariant1 = null,
+
+            global::System.Action<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>>? vectorStructVariant2 = null,
+
+            global::System.Action<object>? vectorStructVariant3 = null,
+
+            global::System.Action<global::Qdrant.Document>? document = null,
+
+            global::System.Action<global::Qdrant.Image>? image = null,
+
+            global::System.Action<global::Qdrant.InferenceObject>? inferenceObject = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsVectorStructVariant1)
+            {
+                vectorStructVariant1?.Invoke(VectorStructVariant1!);
+            }
+            else if (IsVectorStructVariant2)
+            {
+                vectorStructVariant2?.Invoke(VectorStructVariant2!);
+            }
+            else if (IsVectorStructVariant3)
+            {
+                vectorStructVariant3?.Invoke(VectorStructVariant3!);
+            }
+            else if (IsDocument)
+            {
+                document?.Invoke(Document!);
+            }
+            else if (IsImage)
+            {
+                image?.Invoke(Image!);
+            }
+            else if (IsInferenceObject)
+            {
+                inferenceObject?.Invoke(InferenceObject!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::System.Collections.Generic.IList<float>>? vectorStructVariant1 = null,
+            global::System.Action<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>>? vectorStructVariant2 = null,
+            global::System.Action<object>? vectorStructVariant3 = null,
+            global::System.Action<global::Qdrant.Document>? document = null,
+            global::System.Action<global::Qdrant.Image>? image = null,
+            global::System.Action<global::Qdrant.InferenceObject>? inferenceObject = null,
             bool validate = true)
         {
             if (validate)

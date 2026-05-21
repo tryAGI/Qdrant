@@ -162,5 +162,6 @@ namespace Qdrant
         public LocalShardTelemetry()
         {
         }
+
     }
 }

@@ -118,5 +118,6 @@ namespace Qdrant
         public UpdateCollection()
         {
         }
+
     }
 }

@@ -29,6 +29,26 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickKeywordIndex(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.KeywordIndexParams? value)
+        {
+            value = KeywordIndex;
+            return IsKeywordIndex;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.KeywordIndexParams PickKeywordIndex() => IsKeywordIndex
+            ? KeywordIndex!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'KeywordIndex' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.IntegerIndexParams? IntegerIndex { get; init; }
 #else
@@ -42,6 +62,26 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(IntegerIndex))]
 #endif
         public bool IsIntegerIndex => IntegerIndex != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickIntegerIndex(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.IntegerIndexParams? value)
+        {
+            value = IntegerIndex;
+            return IsIntegerIndex;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.IntegerIndexParams PickIntegerIndex() => IsIntegerIndex
+            ? IntegerIndex!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'IntegerIndex' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -63,6 +103,26 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickFloatIndex(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.FloatIndexParams? value)
+        {
+            value = FloatIndex;
+            return IsFloatIndex;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.FloatIndexParams PickFloatIndex() => IsFloatIndex
+            ? FloatIndex!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FloatIndex' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.GeoIndexParams? GeoIndex { get; init; }
 #else
@@ -76,6 +136,26 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(GeoIndex))]
 #endif
         public bool IsGeoIndex => GeoIndex != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickGeoIndex(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.GeoIndexParams? value)
+        {
+            value = GeoIndex;
+            return IsGeoIndex;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.GeoIndexParams PickGeoIndex() => IsGeoIndex
+            ? GeoIndex!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'GeoIndex' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -97,6 +177,26 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickTextIndex(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.TextIndexParams? value)
+        {
+            value = TextIndex;
+            return IsTextIndex;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.TextIndexParams PickTextIndex() => IsTextIndex
+            ? TextIndex!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TextIndex' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.BoolIndexParams? BoolIndex { get; init; }
 #else
@@ -110,6 +210,26 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BoolIndex))]
 #endif
         public bool IsBoolIndex => BoolIndex != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickBoolIndex(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.BoolIndexParams? value)
+        {
+            value = BoolIndex;
+            return IsBoolIndex;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.BoolIndexParams PickBoolIndex() => IsBoolIndex
+            ? BoolIndex!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BoolIndex' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -131,6 +251,26 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickDatetimeIndex(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.DatetimeIndexParams? value)
+        {
+            value = DatetimeIndex;
+            return IsDatetimeIndex;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.DatetimeIndexParams PickDatetimeIndex() => IsDatetimeIndex
+            ? DatetimeIndex!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'DatetimeIndex' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.UuidIndexParams? UuidIndex { get; init; }
 #else
@@ -144,6 +284,26 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(UuidIndex))]
 #endif
         public bool IsUuidIndex => UuidIndex != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickUuidIndex(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.UuidIndexParams? value)
+        {
+            value = UuidIndex;
+            return IsUuidIndex;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.UuidIndexParams PickUuidIndex() => IsUuidIndex
+            ? UuidIndex!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'UuidIndex' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -161,6 +321,11 @@ namespace Qdrant
         {
             KeywordIndex = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static PayloadSchemaParams FromKeywordIndex(global::Qdrant.KeywordIndexParams? value) => new PayloadSchemaParams(value);
 
         /// <summary>
         /// 
@@ -183,6 +348,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static PayloadSchemaParams FromIntegerIndex(global::Qdrant.IntegerIndexParams? value) => new PayloadSchemaParams(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator PayloadSchemaParams(global::Qdrant.FloatIndexParams value) => new PayloadSchemaParams((global::Qdrant.FloatIndexParams?)value);
 
         /// <summary>
@@ -197,6 +367,11 @@ namespace Qdrant
         {
             FloatIndex = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static PayloadSchemaParams FromFloatIndex(global::Qdrant.FloatIndexParams? value) => new PayloadSchemaParams(value);
 
         /// <summary>
         /// 
@@ -219,6 +394,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static PayloadSchemaParams FromGeoIndex(global::Qdrant.GeoIndexParams? value) => new PayloadSchemaParams(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator PayloadSchemaParams(global::Qdrant.TextIndexParams value) => new PayloadSchemaParams((global::Qdrant.TextIndexParams?)value);
 
         /// <summary>
@@ -233,6 +413,11 @@ namespace Qdrant
         {
             TextIndex = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static PayloadSchemaParams FromTextIndex(global::Qdrant.TextIndexParams? value) => new PayloadSchemaParams(value);
 
         /// <summary>
         /// 
@@ -255,6 +440,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static PayloadSchemaParams FromBoolIndex(global::Qdrant.BoolIndexParams? value) => new PayloadSchemaParams(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator PayloadSchemaParams(global::Qdrant.DatetimeIndexParams value) => new PayloadSchemaParams((global::Qdrant.DatetimeIndexParams?)value);
 
         /// <summary>
@@ -273,6 +463,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static PayloadSchemaParams FromDatetimeIndex(global::Qdrant.DatetimeIndexParams? value) => new PayloadSchemaParams(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator PayloadSchemaParams(global::Qdrant.UuidIndexParams value) => new PayloadSchemaParams((global::Qdrant.UuidIndexParams?)value);
 
         /// <summary>
@@ -287,6 +482,11 @@ namespace Qdrant
         {
             UuidIndex = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static PayloadSchemaParams FromUuidIndex(global::Qdrant.UuidIndexParams? value) => new PayloadSchemaParams(value);
 
         /// <summary>
         /// 
@@ -352,14 +552,14 @@ namespace Qdrant
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Qdrant.KeywordIndexParams?, TResult>? keywordIndex = null,
-            global::System.Func<global::Qdrant.IntegerIndexParams?, TResult>? integerIndex = null,
-            global::System.Func<global::Qdrant.FloatIndexParams?, TResult>? floatIndex = null,
-            global::System.Func<global::Qdrant.GeoIndexParams?, TResult>? geoIndex = null,
-            global::System.Func<global::Qdrant.TextIndexParams?, TResult>? textIndex = null,
-            global::System.Func<global::Qdrant.BoolIndexParams?, TResult>? boolIndex = null,
-            global::System.Func<global::Qdrant.DatetimeIndexParams?, TResult>? datetimeIndex = null,
-            global::System.Func<global::Qdrant.UuidIndexParams?, TResult>? uuidIndex = null,
+            global::System.Func<global::Qdrant.KeywordIndexParams, TResult>? keywordIndex = null,
+            global::System.Func<global::Qdrant.IntegerIndexParams, TResult>? integerIndex = null,
+            global::System.Func<global::Qdrant.FloatIndexParams, TResult>? floatIndex = null,
+            global::System.Func<global::Qdrant.GeoIndexParams, TResult>? geoIndex = null,
+            global::System.Func<global::Qdrant.TextIndexParams, TResult>? textIndex = null,
+            global::System.Func<global::Qdrant.BoolIndexParams, TResult>? boolIndex = null,
+            global::System.Func<global::Qdrant.DatetimeIndexParams, TResult>? datetimeIndex = null,
+            global::System.Func<global::Qdrant.UuidIndexParams, TResult>? uuidIndex = null,
             bool validate = true)
         {
             if (validate)
@@ -407,14 +607,74 @@ namespace Qdrant
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Qdrant.KeywordIndexParams?>? keywordIndex = null,
-            global::System.Action<global::Qdrant.IntegerIndexParams?>? integerIndex = null,
-            global::System.Action<global::Qdrant.FloatIndexParams?>? floatIndex = null,
-            global::System.Action<global::Qdrant.GeoIndexParams?>? geoIndex = null,
-            global::System.Action<global::Qdrant.TextIndexParams?>? textIndex = null,
-            global::System.Action<global::Qdrant.BoolIndexParams?>? boolIndex = null,
-            global::System.Action<global::Qdrant.DatetimeIndexParams?>? datetimeIndex = null,
-            global::System.Action<global::Qdrant.UuidIndexParams?>? uuidIndex = null,
+            global::System.Action<global::Qdrant.KeywordIndexParams>? keywordIndex = null,
+
+            global::System.Action<global::Qdrant.IntegerIndexParams>? integerIndex = null,
+
+            global::System.Action<global::Qdrant.FloatIndexParams>? floatIndex = null,
+
+            global::System.Action<global::Qdrant.GeoIndexParams>? geoIndex = null,
+
+            global::System.Action<global::Qdrant.TextIndexParams>? textIndex = null,
+
+            global::System.Action<global::Qdrant.BoolIndexParams>? boolIndex = null,
+
+            global::System.Action<global::Qdrant.DatetimeIndexParams>? datetimeIndex = null,
+
+            global::System.Action<global::Qdrant.UuidIndexParams>? uuidIndex = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsKeywordIndex)
+            {
+                keywordIndex?.Invoke(KeywordIndex!);
+            }
+            else if (IsIntegerIndex)
+            {
+                integerIndex?.Invoke(IntegerIndex!);
+            }
+            else if (IsFloatIndex)
+            {
+                floatIndex?.Invoke(FloatIndex!);
+            }
+            else if (IsGeoIndex)
+            {
+                geoIndex?.Invoke(GeoIndex!);
+            }
+            else if (IsTextIndex)
+            {
+                textIndex?.Invoke(TextIndex!);
+            }
+            else if (IsBoolIndex)
+            {
+                boolIndex?.Invoke(BoolIndex!);
+            }
+            else if (IsDatetimeIndex)
+            {
+                datetimeIndex?.Invoke(DatetimeIndex!);
+            }
+            else if (IsUuidIndex)
+            {
+                uuidIndex?.Invoke(UuidIndex!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Qdrant.KeywordIndexParams>? keywordIndex = null,
+            global::System.Action<global::Qdrant.IntegerIndexParams>? integerIndex = null,
+            global::System.Action<global::Qdrant.FloatIndexParams>? floatIndex = null,
+            global::System.Action<global::Qdrant.GeoIndexParams>? geoIndex = null,
+            global::System.Action<global::Qdrant.TextIndexParams>? textIndex = null,
+            global::System.Action<global::Qdrant.BoolIndexParams>? boolIndex = null,
+            global::System.Action<global::Qdrant.DatetimeIndexParams>? datetimeIndex = null,
+            global::System.Action<global::Qdrant.UuidIndexParams>? uuidIndex = null,
             bool validate = true)
         {
             if (validate)

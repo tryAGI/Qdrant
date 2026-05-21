@@ -29,6 +29,26 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickPayloadStorageTypeVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.PayloadStorageTypeVariant1? value)
+        {
+            value = PayloadStorageTypeVariant1;
+            return IsPayloadStorageTypeVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.PayloadStorageTypeVariant1 PickPayloadStorageTypeVariant1() => IsPayloadStorageTypeVariant1
+            ? PayloadStorageTypeVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'PayloadStorageTypeVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.PayloadStorageTypeVariant2? PayloadStorageTypeVariant2 { get; init; }
 #else
@@ -46,36 +66,22 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickPayloadStorageTypeVariant2(
 #if NET6_0_OR_GREATER
-        public global::Qdrant.PayloadStorageTypeVariant3? PayloadStorageTypeVariant3 { get; init; }
-#else
-        public global::Qdrant.PayloadStorageTypeVariant3? PayloadStorageTypeVariant3 { get; }
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
+            out global::Qdrant.PayloadStorageTypeVariant2? value)
+        {
+            value = PayloadStorageTypeVariant2;
+            return IsPayloadStorageTypeVariant2;
+        }
 
         /// <summary>
         /// 
         /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(PayloadStorageTypeVariant3))]
-#endif
-        public bool IsPayloadStorageTypeVariant3 => PayloadStorageTypeVariant3 != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::Qdrant.PayloadStorageTypeVariant4? PayloadStorageTypeVariant4 { get; init; }
-#else
-        public global::Qdrant.PayloadStorageTypeVariant4? PayloadStorageTypeVariant4 { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(PayloadStorageTypeVariant4))]
-#endif
-        public bool IsPayloadStorageTypeVariant4 => PayloadStorageTypeVariant4 != null;
+        public global::Qdrant.PayloadStorageTypeVariant2 PickPayloadStorageTypeVariant2() => IsPayloadStorageTypeVariant2
+            ? PayloadStorageTypeVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'PayloadStorageTypeVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -93,6 +99,11 @@ namespace Qdrant
         {
             PayloadStorageTypeVariant1 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static PayloadStorageType FromPayloadStorageTypeVariant1(global::Qdrant.PayloadStorageTypeVariant1? value) => new PayloadStorageType(value);
 
         /// <summary>
         /// 
@@ -115,61 +126,24 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator PayloadStorageType(global::Qdrant.PayloadStorageTypeVariant3 value) => new PayloadStorageType((global::Qdrant.PayloadStorageTypeVariant3?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::Qdrant.PayloadStorageTypeVariant3?(PayloadStorageType @this) => @this.PayloadStorageTypeVariant3;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public PayloadStorageType(global::Qdrant.PayloadStorageTypeVariant3? value)
-        {
-            PayloadStorageTypeVariant3 = value;
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator PayloadStorageType(global::Qdrant.PayloadStorageTypeVariant4 value) => new PayloadStorageType((global::Qdrant.PayloadStorageTypeVariant4?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::Qdrant.PayloadStorageTypeVariant4?(PayloadStorageType @this) => @this.PayloadStorageTypeVariant4;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public PayloadStorageType(global::Qdrant.PayloadStorageTypeVariant4? value)
-        {
-            PayloadStorageTypeVariant4 = value;
-        }
+        public static PayloadStorageType FromPayloadStorageTypeVariant2(global::Qdrant.PayloadStorageTypeVariant2? value) => new PayloadStorageType(value);
 
         /// <summary>
         /// 
         /// </summary>
         public PayloadStorageType(
             global::Qdrant.PayloadStorageTypeVariant1? payloadStorageTypeVariant1,
-            global::Qdrant.PayloadStorageTypeVariant2? payloadStorageTypeVariant2,
-            global::Qdrant.PayloadStorageTypeVariant3? payloadStorageTypeVariant3,
-            global::Qdrant.PayloadStorageTypeVariant4? payloadStorageTypeVariant4
+            global::Qdrant.PayloadStorageTypeVariant2? payloadStorageTypeVariant2
             )
         {
             PayloadStorageTypeVariant1 = payloadStorageTypeVariant1;
             PayloadStorageTypeVariant2 = payloadStorageTypeVariant2;
-            PayloadStorageTypeVariant3 = payloadStorageTypeVariant3;
-            PayloadStorageTypeVariant4 = payloadStorageTypeVariant4;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            PayloadStorageTypeVariant4 as object ??
-            PayloadStorageTypeVariant3 as object ??
             PayloadStorageTypeVariant2 as object ??
             PayloadStorageTypeVariant1 as object 
             ;
@@ -179,9 +153,7 @@ namespace Qdrant
         /// </summary>
         public override string? ToString() =>
             PayloadStorageTypeVariant1?.ToString() ??
-            PayloadStorageTypeVariant2?.ToString() ??
-            PayloadStorageTypeVariant3?.ToString() ??
-            PayloadStorageTypeVariant4?.ToString() 
+            PayloadStorageTypeVariant2?.ToString() 
             ;
 
         /// <summary>
@@ -189,17 +161,15 @@ namespace Qdrant
         /// </summary>
         public bool Validate()
         {
-            return IsPayloadStorageTypeVariant1 && !IsPayloadStorageTypeVariant2 && !IsPayloadStorageTypeVariant3 && !IsPayloadStorageTypeVariant4 || !IsPayloadStorageTypeVariant1 && IsPayloadStorageTypeVariant2 && !IsPayloadStorageTypeVariant3 && !IsPayloadStorageTypeVariant4 || !IsPayloadStorageTypeVariant1 && !IsPayloadStorageTypeVariant2 && IsPayloadStorageTypeVariant3 && !IsPayloadStorageTypeVariant4 || !IsPayloadStorageTypeVariant1 && !IsPayloadStorageTypeVariant2 && !IsPayloadStorageTypeVariant3 && IsPayloadStorageTypeVariant4;
+            return IsPayloadStorageTypeVariant1 && !IsPayloadStorageTypeVariant2 || !IsPayloadStorageTypeVariant1 && IsPayloadStorageTypeVariant2;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Qdrant.PayloadStorageTypeVariant1?, TResult>? payloadStorageTypeVariant1 = null,
-            global::System.Func<global::Qdrant.PayloadStorageTypeVariant2?, TResult>? payloadStorageTypeVariant2 = null,
-            global::System.Func<global::Qdrant.PayloadStorageTypeVariant3?, TResult>? payloadStorageTypeVariant3 = null,
-            global::System.Func<global::Qdrant.PayloadStorageTypeVariant4?, TResult>? payloadStorageTypeVariant4 = null,
+            global::System.Func<global::Qdrant.PayloadStorageTypeVariant1, TResult>? payloadStorageTypeVariant1 = null,
+            global::System.Func<global::Qdrant.PayloadStorageTypeVariant2, TResult>? payloadStorageTypeVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -215,14 +185,6 @@ namespace Qdrant
             {
                 return payloadStorageTypeVariant2(PayloadStorageTypeVariant2!);
             }
-            else if (IsPayloadStorageTypeVariant3 && payloadStorageTypeVariant3 != null)
-            {
-                return payloadStorageTypeVariant3(PayloadStorageTypeVariant3!);
-            }
-            else if (IsPayloadStorageTypeVariant4 && payloadStorageTypeVariant4 != null)
-            {
-                return payloadStorageTypeVariant4(PayloadStorageTypeVariant4!);
-            }
 
             return default(TResult);
         }
@@ -231,10 +193,9 @@ namespace Qdrant
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Qdrant.PayloadStorageTypeVariant1?>? payloadStorageTypeVariant1 = null,
-            global::System.Action<global::Qdrant.PayloadStorageTypeVariant2?>? payloadStorageTypeVariant2 = null,
-            global::System.Action<global::Qdrant.PayloadStorageTypeVariant3?>? payloadStorageTypeVariant3 = null,
-            global::System.Action<global::Qdrant.PayloadStorageTypeVariant4?>? payloadStorageTypeVariant4 = null,
+            global::System.Action<global::Qdrant.PayloadStorageTypeVariant1>? payloadStorageTypeVariant1 = null,
+
+            global::System.Action<global::Qdrant.PayloadStorageTypeVariant2>? payloadStorageTypeVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -250,13 +211,28 @@ namespace Qdrant
             {
                 payloadStorageTypeVariant2?.Invoke(PayloadStorageTypeVariant2!);
             }
-            else if (IsPayloadStorageTypeVariant3)
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Qdrant.PayloadStorageTypeVariant1>? payloadStorageTypeVariant1 = null,
+            global::System.Action<global::Qdrant.PayloadStorageTypeVariant2>? payloadStorageTypeVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
             {
-                payloadStorageTypeVariant3?.Invoke(PayloadStorageTypeVariant3!);
+                Validate();
             }
-            else if (IsPayloadStorageTypeVariant4)
+
+            if (IsPayloadStorageTypeVariant1)
             {
-                payloadStorageTypeVariant4?.Invoke(PayloadStorageTypeVariant4!);
+                payloadStorageTypeVariant1?.Invoke(PayloadStorageTypeVariant1!);
+            }
+            else if (IsPayloadStorageTypeVariant2)
+            {
+                payloadStorageTypeVariant2?.Invoke(PayloadStorageTypeVariant2!);
             }
         }
 
@@ -271,10 +247,6 @@ namespace Qdrant
                 typeof(global::Qdrant.PayloadStorageTypeVariant1),
                 PayloadStorageTypeVariant2,
                 typeof(global::Qdrant.PayloadStorageTypeVariant2),
-                PayloadStorageTypeVariant3,
-                typeof(global::Qdrant.PayloadStorageTypeVariant3),
-                PayloadStorageTypeVariant4,
-                typeof(global::Qdrant.PayloadStorageTypeVariant4),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -292,9 +264,7 @@ namespace Qdrant
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Qdrant.PayloadStorageTypeVariant1?>.Default.Equals(PayloadStorageTypeVariant1, other.PayloadStorageTypeVariant1) &&
-                global::System.Collections.Generic.EqualityComparer<global::Qdrant.PayloadStorageTypeVariant2?>.Default.Equals(PayloadStorageTypeVariant2, other.PayloadStorageTypeVariant2) &&
-                global::System.Collections.Generic.EqualityComparer<global::Qdrant.PayloadStorageTypeVariant3?>.Default.Equals(PayloadStorageTypeVariant3, other.PayloadStorageTypeVariant3) &&
-                global::System.Collections.Generic.EqualityComparer<global::Qdrant.PayloadStorageTypeVariant4?>.Default.Equals(PayloadStorageTypeVariant4, other.PayloadStorageTypeVariant4) 
+                global::System.Collections.Generic.EqualityComparer<global::Qdrant.PayloadStorageTypeVariant2?>.Default.Equals(PayloadStorageTypeVariant2, other.PayloadStorageTypeVariant2) 
                 ;
         }
 

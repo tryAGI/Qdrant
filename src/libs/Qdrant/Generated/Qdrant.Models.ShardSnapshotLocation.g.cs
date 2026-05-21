@@ -29,6 +29,26 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickShardSnapshotLocationVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = ShardSnapshotLocationVariant1;
+            return IsShardSnapshotLocationVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string PickShardSnapshotLocationVariant1() => IsShardSnapshotLocationVariant1
+            ? ShardSnapshotLocationVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ShardSnapshotLocationVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public string? ShardSnapshotLocationVariant2 { get; init; }
 #else
@@ -42,6 +62,26 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ShardSnapshotLocationVariant2))]
 #endif
         public bool IsShardSnapshotLocationVariant2 => ShardSnapshotLocationVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickShardSnapshotLocationVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = ShardSnapshotLocationVariant2;
+            return IsShardSnapshotLocationVariant2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string PickShardSnapshotLocationVariant2() => IsShardSnapshotLocationVariant2
+            ? ShardSnapshotLocationVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ShardSnapshotLocationVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -59,6 +99,11 @@ namespace Qdrant
         {
             ShardSnapshotLocationVariant1 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ShardSnapshotLocation FromShardSnapshotLocationVariant1(string? value) => new ShardSnapshotLocation(value);
 
         /// <summary>
         /// 
@@ -100,8 +145,8 @@ namespace Qdrant
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? shardSnapshotLocationVariant1 = null,
-            global::System.Func<string?, TResult>? shardSnapshotLocationVariant2 = null,
+            global::System.Func<string, TResult>? shardSnapshotLocationVariant1 = null,
+            global::System.Func<string, TResult>? shardSnapshotLocationVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -125,8 +170,32 @@ namespace Qdrant
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? shardSnapshotLocationVariant1 = null,
-            global::System.Action<string?>? shardSnapshotLocationVariant2 = null,
+            global::System.Action<string>? shardSnapshotLocationVariant1 = null,
+
+            global::System.Action<string>? shardSnapshotLocationVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsShardSnapshotLocationVariant1)
+            {
+                shardSnapshotLocationVariant1?.Invoke(ShardSnapshotLocationVariant1!);
+            }
+            else if (IsShardSnapshotLocationVariant2)
+            {
+                shardSnapshotLocationVariant2?.Invoke(ShardSnapshotLocationVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<string>? shardSnapshotLocationVariant1 = null,
+            global::System.Action<string>? shardSnapshotLocationVariant2 = null,
             bool validate = true)
         {
             if (validate)

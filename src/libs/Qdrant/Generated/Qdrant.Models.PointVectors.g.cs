@@ -56,5 +56,6 @@ namespace Qdrant
         public PointVectors()
         {
         }
+
     }
 }

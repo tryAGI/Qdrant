@@ -188,5 +188,6 @@ namespace Qdrant
         public QueryGroupsRequest()
         {
         }
+
     }
 }

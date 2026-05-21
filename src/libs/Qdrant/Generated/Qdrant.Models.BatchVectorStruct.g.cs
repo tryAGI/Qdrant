@@ -29,6 +29,26 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickBatchVectorStructVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>? value)
+        {
+            value = BatchVectorStructVariant1;
+            return IsBatchVectorStructVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>> PickBatchVectorStructVariant1() => IsBatchVectorStructVariant1
+            ? BatchVectorStructVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BatchVectorStructVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>>? BatchVectorStructVariant2 { get; init; }
 #else
@@ -42,6 +62,26 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BatchVectorStructVariant2))]
 #endif
         public bool IsBatchVectorStructVariant2 => BatchVectorStructVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickBatchVectorStructVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>>? value)
+        {
+            value = BatchVectorStructVariant2;
+            return IsBatchVectorStructVariant2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>> PickBatchVectorStructVariant2() => IsBatchVectorStructVariant2
+            ? BatchVectorStructVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BatchVectorStructVariant2' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -63,6 +103,26 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickBatchVectorStructVariant3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<global::Qdrant.Vector>>? value)
+        {
+            value = BatchVectorStructVariant3;
+            return IsBatchVectorStructVariant3;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<global::Qdrant.Vector>> PickBatchVectorStructVariant3() => IsBatchVectorStructVariant3
+            ? BatchVectorStructVariant3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BatchVectorStructVariant3' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<global::Qdrant.Document>? BatchVectorStructVariant4 { get; init; }
 #else
@@ -76,6 +136,26 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BatchVectorStructVariant4))]
 #endif
         public bool IsBatchVectorStructVariant4 => BatchVectorStructVariant4 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickBatchVectorStructVariant4(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::System.Collections.Generic.IList<global::Qdrant.Document>? value)
+        {
+            value = BatchVectorStructVariant4;
+            return IsBatchVectorStructVariant4;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::Qdrant.Document> PickBatchVectorStructVariant4() => IsBatchVectorStructVariant4
+            ? BatchVectorStructVariant4!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BatchVectorStructVariant4' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -97,6 +177,26 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickBatchVectorStructVariant5(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::System.Collections.Generic.IList<global::Qdrant.Image>? value)
+        {
+            value = BatchVectorStructVariant5;
+            return IsBatchVectorStructVariant5;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::Qdrant.Image> PickBatchVectorStructVariant5() => IsBatchVectorStructVariant5
+            ? BatchVectorStructVariant5!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BatchVectorStructVariant5' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<global::Qdrant.InferenceObject>? BatchVectorStructVariant6 { get; init; }
 #else
@@ -110,6 +210,26 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BatchVectorStructVariant6))]
 #endif
         public bool IsBatchVectorStructVariant6 => BatchVectorStructVariant6 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickBatchVectorStructVariant6(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::System.Collections.Generic.IList<global::Qdrant.InferenceObject>? value)
+        {
+            value = BatchVectorStructVariant6;
+            return IsBatchVectorStructVariant6;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::Qdrant.InferenceObject> PickBatchVectorStructVariant6() => IsBatchVectorStructVariant6
+            ? BatchVectorStructVariant6!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'BatchVectorStructVariant6' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -127,6 +247,11 @@ namespace Qdrant
         {
             BatchVectorStructVariant3 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BatchVectorStruct FromBatchVectorStructVariant3(global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<global::Qdrant.Vector>>? value) => new BatchVectorStruct(value);
 
         /// <summary>
         /// 
@@ -184,12 +309,12 @@ namespace Qdrant
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>?, TResult>? batchVectorStructVariant1 = null,
-            global::System.Func<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>>?, TResult>? batchVectorStructVariant2 = null,
-            global::System.Func<global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<global::Qdrant.Vector>>?, TResult>? batchVectorStructVariant3 = null,
-            global::System.Func<global::System.Collections.Generic.IList<global::Qdrant.Document>?, TResult>? batchVectorStructVariant4 = null,
-            global::System.Func<global::System.Collections.Generic.IList<global::Qdrant.Image>?, TResult>? batchVectorStructVariant5 = null,
-            global::System.Func<global::System.Collections.Generic.IList<global::Qdrant.InferenceObject>?, TResult>? batchVectorStructVariant6 = null,
+            global::System.Func<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>, TResult>? batchVectorStructVariant1 = null,
+            global::System.Func<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>>, TResult>? batchVectorStructVariant2 = null,
+            global::System.Func<global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<global::Qdrant.Vector>>, TResult>? batchVectorStructVariant3 = null,
+            global::System.Func<global::System.Collections.Generic.IList<global::Qdrant.Document>, TResult>? batchVectorStructVariant4 = null,
+            global::System.Func<global::System.Collections.Generic.IList<global::Qdrant.Image>, TResult>? batchVectorStructVariant5 = null,
+            global::System.Func<global::System.Collections.Generic.IList<global::Qdrant.InferenceObject>, TResult>? batchVectorStructVariant6 = null,
             bool validate = true)
         {
             if (validate)
@@ -229,12 +354,60 @@ namespace Qdrant
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>?>? batchVectorStructVariant1 = null,
-            global::System.Action<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>>?>? batchVectorStructVariant2 = null,
-            global::System.Action<global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<global::Qdrant.Vector>>?>? batchVectorStructVariant3 = null,
-            global::System.Action<global::System.Collections.Generic.IList<global::Qdrant.Document>?>? batchVectorStructVariant4 = null,
-            global::System.Action<global::System.Collections.Generic.IList<global::Qdrant.Image>?>? batchVectorStructVariant5 = null,
-            global::System.Action<global::System.Collections.Generic.IList<global::Qdrant.InferenceObject>?>? batchVectorStructVariant6 = null,
+            global::System.Action<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>>? batchVectorStructVariant1 = null,
+
+            global::System.Action<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>>>? batchVectorStructVariant2 = null,
+
+            global::System.Action<global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<global::Qdrant.Vector>>>? batchVectorStructVariant3 = null,
+
+            global::System.Action<global::System.Collections.Generic.IList<global::Qdrant.Document>>? batchVectorStructVariant4 = null,
+
+            global::System.Action<global::System.Collections.Generic.IList<global::Qdrant.Image>>? batchVectorStructVariant5 = null,
+
+            global::System.Action<global::System.Collections.Generic.IList<global::Qdrant.InferenceObject>>? batchVectorStructVariant6 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsBatchVectorStructVariant1)
+            {
+                batchVectorStructVariant1?.Invoke(BatchVectorStructVariant1!);
+            }
+            else if (IsBatchVectorStructVariant2)
+            {
+                batchVectorStructVariant2?.Invoke(BatchVectorStructVariant2!);
+            }
+            else if (IsBatchVectorStructVariant3)
+            {
+                batchVectorStructVariant3?.Invoke(BatchVectorStructVariant3!);
+            }
+            else if (IsBatchVectorStructVariant4)
+            {
+                batchVectorStructVariant4?.Invoke(BatchVectorStructVariant4!);
+            }
+            else if (IsBatchVectorStructVariant5)
+            {
+                batchVectorStructVariant5?.Invoke(BatchVectorStructVariant5!);
+            }
+            else if (IsBatchVectorStructVariant6)
+            {
+                batchVectorStructVariant6?.Invoke(BatchVectorStructVariant6!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>>? batchVectorStructVariant1 = null,
+            global::System.Action<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>>>? batchVectorStructVariant2 = null,
+            global::System.Action<global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<global::Qdrant.Vector>>>? batchVectorStructVariant3 = null,
+            global::System.Action<global::System.Collections.Generic.IList<global::Qdrant.Document>>? batchVectorStructVariant4 = null,
+            global::System.Action<global::System.Collections.Generic.IList<global::Qdrant.Image>>? batchVectorStructVariant5 = null,
+            global::System.Action<global::System.Collections.Generic.IList<global::Qdrant.InferenceObject>>? batchVectorStructVariant6 = null,
             bool validate = true)
         {
             if (validate)

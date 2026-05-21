@@ -27,6 +27,26 @@ namespace Qdrant
         public bool IsShardKeyVariant1 => ShardKeyVariant1 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickShardKeyVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = ShardKeyVariant1;
+            return IsShardKeyVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string PickShardKeyVariant1() => IsShardKeyVariant1
+            ? ShardKeyVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ShardKeyVariant1' but the value was {ToString()}.");
+
+        /// <summary>
         /// Example: 12
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -42,6 +62,26 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ShardKeyVariant2))]
 #endif
         public bool IsShardKeyVariant2 => ShardKeyVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickShardKeyVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out int? value)
+        {
+            value = ShardKeyVariant2;
+            return IsShardKeyVariant2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public int PickShardKeyVariant2() => IsShardKeyVariant2
+            ? ShardKeyVariant2!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ShardKeyVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -63,6 +103,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static ShardKey FromShardKeyVariant1(string? value) => new ShardKey(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ShardKey(int value) => new ShardKey((int?)value);
 
         /// <summary>
@@ -77,6 +122,11 @@ namespace Qdrant
         {
             ShardKeyVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ShardKey FromShardKeyVariant2(int? value) => new ShardKey(value);
 
         /// <summary>
         /// 
@@ -118,7 +168,7 @@ namespace Qdrant
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? shardKeyVariant1 = null,
+            global::System.Func<string, TResult>? shardKeyVariant1 = null,
             global::System.Func<int?, TResult>? shardKeyVariant2 = null,
             bool validate = true)
         {
@@ -143,7 +193,31 @@ namespace Qdrant
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? shardKeyVariant1 = null,
+            global::System.Action<string>? shardKeyVariant1 = null,
+
+            global::System.Action<int?>? shardKeyVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsShardKeyVariant1)
+            {
+                shardKeyVariant1?.Invoke(ShardKeyVariant1!);
+            }
+            else if (IsShardKeyVariant2)
+            {
+                shardKeyVariant2?.Invoke(ShardKeyVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<string>? shardKeyVariant1 = null,
             global::System.Action<int?>? shardKeyVariant2 = null,
             bool validate = true)
         {

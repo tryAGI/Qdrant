@@ -27,6 +27,26 @@ namespace Qdrant
         public bool IsType => Type != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickType(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.PayloadSchemaType? value)
+        {
+            value = Type;
+            return IsType;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.PayloadSchemaType PickType() => IsType
+            ? Type!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Type' but the value was {ToString()}.");
+
+        /// <summary>
         /// Payload type with parameters
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -42,6 +62,26 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Params))]
 #endif
         public bool IsParams => Params != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickParams(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.PayloadSchemaParams? value)
+        {
+            value = Params;
+            return IsParams;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.PayloadSchemaParams PickParams() => IsParams
+            ? Params!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Params' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -63,6 +103,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static PayloadFieldSchema FromType(global::Qdrant.PayloadSchemaType? value) => new PayloadFieldSchema(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator PayloadFieldSchema(global::Qdrant.PayloadSchemaParams value) => new PayloadFieldSchema((global::Qdrant.PayloadSchemaParams?)value);
 
         /// <summary>
@@ -77,6 +122,11 @@ namespace Qdrant
         {
             Params = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static PayloadFieldSchema FromParams(global::Qdrant.PayloadSchemaParams? value) => new PayloadFieldSchema(value);
 
         /// <summary>
         /// 
@@ -143,6 +193,30 @@ namespace Qdrant
         /// 
         /// </summary>
         public void Match(
+            global::System.Action<global::Qdrant.PayloadSchemaType?>? type = null,
+
+            global::System.Action<global::Qdrant.PayloadSchemaParams?>? @params = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsType)
+            {
+                type?.Invoke(Type!);
+            }
+            else if (IsParams)
+            {
+                @params?.Invoke(Params!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
             global::System.Action<global::Qdrant.PayloadSchemaType?>? type = null,
             global::System.Action<global::Qdrant.PayloadSchemaParams?>? @params = null,
             bool validate = true)

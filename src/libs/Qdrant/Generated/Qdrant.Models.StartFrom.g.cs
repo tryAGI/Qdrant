@@ -29,6 +29,26 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickStartFromVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out long? value)
+        {
+            value = StartFromVariant1;
+            return IsStartFromVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public long PickStartFromVariant1() => IsStartFromVariant1
+            ? StartFromVariant1!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'StartFromVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public double? StartFromVariant2 { get; init; }
 #else
@@ -46,6 +66,26 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickStartFromVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out double? value)
+        {
+            value = StartFromVariant2;
+            return IsStartFromVariant2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public double PickStartFromVariant2() => IsStartFromVariant2
+            ? StartFromVariant2!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'StartFromVariant2' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.DateTime? DateTime { get; init; }
 #else
@@ -59,6 +99,26 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(DateTime))]
 #endif
         public bool IsDateTime => DateTime != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickDateTime(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::System.DateTime? value)
+        {
+            value = DateTime;
+            return IsDateTime;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.DateTime PickDateTime() => IsDateTime
+            ? DateTime!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'DateTime' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -76,6 +136,11 @@ namespace Qdrant
         {
             StartFromVariant1 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static StartFrom FromStartFromVariant1(long? value) => new StartFrom(value);
 
         /// <summary>
         /// 
@@ -98,6 +163,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static StartFrom FromStartFromVariant2(double? value) => new StartFrom(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator StartFrom(global::System.DateTime value) => new StartFrom((global::System.DateTime?)value);
 
         /// <summary>
@@ -112,6 +182,11 @@ namespace Qdrant
         {
             DateTime = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static StartFrom FromDateTime(global::System.DateTime? value) => new StartFrom(value);
 
         /// <summary>
         /// 
@@ -187,6 +262,36 @@ namespace Qdrant
         /// 
         /// </summary>
         public void Match(
+            global::System.Action<long?>? startFromVariant1 = null,
+
+            global::System.Action<double?>? startFromVariant2 = null,
+
+            global::System.Action<global::System.DateTime?>? dateTime = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsStartFromVariant1)
+            {
+                startFromVariant1?.Invoke(StartFromVariant1!);
+            }
+            else if (IsStartFromVariant2)
+            {
+                startFromVariant2?.Invoke(StartFromVariant2!);
+            }
+            else if (IsDateTime)
+            {
+                dateTime?.Invoke(DateTime!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
             global::System.Action<long?>? startFromVariant1 = null,
             global::System.Action<double?>? startFromVariant2 = null,
             global::System.Action<global::System.DateTime?>? dateTime = null,

@@ -25,6 +25,26 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SnowballParams))]
 #endif
         public bool IsSnowballParams => SnowballParams != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSnowballParams(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.SnowballParams? value)
+        {
+            value = SnowballParams;
+            return IsSnowballParams;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.SnowballParams PickSnowballParams() => IsSnowballParams
+            ? SnowballParams!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SnowballParams' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -42,6 +62,11 @@ namespace Qdrant
         {
             SnowballParams = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static StemmingAlgorithm FromSnowballParams(global::Qdrant.SnowballParams? value) => new StemmingAlgorithm(value);
 
         /// <summary>
         /// 
@@ -69,7 +94,7 @@ namespace Qdrant
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Qdrant.SnowballParams?, TResult>? snowballParams = null,
+            global::System.Func<global::Qdrant.SnowballParams, TResult>? snowballParams = null,
             bool validate = true)
         {
             if (validate)
@@ -89,7 +114,25 @@ namespace Qdrant
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Qdrant.SnowballParams?>? snowballParams = null,
+            global::System.Action<global::Qdrant.SnowballParams>? snowballParams = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsSnowballParams)
+            {
+                snowballParams?.Invoke(SnowballParams!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Qdrant.SnowballParams>? snowballParams = null,
             bool validate = true)
         {
             if (validate)

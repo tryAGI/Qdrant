@@ -62,5 +62,6 @@ namespace Qdrant
         public OptimizerTelemetry()
         {
         }
+
     }
 }

@@ -53,6 +53,12 @@ namespace Qdrant
         public global::Qdrant.HardwareTelemetry? Hardware { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("search_pool")]
+        public global::Qdrant.SearchThreadPoolTelemetry? SearchPool { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -68,6 +74,7 @@ namespace Qdrant
         /// <param name="requests"></param>
         /// <param name="memory"></param>
         /// <param name="hardware"></param>
+        /// <param name="searchPool"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -78,7 +85,8 @@ namespace Qdrant
             global::Qdrant.ClusterTelemetry? cluster,
             global::Qdrant.RequestsTelemetry? requests,
             global::Qdrant.MemoryTelemetry? memory,
-            global::Qdrant.HardwareTelemetry? hardware)
+            global::Qdrant.HardwareTelemetry? hardware,
+            global::Qdrant.SearchThreadPoolTelemetry? searchPool)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.App = app;
@@ -87,6 +95,7 @@ namespace Qdrant
             this.Requests = requests;
             this.Memory = memory;
             this.Hardware = hardware;
+            this.SearchPool = searchPool;
         }
 
         /// <summary>
@@ -95,5 +104,6 @@ namespace Qdrant
         public TelemetryData()
         {
         }
+
     }
 }

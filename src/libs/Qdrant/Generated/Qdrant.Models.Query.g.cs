@@ -29,6 +29,26 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickNearest(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.NearestQuery? value)
+        {
+            value = Nearest;
+            return IsNearest;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.NearestQuery PickNearest() => IsNearest
+            ? Nearest!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Nearest' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.RecommendQuery? Recommend { get; init; }
 #else
@@ -42,6 +62,26 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Recommend))]
 #endif
         public bool IsRecommend => Recommend != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickRecommend(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.RecommendQuery? value)
+        {
+            value = Recommend;
+            return IsRecommend;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.RecommendQuery PickRecommend() => IsRecommend
+            ? Recommend!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Recommend' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -63,6 +103,26 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickDiscover(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.DiscoverQuery? value)
+        {
+            value = Discover;
+            return IsDiscover;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.DiscoverQuery PickDiscover() => IsDiscover
+            ? Discover!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Discover' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.ContextQuery? Context { get; init; }
 #else
@@ -76,6 +136,26 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Context))]
 #endif
         public bool IsContext => Context != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickContext(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.ContextQuery? value)
+        {
+            value = Context;
+            return IsContext;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.ContextQuery PickContext() => IsContext
+            ? Context!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Context' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -97,6 +177,26 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickOrderBy(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.OrderByQuery? value)
+        {
+            value = OrderBy;
+            return IsOrderBy;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.OrderByQuery PickOrderBy() => IsOrderBy
+            ? OrderBy!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OrderBy' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.FusionQuery? Fusion { get; init; }
 #else
@@ -110,6 +210,26 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Fusion))]
 #endif
         public bool IsFusion => Fusion != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFusion(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.FusionQuery? value)
+        {
+            value = Fusion;
+            return IsFusion;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.FusionQuery PickFusion() => IsFusion
+            ? Fusion!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Fusion' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -131,6 +251,26 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickRrf(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.RrfQuery? value)
+        {
+            value = Rrf;
+            return IsRrf;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.RrfQuery PickRrf() => IsRrf
+            ? Rrf!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Rrf' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.FormulaQuery? Formula { get; init; }
 #else
@@ -144,6 +284,26 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Formula))]
 #endif
         public bool IsFormula => Formula != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFormula(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.FormulaQuery? value)
+        {
+            value = Formula;
+            return IsFormula;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.FormulaQuery PickFormula() => IsFormula
+            ? Formula!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Formula' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -165,6 +325,26 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickSample(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.SampleQuery? value)
+        {
+            value = Sample;
+            return IsSample;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.SampleQuery PickSample() => IsSample
+            ? Sample!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Sample' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.RelevanceFeedbackQuery? RelevanceFeedback { get; init; }
 #else
@@ -178,6 +358,26 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RelevanceFeedback))]
 #endif
         public bool IsRelevanceFeedback => RelevanceFeedback != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickRelevanceFeedback(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.RelevanceFeedbackQuery? value)
+        {
+            value = RelevanceFeedback;
+            return IsRelevanceFeedback;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.RelevanceFeedbackQuery PickRelevanceFeedback() => IsRelevanceFeedback
+            ? RelevanceFeedback!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RelevanceFeedback' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -195,6 +395,11 @@ namespace Qdrant
         {
             Nearest = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Query FromNearest(global::Qdrant.NearestQuery? value) => new Query(value);
 
         /// <summary>
         /// 
@@ -217,6 +422,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static Query FromRecommend(global::Qdrant.RecommendQuery? value) => new Query(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Query(global::Qdrant.DiscoverQuery value) => new Query((global::Qdrant.DiscoverQuery?)value);
 
         /// <summary>
@@ -231,6 +441,11 @@ namespace Qdrant
         {
             Discover = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Query FromDiscover(global::Qdrant.DiscoverQuery? value) => new Query(value);
 
         /// <summary>
         /// 
@@ -253,6 +468,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static Query FromContext(global::Qdrant.ContextQuery? value) => new Query(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Query(global::Qdrant.OrderByQuery value) => new Query((global::Qdrant.OrderByQuery?)value);
 
         /// <summary>
@@ -267,6 +487,11 @@ namespace Qdrant
         {
             OrderBy = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Query FromOrderBy(global::Qdrant.OrderByQuery? value) => new Query(value);
 
         /// <summary>
         /// 
@@ -289,6 +514,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static Query FromFusion(global::Qdrant.FusionQuery? value) => new Query(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Query(global::Qdrant.RrfQuery value) => new Query((global::Qdrant.RrfQuery?)value);
 
         /// <summary>
@@ -303,6 +533,11 @@ namespace Qdrant
         {
             Rrf = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Query FromRrf(global::Qdrant.RrfQuery? value) => new Query(value);
 
         /// <summary>
         /// 
@@ -325,6 +560,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static Query FromFormula(global::Qdrant.FormulaQuery? value) => new Query(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Query(global::Qdrant.SampleQuery value) => new Query((global::Qdrant.SampleQuery?)value);
 
         /// <summary>
@@ -343,6 +583,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static Query FromSample(global::Qdrant.SampleQuery? value) => new Query(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Query(global::Qdrant.RelevanceFeedbackQuery value) => new Query((global::Qdrant.RelevanceFeedbackQuery?)value);
 
         /// <summary>
@@ -357,6 +602,11 @@ namespace Qdrant
         {
             RelevanceFeedback = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Query FromRelevanceFeedback(global::Qdrant.RelevanceFeedbackQuery? value) => new Query(value);
 
         /// <summary>
         /// 
@@ -430,16 +680,16 @@ namespace Qdrant
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Qdrant.NearestQuery?, TResult>? nearest = null,
-            global::System.Func<global::Qdrant.RecommendQuery?, TResult>? recommend = null,
-            global::System.Func<global::Qdrant.DiscoverQuery?, TResult>? discover = null,
-            global::System.Func<global::Qdrant.ContextQuery?, TResult>? context = null,
-            global::System.Func<global::Qdrant.OrderByQuery?, TResult>? orderBy = null,
-            global::System.Func<global::Qdrant.FusionQuery?, TResult>? fusion = null,
-            global::System.Func<global::Qdrant.RrfQuery?, TResult>? rrf = null,
-            global::System.Func<global::Qdrant.FormulaQuery?, TResult>? formula = null,
-            global::System.Func<global::Qdrant.SampleQuery?, TResult>? sample = null,
-            global::System.Func<global::Qdrant.RelevanceFeedbackQuery?, TResult>? relevanceFeedback = null,
+            global::System.Func<global::Qdrant.NearestQuery, TResult>? nearest = null,
+            global::System.Func<global::Qdrant.RecommendQuery, TResult>? recommend = null,
+            global::System.Func<global::Qdrant.DiscoverQuery, TResult>? discover = null,
+            global::System.Func<global::Qdrant.ContextQuery, TResult>? context = null,
+            global::System.Func<global::Qdrant.OrderByQuery, TResult>? orderBy = null,
+            global::System.Func<global::Qdrant.FusionQuery, TResult>? fusion = null,
+            global::System.Func<global::Qdrant.RrfQuery, TResult>? rrf = null,
+            global::System.Func<global::Qdrant.FormulaQuery, TResult>? formula = null,
+            global::System.Func<global::Qdrant.SampleQuery, TResult>? sample = null,
+            global::System.Func<global::Qdrant.RelevanceFeedbackQuery, TResult>? relevanceFeedback = null,
             bool validate = true)
         {
             if (validate)
@@ -495,16 +745,88 @@ namespace Qdrant
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Qdrant.NearestQuery?>? nearest = null,
-            global::System.Action<global::Qdrant.RecommendQuery?>? recommend = null,
-            global::System.Action<global::Qdrant.DiscoverQuery?>? discover = null,
-            global::System.Action<global::Qdrant.ContextQuery?>? context = null,
-            global::System.Action<global::Qdrant.OrderByQuery?>? orderBy = null,
-            global::System.Action<global::Qdrant.FusionQuery?>? fusion = null,
-            global::System.Action<global::Qdrant.RrfQuery?>? rrf = null,
-            global::System.Action<global::Qdrant.FormulaQuery?>? formula = null,
-            global::System.Action<global::Qdrant.SampleQuery?>? sample = null,
-            global::System.Action<global::Qdrant.RelevanceFeedbackQuery?>? relevanceFeedback = null,
+            global::System.Action<global::Qdrant.NearestQuery>? nearest = null,
+
+            global::System.Action<global::Qdrant.RecommendQuery>? recommend = null,
+
+            global::System.Action<global::Qdrant.DiscoverQuery>? discover = null,
+
+            global::System.Action<global::Qdrant.ContextQuery>? context = null,
+
+            global::System.Action<global::Qdrant.OrderByQuery>? orderBy = null,
+
+            global::System.Action<global::Qdrant.FusionQuery>? fusion = null,
+
+            global::System.Action<global::Qdrant.RrfQuery>? rrf = null,
+
+            global::System.Action<global::Qdrant.FormulaQuery>? formula = null,
+
+            global::System.Action<global::Qdrant.SampleQuery>? sample = null,
+
+            global::System.Action<global::Qdrant.RelevanceFeedbackQuery>? relevanceFeedback = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsNearest)
+            {
+                nearest?.Invoke(Nearest!);
+            }
+            else if (IsRecommend)
+            {
+                recommend?.Invoke(Recommend!);
+            }
+            else if (IsDiscover)
+            {
+                discover?.Invoke(Discover!);
+            }
+            else if (IsContext)
+            {
+                context?.Invoke(Context!);
+            }
+            else if (IsOrderBy)
+            {
+                orderBy?.Invoke(OrderBy!);
+            }
+            else if (IsFusion)
+            {
+                fusion?.Invoke(Fusion!);
+            }
+            else if (IsRrf)
+            {
+                rrf?.Invoke(Rrf!);
+            }
+            else if (IsFormula)
+            {
+                formula?.Invoke(Formula!);
+            }
+            else if (IsSample)
+            {
+                sample?.Invoke(Sample!);
+            }
+            else if (IsRelevanceFeedback)
+            {
+                relevanceFeedback?.Invoke(RelevanceFeedback!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Qdrant.NearestQuery>? nearest = null,
+            global::System.Action<global::Qdrant.RecommendQuery>? recommend = null,
+            global::System.Action<global::Qdrant.DiscoverQuery>? discover = null,
+            global::System.Action<global::Qdrant.ContextQuery>? context = null,
+            global::System.Action<global::Qdrant.OrderByQuery>? orderBy = null,
+            global::System.Action<global::Qdrant.FusionQuery>? fusion = null,
+            global::System.Action<global::Qdrant.RrfQuery>? rrf = null,
+            global::System.Action<global::Qdrant.FormulaQuery>? formula = null,
+            global::System.Action<global::Qdrant.SampleQuery>? sample = null,
+            global::System.Action<global::Qdrant.RelevanceFeedbackQuery>? relevanceFeedback = null,
             bool validate = true)
         {
             if (validate)

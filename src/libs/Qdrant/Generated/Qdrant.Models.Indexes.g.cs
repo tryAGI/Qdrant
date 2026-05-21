@@ -27,6 +27,26 @@ namespace Qdrant
         public bool IsIndexesVariant1 => IndexesVariant1 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickIndexesVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.IndexesVariant1? value)
+        {
+            value = IndexesVariant1;
+            return IsIndexesVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.IndexesVariant1 PickIndexesVariant1() => IsIndexesVariant1
+            ? IndexesVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'IndexesVariant1' but the value was {ToString()}.");
+
+        /// <summary>
         /// Use filterable HNSW index for approximate search. Is very fast even on a very huge collections, but require additional space to store index and additional time to build it.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -42,6 +62,26 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(IndexesVariant2))]
 #endif
         public bool IsIndexesVariant2 => IndexesVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickIndexesVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.IndexesVariant2? value)
+        {
+            value = IndexesVariant2;
+            return IsIndexesVariant2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.IndexesVariant2 PickIndexesVariant2() => IsIndexesVariant2
+            ? IndexesVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'IndexesVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -63,6 +103,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static Indexes FromIndexesVariant1(global::Qdrant.IndexesVariant1? value) => new Indexes(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Indexes(global::Qdrant.IndexesVariant2 value) => new Indexes((global::Qdrant.IndexesVariant2?)value);
 
         /// <summary>
@@ -77,6 +122,11 @@ namespace Qdrant
         {
             IndexesVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Indexes FromIndexesVariant2(global::Qdrant.IndexesVariant2? value) => new Indexes(value);
 
         /// <summary>
         /// 
@@ -118,8 +168,8 @@ namespace Qdrant
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Qdrant.IndexesVariant1?, TResult>? indexesVariant1 = null,
-            global::System.Func<global::Qdrant.IndexesVariant2?, TResult>? indexesVariant2 = null,
+            global::System.Func<global::Qdrant.IndexesVariant1, TResult>? indexesVariant1 = null,
+            global::System.Func<global::Qdrant.IndexesVariant2, TResult>? indexesVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -143,8 +193,32 @@ namespace Qdrant
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Qdrant.IndexesVariant1?>? indexesVariant1 = null,
-            global::System.Action<global::Qdrant.IndexesVariant2?>? indexesVariant2 = null,
+            global::System.Action<global::Qdrant.IndexesVariant1>? indexesVariant1 = null,
+
+            global::System.Action<global::Qdrant.IndexesVariant2>? indexesVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsIndexesVariant1)
+            {
+                indexesVariant1?.Invoke(IndexesVariant1!);
+            }
+            else if (IsIndexesVariant2)
+            {
+                indexesVariant2?.Invoke(IndexesVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Qdrant.IndexesVariant1>? indexesVariant1 = null,
+            global::System.Action<global::Qdrant.IndexesVariant2>? indexesVariant2 = null,
             bool validate = true)
         {
             if (validate)

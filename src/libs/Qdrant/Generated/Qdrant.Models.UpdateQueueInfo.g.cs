@@ -53,5 +53,6 @@ namespace Qdrant
         public UpdateQueueInfo()
         {
         }
+
     }
 }

@@ -247,6 +247,7 @@ namespace Qdrant.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.NearestQuery), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.NearestQuery> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.NearestQuery).Name}");
                     nearest = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -257,9 +258,13 @@ namespace Qdrant.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (nearest == null && recommend == null && discover == null && context == null && orderBy == null && fusion == null && rrf == null && formula == null && sample == null && relevanceFeedback == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.RecommendQuery), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.RecommendQuery> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.RecommendQuery).Name}");
                     recommend = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -270,9 +275,13 @@ namespace Qdrant.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (nearest == null && recommend == null && discover == null && context == null && orderBy == null && fusion == null && rrf == null && formula == null && sample == null && relevanceFeedback == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.DiscoverQuery), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.DiscoverQuery> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.DiscoverQuery).Name}");
                     discover = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -283,9 +292,13 @@ namespace Qdrant.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (nearest == null && recommend == null && discover == null && context == null && orderBy == null && fusion == null && rrf == null && formula == null && sample == null && relevanceFeedback == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.ContextQuery), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.ContextQuery> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.ContextQuery).Name}");
                     context = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -296,9 +309,13 @@ namespace Qdrant.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (nearest == null && recommend == null && discover == null && context == null && orderBy == null && fusion == null && rrf == null && formula == null && sample == null && relevanceFeedback == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.OrderByQuery), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.OrderByQuery> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.OrderByQuery).Name}");
                     orderBy = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -309,9 +326,13 @@ namespace Qdrant.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (nearest == null && recommend == null && discover == null && context == null && orderBy == null && fusion == null && rrf == null && formula == null && sample == null && relevanceFeedback == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.FusionQuery), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.FusionQuery> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.FusionQuery).Name}");
                     fusion = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -322,9 +343,13 @@ namespace Qdrant.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (nearest == null && recommend == null && discover == null && context == null && orderBy == null && fusion == null && rrf == null && formula == null && sample == null && relevanceFeedback == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.RrfQuery), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.RrfQuery> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.RrfQuery).Name}");
                     rrf = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -335,9 +360,13 @@ namespace Qdrant.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (nearest == null && recommend == null && discover == null && context == null && orderBy == null && fusion == null && rrf == null && formula == null && sample == null && relevanceFeedback == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.FormulaQuery), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.FormulaQuery> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.FormulaQuery).Name}");
                     formula = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -348,9 +377,13 @@ namespace Qdrant.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (nearest == null && recommend == null && discover == null && context == null && orderBy == null && fusion == null && rrf == null && formula == null && sample == null && relevanceFeedback == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.SampleQuery), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.SampleQuery> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.SampleQuery).Name}");
                     sample = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -361,9 +394,13 @@ namespace Qdrant.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (nearest == null && recommend == null && discover == null && context == null && orderBy == null && fusion == null && rrf == null && formula == null && sample == null && relevanceFeedback == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.RelevanceFeedbackQuery), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.RelevanceFeedbackQuery> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.RelevanceFeedbackQuery).Name}");
                     relevanceFeedback = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

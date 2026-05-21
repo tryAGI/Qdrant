@@ -73,5 +73,6 @@ namespace Qdrant
         public UuidIndexParams()
         {
         }
+
     }
 }

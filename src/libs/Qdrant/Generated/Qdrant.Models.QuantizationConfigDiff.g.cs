@@ -29,6 +29,26 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickScalar(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.ScalarQuantization? value)
+        {
+            value = Scalar;
+            return IsScalar;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.ScalarQuantization PickScalar() => IsScalar
+            ? Scalar!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Scalar' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.ProductQuantization? Product { get; init; }
 #else
@@ -42,6 +62,26 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Product))]
 #endif
         public bool IsProduct => Product != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickProduct(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.ProductQuantization? value)
+        {
+            value = Product;
+            return IsProduct;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.ProductQuantization PickProduct() => IsProduct
+            ? Product!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Product' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -63,6 +103,63 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickBinary(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.BinaryQuantization? value)
+        {
+            value = Binary;
+            return IsBinary;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.BinaryQuantization PickBinary() => IsBinary
+            ? Binary!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Binary' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Qdrant.TurboQuantization? Turbo { get; init; }
+#else
+        public global::Qdrant.TurboQuantization? Turbo { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Turbo))]
+#endif
+        public bool IsTurbo => Turbo != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickTurbo(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.TurboQuantization? value)
+        {
+            value = Turbo;
+            return IsTurbo;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.TurboQuantization PickTurbo() => IsTurbo
+            ? Turbo!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Turbo' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.DisabledType? DisabledType { get; init; }
 #else
@@ -76,6 +173,26 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(DisabledType))]
 #endif
         public bool IsDisabledType => DisabledType != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickDisabledType(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.DisabledType? value)
+        {
+            value = DisabledType;
+            return IsDisabledType;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.DisabledType PickDisabledType() => IsDisabledType
+            ? DisabledType!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'DisabledType' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -93,6 +210,11 @@ namespace Qdrant
         {
             Scalar = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static QuantizationConfigDiff FromScalar(global::Qdrant.ScalarQuantization? value) => new QuantizationConfigDiff(value);
 
         /// <summary>
         /// 
@@ -115,6 +237,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static QuantizationConfigDiff FromProduct(global::Qdrant.ProductQuantization? value) => new QuantizationConfigDiff(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator QuantizationConfigDiff(global::Qdrant.BinaryQuantization value) => new QuantizationConfigDiff((global::Qdrant.BinaryQuantization?)value);
 
         /// <summary>
@@ -129,6 +256,34 @@ namespace Qdrant
         {
             Binary = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static QuantizationConfigDiff FromBinary(global::Qdrant.BinaryQuantization? value) => new QuantizationConfigDiff(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator QuantizationConfigDiff(global::Qdrant.TurboQuantization value) => new QuantizationConfigDiff((global::Qdrant.TurboQuantization?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Qdrant.TurboQuantization?(QuantizationConfigDiff @this) => @this.Turbo;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public QuantizationConfigDiff(global::Qdrant.TurboQuantization? value)
+        {
+            Turbo = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static QuantizationConfigDiff FromTurbo(global::Qdrant.TurboQuantization? value) => new QuantizationConfigDiff(value);
 
         /// <summary>
         /// 
@@ -151,16 +306,23 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static QuantizationConfigDiff FromDisabledType(global::Qdrant.DisabledType? value) => new QuantizationConfigDiff(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public QuantizationConfigDiff(
             global::Qdrant.ScalarQuantization? scalar,
             global::Qdrant.ProductQuantization? product,
             global::Qdrant.BinaryQuantization? binary,
+            global::Qdrant.TurboQuantization? turbo,
             global::Qdrant.DisabledType? disabledType
             )
         {
             Scalar = scalar;
             Product = product;
             Binary = binary;
+            Turbo = turbo;
             DisabledType = disabledType;
         }
 
@@ -169,6 +331,7 @@ namespace Qdrant
         /// </summary>
         public object? Object =>
             DisabledType as object ??
+            Turbo as object ??
             Binary as object ??
             Product as object ??
             Scalar as object 
@@ -181,6 +344,7 @@ namespace Qdrant
             Scalar?.ToString() ??
             Product?.ToString() ??
             Binary?.ToString() ??
+            Turbo?.ToString() ??
             DisabledType?.ToValueString() 
             ;
 
@@ -189,16 +353,17 @@ namespace Qdrant
         /// </summary>
         public bool Validate()
         {
-            return IsScalar || IsProduct || IsBinary || IsDisabledType;
+            return IsScalar || IsProduct || IsBinary || IsTurbo || IsDisabledType;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Qdrant.ScalarQuantization?, TResult>? scalar = null,
-            global::System.Func<global::Qdrant.ProductQuantization?, TResult>? product = null,
-            global::System.Func<global::Qdrant.BinaryQuantization?, TResult>? binary = null,
+            global::System.Func<global::Qdrant.ScalarQuantization, TResult>? scalar = null,
+            global::System.Func<global::Qdrant.ProductQuantization, TResult>? product = null,
+            global::System.Func<global::Qdrant.BinaryQuantization, TResult>? binary = null,
+            global::System.Func<global::Qdrant.TurboQuantization, TResult>? turbo = null,
             global::System.Func<global::Qdrant.DisabledType?, TResult>? disabledType = null,
             bool validate = true)
         {
@@ -219,6 +384,10 @@ namespace Qdrant
             {
                 return binary(Binary!);
             }
+            else if (IsTurbo && turbo != null)
+            {
+                return turbo(Turbo!);
+            }
             else if (IsDisabledType && disabledType != null)
             {
                 return disabledType(DisabledType!);
@@ -231,9 +400,14 @@ namespace Qdrant
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Qdrant.ScalarQuantization?>? scalar = null,
-            global::System.Action<global::Qdrant.ProductQuantization?>? product = null,
-            global::System.Action<global::Qdrant.BinaryQuantization?>? binary = null,
+            global::System.Action<global::Qdrant.ScalarQuantization>? scalar = null,
+
+            global::System.Action<global::Qdrant.ProductQuantization>? product = null,
+
+            global::System.Action<global::Qdrant.BinaryQuantization>? binary = null,
+
+            global::System.Action<global::Qdrant.TurboQuantization>? turbo = null,
+
             global::System.Action<global::Qdrant.DisabledType?>? disabledType = null,
             bool validate = true)
         {
@@ -254,6 +428,48 @@ namespace Qdrant
             {
                 binary?.Invoke(Binary!);
             }
+            else if (IsTurbo)
+            {
+                turbo?.Invoke(Turbo!);
+            }
+            else if (IsDisabledType)
+            {
+                disabledType?.Invoke(DisabledType!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Qdrant.ScalarQuantization>? scalar = null,
+            global::System.Action<global::Qdrant.ProductQuantization>? product = null,
+            global::System.Action<global::Qdrant.BinaryQuantization>? binary = null,
+            global::System.Action<global::Qdrant.TurboQuantization>? turbo = null,
+            global::System.Action<global::Qdrant.DisabledType?>? disabledType = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsScalar)
+            {
+                scalar?.Invoke(Scalar!);
+            }
+            else if (IsProduct)
+            {
+                product?.Invoke(Product!);
+            }
+            else if (IsBinary)
+            {
+                binary?.Invoke(Binary!);
+            }
+            else if (IsTurbo)
+            {
+                turbo?.Invoke(Turbo!);
+            }
             else if (IsDisabledType)
             {
                 disabledType?.Invoke(DisabledType!);
@@ -273,6 +489,8 @@ namespace Qdrant
                 typeof(global::Qdrant.ProductQuantization),
                 Binary,
                 typeof(global::Qdrant.BinaryQuantization),
+                Turbo,
+                typeof(global::Qdrant.TurboQuantization),
                 DisabledType,
                 typeof(global::Qdrant.DisabledType),
             };
@@ -294,6 +512,7 @@ namespace Qdrant
                 global::System.Collections.Generic.EqualityComparer<global::Qdrant.ScalarQuantization?>.Default.Equals(Scalar, other.Scalar) &&
                 global::System.Collections.Generic.EqualityComparer<global::Qdrant.ProductQuantization?>.Default.Equals(Product, other.Product) &&
                 global::System.Collections.Generic.EqualityComparer<global::Qdrant.BinaryQuantization?>.Default.Equals(Binary, other.Binary) &&
+                global::System.Collections.Generic.EqualityComparer<global::Qdrant.TurboQuantization?>.Default.Equals(Turbo, other.Turbo) &&
                 global::System.Collections.Generic.EqualityComparer<global::Qdrant.DisabledType?>.Default.Equals(DisabledType, other.DisabledType) 
                 ;
         }

@@ -50,5 +50,6 @@ namespace Qdrant
         public ConsensusThreadStatusVariant1()
         {
         }
+
     }
 }

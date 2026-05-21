@@ -29,6 +29,26 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickPointIdsList(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.PointIdsList? value)
+        {
+            value = PointIdsList;
+            return IsPointIdsList;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.PointIdsList PickPointIdsList() => IsPointIdsList
+            ? PointIdsList!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'PointIdsList' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.FilterSelector? Filter { get; init; }
 #else
@@ -42,6 +62,26 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Filter))]
 #endif
         public bool IsFilter => Filter != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickFilter(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.FilterSelector? value)
+        {
+            value = Filter;
+            return IsFilter;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.FilterSelector PickFilter() => IsFilter
+            ? Filter!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Filter' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -63,6 +103,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static PointsSelector FromPointIdsList(global::Qdrant.PointIdsList? value) => new PointsSelector(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator PointsSelector(global::Qdrant.FilterSelector value) => new PointsSelector((global::Qdrant.FilterSelector?)value);
 
         /// <summary>
@@ -77,6 +122,11 @@ namespace Qdrant
         {
             Filter = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static PointsSelector FromFilter(global::Qdrant.FilterSelector? value) => new PointsSelector(value);
 
         /// <summary>
         /// 
@@ -118,8 +168,8 @@ namespace Qdrant
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Qdrant.PointIdsList?, TResult>? pointIdsList = null,
-            global::System.Func<global::Qdrant.FilterSelector?, TResult>? filter = null,
+            global::System.Func<global::Qdrant.PointIdsList, TResult>? pointIdsList = null,
+            global::System.Func<global::Qdrant.FilterSelector, TResult>? filter = null,
             bool validate = true)
         {
             if (validate)
@@ -143,8 +193,32 @@ namespace Qdrant
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Qdrant.PointIdsList?>? pointIdsList = null,
-            global::System.Action<global::Qdrant.FilterSelector?>? filter = null,
+            global::System.Action<global::Qdrant.PointIdsList>? pointIdsList = null,
+
+            global::System.Action<global::Qdrant.FilterSelector>? filter = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsPointIdsList)
+            {
+                pointIdsList?.Invoke(PointIdsList!);
+            }
+            else if (IsFilter)
+            {
+                filter?.Invoke(Filter!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Qdrant.PointIdsList>? pointIdsList = null,
+            global::System.Action<global::Qdrant.FilterSelector>? filter = null,
             bool validate = true)
         {
             if (validate)

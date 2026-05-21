@@ -27,6 +27,26 @@ namespace Qdrant
         public bool IsVectorStructOutputVariant1 => VectorStructOutputVariant1 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickVectorStructOutputVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::System.Collections.Generic.IList<float>? value)
+        {
+            value = VectorStructOutputVariant1;
+            return IsVectorStructOutputVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<float> PickVectorStructOutputVariant1() => IsVectorStructOutputVariant1
+            ? VectorStructOutputVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'VectorStructOutputVariant1' but the value was {ToString()}.");
+
+        /// <summary>
         /// Example: [[0.875F, 0.140625F, 0.1102F], [0.758F, 0.28126F, 0.96871F], [0.621F, 0.421878F, 0.9375F]]
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -44,6 +64,26 @@ namespace Qdrant
         public bool IsVectorStructOutputVariant2 => VectorStructOutputVariant2 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickVectorStructOutputVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>? value)
+        {
+            value = VectorStructOutputVariant2;
+            return IsVectorStructOutputVariant2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>> PickVectorStructOutputVariant2() => IsVectorStructOutputVariant2
+            ? VectorStructOutputVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'VectorStructOutputVariant2' but the value was {ToString()}.");
+
+        /// <summary>
         /// Example: {"image-embeddings":[0.8730000257492065,0.140625,0.897599995136261]}
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -59,6 +99,26 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(VectorStructOutputVariant3))]
 #endif
         public bool IsVectorStructOutputVariant3 => VectorStructOutputVariant3 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickVectorStructOutputVariant3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out object? value)
+        {
+            value = VectorStructOutputVariant3;
+            return IsVectorStructOutputVariant3;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public object PickVectorStructOutputVariant3() => IsVectorStructOutputVariant3
+            ? VectorStructOutputVariant3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'VectorStructOutputVariant3' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -104,9 +164,9 @@ namespace Qdrant
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::System.Collections.Generic.IList<float>?, TResult>? vectorStructOutputVariant1 = null,
-            global::System.Func<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>?, TResult>? vectorStructOutputVariant2 = null,
-            global::System.Func<object?, TResult>? vectorStructOutputVariant3 = null,
+            global::System.Func<global::System.Collections.Generic.IList<float>, TResult>? vectorStructOutputVariant1 = null,
+            global::System.Func<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>, TResult>? vectorStructOutputVariant2 = null,
+            global::System.Func<object, TResult>? vectorStructOutputVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -134,9 +194,39 @@ namespace Qdrant
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::System.Collections.Generic.IList<float>?>? vectorStructOutputVariant1 = null,
-            global::System.Action<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>?>? vectorStructOutputVariant2 = null,
-            global::System.Action<object?>? vectorStructOutputVariant3 = null,
+            global::System.Action<global::System.Collections.Generic.IList<float>>? vectorStructOutputVariant1 = null,
+
+            global::System.Action<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>>? vectorStructOutputVariant2 = null,
+
+            global::System.Action<object>? vectorStructOutputVariant3 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsVectorStructOutputVariant1)
+            {
+                vectorStructOutputVariant1?.Invoke(VectorStructOutputVariant1!);
+            }
+            else if (IsVectorStructOutputVariant2)
+            {
+                vectorStructOutputVariant2?.Invoke(VectorStructOutputVariant2!);
+            }
+            else if (IsVectorStructOutputVariant3)
+            {
+                vectorStructOutputVariant3?.Invoke(VectorStructOutputVariant3!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::System.Collections.Generic.IList<float>>? vectorStructOutputVariant1 = null,
+            global::System.Action<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>>? vectorStructOutputVariant2 = null,
+            global::System.Action<object>? vectorStructOutputVariant3 = null,
             bool validate = true)
         {
             if (validate)

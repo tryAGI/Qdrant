@@ -155,5 +155,6 @@ namespace Qdrant
         public OptimizersConfig()
         {
         }
+
     }
 }

@@ -29,6 +29,26 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickEnum(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.TrackerStatusEnum? value)
+        {
+            value = Enum;
+            return IsEnum;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.TrackerStatusEnum PickEnum() => IsEnum
+            ? Enum!.Value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Enum' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.TrackerStatusEnum2? Enum2 { get; init; }
 #else
@@ -46,6 +66,26 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickEnum2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.TrackerStatusEnum2? value)
+        {
+            value = Enum2;
+            return IsEnum2;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.TrackerStatusEnum2 PickEnum2() => IsEnum2
+            ? Enum2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Enum2' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.TrackerStatusEnum3? Enum3 { get; init; }
 #else
@@ -59,6 +99,26 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Enum3))]
 #endif
         public bool IsEnum3 => Enum3 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickEnum3(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.TrackerStatusEnum3? value)
+        {
+            value = Enum3;
+            return IsEnum3;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.TrackerStatusEnum3 PickEnum3() => IsEnum3
+            ? Enum3!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Enum3' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -76,6 +136,11 @@ namespace Qdrant
         {
             Enum = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static TrackerStatus FromEnum(global::Qdrant.TrackerStatusEnum? value) => new TrackerStatus(value);
 
         /// <summary>
         /// 
@@ -98,6 +163,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static TrackerStatus FromEnum2(global::Qdrant.TrackerStatusEnum2? value) => new TrackerStatus(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator TrackerStatus(global::Qdrant.TrackerStatusEnum3 value) => new TrackerStatus((global::Qdrant.TrackerStatusEnum3?)value);
 
         /// <summary>
@@ -112,6 +182,11 @@ namespace Qdrant
         {
             Enum3 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static TrackerStatus FromEnum3(global::Qdrant.TrackerStatusEnum3? value) => new TrackerStatus(value);
 
         /// <summary>
         /// 
@@ -158,8 +233,8 @@ namespace Qdrant
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Qdrant.TrackerStatusEnum?, TResult>? @enum = null,
-            global::System.Func<global::Qdrant.TrackerStatusEnum2?, TResult>? enum2 = null,
-            global::System.Func<global::Qdrant.TrackerStatusEnum3?, TResult>? enum3 = null,
+            global::System.Func<global::Qdrant.TrackerStatusEnum2, TResult>? enum2 = null,
+            global::System.Func<global::Qdrant.TrackerStatusEnum3, TResult>? enum3 = null,
             bool validate = true)
         {
             if (validate)
@@ -188,8 +263,38 @@ namespace Qdrant
         /// </summary>
         public void Match(
             global::System.Action<global::Qdrant.TrackerStatusEnum?>? @enum = null,
-            global::System.Action<global::Qdrant.TrackerStatusEnum2?>? enum2 = null,
-            global::System.Action<global::Qdrant.TrackerStatusEnum3?>? enum3 = null,
+
+            global::System.Action<global::Qdrant.TrackerStatusEnum2>? enum2 = null,
+
+            global::System.Action<global::Qdrant.TrackerStatusEnum3>? enum3 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsEnum)
+            {
+                @enum?.Invoke(Enum!);
+            }
+            else if (IsEnum2)
+            {
+                enum2?.Invoke(Enum2!);
+            }
+            else if (IsEnum3)
+            {
+                enum3?.Invoke(Enum3!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Qdrant.TrackerStatusEnum?>? @enum = null,
+            global::System.Action<global::Qdrant.TrackerStatusEnum2>? enum2 = null,
+            global::System.Action<global::Qdrant.TrackerStatusEnum3>? enum3 = null,
             bool validate = true)
         {
             if (validate)

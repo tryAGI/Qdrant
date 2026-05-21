@@ -29,6 +29,26 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickInclude(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.PayloadSelectorInclude? value)
+        {
+            value = Include;
+            return IsInclude;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.PayloadSelectorInclude PickInclude() => IsInclude
+            ? Include!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Include' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.PayloadSelectorExclude? Exclude { get; init; }
 #else
@@ -42,6 +62,26 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Exclude))]
 #endif
         public bool IsExclude => Exclude != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickExclude(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.PayloadSelectorExclude? value)
+        {
+            value = Exclude;
+            return IsExclude;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.PayloadSelectorExclude PickExclude() => IsExclude
+            ? Exclude!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Exclude' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -63,6 +103,11 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static PayloadSelector FromInclude(global::Qdrant.PayloadSelectorInclude? value) => new PayloadSelector(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator PayloadSelector(global::Qdrant.PayloadSelectorExclude value) => new PayloadSelector((global::Qdrant.PayloadSelectorExclude?)value);
 
         /// <summary>
@@ -77,6 +122,11 @@ namespace Qdrant
         {
             Exclude = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static PayloadSelector FromExclude(global::Qdrant.PayloadSelectorExclude? value) => new PayloadSelector(value);
 
         /// <summary>
         /// 
@@ -118,8 +168,8 @@ namespace Qdrant
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Qdrant.PayloadSelectorInclude?, TResult>? include = null,
-            global::System.Func<global::Qdrant.PayloadSelectorExclude?, TResult>? exclude = null,
+            global::System.Func<global::Qdrant.PayloadSelectorInclude, TResult>? include = null,
+            global::System.Func<global::Qdrant.PayloadSelectorExclude, TResult>? exclude = null,
             bool validate = true)
         {
             if (validate)
@@ -143,8 +193,32 @@ namespace Qdrant
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::Qdrant.PayloadSelectorInclude?>? include = null,
-            global::System.Action<global::Qdrant.PayloadSelectorExclude?>? exclude = null,
+            global::System.Action<global::Qdrant.PayloadSelectorInclude>? include = null,
+
+            global::System.Action<global::Qdrant.PayloadSelectorExclude>? exclude = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsInclude)
+            {
+                include?.Invoke(Include!);
+            }
+            else if (IsExclude)
+            {
+                exclude?.Invoke(Exclude!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::Qdrant.PayloadSelectorInclude>? include = null,
+            global::System.Action<global::Qdrant.PayloadSelectorExclude>? exclude = null,
             bool validate = true)
         {
             if (validate)

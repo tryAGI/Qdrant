@@ -59,5 +59,6 @@ namespace Qdrant
         public DistributedClusterTelemetry()
         {
         }
+
     }
 }

@@ -193,6 +193,7 @@ namespace Qdrant.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.FieldCondition), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.FieldCondition> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.FieldCondition).Name}");
                     field = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -203,9 +204,13 @@ namespace Qdrant.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (field == null && isEmpty == null && isNull == null && hasId == null && hasVector == null && nested == null && filter == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.IsEmptyCondition), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.IsEmptyCondition> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.IsEmptyCondition).Name}");
                     isEmpty = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -216,9 +221,13 @@ namespace Qdrant.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (field == null && isEmpty == null && isNull == null && hasId == null && hasVector == null && nested == null && filter == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.IsNullCondition), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.IsNullCondition> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.IsNullCondition).Name}");
                     isNull = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -229,9 +238,13 @@ namespace Qdrant.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (field == null && isEmpty == null && isNull == null && hasId == null && hasVector == null && nested == null && filter == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.HasIdCondition), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.HasIdCondition> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.HasIdCondition).Name}");
                     hasId = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -242,9 +255,13 @@ namespace Qdrant.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (field == null && isEmpty == null && isNull == null && hasId == null && hasVector == null && nested == null && filter == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.HasVectorCondition), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.HasVectorCondition> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.HasVectorCondition).Name}");
                     hasVector = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -255,9 +272,13 @@ namespace Qdrant.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (field == null && isEmpty == null && isNull == null && hasId == null && hasVector == null && nested == null && filter == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.NestedCondition), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.NestedCondition> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.NestedCondition).Name}");
                     nested = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -268,9 +289,13 @@ namespace Qdrant.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (field == null && isEmpty == null && isNull == null && hasId == null && hasVector == null && nested == null && filter == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.Filter), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.Filter> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.Filter).Name}");
                     filter = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

@@ -67,6 +67,7 @@ namespace Qdrant.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.NaiveFeedbackStrategy), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.NaiveFeedbackStrategy> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.NaiveFeedbackStrategy).Name}");
                     naive = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
