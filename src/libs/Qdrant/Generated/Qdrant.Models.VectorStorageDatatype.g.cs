@@ -19,6 +19,10 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        Turbo4,
+        /// <summary>
+        /// 
+        /// </summary>
         Uint8,
     }
 
@@ -36,6 +40,7 @@ namespace Qdrant
             {
                 VectorStorageDatatype.Float16 => "float16",
                 VectorStorageDatatype.Float32 => "float32",
+                VectorStorageDatatype.Turbo4 => "turbo4",
                 VectorStorageDatatype.Uint8 => "uint8",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -49,6 +54,7 @@ namespace Qdrant
             {
                 "float16" => VectorStorageDatatype.Float16,
                 "float32" => VectorStorageDatatype.Float32,
+                "turbo4" => VectorStorageDatatype.Turbo4,
                 "uint8" => VectorStorageDatatype.Uint8,
                 _ => null,
             };

@@ -135,6 +135,12 @@ namespace Qdrant
         public byte? MaxResidentMemoryPercent { get; set; }
 
         /// <summary>
+        /// Reject disk-consuming update operations (e.g. upsert, set payload) when the filesystem hosting Qdrant storage is filled above this percentage of its total capacity. Value in [1, 100]. Applied uniformly to external and internal (replication) traffic — rejection is deterministic so it does not cause replica divergence. Delete operations are not affected, so callers can still free disk space. Free space is sampled with a small TTL cache; the gate may take a few seconds to react.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("max_disk_usage_percent")]
+        public byte? MaxDiskUsagePercent { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -206,6 +212,9 @@ namespace Qdrant
         /// <param name="maxResidentMemoryPercent">
         /// Reject memory-consuming update operations (e.g. upsert, set payload) when the process resident memory exceeds this percentage of total system memory (or cgroup limit). Value in [1, 100]. Applied uniformly to external and internal (replication) traffic — rejection is deterministic so it does not cause replica divergence. Delete operations are not affected, so callers can still free memory.
         /// </param>
+        /// <param name="maxDiskUsagePercent">
+        /// Reject disk-consuming update operations (e.g. upsert, set payload) when the filesystem hosting Qdrant storage is filled above this percentage of its total capacity. Value in [1, 100]. Applied uniformly to external and internal (replication) traffic — rejection is deterministic so it does not cause replica divergence. Delete operations are not affected, so callers can still free disk space. Free space is sampled with a small TTL cache; the gate may take a few seconds to react.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -230,7 +239,8 @@ namespace Qdrant
             global::System.Collections.Generic.Dictionary<string, global::Qdrant.StrictModeMultivector>? multivectorConfig,
             global::System.Collections.Generic.Dictionary<string, global::Qdrant.StrictModeSparse>? sparseConfig,
             int? maxPayloadIndexCount,
-            byte? maxResidentMemoryPercent)
+            byte? maxResidentMemoryPercent,
+            byte? maxDiskUsagePercent)
         {
             this.Enabled = enabled;
             this.MaxQueryLimit = maxQueryLimit;
@@ -253,6 +263,7 @@ namespace Qdrant
             this.SparseConfig = sparseConfig;
             this.MaxPayloadIndexCount = maxPayloadIndexCount;
             this.MaxResidentMemoryPercent = maxResidentMemoryPercent;
+            this.MaxDiskUsagePercent = maxDiskUsagePercent;
         }
 
         /// <summary>

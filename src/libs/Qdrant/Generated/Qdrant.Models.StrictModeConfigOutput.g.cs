@@ -135,6 +135,12 @@ namespace Qdrant
         public byte? MaxResidentMemoryPercent { get; set; }
 
         /// <summary>
+        /// Reject disk-consuming update operations when the storage filesystem exceeds this percentage of total capacity (1-100)
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("max_disk_usage_percent")]
+        public byte? MaxDiskUsagePercent { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -206,6 +212,9 @@ namespace Qdrant
         /// <param name="maxResidentMemoryPercent">
         /// Reject memory-consuming update operations when resident memory exceeds this percentage of total RAM (1-100)
         /// </param>
+        /// <param name="maxDiskUsagePercent">
+        /// Reject disk-consuming update operations when the storage filesystem exceeds this percentage of total capacity (1-100)
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -230,7 +239,8 @@ namespace Qdrant
             global::System.Collections.Generic.Dictionary<string, global::Qdrant.StrictModeMultivectorOutput>? multivectorConfig,
             global::System.Collections.Generic.Dictionary<string, global::Qdrant.StrictModeSparseOutput>? sparseConfig,
             int? maxPayloadIndexCount,
-            byte? maxResidentMemoryPercent)
+            byte? maxResidentMemoryPercent,
+            byte? maxDiskUsagePercent)
         {
             this.Enabled = enabled;
             this.MaxQueryLimit = maxQueryLimit;
@@ -253,6 +263,7 @@ namespace Qdrant
             this.SparseConfig = sparseConfig;
             this.MaxPayloadIndexCount = maxPayloadIndexCount;
             this.MaxResidentMemoryPercent = maxResidentMemoryPercent;
+            this.MaxDiskUsagePercent = maxDiskUsagePercent;
         }
 
         /// <summary>
