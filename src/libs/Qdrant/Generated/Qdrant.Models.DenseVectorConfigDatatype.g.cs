@@ -4,7 +4,7 @@
 namespace Qdrant
 {
     /// <summary>
-    /// Element storage type (Float32, Float16, Uint8)
+    /// Element storage type (Float32, Float16, Uint8, Turbo4)
     /// </summary>
     public sealed partial class DenseVectorConfigDatatype
     {
