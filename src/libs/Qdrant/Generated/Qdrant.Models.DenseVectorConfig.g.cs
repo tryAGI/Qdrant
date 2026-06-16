@@ -31,7 +31,7 @@ namespace Qdrant
         public global::Qdrant.MultiVectorConfig? MultivectorConfig { get; set; }
 
         /// <summary>
-        /// Element storage type (Float32, Float16, Uint8)
+        /// Element storage type (Float32, Float16, Uint8, Turbo4)
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("datatype")]
         public global::Qdrant.VectorStorageDatatype? Datatype { get; set; }
@@ -55,7 +55,7 @@ namespace Qdrant
         /// Configuration for multi-vector points (e.g., ColBERT)
         /// </param>
         /// <param name="datatype">
-        /// Element storage type (Float32, Float16, Uint8)
+        /// Element storage type (Float32, Float16, Uint8, Turbo4)
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
