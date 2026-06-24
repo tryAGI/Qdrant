@@ -10,7 +10,14 @@ OpenAPI spec from the official [qdrant/qdrant](https://github.com/qdrant/qdrant)
 ```bash
 dotnet build Qdrant.slnx
 dotnet test src/tests/IntegrationTests/
+
+# Optional first-run pre-pull for faster container startup
+docker pull qdrant/qdrant:latest
 ```
+
+Integration tests use Testcontainers automatically when Docker is available. If Docker is unavailable, tests connect to a local Qdrant instance at `http://localhost:6333`.
+
+Override with `QDRANT_TEST_ENVIRONMENT=Local|Container`.
 
 ## Auth
 
