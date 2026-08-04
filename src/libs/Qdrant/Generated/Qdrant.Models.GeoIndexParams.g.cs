@@ -1,4 +1,6 @@
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace Qdrant
@@ -16,10 +18,17 @@ namespace Qdrant
         public global::Qdrant.GeoIndexType Type { get; set; }
 
         /// <summary>
-        /// If true, store the index on disk. Default: false.
+        /// Deprecated: use `memory` instead. If true, store the index on disk. Default: false.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("on_disk")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public bool? OnDisk { get; set; }
+
+        /// <summary>
+        /// Memory placement of the index. Overrides the deprecated `on_disk` flag if both are set. Default: `pinned` (`cold` if `on_disk` is set to true).
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("memory")]
+        public global::Qdrant.Memory? Memory { get; set; }
 
         /// <summary>
         /// Enable HNSW graph building for this payload field. If true, builds additional HNSW links (Need payload_m &gt; 0). Default: true.
@@ -37,8 +46,8 @@ namespace Qdrant
         /// Initializes a new instance of the <see cref="GeoIndexParams" /> class.
         /// </summary>
         /// <param name="type"></param>
-        /// <param name="onDisk">
-        /// If true, store the index on disk. Default: false.
+        /// <param name="memory">
+        /// Memory placement of the index. Overrides the deprecated `on_disk` flag if both are set. Default: `pinned` (`cold` if `on_disk` is set to true).
         /// </param>
         /// <param name="enableHnsw">
         /// Enable HNSW graph building for this payload field. If true, builds additional HNSW links (Need payload_m &gt; 0). Default: true.
@@ -48,11 +57,11 @@ namespace Qdrant
 #endif
         public GeoIndexParams(
             global::Qdrant.GeoIndexType type,
-            bool? onDisk,
+            global::Qdrant.Memory? memory,
             bool? enableHnsw)
         {
             this.Type = type;
-            this.OnDisk = onDisk;
+            this.Memory = memory;
             this.EnableHnsw = enableHnsw;
         }
 

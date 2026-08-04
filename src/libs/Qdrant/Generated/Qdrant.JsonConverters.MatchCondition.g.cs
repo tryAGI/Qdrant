@@ -36,9 +36,11 @@ namespace Qdrant.JsonConverters
             var __score3 = 0;
             if (__jsonProps.Contains("phrase")) __score3++;
             var __score4 = 0;
-            if (__jsonProps.Contains("any")) __score4++;
+            if (__jsonProps.Contains("prefix")) __score4++;
             var __score5 = 0;
-            if (__jsonProps.Contains("except")) __score5++;
+            if (__jsonProps.Contains("any")) __score5++;
+            var __score6 = 0;
+            if (__jsonProps.Contains("except")) __score6++;
             var __bestScore = 0;
             var __bestIndex = -1;
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
@@ -47,11 +49,13 @@ namespace Qdrant.JsonConverters
             if (__score3 > __bestScore) { __bestScore = __score3; __bestIndex = 3; }
             if (__score4 > __bestScore) { __bestScore = __score4; __bestIndex = 4; }
             if (__score5 > __bestScore) { __bestScore = __score5; __bestIndex = 5; }
+            if (__score6 > __bestScore) { __bestScore = __score6; __bestIndex = 6; }
 
             global::Qdrant.MatchValue? value = default;
             global::Qdrant.MatchText? text = default;
             global::Qdrant.MatchTextAny? textAny = default;
             global::Qdrant.MatchPhrase? phrase = default;
+            global::Qdrant.MatchPrefix? prefix = default;
             global::Qdrant.MatchAny? any = default;
             global::Qdrant.MatchExcept? except = default;
             if (__bestIndex >= 0)
@@ -120,6 +124,21 @@ namespace Qdrant.JsonConverters
                 {
                     try
                     {
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.MatchPrefix), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.MatchPrefix> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.MatchPrefix).Name}");
+                        prefix = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    }
+                    catch (global::System.Text.Json.JsonException)
+                    {
+                    }
+                    catch (global::System.InvalidOperationException)
+                    {
+                    }
+                }
+                else if (__bestIndex == 5)
+                {
+                    try
+                    {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.MatchAny), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.MatchAny> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.MatchAny).Name}");
                         any = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -131,7 +150,7 @@ namespace Qdrant.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 5)
+                else if (__bestIndex == 6)
                 {
                     try
                     {
@@ -148,7 +167,7 @@ namespace Qdrant.JsonConverters
                 }
             }
 
-            if (value == null && text == null && textAny == null && phrase == null && any == null && except == null)
+            if (value == null && text == null && textAny == null && phrase == null && prefix == null && any == null && except == null)
             {
                 try
                 {
@@ -165,7 +184,7 @@ namespace Qdrant.JsonConverters
                 }
             }
 
-            if (value == null && text == null && textAny == null && phrase == null && any == null && except == null)
+            if (value == null && text == null && textAny == null && phrase == null && prefix == null && any == null && except == null)
             {
                 try
                 {
@@ -182,7 +201,7 @@ namespace Qdrant.JsonConverters
                 }
             }
 
-            if (value == null && text == null && textAny == null && phrase == null && any == null && except == null)
+            if (value == null && text == null && textAny == null && phrase == null && prefix == null && any == null && except == null)
             {
                 try
                 {
@@ -199,7 +218,7 @@ namespace Qdrant.JsonConverters
                 }
             }
 
-            if (value == null && text == null && textAny == null && phrase == null && any == null && except == null)
+            if (value == null && text == null && textAny == null && phrase == null && prefix == null && any == null && except == null)
             {
                 try
                 {
@@ -216,7 +235,24 @@ namespace Qdrant.JsonConverters
                 }
             }
 
-            if (value == null && text == null && textAny == null && phrase == null && any == null && except == null)
+            if (value == null && text == null && textAny == null && phrase == null && prefix == null && any == null && except == null)
+            {
+                try
+                {
+
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.MatchPrefix), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.MatchPrefix> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.MatchPrefix).Name}");
+                    prefix = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+            }
+
+            if (value == null && text == null && textAny == null && phrase == null && prefix == null && any == null && except == null)
             {
                 try
                 {
@@ -233,7 +269,7 @@ namespace Qdrant.JsonConverters
                 }
             }
 
-            if (value == null && text == null && textAny == null && phrase == null && any == null && except == null)
+            if (value == null && text == null && textAny == null && phrase == null && prefix == null && any == null && except == null)
             {
                 try
                 {
@@ -258,6 +294,8 @@ namespace Qdrant.JsonConverters
                 textAny,
 
                 phrase,
+
+                prefix,
 
                 any,
 
@@ -299,6 +337,12 @@ namespace Qdrant.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.MatchPhrase), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.MatchPhrase?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.MatchPhrase).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Phrase!, typeInfo);
+            }
+            else if (value.IsPrefix)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.MatchPrefix), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.MatchPrefix?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.MatchPrefix).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Prefix!, typeInfo);
             }
             else if (value.IsAny)
             {

@@ -4,7 +4,7 @@
 namespace Qdrant
 {
     /// <summary>
-    /// 
+    /// Custom shard key to reshard, must already exist. If not specified, shards without a shard key are resharded.
     /// </summary>
     public sealed partial class StartReshardingShardKey
     {

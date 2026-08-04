@@ -59,6 +59,12 @@ namespace Qdrant
         public global::Qdrant.SearchThreadPoolTelemetry? SearchPool { get; set; }
 
         /// <summary>
+        /// Resource quota this node is enforcing, and whether it is currently over it. The config is whatever this node last persisted, so a peer that missed a consensus update reports what it is actually applying rather than what the cluster agreed on. Absent for a token without global access, which `GET /quotas` requires as well.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("quota")]
+        public global::Qdrant.QuotaTelemetry? Quota { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -75,6 +81,9 @@ namespace Qdrant
         /// <param name="memory"></param>
         /// <param name="hardware"></param>
         /// <param name="searchPool"></param>
+        /// <param name="quota">
+        /// Resource quota this node is enforcing, and whether it is currently over it. The config is whatever this node last persisted, so a peer that missed a consensus update reports what it is actually applying rather than what the cluster agreed on. Absent for a token without global access, which `GET /quotas` requires as well.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -86,7 +95,8 @@ namespace Qdrant
             global::Qdrant.RequestsTelemetry? requests,
             global::Qdrant.MemoryTelemetry? memory,
             global::Qdrant.HardwareTelemetry? hardware,
-            global::Qdrant.SearchThreadPoolTelemetry? searchPool)
+            global::Qdrant.SearchThreadPoolTelemetry? searchPool,
+            global::Qdrant.QuotaTelemetry? quota)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.App = app;
@@ -96,6 +106,7 @@ namespace Qdrant
             this.Memory = memory;
             this.Hardware = hardware;
             this.SearchPool = searchPool;
+            this.Quota = quota;
         }
 
         /// <summary>

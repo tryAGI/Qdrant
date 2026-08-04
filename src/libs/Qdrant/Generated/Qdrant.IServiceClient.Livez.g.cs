@@ -6,7 +6,7 @@ namespace Qdrant
     {
         /// <summary>
         /// Kubernetes livez endpoint<br/>
-        /// An endpoint for health checking used in Kubernetes.
+        /// Kubernetes liveness probe. Returns 200 as soon as the HTTP API is serving requests. It does not inspect collections, shards or consensus state, and is identical to `/healthz`. A failure indicates the process is unresponsive and should be restarted.
         /// </summary>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -16,7 +16,7 @@ namespace Qdrant
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Kubernetes livez endpoint<br/>
-        /// An endpoint for health checking used in Kubernetes.
+        /// Kubernetes liveness probe. Returns 200 as soon as the HTTP API is serving requests. It does not inspect collections, shards or consensus state, and is identical to `/healthz`. A failure indicates the process is unresponsive and should be restarted.
         /// </summary>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>

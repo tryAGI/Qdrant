@@ -1,4 +1,6 @@
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace Qdrant
@@ -129,16 +131,11 @@ namespace Qdrant
         public int? MaxPayloadIndexCount { get; set; }
 
         /// <summary>
-        /// Reject memory-consuming update operations when resident memory exceeds this percentage of total RAM (1-100)
+        /// Deprecated: use the node-wide quota config instead. Reject memory-consuming update operations when resident memory exceeds this percentage of total RAM (1-100)
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_resident_memory_percent")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public byte? MaxResidentMemoryPercent { get; set; }
-
-        /// <summary>
-        /// Reject disk-consuming update operations when the storage filesystem exceeds this percentage of total capacity (1-100)
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("max_disk_usage_percent")]
-        public byte? MaxDiskUsagePercent { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -209,12 +206,6 @@ namespace Qdrant
         /// <param name="maxPayloadIndexCount">
         /// Max number of payload indexes in a collection
         /// </param>
-        /// <param name="maxResidentMemoryPercent">
-        /// Reject memory-consuming update operations when resident memory exceeds this percentage of total RAM (1-100)
-        /// </param>
-        /// <param name="maxDiskUsagePercent">
-        /// Reject disk-consuming update operations when the storage filesystem exceeds this percentage of total capacity (1-100)
-        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -238,9 +229,7 @@ namespace Qdrant
             int? conditionMaxSize,
             global::System.Collections.Generic.Dictionary<string, global::Qdrant.StrictModeMultivectorOutput>? multivectorConfig,
             global::System.Collections.Generic.Dictionary<string, global::Qdrant.StrictModeSparseOutput>? sparseConfig,
-            int? maxPayloadIndexCount,
-            byte? maxResidentMemoryPercent,
-            byte? maxDiskUsagePercent)
+            int? maxPayloadIndexCount)
         {
             this.Enabled = enabled;
             this.MaxQueryLimit = maxQueryLimit;
@@ -262,8 +251,6 @@ namespace Qdrant
             this.MultivectorConfig = multivectorConfig;
             this.SparseConfig = sparseConfig;
             this.MaxPayloadIndexCount = maxPayloadIndexCount;
-            this.MaxResidentMemoryPercent = maxResidentMemoryPercent;
-            this.MaxDiskUsagePercent = maxDiskUsagePercent;
         }
 
         /// <summary>

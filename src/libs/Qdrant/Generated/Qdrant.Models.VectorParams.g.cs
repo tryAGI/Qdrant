@@ -1,4 +1,6 @@
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace Qdrant
@@ -36,10 +38,17 @@ namespace Qdrant
         public global::Qdrant.QuantizationConfig? QuantizationConfig { get; set; }
 
         /// <summary>
-        /// If true, vectors are served from disk, improving RAM usage at the cost of latency Default: false
+        /// Deprecated: use `memory` instead. If true, vectors are served from disk, improving RAM usage at the cost of latency Default: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("on_disk")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public bool? OnDisk { get; set; }
+
+        /// <summary>
+        /// Memory placement of the original vector storage. Overrides the deprecated `on_disk` flag if both are set. `pinned` is not supported for dense vector storage. Default: `cached` (`cold` if `on_disk` is set to true).
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("memory")]
+        public global::Qdrant.Memory? Memory { get; set; }
 
         /// <summary>
         /// Defines which datatype should be used to represent vectors in the storage. Choosing different datatypes allows to optimize memory usage and performance vs accuracy.<br/>
@@ -75,8 +84,8 @@ namespace Qdrant
         /// <param name="quantizationConfig">
         /// Custom params for quantization. If none - values from collection configuration are used.
         /// </param>
-        /// <param name="onDisk">
-        /// If true, vectors are served from disk, improving RAM usage at the cost of latency Default: false
+        /// <param name="memory">
+        /// Memory placement of the original vector storage. Overrides the deprecated `on_disk` flag if both are set. `pinned` is not supported for dense vector storage. Default: `cached` (`cold` if `on_disk` is set to true).
         /// </param>
         /// <param name="datatype">
         /// Defines which datatype should be used to represent vectors in the storage. Choosing different datatypes allows to optimize memory usage and performance vs accuracy.<br/>
@@ -91,7 +100,7 @@ namespace Qdrant
             global::Qdrant.Distance distance,
             global::Qdrant.HnswConfigDiff? hnswConfig,
             global::Qdrant.QuantizationConfig? quantizationConfig,
-            bool? onDisk,
+            global::Qdrant.Memory? memory,
             global::Qdrant.Datatype? datatype,
             global::Qdrant.MultiVectorConfig? multivectorConfig)
         {
@@ -99,7 +108,7 @@ namespace Qdrant
             this.Distance = distance;
             this.HnswConfig = hnswConfig;
             this.QuantizationConfig = quantizationConfig;
-            this.OnDisk = onDisk;
+            this.Memory = memory;
             this.Datatype = datatype;
             this.MultivectorConfig = multivectorConfig;
         }

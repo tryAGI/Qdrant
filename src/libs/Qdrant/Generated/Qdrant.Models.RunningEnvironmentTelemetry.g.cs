@@ -40,13 +40,13 @@ namespace Qdrant
         public float? CpuCoresUsed { get; set; }
 
         /// <summary>
-        /// 
+        /// Effective total memory for this process in KiB (cgroup limit or host RAM).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("ram_size")]
         public int? RamSize { get; set; }
 
         /// <summary>
-        /// 
+        /// Size in KiB of the filesystem hosting Qdrant's /storage path (if not available, fallback to host disk size)
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("disk_size")]
         public int? DiskSize { get; set; }
@@ -87,8 +87,12 @@ namespace Qdrant
         /// <param name="cpuCoresUsed">
         /// Average number of CPU cores used by this process over roughly the last two seconds. `None` on unsupported platforms, before two samples are collected, or on transient failures reading process CPU time.
         /// </param>
-        /// <param name="ramSize"></param>
-        /// <param name="diskSize"></param>
+        /// <param name="ramSize">
+        /// Effective total memory for this process in KiB (cgroup limit or host RAM).
+        /// </param>
+        /// <param name="diskSize">
+        /// Size in KiB of the filesystem hosting Qdrant's /storage path (if not available, fallback to host disk size)
+        /// </param>
         /// <param name="cpuEndian"></param>
         /// <param name="gpuDevices"></param>
 #if NET7_0_OR_GREATER

@@ -1,4 +1,6 @@
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace Qdrant
@@ -16,10 +18,17 @@ namespace Qdrant
         public int? FullScanThreshold { get; set; }
 
         /// <summary>
-        /// Store index on disk. If set to false, the index will be stored in RAM. Default: false
+        /// Deprecated: use `memory` instead. Store index on disk. If set to false, the index will be stored in RAM. Default: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("on_disk")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public bool? OnDisk { get; set; }
+
+        /// <summary>
+        /// Memory placement of the index. Overrides the deprecated `on_disk` flag if both are set. Default: `pinned` (`cold` if `on_disk` is set to true).
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("memory")]
+        public global::Qdrant.Memory? Memory { get; set; }
 
         /// <summary>
         /// Defines which datatype should be used for the index. Choosing different datatypes allows to optimize memory usage and performance vs accuracy.<br/>
@@ -41,8 +50,8 @@ namespace Qdrant
         /// We prefer a full scan search upto (excluding) this number of vectors.<br/>
         /// Note: this is number of vectors, not KiloBytes.
         /// </param>
-        /// <param name="onDisk">
-        /// Store index on disk. If set to false, the index will be stored in RAM. Default: false
+        /// <param name="memory">
+        /// Memory placement of the index. Overrides the deprecated `on_disk` flag if both are set. Default: `pinned` (`cold` if `on_disk` is set to true).
         /// </param>
         /// <param name="datatype">
         /// Defines which datatype should be used for the index. Choosing different datatypes allows to optimize memory usage and performance vs accuracy.<br/>
@@ -53,11 +62,11 @@ namespace Qdrant
 #endif
         public SparseIndexParams(
             int? fullScanThreshold,
-            bool? onDisk,
+            global::Qdrant.Memory? memory,
             global::Qdrant.Datatype? datatype)
         {
             this.FullScanThreshold = fullScanThreshold;
-            this.OnDisk = onDisk;
+            this.Memory = memory;
             this.Datatype = datatype;
         }
 

@@ -65,7 +65,7 @@ namespace Qdrant
         /// </param>
         /// <param name="strictModeConfig"></param>
         /// <param name="metadata">
-        /// Metadata to update for the collection. If provided, this will merge with existing metadata. To remove metadata, set it to an empty object.
+        /// Metadata to update for the collection. If provided, this will merge with existing metadata. Individual keys can be removed by setting their value to `null`.
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>

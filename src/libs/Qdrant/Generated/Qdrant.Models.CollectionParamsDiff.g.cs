@@ -1,4 +1,6 @@
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace Qdrant
@@ -33,11 +35,18 @@ namespace Qdrant
         public int? ReadFanOutDelayMs { get; set; }
 
         /// <summary>
-        /// If true - point's payload will not be stored in memory. It will be read from the disk every time it is requested. This setting saves RAM by (slightly) increasing the response time. Note: those payload values that are involved in filtering and are indexed - remain in RAM.<br/>
+        /// Deprecated: use `payload.memory` instead. If true - point's payload will not be stored in memory. It will be read from the disk every time it is requested. This setting saves RAM by (slightly) increasing the response time. Note: those payload values that are involved in filtering and are indexed - remain in RAM.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("on_disk_payload")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public bool? OnDiskPayload { get; set; }
+
+        /// <summary>
+        /// Update params of the payload storage. If none - it is left unchanged.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("payload")]
+        public global::Qdrant.PayloadStorageParams? Payload { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -60,9 +69,8 @@ namespace Qdrant
         /// <param name="readFanOutDelayMs">
         /// Delay in milliseconds before sending read requests to remote nodes
         /// </param>
-        /// <param name="onDiskPayload">
-        /// If true - point's payload will not be stored in memory. It will be read from the disk every time it is requested. This setting saves RAM by (slightly) increasing the response time. Note: those payload values that are involved in filtering and are indexed - remain in RAM.<br/>
-        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// <param name="payload">
+        /// Update params of the payload storage. If none - it is left unchanged.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -72,13 +80,13 @@ namespace Qdrant
             int? writeConsistencyFactor,
             int? readFanOutFactor,
             int? readFanOutDelayMs,
-            bool? onDiskPayload)
+            global::Qdrant.PayloadStorageParams? payload)
         {
             this.ReplicationFactor = replicationFactor;
             this.WriteConsistencyFactor = writeConsistencyFactor;
             this.ReadFanOutFactor = readFanOutFactor;
             this.ReadFanOutDelayMs = readFanOutDelayMs;
-            this.OnDiskPayload = onDiskPayload;
+            this.Payload = payload;
         }
 
         /// <summary>

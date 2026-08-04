@@ -195,6 +195,43 @@ namespace Qdrant
             : throw new global::System.InvalidOperationException($"Expected union variant 'HasVector' but the value was {ToString()}.");
 
         /// <summary>
+        /// Select points that fall into one of `total` disjoint deterministic slices of the id space, for parallel scans and reproducible sampling.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Qdrant.SliceCondition? Slice { get; init; }
+#else
+        public global::Qdrant.SliceCondition? Slice { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Slice))]
+#endif
+        public bool IsSlice => Slice != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSlice(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.SliceCondition? value)
+        {
+            value = Slice;
+            return IsSlice;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::Qdrant.SliceCondition PickSlice() => IsSlice
+            ? Slice!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Slice' but the value was {ToString()}.");
+
+        /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -385,6 +422,29 @@ namespace Qdrant
         /// <summary>
         /// 
         /// </summary>
+        public static implicit operator Condition(global::Qdrant.SliceCondition value) => new Condition((global::Qdrant.SliceCondition?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::Qdrant.SliceCondition?(Condition @this) => @this.Slice;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Condition(global::Qdrant.SliceCondition? value)
+        {
+            Slice = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Condition FromSlice(global::Qdrant.SliceCondition? value) => new Condition(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Condition(global::Qdrant.NestedCondition value) => new Condition((global::Qdrant.NestedCondition?)value);
 
         /// <summary>
@@ -437,6 +497,7 @@ namespace Qdrant
             global::Qdrant.IsNullCondition? isNull,
             global::Qdrant.HasIdCondition? hasId,
             global::Qdrant.HasVectorCondition? hasVector,
+            global::Qdrant.SliceCondition? slice,
             global::Qdrant.NestedCondition? nested,
             global::Qdrant.Filter? filter
             )
@@ -446,6 +507,7 @@ namespace Qdrant
             IsNull = isNull;
             HasId = hasId;
             HasVector = hasVector;
+            Slice = slice;
             Nested = nested;
             Filter = filter;
         }
@@ -456,6 +518,7 @@ namespace Qdrant
         public object? Object =>
             Filter as object ??
             Nested as object ??
+            Slice as object ??
             HasVector as object ??
             HasId as object ??
             IsNull as object ??
@@ -472,6 +535,7 @@ namespace Qdrant
             IsNull?.ToString() ??
             HasId?.ToString() ??
             HasVector?.ToString() ??
+            Slice?.ToString() ??
             Nested?.ToString() ??
             Filter?.ToString() 
             ;
@@ -481,7 +545,7 @@ namespace Qdrant
         /// </summary>
         public bool Validate()
         {
-            return IsField || IsIsEmpty || IsIsNull || IsHasId || IsHasVector || IsNested || IsFilter;
+            return IsField || IsIsEmpty || IsIsNull || IsHasId || IsHasVector || IsSlice || IsNested || IsFilter;
         }
 
         /// <summary>
@@ -493,6 +557,7 @@ namespace Qdrant
             global::System.Func<global::Qdrant.IsNullCondition, TResult>? isNull = null,
             global::System.Func<global::Qdrant.HasIdCondition, TResult>? hasId = null,
             global::System.Func<global::Qdrant.HasVectorCondition, TResult>? hasVector = null,
+            global::System.Func<global::Qdrant.SliceCondition, TResult>? slice = null,
             global::System.Func<global::Qdrant.NestedCondition, TResult>? nested = null,
             global::System.Func<global::Qdrant.Filter, TResult>? filter = null,
             bool validate = true)
@@ -522,6 +587,10 @@ namespace Qdrant
             {
                 return hasVector(HasVector!);
             }
+            else if (IsSlice && slice != null)
+            {
+                return slice(Slice!);
+            }
             else if (IsNested && nested != null)
             {
                 return nested(Nested!);
@@ -548,6 +617,8 @@ namespace Qdrant
 
             global::System.Action<global::Qdrant.HasVectorCondition>? hasVector = null,
 
+            global::System.Action<global::Qdrant.SliceCondition>? slice = null,
+
             global::System.Action<global::Qdrant.NestedCondition>? nested = null,
 
             global::System.Action<global::Qdrant.Filter>? filter = null,
@@ -577,6 +648,10 @@ namespace Qdrant
             else if (IsHasVector)
             {
                 hasVector?.Invoke(HasVector!);
+            }
+            else if (IsSlice)
+            {
+                slice?.Invoke(Slice!);
             }
             else if (IsNested)
             {
@@ -597,6 +672,7 @@ namespace Qdrant
             global::System.Action<global::Qdrant.IsNullCondition>? isNull = null,
             global::System.Action<global::Qdrant.HasIdCondition>? hasId = null,
             global::System.Action<global::Qdrant.HasVectorCondition>? hasVector = null,
+            global::System.Action<global::Qdrant.SliceCondition>? slice = null,
             global::System.Action<global::Qdrant.NestedCondition>? nested = null,
             global::System.Action<global::Qdrant.Filter>? filter = null,
             bool validate = true)
@@ -625,6 +701,10 @@ namespace Qdrant
             else if (IsHasVector)
             {
                 hasVector?.Invoke(HasVector!);
+            }
+            else if (IsSlice)
+            {
+                slice?.Invoke(Slice!);
             }
             else if (IsNested)
             {
@@ -653,6 +733,8 @@ namespace Qdrant
                 typeof(global::Qdrant.HasIdCondition),
                 HasVector,
                 typeof(global::Qdrant.HasVectorCondition),
+                Slice,
+                typeof(global::Qdrant.SliceCondition),
                 Nested,
                 typeof(global::Qdrant.NestedCondition),
                 Filter,
@@ -678,6 +760,7 @@ namespace Qdrant
                 global::System.Collections.Generic.EqualityComparer<global::Qdrant.IsNullCondition?>.Default.Equals(IsNull, other.IsNull) &&
                 global::System.Collections.Generic.EqualityComparer<global::Qdrant.HasIdCondition?>.Default.Equals(HasId, other.HasId) &&
                 global::System.Collections.Generic.EqualityComparer<global::Qdrant.HasVectorCondition?>.Default.Equals(HasVector, other.HasVector) &&
+                global::System.Collections.Generic.EqualityComparer<global::Qdrant.SliceCondition?>.Default.Equals(Slice, other.Slice) &&
                 global::System.Collections.Generic.EqualityComparer<global::Qdrant.NestedCondition?>.Default.Equals(Nested, other.Nested) &&
                 global::System.Collections.Generic.EqualityComparer<global::Qdrant.Filter?>.Default.Equals(Filter, other.Filter) 
                 ;

@@ -55,14 +55,18 @@ namespace Qdrant.JsonConverters
             var __score4 = 0;
             if (__jsonProps.Contains("has_vector")) __score4++;
             var __score5 = 0;
-            if (__jsonProps.Contains("nested")) __score5++;
-            if (__jsonProps.Contains("nested.filter")) __score5++;
-            if (__jsonProps.Contains("nested.key")) __score5++;
+            if (__jsonProps.Contains("slice")) __score5++;
+            if (__jsonProps.Contains("slice.index")) __score5++;
+            if (__jsonProps.Contains("slice.total")) __score5++;
             var __score6 = 0;
-            if (__jsonProps.Contains("min_should")) __score6++;
-            if (__jsonProps.Contains("must")) __score6++;
-            if (__jsonProps.Contains("must_not")) __score6++;
-            if (__jsonProps.Contains("should")) __score6++;
+            if (__jsonProps.Contains("nested")) __score6++;
+            if (__jsonProps.Contains("nested.filter")) __score6++;
+            if (__jsonProps.Contains("nested.key")) __score6++;
+            var __score7 = 0;
+            if (__jsonProps.Contains("min_should")) __score7++;
+            if (__jsonProps.Contains("must")) __score7++;
+            if (__jsonProps.Contains("must_not")) __score7++;
+            if (__jsonProps.Contains("should")) __score7++;
             var __bestScore = 0;
             var __bestIndex = -1;
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
@@ -72,12 +76,14 @@ namespace Qdrant.JsonConverters
             if (__score4 > __bestScore) { __bestScore = __score4; __bestIndex = 4; }
             if (__score5 > __bestScore) { __bestScore = __score5; __bestIndex = 5; }
             if (__score6 > __bestScore) { __bestScore = __score6; __bestIndex = 6; }
+            if (__score7 > __bestScore) { __bestScore = __score7; __bestIndex = 7; }
 
             global::Qdrant.FieldCondition? field = default;
             global::Qdrant.IsEmptyCondition? isEmpty = default;
             global::Qdrant.IsNullCondition? isNull = default;
             global::Qdrant.HasIdCondition? hasId = default;
             global::Qdrant.HasVectorCondition? hasVector = default;
+            global::Qdrant.SliceCondition? slice = default;
             global::Qdrant.NestedCondition? nested = default;
             global::Qdrant.Filter? filter = default;
             if (__bestIndex >= 0)
@@ -161,6 +167,21 @@ namespace Qdrant.JsonConverters
                 {
                     try
                     {
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.SliceCondition), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.SliceCondition> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.SliceCondition).Name}");
+                        slice = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    }
+                    catch (global::System.Text.Json.JsonException)
+                    {
+                    }
+                    catch (global::System.InvalidOperationException)
+                    {
+                    }
+                }
+                else if (__bestIndex == 6)
+                {
+                    try
+                    {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.NestedCondition), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.NestedCondition> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.NestedCondition).Name}");
                         nested = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -172,7 +193,7 @@ namespace Qdrant.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 6)
+                else if (__bestIndex == 7)
                 {
                     try
                     {
@@ -189,7 +210,7 @@ namespace Qdrant.JsonConverters
                 }
             }
 
-            if (field == null && isEmpty == null && isNull == null && hasId == null && hasVector == null && nested == null && filter == null)
+            if (field == null && isEmpty == null && isNull == null && hasId == null && hasVector == null && slice == null && nested == null && filter == null)
             {
                 try
                 {
@@ -206,7 +227,7 @@ namespace Qdrant.JsonConverters
                 }
             }
 
-            if (field == null && isEmpty == null && isNull == null && hasId == null && hasVector == null && nested == null && filter == null)
+            if (field == null && isEmpty == null && isNull == null && hasId == null && hasVector == null && slice == null && nested == null && filter == null)
             {
                 try
                 {
@@ -223,7 +244,7 @@ namespace Qdrant.JsonConverters
                 }
             }
 
-            if (field == null && isEmpty == null && isNull == null && hasId == null && hasVector == null && nested == null && filter == null)
+            if (field == null && isEmpty == null && isNull == null && hasId == null && hasVector == null && slice == null && nested == null && filter == null)
             {
                 try
                 {
@@ -240,7 +261,7 @@ namespace Qdrant.JsonConverters
                 }
             }
 
-            if (field == null && isEmpty == null && isNull == null && hasId == null && hasVector == null && nested == null && filter == null)
+            if (field == null && isEmpty == null && isNull == null && hasId == null && hasVector == null && slice == null && nested == null && filter == null)
             {
                 try
                 {
@@ -257,7 +278,7 @@ namespace Qdrant.JsonConverters
                 }
             }
 
-            if (field == null && isEmpty == null && isNull == null && hasId == null && hasVector == null && nested == null && filter == null)
+            if (field == null && isEmpty == null && isNull == null && hasId == null && hasVector == null && slice == null && nested == null && filter == null)
             {
                 try
                 {
@@ -274,7 +295,24 @@ namespace Qdrant.JsonConverters
                 }
             }
 
-            if (field == null && isEmpty == null && isNull == null && hasId == null && hasVector == null && nested == null && filter == null)
+            if (field == null && isEmpty == null && isNull == null && hasId == null && hasVector == null && slice == null && nested == null && filter == null)
+            {
+                try
+                {
+
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.SliceCondition), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.SliceCondition> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.SliceCondition).Name}");
+                    slice = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+            }
+
+            if (field == null && isEmpty == null && isNull == null && hasId == null && hasVector == null && slice == null && nested == null && filter == null)
             {
                 try
                 {
@@ -291,7 +329,7 @@ namespace Qdrant.JsonConverters
                 }
             }
 
-            if (field == null && isEmpty == null && isNull == null && hasId == null && hasVector == null && nested == null && filter == null)
+            if (field == null && isEmpty == null && isNull == null && hasId == null && hasVector == null && slice == null && nested == null && filter == null)
             {
                 try
                 {
@@ -318,6 +356,8 @@ namespace Qdrant.JsonConverters
                 hasId,
 
                 hasVector,
+
+                slice,
 
                 nested,
 
@@ -365,6 +405,12 @@ namespace Qdrant.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.HasVectorCondition), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.HasVectorCondition?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.HasVectorCondition).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.HasVector!, typeInfo);
+            }
+            else if (value.IsSlice)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.SliceCondition), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.SliceCondition?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.SliceCondition).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Slice!, typeInfo);
             }
             else if (value.IsNested)
             {

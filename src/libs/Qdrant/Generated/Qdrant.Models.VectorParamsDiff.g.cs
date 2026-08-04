@@ -1,4 +1,6 @@
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace Qdrant
@@ -21,10 +23,17 @@ namespace Qdrant
         public global::Qdrant.QuantizationConfigDiff? QuantizationConfig { get; set; }
 
         /// <summary>
-        /// If true, vectors are served from disk, improving RAM usage at the cost of latency
+        /// Deprecated: use `memory` instead. If true, vectors are served from disk, improving RAM usage at the cost of latency
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("on_disk")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public bool? OnDisk { get; set; }
+
+        /// <summary>
+        /// Memory placement of the original vector storage. Overrides the deprecated `on_disk` flag if both are set. `pinned` is not supported for dense vector storage.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("memory")]
+        public global::Qdrant.Memory? Memory { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -41,8 +50,8 @@ namespace Qdrant
         /// <param name="quantizationConfig">
         /// Update params for quantization. If none - it is left unchanged.
         /// </param>
-        /// <param name="onDisk">
-        /// If true, vectors are served from disk, improving RAM usage at the cost of latency
+        /// <param name="memory">
+        /// Memory placement of the original vector storage. Overrides the deprecated `on_disk` flag if both are set. `pinned` is not supported for dense vector storage.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -50,11 +59,11 @@ namespace Qdrant
         public VectorParamsDiff(
             global::Qdrant.HnswConfigDiff? hnswConfig,
             global::Qdrant.QuantizationConfigDiff? quantizationConfig,
-            bool? onDisk)
+            global::Qdrant.Memory? memory)
         {
             this.HnswConfig = hnswConfig;
             this.QuantizationConfig = quantizationConfig;
-            this.OnDisk = onDisk;
+            this.Memory = memory;
         }
 
         /// <summary>

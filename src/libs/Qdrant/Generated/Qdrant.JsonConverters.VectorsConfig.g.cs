@@ -31,6 +31,7 @@ namespace Qdrant.JsonConverters
             if (__jsonProps.Contains("datatype")) __score0++;
             if (__jsonProps.Contains("distance")) __score0++;
             if (__jsonProps.Contains("hnsw_config")) __score0++;
+            if (__jsonProps.Contains("memory")) __score0++;
             if (__jsonProps.Contains("multivector_config")) __score0++;
             if (__jsonProps.Contains("on_disk")) __score0++;
             if (__jsonProps.Contains("quantization_config")) __score0++;

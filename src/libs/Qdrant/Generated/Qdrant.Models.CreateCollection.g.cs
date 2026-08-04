@@ -1,4 +1,6 @@
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace Qdrant
@@ -48,12 +50,20 @@ namespace Qdrant
         public int? WriteConsistencyFactor { get; set; }
 
         /// <summary>
-        /// If true - point's payload will not be stored in memory. It will be read from the disk every time it is requested. This setting saves RAM by (slightly) increasing the response time. Note: those payload values that are involved in filtering and are indexed - remain in RAM.<br/>
+        /// Deprecated: use `payload.memory` instead. If true - point's payload will not be stored in memory. It will be read from the disk every time it is requested. This setting saves RAM by (slightly) increasing the response time. Note: those payload values that are involved in filtering and are indexed - remain in RAM.<br/>
         /// Default: true<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("on_disk_payload")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public bool? OnDiskPayload { get; set; }
+
+        /// <summary>
+        /// Configuration of the payload storage<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("payload")]
+        public global::Qdrant.PayloadStorageParams? Payload { get; set; }
 
         /// <summary>
         /// Custom params for HNSW index. If none - values from service configuration file are used.
@@ -130,9 +140,8 @@ namespace Qdrant
         /// Defines how many replicas should apply the operation for us to consider it successful. Increasing this number will make the collection more resilient to inconsistencies, but will also make it fail if not enough replicas are available. Does not have any performance impact.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
-        /// <param name="onDiskPayload">
-        /// If true - point's payload will not be stored in memory. It will be read from the disk every time it is requested. This setting saves RAM by (slightly) increasing the response time. Note: those payload values that are involved in filtering and are indexed - remain in RAM.<br/>
-        /// Default: true<br/>
+        /// <param name="payload">
+        /// Configuration of the payload storage<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
         /// <param name="hnswConfig">
@@ -166,7 +175,7 @@ namespace Qdrant
             global::Qdrant.ShardingMethod? shardingMethod,
             int? replicationFactor,
             int? writeConsistencyFactor,
-            bool? onDiskPayload,
+            global::Qdrant.PayloadStorageParams? payload,
             global::Qdrant.HnswConfigDiff? hnswConfig,
             global::Qdrant.WalConfigDiff? walConfig,
             global::Qdrant.OptimizersConfigDiff? optimizersConfig,
@@ -180,7 +189,7 @@ namespace Qdrant
             this.ShardingMethod = shardingMethod;
             this.ReplicationFactor = replicationFactor;
             this.WriteConsistencyFactor = writeConsistencyFactor;
-            this.OnDiskPayload = onDiskPayload;
+            this.Payload = payload;
             this.HnswConfig = hnswConfig;
             this.WalConfig = walConfig;
             this.OptimizersConfig = optimizersConfig;

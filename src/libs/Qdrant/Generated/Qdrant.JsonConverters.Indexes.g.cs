@@ -44,6 +44,7 @@ namespace Qdrant.JsonConverters
             if (__jsonProps.Contains("options.inline_storage")) __score1++;
             if (__jsonProps.Contains("options.m")) __score1++;
             if (__jsonProps.Contains("options.max_indexing_threads")) __score1++;
+            if (__jsonProps.Contains("options.memory")) __score1++;
             if (__jsonProps.Contains("options.on_disk")) __score1++;
             if (__jsonProps.Contains("options.payload_m")) __score1++;
             if (__jsonProps.Contains("type")) __score1++;

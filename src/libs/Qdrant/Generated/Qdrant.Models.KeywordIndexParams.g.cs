@@ -1,4 +1,6 @@
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace Qdrant
@@ -22,16 +24,29 @@ namespace Qdrant
         public bool? IsTenant { get; set; }
 
         /// <summary>
-        /// If true, store the index on disk. Default: false.
+        /// Deprecated: use `memory` instead. If true, store the index on disk. Default: false.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("on_disk")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public bool? OnDisk { get; set; }
+
+        /// <summary>
+        /// Memory placement of the index. Overrides the deprecated `on_disk` flag if both are set. Default: `pinned` (`cold` if `on_disk` is set to true).
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("memory")]
+        public global::Qdrant.Memory? Memory { get; set; }
 
         /// <summary>
         /// Enable HNSW graph building for this payload field. If true, builds additional HNSW links (Need payload_m &gt; 0). Default: true.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("enable_hnsw")]
         public bool? EnableHnsw { get; set; }
+
+        /// <summary>
+        /// If true, enable prefix matching (`match: { "prefix": ... }`) on this field. Default: false.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("prefix")]
+        public bool? Prefix { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -46,11 +61,14 @@ namespace Qdrant
         /// <param name="isTenant">
         /// If true - used for tenant optimization. Default: false.
         /// </param>
-        /// <param name="onDisk">
-        /// If true, store the index on disk. Default: false.
+        /// <param name="memory">
+        /// Memory placement of the index. Overrides the deprecated `on_disk` flag if both are set. Default: `pinned` (`cold` if `on_disk` is set to true).
         /// </param>
         /// <param name="enableHnsw">
         /// Enable HNSW graph building for this payload field. If true, builds additional HNSW links (Need payload_m &gt; 0). Default: true.
+        /// </param>
+        /// <param name="prefix">
+        /// If true, enable prefix matching (`match: { "prefix": ... }`) on this field. Default: false.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -58,13 +76,15 @@ namespace Qdrant
         public KeywordIndexParams(
             global::Qdrant.KeywordIndexType type,
             bool? isTenant,
-            bool? onDisk,
-            bool? enableHnsw)
+            global::Qdrant.Memory? memory,
+            bool? enableHnsw,
+            bool? prefix)
         {
             this.Type = type;
             this.IsTenant = isTenant;
-            this.OnDisk = onDisk;
+            this.Memory = memory;
             this.EnableHnsw = enableHnsw;
+            this.Prefix = prefix;
         }
 
         /// <summary>

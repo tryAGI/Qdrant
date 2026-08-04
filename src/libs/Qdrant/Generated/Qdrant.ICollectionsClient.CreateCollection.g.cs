@@ -1,5 +1,7 @@
 #nullable enable
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 namespace Qdrant
 {
     public partial interface ICollectionsClient
@@ -67,9 +69,8 @@ namespace Qdrant
         /// Defines how many replicas should apply the operation for us to consider it successful. Increasing this number will make the collection more resilient to inconsistencies, but will also make it fail if not enough replicas are available. Does not have any performance impact.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
-        /// <param name="onDiskPayload">
-        /// If true - point's payload will not be stored in memory. It will be read from the disk every time it is requested. This setting saves RAM by (slightly) increasing the response time. Note: those payload values that are involved in filtering and are indexed - remain in RAM.<br/>
-        /// Default: true<br/>
+        /// <param name="payload">
+        /// Configuration of the payload storage<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
         /// <param name="hnswConfig">
@@ -105,7 +106,7 @@ namespace Qdrant
             global::Qdrant.ShardingMethod? shardingMethod = default,
             int? replicationFactor = default,
             int? writeConsistencyFactor = default,
-            bool? onDiskPayload = default,
+            global::Qdrant.PayloadStorageParams? payload = default,
             global::Qdrant.HnswConfigDiff? hnswConfig = default,
             global::Qdrant.WalConfigDiff? walConfig = default,
             global::Qdrant.OptimizersConfigDiff? optimizersConfig = default,

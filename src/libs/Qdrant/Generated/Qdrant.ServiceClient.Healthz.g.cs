@@ -41,7 +41,7 @@ namespace Qdrant
 
         /// <summary>
         /// Kubernetes healthz endpoint<br/>
-        /// An endpoint for health checking used in Kubernetes.
+        /// Liveness-style health check. Returns 200 as soon as the HTTP API is serving requests. It does not inspect collections, shards or consensus state, and is identical to `/livez`. Use it only to detect whether the process is up and responsive.
         /// </summary>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -59,7 +59,7 @@ namespace Qdrant
         }
         /// <summary>
         /// Kubernetes healthz endpoint<br/>
-        /// An endpoint for health checking used in Kubernetes.
+        /// Liveness-style health check. Returns 200 as soon as the HTTP API is serving requests. It does not inspect collections, shards or consensus state, and is identical to `/livez`. Use it only to detect whether the process is up and responsive.
         /// </summary>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>

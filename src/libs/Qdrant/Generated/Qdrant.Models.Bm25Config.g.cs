@@ -37,7 +37,7 @@ namespace Qdrant
         public global::Qdrant.TokenizerType? Tokenizer { get; set; }
 
         /// <summary>
-        /// Defines which language to use for text preprocessing. This parameter is used to construct default stopwords filter and stemmer. To disable language-specific processing, set this to `"language": "none"`. If not specified, English is assumed.
+        /// Defines which language to use for text preprocessing. This parameter is used to construct default stopwords filter and stemmer. To disable language-specific processing, set `stemmer` to `{"type": "none"}` and configure an empty stopword set. The legacy `"language": "none"` hack is deprecated and may be rejected in a future release. If not specified, English is assumed.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("language")]
         public string? Language { get; set; }
@@ -101,7 +101,7 @@ namespace Qdrant
         /// </param>
         /// <param name="tokenizer"></param>
         /// <param name="language">
-        /// Defines which language to use for text preprocessing. This parameter is used to construct default stopwords filter and stemmer. To disable language-specific processing, set this to `"language": "none"`. If not specified, English is assumed.
+        /// Defines which language to use for text preprocessing. This parameter is used to construct default stopwords filter and stemmer. To disable language-specific processing, set `stemmer` to `{"type": "none"}` and configure an empty stopword set. The legacy `"language": "none"` hack is deprecated and may be rejected in a future release. If not specified, English is assumed.
         /// </param>
         /// <param name="lowercase">
         /// Lowercase the text before tokenization. Default is `true`.

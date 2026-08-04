@@ -217,6 +217,11 @@ namespace Qdrant
         public PointsClient Points { get; }
 
         /// <summary>
+        /// Cluster-wide resource quotas.
+        /// </summary>
+        public QuotasClient Quotas { get; }
+
+        /// <summary>
         /// Find points in a collection.
         /// </summary>
         public SearchClient Search { get; }
