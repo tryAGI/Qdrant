@@ -46,6 +46,7 @@ namespace Qdrant.JsonConverters
             if (__jsonProps.Contains("optimizers_status")) __score1++;
             if (__jsonProps.Contains("params")) __score1++;
             if (__jsonProps.Contains("params.on_disk_payload")) __score1++;
+            if (__jsonProps.Contains("params.payload")) __score1++;
             if (__jsonProps.Contains("params.read_fan_out_delay_ms")) __score1++;
             if (__jsonProps.Contains("params.read_fan_out_factor")) __score1++;
             if (__jsonProps.Contains("params.replication_factor")) __score1++;

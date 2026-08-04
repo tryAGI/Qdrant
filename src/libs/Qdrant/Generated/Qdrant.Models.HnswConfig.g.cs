@@ -1,4 +1,6 @@
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace Qdrant
@@ -37,10 +39,17 @@ namespace Qdrant
         public int? MaxIndexingThreads { get; set; }
 
         /// <summary>
-        /// Store HNSW index on disk. If set to false, index will be stored in RAM. Default: false
+        /// Deprecated: use `memory` instead. Store HNSW index on disk. If set to false, index will be stored in RAM. Default: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("on_disk")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public bool? OnDisk { get; set; }
+
+        /// <summary>
+        /// Memory placement of the HNSW graph. Overrides the deprecated `on_disk` flag if both are set. Default: `cached` (`cold` if `on_disk` is set to true).
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("memory")]
+        public global::Qdrant.Memory? Memory { get; set; }
 
         /// <summary>
         /// Custom M param for hnsw graph built for payload index. If not set, default M will be used.
@@ -76,8 +85,8 @@ namespace Qdrant
         /// Number of parallel threads used for background index building. If 0 - automatically select from 8 to 16. Best to keep between 8 and 16 to prevent likelihood of slow building or broken/inefficient HNSW graphs. On small CPUs, less threads are used.<br/>
         /// Default Value: 0
         /// </param>
-        /// <param name="onDisk">
-        /// Store HNSW index on disk. If set to false, index will be stored in RAM. Default: false
+        /// <param name="memory">
+        /// Memory placement of the HNSW graph. Overrides the deprecated `on_disk` flag if both are set. Default: `cached` (`cold` if `on_disk` is set to true).
         /// </param>
         /// <param name="payloadM">
         /// Custom M param for hnsw graph built for payload index. If not set, default M will be used.
@@ -93,7 +102,7 @@ namespace Qdrant
             int efConstruct,
             int fullScanThreshold,
             int? maxIndexingThreads,
-            bool? onDisk,
+            global::Qdrant.Memory? memory,
             int? payloadM,
             bool? inlineStorage)
         {
@@ -101,7 +110,7 @@ namespace Qdrant
             this.EfConstruct = efConstruct;
             this.FullScanThreshold = fullScanThreshold;
             this.MaxIndexingThreads = maxIndexingThreads;
-            this.OnDisk = onDisk;
+            this.Memory = memory;
             this.PayloadM = payloadM;
             this.InlineStorage = inlineStorage;
         }

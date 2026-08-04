@@ -1,4 +1,6 @@
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace Qdrant
@@ -58,12 +60,19 @@ namespace Qdrant
         public int? ReadFanOutDelayMs { get; set; }
 
         /// <summary>
-        /// If true - point's payload will not be stored in memory. It will be read from the disk every time it is requested. This setting saves RAM by (slightly) increasing the response time. Note: those payload values that are involved in filtering and are indexed - remain in RAM.<br/>
+        /// Deprecated: use `payload.memory` instead. If true - point's payload will not be stored in memory. It will be read from the disk every time it is requested. This setting saves RAM by (slightly) increasing the response time. Note: those payload values that are involved in filtering and are indexed - remain in RAM.<br/>
         /// Default: true<br/>
         /// Default Value: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("on_disk_payload")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public bool? OnDiskPayload { get; set; }
+
+        /// <summary>
+        /// Configuration of the payload storage
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("payload")]
+        public global::Qdrant.PayloadStorageParams? Payload { get; set; }
 
         /// <summary>
         /// Configuration of the sparse vector storage
@@ -107,10 +116,8 @@ namespace Qdrant
         /// <param name="readFanOutDelayMs">
         /// Define number of milliseconds to wait before attempting to read from another replica. This setting can help to reduce latency spikes in case of occasional slow replicas. Default is 0, which means delayed fan out request is disabled.
         /// </param>
-        /// <param name="onDiskPayload">
-        /// If true - point's payload will not be stored in memory. It will be read from the disk every time it is requested. This setting saves RAM by (slightly) increasing the response time. Note: those payload values that are involved in filtering and are indexed - remain in RAM.<br/>
-        /// Default: true<br/>
-        /// Default Value: true
+        /// <param name="payload">
+        /// Configuration of the payload storage
         /// </param>
         /// <param name="sparseVectors">
         /// Configuration of the sparse vector storage
@@ -126,7 +133,7 @@ namespace Qdrant
             int? writeConsistencyFactor,
             int? readFanOutFactor,
             int? readFanOutDelayMs,
-            bool? onDiskPayload,
+            global::Qdrant.PayloadStorageParams? payload,
             global::System.Collections.Generic.Dictionary<string, global::Qdrant.SparseVectorParams>? sparseVectors)
         {
             this.Vectors = vectors;
@@ -136,7 +143,7 @@ namespace Qdrant
             this.WriteConsistencyFactor = writeConsistencyFactor;
             this.ReadFanOutFactor = readFanOutFactor;
             this.ReadFanOutDelayMs = readFanOutDelayMs;
-            this.OnDiskPayload = onDiskPayload;
+            this.Payload = payload;
             this.SparseVectors = sparseVectors;
         }
 

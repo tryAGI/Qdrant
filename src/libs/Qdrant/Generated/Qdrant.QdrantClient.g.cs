@@ -236,6 +236,15 @@ namespace Qdrant
         };
 
         /// <summary>
+        /// Cluster-wide resource quotas.
+        /// </summary>
+        public QuotasClient Quotas => new QuotasClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
         /// Find points in a collection.
         /// </summary>
         public SearchClient Search => new SearchClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)

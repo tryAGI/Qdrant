@@ -41,6 +41,12 @@ namespace Qdrant
         public global::Qdrant.AcornSearchParams? Acorn { get; set; }
 
         /// <summary>
+        /// Which population sparse vector IDF statistics are computed over. By default (or with explicit `"global"`) statistics are collection-wide. Only applicable to sparse vectors with the IDF modifier enabled.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("idf")]
+        public global::Qdrant.IdfParams? Idf { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -66,6 +72,9 @@ namespace Qdrant
         /// <param name="acorn">
         /// ACORN search params
         /// </param>
+        /// <param name="idf">
+        /// Which population sparse vector IDF statistics are computed over. By default (or with explicit `"global"`) statistics are collection-wide. Only applicable to sparse vectors with the IDF modifier enabled.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -74,13 +83,15 @@ namespace Qdrant
             bool? exact,
             global::Qdrant.QuantizationSearchParams? quantization,
             bool? indexedOnly,
-            global::Qdrant.AcornSearchParams? acorn)
+            global::Qdrant.AcornSearchParams? acorn,
+            global::Qdrant.IdfParams? idf)
         {
             this.HnswEf = hnswEf;
             this.Exact = exact;
             this.Quantization = quantization;
             this.IndexedOnly = indexedOnly;
             this.Acorn = acorn;
+            this.Idf = idf;
         }
 
         /// <summary>

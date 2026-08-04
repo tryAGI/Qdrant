@@ -30,6 +30,13 @@ namespace Qdrant
         public global::Qdrant.VectorStorageDatatype? Datatype { get; set; }
 
         /// <summary>
+        /// Requested memory placement of the index.<br/>
+        /// The structural decision is carried by `index_type`; this field additionally distinguishes `cold` from `cached` for the mmap index variant.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("memory")]
+        public global::Qdrant.Memory? Memory { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -48,17 +55,23 @@ namespace Qdrant
         /// <param name="datatype">
         /// Datatype used to store weights in the index.
         /// </param>
+        /// <param name="memory">
+        /// Requested memory placement of the index.<br/>
+        /// The structural decision is carried by `index_type`; this field additionally distinguishes `cold` from `cached` for the mmap index variant.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public SparseIndexConfig(
             global::Qdrant.SparseIndexType indexType,
             int? fullScanThreshold,
-            global::Qdrant.VectorStorageDatatype? datatype)
+            global::Qdrant.VectorStorageDatatype? datatype,
+            global::Qdrant.Memory? memory)
         {
             this.FullScanThreshold = fullScanThreshold;
             this.IndexType = indexType;
             this.Datatype = datatype;
+            this.Memory = memory;
         }
 
         /// <summary>

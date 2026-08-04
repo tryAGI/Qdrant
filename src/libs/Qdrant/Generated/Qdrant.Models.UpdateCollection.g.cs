@@ -52,7 +52,7 @@ namespace Qdrant
         public global::Qdrant.StrictModeConfig? StrictModeConfig { get; set; }
 
         /// <summary>
-        /// Metadata to update for the collection. If provided, this will merge with existing metadata. To remove metadata, set it to an empty object.
+        /// Metadata to update for the collection. If provided, this will merge with existing metadata. Individual keys can be removed by setting their value to `null`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
         public global::Qdrant.Payload? Metadata { get; set; }
@@ -87,7 +87,7 @@ namespace Qdrant
         /// </param>
         /// <param name="strictModeConfig"></param>
         /// <param name="metadata">
-        /// Metadata to update for the collection. If provided, this will merge with existing metadata. To remove metadata, set it to an empty object.
+        /// Metadata to update for the collection. If provided, this will merge with existing metadata. Individual keys can be removed by setting their value to `null`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

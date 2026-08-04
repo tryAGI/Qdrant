@@ -25,6 +25,10 @@ namespace Qdrant
 
             typeof(global::Qdrant.JsonConverters.DistanceNullableJsonConverter),
 
+            typeof(global::Qdrant.JsonConverters.MemoryJsonConverter),
+
+            typeof(global::Qdrant.JsonConverters.MemoryNullableJsonConverter),
+
             typeof(global::Qdrant.JsonConverters.ScalarTypeJsonConverter),
 
             typeof(global::Qdrant.JsonConverters.ScalarTypeNullableJsonConverter),
@@ -97,6 +101,10 @@ namespace Qdrant
 
             typeof(global::Qdrant.JsonConverters.SnowballLanguageNullableJsonConverter),
 
+            typeof(global::Qdrant.JsonConverters.NoStemmerJsonConverter),
+
+            typeof(global::Qdrant.JsonConverters.NoStemmerNullableJsonConverter),
+
             typeof(global::Qdrant.JsonConverters.BoolIndexTypeJsonConverter),
 
             typeof(global::Qdrant.JsonConverters.BoolIndexTypeNullableJsonConverter),
@@ -112,10 +120,6 @@ namespace Qdrant
             typeof(global::Qdrant.JsonConverters.UpdateStatusJsonConverter),
 
             typeof(global::Qdrant.JsonConverters.UpdateStatusNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.RecommendStrategyJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.RecommendStrategyNullableJsonConverter),
 
             typeof(global::Qdrant.JsonConverters.DirectionJsonConverter),
 
@@ -188,6 +192,10 @@ namespace Qdrant
             typeof(global::Qdrant.JsonConverters.SegmentTypeJsonConverter),
 
             typeof(global::Qdrant.JsonConverters.SegmentTypeNullableJsonConverter),
+
+            typeof(global::Qdrant.JsonConverters.IoBackendJsonConverter),
+
+            typeof(global::Qdrant.JsonConverters.IoBackendNullableJsonConverter),
 
             typeof(global::Qdrant.JsonConverters.VectorStorageTypeVariant1JsonConverter),
 
@@ -273,6 +281,10 @@ namespace Qdrant
 
             typeof(global::Qdrant.JsonConverters.ReadConsistencyTypeNullableJsonConverter),
 
+            typeof(global::Qdrant.JsonConverters.RecommendStrategyJsonConverter),
+
+            typeof(global::Qdrant.JsonConverters.RecommendStrategyNullableJsonConverter),
+
             typeof(global::Qdrant.JsonConverters.FusionJsonConverter),
 
             typeof(global::Qdrant.JsonConverters.FusionNullableJsonConverter),
@@ -280,6 +292,10 @@ namespace Qdrant
             typeof(global::Qdrant.JsonConverters.SampleJsonConverter),
 
             typeof(global::Qdrant.JsonConverters.SampleNullableJsonConverter),
+
+            typeof(global::Qdrant.JsonConverters.IdfScopeJsonConverter),
+
+            typeof(global::Qdrant.JsonConverters.IdfScopeNullableJsonConverter),
 
             typeof(global::Qdrant.JsonConverters.DisabledTypeJsonConverter),
 
@@ -319,8 +335,6 @@ namespace Qdrant
 
             typeof(global::Qdrant.JsonConverters.OrderValueJsonConverter),
 
-            typeof(global::Qdrant.JsonConverters.NamedVectorStructJsonConverter),
-
             typeof(global::Qdrant.JsonConverters.ConditionJsonConverter),
 
             typeof(global::Qdrant.JsonConverters.ValueVariantsJsonConverter),
@@ -328,10 +342,6 @@ namespace Qdrant
             typeof(global::Qdrant.JsonConverters.AnyVariantsJsonConverter),
 
             typeof(global::Qdrant.JsonConverters.RangeInterfaceJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.RecommendExampleJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.UsingVectorJsonConverter),
 
             typeof(global::Qdrant.JsonConverters.OrderByInterfaceJsonConverter),
 
@@ -385,8 +395,6 @@ namespace Qdrant
 
             typeof(global::Qdrant.JsonConverters.GroupIdJsonConverter),
 
-            typeof(global::Qdrant.JsonConverters.WithLookupInterfaceJsonConverter),
-
             typeof(global::Qdrant.JsonConverters.UpdateOperationJsonConverter),
 
             typeof(global::Qdrant.JsonConverters.ShardSnapshotLocationJsonConverter),
@@ -402,6 +410,10 @@ namespace Qdrant
             typeof(global::Qdrant.JsonConverters.ExpressionJsonConverter),
 
             typeof(global::Qdrant.JsonConverters.FeedbackStrategyJsonConverter),
+
+            typeof(global::Qdrant.JsonConverters.IdfParamsJsonConverter),
+
+            typeof(global::Qdrant.JsonConverters.WithLookupInterfaceJsonConverter),
 
             typeof(global::Qdrant.JsonConverters.FacetValueJsonConverter),
 
@@ -458,12 +470,14 @@ namespace Qdrant
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.VectorsConfig), TypeInfoPropertyName = "VectorsConfig2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.ShardingMethod))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(bool))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.PayloadStorageParams))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, global::Qdrant.SparseVectorParams>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.SparseVectorParams))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.VectorParams))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, global::Qdrant.VectorParams>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.Distance), TypeInfoPropertyName = "Distance2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.HnswConfigDiff))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.Memory))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.Datatype))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.MultiVectorConfig))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.ScalarQuantization))]
@@ -511,8 +525,10 @@ namespace Qdrant
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Qdrant.Language>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<string>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.SnowballParams))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.DisabledStemmerParams))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.SnowballType), TypeInfoPropertyName = "SnowballType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.SnowballLanguage), TypeInfoPropertyName = "SnowballLanguage2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.NoStemmer), TypeInfoPropertyName = "NoStemmer2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.BoolIndexType), TypeInfoPropertyName = "BoolIndexType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.DatetimeIndexType), TypeInfoPropertyName = "DatetimeIndexType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.UuidIndexType), TypeInfoPropertyName = "UuidIndexType2")]
@@ -538,12 +554,12 @@ namespace Qdrant
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.SparseVector))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<int>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(long))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.SearchRequest))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.NamedVectorStruct), TypeInfoPropertyName = "NamedVectorStruct2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.ScoredPoint))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.UpdateResult))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.UpdateStatus), TypeInfoPropertyName = "UpdateStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.ScrollRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.Filter))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.SearchParams))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.NamedVector))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.NamedSparseVector))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.OrderByInterface))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.AnyOf<global::Qdrant.Condition?, global::System.Collections.Generic.IList<global::Qdrant.Condition>, object>), TypeInfoPropertyName = "AnyOfConditionIListConditionObject2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.Condition), TypeInfoPropertyName = "Condition2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Qdrant.Condition>))]
@@ -553,6 +569,7 @@ namespace Qdrant
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.IsNullCondition))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.HasIdCondition))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.HasVectorCondition))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.SliceCondition))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.NestedCondition))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.MatchCondition))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.RangeInterface))]
@@ -565,6 +582,7 @@ namespace Qdrant
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.MatchText))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.MatchTextAny))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.MatchPhrase))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.MatchPrefix))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.MatchAny))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.AnyVariants), TypeInfoPropertyName = "AnyVariants2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<long>))]
@@ -577,20 +595,8 @@ namespace Qdrant
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Qdrant.GeoLineString>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Qdrant.GeoPoint>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.PayloadField))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.Slice))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.Nested))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.QuantizationSearchParams))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.AcornSearchParams))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.ScoredPoint))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.UpdateResult))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.UpdateStatus), TypeInfoPropertyName = "UpdateStatus2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.RecommendRequest))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Qdrant.RecommendExample>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.RecommendExample), TypeInfoPropertyName = "RecommendExample2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.RecommendStrategy))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.UsingVector))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.LookupLocation))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.ScrollRequest))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.OrderByInterface))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.OrderBy))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.Direction))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.StartFrom))]
@@ -691,6 +697,7 @@ namespace Qdrant
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.MemoryTelemetry))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.HardwareTelemetry))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.SearchThreadPoolTelemetry))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.QuotaTelemetry))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.AppFeaturesTelemetry))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.FeatureFlags))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.LowMemoryMode))]
@@ -733,6 +740,7 @@ namespace Qdrant
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.SegmentType), TypeInfoPropertyName = "SegmentType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, global::Qdrant.VectorDataInfo>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.VectorDataInfo))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.IoBackend))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, global::Qdrant.VectorDataConfig>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.VectorDataConfig))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, global::Qdrant.SparseVectorDataConfig>))]
@@ -789,6 +797,8 @@ namespace Qdrant
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.Dictionary<string, global::Qdrant.OperationDurationStatistics>>>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, global::Qdrant.HardwareUsage>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.HardwareUsage))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.QuotaConfig))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.QuotaExceeded))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.ClusterOperations), TypeInfoPropertyName = "ClusterOperations2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.MoveShardOperation))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.ReplicateShardOperation))]
@@ -810,10 +820,6 @@ namespace Qdrant
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.StartResharding))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.AbortResharding))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.ReplicatePoints))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.SearchRequestBatch))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Qdrant.SearchRequest>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.RecommendRequestBatch))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Qdrant.RecommendRequest>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.SnapshotRecover))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.SnapshotPriority))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.CollectionsAliasesResponse))]
@@ -829,10 +835,6 @@ namespace Qdrant
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.PointGroup))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Qdrant.ScoredPoint>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.GroupId), TypeInfoPropertyName = "GroupId2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.SearchGroupsRequest))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.WithLookupInterface))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.WithLookup))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.RecommendGroupsRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.GroupsResult))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Qdrant.PointGroup>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.UpdateOperations))]
@@ -848,11 +850,6 @@ namespace Qdrant
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.DeleteVectorsOperation))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.ShardSnapshotRecover))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.ShardSnapshotLocation), TypeInfoPropertyName = "ShardSnapshotLocation2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.DiscoverRequest))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Qdrant.ContextExamplePair>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.ContextExamplePair))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.DiscoverRequestBatch))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Qdrant.DiscoverRequest>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.VersionInfo))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.CollectionExistence))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.QueryRequest))]
@@ -860,6 +857,8 @@ namespace Qdrant
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.Prefetch2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Qdrant.Prefetch2>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.QueryInterface))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.SearchParams))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.LookupLocation))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.VectorInput), TypeInfoPropertyName = "VectorInput2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.Query), TypeInfoPropertyName = "Query2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.NearestQuery))]
@@ -875,6 +874,7 @@ namespace Qdrant
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.Mmr))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.RecommendInput))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Qdrant.VectorInput>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.RecommendStrategy))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.DiscoverInput))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.AnyOf<global::Qdrant.ContextPair, global::System.Collections.Generic.IList<global::Qdrant.ContextPair>, object>), TypeInfoPropertyName = "AnyOfContextPairIListContextPairObject2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.ContextPair))]
@@ -911,10 +911,17 @@ namespace Qdrant
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.FeedbackStrategy), TypeInfoPropertyName = "FeedbackStrategy2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.NaiveFeedbackStrategy))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.NaiveFeedbackStrategyParams))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.QuantizationSearchParams))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.AcornSearchParams))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.IdfParams))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.IdfScope), TypeInfoPropertyName = "IdfScope2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.IdfCorpusParams))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.QueryRequestBatch))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Qdrant.QueryRequest>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.QueryResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.QueryGroupsRequest))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.WithLookupInterface))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.WithLookup))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.SearchMatrixRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.SearchMatrixOffsetsResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.SearchMatrixPairsResponse))]
@@ -925,6 +932,11 @@ namespace Qdrant
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Qdrant.FacetValueHit>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.FacetValueHit))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.FacetValue), TypeInfoPropertyName = "FacetValue2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.Usage))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.InferenceUsage))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, global::Qdrant.ModelUsage>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.ModelUsage))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.ShardKeysResponse))]
     internal sealed partial class SourceGenerationContextChunk0 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -947,6 +959,10 @@ namespace Qdrant
             typeof(global::Qdrant.JsonConverters.DistanceJsonConverter),
 
             typeof(global::Qdrant.JsonConverters.DistanceNullableJsonConverter),
+
+            typeof(global::Qdrant.JsonConverters.MemoryJsonConverter),
+
+            typeof(global::Qdrant.JsonConverters.MemoryNullableJsonConverter),
 
             typeof(global::Qdrant.JsonConverters.ScalarTypeJsonConverter),
 
@@ -1020,6 +1036,10 @@ namespace Qdrant
 
             typeof(global::Qdrant.JsonConverters.SnowballLanguageNullableJsonConverter),
 
+            typeof(global::Qdrant.JsonConverters.NoStemmerJsonConverter),
+
+            typeof(global::Qdrant.JsonConverters.NoStemmerNullableJsonConverter),
+
             typeof(global::Qdrant.JsonConverters.BoolIndexTypeJsonConverter),
 
             typeof(global::Qdrant.JsonConverters.BoolIndexTypeNullableJsonConverter),
@@ -1035,10 +1055,6 @@ namespace Qdrant
             typeof(global::Qdrant.JsonConverters.UpdateStatusJsonConverter),
 
             typeof(global::Qdrant.JsonConverters.UpdateStatusNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.RecommendStrategyJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.RecommendStrategyNullableJsonConverter),
 
             typeof(global::Qdrant.JsonConverters.DirectionJsonConverter),
 
@@ -1111,6 +1127,10 @@ namespace Qdrant
             typeof(global::Qdrant.JsonConverters.SegmentTypeJsonConverter),
 
             typeof(global::Qdrant.JsonConverters.SegmentTypeNullableJsonConverter),
+
+            typeof(global::Qdrant.JsonConverters.IoBackendJsonConverter),
+
+            typeof(global::Qdrant.JsonConverters.IoBackendNullableJsonConverter),
 
             typeof(global::Qdrant.JsonConverters.VectorStorageTypeVariant1JsonConverter),
 
@@ -1196,6 +1216,10 @@ namespace Qdrant
 
             typeof(global::Qdrant.JsonConverters.ReadConsistencyTypeNullableJsonConverter),
 
+            typeof(global::Qdrant.JsonConverters.RecommendStrategyJsonConverter),
+
+            typeof(global::Qdrant.JsonConverters.RecommendStrategyNullableJsonConverter),
+
             typeof(global::Qdrant.JsonConverters.FusionJsonConverter),
 
             typeof(global::Qdrant.JsonConverters.FusionNullableJsonConverter),
@@ -1203,6 +1227,10 @@ namespace Qdrant
             typeof(global::Qdrant.JsonConverters.SampleJsonConverter),
 
             typeof(global::Qdrant.JsonConverters.SampleNullableJsonConverter),
+
+            typeof(global::Qdrant.JsonConverters.IdfScopeJsonConverter),
+
+            typeof(global::Qdrant.JsonConverters.IdfScopeNullableJsonConverter),
 
             typeof(global::Qdrant.JsonConverters.DisabledTypeJsonConverter),
 
@@ -1242,8 +1270,6 @@ namespace Qdrant
 
             typeof(global::Qdrant.JsonConverters.OrderValueJsonConverter),
 
-            typeof(global::Qdrant.JsonConverters.NamedVectorStructJsonConverter),
-
             typeof(global::Qdrant.JsonConverters.ConditionJsonConverter),
 
             typeof(global::Qdrant.JsonConverters.ValueVariantsJsonConverter),
@@ -1251,10 +1277,6 @@ namespace Qdrant
             typeof(global::Qdrant.JsonConverters.AnyVariantsJsonConverter),
 
             typeof(global::Qdrant.JsonConverters.RangeInterfaceJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.RecommendExampleJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.UsingVectorJsonConverter),
 
             typeof(global::Qdrant.JsonConverters.OrderByInterfaceJsonConverter),
 
@@ -1308,8 +1330,6 @@ namespace Qdrant
 
             typeof(global::Qdrant.JsonConverters.GroupIdJsonConverter),
 
-            typeof(global::Qdrant.JsonConverters.WithLookupInterfaceJsonConverter),
-
             typeof(global::Qdrant.JsonConverters.UpdateOperationJsonConverter),
 
             typeof(global::Qdrant.JsonConverters.ShardSnapshotLocationJsonConverter),
@@ -1325,6 +1345,10 @@ namespace Qdrant
             typeof(global::Qdrant.JsonConverters.ExpressionJsonConverter),
 
             typeof(global::Qdrant.JsonConverters.FeedbackStrategyJsonConverter),
+
+            typeof(global::Qdrant.JsonConverters.IdfParamsJsonConverter),
+
+            typeof(global::Qdrant.JsonConverters.WithLookupInterfaceJsonConverter),
 
             typeof(global::Qdrant.JsonConverters.FacetValueJsonConverter),
 
@@ -1348,11 +1372,6 @@ namespace Qdrant
 
             typeof(global::Qdrant.JsonConverters.UnixTimestampJsonConverter),
         })]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.Usage))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.InferenceUsage))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, global::Qdrant.ModelUsage>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.ModelUsage))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.ShardKeysResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Qdrant.ShardKeyDescription>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.ShardKeyDescription))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.OptimizationsResponse))]
@@ -1381,6 +1400,10 @@ namespace Qdrant
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.SparseVectorNameConfig))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.DenseVectorConfig))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.SparseVectorConfig))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.QuotaStatus))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.QuotaUsage))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, global::Qdrant.PeerQuotaUsage>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.PeerQuotaUsage))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.RecoverFromUploadedSnapshotRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(byte[]))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.RecoverShardFromUploadedSnapshotRequest))]
@@ -1393,6 +1416,8 @@ namespace Qdrant
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.ClusterTelemetryResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.RecoverCurrentPeerResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.RemovePeerResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.GetQuotasResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.UpdateQuotasResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.GetCollectionsResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.GetCollectionResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.CreateCollectionResponse))]
@@ -1446,15 +1471,6 @@ namespace Qdrant
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.BatchUpdateResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Qdrant.UpdateResult>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.ScrollPointsResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.SearchPointsResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.SearchBatchPointsResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::Qdrant.ScoredPoint>>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.SearchPointGroupsResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.RecommendPointsResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.RecommendBatchPointsResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.RecommendPointGroupsResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.DiscoverPointsResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.DiscoverBatchPointsResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.CountPointsResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.FacetResponse2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.QueryPointsResponse))]
@@ -1485,6 +1501,7 @@ namespace Qdrant
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.Language?), TypeInfoPropertyName = "NullableLanguage2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.SnowballType?), TypeInfoPropertyName = "NullableSnowballType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.SnowballLanguage?), TypeInfoPropertyName = "NullableSnowballLanguage2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.NoStemmer?), TypeInfoPropertyName = "NullableNoStemmer2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.BoolIndexType?), TypeInfoPropertyName = "NullableBoolIndexType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.DatetimeIndexType?), TypeInfoPropertyName = "NullableDatetimeIndexType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.UuidIndexType?), TypeInfoPropertyName = "NullableUuidIndexType2")]
@@ -1495,14 +1512,12 @@ namespace Qdrant
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.PayloadSelector?), TypeInfoPropertyName = "NullablePayloadSelector2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.VectorOutput?), TypeInfoPropertyName = "NullableVectorOutput2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(long?))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.NamedVectorStruct?), TypeInfoPropertyName = "NullableNamedVectorStruct2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.UpdateStatus?), TypeInfoPropertyName = "NullableUpdateStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.AnyOf<global::Qdrant.Condition?, global::System.Collections.Generic.IList<global::Qdrant.Condition>, object>?), TypeInfoPropertyName = "NullableAnyOfConditionIListConditionObject2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.Condition?), TypeInfoPropertyName = "NullableCondition2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.ValueVariants?), TypeInfoPropertyName = "NullableValueVariants2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.AnyVariants?), TypeInfoPropertyName = "NullableAnyVariants2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.DateTime?))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.UpdateStatus?), TypeInfoPropertyName = "NullableUpdateStatus2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.RecommendExample?), TypeInfoPropertyName = "NullableRecommendExample2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.MaxOptimizationThreadsSetting?), TypeInfoPropertyName = "NullableMaxOptimizationThreadsSetting2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.DisabledType?), TypeInfoPropertyName = "NullableDisabledType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.AliasOperations?), TypeInfoPropertyName = "NullableAliasOperations2")]
@@ -1565,6 +1580,7 @@ namespace Qdrant
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.Expression?), TypeInfoPropertyName = "NullableExpression2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.Sample?), TypeInfoPropertyName = "NullableSample2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.FeedbackStrategy?), TypeInfoPropertyName = "NullableFeedbackStrategy2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.IdfScope?), TypeInfoPropertyName = "NullableIdfScope2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.FacetValue?), TypeInfoPropertyName = "NullableFacetValue2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.VectorNameConfig?), TypeInfoPropertyName = "NullableVectorNameConfig2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Qdrant.CollectionDescription>))]
@@ -1581,7 +1597,6 @@ namespace Qdrant
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<long>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Qdrant.GeoLineString>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Qdrant.GeoPoint>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Qdrant.RecommendExample>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Qdrant.Record>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Qdrant.AliasOperations>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Qdrant.Payload>))]
@@ -1606,15 +1621,11 @@ namespace Qdrant
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Qdrant.PayloadIndexTelemetry>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Qdrant.TrackerTelemetry>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::System.Guid>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Qdrant.SearchRequest>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Qdrant.RecommendRequest>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Qdrant.AliasDescription>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Qdrant.PointVectors>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Qdrant.ScoredPoint>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Qdrant.PointGroup>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Qdrant.UpdateOperation>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Qdrant.ContextExamplePair>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Qdrant.DiscoverRequest>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.AnyOf<global::Qdrant.Prefetch2, global::System.Collections.Generic.List<global::Qdrant.Prefetch2>, object>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Qdrant.Prefetch2>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Qdrant.VectorInput>))]
@@ -1634,7 +1645,6 @@ namespace Qdrant
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Qdrant.DistributedReplicaTelemetry>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Qdrant.SnapshotDescription>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Qdrant.UpdateResult>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::System.Collections.Generic.List<global::Qdrant.ScoredPoint>>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Qdrant.QueryResponse>))]
     internal sealed partial class SourceGenerationContextChunk1 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
@@ -1684,6 +1694,8 @@ namespace Qdrant
             options.Converters.Add(new global::Qdrant.JsonConverters.OptimizersStatusEnumNullableJsonConverter());
             options.Converters.Add(new global::Qdrant.JsonConverters.DistanceJsonConverter());
             options.Converters.Add(new global::Qdrant.JsonConverters.DistanceNullableJsonConverter());
+            options.Converters.Add(new global::Qdrant.JsonConverters.MemoryJsonConverter());
+            options.Converters.Add(new global::Qdrant.JsonConverters.MemoryNullableJsonConverter());
             options.Converters.Add(new global::Qdrant.JsonConverters.ScalarTypeJsonConverter());
             options.Converters.Add(new global::Qdrant.JsonConverters.ScalarTypeNullableJsonConverter());
             options.Converters.Add(new global::Qdrant.JsonConverters.CompressionRatioJsonConverter());
@@ -1720,6 +1732,8 @@ namespace Qdrant
             options.Converters.Add(new global::Qdrant.JsonConverters.LanguageNullableJsonConverter());
             options.Converters.Add(new global::Qdrant.JsonConverters.SnowballLanguageJsonConverter());
             options.Converters.Add(new global::Qdrant.JsonConverters.SnowballLanguageNullableJsonConverter());
+            options.Converters.Add(new global::Qdrant.JsonConverters.NoStemmerJsonConverter());
+            options.Converters.Add(new global::Qdrant.JsonConverters.NoStemmerNullableJsonConverter());
             options.Converters.Add(new global::Qdrant.JsonConverters.BoolIndexTypeJsonConverter());
             options.Converters.Add(new global::Qdrant.JsonConverters.BoolIndexTypeNullableJsonConverter());
             options.Converters.Add(new global::Qdrant.JsonConverters.DatetimeIndexTypeJsonConverter());
@@ -1728,8 +1742,6 @@ namespace Qdrant
             options.Converters.Add(new global::Qdrant.JsonConverters.UuidIndexTypeNullableJsonConverter());
             options.Converters.Add(new global::Qdrant.JsonConverters.UpdateStatusJsonConverter());
             options.Converters.Add(new global::Qdrant.JsonConverters.UpdateStatusNullableJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.RecommendStrategyJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.RecommendStrategyNullableJsonConverter());
             options.Converters.Add(new global::Qdrant.JsonConverters.DirectionJsonConverter());
             options.Converters.Add(new global::Qdrant.JsonConverters.DirectionNullableJsonConverter());
             options.Converters.Add(new global::Qdrant.JsonConverters.MaxOptimizationThreadsSettingJsonConverter());
@@ -1766,6 +1778,8 @@ namespace Qdrant
             options.Converters.Add(new global::Qdrant.JsonConverters.ShardStatusNullableJsonConverter());
             options.Converters.Add(new global::Qdrant.JsonConverters.SegmentTypeJsonConverter());
             options.Converters.Add(new global::Qdrant.JsonConverters.SegmentTypeNullableJsonConverter());
+            options.Converters.Add(new global::Qdrant.JsonConverters.IoBackendJsonConverter());
+            options.Converters.Add(new global::Qdrant.JsonConverters.IoBackendNullableJsonConverter());
             options.Converters.Add(new global::Qdrant.JsonConverters.VectorStorageTypeVariant1JsonConverter());
             options.Converters.Add(new global::Qdrant.JsonConverters.VectorStorageTypeVariant1NullableJsonConverter());
             options.Converters.Add(new global::Qdrant.JsonConverters.VectorStorageTypeVariant2JsonConverter());
@@ -1808,10 +1822,14 @@ namespace Qdrant
             options.Converters.Add(new global::Qdrant.JsonConverters.WriteOrderingNullableJsonConverter());
             options.Converters.Add(new global::Qdrant.JsonConverters.ReadConsistencyTypeJsonConverter());
             options.Converters.Add(new global::Qdrant.JsonConverters.ReadConsistencyTypeNullableJsonConverter());
+            options.Converters.Add(new global::Qdrant.JsonConverters.RecommendStrategyJsonConverter());
+            options.Converters.Add(new global::Qdrant.JsonConverters.RecommendStrategyNullableJsonConverter());
             options.Converters.Add(new global::Qdrant.JsonConverters.FusionJsonConverter());
             options.Converters.Add(new global::Qdrant.JsonConverters.FusionNullableJsonConverter());
             options.Converters.Add(new global::Qdrant.JsonConverters.SampleJsonConverter());
             options.Converters.Add(new global::Qdrant.JsonConverters.SampleNullableJsonConverter());
+            options.Converters.Add(new global::Qdrant.JsonConverters.IdfScopeJsonConverter());
+            options.Converters.Add(new global::Qdrant.JsonConverters.IdfScopeNullableJsonConverter());
             options.Converters.Add(new global::Qdrant.JsonConverters.DisabledTypeJsonConverter());
             options.Converters.Add(new global::Qdrant.JsonConverters.DisabledTypeNullableJsonConverter());
             options.Converters.Add(new global::Qdrant.JsonConverters.SnowballTypeJsonConverter());
@@ -1831,13 +1849,10 @@ namespace Qdrant
             options.Converters.Add(new global::Qdrant.JsonConverters.VectorStructOutputJsonConverter());
             options.Converters.Add(new global::Qdrant.JsonConverters.VectorOutputJsonConverter());
             options.Converters.Add(new global::Qdrant.JsonConverters.OrderValueJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.NamedVectorStructJsonConverter());
             options.Converters.Add(new global::Qdrant.JsonConverters.ConditionJsonConverter());
             options.Converters.Add(new global::Qdrant.JsonConverters.ValueVariantsJsonConverter());
             options.Converters.Add(new global::Qdrant.JsonConverters.AnyVariantsJsonConverter());
             options.Converters.Add(new global::Qdrant.JsonConverters.RangeInterfaceJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.RecommendExampleJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.UsingVectorJsonConverter());
             options.Converters.Add(new global::Qdrant.JsonConverters.OrderByInterfaceJsonConverter());
             options.Converters.Add(new global::Qdrant.JsonConverters.StartFromJsonConverter());
             options.Converters.Add(new global::Qdrant.JsonConverters.MaxOptimizationThreadsJsonConverter());
@@ -1864,7 +1879,6 @@ namespace Qdrant
             options.Converters.Add(new global::Qdrant.JsonConverters.ClusterOperationsJsonConverter());
             options.Converters.Add(new global::Qdrant.JsonConverters.ReadConsistencyJsonConverter());
             options.Converters.Add(new global::Qdrant.JsonConverters.GroupIdJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.WithLookupInterfaceJsonConverter());
             options.Converters.Add(new global::Qdrant.JsonConverters.UpdateOperationJsonConverter());
             options.Converters.Add(new global::Qdrant.JsonConverters.ShardSnapshotLocationJsonConverter());
             options.Converters.Add(new global::Qdrant.JsonConverters.QueryInterfaceJsonConverter());
@@ -1873,6 +1887,8 @@ namespace Qdrant
             options.Converters.Add(new global::Qdrant.JsonConverters.ContextInputJsonConverter());
             options.Converters.Add(new global::Qdrant.JsonConverters.ExpressionJsonConverter());
             options.Converters.Add(new global::Qdrant.JsonConverters.FeedbackStrategyJsonConverter());
+            options.Converters.Add(new global::Qdrant.JsonConverters.IdfParamsJsonConverter());
+            options.Converters.Add(new global::Qdrant.JsonConverters.WithLookupInterfaceJsonConverter());
             options.Converters.Add(new global::Qdrant.JsonConverters.FacetValueJsonConverter());
             options.Converters.Add(new global::Qdrant.JsonConverters.VectorNameConfigJsonConverter());
             options.Converters.Add(new global::Qdrant.JsonConverters.MatchConditionJsonConverter());

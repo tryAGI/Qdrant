@@ -1,4 +1,6 @@
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace Qdrant
@@ -59,10 +61,17 @@ namespace Qdrant
         public global::Qdrant.StopwordsInterface? Stopwords { get; set; }
 
         /// <summary>
-        /// If true, store the index on disk. Default: false.
+        /// Deprecated: use `memory` instead. If true, store the index on disk. Default: false.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("on_disk")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public bool? OnDisk { get; set; }
+
+        /// <summary>
+        /// Memory placement of the index. Overrides the deprecated `on_disk` flag if both are set. Default: `pinned` (`cold` if `on_disk` is set to true).
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("memory")]
+        public global::Qdrant.Memory? Memory { get; set; }
 
         /// <summary>
         /// Algorithm for stemming. Default: disabled.
@@ -105,8 +114,8 @@ namespace Qdrant
         /// <param name="stopwords">
         /// Ignore this set of tokens. Can select from predefined languages and/or provide a custom set.
         /// </param>
-        /// <param name="onDisk">
-        /// If true, store the index on disk. Default: false.
+        /// <param name="memory">
+        /// Memory placement of the index. Overrides the deprecated `on_disk` flag if both are set. Default: `pinned` (`cold` if `on_disk` is set to true).
         /// </param>
         /// <param name="stemmer">
         /// Algorithm for stemming. Default: disabled.
@@ -126,7 +135,7 @@ namespace Qdrant
             bool? asciiFolding,
             bool? phraseMatching,
             global::Qdrant.StopwordsInterface? stopwords,
-            bool? onDisk,
+            global::Qdrant.Memory? memory,
             global::Qdrant.StemmingAlgorithm? stemmer,
             bool? enableHnsw)
         {
@@ -138,7 +147,7 @@ namespace Qdrant
             this.AsciiFolding = asciiFolding;
             this.PhraseMatching = phraseMatching;
             this.Stopwords = stopwords;
-            this.OnDisk = onDisk;
+            this.Memory = memory;
             this.Stemmer = stemmer;
             this.EnableHnsw = enableHnsw;
         }

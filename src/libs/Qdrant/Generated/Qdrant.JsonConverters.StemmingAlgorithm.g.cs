@@ -30,11 +30,15 @@ namespace Qdrant.JsonConverters
             var __score0 = 0;
             if (__jsonProps.Contains("language")) __score0++;
             if (__jsonProps.Contains("type")) __score0++;
+            var __score1 = 0;
+            if (__jsonProps.Contains("type")) __score1++;
             var __bestScore = 0;
             var __bestIndex = -1;
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
+            if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
 
             global::Qdrant.SnowballParams? snowballParams = default;
+            global::Qdrant.DisabledStemmerParams? disabledStemmerParams = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -52,9 +56,24 @@ namespace Qdrant.JsonConverters
                     {
                     }
                 }
+                else if (__bestIndex == 1)
+                {
+                    try
+                    {
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.DisabledStemmerParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.DisabledStemmerParams> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.DisabledStemmerParams).Name}");
+                        disabledStemmerParams = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    }
+                    catch (global::System.Text.Json.JsonException)
+                    {
+                    }
+                    catch (global::System.InvalidOperationException)
+                    {
+                    }
+                }
             }
 
-            if (snowballParams == null)
+            if (snowballParams == null && disabledStemmerParams == null)
             {
                 try
                 {
@@ -71,8 +90,27 @@ namespace Qdrant.JsonConverters
                 }
             }
 
+            if (snowballParams == null && disabledStemmerParams == null)
+            {
+                try
+                {
+
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.DisabledStemmerParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.DisabledStemmerParams> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.DisabledStemmerParams).Name}");
+                    disabledStemmerParams = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+            }
+
             var __value = new global::Qdrant.StemmingAlgorithm(
-                snowballParams
+                snowballParams,
+
+                disabledStemmerParams
                 );
 
             return __value;
@@ -92,6 +130,12 @@ namespace Qdrant.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.SnowballParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.SnowballParams?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.SnowballParams).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.SnowballParams!, typeInfo);
+            }
+            else if (value.IsDisabledStemmerParams)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.DisabledStemmerParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.DisabledStemmerParams?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.DisabledStemmerParams).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DisabledStemmerParams!, typeInfo);
             }
         }
     }

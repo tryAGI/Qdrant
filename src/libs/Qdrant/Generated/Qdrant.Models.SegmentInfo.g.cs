@@ -113,6 +113,12 @@ namespace Qdrant
         public required global::System.Collections.Generic.Dictionary<string, global::Qdrant.VectorDataInfo> VectorData { get; set; }
 
         /// <summary>
+        /// Universal I/O backend that payload storage reads files with. Absent if payload storage does not support configurable backends or only supports a single backend type.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("payload_storage_io_backend")]
+        public global::Qdrant.IoBackend? PayloadStorageIoBackend { get; set; }
+
+        /// <summary>
         /// Internal ID from which points are deferred (hidden from reads). Only set for appendable segments.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("deferred_internal_id")]
@@ -148,6 +154,9 @@ namespace Qdrant
         /// <param name="vectorData"></param>
         /// <param name="numDeferredPoints"></param>
         /// <param name="numDeletedDeferredPoints"></param>
+        /// <param name="payloadStorageIoBackend">
+        /// Universal I/O backend that payload storage reads files with. Absent if payload storage does not support configurable backends or only supports a single backend type.
+        /// </param>
         /// <param name="deferredInternalId">
         /// Internal ID from which points are deferred (hidden from reads). Only set for appendable segments.
         /// </param>
@@ -170,6 +179,7 @@ namespace Qdrant
             global::System.Collections.Generic.Dictionary<string, global::Qdrant.VectorDataInfo> vectorData,
             int? numDeferredPoints,
             int? numDeletedDeferredPoints,
+            global::Qdrant.IoBackend? payloadStorageIoBackend,
             int? deferredInternalId)
         {
             this.Uuid = uuid;
@@ -187,6 +197,7 @@ namespace Qdrant
             this.IsAppendable = isAppendable;
             this.IndexSchema = indexSchema ?? throw new global::System.ArgumentNullException(nameof(indexSchema));
             this.VectorData = vectorData ?? throw new global::System.ArgumentNullException(nameof(vectorData));
+            this.PayloadStorageIoBackend = payloadStorageIoBackend;
             this.DeferredInternalId = deferredInternalId;
         }
 
