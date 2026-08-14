@@ -13,429 +13,6 @@ namespace Qdrant
         DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
         Converters = new global::System.Type[]
         {
-            typeof(global::Qdrant.JsonConverters.CollectionStatusJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.CollectionStatusNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.OptimizersStatusEnumJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.OptimizersStatusEnumNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.DistanceJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.DistanceNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.MemoryJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.MemoryNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.ScalarTypeJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.ScalarTypeNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.CompressionRatioJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.CompressionRatioNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.BinaryQuantizationEncodingJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.BinaryQuantizationEncodingNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.BinaryQuantizationQueryEncodingJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.BinaryQuantizationQueryEncodingNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.TurboQuantBitSizeJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.TurboQuantBitSizeNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.DatatypeJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.DatatypeNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.MultiVectorComparatorJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.MultiVectorComparatorNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.ShardingMethodJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.ShardingMethodNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.ModifierJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.ModifierNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.PayloadSchemaTypeJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.PayloadSchemaTypeNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.KeywordIndexTypeJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.KeywordIndexTypeNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.IntegerIndexTypeJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.IntegerIndexTypeNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.FloatIndexTypeJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.FloatIndexTypeNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.GeoIndexTypeJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.GeoIndexTypeNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.TextIndexTypeJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.TextIndexTypeNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.TokenizerTypeJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.TokenizerTypeNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.LanguageJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.LanguageNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.SnowballLanguageJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.SnowballLanguageNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.NoStemmerJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.NoStemmerNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.BoolIndexTypeJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.BoolIndexTypeNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.DatetimeIndexTypeJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.DatetimeIndexTypeNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.UuidIndexTypeJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.UuidIndexTypeNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.UpdateStatusJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.UpdateStatusNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.DirectionJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.DirectionNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.MaxOptimizationThreadsSettingJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.MaxOptimizationThreadsSettingNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.UpdateModeJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.UpdateModeNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.ClusterStatusVariant1StatusJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.ClusterStatusVariant1StatusNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.ClusterStatusVariant2StatusJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.ClusterStatusVariant2StatusNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.StateRoleJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.StateRoleNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.ConsensusThreadStatusVariant1ConsensusThreadStatusJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.ConsensusThreadStatusVariant1ConsensusThreadStatusNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.ConsensusThreadStatusVariant2ConsensusThreadStatusJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.ConsensusThreadStatusVariant2ConsensusThreadStatusNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.ConsensusThreadStatusVariant3ConsensusThreadStatusJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.ConsensusThreadStatusVariant3ConsensusThreadStatusNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.ReplicaStateJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.ReplicaStateNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.ShardTransferMethodJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.ShardTransferMethodNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.ReshardingDirectionJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.ReshardingDirectionNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.LowMemoryModeVariant1JsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.LowMemoryModeVariant1NullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.LowMemoryModeVariant2JsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.LowMemoryModeVariant2NullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.LowMemoryModeVariant3JsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.LowMemoryModeVariant3NullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.CpuEndianJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.CpuEndianNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.ShardStatusJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.ShardStatusNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.SegmentTypeJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.SegmentTypeNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.IoBackendJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.IoBackendNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.VectorStorageTypeVariant1JsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.VectorStorageTypeVariant1NullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.VectorStorageTypeVariant2JsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.VectorStorageTypeVariant2NullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.VectorStorageTypeVariant3JsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.VectorStorageTypeVariant3NullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.VectorStorageTypeVariant4JsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.VectorStorageTypeVariant4NullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.VectorStorageTypeVariant5JsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.VectorStorageTypeVariant5NullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.VectorStorageTypeVariant6JsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.VectorStorageTypeVariant6NullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.IndexesVariant1TypeJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.IndexesVariant1TypeNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.IndexesVariant2TypeJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.IndexesVariant2TypeNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.VectorStorageDatatypeJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.VectorStorageDatatypeNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.SparseIndexTypeVariant1JsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.SparseIndexTypeVariant1NullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.SparseIndexTypeVariant2JsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.SparseIndexTypeVariant2NullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.SparseIndexTypeVariant3JsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.SparseIndexTypeVariant3NullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.SparseVectorStorageTypeVariant1JsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.SparseVectorStorageTypeVariant1NullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.SparseVectorStorageTypeVariant2JsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.SparseVectorStorageTypeVariant2NullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.PayloadStorageTypeVariant1TypeJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.PayloadStorageTypeVariant1TypeNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.PayloadStorageTypeVariant2TypeJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.PayloadStorageTypeVariant2TypeNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.TrackerStatusEnumJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.TrackerStatusEnumNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.ShardCleanStatusTelemetryEnumJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.ShardCleanStatusTelemetryEnumNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.SnapshotPriorityJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.SnapshotPriorityNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.WriteOrderingJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.WriteOrderingNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.ReadConsistencyTypeJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.ReadConsistencyTypeNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.RecommendStrategyJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.RecommendStrategyNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.FusionJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.FusionNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.SampleJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.SampleNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.IdfScopeJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.IdfScopeNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.DisabledTypeJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.DisabledTypeNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.SnowballTypeJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.SnowballTypeNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.OptimizersStatusJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.VectorsConfigJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.QuantizationConfigJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.PayloadSchemaParamsJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.StopwordsInterfaceJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.StemmingAlgorithmJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.ShardKeySelectorJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.ShardKeyJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.ExtendedPointIdJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.WithPayloadInterfaceJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.PayloadSelectorJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.WithVectorJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.VectorStructOutputJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.VectorOutputJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.OrderValueJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.ConditionJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.ValueVariantsJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.AnyVariantsJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.RangeInterfaceJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.OrderByInterfaceJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.StartFromJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.MaxOptimizationThreadsJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.QuantizationConfigDiffJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.AliasOperationsJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.PayloadFieldSchemaJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.PointsSelectorJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.PointInsertOperationsJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.BatchVectorStructJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.VectorJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.DocumentOptions2JsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.VectorStructJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.ClusterStatusJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.ConsensusThreadStatusJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.LowMemoryModeJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.CollectionTelemetryEnumJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.VectorStorageTypeJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.IndexesJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.SparseIndexTypeJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.SparseVectorStorageTypeJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.PayloadStorageTypeJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.TrackerStatusJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.ShardCleanStatusTelemetryJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.ClusterOperationsJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.ReadConsistencyJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.GroupIdJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.UpdateOperationJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.ShardSnapshotLocationJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.QueryInterfaceJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.VectorInputJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.QueryJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.ContextInputJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.ExpressionJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.FeedbackStrategyJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.IdfParamsJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.WithLookupInterfaceJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.FacetValueJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.VectorNameConfigJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.MatchConditionJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.AnyOfJsonConverter<global::Qdrant.Condition?, global::System.Collections.Generic.IList<global::Qdrant.Condition>, object>),
-
-            typeof(global::Qdrant.JsonConverters.AnyOfJsonConverter<global::Qdrant.Condition?, global::System.Collections.Generic.IList<global::Qdrant.Condition>, object>),
-
-            typeof(global::Qdrant.JsonConverters.AnyOfJsonConverter<global::Qdrant.Condition?, global::System.Collections.Generic.IList<global::Qdrant.Condition>, object>),
-
-            typeof(global::Qdrant.JsonConverters.AnyOfJsonConverter<global::Qdrant.Prefetch2, global::System.Collections.Generic.IList<global::Qdrant.Prefetch2>, object>),
-
-            typeof(global::Qdrant.JsonConverters.AnyOfJsonConverter<global::Qdrant.Prefetch2, global::System.Collections.Generic.IList<global::Qdrant.Prefetch2>, object>),
-
-            typeof(global::Qdrant.JsonConverters.AnyOfJsonConverter<global::Qdrant.ContextPair, global::System.Collections.Generic.IList<global::Qdrant.ContextPair>, object>),
-
-            typeof(global::Qdrant.JsonConverters.AnyOfJsonConverter<global::Qdrant.Prefetch2, global::System.Collections.Generic.IList<global::Qdrant.Prefetch2>, object>),
-
-            typeof(global::Qdrant.JsonConverters.UnixTimestampJsonConverter),
         })]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, string>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, object>))]
@@ -948,429 +525,6 @@ namespace Qdrant
         DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
         Converters = new global::System.Type[]
         {
-            typeof(global::Qdrant.JsonConverters.CollectionStatusJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.CollectionStatusNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.OptimizersStatusEnumJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.OptimizersStatusEnumNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.DistanceJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.DistanceNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.MemoryJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.MemoryNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.ScalarTypeJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.ScalarTypeNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.CompressionRatioJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.CompressionRatioNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.BinaryQuantizationEncodingJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.BinaryQuantizationEncodingNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.BinaryQuantizationQueryEncodingJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.BinaryQuantizationQueryEncodingNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.TurboQuantBitSizeJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.TurboQuantBitSizeNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.DatatypeJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.DatatypeNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.MultiVectorComparatorJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.MultiVectorComparatorNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.ShardingMethodJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.ShardingMethodNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.ModifierJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.ModifierNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.PayloadSchemaTypeJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.PayloadSchemaTypeNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.KeywordIndexTypeJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.KeywordIndexTypeNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.IntegerIndexTypeJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.IntegerIndexTypeNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.FloatIndexTypeJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.FloatIndexTypeNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.GeoIndexTypeJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.GeoIndexTypeNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.TextIndexTypeJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.TextIndexTypeNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.TokenizerTypeJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.TokenizerTypeNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.LanguageJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.LanguageNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.SnowballLanguageJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.SnowballLanguageNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.NoStemmerJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.NoStemmerNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.BoolIndexTypeJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.BoolIndexTypeNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.DatetimeIndexTypeJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.DatetimeIndexTypeNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.UuidIndexTypeJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.UuidIndexTypeNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.UpdateStatusJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.UpdateStatusNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.DirectionJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.DirectionNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.MaxOptimizationThreadsSettingJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.MaxOptimizationThreadsSettingNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.UpdateModeJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.UpdateModeNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.ClusterStatusVariant1StatusJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.ClusterStatusVariant1StatusNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.ClusterStatusVariant2StatusJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.ClusterStatusVariant2StatusNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.StateRoleJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.StateRoleNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.ConsensusThreadStatusVariant1ConsensusThreadStatusJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.ConsensusThreadStatusVariant1ConsensusThreadStatusNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.ConsensusThreadStatusVariant2ConsensusThreadStatusJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.ConsensusThreadStatusVariant2ConsensusThreadStatusNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.ConsensusThreadStatusVariant3ConsensusThreadStatusJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.ConsensusThreadStatusVariant3ConsensusThreadStatusNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.ReplicaStateJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.ReplicaStateNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.ShardTransferMethodJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.ShardTransferMethodNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.ReshardingDirectionJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.ReshardingDirectionNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.LowMemoryModeVariant1JsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.LowMemoryModeVariant1NullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.LowMemoryModeVariant2JsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.LowMemoryModeVariant2NullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.LowMemoryModeVariant3JsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.LowMemoryModeVariant3NullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.CpuEndianJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.CpuEndianNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.ShardStatusJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.ShardStatusNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.SegmentTypeJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.SegmentTypeNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.IoBackendJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.IoBackendNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.VectorStorageTypeVariant1JsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.VectorStorageTypeVariant1NullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.VectorStorageTypeVariant2JsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.VectorStorageTypeVariant2NullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.VectorStorageTypeVariant3JsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.VectorStorageTypeVariant3NullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.VectorStorageTypeVariant4JsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.VectorStorageTypeVariant4NullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.VectorStorageTypeVariant5JsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.VectorStorageTypeVariant5NullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.VectorStorageTypeVariant6JsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.VectorStorageTypeVariant6NullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.IndexesVariant1TypeJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.IndexesVariant1TypeNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.IndexesVariant2TypeJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.IndexesVariant2TypeNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.VectorStorageDatatypeJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.VectorStorageDatatypeNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.SparseIndexTypeVariant1JsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.SparseIndexTypeVariant1NullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.SparseIndexTypeVariant2JsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.SparseIndexTypeVariant2NullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.SparseIndexTypeVariant3JsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.SparseIndexTypeVariant3NullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.SparseVectorStorageTypeVariant1JsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.SparseVectorStorageTypeVariant1NullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.SparseVectorStorageTypeVariant2JsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.SparseVectorStorageTypeVariant2NullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.PayloadStorageTypeVariant1TypeJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.PayloadStorageTypeVariant1TypeNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.PayloadStorageTypeVariant2TypeJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.PayloadStorageTypeVariant2TypeNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.TrackerStatusEnumJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.TrackerStatusEnumNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.ShardCleanStatusTelemetryEnumJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.ShardCleanStatusTelemetryEnumNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.SnapshotPriorityJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.SnapshotPriorityNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.WriteOrderingJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.WriteOrderingNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.ReadConsistencyTypeJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.ReadConsistencyTypeNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.RecommendStrategyJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.RecommendStrategyNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.FusionJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.FusionNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.SampleJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.SampleNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.IdfScopeJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.IdfScopeNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.DisabledTypeJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.DisabledTypeNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.SnowballTypeJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.SnowballTypeNullableJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.OptimizersStatusJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.VectorsConfigJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.QuantizationConfigJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.PayloadSchemaParamsJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.StopwordsInterfaceJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.StemmingAlgorithmJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.ShardKeySelectorJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.ShardKeyJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.ExtendedPointIdJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.WithPayloadInterfaceJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.PayloadSelectorJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.WithVectorJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.VectorStructOutputJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.VectorOutputJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.OrderValueJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.ConditionJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.ValueVariantsJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.AnyVariantsJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.RangeInterfaceJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.OrderByInterfaceJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.StartFromJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.MaxOptimizationThreadsJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.QuantizationConfigDiffJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.AliasOperationsJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.PayloadFieldSchemaJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.PointsSelectorJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.PointInsertOperationsJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.BatchVectorStructJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.VectorJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.DocumentOptions2JsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.VectorStructJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.ClusterStatusJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.ConsensusThreadStatusJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.LowMemoryModeJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.CollectionTelemetryEnumJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.VectorStorageTypeJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.IndexesJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.SparseIndexTypeJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.SparseVectorStorageTypeJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.PayloadStorageTypeJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.TrackerStatusJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.ShardCleanStatusTelemetryJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.ClusterOperationsJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.ReadConsistencyJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.GroupIdJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.UpdateOperationJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.ShardSnapshotLocationJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.QueryInterfaceJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.VectorInputJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.QueryJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.ContextInputJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.ExpressionJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.FeedbackStrategyJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.IdfParamsJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.WithLookupInterfaceJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.FacetValueJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.VectorNameConfigJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.MatchConditionJsonConverter),
-
-            typeof(global::Qdrant.JsonConverters.AnyOfJsonConverter<global::Qdrant.Condition?, global::System.Collections.Generic.IList<global::Qdrant.Condition>, object>),
-
-            typeof(global::Qdrant.JsonConverters.AnyOfJsonConverter<global::Qdrant.Condition?, global::System.Collections.Generic.IList<global::Qdrant.Condition>, object>),
-
-            typeof(global::Qdrant.JsonConverters.AnyOfJsonConverter<global::Qdrant.Condition?, global::System.Collections.Generic.IList<global::Qdrant.Condition>, object>),
-
-            typeof(global::Qdrant.JsonConverters.AnyOfJsonConverter<global::Qdrant.Prefetch2, global::System.Collections.Generic.IList<global::Qdrant.Prefetch2>, object>),
-
-            typeof(global::Qdrant.JsonConverters.AnyOfJsonConverter<global::Qdrant.Prefetch2, global::System.Collections.Generic.IList<global::Qdrant.Prefetch2>, object>),
-
-            typeof(global::Qdrant.JsonConverters.AnyOfJsonConverter<global::Qdrant.ContextPair, global::System.Collections.Generic.IList<global::Qdrant.ContextPair>, object>),
-
-            typeof(global::Qdrant.JsonConverters.AnyOfJsonConverter<global::Qdrant.Prefetch2, global::System.Collections.Generic.IList<global::Qdrant.Prefetch2>, object>),
-
-            typeof(global::Qdrant.JsonConverters.UnixTimestampJsonConverter),
         })]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Qdrant.ShardKeyDescription>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.ShardKeyDescription))]
@@ -1654,11 +808,7 @@ namespace Qdrant
     /// </summary>
     public sealed partial class SourceGenerationContext : global::System.Text.Json.Serialization.JsonSerializerContext
     {
-        private static readonly global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver Resolver = global::System.Text.Json.Serialization.Metadata.JsonTypeInfoResolver.Combine(
-            SourceGenerationContextChunk0.Default,
-
-            SourceGenerationContextChunk1.Default
-            );
+        private static readonly global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver Resolver = new LazyChunkResolver();
 
         private static readonly global::System.Text.Json.JsonSerializerOptions DefaultOptions = CreateDefaultOptions();
 
@@ -1688,152 +838,6 @@ namespace Qdrant
                 DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
                 TypeInfoResolver = Resolver,
             };
-            options.Converters.Add(new global::Qdrant.JsonConverters.CollectionStatusJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.CollectionStatusNullableJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.OptimizersStatusEnumJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.OptimizersStatusEnumNullableJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.DistanceJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.DistanceNullableJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.MemoryJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.MemoryNullableJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.ScalarTypeJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.ScalarTypeNullableJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.CompressionRatioJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.CompressionRatioNullableJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.BinaryQuantizationEncodingJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.BinaryQuantizationEncodingNullableJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.BinaryQuantizationQueryEncodingJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.BinaryQuantizationQueryEncodingNullableJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.TurboQuantBitSizeJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.TurboQuantBitSizeNullableJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.DatatypeJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.DatatypeNullableJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.MultiVectorComparatorJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.MultiVectorComparatorNullableJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.ShardingMethodJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.ShardingMethodNullableJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.ModifierJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.ModifierNullableJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.PayloadSchemaTypeJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.PayloadSchemaTypeNullableJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.KeywordIndexTypeJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.KeywordIndexTypeNullableJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.IntegerIndexTypeJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.IntegerIndexTypeNullableJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.FloatIndexTypeJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.FloatIndexTypeNullableJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.GeoIndexTypeJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.GeoIndexTypeNullableJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.TextIndexTypeJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.TextIndexTypeNullableJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.TokenizerTypeJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.TokenizerTypeNullableJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.LanguageJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.LanguageNullableJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.SnowballLanguageJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.SnowballLanguageNullableJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.NoStemmerJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.NoStemmerNullableJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.BoolIndexTypeJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.BoolIndexTypeNullableJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.DatetimeIndexTypeJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.DatetimeIndexTypeNullableJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.UuidIndexTypeJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.UuidIndexTypeNullableJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.UpdateStatusJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.UpdateStatusNullableJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.DirectionJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.DirectionNullableJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.MaxOptimizationThreadsSettingJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.MaxOptimizationThreadsSettingNullableJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.UpdateModeJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.UpdateModeNullableJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.ClusterStatusVariant1StatusJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.ClusterStatusVariant1StatusNullableJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.ClusterStatusVariant2StatusJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.ClusterStatusVariant2StatusNullableJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.StateRoleJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.StateRoleNullableJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.ConsensusThreadStatusVariant1ConsensusThreadStatusJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.ConsensusThreadStatusVariant1ConsensusThreadStatusNullableJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.ConsensusThreadStatusVariant2ConsensusThreadStatusJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.ConsensusThreadStatusVariant2ConsensusThreadStatusNullableJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.ConsensusThreadStatusVariant3ConsensusThreadStatusJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.ConsensusThreadStatusVariant3ConsensusThreadStatusNullableJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.ReplicaStateJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.ReplicaStateNullableJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.ShardTransferMethodJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.ShardTransferMethodNullableJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.ReshardingDirectionJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.ReshardingDirectionNullableJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.LowMemoryModeVariant1JsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.LowMemoryModeVariant1NullableJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.LowMemoryModeVariant2JsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.LowMemoryModeVariant2NullableJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.LowMemoryModeVariant3JsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.LowMemoryModeVariant3NullableJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.CpuEndianJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.CpuEndianNullableJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.ShardStatusJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.ShardStatusNullableJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.SegmentTypeJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.SegmentTypeNullableJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.IoBackendJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.IoBackendNullableJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.VectorStorageTypeVariant1JsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.VectorStorageTypeVariant1NullableJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.VectorStorageTypeVariant2JsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.VectorStorageTypeVariant2NullableJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.VectorStorageTypeVariant3JsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.VectorStorageTypeVariant3NullableJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.VectorStorageTypeVariant4JsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.VectorStorageTypeVariant4NullableJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.VectorStorageTypeVariant5JsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.VectorStorageTypeVariant5NullableJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.VectorStorageTypeVariant6JsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.VectorStorageTypeVariant6NullableJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.IndexesVariant1TypeJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.IndexesVariant1TypeNullableJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.IndexesVariant2TypeJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.IndexesVariant2TypeNullableJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.VectorStorageDatatypeJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.VectorStorageDatatypeNullableJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.SparseIndexTypeVariant1JsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.SparseIndexTypeVariant1NullableJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.SparseIndexTypeVariant2JsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.SparseIndexTypeVariant2NullableJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.SparseIndexTypeVariant3JsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.SparseIndexTypeVariant3NullableJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.SparseVectorStorageTypeVariant1JsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.SparseVectorStorageTypeVariant1NullableJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.SparseVectorStorageTypeVariant2JsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.SparseVectorStorageTypeVariant2NullableJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.PayloadStorageTypeVariant1TypeJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.PayloadStorageTypeVariant1TypeNullableJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.PayloadStorageTypeVariant2TypeJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.PayloadStorageTypeVariant2TypeNullableJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.TrackerStatusEnumJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.TrackerStatusEnumNullableJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.ShardCleanStatusTelemetryEnumJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.ShardCleanStatusTelemetryEnumNullableJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.SnapshotPriorityJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.SnapshotPriorityNullableJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.WriteOrderingJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.WriteOrderingNullableJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.ReadConsistencyTypeJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.ReadConsistencyTypeNullableJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.RecommendStrategyJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.RecommendStrategyNullableJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.FusionJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.FusionNullableJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.SampleJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.SampleNullableJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.IdfScopeJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.IdfScopeNullableJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.DisabledTypeJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.DisabledTypeNullableJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.SnowballTypeJsonConverter());
-            options.Converters.Add(new global::Qdrant.JsonConverters.SnowballTypeNullableJsonConverter());
             options.Converters.Add(new global::Qdrant.JsonConverters.OptimizersStatusJsonConverter());
             options.Converters.Add(new global::Qdrant.JsonConverters.VectorsConfigJsonConverter());
             options.Converters.Add(new global::Qdrant.JsonConverters.QuantizationConfigJsonConverter());
@@ -1901,7 +905,1092 @@ namespace Qdrant
             options.Converters.Add(new global::Qdrant.JsonConverters.AnyOfJsonConverter<global::Qdrant.Prefetch2, global::System.Collections.Generic.IList<global::Qdrant.Prefetch2>, object>());
             options.Converters.Add(new global::Qdrant.JsonConverters.UnixTimestampJsonConverter());
 
+            options.Converters.Add(new LazyEnumJsonConverterFactory());
+
             return options;
+        }
+
+
+        private sealed class LazyEnumJsonConverterFactory : global::System.Text.Json.Serialization.JsonConverterFactory
+        {
+            public override bool CanConvert(global::System.Type typeToConvert)
+            {
+                return
+                    typeToConvert == typeof(global::Qdrant.CollectionStatus)
+
+                    || typeToConvert == typeof(global::Qdrant.CollectionStatus?)
+
+                    || typeToConvert == typeof(global::Qdrant.OptimizersStatusEnum)
+
+                    || typeToConvert == typeof(global::Qdrant.OptimizersStatusEnum?)
+
+                    || typeToConvert == typeof(global::Qdrant.Distance)
+
+                    || typeToConvert == typeof(global::Qdrant.Distance?)
+
+                    || typeToConvert == typeof(global::Qdrant.Memory)
+
+                    || typeToConvert == typeof(global::Qdrant.Memory?)
+
+                    || typeToConvert == typeof(global::Qdrant.ScalarType)
+
+                    || typeToConvert == typeof(global::Qdrant.ScalarType?)
+
+                    || typeToConvert == typeof(global::Qdrant.CompressionRatio)
+
+                    || typeToConvert == typeof(global::Qdrant.CompressionRatio?)
+
+                    || typeToConvert == typeof(global::Qdrant.BinaryQuantizationEncoding)
+
+                    || typeToConvert == typeof(global::Qdrant.BinaryQuantizationEncoding?)
+
+                    || typeToConvert == typeof(global::Qdrant.BinaryQuantizationQueryEncoding)
+
+                    || typeToConvert == typeof(global::Qdrant.BinaryQuantizationQueryEncoding?)
+
+                    || typeToConvert == typeof(global::Qdrant.TurboQuantBitSize)
+
+                    || typeToConvert == typeof(global::Qdrant.TurboQuantBitSize?)
+
+                    || typeToConvert == typeof(global::Qdrant.Datatype)
+
+                    || typeToConvert == typeof(global::Qdrant.Datatype?)
+
+                    || typeToConvert == typeof(global::Qdrant.MultiVectorComparator)
+
+                    || typeToConvert == typeof(global::Qdrant.MultiVectorComparator?)
+
+                    || typeToConvert == typeof(global::Qdrant.ShardingMethod)
+
+                    || typeToConvert == typeof(global::Qdrant.ShardingMethod?)
+
+                    || typeToConvert == typeof(global::Qdrant.Modifier)
+
+                    || typeToConvert == typeof(global::Qdrant.Modifier?)
+
+                    || typeToConvert == typeof(global::Qdrant.PayloadSchemaType)
+
+                    || typeToConvert == typeof(global::Qdrant.PayloadSchemaType?)
+
+                    || typeToConvert == typeof(global::Qdrant.KeywordIndexType)
+
+                    || typeToConvert == typeof(global::Qdrant.KeywordIndexType?)
+
+                    || typeToConvert == typeof(global::Qdrant.IntegerIndexType)
+
+                    || typeToConvert == typeof(global::Qdrant.IntegerIndexType?)
+
+                    || typeToConvert == typeof(global::Qdrant.FloatIndexType)
+
+                    || typeToConvert == typeof(global::Qdrant.FloatIndexType?)
+
+                    || typeToConvert == typeof(global::Qdrant.GeoIndexType)
+
+                    || typeToConvert == typeof(global::Qdrant.GeoIndexType?)
+
+                    || typeToConvert == typeof(global::Qdrant.TextIndexType)
+
+                    || typeToConvert == typeof(global::Qdrant.TextIndexType?)
+
+                    || typeToConvert == typeof(global::Qdrant.TokenizerType)
+
+                    || typeToConvert == typeof(global::Qdrant.TokenizerType?)
+
+                    || typeToConvert == typeof(global::Qdrant.Language)
+
+                    || typeToConvert == typeof(global::Qdrant.Language?)
+
+                    || typeToConvert == typeof(global::Qdrant.SnowballLanguage)
+
+                    || typeToConvert == typeof(global::Qdrant.SnowballLanguage?)
+
+                    || typeToConvert == typeof(global::Qdrant.NoStemmer)
+
+                    || typeToConvert == typeof(global::Qdrant.NoStemmer?)
+
+                    || typeToConvert == typeof(global::Qdrant.BoolIndexType)
+
+                    || typeToConvert == typeof(global::Qdrant.BoolIndexType?)
+
+                    || typeToConvert == typeof(global::Qdrant.DatetimeIndexType)
+
+                    || typeToConvert == typeof(global::Qdrant.DatetimeIndexType?)
+
+                    || typeToConvert == typeof(global::Qdrant.UuidIndexType)
+
+                    || typeToConvert == typeof(global::Qdrant.UuidIndexType?)
+
+                    || typeToConvert == typeof(global::Qdrant.UpdateStatus)
+
+                    || typeToConvert == typeof(global::Qdrant.UpdateStatus?)
+
+                    || typeToConvert == typeof(global::Qdrant.Direction)
+
+                    || typeToConvert == typeof(global::Qdrant.Direction?)
+
+                    || typeToConvert == typeof(global::Qdrant.MaxOptimizationThreadsSetting)
+
+                    || typeToConvert == typeof(global::Qdrant.MaxOptimizationThreadsSetting?)
+
+                    || typeToConvert == typeof(global::Qdrant.UpdateMode)
+
+                    || typeToConvert == typeof(global::Qdrant.UpdateMode?)
+
+                    || typeToConvert == typeof(global::Qdrant.ClusterStatusVariant1Status)
+
+                    || typeToConvert == typeof(global::Qdrant.ClusterStatusVariant1Status?)
+
+                    || typeToConvert == typeof(global::Qdrant.ClusterStatusVariant2Status)
+
+                    || typeToConvert == typeof(global::Qdrant.ClusterStatusVariant2Status?)
+
+                    || typeToConvert == typeof(global::Qdrant.StateRole)
+
+                    || typeToConvert == typeof(global::Qdrant.StateRole?)
+
+                    || typeToConvert == typeof(global::Qdrant.ConsensusThreadStatusVariant1ConsensusThreadStatus)
+
+                    || typeToConvert == typeof(global::Qdrant.ConsensusThreadStatusVariant1ConsensusThreadStatus?)
+
+                    || typeToConvert == typeof(global::Qdrant.ConsensusThreadStatusVariant2ConsensusThreadStatus)
+
+                    || typeToConvert == typeof(global::Qdrant.ConsensusThreadStatusVariant2ConsensusThreadStatus?)
+
+                    || typeToConvert == typeof(global::Qdrant.ConsensusThreadStatusVariant3ConsensusThreadStatus)
+
+                    || typeToConvert == typeof(global::Qdrant.ConsensusThreadStatusVariant3ConsensusThreadStatus?)
+
+                    || typeToConvert == typeof(global::Qdrant.ReplicaState)
+
+                    || typeToConvert == typeof(global::Qdrant.ReplicaState?)
+
+                    || typeToConvert == typeof(global::Qdrant.ShardTransferMethod)
+
+                    || typeToConvert == typeof(global::Qdrant.ShardTransferMethod?)
+
+                    || typeToConvert == typeof(global::Qdrant.ReshardingDirection)
+
+                    || typeToConvert == typeof(global::Qdrant.ReshardingDirection?)
+
+                    || typeToConvert == typeof(global::Qdrant.LowMemoryModeVariant1)
+
+                    || typeToConvert == typeof(global::Qdrant.LowMemoryModeVariant1?)
+
+                    || typeToConvert == typeof(global::Qdrant.LowMemoryModeVariant2)
+
+                    || typeToConvert == typeof(global::Qdrant.LowMemoryModeVariant2?)
+
+                    || typeToConvert == typeof(global::Qdrant.LowMemoryModeVariant3)
+
+                    || typeToConvert == typeof(global::Qdrant.LowMemoryModeVariant3?)
+
+                    || typeToConvert == typeof(global::Qdrant.CpuEndian)
+
+                    || typeToConvert == typeof(global::Qdrant.CpuEndian?)
+
+                    || typeToConvert == typeof(global::Qdrant.ShardStatus)
+
+                    || typeToConvert == typeof(global::Qdrant.ShardStatus?)
+
+                    || typeToConvert == typeof(global::Qdrant.SegmentType)
+
+                    || typeToConvert == typeof(global::Qdrant.SegmentType?)
+
+                    || typeToConvert == typeof(global::Qdrant.IoBackend)
+
+                    || typeToConvert == typeof(global::Qdrant.IoBackend?)
+
+                    || typeToConvert == typeof(global::Qdrant.VectorStorageTypeVariant1)
+
+                    || typeToConvert == typeof(global::Qdrant.VectorStorageTypeVariant1?)
+
+                    || typeToConvert == typeof(global::Qdrant.VectorStorageTypeVariant2)
+
+                    || typeToConvert == typeof(global::Qdrant.VectorStorageTypeVariant2?)
+
+                    || typeToConvert == typeof(global::Qdrant.VectorStorageTypeVariant3)
+
+                    || typeToConvert == typeof(global::Qdrant.VectorStorageTypeVariant3?)
+
+                    || typeToConvert == typeof(global::Qdrant.VectorStorageTypeVariant4)
+
+                    || typeToConvert == typeof(global::Qdrant.VectorStorageTypeVariant4?)
+
+                    || typeToConvert == typeof(global::Qdrant.VectorStorageTypeVariant5)
+
+                    || typeToConvert == typeof(global::Qdrant.VectorStorageTypeVariant5?)
+
+                    || typeToConvert == typeof(global::Qdrant.VectorStorageTypeVariant6)
+
+                    || typeToConvert == typeof(global::Qdrant.VectorStorageTypeVariant6?)
+
+                    || typeToConvert == typeof(global::Qdrant.IndexesVariant1Type)
+
+                    || typeToConvert == typeof(global::Qdrant.IndexesVariant1Type?)
+
+                    || typeToConvert == typeof(global::Qdrant.IndexesVariant2Type)
+
+                    || typeToConvert == typeof(global::Qdrant.IndexesVariant2Type?)
+
+                    || typeToConvert == typeof(global::Qdrant.VectorStorageDatatype)
+
+                    || typeToConvert == typeof(global::Qdrant.VectorStorageDatatype?)
+
+                    || typeToConvert == typeof(global::Qdrant.SparseIndexTypeVariant1)
+
+                    || typeToConvert == typeof(global::Qdrant.SparseIndexTypeVariant1?)
+
+                    || typeToConvert == typeof(global::Qdrant.SparseIndexTypeVariant2)
+
+                    || typeToConvert == typeof(global::Qdrant.SparseIndexTypeVariant2?)
+
+                    || typeToConvert == typeof(global::Qdrant.SparseIndexTypeVariant3)
+
+                    || typeToConvert == typeof(global::Qdrant.SparseIndexTypeVariant3?)
+
+                    || typeToConvert == typeof(global::Qdrant.SparseVectorStorageTypeVariant1)
+
+                    || typeToConvert == typeof(global::Qdrant.SparseVectorStorageTypeVariant1?)
+
+                    || typeToConvert == typeof(global::Qdrant.SparseVectorStorageTypeVariant2)
+
+                    || typeToConvert == typeof(global::Qdrant.SparseVectorStorageTypeVariant2?)
+
+                    || typeToConvert == typeof(global::Qdrant.PayloadStorageTypeVariant1Type)
+
+                    || typeToConvert == typeof(global::Qdrant.PayloadStorageTypeVariant1Type?)
+
+                    || typeToConvert == typeof(global::Qdrant.PayloadStorageTypeVariant2Type)
+
+                    || typeToConvert == typeof(global::Qdrant.PayloadStorageTypeVariant2Type?)
+
+                    || typeToConvert == typeof(global::Qdrant.TrackerStatusEnum)
+
+                    || typeToConvert == typeof(global::Qdrant.TrackerStatusEnum?)
+
+                    || typeToConvert == typeof(global::Qdrant.ShardCleanStatusTelemetryEnum)
+
+                    || typeToConvert == typeof(global::Qdrant.ShardCleanStatusTelemetryEnum?)
+
+                    || typeToConvert == typeof(global::Qdrant.SnapshotPriority)
+
+                    || typeToConvert == typeof(global::Qdrant.SnapshotPriority?)
+
+                    || typeToConvert == typeof(global::Qdrant.WriteOrdering)
+
+                    || typeToConvert == typeof(global::Qdrant.WriteOrdering?)
+
+                    || typeToConvert == typeof(global::Qdrant.ReadConsistencyType)
+
+                    || typeToConvert == typeof(global::Qdrant.ReadConsistencyType?)
+
+                    || typeToConvert == typeof(global::Qdrant.RecommendStrategy)
+
+                    || typeToConvert == typeof(global::Qdrant.RecommendStrategy?)
+
+                    || typeToConvert == typeof(global::Qdrant.Fusion)
+
+                    || typeToConvert == typeof(global::Qdrant.Fusion?)
+
+                    || typeToConvert == typeof(global::Qdrant.Sample)
+
+                    || typeToConvert == typeof(global::Qdrant.Sample?)
+
+                    || typeToConvert == typeof(global::Qdrant.IdfScope)
+
+                    || typeToConvert == typeof(global::Qdrant.IdfScope?)
+
+                    || typeToConvert == typeof(global::Qdrant.DisabledType)
+
+                    || typeToConvert == typeof(global::Qdrant.DisabledType?)
+
+                    || typeToConvert == typeof(global::Qdrant.SnowballType)
+
+                    || typeToConvert == typeof(global::Qdrant.SnowballType?);
+            }
+
+            public override global::System.Text.Json.Serialization.JsonConverter CreateConverter(
+                global::System.Type typeToConvert,
+                global::System.Text.Json.JsonSerializerOptions options)
+            {
+                if (typeToConvert == typeof(global::Qdrant.CollectionStatus))
+                {
+                    return new global::Qdrant.JsonConverters.CollectionStatusJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.CollectionStatus?))
+                {
+                    return new global::Qdrant.JsonConverters.CollectionStatusNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.OptimizersStatusEnum))
+                {
+                    return new global::Qdrant.JsonConverters.OptimizersStatusEnumJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.OptimizersStatusEnum?))
+                {
+                    return new global::Qdrant.JsonConverters.OptimizersStatusEnumNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.Distance))
+                {
+                    return new global::Qdrant.JsonConverters.DistanceJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.Distance?))
+                {
+                    return new global::Qdrant.JsonConverters.DistanceNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.Memory))
+                {
+                    return new global::Qdrant.JsonConverters.MemoryJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.Memory?))
+                {
+                    return new global::Qdrant.JsonConverters.MemoryNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.ScalarType))
+                {
+                    return new global::Qdrant.JsonConverters.ScalarTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.ScalarType?))
+                {
+                    return new global::Qdrant.JsonConverters.ScalarTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.CompressionRatio))
+                {
+                    return new global::Qdrant.JsonConverters.CompressionRatioJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.CompressionRatio?))
+                {
+                    return new global::Qdrant.JsonConverters.CompressionRatioNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.BinaryQuantizationEncoding))
+                {
+                    return new global::Qdrant.JsonConverters.BinaryQuantizationEncodingJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.BinaryQuantizationEncoding?))
+                {
+                    return new global::Qdrant.JsonConverters.BinaryQuantizationEncodingNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.BinaryQuantizationQueryEncoding))
+                {
+                    return new global::Qdrant.JsonConverters.BinaryQuantizationQueryEncodingJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.BinaryQuantizationQueryEncoding?))
+                {
+                    return new global::Qdrant.JsonConverters.BinaryQuantizationQueryEncodingNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.TurboQuantBitSize))
+                {
+                    return new global::Qdrant.JsonConverters.TurboQuantBitSizeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.TurboQuantBitSize?))
+                {
+                    return new global::Qdrant.JsonConverters.TurboQuantBitSizeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.Datatype))
+                {
+                    return new global::Qdrant.JsonConverters.DatatypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.Datatype?))
+                {
+                    return new global::Qdrant.JsonConverters.DatatypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.MultiVectorComparator))
+                {
+                    return new global::Qdrant.JsonConverters.MultiVectorComparatorJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.MultiVectorComparator?))
+                {
+                    return new global::Qdrant.JsonConverters.MultiVectorComparatorNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.ShardingMethod))
+                {
+                    return new global::Qdrant.JsonConverters.ShardingMethodJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.ShardingMethod?))
+                {
+                    return new global::Qdrant.JsonConverters.ShardingMethodNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.Modifier))
+                {
+                    return new global::Qdrant.JsonConverters.ModifierJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.Modifier?))
+                {
+                    return new global::Qdrant.JsonConverters.ModifierNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.PayloadSchemaType))
+                {
+                    return new global::Qdrant.JsonConverters.PayloadSchemaTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.PayloadSchemaType?))
+                {
+                    return new global::Qdrant.JsonConverters.PayloadSchemaTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.KeywordIndexType))
+                {
+                    return new global::Qdrant.JsonConverters.KeywordIndexTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.KeywordIndexType?))
+                {
+                    return new global::Qdrant.JsonConverters.KeywordIndexTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.IntegerIndexType))
+                {
+                    return new global::Qdrant.JsonConverters.IntegerIndexTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.IntegerIndexType?))
+                {
+                    return new global::Qdrant.JsonConverters.IntegerIndexTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.FloatIndexType))
+                {
+                    return new global::Qdrant.JsonConverters.FloatIndexTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.FloatIndexType?))
+                {
+                    return new global::Qdrant.JsonConverters.FloatIndexTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.GeoIndexType))
+                {
+                    return new global::Qdrant.JsonConverters.GeoIndexTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.GeoIndexType?))
+                {
+                    return new global::Qdrant.JsonConverters.GeoIndexTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.TextIndexType))
+                {
+                    return new global::Qdrant.JsonConverters.TextIndexTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.TextIndexType?))
+                {
+                    return new global::Qdrant.JsonConverters.TextIndexTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.TokenizerType))
+                {
+                    return new global::Qdrant.JsonConverters.TokenizerTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.TokenizerType?))
+                {
+                    return new global::Qdrant.JsonConverters.TokenizerTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.Language))
+                {
+                    return new global::Qdrant.JsonConverters.LanguageJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.Language?))
+                {
+                    return new global::Qdrant.JsonConverters.LanguageNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.SnowballLanguage))
+                {
+                    return new global::Qdrant.JsonConverters.SnowballLanguageJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.SnowballLanguage?))
+                {
+                    return new global::Qdrant.JsonConverters.SnowballLanguageNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.NoStemmer))
+                {
+                    return new global::Qdrant.JsonConverters.NoStemmerJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.NoStemmer?))
+                {
+                    return new global::Qdrant.JsonConverters.NoStemmerNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.BoolIndexType))
+                {
+                    return new global::Qdrant.JsonConverters.BoolIndexTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.BoolIndexType?))
+                {
+                    return new global::Qdrant.JsonConverters.BoolIndexTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.DatetimeIndexType))
+                {
+                    return new global::Qdrant.JsonConverters.DatetimeIndexTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.DatetimeIndexType?))
+                {
+                    return new global::Qdrant.JsonConverters.DatetimeIndexTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.UuidIndexType))
+                {
+                    return new global::Qdrant.JsonConverters.UuidIndexTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.UuidIndexType?))
+                {
+                    return new global::Qdrant.JsonConverters.UuidIndexTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.UpdateStatus))
+                {
+                    return new global::Qdrant.JsonConverters.UpdateStatusJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.UpdateStatus?))
+                {
+                    return new global::Qdrant.JsonConverters.UpdateStatusNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.Direction))
+                {
+                    return new global::Qdrant.JsonConverters.DirectionJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.Direction?))
+                {
+                    return new global::Qdrant.JsonConverters.DirectionNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.MaxOptimizationThreadsSetting))
+                {
+                    return new global::Qdrant.JsonConverters.MaxOptimizationThreadsSettingJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.MaxOptimizationThreadsSetting?))
+                {
+                    return new global::Qdrant.JsonConverters.MaxOptimizationThreadsSettingNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.UpdateMode))
+                {
+                    return new global::Qdrant.JsonConverters.UpdateModeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.UpdateMode?))
+                {
+                    return new global::Qdrant.JsonConverters.UpdateModeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.ClusterStatusVariant1Status))
+                {
+                    return new global::Qdrant.JsonConverters.ClusterStatusVariant1StatusJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.ClusterStatusVariant1Status?))
+                {
+                    return new global::Qdrant.JsonConverters.ClusterStatusVariant1StatusNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.ClusterStatusVariant2Status))
+                {
+                    return new global::Qdrant.JsonConverters.ClusterStatusVariant2StatusJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.ClusterStatusVariant2Status?))
+                {
+                    return new global::Qdrant.JsonConverters.ClusterStatusVariant2StatusNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.StateRole))
+                {
+                    return new global::Qdrant.JsonConverters.StateRoleJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.StateRole?))
+                {
+                    return new global::Qdrant.JsonConverters.StateRoleNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.ConsensusThreadStatusVariant1ConsensusThreadStatus))
+                {
+                    return new global::Qdrant.JsonConverters.ConsensusThreadStatusVariant1ConsensusThreadStatusJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.ConsensusThreadStatusVariant1ConsensusThreadStatus?))
+                {
+                    return new global::Qdrant.JsonConverters.ConsensusThreadStatusVariant1ConsensusThreadStatusNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.ConsensusThreadStatusVariant2ConsensusThreadStatus))
+                {
+                    return new global::Qdrant.JsonConverters.ConsensusThreadStatusVariant2ConsensusThreadStatusJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.ConsensusThreadStatusVariant2ConsensusThreadStatus?))
+                {
+                    return new global::Qdrant.JsonConverters.ConsensusThreadStatusVariant2ConsensusThreadStatusNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.ConsensusThreadStatusVariant3ConsensusThreadStatus))
+                {
+                    return new global::Qdrant.JsonConverters.ConsensusThreadStatusVariant3ConsensusThreadStatusJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.ConsensusThreadStatusVariant3ConsensusThreadStatus?))
+                {
+                    return new global::Qdrant.JsonConverters.ConsensusThreadStatusVariant3ConsensusThreadStatusNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.ReplicaState))
+                {
+                    return new global::Qdrant.JsonConverters.ReplicaStateJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.ReplicaState?))
+                {
+                    return new global::Qdrant.JsonConverters.ReplicaStateNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.ShardTransferMethod))
+                {
+                    return new global::Qdrant.JsonConverters.ShardTransferMethodJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.ShardTransferMethod?))
+                {
+                    return new global::Qdrant.JsonConverters.ShardTransferMethodNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.ReshardingDirection))
+                {
+                    return new global::Qdrant.JsonConverters.ReshardingDirectionJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.ReshardingDirection?))
+                {
+                    return new global::Qdrant.JsonConverters.ReshardingDirectionNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.LowMemoryModeVariant1))
+                {
+                    return new global::Qdrant.JsonConverters.LowMemoryModeVariant1JsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.LowMemoryModeVariant1?))
+                {
+                    return new global::Qdrant.JsonConverters.LowMemoryModeVariant1NullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.LowMemoryModeVariant2))
+                {
+                    return new global::Qdrant.JsonConverters.LowMemoryModeVariant2JsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.LowMemoryModeVariant2?))
+                {
+                    return new global::Qdrant.JsonConverters.LowMemoryModeVariant2NullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.LowMemoryModeVariant3))
+                {
+                    return new global::Qdrant.JsonConverters.LowMemoryModeVariant3JsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.LowMemoryModeVariant3?))
+                {
+                    return new global::Qdrant.JsonConverters.LowMemoryModeVariant3NullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.CpuEndian))
+                {
+                    return new global::Qdrant.JsonConverters.CpuEndianJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.CpuEndian?))
+                {
+                    return new global::Qdrant.JsonConverters.CpuEndianNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.ShardStatus))
+                {
+                    return new global::Qdrant.JsonConverters.ShardStatusJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.ShardStatus?))
+                {
+                    return new global::Qdrant.JsonConverters.ShardStatusNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.SegmentType))
+                {
+                    return new global::Qdrant.JsonConverters.SegmentTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.SegmentType?))
+                {
+                    return new global::Qdrant.JsonConverters.SegmentTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.IoBackend))
+                {
+                    return new global::Qdrant.JsonConverters.IoBackendJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.IoBackend?))
+                {
+                    return new global::Qdrant.JsonConverters.IoBackendNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.VectorStorageTypeVariant1))
+                {
+                    return new global::Qdrant.JsonConverters.VectorStorageTypeVariant1JsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.VectorStorageTypeVariant1?))
+                {
+                    return new global::Qdrant.JsonConverters.VectorStorageTypeVariant1NullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.VectorStorageTypeVariant2))
+                {
+                    return new global::Qdrant.JsonConverters.VectorStorageTypeVariant2JsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.VectorStorageTypeVariant2?))
+                {
+                    return new global::Qdrant.JsonConverters.VectorStorageTypeVariant2NullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.VectorStorageTypeVariant3))
+                {
+                    return new global::Qdrant.JsonConverters.VectorStorageTypeVariant3JsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.VectorStorageTypeVariant3?))
+                {
+                    return new global::Qdrant.JsonConverters.VectorStorageTypeVariant3NullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.VectorStorageTypeVariant4))
+                {
+                    return new global::Qdrant.JsonConverters.VectorStorageTypeVariant4JsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.VectorStorageTypeVariant4?))
+                {
+                    return new global::Qdrant.JsonConverters.VectorStorageTypeVariant4NullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.VectorStorageTypeVariant5))
+                {
+                    return new global::Qdrant.JsonConverters.VectorStorageTypeVariant5JsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.VectorStorageTypeVariant5?))
+                {
+                    return new global::Qdrant.JsonConverters.VectorStorageTypeVariant5NullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.VectorStorageTypeVariant6))
+                {
+                    return new global::Qdrant.JsonConverters.VectorStorageTypeVariant6JsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.VectorStorageTypeVariant6?))
+                {
+                    return new global::Qdrant.JsonConverters.VectorStorageTypeVariant6NullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.IndexesVariant1Type))
+                {
+                    return new global::Qdrant.JsonConverters.IndexesVariant1TypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.IndexesVariant1Type?))
+                {
+                    return new global::Qdrant.JsonConverters.IndexesVariant1TypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.IndexesVariant2Type))
+                {
+                    return new global::Qdrant.JsonConverters.IndexesVariant2TypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.IndexesVariant2Type?))
+                {
+                    return new global::Qdrant.JsonConverters.IndexesVariant2TypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.VectorStorageDatatype))
+                {
+                    return new global::Qdrant.JsonConverters.VectorStorageDatatypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.VectorStorageDatatype?))
+                {
+                    return new global::Qdrant.JsonConverters.VectorStorageDatatypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.SparseIndexTypeVariant1))
+                {
+                    return new global::Qdrant.JsonConverters.SparseIndexTypeVariant1JsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.SparseIndexTypeVariant1?))
+                {
+                    return new global::Qdrant.JsonConverters.SparseIndexTypeVariant1NullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.SparseIndexTypeVariant2))
+                {
+                    return new global::Qdrant.JsonConverters.SparseIndexTypeVariant2JsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.SparseIndexTypeVariant2?))
+                {
+                    return new global::Qdrant.JsonConverters.SparseIndexTypeVariant2NullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.SparseIndexTypeVariant3))
+                {
+                    return new global::Qdrant.JsonConverters.SparseIndexTypeVariant3JsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.SparseIndexTypeVariant3?))
+                {
+                    return new global::Qdrant.JsonConverters.SparseIndexTypeVariant3NullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.SparseVectorStorageTypeVariant1))
+                {
+                    return new global::Qdrant.JsonConverters.SparseVectorStorageTypeVariant1JsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.SparseVectorStorageTypeVariant1?))
+                {
+                    return new global::Qdrant.JsonConverters.SparseVectorStorageTypeVariant1NullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.SparseVectorStorageTypeVariant2))
+                {
+                    return new global::Qdrant.JsonConverters.SparseVectorStorageTypeVariant2JsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.SparseVectorStorageTypeVariant2?))
+                {
+                    return new global::Qdrant.JsonConverters.SparseVectorStorageTypeVariant2NullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.PayloadStorageTypeVariant1Type))
+                {
+                    return new global::Qdrant.JsonConverters.PayloadStorageTypeVariant1TypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.PayloadStorageTypeVariant1Type?))
+                {
+                    return new global::Qdrant.JsonConverters.PayloadStorageTypeVariant1TypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.PayloadStorageTypeVariant2Type))
+                {
+                    return new global::Qdrant.JsonConverters.PayloadStorageTypeVariant2TypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.PayloadStorageTypeVariant2Type?))
+                {
+                    return new global::Qdrant.JsonConverters.PayloadStorageTypeVariant2TypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.TrackerStatusEnum))
+                {
+                    return new global::Qdrant.JsonConverters.TrackerStatusEnumJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.TrackerStatusEnum?))
+                {
+                    return new global::Qdrant.JsonConverters.TrackerStatusEnumNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.ShardCleanStatusTelemetryEnum))
+                {
+                    return new global::Qdrant.JsonConverters.ShardCleanStatusTelemetryEnumJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.ShardCleanStatusTelemetryEnum?))
+                {
+                    return new global::Qdrant.JsonConverters.ShardCleanStatusTelemetryEnumNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.SnapshotPriority))
+                {
+                    return new global::Qdrant.JsonConverters.SnapshotPriorityJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.SnapshotPriority?))
+                {
+                    return new global::Qdrant.JsonConverters.SnapshotPriorityNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.WriteOrdering))
+                {
+                    return new global::Qdrant.JsonConverters.WriteOrderingJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.WriteOrdering?))
+                {
+                    return new global::Qdrant.JsonConverters.WriteOrderingNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.ReadConsistencyType))
+                {
+                    return new global::Qdrant.JsonConverters.ReadConsistencyTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.ReadConsistencyType?))
+                {
+                    return new global::Qdrant.JsonConverters.ReadConsistencyTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.RecommendStrategy))
+                {
+                    return new global::Qdrant.JsonConverters.RecommendStrategyJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.RecommendStrategy?))
+                {
+                    return new global::Qdrant.JsonConverters.RecommendStrategyNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.Fusion))
+                {
+                    return new global::Qdrant.JsonConverters.FusionJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.Fusion?))
+                {
+                    return new global::Qdrant.JsonConverters.FusionNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.Sample))
+                {
+                    return new global::Qdrant.JsonConverters.SampleJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.Sample?))
+                {
+                    return new global::Qdrant.JsonConverters.SampleNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.IdfScope))
+                {
+                    return new global::Qdrant.JsonConverters.IdfScopeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.IdfScope?))
+                {
+                    return new global::Qdrant.JsonConverters.IdfScopeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.DisabledType))
+                {
+                    return new global::Qdrant.JsonConverters.DisabledTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.DisabledType?))
+                {
+                    return new global::Qdrant.JsonConverters.DisabledTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.SnowballType))
+                {
+                    return new global::Qdrant.JsonConverters.SnowballTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.SnowballType?))
+                {
+                    return new global::Qdrant.JsonConverters.SnowballTypeNullableJsonConverter();
+                }
+                throw new global::System.NotSupportedException($"No generated enum converter is registered for '{typeToConvert}'.");
+            }
+        }
+
+        private sealed class LazyChunkResolver : global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver
+        {
+            private readonly object _gate = new();
+            private readonly global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver?[] _resolvers = new global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver?[2];
+
+            public global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? GetTypeInfo(
+                global::System.Type type,
+                global::System.Text.Json.JsonSerializerOptions options)
+            {
+                for (var index = 0; index < _resolvers.Length; index++)
+                {
+                    var typeInfo = GetResolver(index).GetTypeInfo(type, options);
+                    if (typeInfo is not null)
+                    {
+                        return typeInfo;
+                    }
+                }
+
+                return null;
+            }
+
+            private global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver GetResolver(int index)
+            {
+                var resolver = global::System.Threading.Volatile.Read(ref _resolvers[index]);
+                if (resolver is not null)
+                {
+                    return resolver;
+                }
+
+                lock (_gate)
+                {
+                    return _resolvers[index] ??= CreateResolver(index);
+                }
+            }
+
+            private static global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver CreateResolver(int index)
+            {
+                return index switch
+                {
+                    0 => new SourceGenerationContextChunk0(new global::System.Text.Json.JsonSerializerOptions()),
+
+                    1 => new SourceGenerationContextChunk1(new global::System.Text.Json.JsonSerializerOptions()),
+                    _ => throw new global::System.ArgumentOutOfRangeException(nameof(index)),
+                };
+            }
         }
     }
 }
