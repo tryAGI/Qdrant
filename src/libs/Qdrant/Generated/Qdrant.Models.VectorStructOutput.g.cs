@@ -19,7 +19,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(VectorStructOutputVariant1))]
@@ -27,7 +27,7 @@ namespace Qdrant
         public bool IsVectorStructOutputVariant1 => VectorStructOutputVariant1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickVectorStructOutputVariant1(
 #if NET6_0_OR_GREATER
@@ -40,7 +40,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::System.Collections.Generic.IList<float> PickVectorStructOutputVariant1() => IsVectorStructOutputVariant1
             ? VectorStructOutputVariant1!
@@ -56,7 +56,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(VectorStructOutputVariant2))]
@@ -64,7 +64,7 @@ namespace Qdrant
         public bool IsVectorStructOutputVariant2 => VectorStructOutputVariant2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickVectorStructOutputVariant2(
 #if NET6_0_OR_GREATER
@@ -77,7 +77,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>> PickVectorStructOutputVariant2() => IsVectorStructOutputVariant2
             ? VectorStructOutputVariant2!
@@ -93,7 +93,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(VectorStructOutputVariant3))]
@@ -101,7 +101,7 @@ namespace Qdrant
         public bool IsVectorStructOutputVariant3 => VectorStructOutputVariant3 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickVectorStructOutputVariant3(
 #if NET6_0_OR_GREATER
@@ -114,14 +114,14 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object PickVectorStructOutputVariant3() => IsVectorStructOutputVariant3
             ? VectorStructOutputVariant3!
             : throw new global::System.InvalidOperationException($"Expected union variant 'VectorStructOutputVariant3' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public VectorStructOutput(
             global::System.Collections.Generic.IList<float>? vectorStructOutputVariant1,
@@ -135,25 +135,25 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             VectorStructOutputVariant3 as object ??
             VectorStructOutputVariant2 as object ??
-            VectorStructOutputVariant1 as object 
+            VectorStructOutputVariant1 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             VectorStructOutputVariant1?.ToString() ??
             VectorStructOutputVariant2?.ToString() ??
-            VectorStructOutputVariant3?.ToString() 
+            VectorStructOutputVariant3?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -161,7 +161,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::System.Collections.Generic.IList<float>, TResult>? vectorStructOutputVariant1 = null,
@@ -191,7 +191,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::System.Collections.Generic.IList<float>>? vectorStructOutputVariant1 = null,
@@ -221,7 +221,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::System.Collections.Generic.IList<float>>? vectorStructOutputVariant1 = null,
@@ -249,7 +249,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -272,19 +272,19 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(VectorStructOutput other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<float>?>.Default.Equals(VectorStructOutputVariant1, other.VectorStructOutputVariant1) &&
                 global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>?>.Default.Equals(VectorStructOutputVariant2, other.VectorStructOutputVariant2) &&
-                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(VectorStructOutputVariant3, other.VectorStructOutputVariant3) 
+                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(VectorStructOutputVariant3, other.VectorStructOutputVariant3)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(VectorStructOutput obj1, VectorStructOutput obj2)
         {
@@ -292,7 +292,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(VectorStructOutput obj1, VectorStructOutput obj2)
         {
@@ -300,7 +300,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

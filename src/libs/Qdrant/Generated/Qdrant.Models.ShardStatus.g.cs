@@ -10,19 +10,19 @@ namespace Qdrant
     public enum ShardStatus
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Green,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Grey,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Red,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Yellow,
     }

@@ -4,26 +4,26 @@
 namespace Qdrant
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class PartialSnapshotTelemetry
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("ongoing_create_snapshot_requests")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int OngoingCreateSnapshotRequests { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("is_recovering")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool IsRecovering { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("recovery_timestamp")]
         [global::System.Text.Json.Serialization.JsonRequired]

@@ -4,26 +4,26 @@
 namespace Qdrant
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class VectorDataInfo
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("num_vectors")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int NumVectors { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("num_indexed_vectors")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int NumIndexedVectors { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("num_deleted_vectors")]
         [global::System.Text.Json.Serialization.JsonRequired]

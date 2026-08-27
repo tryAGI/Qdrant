@@ -9,14 +9,14 @@ namespace Qdrant
     public sealed partial class CreateAlias
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("collection_name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string CollectionName { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("alias_name")]
         [global::System.Text.Json.Serialization.JsonRequired]

@@ -11,11 +11,11 @@ namespace Qdrant
     public enum ReshardingDirection
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Down,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Up,
     }

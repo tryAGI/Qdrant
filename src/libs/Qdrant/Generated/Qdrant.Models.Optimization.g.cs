@@ -4,7 +4,7 @@
 namespace Qdrant
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class Optimization
     {
@@ -40,7 +40,7 @@ namespace Qdrant
         public required global::System.Collections.Generic.IList<global::Qdrant.OptimizationSegmentInfo> Segments { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("progress")]
         [global::System.Text.Json.Serialization.JsonRequired]

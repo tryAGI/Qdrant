@@ -5,7 +5,7 @@
 namespace Qdrant
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct SparseVectorStorageType : global::System.IEquatable<SparseVectorStorageType>
     {
@@ -19,7 +19,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SparseVectorStorageTypeVariant1))]
@@ -27,7 +27,7 @@ namespace Qdrant
         public bool IsSparseVectorStorageTypeVariant1 => SparseVectorStorageTypeVariant1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSparseVectorStorageTypeVariant1(
 #if NET6_0_OR_GREATER
@@ -40,7 +40,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Qdrant.SparseVectorStorageTypeVariant1 PickSparseVectorStorageTypeVariant1() => IsSparseVectorStorageTypeVariant1
             ? SparseVectorStorageTypeVariant1!.Value
@@ -56,7 +56,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SparseVectorStorageTypeVariant2))]
@@ -64,7 +64,7 @@ namespace Qdrant
         public bool IsSparseVectorStorageTypeVariant2 => SparseVectorStorageTypeVariant2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSparseVectorStorageTypeVariant2(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Qdrant.SparseVectorStorageTypeVariant2 PickSparseVectorStorageTypeVariant2() => IsSparseVectorStorageTypeVariant2
             ? SparseVectorStorageTypeVariant2!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SparseVectorStorageTypeVariant2' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator SparseVectorStorageType(global::Qdrant.SparseVectorStorageTypeVariant1 value) => new SparseVectorStorageType((global::Qdrant.SparseVectorStorageTypeVariant1?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Qdrant.SparseVectorStorageTypeVariant1?(SparseVectorStorageType @this) => @this.SparseVectorStorageTypeVariant1;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SparseVectorStorageType(global::Qdrant.SparseVectorStorageTypeVariant1? value)
         {
@@ -101,22 +101,22 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static SparseVectorStorageType FromSparseVectorStorageTypeVariant1(global::Qdrant.SparseVectorStorageTypeVariant1? value) => new SparseVectorStorageType(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator SparseVectorStorageType(global::Qdrant.SparseVectorStorageTypeVariant2 value) => new SparseVectorStorageType((global::Qdrant.SparseVectorStorageTypeVariant2?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Qdrant.SparseVectorStorageTypeVariant2?(SparseVectorStorageType @this) => @this.SparseVectorStorageTypeVariant2;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SparseVectorStorageType(global::Qdrant.SparseVectorStorageTypeVariant2? value)
         {
@@ -124,12 +124,12 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static SparseVectorStorageType FromSparseVectorStorageTypeVariant2(global::Qdrant.SparseVectorStorageTypeVariant2? value) => new SparseVectorStorageType(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SparseVectorStorageType(
             global::Qdrant.SparseVectorStorageTypeVariant1? sparseVectorStorageTypeVariant1,
@@ -141,23 +141,23 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             SparseVectorStorageTypeVariant2 as object ??
-            SparseVectorStorageTypeVariant1 as object 
+            SparseVectorStorageTypeVariant1 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             SparseVectorStorageTypeVariant1?.ToValueString() ??
-            SparseVectorStorageTypeVariant2?.ToValueString() 
+            SparseVectorStorageTypeVariant2?.ToValueString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Qdrant.SparseVectorStorageTypeVariant1?, TResult>? sparseVectorStorageTypeVariant1 = null,
@@ -190,7 +190,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Qdrant.SparseVectorStorageTypeVariant1?>? sparseVectorStorageTypeVariant1 = null,
@@ -214,7 +214,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Qdrant.SparseVectorStorageTypeVariant1?>? sparseVectorStorageTypeVariant1 = null,
@@ -237,7 +237,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(SparseVectorStorageType other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Qdrant.SparseVectorStorageTypeVariant1?>.Default.Equals(SparseVectorStorageTypeVariant1, other.SparseVectorStorageTypeVariant1) &&
-                global::System.Collections.Generic.EqualityComparer<global::Qdrant.SparseVectorStorageTypeVariant2?>.Default.Equals(SparseVectorStorageTypeVariant2, other.SparseVectorStorageTypeVariant2) 
+                global::System.Collections.Generic.EqualityComparer<global::Qdrant.SparseVectorStorageTypeVariant2?>.Default.Equals(SparseVectorStorageTypeVariant2, other.SparseVectorStorageTypeVariant2)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(SparseVectorStorageType obj1, SparseVectorStorageType obj2)
         {
@@ -277,7 +277,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(SparseVectorStorageType obj1, SparseVectorStorageType obj2)
         {
@@ -285,7 +285,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

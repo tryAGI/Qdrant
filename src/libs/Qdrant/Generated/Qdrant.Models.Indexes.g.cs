@@ -19,7 +19,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(IndexesVariant1))]
@@ -27,7 +27,7 @@ namespace Qdrant
         public bool IsIndexesVariant1 => IndexesVariant1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickIndexesVariant1(
 #if NET6_0_OR_GREATER
@@ -40,7 +40,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Qdrant.IndexesVariant1 PickIndexesVariant1() => IsIndexesVariant1
             ? IndexesVariant1!
@@ -56,7 +56,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(IndexesVariant2))]
@@ -64,7 +64,7 @@ namespace Qdrant
         public bool IsIndexesVariant2 => IndexesVariant2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickIndexesVariant2(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Qdrant.IndexesVariant2 PickIndexesVariant2() => IsIndexesVariant2
             ? IndexesVariant2!
             : throw new global::System.InvalidOperationException($"Expected union variant 'IndexesVariant2' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Indexes(global::Qdrant.IndexesVariant1 value) => new Indexes((global::Qdrant.IndexesVariant1?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Qdrant.IndexesVariant1?(Indexes @this) => @this.IndexesVariant1;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Indexes(global::Qdrant.IndexesVariant1? value)
         {
@@ -101,22 +101,22 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Indexes FromIndexesVariant1(global::Qdrant.IndexesVariant1? value) => new Indexes(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Indexes(global::Qdrant.IndexesVariant2 value) => new Indexes((global::Qdrant.IndexesVariant2?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Qdrant.IndexesVariant2?(Indexes @this) => @this.IndexesVariant2;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Indexes(global::Qdrant.IndexesVariant2? value)
         {
@@ -124,12 +124,12 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Indexes FromIndexesVariant2(global::Qdrant.IndexesVariant2? value) => new Indexes(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Indexes(
             global::Qdrant.IndexesVariant1? indexesVariant1,
@@ -141,23 +141,23 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             IndexesVariant2 as object ??
-            IndexesVariant1 as object 
+            IndexesVariant1 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             IndexesVariant1?.ToString() ??
-            IndexesVariant2?.ToString() 
+            IndexesVariant2?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Qdrant.IndexesVariant1, TResult>? indexesVariant1 = null,
@@ -190,7 +190,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Qdrant.IndexesVariant1>? indexesVariant1 = null,
@@ -214,7 +214,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Qdrant.IndexesVariant1>? indexesVariant1 = null,
@@ -237,7 +237,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(Indexes other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Qdrant.IndexesVariant1?>.Default.Equals(IndexesVariant1, other.IndexesVariant1) &&
-                global::System.Collections.Generic.EqualityComparer<global::Qdrant.IndexesVariant2?>.Default.Equals(IndexesVariant2, other.IndexesVariant2) 
+                global::System.Collections.Generic.EqualityComparer<global::Qdrant.IndexesVariant2?>.Default.Equals(IndexesVariant2, other.IndexesVariant2)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(Indexes obj1, Indexes obj2)
         {
@@ -277,7 +277,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(Indexes obj1, Indexes obj2)
         {
@@ -285,7 +285,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

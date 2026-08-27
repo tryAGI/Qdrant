@@ -9,19 +9,19 @@ namespace Qdrant
     public enum StateRole
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Candidate,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Follower,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Leader,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PreCandidate,
     }

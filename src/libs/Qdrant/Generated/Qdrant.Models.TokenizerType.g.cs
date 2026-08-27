@@ -4,24 +4,24 @@
 namespace Qdrant
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum TokenizerType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Multilingual,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Prefix,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Whitespace,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Word,
     }

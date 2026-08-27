@@ -5,12 +5,12 @@
 namespace Qdrant
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct BatchVectorStruct : global::System.IEquatable<BatchVectorStruct>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>? BatchVectorStructVariant1 { get; init; }
@@ -19,7 +19,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BatchVectorStructVariant1))]
@@ -27,7 +27,7 @@ namespace Qdrant
         public bool IsBatchVectorStructVariant1 => BatchVectorStructVariant1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickBatchVectorStructVariant1(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>> PickBatchVectorStructVariant1() => IsBatchVectorStructVariant1
             ? BatchVectorStructVariant1!
             : throw new global::System.InvalidOperationException($"Expected union variant 'BatchVectorStructVariant1' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>>? BatchVectorStructVariant2 { get; init; }
@@ -56,7 +56,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BatchVectorStructVariant2))]
@@ -64,7 +64,7 @@ namespace Qdrant
         public bool IsBatchVectorStructVariant2 => BatchVectorStructVariant2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickBatchVectorStructVariant2(
 #if NET6_0_OR_GREATER
@@ -77,14 +77,14 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>> PickBatchVectorStructVariant2() => IsBatchVectorStructVariant2
             ? BatchVectorStructVariant2!
             : throw new global::System.InvalidOperationException($"Expected union variant 'BatchVectorStructVariant2' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<global::Qdrant.Vector>>? BatchVectorStructVariant3 { get; init; }
@@ -93,7 +93,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BatchVectorStructVariant3))]
@@ -101,7 +101,7 @@ namespace Qdrant
         public bool IsBatchVectorStructVariant3 => BatchVectorStructVariant3 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickBatchVectorStructVariant3(
 #if NET6_0_OR_GREATER
@@ -114,14 +114,14 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<global::Qdrant.Vector>> PickBatchVectorStructVariant3() => IsBatchVectorStructVariant3
             ? BatchVectorStructVariant3!
             : throw new global::System.InvalidOperationException($"Expected union variant 'BatchVectorStructVariant3' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<global::Qdrant.Document>? BatchVectorStructVariant4 { get; init; }
@@ -130,7 +130,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BatchVectorStructVariant4))]
@@ -138,7 +138,7 @@ namespace Qdrant
         public bool IsBatchVectorStructVariant4 => BatchVectorStructVariant4 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickBatchVectorStructVariant4(
 #if NET6_0_OR_GREATER
@@ -151,14 +151,14 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::System.Collections.Generic.IList<global::Qdrant.Document> PickBatchVectorStructVariant4() => IsBatchVectorStructVariant4
             ? BatchVectorStructVariant4!
             : throw new global::System.InvalidOperationException($"Expected union variant 'BatchVectorStructVariant4' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<global::Qdrant.Image>? BatchVectorStructVariant5 { get; init; }
@@ -167,7 +167,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BatchVectorStructVariant5))]
@@ -175,7 +175,7 @@ namespace Qdrant
         public bool IsBatchVectorStructVariant5 => BatchVectorStructVariant5 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickBatchVectorStructVariant5(
 #if NET6_0_OR_GREATER
@@ -188,14 +188,14 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::System.Collections.Generic.IList<global::Qdrant.Image> PickBatchVectorStructVariant5() => IsBatchVectorStructVariant5
             ? BatchVectorStructVariant5!
             : throw new global::System.InvalidOperationException($"Expected union variant 'BatchVectorStructVariant5' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<global::Qdrant.InferenceObject>? BatchVectorStructVariant6 { get; init; }
@@ -204,7 +204,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BatchVectorStructVariant6))]
@@ -212,7 +212,7 @@ namespace Qdrant
         public bool IsBatchVectorStructVariant6 => BatchVectorStructVariant6 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickBatchVectorStructVariant6(
 #if NET6_0_OR_GREATER
@@ -225,23 +225,23 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::System.Collections.Generic.IList<global::Qdrant.InferenceObject> PickBatchVectorStructVariant6() => IsBatchVectorStructVariant6
             ? BatchVectorStructVariant6!
             : throw new global::System.InvalidOperationException($"Expected union variant 'BatchVectorStructVariant6' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BatchVectorStruct(global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<global::Qdrant.Vector>> value) => new BatchVectorStruct((global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<global::Qdrant.Vector>>?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<global::Qdrant.Vector>>?(BatchVectorStruct @this) => @this.BatchVectorStructVariant3;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BatchVectorStruct(global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<global::Qdrant.Vector>>? value)
         {
@@ -249,12 +249,12 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BatchVectorStruct FromBatchVectorStructVariant3(global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<global::Qdrant.Vector>>? value) => new BatchVectorStruct(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BatchVectorStruct(
             global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>? batchVectorStructVariant1,
@@ -274,7 +274,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             BatchVectorStructVariant6 as object ??
@@ -282,11 +282,11 @@ namespace Qdrant
             BatchVectorStructVariant4 as object ??
             BatchVectorStructVariant3 as object ??
             BatchVectorStructVariant2 as object ??
-            BatchVectorStructVariant1 as object 
+            BatchVectorStructVariant1 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             BatchVectorStructVariant1?.ToString() ??
@@ -294,11 +294,11 @@ namespace Qdrant
             BatchVectorStructVariant3?.ToString() ??
             BatchVectorStructVariant4?.ToString() ??
             BatchVectorStructVariant5?.ToString() ??
-            BatchVectorStructVariant6?.ToString() 
+            BatchVectorStructVariant6?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -306,7 +306,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>, TResult>? batchVectorStructVariant1 = null,
@@ -351,7 +351,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>>? batchVectorStructVariant1 = null,
@@ -399,7 +399,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>>? batchVectorStructVariant1 = null,
@@ -442,7 +442,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -471,7 +471,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(BatchVectorStruct other)
         {
@@ -481,12 +481,12 @@ namespace Qdrant
                 global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<global::Qdrant.Vector>>?>.Default.Equals(BatchVectorStructVariant3, other.BatchVectorStructVariant3) &&
                 global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::Qdrant.Document>?>.Default.Equals(BatchVectorStructVariant4, other.BatchVectorStructVariant4) &&
                 global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::Qdrant.Image>?>.Default.Equals(BatchVectorStructVariant5, other.BatchVectorStructVariant5) &&
-                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::Qdrant.InferenceObject>?>.Default.Equals(BatchVectorStructVariant6, other.BatchVectorStructVariant6) 
+                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::Qdrant.InferenceObject>?>.Default.Equals(BatchVectorStructVariant6, other.BatchVectorStructVariant6)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(BatchVectorStruct obj1, BatchVectorStruct obj2)
         {
@@ -494,7 +494,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(BatchVectorStruct obj1, BatchVectorStruct obj2)
         {
@@ -502,7 +502,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

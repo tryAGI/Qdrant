@@ -5,12 +5,12 @@
 namespace Qdrant
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct AnyVariants : global::System.IEquatable<AnyVariants>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<string>? AnyVariantsVariant1 { get; init; }
@@ -19,7 +19,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AnyVariantsVariant1))]
@@ -27,7 +27,7 @@ namespace Qdrant
         public bool IsAnyVariantsVariant1 => AnyVariantsVariant1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickAnyVariantsVariant1(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::System.Collections.Generic.IList<string> PickAnyVariantsVariant1() => IsAnyVariantsVariant1
             ? AnyVariantsVariant1!
             : throw new global::System.InvalidOperationException($"Expected union variant 'AnyVariantsVariant1' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<long>? AnyVariantsVariant2 { get; init; }
@@ -56,7 +56,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AnyVariantsVariant2))]
@@ -64,7 +64,7 @@ namespace Qdrant
         public bool IsAnyVariantsVariant2 => AnyVariantsVariant2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickAnyVariantsVariant2(
 #if NET6_0_OR_GREATER
@@ -77,14 +77,14 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::System.Collections.Generic.IList<long> PickAnyVariantsVariant2() => IsAnyVariantsVariant2
             ? AnyVariantsVariant2!
             : throw new global::System.InvalidOperationException($"Expected union variant 'AnyVariantsVariant2' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AnyVariants(
             global::System.Collections.Generic.IList<string>? anyVariantsVariant1,
@@ -96,23 +96,23 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             AnyVariantsVariant2 as object ??
-            AnyVariantsVariant1 as object 
+            AnyVariantsVariant1 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             AnyVariantsVariant1?.ToString() ??
-            AnyVariantsVariant2?.ToString() 
+            AnyVariantsVariant2?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -120,7 +120,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::System.Collections.Generic.IList<string>, TResult>? anyVariantsVariant1 = null,
@@ -145,7 +145,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::System.Collections.Generic.IList<string>>? anyVariantsVariant1 = null,
@@ -169,7 +169,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::System.Collections.Generic.IList<string>>? anyVariantsVariant1 = null,
@@ -192,7 +192,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -213,18 +213,18 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(AnyVariants other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<string>?>.Default.Equals(AnyVariantsVariant1, other.AnyVariantsVariant1) &&
-                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<long>?>.Default.Equals(AnyVariantsVariant2, other.AnyVariantsVariant2) 
+                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<long>?>.Default.Equals(AnyVariantsVariant2, other.AnyVariantsVariant2)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(AnyVariants obj1, AnyVariants obj2)
         {
@@ -232,7 +232,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(AnyVariants obj1, AnyVariants obj2)
         {
@@ -240,7 +240,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

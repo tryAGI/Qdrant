@@ -22,7 +22,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Dense))]
@@ -30,7 +30,7 @@ namespace Qdrant
         public bool IsDense => Dense != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickDense(
 #if NET6_0_OR_GREATER
@@ -43,7 +43,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Qdrant.DenseVectorNameConfig PickDense() => IsDense
             ? Dense!
@@ -59,7 +59,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Sparse))]
@@ -67,7 +67,7 @@ namespace Qdrant
         public bool IsSparse => Sparse != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSparse(
 #if NET6_0_OR_GREATER
@@ -80,23 +80,23 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Qdrant.SparseVectorNameConfig PickSparse() => IsSparse
             ? Sparse!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Sparse' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator VectorNameConfig(global::Qdrant.DenseVectorNameConfig value) => new VectorNameConfig((global::Qdrant.DenseVectorNameConfig?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Qdrant.DenseVectorNameConfig?(VectorNameConfig @this) => @this.Dense;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public VectorNameConfig(global::Qdrant.DenseVectorNameConfig? value)
         {
@@ -104,22 +104,22 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static VectorNameConfig FromDense(global::Qdrant.DenseVectorNameConfig? value) => new VectorNameConfig(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator VectorNameConfig(global::Qdrant.SparseVectorNameConfig value) => new VectorNameConfig((global::Qdrant.SparseVectorNameConfig?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Qdrant.SparseVectorNameConfig?(VectorNameConfig @this) => @this.Sparse;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public VectorNameConfig(global::Qdrant.SparseVectorNameConfig? value)
         {
@@ -127,12 +127,12 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static VectorNameConfig FromSparse(global::Qdrant.SparseVectorNameConfig? value) => new VectorNameConfig(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public VectorNameConfig(
             global::Qdrant.DenseVectorNameConfig? dense,
@@ -144,23 +144,23 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Sparse as object ??
-            Dense as object 
+            Dense as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Dense?.ToString() ??
-            Sparse?.ToString() 
+            Sparse?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -168,7 +168,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Qdrant.DenseVectorNameConfig, TResult>? dense = null,
@@ -193,7 +193,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Qdrant.DenseVectorNameConfig>? dense = null,
@@ -217,7 +217,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Qdrant.DenseVectorNameConfig>? dense = null,
@@ -240,7 +240,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -261,18 +261,18 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(VectorNameConfig other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Qdrant.DenseVectorNameConfig?>.Default.Equals(Dense, other.Dense) &&
-                global::System.Collections.Generic.EqualityComparer<global::Qdrant.SparseVectorNameConfig?>.Default.Equals(Sparse, other.Sparse) 
+                global::System.Collections.Generic.EqualityComparer<global::Qdrant.SparseVectorNameConfig?>.Default.Equals(Sparse, other.Sparse)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(VectorNameConfig obj1, VectorNameConfig obj2)
         {
@@ -280,7 +280,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(VectorNameConfig obj1, VectorNameConfig obj2)
         {
@@ -288,7 +288,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

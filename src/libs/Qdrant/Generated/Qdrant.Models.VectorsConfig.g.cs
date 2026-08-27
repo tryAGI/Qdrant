@@ -22,7 +22,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(VectorParams))]
@@ -30,7 +30,7 @@ namespace Qdrant
         public bool IsVectorParams => VectorParams != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickVectorParams(
 #if NET6_0_OR_GREATER
@@ -43,14 +43,14 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Qdrant.VectorParams PickVectorParams() => IsVectorParams
             ? VectorParams!
             : throw new global::System.InvalidOperationException($"Expected union variant 'VectorParams' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.Dictionary<string, global::Qdrant.VectorParams>? VectorsConfigVariant2 { get; init; }
@@ -59,7 +59,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(VectorsConfigVariant2))]
@@ -67,7 +67,7 @@ namespace Qdrant
         public bool IsVectorsConfigVariant2 => VectorsConfigVariant2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickVectorsConfigVariant2(
 #if NET6_0_OR_GREATER
@@ -80,23 +80,23 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::System.Collections.Generic.Dictionary<string, global::Qdrant.VectorParams> PickVectorsConfigVariant2() => IsVectorsConfigVariant2
             ? VectorsConfigVariant2!
             : throw new global::System.InvalidOperationException($"Expected union variant 'VectorsConfigVariant2' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator VectorsConfig(global::Qdrant.VectorParams value) => new VectorsConfig((global::Qdrant.VectorParams?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Qdrant.VectorParams?(VectorsConfig @this) => @this.VectorParams;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public VectorsConfig(global::Qdrant.VectorParams? value)
         {
@@ -104,22 +104,22 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static VectorsConfig FromVectorParams(global::Qdrant.VectorParams? value) => new VectorsConfig(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator VectorsConfig(global::System.Collections.Generic.Dictionary<string, global::Qdrant.VectorParams> value) => new VectorsConfig((global::System.Collections.Generic.Dictionary<string, global::Qdrant.VectorParams>?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::System.Collections.Generic.Dictionary<string, global::Qdrant.VectorParams>?(VectorsConfig @this) => @this.VectorsConfigVariant2;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public VectorsConfig(global::System.Collections.Generic.Dictionary<string, global::Qdrant.VectorParams>? value)
         {
@@ -127,12 +127,12 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static VectorsConfig FromVectorsConfigVariant2(global::System.Collections.Generic.Dictionary<string, global::Qdrant.VectorParams>? value) => new VectorsConfig(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public VectorsConfig(
             global::Qdrant.VectorParams? vectorParams,
@@ -144,23 +144,23 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             VectorsConfigVariant2 as object ??
-            VectorParams as object 
+            VectorParams as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             VectorParams?.ToString() ??
-            VectorsConfigVariant2?.ToString() 
+            VectorsConfigVariant2?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -168,7 +168,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Qdrant.VectorParams, TResult>? vectorParams = null,
@@ -193,7 +193,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Qdrant.VectorParams>? vectorParams = null,
@@ -217,7 +217,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Qdrant.VectorParams>? vectorParams = null,
@@ -240,7 +240,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -261,18 +261,18 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(VectorsConfig other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Qdrant.VectorParams?>.Default.Equals(VectorParams, other.VectorParams) &&
-                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.Dictionary<string, global::Qdrant.VectorParams>?>.Default.Equals(VectorsConfigVariant2, other.VectorsConfigVariant2) 
+                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.Dictionary<string, global::Qdrant.VectorParams>?>.Default.Equals(VectorsConfigVariant2, other.VectorsConfigVariant2)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(VectorsConfig obj1, VectorsConfig obj2)
         {
@@ -280,7 +280,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(VectorsConfig obj1, VectorsConfig obj2)
         {
@@ -288,7 +288,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

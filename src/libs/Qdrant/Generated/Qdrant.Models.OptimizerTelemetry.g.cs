@@ -4,7 +4,7 @@
 namespace Qdrant
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class OptimizerTelemetry
     {
@@ -17,14 +17,14 @@ namespace Qdrant
         public required global::Qdrant.OptimizersStatus Status { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("optimizations")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::Qdrant.OperationDurationStatistics Optimizations { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("log")]
         public global::System.Collections.Generic.IList<global::Qdrant.TrackerTelemetry>? Log { get; set; }

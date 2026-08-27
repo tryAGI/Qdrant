@@ -9,49 +9,49 @@ namespace Qdrant
     public sealed partial class HardwareUsage
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cpu")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int Cpu { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("payload_io_read")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int PayloadIoRead { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("payload_io_write")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int PayloadIoWrite { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("payload_index_io_read")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int PayloadIndexIoRead { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("payload_index_io_write")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int PayloadIndexIoWrite { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("vector_io_read")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int VectorIoRead { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("vector_io_write")]
         [global::System.Text.Json.Serialization.JsonRequired]

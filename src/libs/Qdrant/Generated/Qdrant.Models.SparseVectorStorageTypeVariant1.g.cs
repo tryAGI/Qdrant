@@ -9,7 +9,7 @@ namespace Qdrant
     public enum SparseVectorStorageTypeVariant1
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Mmap,
     }

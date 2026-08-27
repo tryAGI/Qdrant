@@ -5,12 +5,12 @@
 namespace Qdrant
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct OrderByInterface : global::System.IEquatable<OrderByInterface>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public string? OrderByInterfaceVariant1 { get; init; }
@@ -19,7 +19,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OrderByInterfaceVariant1))]
@@ -27,7 +27,7 @@ namespace Qdrant
         public bool IsOrderByInterfaceVariant1 => OrderByInterfaceVariant1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickOrderByInterfaceVariant1(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string PickOrderByInterfaceVariant1() => IsOrderByInterfaceVariant1
             ? OrderByInterfaceVariant1!
             : throw new global::System.InvalidOperationException($"Expected union variant 'OrderByInterfaceVariant1' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.OrderBy? OrderBy { get; init; }
@@ -56,7 +56,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OrderBy))]
@@ -64,7 +64,7 @@ namespace Qdrant
         public bool IsOrderBy => OrderBy != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickOrderBy(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Qdrant.OrderBy PickOrderBy() => IsOrderBy
             ? OrderBy!
             : throw new global::System.InvalidOperationException($"Expected union variant 'OrderBy' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator OrderByInterface(string value) => new OrderByInterface((string?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator string?(OrderByInterface @this) => @this.OrderByInterfaceVariant1;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public OrderByInterface(string? value)
         {
@@ -101,22 +101,22 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static OrderByInterface FromOrderByInterfaceVariant1(string? value) => new OrderByInterface(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator OrderByInterface(global::Qdrant.OrderBy value) => new OrderByInterface((global::Qdrant.OrderBy?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Qdrant.OrderBy?(OrderByInterface @this) => @this.OrderBy;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public OrderByInterface(global::Qdrant.OrderBy? value)
         {
@@ -124,12 +124,12 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static OrderByInterface FromOrderBy(global::Qdrant.OrderBy? value) => new OrderByInterface(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public OrderByInterface(
             string? orderByInterfaceVariant1,
@@ -141,23 +141,23 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             OrderBy as object ??
-            OrderByInterfaceVariant1 as object 
+            OrderByInterfaceVariant1 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             OrderByInterfaceVariant1?.ToString() ??
-            OrderBy?.ToString() 
+            OrderBy?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<string, TResult>? orderByInterfaceVariant1 = null,
@@ -190,7 +190,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<string>? orderByInterfaceVariant1 = null,
@@ -214,7 +214,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<string>? orderByInterfaceVariant1 = null,
@@ -237,7 +237,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(OrderByInterface other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(OrderByInterfaceVariant1, other.OrderByInterfaceVariant1) &&
-                global::System.Collections.Generic.EqualityComparer<global::Qdrant.OrderBy?>.Default.Equals(OrderBy, other.OrderBy) 
+                global::System.Collections.Generic.EqualityComparer<global::Qdrant.OrderBy?>.Default.Equals(OrderBy, other.OrderBy)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(OrderByInterface obj1, OrderByInterface obj2)
         {
@@ -277,7 +277,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(OrderByInterface obj1, OrderByInterface obj2)
         {
@@ -285,7 +285,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

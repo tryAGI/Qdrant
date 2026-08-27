@@ -9,19 +9,19 @@ namespace Qdrant
     public enum CollectionStatus
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Green,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Grey,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Red,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Yellow,
     }

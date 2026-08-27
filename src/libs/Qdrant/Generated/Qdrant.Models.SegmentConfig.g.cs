@@ -4,7 +4,7 @@
 namespace Qdrant
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class SegmentConfig
     {
@@ -15,7 +15,7 @@ namespace Qdrant
         public global::System.Collections.Generic.Dictionary<string, global::Qdrant.VectorDataConfig>? VectorData { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sparse_vector_data")]
         public global::System.Collections.Generic.Dictionary<string, global::Qdrant.SparseVectorDataConfig>? SparseVectorData { get; set; }

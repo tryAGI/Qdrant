@@ -5,12 +5,12 @@
 namespace Qdrant
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct FacetValue : global::System.IEquatable<FacetValue>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public string? FacetValueVariant1 { get; init; }
@@ -19,7 +19,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FacetValueVariant1))]
@@ -27,7 +27,7 @@ namespace Qdrant
         public bool IsFacetValueVariant1 => FacetValueVariant1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickFacetValueVariant1(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string PickFacetValueVariant1() => IsFacetValueVariant1
             ? FacetValueVariant1!
             : throw new global::System.InvalidOperationException($"Expected union variant 'FacetValueVariant1' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public long? FacetValueVariant2 { get; init; }
@@ -56,7 +56,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FacetValueVariant2))]
@@ -64,7 +64,7 @@ namespace Qdrant
         public bool IsFacetValueVariant2 => FacetValueVariant2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickFacetValueVariant2(
 #if NET6_0_OR_GREATER
@@ -77,14 +77,14 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public long PickFacetValueVariant2() => IsFacetValueVariant2
             ? FacetValueVariant2!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FacetValueVariant2' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public bool? FacetValueVariant3 { get; init; }
@@ -93,7 +93,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FacetValueVariant3))]
@@ -101,7 +101,7 @@ namespace Qdrant
         public bool IsFacetValueVariant3 => FacetValueVariant3 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickFacetValueVariant3(
 #if NET6_0_OR_GREATER
@@ -114,23 +114,23 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool PickFacetValueVariant3() => IsFacetValueVariant3
             ? FacetValueVariant3!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FacetValueVariant3' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator FacetValue(string value) => new FacetValue((string?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator string?(FacetValue @this) => @this.FacetValueVariant1;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public FacetValue(string? value)
         {
@@ -138,22 +138,22 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static FacetValue FromFacetValueVariant1(string? value) => new FacetValue(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator FacetValue(long value) => new FacetValue((long?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator long?(FacetValue @this) => @this.FacetValueVariant2;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public FacetValue(long? value)
         {
@@ -161,22 +161,22 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static FacetValue FromFacetValueVariant2(long? value) => new FacetValue(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator FacetValue(bool value) => new FacetValue((bool?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator bool?(FacetValue @this) => @this.FacetValueVariant3;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public FacetValue(bool? value)
         {
@@ -184,12 +184,12 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static FacetValue FromFacetValueVariant3(bool? value) => new FacetValue(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public FacetValue(
             string? facetValueVariant1,
@@ -203,25 +203,25 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             FacetValueVariant3 as object ??
             FacetValueVariant2 as object ??
-            FacetValueVariant1 as object 
+            FacetValueVariant1 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             FacetValueVariant1?.ToString() ??
             FacetValueVariant2?.ToString() ??
-            FacetValueVariant3?.ToString().ToLowerInvariant() 
+            FacetValueVariant3?.ToString().ToLowerInvariant()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -229,7 +229,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<string, TResult>? facetValueVariant1 = null,
@@ -259,7 +259,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<string>? facetValueVariant1 = null,
@@ -289,7 +289,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<string>? facetValueVariant1 = null,
@@ -317,7 +317,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -340,19 +340,19 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(FacetValue other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(FacetValueVariant1, other.FacetValueVariant1) &&
                 global::System.Collections.Generic.EqualityComparer<long?>.Default.Equals(FacetValueVariant2, other.FacetValueVariant2) &&
-                global::System.Collections.Generic.EqualityComparer<bool?>.Default.Equals(FacetValueVariant3, other.FacetValueVariant3) 
+                global::System.Collections.Generic.EqualityComparer<bool?>.Default.Equals(FacetValueVariant3, other.FacetValueVariant3)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(FacetValue obj1, FacetValue obj2)
         {
@@ -360,7 +360,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(FacetValue obj1, FacetValue obj2)
         {
@@ -368,7 +368,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

@@ -9,7 +9,7 @@ namespace Qdrant
     public enum VectorStorageTypeVariant5
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InRamMmap,
     }

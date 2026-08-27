@@ -25,7 +25,7 @@ namespace Qdrant
         public required global::Qdrant.ExtendedPointId B { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("score")]
         [global::System.Text.Json.Serialization.JsonRequired]

@@ -4,12 +4,12 @@
 namespace Qdrant
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum PayloadStorageTypeVariant2Type
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InRamMmap,
     }

@@ -126,7 +126,7 @@ namespace Qdrant
                          __authorization.Location == "Header")
                 {
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
-                } 
+                }
             }
                 global::Qdrant.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
@@ -317,7 +317,7 @@ namespace Qdrant
                                 retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
-                            // 
+                            //
                             if ((int)__response.StatusCode >= 400 && (int)__response.StatusCode <= 499)
                             {
                                 string? __content_4XX = null;

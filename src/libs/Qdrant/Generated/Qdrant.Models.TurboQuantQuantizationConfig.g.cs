@@ -6,7 +6,7 @@
 namespace Qdrant
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class TurboQuantQuantizationConfig
     {
@@ -24,7 +24,7 @@ namespace Qdrant
         public global::Qdrant.Memory? Memory { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("bits")]
         public global::Qdrant.TurboQuantBitSize? Bits { get; set; }

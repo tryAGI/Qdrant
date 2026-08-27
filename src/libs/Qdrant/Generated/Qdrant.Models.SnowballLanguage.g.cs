@@ -9,79 +9,79 @@ namespace Qdrant
     public enum SnowballLanguage
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Arabic,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Armenian,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Danish,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Dutch,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         English,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Finnish,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         French,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         German,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Greek,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Hungarian,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Italian,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Norwegian,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Portuguese,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Romanian,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Russian,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Spanish,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Swedish,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Tamil,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Turkish,
     }

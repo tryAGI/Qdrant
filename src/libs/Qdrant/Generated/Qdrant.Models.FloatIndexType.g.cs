@@ -4,12 +4,12 @@
 namespace Qdrant
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum FloatIndexType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Float,
     }

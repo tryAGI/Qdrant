@@ -16,7 +16,7 @@ namespace Qdrant
     public readonly partial struct ReadConsistency : global::System.IEquatable<ReadConsistency>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public int? ReadConsistencyVariant1 { get; init; }
@@ -25,7 +25,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ReadConsistencyVariant1))]
@@ -33,7 +33,7 @@ namespace Qdrant
         public bool IsReadConsistencyVariant1 => ReadConsistencyVariant1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickReadConsistencyVariant1(
 #if NET6_0_OR_GREATER
@@ -46,7 +46,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public int PickReadConsistencyVariant1() => IsReadConsistencyVariant1
             ? ReadConsistencyVariant1!.Value
@@ -64,7 +64,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Type))]
@@ -72,7 +72,7 @@ namespace Qdrant
         public bool IsType => Type != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickType(
 #if NET6_0_OR_GREATER
@@ -85,23 +85,23 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Qdrant.ReadConsistencyType PickType() => IsType
             ? Type!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Type' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ReadConsistency(int value) => new ReadConsistency((int?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator int?(ReadConsistency @this) => @this.ReadConsistencyVariant1;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ReadConsistency(int? value)
         {
@@ -109,22 +109,22 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ReadConsistency FromReadConsistencyVariant1(int? value) => new ReadConsistency(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ReadConsistency(global::Qdrant.ReadConsistencyType value) => new ReadConsistency((global::Qdrant.ReadConsistencyType?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Qdrant.ReadConsistencyType?(ReadConsistency @this) => @this.Type;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ReadConsistency(global::Qdrant.ReadConsistencyType? value)
         {
@@ -132,12 +132,12 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ReadConsistency FromType(global::Qdrant.ReadConsistencyType? value) => new ReadConsistency(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ReadConsistency(
             int? readConsistencyVariant1,
@@ -149,23 +149,23 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Type as object ??
-            ReadConsistencyVariant1 as object 
+            ReadConsistencyVariant1 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             ReadConsistencyVariant1?.ToString() ??
-            Type?.ToValueString() 
+            Type?.ToValueString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -173,7 +173,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<int?, TResult>? readConsistencyVariant1 = null,
@@ -198,7 +198,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<int?>? readConsistencyVariant1 = null,
@@ -222,7 +222,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<int?>? readConsistencyVariant1 = null,
@@ -245,7 +245,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -266,18 +266,18 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(ReadConsistency other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<int?>.Default.Equals(ReadConsistencyVariant1, other.ReadConsistencyVariant1) &&
-                global::System.Collections.Generic.EqualityComparer<global::Qdrant.ReadConsistencyType?>.Default.Equals(Type, other.Type) 
+                global::System.Collections.Generic.EqualityComparer<global::Qdrant.ReadConsistencyType?>.Default.Equals(Type, other.Type)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(ReadConsistency obj1, ReadConsistency obj2)
         {
@@ -285,7 +285,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(ReadConsistency obj1, ReadConsistency obj2)
         {
@@ -293,7 +293,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

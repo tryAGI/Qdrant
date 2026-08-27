@@ -12,15 +12,15 @@ namespace Qdrant
     public enum RecommendStrategy
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AverageVector,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         BestScore,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SumScores,
     }

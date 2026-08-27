@@ -4,20 +4,20 @@
 namespace Qdrant
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum BinaryQuantizationEncoding
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         OneAndHalfBits,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         OneBit,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TwoBits,
     }

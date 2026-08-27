@@ -9,7 +9,7 @@ namespace Qdrant
     public sealed partial class CollectionConfig
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("params")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -23,14 +23,14 @@ namespace Qdrant
         public required global::Qdrant.HnswConfig HnswConfig { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("optimizer_config")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::Qdrant.OptimizersConfig OptimizerConfig { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("wal_config")]
         public global::Qdrant.WalConfig? WalConfig { get; set; }
@@ -42,7 +42,7 @@ namespace Qdrant
         public global::Qdrant.QuantizationConfig? QuantizationConfig { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("strict_mode_config")]
         public global::Qdrant.StrictModeConfigOutput? StrictModeConfig { get; set; }

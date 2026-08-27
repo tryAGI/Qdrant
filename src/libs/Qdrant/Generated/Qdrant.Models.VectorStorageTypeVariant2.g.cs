@@ -10,7 +10,7 @@ namespace Qdrant
     public enum VectorStorageTypeVariant2
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Mmap,
     }

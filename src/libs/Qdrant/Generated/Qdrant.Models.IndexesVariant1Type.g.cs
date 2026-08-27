@@ -4,12 +4,12 @@
 namespace Qdrant
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum IndexesVariant1Type
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Plain,
     }

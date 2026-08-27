@@ -9,15 +9,15 @@ namespace Qdrant
     public enum SegmentType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Indexed,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Plain,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Special,
     }

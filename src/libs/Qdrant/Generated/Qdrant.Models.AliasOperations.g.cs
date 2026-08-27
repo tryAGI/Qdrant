@@ -10,7 +10,7 @@ namespace Qdrant
     public readonly partial struct AliasOperations : global::System.IEquatable<AliasOperations>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.CreateAliasOperation? CreateOperation { get; init; }
@@ -19,7 +19,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CreateOperation))]
@@ -27,7 +27,7 @@ namespace Qdrant
         public bool IsCreateOperation => CreateOperation != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickCreateOperation(
 #if NET6_0_OR_GREATER
@@ -40,7 +40,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Qdrant.CreateAliasOperation PickCreateOperation() => IsCreateOperation
             ? CreateOperation!
@@ -56,7 +56,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(DeleteOperation))]
@@ -64,7 +64,7 @@ namespace Qdrant
         public bool IsDeleteOperation => DeleteOperation != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickDeleteOperation(
 #if NET6_0_OR_GREATER
@@ -77,7 +77,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Qdrant.DeleteAliasOperation PickDeleteOperation() => IsDeleteOperation
             ? DeleteOperation!
@@ -93,7 +93,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RenameOperation))]
@@ -101,7 +101,7 @@ namespace Qdrant
         public bool IsRenameOperation => RenameOperation != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickRenameOperation(
 #if NET6_0_OR_GREATER
@@ -114,23 +114,23 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Qdrant.RenameAliasOperation PickRenameOperation() => IsRenameOperation
             ? RenameOperation!
             : throw new global::System.InvalidOperationException($"Expected union variant 'RenameOperation' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator AliasOperations(global::Qdrant.CreateAliasOperation value) => new AliasOperations((global::Qdrant.CreateAliasOperation?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Qdrant.CreateAliasOperation?(AliasOperations @this) => @this.CreateOperation;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AliasOperations(global::Qdrant.CreateAliasOperation? value)
         {
@@ -138,22 +138,22 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static AliasOperations FromCreateOperation(global::Qdrant.CreateAliasOperation? value) => new AliasOperations(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator AliasOperations(global::Qdrant.DeleteAliasOperation value) => new AliasOperations((global::Qdrant.DeleteAliasOperation?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Qdrant.DeleteAliasOperation?(AliasOperations @this) => @this.DeleteOperation;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AliasOperations(global::Qdrant.DeleteAliasOperation? value)
         {
@@ -161,22 +161,22 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static AliasOperations FromDeleteOperation(global::Qdrant.DeleteAliasOperation? value) => new AliasOperations(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator AliasOperations(global::Qdrant.RenameAliasOperation value) => new AliasOperations((global::Qdrant.RenameAliasOperation?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Qdrant.RenameAliasOperation?(AliasOperations @this) => @this.RenameOperation;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AliasOperations(global::Qdrant.RenameAliasOperation? value)
         {
@@ -184,12 +184,12 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static AliasOperations FromRenameOperation(global::Qdrant.RenameAliasOperation? value) => new AliasOperations(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AliasOperations(
             global::Qdrant.CreateAliasOperation? createOperation,
@@ -203,25 +203,25 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             RenameOperation as object ??
             DeleteOperation as object ??
-            CreateOperation as object 
+            CreateOperation as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             CreateOperation?.ToString() ??
             DeleteOperation?.ToString() ??
-            RenameOperation?.ToString() 
+            RenameOperation?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -229,7 +229,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Qdrant.CreateAliasOperation, TResult>? createOperation = null,
@@ -259,7 +259,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Qdrant.CreateAliasOperation>? createOperation = null,
@@ -289,7 +289,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Qdrant.CreateAliasOperation>? createOperation = null,
@@ -317,7 +317,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -340,19 +340,19 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(AliasOperations other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Qdrant.CreateAliasOperation?>.Default.Equals(CreateOperation, other.CreateOperation) &&
                 global::System.Collections.Generic.EqualityComparer<global::Qdrant.DeleteAliasOperation?>.Default.Equals(DeleteOperation, other.DeleteOperation) &&
-                global::System.Collections.Generic.EqualityComparer<global::Qdrant.RenameAliasOperation?>.Default.Equals(RenameOperation, other.RenameOperation) 
+                global::System.Collections.Generic.EqualityComparer<global::Qdrant.RenameAliasOperation?>.Default.Equals(RenameOperation, other.RenameOperation)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(AliasOperations obj1, AliasOperations obj2)
         {
@@ -360,7 +360,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(AliasOperations obj1, AliasOperations obj2)
         {
@@ -368,7 +368,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

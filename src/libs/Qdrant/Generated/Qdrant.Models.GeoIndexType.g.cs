@@ -4,12 +4,12 @@
 namespace Qdrant
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum GeoIndexType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Geo,
     }

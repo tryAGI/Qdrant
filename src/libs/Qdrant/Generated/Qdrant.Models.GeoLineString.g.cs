@@ -9,7 +9,7 @@ namespace Qdrant
     public sealed partial class GeoLineString
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("points")]
         [global::System.Text.Json.Serialization.JsonRequired]

@@ -9,7 +9,7 @@ namespace Qdrant
     public sealed partial class DeleteAlias
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("alias_name")]
         [global::System.Text.Json.Serialization.JsonRequired]

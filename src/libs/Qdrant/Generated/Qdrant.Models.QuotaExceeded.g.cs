@@ -12,13 +12,13 @@ namespace Qdrant
     public sealed partial class QuotaExceeded
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("resident_memory")]
         public bool? ResidentMemory { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("disk_usage")]
         public bool? DiskUsage { get; set; }

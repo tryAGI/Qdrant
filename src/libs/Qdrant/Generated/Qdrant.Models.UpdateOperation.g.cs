@@ -5,12 +5,12 @@
 namespace Qdrant
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct UpdateOperation : global::System.IEquatable<UpdateOperation>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.UpsertOperation? Upsert { get; init; }
@@ -19,7 +19,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Upsert))]
@@ -27,7 +27,7 @@ namespace Qdrant
         public bool IsUpsert => Upsert != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickUpsert(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Qdrant.UpsertOperation PickUpsert() => IsUpsert
             ? Upsert!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Upsert' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.DeleteOperation? Delete { get; init; }
@@ -56,7 +56,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Delete))]
@@ -64,7 +64,7 @@ namespace Qdrant
         public bool IsDelete => Delete != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickDelete(
 #if NET6_0_OR_GREATER
@@ -77,14 +77,14 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Qdrant.DeleteOperation PickDelete() => IsDelete
             ? Delete!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Delete' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.SetPayloadOperation? SetPayload { get; init; }
@@ -93,7 +93,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SetPayload))]
@@ -101,7 +101,7 @@ namespace Qdrant
         public bool IsSetPayload => SetPayload != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSetPayload(
 #if NET6_0_OR_GREATER
@@ -114,14 +114,14 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Qdrant.SetPayloadOperation PickSetPayload() => IsSetPayload
             ? SetPayload!
             : throw new global::System.InvalidOperationException($"Expected union variant 'SetPayload' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.OverwritePayloadOperation? OverwritePayload { get; init; }
@@ -130,7 +130,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OverwritePayload))]
@@ -138,7 +138,7 @@ namespace Qdrant
         public bool IsOverwritePayload => OverwritePayload != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickOverwritePayload(
 #if NET6_0_OR_GREATER
@@ -151,14 +151,14 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Qdrant.OverwritePayloadOperation PickOverwritePayload() => IsOverwritePayload
             ? OverwritePayload!
             : throw new global::System.InvalidOperationException($"Expected union variant 'OverwritePayload' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.DeletePayloadOperation? DeletePayload { get; init; }
@@ -167,7 +167,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(DeletePayload))]
@@ -175,7 +175,7 @@ namespace Qdrant
         public bool IsDeletePayload => DeletePayload != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickDeletePayload(
 #if NET6_0_OR_GREATER
@@ -188,14 +188,14 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Qdrant.DeletePayloadOperation PickDeletePayload() => IsDeletePayload
             ? DeletePayload!
             : throw new global::System.InvalidOperationException($"Expected union variant 'DeletePayload' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.ClearPayloadOperation? ClearPayload { get; init; }
@@ -204,7 +204,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ClearPayload))]
@@ -212,7 +212,7 @@ namespace Qdrant
         public bool IsClearPayload => ClearPayload != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickClearPayload(
 #if NET6_0_OR_GREATER
@@ -225,14 +225,14 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Qdrant.ClearPayloadOperation PickClearPayload() => IsClearPayload
             ? ClearPayload!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ClearPayload' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.UpdateVectorsOperation? Vectors { get; init; }
@@ -241,7 +241,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Vectors))]
@@ -249,7 +249,7 @@ namespace Qdrant
         public bool IsVectors => Vectors != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickVectors(
 #if NET6_0_OR_GREATER
@@ -262,14 +262,14 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Qdrant.UpdateVectorsOperation PickVectors() => IsVectors
             ? Vectors!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Vectors' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.DeleteVectorsOperation? DeleteVectors { get; init; }
@@ -278,7 +278,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(DeleteVectors))]
@@ -286,7 +286,7 @@ namespace Qdrant
         public bool IsDeleteVectors => DeleteVectors != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickDeleteVectors(
 #if NET6_0_OR_GREATER
@@ -299,23 +299,23 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Qdrant.DeleteVectorsOperation PickDeleteVectors() => IsDeleteVectors
             ? DeleteVectors!
             : throw new global::System.InvalidOperationException($"Expected union variant 'DeleteVectors' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator UpdateOperation(global::Qdrant.UpsertOperation value) => new UpdateOperation((global::Qdrant.UpsertOperation?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Qdrant.UpsertOperation?(UpdateOperation @this) => @this.Upsert;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public UpdateOperation(global::Qdrant.UpsertOperation? value)
         {
@@ -323,22 +323,22 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static UpdateOperation FromUpsert(global::Qdrant.UpsertOperation? value) => new UpdateOperation(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator UpdateOperation(global::Qdrant.DeleteOperation value) => new UpdateOperation((global::Qdrant.DeleteOperation?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Qdrant.DeleteOperation?(UpdateOperation @this) => @this.Delete;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public UpdateOperation(global::Qdrant.DeleteOperation? value)
         {
@@ -346,22 +346,22 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static UpdateOperation FromDelete(global::Qdrant.DeleteOperation? value) => new UpdateOperation(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator UpdateOperation(global::Qdrant.SetPayloadOperation value) => new UpdateOperation((global::Qdrant.SetPayloadOperation?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Qdrant.SetPayloadOperation?(UpdateOperation @this) => @this.SetPayload;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public UpdateOperation(global::Qdrant.SetPayloadOperation? value)
         {
@@ -369,22 +369,22 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static UpdateOperation FromSetPayload(global::Qdrant.SetPayloadOperation? value) => new UpdateOperation(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator UpdateOperation(global::Qdrant.OverwritePayloadOperation value) => new UpdateOperation((global::Qdrant.OverwritePayloadOperation?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Qdrant.OverwritePayloadOperation?(UpdateOperation @this) => @this.OverwritePayload;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public UpdateOperation(global::Qdrant.OverwritePayloadOperation? value)
         {
@@ -392,22 +392,22 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static UpdateOperation FromOverwritePayload(global::Qdrant.OverwritePayloadOperation? value) => new UpdateOperation(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator UpdateOperation(global::Qdrant.DeletePayloadOperation value) => new UpdateOperation((global::Qdrant.DeletePayloadOperation?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Qdrant.DeletePayloadOperation?(UpdateOperation @this) => @this.DeletePayload;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public UpdateOperation(global::Qdrant.DeletePayloadOperation? value)
         {
@@ -415,22 +415,22 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static UpdateOperation FromDeletePayload(global::Qdrant.DeletePayloadOperation? value) => new UpdateOperation(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator UpdateOperation(global::Qdrant.ClearPayloadOperation value) => new UpdateOperation((global::Qdrant.ClearPayloadOperation?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Qdrant.ClearPayloadOperation?(UpdateOperation @this) => @this.ClearPayload;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public UpdateOperation(global::Qdrant.ClearPayloadOperation? value)
         {
@@ -438,22 +438,22 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static UpdateOperation FromClearPayload(global::Qdrant.ClearPayloadOperation? value) => new UpdateOperation(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator UpdateOperation(global::Qdrant.UpdateVectorsOperation value) => new UpdateOperation((global::Qdrant.UpdateVectorsOperation?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Qdrant.UpdateVectorsOperation?(UpdateOperation @this) => @this.Vectors;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public UpdateOperation(global::Qdrant.UpdateVectorsOperation? value)
         {
@@ -461,22 +461,22 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static UpdateOperation FromVectors(global::Qdrant.UpdateVectorsOperation? value) => new UpdateOperation(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator UpdateOperation(global::Qdrant.DeleteVectorsOperation value) => new UpdateOperation((global::Qdrant.DeleteVectorsOperation?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Qdrant.DeleteVectorsOperation?(UpdateOperation @this) => @this.DeleteVectors;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public UpdateOperation(global::Qdrant.DeleteVectorsOperation? value)
         {
@@ -484,12 +484,12 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static UpdateOperation FromDeleteVectors(global::Qdrant.DeleteVectorsOperation? value) => new UpdateOperation(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public UpdateOperation(
             global::Qdrant.UpsertOperation? upsert,
@@ -513,7 +513,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             DeleteVectors as object ??
@@ -523,11 +523,11 @@ namespace Qdrant
             OverwritePayload as object ??
             SetPayload as object ??
             Delete as object ??
-            Upsert as object 
+            Upsert as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Upsert?.ToString() ??
@@ -537,11 +537,11 @@ namespace Qdrant
             DeletePayload?.ToString() ??
             ClearPayload?.ToString() ??
             Vectors?.ToString() ??
-            DeleteVectors?.ToString() 
+            DeleteVectors?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -549,7 +549,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Qdrant.UpsertOperation, TResult>? upsert = null,
@@ -604,7 +604,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Qdrant.UpsertOperation>? upsert = null,
@@ -664,7 +664,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Qdrant.UpsertOperation>? upsert = null,
@@ -717,7 +717,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -750,7 +750,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(UpdateOperation other)
         {
@@ -762,12 +762,12 @@ namespace Qdrant
                 global::System.Collections.Generic.EqualityComparer<global::Qdrant.DeletePayloadOperation?>.Default.Equals(DeletePayload, other.DeletePayload) &&
                 global::System.Collections.Generic.EqualityComparer<global::Qdrant.ClearPayloadOperation?>.Default.Equals(ClearPayload, other.ClearPayload) &&
                 global::System.Collections.Generic.EqualityComparer<global::Qdrant.UpdateVectorsOperation?>.Default.Equals(Vectors, other.Vectors) &&
-                global::System.Collections.Generic.EqualityComparer<global::Qdrant.DeleteVectorsOperation?>.Default.Equals(DeleteVectors, other.DeleteVectors) 
+                global::System.Collections.Generic.EqualityComparer<global::Qdrant.DeleteVectorsOperation?>.Default.Equals(DeleteVectors, other.DeleteVectors)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(UpdateOperation obj1, UpdateOperation obj2)
         {
@@ -775,7 +775,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(UpdateOperation obj1, UpdateOperation obj2)
         {
@@ -783,7 +783,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

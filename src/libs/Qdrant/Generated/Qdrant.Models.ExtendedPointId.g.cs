@@ -19,7 +19,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ExtendedPointIdVariant1))]
@@ -27,7 +27,7 @@ namespace Qdrant
         public bool IsExtendedPointIdVariant1 => ExtendedPointIdVariant1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickExtendedPointIdVariant1(
 #if NET6_0_OR_GREATER
@@ -40,7 +40,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public int PickExtendedPointIdVariant1() => IsExtendedPointIdVariant1
             ? ExtendedPointIdVariant1!.Value
@@ -56,7 +56,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Guid))]
@@ -64,7 +64,7 @@ namespace Qdrant
         public bool IsGuid => Guid != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickGuid(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::System.Guid PickGuid() => IsGuid
             ? Guid!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Guid' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ExtendedPointId(int value) => new ExtendedPointId((int?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator int?(ExtendedPointId @this) => @this.ExtendedPointIdVariant1;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ExtendedPointId(int? value)
         {
@@ -101,22 +101,22 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ExtendedPointId FromExtendedPointIdVariant1(int? value) => new ExtendedPointId(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ExtendedPointId(global::System.Guid value) => new ExtendedPointId((global::System.Guid?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::System.Guid?(ExtendedPointId @this) => @this.Guid;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ExtendedPointId(global::System.Guid? value)
         {
@@ -124,12 +124,12 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ExtendedPointId FromGuid(global::System.Guid? value) => new ExtendedPointId(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ExtendedPointId(
             int? extendedPointIdVariant1,
@@ -141,23 +141,23 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Guid as object ??
-            ExtendedPointIdVariant1 as object 
+            ExtendedPointIdVariant1 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             ExtendedPointIdVariant1?.ToString() ??
-            Guid?.ToString() 
+            Guid?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<int?, TResult>? extendedPointIdVariant1 = null,
@@ -190,7 +190,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<int?>? extendedPointIdVariant1 = null,
@@ -214,7 +214,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<int?>? extendedPointIdVariant1 = null,
@@ -237,7 +237,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(ExtendedPointId other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<int?>.Default.Equals(ExtendedPointIdVariant1, other.ExtendedPointIdVariant1) &&
-                global::System.Collections.Generic.EqualityComparer<global::System.Guid?>.Default.Equals(Guid, other.Guid) 
+                global::System.Collections.Generic.EqualityComparer<global::System.Guid?>.Default.Equals(Guid, other.Guid)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(ExtendedPointId obj1, ExtendedPointId obj2)
         {
@@ -277,7 +277,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(ExtendedPointId obj1, ExtendedPointId obj2)
         {
@@ -285,7 +285,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

@@ -4,20 +4,20 @@
 namespace Qdrant
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum CpuEndian
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Big,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Little,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Other,
     }

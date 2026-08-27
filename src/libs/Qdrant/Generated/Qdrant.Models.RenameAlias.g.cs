@@ -9,14 +9,14 @@ namespace Qdrant
     public sealed partial class RenameAlias
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("old_alias_name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string OldAliasName { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("new_alias_name")]
         [global::System.Text.Json.Serialization.JsonRequired]

@@ -5,12 +5,12 @@
 namespace Qdrant
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct PointInsertOperations : global::System.IEquatable<PointInsertOperations>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.PointsBatch? PointsBatch { get; init; }
@@ -19,7 +19,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(PointsBatch))]
@@ -27,7 +27,7 @@ namespace Qdrant
         public bool IsPointsBatch => PointsBatch != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickPointsBatch(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Qdrant.PointsBatch PickPointsBatch() => IsPointsBatch
             ? PointsBatch!
             : throw new global::System.InvalidOperationException($"Expected union variant 'PointsBatch' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.PointsList? PointsList { get; init; }
@@ -56,7 +56,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(PointsList))]
@@ -64,7 +64,7 @@ namespace Qdrant
         public bool IsPointsList => PointsList != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickPointsList(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Qdrant.PointsList PickPointsList() => IsPointsList
             ? PointsList!
             : throw new global::System.InvalidOperationException($"Expected union variant 'PointsList' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator PointInsertOperations(global::Qdrant.PointsBatch value) => new PointInsertOperations((global::Qdrant.PointsBatch?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Qdrant.PointsBatch?(PointInsertOperations @this) => @this.PointsBatch;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public PointInsertOperations(global::Qdrant.PointsBatch? value)
         {
@@ -101,22 +101,22 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static PointInsertOperations FromPointsBatch(global::Qdrant.PointsBatch? value) => new PointInsertOperations(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator PointInsertOperations(global::Qdrant.PointsList value) => new PointInsertOperations((global::Qdrant.PointsList?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Qdrant.PointsList?(PointInsertOperations @this) => @this.PointsList;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public PointInsertOperations(global::Qdrant.PointsList? value)
         {
@@ -124,12 +124,12 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static PointInsertOperations FromPointsList(global::Qdrant.PointsList? value) => new PointInsertOperations(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public PointInsertOperations(
             global::Qdrant.PointsBatch? pointsBatch,
@@ -141,23 +141,23 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             PointsList as object ??
-            PointsBatch as object 
+            PointsBatch as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             PointsBatch?.ToString() ??
-            PointsList?.ToString() 
+            PointsList?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Qdrant.PointsBatch, TResult>? pointsBatch = null,
@@ -190,7 +190,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Qdrant.PointsBatch>? pointsBatch = null,
@@ -214,7 +214,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Qdrant.PointsBatch>? pointsBatch = null,
@@ -237,7 +237,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(PointInsertOperations other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Qdrant.PointsBatch?>.Default.Equals(PointsBatch, other.PointsBatch) &&
-                global::System.Collections.Generic.EqualityComparer<global::Qdrant.PointsList?>.Default.Equals(PointsList, other.PointsList) 
+                global::System.Collections.Generic.EqualityComparer<global::Qdrant.PointsList?>.Default.Equals(PointsList, other.PointsList)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(PointInsertOperations obj1, PointInsertOperations obj2)
         {
@@ -277,7 +277,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(PointInsertOperations obj1, PointInsertOperations obj2)
         {
@@ -285,7 +285,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

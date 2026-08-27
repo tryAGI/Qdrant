@@ -14,15 +14,15 @@ namespace Qdrant
     public enum Memory
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Cached,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Cold,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Pinned,
     }

@@ -5,7 +5,7 @@
 namespace Qdrant
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct RangeInterface : global::System.IEquatable<RangeInterface>
     {
@@ -19,7 +19,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Range))]
@@ -27,7 +27,7 @@ namespace Qdrant
         public bool IsRange => Range != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickRange(
 #if NET6_0_OR_GREATER
@@ -40,7 +40,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Qdrant.Range PickRange() => IsRange
             ? Range!
@@ -56,7 +56,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Datetime))]
@@ -64,7 +64,7 @@ namespace Qdrant
         public bool IsDatetime => Datetime != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickDatetime(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Qdrant.DatetimeRange PickDatetime() => IsDatetime
             ? Datetime!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Datetime' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator RangeInterface(global::Qdrant.Range value) => new RangeInterface((global::Qdrant.Range?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Qdrant.Range?(RangeInterface @this) => @this.Range;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public RangeInterface(global::Qdrant.Range? value)
         {
@@ -101,22 +101,22 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static RangeInterface FromRange(global::Qdrant.Range? value) => new RangeInterface(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator RangeInterface(global::Qdrant.DatetimeRange value) => new RangeInterface((global::Qdrant.DatetimeRange?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Qdrant.DatetimeRange?(RangeInterface @this) => @this.Datetime;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public RangeInterface(global::Qdrant.DatetimeRange? value)
         {
@@ -124,12 +124,12 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static RangeInterface FromDatetime(global::Qdrant.DatetimeRange? value) => new RangeInterface(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public RangeInterface(
             global::Qdrant.Range? range,
@@ -141,23 +141,23 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Datetime as object ??
-            Range as object 
+            Range as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Range?.ToString() ??
-            Datetime?.ToString() 
+            Datetime?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Qdrant.Range, TResult>? range = null,
@@ -190,7 +190,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Qdrant.Range>? range = null,
@@ -214,7 +214,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Qdrant.Range>? range = null,
@@ -237,7 +237,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(RangeInterface other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Qdrant.Range?>.Default.Equals(Range, other.Range) &&
-                global::System.Collections.Generic.EqualityComparer<global::Qdrant.DatetimeRange?>.Default.Equals(Datetime, other.Datetime) 
+                global::System.Collections.Generic.EqualityComparer<global::Qdrant.DatetimeRange?>.Default.Equals(Datetime, other.Datetime)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(RangeInterface obj1, RangeInterface obj2)
         {
@@ -277,7 +277,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(RangeInterface obj1, RangeInterface obj2)
         {
@@ -285,7 +285,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

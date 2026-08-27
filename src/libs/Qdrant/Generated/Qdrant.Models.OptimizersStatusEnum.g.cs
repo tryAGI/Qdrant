@@ -9,7 +9,7 @@ namespace Qdrant
     public enum OptimizersStatusEnum
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ok,
     }

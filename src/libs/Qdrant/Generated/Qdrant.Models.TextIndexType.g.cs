@@ -4,12 +4,12 @@
 namespace Qdrant
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum TextIndexType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Text,
     }

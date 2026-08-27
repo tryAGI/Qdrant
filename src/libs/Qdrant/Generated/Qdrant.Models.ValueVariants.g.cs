@@ -5,12 +5,12 @@
 namespace Qdrant
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct ValueVariants : global::System.IEquatable<ValueVariants>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public string? ValueVariantsVariant1 { get; init; }
@@ -19,7 +19,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ValueVariantsVariant1))]
@@ -27,7 +27,7 @@ namespace Qdrant
         public bool IsValueVariantsVariant1 => ValueVariantsVariant1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickValueVariantsVariant1(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string PickValueVariantsVariant1() => IsValueVariantsVariant1
             ? ValueVariantsVariant1!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ValueVariantsVariant1' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public long? ValueVariantsVariant2 { get; init; }
@@ -56,7 +56,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ValueVariantsVariant2))]
@@ -64,7 +64,7 @@ namespace Qdrant
         public bool IsValueVariantsVariant2 => ValueVariantsVariant2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickValueVariantsVariant2(
 #if NET6_0_OR_GREATER
@@ -77,14 +77,14 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public long PickValueVariantsVariant2() => IsValueVariantsVariant2
             ? ValueVariantsVariant2!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ValueVariantsVariant2' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public bool? ValueVariantsVariant3 { get; init; }
@@ -93,7 +93,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ValueVariantsVariant3))]
@@ -101,7 +101,7 @@ namespace Qdrant
         public bool IsValueVariantsVariant3 => ValueVariantsVariant3 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickValueVariantsVariant3(
 #if NET6_0_OR_GREATER
@@ -114,23 +114,23 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool PickValueVariantsVariant3() => IsValueVariantsVariant3
             ? ValueVariantsVariant3!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ValueVariantsVariant3' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ValueVariants(string value) => new ValueVariants((string?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator string?(ValueVariants @this) => @this.ValueVariantsVariant1;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ValueVariants(string? value)
         {
@@ -138,22 +138,22 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ValueVariants FromValueVariantsVariant1(string? value) => new ValueVariants(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ValueVariants(long value) => new ValueVariants((long?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator long?(ValueVariants @this) => @this.ValueVariantsVariant2;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ValueVariants(long? value)
         {
@@ -161,22 +161,22 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ValueVariants FromValueVariantsVariant2(long? value) => new ValueVariants(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ValueVariants(bool value) => new ValueVariants((bool?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator bool?(ValueVariants @this) => @this.ValueVariantsVariant3;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ValueVariants(bool? value)
         {
@@ -184,12 +184,12 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ValueVariants FromValueVariantsVariant3(bool? value) => new ValueVariants(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ValueVariants(
             string? valueVariantsVariant1,
@@ -203,25 +203,25 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             ValueVariantsVariant3 as object ??
             ValueVariantsVariant2 as object ??
-            ValueVariantsVariant1 as object 
+            ValueVariantsVariant1 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             ValueVariantsVariant1?.ToString() ??
             ValueVariantsVariant2?.ToString() ??
-            ValueVariantsVariant3?.ToString().ToLowerInvariant() 
+            ValueVariantsVariant3?.ToString().ToLowerInvariant()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -229,7 +229,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<string, TResult>? valueVariantsVariant1 = null,
@@ -259,7 +259,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<string>? valueVariantsVariant1 = null,
@@ -289,7 +289,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<string>? valueVariantsVariant1 = null,
@@ -317,7 +317,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -340,19 +340,19 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(ValueVariants other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(ValueVariantsVariant1, other.ValueVariantsVariant1) &&
                 global::System.Collections.Generic.EqualityComparer<long?>.Default.Equals(ValueVariantsVariant2, other.ValueVariantsVariant2) &&
-                global::System.Collections.Generic.EqualityComparer<bool?>.Default.Equals(ValueVariantsVariant3, other.ValueVariantsVariant3) 
+                global::System.Collections.Generic.EqualityComparer<bool?>.Default.Equals(ValueVariantsVariant3, other.ValueVariantsVariant3)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(ValueVariants obj1, ValueVariants obj2)
         {
@@ -360,7 +360,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(ValueVariants obj1, ValueVariants obj2)
         {
@@ -368,7 +368,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

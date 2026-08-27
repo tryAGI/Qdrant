@@ -5,12 +5,12 @@
 namespace Qdrant
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct FeedbackStrategy : global::System.IEquatable<FeedbackStrategy>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.NaiveFeedbackStrategy? Naive { get; init; }
@@ -19,7 +19,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Naive))]
@@ -27,7 +27,7 @@ namespace Qdrant
         public bool IsNaive => Naive != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickNaive(
 #if NET6_0_OR_GREATER
@@ -40,23 +40,23 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Qdrant.NaiveFeedbackStrategy PickNaive() => IsNaive
             ? Naive!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Naive' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator FeedbackStrategy(global::Qdrant.NaiveFeedbackStrategy value) => new FeedbackStrategy((global::Qdrant.NaiveFeedbackStrategy?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Qdrant.NaiveFeedbackStrategy?(FeedbackStrategy @this) => @this.Naive;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public FeedbackStrategy(global::Qdrant.NaiveFeedbackStrategy? value)
         {
@@ -64,26 +64,26 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static FeedbackStrategy FromNaive(global::Qdrant.NaiveFeedbackStrategy? value) => new FeedbackStrategy(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
-            Naive as object 
+            Naive as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
-            Naive?.ToString() 
+            Naive?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -91,7 +91,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Qdrant.NaiveFeedbackStrategy, TResult>? naive = null,
@@ -111,7 +111,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Qdrant.NaiveFeedbackStrategy>? naive = null,
@@ -129,7 +129,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Qdrant.NaiveFeedbackStrategy>? naive = null,
@@ -147,7 +147,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -166,17 +166,17 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(FeedbackStrategy other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::Qdrant.NaiveFeedbackStrategy?>.Default.Equals(Naive, other.Naive) 
+                global::System.Collections.Generic.EqualityComparer<global::Qdrant.NaiveFeedbackStrategy?>.Default.Equals(Naive, other.Naive)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(FeedbackStrategy obj1, FeedbackStrategy obj2)
         {
@@ -184,7 +184,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(FeedbackStrategy obj1, FeedbackStrategy obj2)
         {
@@ -192,7 +192,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

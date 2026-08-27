@@ -5,12 +5,12 @@
 namespace Qdrant
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct MaxOptimizationThreads : global::System.IEquatable<MaxOptimizationThreads>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.MaxOptimizationThreadsSetting? Setting { get; init; }
@@ -19,7 +19,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Setting))]
@@ -27,7 +27,7 @@ namespace Qdrant
         public bool IsSetting => Setting != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSetting(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Qdrant.MaxOptimizationThreadsSetting PickSetting() => IsSetting
             ? Setting!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Setting' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public int? MaxOptimizationThreadsVariant2 { get; init; }
@@ -56,7 +56,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MaxOptimizationThreadsVariant2))]
@@ -64,7 +64,7 @@ namespace Qdrant
         public bool IsMaxOptimizationThreadsVariant2 => MaxOptimizationThreadsVariant2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMaxOptimizationThreadsVariant2(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public int PickMaxOptimizationThreadsVariant2() => IsMaxOptimizationThreadsVariant2
             ? MaxOptimizationThreadsVariant2!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MaxOptimizationThreadsVariant2' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator MaxOptimizationThreads(global::Qdrant.MaxOptimizationThreadsSetting value) => new MaxOptimizationThreads((global::Qdrant.MaxOptimizationThreadsSetting?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Qdrant.MaxOptimizationThreadsSetting?(MaxOptimizationThreads @this) => @this.Setting;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public MaxOptimizationThreads(global::Qdrant.MaxOptimizationThreadsSetting? value)
         {
@@ -101,22 +101,22 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static MaxOptimizationThreads FromSetting(global::Qdrant.MaxOptimizationThreadsSetting? value) => new MaxOptimizationThreads(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator MaxOptimizationThreads(int value) => new MaxOptimizationThreads((int?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator int?(MaxOptimizationThreads @this) => @this.MaxOptimizationThreadsVariant2;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public MaxOptimizationThreads(int? value)
         {
@@ -124,12 +124,12 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static MaxOptimizationThreads FromMaxOptimizationThreadsVariant2(int? value) => new MaxOptimizationThreads(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public MaxOptimizationThreads(
             global::Qdrant.MaxOptimizationThreadsSetting? setting,
@@ -141,23 +141,23 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             MaxOptimizationThreadsVariant2 as object ??
-            Setting as object 
+            Setting as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Setting?.ToValueString() ??
-            MaxOptimizationThreadsVariant2?.ToString() 
+            MaxOptimizationThreadsVariant2?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Qdrant.MaxOptimizationThreadsSetting?, TResult>? setting = null,
@@ -190,7 +190,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Qdrant.MaxOptimizationThreadsSetting?>? setting = null,
@@ -214,7 +214,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Qdrant.MaxOptimizationThreadsSetting?>? setting = null,
@@ -237,7 +237,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(MaxOptimizationThreads other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Qdrant.MaxOptimizationThreadsSetting?>.Default.Equals(Setting, other.Setting) &&
-                global::System.Collections.Generic.EqualityComparer<int?>.Default.Equals(MaxOptimizationThreadsVariant2, other.MaxOptimizationThreadsVariant2) 
+                global::System.Collections.Generic.EqualityComparer<int?>.Default.Equals(MaxOptimizationThreadsVariant2, other.MaxOptimizationThreadsVariant2)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(MaxOptimizationThreads obj1, MaxOptimizationThreads obj2)
         {
@@ -277,7 +277,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(MaxOptimizationThreads obj1, MaxOptimizationThreads obj2)
         {
@@ -285,7 +285,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

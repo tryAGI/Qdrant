@@ -4,18 +4,18 @@
 namespace Qdrant
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class LocalShardTelemetry
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("variant_name")]
         public string? VariantName { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         public global::Qdrant.ShardStatus? Status { get; set; }
@@ -58,25 +58,25 @@ namespace Qdrant
         public global::System.Collections.Generic.Dictionary<string, int>? NumVectorsByName { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("segments")]
         public global::System.Collections.Generic.IList<global::Qdrant.SegmentTelemetry>? Segments { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("optimizations")]
         public global::Qdrant.OptimizerTelemetry? Optimizations { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("async_scorer")]
         public bool? AsyncScorer { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("indexed_only_excluded_vectors")]
         public global::System.Collections.Generic.Dictionary<string, int>? IndexedOnlyExcludedVectors { get; set; }

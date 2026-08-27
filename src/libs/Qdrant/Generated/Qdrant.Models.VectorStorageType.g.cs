@@ -20,7 +20,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(VectorStorageTypeVariant1))]
@@ -28,7 +28,7 @@ namespace Qdrant
         public bool IsVectorStorageTypeVariant1 => VectorStorageTypeVariant1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickVectorStorageTypeVariant1(
 #if NET6_0_OR_GREATER
@@ -41,7 +41,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Qdrant.VectorStorageTypeVariant1 PickVectorStorageTypeVariant1() => IsVectorStorageTypeVariant1
             ? VectorStorageTypeVariant1!.Value
@@ -58,7 +58,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(VectorStorageTypeVariant2))]
@@ -66,7 +66,7 @@ namespace Qdrant
         public bool IsVectorStorageTypeVariant2 => VectorStorageTypeVariant2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickVectorStorageTypeVariant2(
 #if NET6_0_OR_GREATER
@@ -79,7 +79,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Qdrant.VectorStorageTypeVariant2 PickVectorStorageTypeVariant2() => IsVectorStorageTypeVariant2
             ? VectorStorageTypeVariant2!.Value
@@ -96,7 +96,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(VectorStorageTypeVariant3))]
@@ -104,7 +104,7 @@ namespace Qdrant
         public bool IsVectorStorageTypeVariant3 => VectorStorageTypeVariant3 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickVectorStorageTypeVariant3(
 #if NET6_0_OR_GREATER
@@ -117,7 +117,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Qdrant.VectorStorageTypeVariant3 PickVectorStorageTypeVariant3() => IsVectorStorageTypeVariant3
             ? VectorStorageTypeVariant3!.Value
@@ -134,7 +134,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(VectorStorageTypeVariant4))]
@@ -142,7 +142,7 @@ namespace Qdrant
         public bool IsVectorStorageTypeVariant4 => VectorStorageTypeVariant4 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickVectorStorageTypeVariant4(
 #if NET6_0_OR_GREATER
@@ -155,7 +155,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Qdrant.VectorStorageTypeVariant4 PickVectorStorageTypeVariant4() => IsVectorStorageTypeVariant4
             ? VectorStorageTypeVariant4!.Value
@@ -171,7 +171,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(VectorStorageTypeVariant5))]
@@ -179,7 +179,7 @@ namespace Qdrant
         public bool IsVectorStorageTypeVariant5 => VectorStorageTypeVariant5 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickVectorStorageTypeVariant5(
 #if NET6_0_OR_GREATER
@@ -192,7 +192,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Qdrant.VectorStorageTypeVariant5 PickVectorStorageTypeVariant5() => IsVectorStorageTypeVariant5
             ? VectorStorageTypeVariant5!.Value
@@ -208,7 +208,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(VectorStorageTypeVariant6))]
@@ -216,7 +216,7 @@ namespace Qdrant
         public bool IsVectorStorageTypeVariant6 => VectorStorageTypeVariant6 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickVectorStorageTypeVariant6(
 #if NET6_0_OR_GREATER
@@ -229,23 +229,23 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Qdrant.VectorStorageTypeVariant6 PickVectorStorageTypeVariant6() => IsVectorStorageTypeVariant6
             ? VectorStorageTypeVariant6!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'VectorStorageTypeVariant6' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator VectorStorageType(global::Qdrant.VectorStorageTypeVariant1 value) => new VectorStorageType((global::Qdrant.VectorStorageTypeVariant1?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Qdrant.VectorStorageTypeVariant1?(VectorStorageType @this) => @this.VectorStorageTypeVariant1;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public VectorStorageType(global::Qdrant.VectorStorageTypeVariant1? value)
         {
@@ -253,22 +253,22 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static VectorStorageType FromVectorStorageTypeVariant1(global::Qdrant.VectorStorageTypeVariant1? value) => new VectorStorageType(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator VectorStorageType(global::Qdrant.VectorStorageTypeVariant2 value) => new VectorStorageType((global::Qdrant.VectorStorageTypeVariant2?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Qdrant.VectorStorageTypeVariant2?(VectorStorageType @this) => @this.VectorStorageTypeVariant2;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public VectorStorageType(global::Qdrant.VectorStorageTypeVariant2? value)
         {
@@ -276,22 +276,22 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static VectorStorageType FromVectorStorageTypeVariant2(global::Qdrant.VectorStorageTypeVariant2? value) => new VectorStorageType(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator VectorStorageType(global::Qdrant.VectorStorageTypeVariant3 value) => new VectorStorageType((global::Qdrant.VectorStorageTypeVariant3?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Qdrant.VectorStorageTypeVariant3?(VectorStorageType @this) => @this.VectorStorageTypeVariant3;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public VectorStorageType(global::Qdrant.VectorStorageTypeVariant3? value)
         {
@@ -299,22 +299,22 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static VectorStorageType FromVectorStorageTypeVariant3(global::Qdrant.VectorStorageTypeVariant3? value) => new VectorStorageType(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator VectorStorageType(global::Qdrant.VectorStorageTypeVariant4 value) => new VectorStorageType((global::Qdrant.VectorStorageTypeVariant4?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Qdrant.VectorStorageTypeVariant4?(VectorStorageType @this) => @this.VectorStorageTypeVariant4;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public VectorStorageType(global::Qdrant.VectorStorageTypeVariant4? value)
         {
@@ -322,22 +322,22 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static VectorStorageType FromVectorStorageTypeVariant4(global::Qdrant.VectorStorageTypeVariant4? value) => new VectorStorageType(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator VectorStorageType(global::Qdrant.VectorStorageTypeVariant5 value) => new VectorStorageType((global::Qdrant.VectorStorageTypeVariant5?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Qdrant.VectorStorageTypeVariant5?(VectorStorageType @this) => @this.VectorStorageTypeVariant5;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public VectorStorageType(global::Qdrant.VectorStorageTypeVariant5? value)
         {
@@ -345,22 +345,22 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static VectorStorageType FromVectorStorageTypeVariant5(global::Qdrant.VectorStorageTypeVariant5? value) => new VectorStorageType(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator VectorStorageType(global::Qdrant.VectorStorageTypeVariant6 value) => new VectorStorageType((global::Qdrant.VectorStorageTypeVariant6?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Qdrant.VectorStorageTypeVariant6?(VectorStorageType @this) => @this.VectorStorageTypeVariant6;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public VectorStorageType(global::Qdrant.VectorStorageTypeVariant6? value)
         {
@@ -368,12 +368,12 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static VectorStorageType FromVectorStorageTypeVariant6(global::Qdrant.VectorStorageTypeVariant6? value) => new VectorStorageType(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public VectorStorageType(
             global::Qdrant.VectorStorageTypeVariant1? vectorStorageTypeVariant1,
@@ -393,7 +393,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             VectorStorageTypeVariant6 as object ??
@@ -401,11 +401,11 @@ namespace Qdrant
             VectorStorageTypeVariant4 as object ??
             VectorStorageTypeVariant3 as object ??
             VectorStorageTypeVariant2 as object ??
-            VectorStorageTypeVariant1 as object 
+            VectorStorageTypeVariant1 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             VectorStorageTypeVariant1?.ToValueString() ??
@@ -413,11 +413,11 @@ namespace Qdrant
             VectorStorageTypeVariant3?.ToValueString() ??
             VectorStorageTypeVariant4?.ToValueString() ??
             VectorStorageTypeVariant5?.ToValueString() ??
-            VectorStorageTypeVariant6?.ToValueString() 
+            VectorStorageTypeVariant6?.ToValueString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -425,7 +425,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Qdrant.VectorStorageTypeVariant1?, TResult>? vectorStorageTypeVariant1 = null,
@@ -470,7 +470,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Qdrant.VectorStorageTypeVariant1?>? vectorStorageTypeVariant1 = null,
@@ -518,7 +518,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Qdrant.VectorStorageTypeVariant1?>? vectorStorageTypeVariant1 = null,
@@ -561,7 +561,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -590,7 +590,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(VectorStorageType other)
         {
@@ -600,12 +600,12 @@ namespace Qdrant
                 global::System.Collections.Generic.EqualityComparer<global::Qdrant.VectorStorageTypeVariant3?>.Default.Equals(VectorStorageTypeVariant3, other.VectorStorageTypeVariant3) &&
                 global::System.Collections.Generic.EqualityComparer<global::Qdrant.VectorStorageTypeVariant4?>.Default.Equals(VectorStorageTypeVariant4, other.VectorStorageTypeVariant4) &&
                 global::System.Collections.Generic.EqualityComparer<global::Qdrant.VectorStorageTypeVariant5?>.Default.Equals(VectorStorageTypeVariant5, other.VectorStorageTypeVariant5) &&
-                global::System.Collections.Generic.EqualityComparer<global::Qdrant.VectorStorageTypeVariant6?>.Default.Equals(VectorStorageTypeVariant6, other.VectorStorageTypeVariant6) 
+                global::System.Collections.Generic.EqualityComparer<global::Qdrant.VectorStorageTypeVariant6?>.Default.Equals(VectorStorageTypeVariant6, other.VectorStorageTypeVariant6)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(VectorStorageType obj1, VectorStorageType obj2)
         {
@@ -613,7 +613,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(VectorStorageType obj1, VectorStorageType obj2)
         {
@@ -621,7 +621,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

@@ -12,15 +12,15 @@ namespace Qdrant
     public enum WriteOrdering
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Medium,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Strong,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Weak,
     }

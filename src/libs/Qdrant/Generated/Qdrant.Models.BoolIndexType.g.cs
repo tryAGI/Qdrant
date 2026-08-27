@@ -4,12 +4,12 @@
 namespace Qdrant
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum BoolIndexType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Bool,
     }

@@ -5,12 +5,12 @@
 namespace Qdrant
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct QueryInterface : global::System.IEquatable<QueryInterface>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.VectorInput? VectorInput { get; init; }
@@ -19,7 +19,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(VectorInput))]
@@ -27,7 +27,7 @@ namespace Qdrant
         public bool IsVectorInput => VectorInput != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickVectorInput(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Qdrant.VectorInput PickVectorInput() => IsVectorInput
             ? VectorInput!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'VectorInput' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.Query? Query { get; init; }
@@ -56,7 +56,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Query))]
@@ -64,7 +64,7 @@ namespace Qdrant
         public bool IsQuery => Query != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickQuery(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Qdrant.Query PickQuery() => IsQuery
             ? Query!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Query' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator QueryInterface(global::Qdrant.VectorInput value) => new QueryInterface((global::Qdrant.VectorInput?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Qdrant.VectorInput?(QueryInterface @this) => @this.VectorInput;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public QueryInterface(global::Qdrant.VectorInput? value)
         {
@@ -101,22 +101,22 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static QueryInterface FromVectorInput(global::Qdrant.VectorInput? value) => new QueryInterface(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator QueryInterface(global::Qdrant.Query value) => new QueryInterface((global::Qdrant.Query?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Qdrant.Query?(QueryInterface @this) => @this.Query;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public QueryInterface(global::Qdrant.Query? value)
         {
@@ -124,12 +124,12 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static QueryInterface FromQuery(global::Qdrant.Query? value) => new QueryInterface(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public QueryInterface(
             global::Qdrant.VectorInput? vectorInput,
@@ -141,23 +141,23 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Query as object ??
-            VectorInput as object 
+            VectorInput as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             VectorInput?.ToString() ??
-            Query?.ToString() 
+            Query?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Qdrant.VectorInput?, TResult>? vectorInput = null,
@@ -190,7 +190,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Qdrant.VectorInput?>? vectorInput = null,
@@ -214,7 +214,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Qdrant.VectorInput?>? vectorInput = null,
@@ -237,7 +237,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(QueryInterface other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Qdrant.VectorInput?>.Default.Equals(VectorInput, other.VectorInput) &&
-                global::System.Collections.Generic.EqualityComparer<global::Qdrant.Query?>.Default.Equals(Query, other.Query) 
+                global::System.Collections.Generic.EqualityComparer<global::Qdrant.Query?>.Default.Equals(Query, other.Query)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(QueryInterface obj1, QueryInterface obj2)
         {
@@ -277,7 +277,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(QueryInterface obj1, QueryInterface obj2)
         {
@@ -285,7 +285,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

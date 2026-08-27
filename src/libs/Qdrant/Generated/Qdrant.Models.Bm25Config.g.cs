@@ -30,7 +30,7 @@ namespace Qdrant
         public double? AvgLen { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tokenizer")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Qdrant.JsonConverters.TokenizerTypeJsonConverter))]

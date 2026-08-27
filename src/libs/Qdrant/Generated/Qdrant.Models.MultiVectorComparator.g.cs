@@ -4,12 +4,12 @@
 namespace Qdrant
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum MultiVectorComparator
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MaxSim,
     }

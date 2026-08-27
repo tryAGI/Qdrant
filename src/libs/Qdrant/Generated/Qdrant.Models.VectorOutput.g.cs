@@ -10,7 +10,7 @@ namespace Qdrant
     public readonly partial struct VectorOutput : global::System.IEquatable<VectorOutput>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<float>? VectorOutputVariant1 { get; init; }
@@ -19,7 +19,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(VectorOutputVariant1))]
@@ -27,7 +27,7 @@ namespace Qdrant
         public bool IsVectorOutputVariant1 => VectorOutputVariant1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickVectorOutputVariant1(
 #if NET6_0_OR_GREATER
@@ -40,7 +40,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::System.Collections.Generic.IList<float> PickVectorOutputVariant1() => IsVectorOutputVariant1
             ? VectorOutputVariant1!
@@ -56,7 +56,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Sparse))]
@@ -64,7 +64,7 @@ namespace Qdrant
         public bool IsSparse => Sparse != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSparse(
 #if NET6_0_OR_GREATER
@@ -77,14 +77,14 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Qdrant.SparseVector PickSparse() => IsSparse
             ? Sparse!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Sparse' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>? VectorOutputVariant3 { get; init; }
@@ -93,7 +93,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(VectorOutputVariant3))]
@@ -101,7 +101,7 @@ namespace Qdrant
         public bool IsVectorOutputVariant3 => VectorOutputVariant3 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickVectorOutputVariant3(
 #if NET6_0_OR_GREATER
@@ -114,23 +114,23 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>> PickVectorOutputVariant3() => IsVectorOutputVariant3
             ? VectorOutputVariant3!
             : throw new global::System.InvalidOperationException($"Expected union variant 'VectorOutputVariant3' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator VectorOutput(global::Qdrant.SparseVector value) => new VectorOutput((global::Qdrant.SparseVector?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Qdrant.SparseVector?(VectorOutput @this) => @this.Sparse;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public VectorOutput(global::Qdrant.SparseVector? value)
         {
@@ -138,12 +138,12 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static VectorOutput FromSparse(global::Qdrant.SparseVector? value) => new VectorOutput(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public VectorOutput(
             global::System.Collections.Generic.IList<float>? vectorOutputVariant1,
@@ -157,25 +157,25 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             VectorOutputVariant3 as object ??
             Sparse as object ??
-            VectorOutputVariant1 as object 
+            VectorOutputVariant1 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             VectorOutputVariant1?.ToString() ??
             Sparse?.ToString() ??
-            VectorOutputVariant3?.ToString() 
+            VectorOutputVariant3?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -183,7 +183,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::System.Collections.Generic.IList<float>, TResult>? vectorOutputVariant1 = null,
@@ -213,7 +213,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::System.Collections.Generic.IList<float>>? vectorOutputVariant1 = null,
@@ -243,7 +243,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::System.Collections.Generic.IList<float>>? vectorOutputVariant1 = null,
@@ -271,7 +271,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -294,19 +294,19 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(VectorOutput other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<float>?>.Default.Equals(VectorOutputVariant1, other.VectorOutputVariant1) &&
                 global::System.Collections.Generic.EqualityComparer<global::Qdrant.SparseVector?>.Default.Equals(Sparse, other.Sparse) &&
-                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>?>.Default.Equals(VectorOutputVariant3, other.VectorOutputVariant3) 
+                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>?>.Default.Equals(VectorOutputVariant3, other.VectorOutputVariant3)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(VectorOutput obj1, VectorOutput obj2)
         {
@@ -314,7 +314,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(VectorOutput obj1, VectorOutput obj2)
         {
@@ -322,7 +322,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

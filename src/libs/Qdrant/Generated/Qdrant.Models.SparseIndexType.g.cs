@@ -19,7 +19,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SparseIndexTypeVariant1))]
@@ -27,7 +27,7 @@ namespace Qdrant
         public bool IsSparseIndexTypeVariant1 => SparseIndexTypeVariant1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSparseIndexTypeVariant1(
 #if NET6_0_OR_GREATER
@@ -40,7 +40,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Qdrant.SparseIndexTypeVariant1 PickSparseIndexTypeVariant1() => IsSparseIndexTypeVariant1
             ? SparseIndexTypeVariant1!.Value
@@ -56,7 +56,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SparseIndexTypeVariant2))]
@@ -64,7 +64,7 @@ namespace Qdrant
         public bool IsSparseIndexTypeVariant2 => SparseIndexTypeVariant2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSparseIndexTypeVariant2(
 #if NET6_0_OR_GREATER
@@ -77,7 +77,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Qdrant.SparseIndexTypeVariant2 PickSparseIndexTypeVariant2() => IsSparseIndexTypeVariant2
             ? SparseIndexTypeVariant2!.Value
@@ -93,7 +93,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SparseIndexTypeVariant3))]
@@ -101,7 +101,7 @@ namespace Qdrant
         public bool IsSparseIndexTypeVariant3 => SparseIndexTypeVariant3 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSparseIndexTypeVariant3(
 #if NET6_0_OR_GREATER
@@ -114,23 +114,23 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Qdrant.SparseIndexTypeVariant3 PickSparseIndexTypeVariant3() => IsSparseIndexTypeVariant3
             ? SparseIndexTypeVariant3!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SparseIndexTypeVariant3' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator SparseIndexType(global::Qdrant.SparseIndexTypeVariant1 value) => new SparseIndexType((global::Qdrant.SparseIndexTypeVariant1?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Qdrant.SparseIndexTypeVariant1?(SparseIndexType @this) => @this.SparseIndexTypeVariant1;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SparseIndexType(global::Qdrant.SparseIndexTypeVariant1? value)
         {
@@ -138,22 +138,22 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static SparseIndexType FromSparseIndexTypeVariant1(global::Qdrant.SparseIndexTypeVariant1? value) => new SparseIndexType(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator SparseIndexType(global::Qdrant.SparseIndexTypeVariant2 value) => new SparseIndexType((global::Qdrant.SparseIndexTypeVariant2?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Qdrant.SparseIndexTypeVariant2?(SparseIndexType @this) => @this.SparseIndexTypeVariant2;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SparseIndexType(global::Qdrant.SparseIndexTypeVariant2? value)
         {
@@ -161,22 +161,22 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static SparseIndexType FromSparseIndexTypeVariant2(global::Qdrant.SparseIndexTypeVariant2? value) => new SparseIndexType(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator SparseIndexType(global::Qdrant.SparseIndexTypeVariant3 value) => new SparseIndexType((global::Qdrant.SparseIndexTypeVariant3?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Qdrant.SparseIndexTypeVariant3?(SparseIndexType @this) => @this.SparseIndexTypeVariant3;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SparseIndexType(global::Qdrant.SparseIndexTypeVariant3? value)
         {
@@ -184,12 +184,12 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static SparseIndexType FromSparseIndexTypeVariant3(global::Qdrant.SparseIndexTypeVariant3? value) => new SparseIndexType(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SparseIndexType(
             global::Qdrant.SparseIndexTypeVariant1? sparseIndexTypeVariant1,
@@ -203,25 +203,25 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             SparseIndexTypeVariant3 as object ??
             SparseIndexTypeVariant2 as object ??
-            SparseIndexTypeVariant1 as object 
+            SparseIndexTypeVariant1 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             SparseIndexTypeVariant1?.ToValueString() ??
             SparseIndexTypeVariant2?.ToValueString() ??
-            SparseIndexTypeVariant3?.ToValueString() 
+            SparseIndexTypeVariant3?.ToValueString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -229,7 +229,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Qdrant.SparseIndexTypeVariant1?, TResult>? sparseIndexTypeVariant1 = null,
@@ -259,7 +259,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Qdrant.SparseIndexTypeVariant1?>? sparseIndexTypeVariant1 = null,
@@ -289,7 +289,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Qdrant.SparseIndexTypeVariant1?>? sparseIndexTypeVariant1 = null,
@@ -317,7 +317,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -340,19 +340,19 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(SparseIndexType other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Qdrant.SparseIndexTypeVariant1?>.Default.Equals(SparseIndexTypeVariant1, other.SparseIndexTypeVariant1) &&
                 global::System.Collections.Generic.EqualityComparer<global::Qdrant.SparseIndexTypeVariant2?>.Default.Equals(SparseIndexTypeVariant2, other.SparseIndexTypeVariant2) &&
-                global::System.Collections.Generic.EqualityComparer<global::Qdrant.SparseIndexTypeVariant3?>.Default.Equals(SparseIndexTypeVariant3, other.SparseIndexTypeVariant3) 
+                global::System.Collections.Generic.EqualityComparer<global::Qdrant.SparseIndexTypeVariant3?>.Default.Equals(SparseIndexTypeVariant3, other.SparseIndexTypeVariant3)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(SparseIndexType obj1, SparseIndexType obj2)
         {
@@ -360,7 +360,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(SparseIndexType obj1, SparseIndexType obj2)
         {
@@ -368,7 +368,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

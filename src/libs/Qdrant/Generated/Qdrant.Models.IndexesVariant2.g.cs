@@ -9,7 +9,7 @@ namespace Qdrant
     public sealed partial class IndexesVariant2
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Qdrant.JsonConverters.IndexesVariant2TypeJsonConverter))]

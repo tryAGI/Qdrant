@@ -4,12 +4,12 @@
 namespace Qdrant
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ConsensusThreadStatusVariant2ConsensusThreadStatus
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Stopped,
     }

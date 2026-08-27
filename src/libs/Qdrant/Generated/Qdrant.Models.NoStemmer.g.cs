@@ -9,7 +9,7 @@ namespace Qdrant
     public enum NoStemmer
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         None,
     }
