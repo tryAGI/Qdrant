@@ -29,7 +29,7 @@ namespace Qdrant
         public global::Qdrant.Filter? Filter { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("shard_key")]
         public global::Qdrant.ShardKeySelector? ShardKey { get; set; }

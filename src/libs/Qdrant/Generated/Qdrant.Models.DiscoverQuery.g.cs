@@ -4,12 +4,12 @@
 namespace Qdrant
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class DiscoverQuery
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("discover")]
         [global::System.Text.Json.Serialization.JsonRequired]

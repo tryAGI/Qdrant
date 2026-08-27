@@ -4,49 +4,49 @@
 namespace Qdrant
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class CollectionTelemetry
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Id { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("init_time_ms")]
         public int? InitTimeMs { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("config")]
         public global::Qdrant.CollectionConfigTelemetry? Config { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("shards")]
         public global::System.Collections.Generic.IList<global::Qdrant.ReplicaSetTelemetry>? Shards { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("transfers")]
         public global::System.Collections.Generic.IList<global::Qdrant.ShardTransferInfo>? Transfers { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("resharding")]
         public global::System.Collections.Generic.IList<global::Qdrant.ReshardingInfo>? Resharding { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("shard_clean_tasks")]
         public object? ShardCleanTasks { get; set; }

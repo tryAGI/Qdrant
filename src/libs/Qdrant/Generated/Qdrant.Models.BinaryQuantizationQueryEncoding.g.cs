@@ -4,24 +4,24 @@
 namespace Qdrant
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum BinaryQuantizationQueryEncoding
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Binary,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Default,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Scalar4bits,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Scalar8bits,
     }

@@ -4,12 +4,12 @@
 namespace Qdrant
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class AbortReshardingOperation
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("abort_resharding")]
         [global::System.Text.Json.Serialization.JsonRequired]

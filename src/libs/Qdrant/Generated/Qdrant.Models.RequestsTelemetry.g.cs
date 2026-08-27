@@ -4,19 +4,19 @@
 namespace Qdrant
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class RequestsTelemetry
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("rest")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::Qdrant.WebApiTelemetry Rest { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("grpc")]
         [global::System.Text.Json.Serialization.JsonRequired]

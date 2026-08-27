@@ -4,24 +4,24 @@
 namespace Qdrant
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum TurboQuantBitSize
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Bits1,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Bits15,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Bits2,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Bits4,
     }

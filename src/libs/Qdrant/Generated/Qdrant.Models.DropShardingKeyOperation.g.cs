@@ -4,12 +4,12 @@
 namespace Qdrant
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class DropShardingKeyOperation
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("drop_sharding_key")]
         [global::System.Text.Json.Serialization.JsonRequired]

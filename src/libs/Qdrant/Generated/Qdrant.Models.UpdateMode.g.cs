@@ -10,15 +10,15 @@ namespace Qdrant
     public enum UpdateMode
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InsertOnly,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UpdateOnly,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Upsert,
     }

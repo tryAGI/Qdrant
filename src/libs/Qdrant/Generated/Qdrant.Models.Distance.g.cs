@@ -9,19 +9,19 @@ namespace Qdrant
     public enum Distance
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Cosine,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Dot,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Euclid,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Manhattan,
     }

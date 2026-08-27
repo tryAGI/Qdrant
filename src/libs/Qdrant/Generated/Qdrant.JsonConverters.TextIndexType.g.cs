@@ -20,7 +20,7 @@ namespace Qdrant.JsonConverters
                     {
                         return global::Qdrant.TextIndexTypeExtensions.ToEnum(stringValue) ?? default;
                     }
-                    
+
                     break;
                 }
                 case global::System.Text.Json.JsonTokenType.Number:

@@ -4,7 +4,7 @@
 namespace Qdrant
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class SegmentTelemetry
     {
@@ -16,21 +16,21 @@ namespace Qdrant
         public required global::Qdrant.SegmentInfo Info { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("config")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::Qdrant.SegmentConfig Config { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("vector_index_searches")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Collections.Generic.IList<global::Qdrant.VectorIndexSearchesTelemetry> VectorIndexSearches { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("payload_field_indices")]
         [global::System.Text.Json.Serialization.JsonRequired]

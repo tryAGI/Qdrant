@@ -4,12 +4,12 @@
 namespace Qdrant
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class ConsensusThreadStatusVariant2
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("consensus_thread_status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Qdrant.JsonConverters.ConsensusThreadStatusVariant2ConsensusThreadStatusJsonConverter))]

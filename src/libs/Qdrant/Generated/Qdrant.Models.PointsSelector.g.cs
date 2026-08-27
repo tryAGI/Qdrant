@@ -5,12 +5,12 @@
 namespace Qdrant
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct PointsSelector : global::System.IEquatable<PointsSelector>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.PointIdsList? PointIdsList { get; init; }
@@ -19,7 +19,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(PointIdsList))]
@@ -27,7 +27,7 @@ namespace Qdrant
         public bool IsPointIdsList => PointIdsList != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickPointIdsList(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Qdrant.PointIdsList PickPointIdsList() => IsPointIdsList
             ? PointIdsList!
             : throw new global::System.InvalidOperationException($"Expected union variant 'PointIdsList' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.FilterSelector? Filter { get; init; }
@@ -56,7 +56,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Filter))]
@@ -64,7 +64,7 @@ namespace Qdrant
         public bool IsFilter => Filter != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickFilter(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Qdrant.FilterSelector PickFilter() => IsFilter
             ? Filter!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Filter' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator PointsSelector(global::Qdrant.PointIdsList value) => new PointsSelector((global::Qdrant.PointIdsList?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Qdrant.PointIdsList?(PointsSelector @this) => @this.PointIdsList;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public PointsSelector(global::Qdrant.PointIdsList? value)
         {
@@ -101,22 +101,22 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static PointsSelector FromPointIdsList(global::Qdrant.PointIdsList? value) => new PointsSelector(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator PointsSelector(global::Qdrant.FilterSelector value) => new PointsSelector((global::Qdrant.FilterSelector?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Qdrant.FilterSelector?(PointsSelector @this) => @this.Filter;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public PointsSelector(global::Qdrant.FilterSelector? value)
         {
@@ -124,12 +124,12 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static PointsSelector FromFilter(global::Qdrant.FilterSelector? value) => new PointsSelector(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public PointsSelector(
             global::Qdrant.PointIdsList? pointIdsList,
@@ -141,23 +141,23 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Filter as object ??
-            PointIdsList as object 
+            PointIdsList as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             PointIdsList?.ToString() ??
-            Filter?.ToString() 
+            Filter?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Qdrant.PointIdsList, TResult>? pointIdsList = null,
@@ -190,7 +190,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Qdrant.PointIdsList>? pointIdsList = null,
@@ -214,7 +214,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Qdrant.PointIdsList>? pointIdsList = null,
@@ -237,7 +237,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(PointsSelector other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Qdrant.PointIdsList?>.Default.Equals(PointIdsList, other.PointIdsList) &&
-                global::System.Collections.Generic.EqualityComparer<global::Qdrant.FilterSelector?>.Default.Equals(Filter, other.Filter) 
+                global::System.Collections.Generic.EqualityComparer<global::Qdrant.FilterSelector?>.Default.Equals(Filter, other.Filter)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(PointsSelector obj1, PointsSelector obj2)
         {
@@ -277,7 +277,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(PointsSelector obj1, PointsSelector obj2)
         {
@@ -285,7 +285,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

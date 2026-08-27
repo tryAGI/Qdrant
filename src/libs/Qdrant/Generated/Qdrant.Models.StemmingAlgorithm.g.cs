@@ -10,7 +10,7 @@ namespace Qdrant
     public readonly partial struct StemmingAlgorithm : global::System.IEquatable<StemmingAlgorithm>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.SnowballParams? SnowballParams { get; init; }
@@ -19,7 +19,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SnowballParams))]
@@ -27,7 +27,7 @@ namespace Qdrant
         public bool IsSnowballParams => SnowballParams != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSnowballParams(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Qdrant.SnowballParams PickSnowballParams() => IsSnowballParams
             ? SnowballParams!
             : throw new global::System.InvalidOperationException($"Expected union variant 'SnowballParams' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.DisabledStemmerParams? DisabledStemmerParams { get; init; }
@@ -56,7 +56,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(DisabledStemmerParams))]
@@ -64,7 +64,7 @@ namespace Qdrant
         public bool IsDisabledStemmerParams => DisabledStemmerParams != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickDisabledStemmerParams(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Qdrant.DisabledStemmerParams PickDisabledStemmerParams() => IsDisabledStemmerParams
             ? DisabledStemmerParams!
             : throw new global::System.InvalidOperationException($"Expected union variant 'DisabledStemmerParams' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator StemmingAlgorithm(global::Qdrant.SnowballParams value) => new StemmingAlgorithm((global::Qdrant.SnowballParams?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Qdrant.SnowballParams?(StemmingAlgorithm @this) => @this.SnowballParams;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public StemmingAlgorithm(global::Qdrant.SnowballParams? value)
         {
@@ -101,22 +101,22 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static StemmingAlgorithm FromSnowballParams(global::Qdrant.SnowballParams? value) => new StemmingAlgorithm(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator StemmingAlgorithm(global::Qdrant.DisabledStemmerParams value) => new StemmingAlgorithm((global::Qdrant.DisabledStemmerParams?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Qdrant.DisabledStemmerParams?(StemmingAlgorithm @this) => @this.DisabledStemmerParams;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public StemmingAlgorithm(global::Qdrant.DisabledStemmerParams? value)
         {
@@ -124,12 +124,12 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static StemmingAlgorithm FromDisabledStemmerParams(global::Qdrant.DisabledStemmerParams? value) => new StemmingAlgorithm(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public StemmingAlgorithm(
             global::Qdrant.SnowballParams? snowballParams,
@@ -141,23 +141,23 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             DisabledStemmerParams as object ??
-            SnowballParams as object 
+            SnowballParams as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             SnowballParams?.ToString() ??
-            DisabledStemmerParams?.ToString() 
+            DisabledStemmerParams?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Qdrant.SnowballParams, TResult>? snowballParams = null,
@@ -190,7 +190,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Qdrant.SnowballParams>? snowballParams = null,
@@ -214,7 +214,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Qdrant.SnowballParams>? snowballParams = null,
@@ -237,7 +237,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(StemmingAlgorithm other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Qdrant.SnowballParams?>.Default.Equals(SnowballParams, other.SnowballParams) &&
-                global::System.Collections.Generic.EqualityComparer<global::Qdrant.DisabledStemmerParams?>.Default.Equals(DisabledStemmerParams, other.DisabledStemmerParams) 
+                global::System.Collections.Generic.EqualityComparer<global::Qdrant.DisabledStemmerParams?>.Default.Equals(DisabledStemmerParams, other.DisabledStemmerParams)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(StemmingAlgorithm obj1, StemmingAlgorithm obj2)
         {
@@ -277,7 +277,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(StemmingAlgorithm obj1, StemmingAlgorithm obj2)
         {
@@ -285,7 +285,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

@@ -9,7 +9,7 @@ namespace Qdrant
     public sealed partial class ClusterStatusVariant2
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Qdrant.JsonConverters.ClusterStatusVariant2StatusJsonConverter))]

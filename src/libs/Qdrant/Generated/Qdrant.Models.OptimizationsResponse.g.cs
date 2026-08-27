@@ -9,7 +9,7 @@ namespace Qdrant
     public sealed partial class OptimizationsResponse
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("summary")]
         [global::System.Text.Json.Serialization.JsonRequired]

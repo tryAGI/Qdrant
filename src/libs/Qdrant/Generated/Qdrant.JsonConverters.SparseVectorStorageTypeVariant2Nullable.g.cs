@@ -20,7 +20,7 @@ namespace Qdrant.JsonConverters
                     {
                         return global::Qdrant.SparseVectorStorageTypeVariant2Extensions.ToEnum(stringValue);
                     }
-                    
+
                     break;
                 }
                 case global::System.Text.Json.JsonTokenType.Number:

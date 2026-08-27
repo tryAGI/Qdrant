@@ -19,7 +19,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(VectorStructVariant1))]
@@ -27,7 +27,7 @@ namespace Qdrant
         public bool IsVectorStructVariant1 => VectorStructVariant1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickVectorStructVariant1(
 #if NET6_0_OR_GREATER
@@ -40,7 +40,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::System.Collections.Generic.IList<float> PickVectorStructVariant1() => IsVectorStructVariant1
             ? VectorStructVariant1!
@@ -56,7 +56,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(VectorStructVariant2))]
@@ -64,7 +64,7 @@ namespace Qdrant
         public bool IsVectorStructVariant2 => VectorStructVariant2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickVectorStructVariant2(
 #if NET6_0_OR_GREATER
@@ -77,7 +77,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>> PickVectorStructVariant2() => IsVectorStructVariant2
             ? VectorStructVariant2!
@@ -93,7 +93,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(VectorStructVariant3))]
@@ -101,7 +101,7 @@ namespace Qdrant
         public bool IsVectorStructVariant3 => VectorStructVariant3 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickVectorStructVariant3(
 #if NET6_0_OR_GREATER
@@ -114,7 +114,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object PickVectorStructVariant3() => IsVectorStructVariant3
             ? VectorStructVariant3!
@@ -131,7 +131,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Document))]
@@ -139,7 +139,7 @@ namespace Qdrant
         public bool IsDocument => Document != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickDocument(
 #if NET6_0_OR_GREATER
@@ -152,7 +152,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Qdrant.Document PickDocument() => IsDocument
             ? Document!
@@ -169,7 +169,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Image))]
@@ -177,7 +177,7 @@ namespace Qdrant
         public bool IsImage => Image != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickImage(
 #if NET6_0_OR_GREATER
@@ -190,7 +190,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Qdrant.Image PickImage() => IsImage
             ? Image!
@@ -207,7 +207,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InferenceObject))]
@@ -215,7 +215,7 @@ namespace Qdrant
         public bool IsInferenceObject => InferenceObject != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickInferenceObject(
 #if NET6_0_OR_GREATER
@@ -228,23 +228,23 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Qdrant.InferenceObject PickInferenceObject() => IsInferenceObject
             ? InferenceObject!
             : throw new global::System.InvalidOperationException($"Expected union variant 'InferenceObject' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator VectorStruct(global::Qdrant.Document value) => new VectorStruct((global::Qdrant.Document?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Qdrant.Document?(VectorStruct @this) => @this.Document;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public VectorStruct(global::Qdrant.Document? value)
         {
@@ -252,22 +252,22 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static VectorStruct FromDocument(global::Qdrant.Document? value) => new VectorStruct(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator VectorStruct(global::Qdrant.Image value) => new VectorStruct((global::Qdrant.Image?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Qdrant.Image?(VectorStruct @this) => @this.Image;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public VectorStruct(global::Qdrant.Image? value)
         {
@@ -275,22 +275,22 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static VectorStruct FromImage(global::Qdrant.Image? value) => new VectorStruct(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator VectorStruct(global::Qdrant.InferenceObject value) => new VectorStruct((global::Qdrant.InferenceObject?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Qdrant.InferenceObject?(VectorStruct @this) => @this.InferenceObject;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public VectorStruct(global::Qdrant.InferenceObject? value)
         {
@@ -298,12 +298,12 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static VectorStruct FromInferenceObject(global::Qdrant.InferenceObject? value) => new VectorStruct(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public VectorStruct(
             global::System.Collections.Generic.IList<float>? vectorStructVariant1,
@@ -323,7 +323,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             InferenceObject as object ??
@@ -331,11 +331,11 @@ namespace Qdrant
             Document as object ??
             VectorStructVariant3 as object ??
             VectorStructVariant2 as object ??
-            VectorStructVariant1 as object 
+            VectorStructVariant1 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             VectorStructVariant1?.ToString() ??
@@ -343,11 +343,11 @@ namespace Qdrant
             VectorStructVariant3?.ToString() ??
             Document?.ToString() ??
             Image?.ToString() ??
-            InferenceObject?.ToString() 
+            InferenceObject?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -355,7 +355,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::System.Collections.Generic.IList<float>, TResult>? vectorStructVariant1 = null,
@@ -400,7 +400,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::System.Collections.Generic.IList<float>>? vectorStructVariant1 = null,
@@ -448,7 +448,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::System.Collections.Generic.IList<float>>? vectorStructVariant1 = null,
@@ -491,7 +491,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -520,7 +520,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(VectorStruct other)
         {
@@ -530,12 +530,12 @@ namespace Qdrant
                 global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(VectorStructVariant3, other.VectorStructVariant3) &&
                 global::System.Collections.Generic.EqualityComparer<global::Qdrant.Document?>.Default.Equals(Document, other.Document) &&
                 global::System.Collections.Generic.EqualityComparer<global::Qdrant.Image?>.Default.Equals(Image, other.Image) &&
-                global::System.Collections.Generic.EqualityComparer<global::Qdrant.InferenceObject?>.Default.Equals(InferenceObject, other.InferenceObject) 
+                global::System.Collections.Generic.EqualityComparer<global::Qdrant.InferenceObject?>.Default.Equals(InferenceObject, other.InferenceObject)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(VectorStruct obj1, VectorStruct obj2)
         {
@@ -543,7 +543,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(VectorStruct obj1, VectorStruct obj2)
         {
@@ -551,7 +551,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

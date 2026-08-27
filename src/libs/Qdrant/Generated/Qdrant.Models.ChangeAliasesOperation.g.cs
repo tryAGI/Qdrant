@@ -9,7 +9,7 @@ namespace Qdrant
     public sealed partial class ChangeAliasesOperation
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("actions")]
         [global::System.Text.Json.Serialization.JsonRequired]

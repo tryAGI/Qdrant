@@ -9,7 +9,7 @@ namespace Qdrant
     public enum IdfScope
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Global,
     }

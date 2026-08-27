@@ -9,7 +9,7 @@ namespace Qdrant
     public sealed partial class MatchPhrase
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("phrase")]
         [global::System.Text.Json.Serialization.JsonRequired]

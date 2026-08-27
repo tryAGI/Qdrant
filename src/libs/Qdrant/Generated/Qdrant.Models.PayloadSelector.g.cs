@@ -10,7 +10,7 @@ namespace Qdrant
     public readonly partial struct PayloadSelector : global::System.IEquatable<PayloadSelector>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.PayloadSelectorInclude? Include { get; init; }
@@ -19,7 +19,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Include))]
@@ -27,7 +27,7 @@ namespace Qdrant
         public bool IsInclude => Include != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickInclude(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Qdrant.PayloadSelectorInclude PickInclude() => IsInclude
             ? Include!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Include' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.PayloadSelectorExclude? Exclude { get; init; }
@@ -56,7 +56,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Exclude))]
@@ -64,7 +64,7 @@ namespace Qdrant
         public bool IsExclude => Exclude != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickExclude(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Qdrant.PayloadSelectorExclude PickExclude() => IsExclude
             ? Exclude!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Exclude' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator PayloadSelector(global::Qdrant.PayloadSelectorInclude value) => new PayloadSelector((global::Qdrant.PayloadSelectorInclude?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Qdrant.PayloadSelectorInclude?(PayloadSelector @this) => @this.Include;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public PayloadSelector(global::Qdrant.PayloadSelectorInclude? value)
         {
@@ -101,22 +101,22 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static PayloadSelector FromInclude(global::Qdrant.PayloadSelectorInclude? value) => new PayloadSelector(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator PayloadSelector(global::Qdrant.PayloadSelectorExclude value) => new PayloadSelector((global::Qdrant.PayloadSelectorExclude?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Qdrant.PayloadSelectorExclude?(PayloadSelector @this) => @this.Exclude;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public PayloadSelector(global::Qdrant.PayloadSelectorExclude? value)
         {
@@ -124,12 +124,12 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static PayloadSelector FromExclude(global::Qdrant.PayloadSelectorExclude? value) => new PayloadSelector(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public PayloadSelector(
             global::Qdrant.PayloadSelectorInclude? include,
@@ -141,23 +141,23 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Exclude as object ??
-            Include as object 
+            Include as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Include?.ToString() ??
-            Exclude?.ToString() 
+            Exclude?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Qdrant.PayloadSelectorInclude, TResult>? include = null,
@@ -190,7 +190,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Qdrant.PayloadSelectorInclude>? include = null,
@@ -214,7 +214,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Qdrant.PayloadSelectorInclude>? include = null,
@@ -237,7 +237,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(PayloadSelector other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Qdrant.PayloadSelectorInclude?>.Default.Equals(Include, other.Include) &&
-                global::System.Collections.Generic.EqualityComparer<global::Qdrant.PayloadSelectorExclude?>.Default.Equals(Exclude, other.Exclude) 
+                global::System.Collections.Generic.EqualityComparer<global::Qdrant.PayloadSelectorExclude?>.Default.Equals(Exclude, other.Exclude)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(PayloadSelector obj1, PayloadSelector obj2)
         {
@@ -277,7 +277,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(PayloadSelector obj1, PayloadSelector obj2)
         {
@@ -285,7 +285,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

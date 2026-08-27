@@ -10,7 +10,7 @@ namespace Qdrant
     public readonly partial struct ClusterStatus : global::System.IEquatable<ClusterStatus>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.ClusterStatusVariant1? ClusterStatusVariant1 { get; init; }
@@ -19,7 +19,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ClusterStatusVariant1))]
@@ -27,7 +27,7 @@ namespace Qdrant
         public bool IsClusterStatusVariant1 => ClusterStatusVariant1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickClusterStatusVariant1(
 #if NET6_0_OR_GREATER
@@ -40,7 +40,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Qdrant.ClusterStatusVariant1 PickClusterStatusVariant1() => IsClusterStatusVariant1
             ? ClusterStatusVariant1!
@@ -56,7 +56,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ClusterStatusVariant2))]
@@ -64,7 +64,7 @@ namespace Qdrant
         public bool IsClusterStatusVariant2 => ClusterStatusVariant2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickClusterStatusVariant2(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Qdrant.ClusterStatusVariant2 PickClusterStatusVariant2() => IsClusterStatusVariant2
             ? ClusterStatusVariant2!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ClusterStatusVariant2' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ClusterStatus(global::Qdrant.ClusterStatusVariant1 value) => new ClusterStatus((global::Qdrant.ClusterStatusVariant1?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Qdrant.ClusterStatusVariant1?(ClusterStatus @this) => @this.ClusterStatusVariant1;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ClusterStatus(global::Qdrant.ClusterStatusVariant1? value)
         {
@@ -101,22 +101,22 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ClusterStatus FromClusterStatusVariant1(global::Qdrant.ClusterStatusVariant1? value) => new ClusterStatus(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ClusterStatus(global::Qdrant.ClusterStatusVariant2 value) => new ClusterStatus((global::Qdrant.ClusterStatusVariant2?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Qdrant.ClusterStatusVariant2?(ClusterStatus @this) => @this.ClusterStatusVariant2;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ClusterStatus(global::Qdrant.ClusterStatusVariant2? value)
         {
@@ -124,12 +124,12 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ClusterStatus FromClusterStatusVariant2(global::Qdrant.ClusterStatusVariant2? value) => new ClusterStatus(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ClusterStatus(
             global::Qdrant.ClusterStatusVariant1? clusterStatusVariant1,
@@ -141,23 +141,23 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             ClusterStatusVariant2 as object ??
-            ClusterStatusVariant1 as object 
+            ClusterStatusVariant1 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             ClusterStatusVariant1?.ToString() ??
-            ClusterStatusVariant2?.ToString() 
+            ClusterStatusVariant2?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Qdrant.ClusterStatusVariant1, TResult>? clusterStatusVariant1 = null,
@@ -190,7 +190,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Qdrant.ClusterStatusVariant1>? clusterStatusVariant1 = null,
@@ -214,7 +214,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Qdrant.ClusterStatusVariant1>? clusterStatusVariant1 = null,
@@ -237,7 +237,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(ClusterStatus other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Qdrant.ClusterStatusVariant1?>.Default.Equals(ClusterStatusVariant1, other.ClusterStatusVariant1) &&
-                global::System.Collections.Generic.EqualityComparer<global::Qdrant.ClusterStatusVariant2?>.Default.Equals(ClusterStatusVariant2, other.ClusterStatusVariant2) 
+                global::System.Collections.Generic.EqualityComparer<global::Qdrant.ClusterStatusVariant2?>.Default.Equals(ClusterStatusVariant2, other.ClusterStatusVariant2)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(ClusterStatus obj1, ClusterStatus obj2)
         {
@@ -277,7 +277,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(ClusterStatus obj1, ClusterStatus obj2)
         {
@@ -285,7 +285,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

@@ -4,12 +4,12 @@
 namespace Qdrant
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ClusterStatusVariant1Status
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Disabled,
     }

@@ -13,11 +13,11 @@ namespace Qdrant
     public enum IoBackend
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         IoUring,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Mmap,
     }

@@ -4,47 +4,47 @@
 namespace Qdrant
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class AuditTelemetry
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dir")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Dir { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("rotation")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Rotation { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_log_files")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int MaxLogFiles { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("trust_forwarded_headers")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool TrustForwardedHeaders { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("log_api")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool LogApi { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dir_size_bytes")]
         public int? DirSizeBytes { get; set; }

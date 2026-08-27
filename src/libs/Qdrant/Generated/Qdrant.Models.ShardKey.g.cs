@@ -5,7 +5,7 @@
 namespace Qdrant
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct ShardKey : global::System.IEquatable<ShardKey>
     {
@@ -19,7 +19,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ShardKeyVariant1))]
@@ -27,7 +27,7 @@ namespace Qdrant
         public bool IsShardKeyVariant1 => ShardKeyVariant1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickShardKeyVariant1(
 #if NET6_0_OR_GREATER
@@ -40,7 +40,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string PickShardKeyVariant1() => IsShardKeyVariant1
             ? ShardKeyVariant1!
@@ -56,7 +56,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ShardKeyVariant2))]
@@ -64,7 +64,7 @@ namespace Qdrant
         public bool IsShardKeyVariant2 => ShardKeyVariant2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickShardKeyVariant2(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public int PickShardKeyVariant2() => IsShardKeyVariant2
             ? ShardKeyVariant2!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ShardKeyVariant2' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ShardKey(string value) => new ShardKey((string?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator string?(ShardKey @this) => @this.ShardKeyVariant1;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ShardKey(string? value)
         {
@@ -101,22 +101,22 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ShardKey FromShardKeyVariant1(string? value) => new ShardKey(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ShardKey(int value) => new ShardKey((int?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator int?(ShardKey @this) => @this.ShardKeyVariant2;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ShardKey(int? value)
         {
@@ -124,12 +124,12 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ShardKey FromShardKeyVariant2(int? value) => new ShardKey(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ShardKey(
             string? shardKeyVariant1,
@@ -141,23 +141,23 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             ShardKeyVariant2 as object ??
-            ShardKeyVariant1 as object 
+            ShardKeyVariant1 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             ShardKeyVariant1?.ToString() ??
-            ShardKeyVariant2?.ToString() 
+            ShardKeyVariant2?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<string, TResult>? shardKeyVariant1 = null,
@@ -190,7 +190,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<string>? shardKeyVariant1 = null,
@@ -214,7 +214,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<string>? shardKeyVariant1 = null,
@@ -237,7 +237,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(ShardKey other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(ShardKeyVariant1, other.ShardKeyVariant1) &&
-                global::System.Collections.Generic.EqualityComparer<int?>.Default.Equals(ShardKeyVariant2, other.ShardKeyVariant2) 
+                global::System.Collections.Generic.EqualityComparer<int?>.Default.Equals(ShardKeyVariant2, other.ShardKeyVariant2)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(ShardKey obj1, ShardKey obj2)
         {
@@ -277,7 +277,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(ShardKey obj1, ShardKey obj2)
         {
@@ -285,7 +285,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

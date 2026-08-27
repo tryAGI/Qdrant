@@ -5,12 +5,12 @@
 namespace Qdrant
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct StartFrom : global::System.IEquatable<StartFrom>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public long? StartFromVariant1 { get; init; }
@@ -19,7 +19,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(StartFromVariant1))]
@@ -27,7 +27,7 @@ namespace Qdrant
         public bool IsStartFromVariant1 => StartFromVariant1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickStartFromVariant1(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public long PickStartFromVariant1() => IsStartFromVariant1
             ? StartFromVariant1!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'StartFromVariant1' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public double? StartFromVariant2 { get; init; }
@@ -56,7 +56,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(StartFromVariant2))]
@@ -64,7 +64,7 @@ namespace Qdrant
         public bool IsStartFromVariant2 => StartFromVariant2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickStartFromVariant2(
 #if NET6_0_OR_GREATER
@@ -77,14 +77,14 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public double PickStartFromVariant2() => IsStartFromVariant2
             ? StartFromVariant2!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'StartFromVariant2' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.DateTime? DateTime { get; init; }
@@ -93,7 +93,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(DateTime))]
@@ -101,7 +101,7 @@ namespace Qdrant
         public bool IsDateTime => DateTime != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickDateTime(
 #if NET6_0_OR_GREATER
@@ -114,23 +114,23 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::System.DateTime PickDateTime() => IsDateTime
             ? DateTime!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'DateTime' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator StartFrom(long value) => new StartFrom((long?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator long?(StartFrom @this) => @this.StartFromVariant1;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public StartFrom(long? value)
         {
@@ -138,22 +138,22 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static StartFrom FromStartFromVariant1(long? value) => new StartFrom(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator StartFrom(double value) => new StartFrom((double?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator double?(StartFrom @this) => @this.StartFromVariant2;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public StartFrom(double? value)
         {
@@ -161,22 +161,22 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static StartFrom FromStartFromVariant2(double? value) => new StartFrom(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator StartFrom(global::System.DateTime value) => new StartFrom((global::System.DateTime?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::System.DateTime?(StartFrom @this) => @this.DateTime;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public StartFrom(global::System.DateTime? value)
         {
@@ -184,12 +184,12 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static StartFrom FromDateTime(global::System.DateTime? value) => new StartFrom(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public StartFrom(
             long? startFromVariant1,
@@ -203,25 +203,25 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             DateTime as object ??
             StartFromVariant2 as object ??
-            StartFromVariant1 as object 
+            StartFromVariant1 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             StartFromVariant1?.ToString() ??
             StartFromVariant2?.ToString() ??
-            DateTime?.ToString() 
+            DateTime?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -229,7 +229,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<long?, TResult>? startFromVariant1 = null,
@@ -259,7 +259,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<long?>? startFromVariant1 = null,
@@ -289,7 +289,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<long?>? startFromVariant1 = null,
@@ -317,7 +317,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -340,19 +340,19 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(StartFrom other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<long?>.Default.Equals(StartFromVariant1, other.StartFromVariant1) &&
                 global::System.Collections.Generic.EqualityComparer<double?>.Default.Equals(StartFromVariant2, other.StartFromVariant2) &&
-                global::System.Collections.Generic.EqualityComparer<global::System.DateTime?>.Default.Equals(DateTime, other.DateTime) 
+                global::System.Collections.Generic.EqualityComparer<global::System.DateTime?>.Default.Equals(DateTime, other.DateTime)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(StartFrom obj1, StartFrom obj2)
         {
@@ -360,7 +360,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(StartFrom obj1, StartFrom obj2)
         {
@@ -368,7 +368,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

@@ -9,7 +9,7 @@ namespace Qdrant
     public sealed partial class MatchValue
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("value")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Qdrant.JsonConverters.ValueVariantsJsonConverter))]

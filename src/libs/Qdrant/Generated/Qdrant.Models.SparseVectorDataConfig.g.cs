@@ -16,7 +16,7 @@ namespace Qdrant
         public required global::Qdrant.SparseIndexConfig Index { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("storage_type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Qdrant.JsonConverters.SparseVectorStorageTypeJsonConverter))]

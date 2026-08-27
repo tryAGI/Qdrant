@@ -9,13 +9,13 @@ namespace Qdrant
     public sealed partial class Usage
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("hardware")]
         public global::Qdrant.HardwareUsage? Hardware { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("inference")]
         public global::Qdrant.InferenceUsage? Inference { get; set; }

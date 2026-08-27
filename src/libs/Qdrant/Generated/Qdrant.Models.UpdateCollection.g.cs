@@ -46,7 +46,7 @@ namespace Qdrant
         public global::System.Collections.Generic.Dictionary<string, global::Qdrant.SparseVectorParams>? SparseVectors { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("strict_mode_config")]
         public global::Qdrant.StrictModeConfig? StrictModeConfig { get; set; }

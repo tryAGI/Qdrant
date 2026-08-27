@@ -9,7 +9,7 @@ namespace Qdrant
     public enum LowMemoryModeVariant3
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         NoPopulate,
     }

@@ -9,15 +9,15 @@ namespace Qdrant
     public enum UpdateStatus
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Acknowledged,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Completed,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         WaitTimeout,
     }

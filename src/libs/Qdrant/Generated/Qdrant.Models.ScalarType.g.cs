@@ -4,12 +4,12 @@
 namespace Qdrant
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ScalarType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Int8,
     }

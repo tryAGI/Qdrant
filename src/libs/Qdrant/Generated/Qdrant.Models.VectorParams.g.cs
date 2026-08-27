@@ -58,7 +58,7 @@ namespace Qdrant
         public global::Qdrant.Datatype? Datatype { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("multivector_config")]
         public global::Qdrant.MultiVectorConfig? MultivectorConfig { get; set; }

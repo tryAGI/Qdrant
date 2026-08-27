@@ -9,19 +9,19 @@ namespace Qdrant
     public enum VectorStorageDatatype
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Float16,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Float32,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Turbo4,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Uint8,
     }

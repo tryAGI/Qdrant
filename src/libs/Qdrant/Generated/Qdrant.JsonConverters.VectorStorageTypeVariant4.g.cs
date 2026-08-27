@@ -20,7 +20,7 @@ namespace Qdrant.JsonConverters
                     {
                         return global::Qdrant.VectorStorageTypeVariant4Extensions.ToEnum(stringValue) ?? default;
                     }
-                    
+
                     break;
                 }
                 case global::System.Text.Json.JsonTokenType.Number:

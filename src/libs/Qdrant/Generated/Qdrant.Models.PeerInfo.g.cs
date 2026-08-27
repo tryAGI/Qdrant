@@ -9,7 +9,7 @@ namespace Qdrant
     public sealed partial class PeerInfo
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("uri")]
         [global::System.Text.Json.Serialization.JsonRequired]

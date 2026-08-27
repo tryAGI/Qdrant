@@ -4,26 +4,26 @@
 namespace Qdrant
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class ClusterConfigTelemetry
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("grpc_timeout_ms")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int GrpcTimeoutMs { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("p2p")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::Qdrant.P2pConfigTelemetry P2p { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("consensus")]
         [global::System.Text.Json.Serialization.JsonRequired]

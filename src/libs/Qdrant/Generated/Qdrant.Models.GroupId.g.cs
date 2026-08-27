@@ -10,7 +10,7 @@ namespace Qdrant
     public readonly partial struct GroupId : global::System.IEquatable<GroupId>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public string? GroupIdVariant1 { get; init; }
@@ -19,7 +19,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(GroupIdVariant1))]
@@ -27,7 +27,7 @@ namespace Qdrant
         public bool IsGroupIdVariant1 => GroupIdVariant1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickGroupIdVariant1(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string PickGroupIdVariant1() => IsGroupIdVariant1
             ? GroupIdVariant1!
             : throw new global::System.InvalidOperationException($"Expected union variant 'GroupIdVariant1' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public int? GroupIdVariant2 { get; init; }
@@ -56,7 +56,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(GroupIdVariant2))]
@@ -64,7 +64,7 @@ namespace Qdrant
         public bool IsGroupIdVariant2 => GroupIdVariant2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickGroupIdVariant2(
 #if NET6_0_OR_GREATER
@@ -77,14 +77,14 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public int PickGroupIdVariant2() => IsGroupIdVariant2
             ? GroupIdVariant2!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'GroupIdVariant2' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public long? GroupIdVariant3 { get; init; }
@@ -93,7 +93,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(GroupIdVariant3))]
@@ -101,7 +101,7 @@ namespace Qdrant
         public bool IsGroupIdVariant3 => GroupIdVariant3 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickGroupIdVariant3(
 #if NET6_0_OR_GREATER
@@ -114,23 +114,23 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public long PickGroupIdVariant3() => IsGroupIdVariant3
             ? GroupIdVariant3!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'GroupIdVariant3' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator GroupId(string value) => new GroupId((string?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator string?(GroupId @this) => @this.GroupIdVariant1;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public GroupId(string? value)
         {
@@ -138,22 +138,22 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static GroupId FromGroupIdVariant1(string? value) => new GroupId(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator GroupId(int value) => new GroupId((int?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator int?(GroupId @this) => @this.GroupIdVariant2;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public GroupId(int? value)
         {
@@ -161,22 +161,22 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static GroupId FromGroupIdVariant2(int? value) => new GroupId(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator GroupId(long value) => new GroupId((long?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator long?(GroupId @this) => @this.GroupIdVariant3;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public GroupId(long? value)
         {
@@ -184,12 +184,12 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static GroupId FromGroupIdVariant3(long? value) => new GroupId(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public GroupId(
             string? groupIdVariant1,
@@ -203,25 +203,25 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             GroupIdVariant3 as object ??
             GroupIdVariant2 as object ??
-            GroupIdVariant1 as object 
+            GroupIdVariant1 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             GroupIdVariant1?.ToString() ??
             GroupIdVariant2?.ToString() ??
-            GroupIdVariant3?.ToString() 
+            GroupIdVariant3?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -229,7 +229,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<string, TResult>? groupIdVariant1 = null,
@@ -259,7 +259,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<string>? groupIdVariant1 = null,
@@ -289,7 +289,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<string>? groupIdVariant1 = null,
@@ -317,7 +317,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -340,19 +340,19 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(GroupId other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(GroupIdVariant1, other.GroupIdVariant1) &&
                 global::System.Collections.Generic.EqualityComparer<int?>.Default.Equals(GroupIdVariant2, other.GroupIdVariant2) &&
-                global::System.Collections.Generic.EqualityComparer<long?>.Default.Equals(GroupIdVariant3, other.GroupIdVariant3) 
+                global::System.Collections.Generic.EqualityComparer<long?>.Default.Equals(GroupIdVariant3, other.GroupIdVariant3)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(GroupId obj1, GroupId obj2)
         {
@@ -360,7 +360,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(GroupId obj1, GroupId obj2)
         {
@@ -368,7 +368,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

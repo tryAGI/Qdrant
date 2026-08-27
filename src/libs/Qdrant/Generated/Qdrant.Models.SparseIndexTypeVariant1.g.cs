@@ -9,7 +9,7 @@ namespace Qdrant
     public enum SparseIndexTypeVariant1
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MutableRam,
     }

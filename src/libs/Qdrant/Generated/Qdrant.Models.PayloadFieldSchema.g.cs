@@ -5,7 +5,7 @@
 namespace Qdrant
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct PayloadFieldSchema : global::System.IEquatable<PayloadFieldSchema>
     {
@@ -19,7 +19,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Type))]
@@ -27,7 +27,7 @@ namespace Qdrant
         public bool IsType => Type != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickType(
 #if NET6_0_OR_GREATER
@@ -40,7 +40,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Qdrant.PayloadSchemaType PickType() => IsType
             ? Type!.Value
@@ -56,7 +56,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Params))]
@@ -64,7 +64,7 @@ namespace Qdrant
         public bool IsParams => Params != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickParams(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Qdrant.PayloadSchemaParams PickParams() => IsParams
             ? Params!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Params' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator PayloadFieldSchema(global::Qdrant.PayloadSchemaType value) => new PayloadFieldSchema((global::Qdrant.PayloadSchemaType?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Qdrant.PayloadSchemaType?(PayloadFieldSchema @this) => @this.Type;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public PayloadFieldSchema(global::Qdrant.PayloadSchemaType? value)
         {
@@ -101,22 +101,22 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static PayloadFieldSchema FromType(global::Qdrant.PayloadSchemaType? value) => new PayloadFieldSchema(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator PayloadFieldSchema(global::Qdrant.PayloadSchemaParams value) => new PayloadFieldSchema((global::Qdrant.PayloadSchemaParams?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Qdrant.PayloadSchemaParams?(PayloadFieldSchema @this) => @this.Params;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public PayloadFieldSchema(global::Qdrant.PayloadSchemaParams? value)
         {
@@ -124,12 +124,12 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static PayloadFieldSchema FromParams(global::Qdrant.PayloadSchemaParams? value) => new PayloadFieldSchema(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public PayloadFieldSchema(
             global::Qdrant.PayloadSchemaType? type,
@@ -141,23 +141,23 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Params as object ??
-            Type as object 
+            Type as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Type?.ToValueString() ??
-            Params?.ToString() 
+            Params?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Qdrant.PayloadSchemaType?, TResult>? type = null,
@@ -190,7 +190,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Qdrant.PayloadSchemaType?>? type = null,
@@ -214,7 +214,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Qdrant.PayloadSchemaType?>? type = null,
@@ -237,7 +237,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(PayloadFieldSchema other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Qdrant.PayloadSchemaType?>.Default.Equals(Type, other.Type) &&
-                global::System.Collections.Generic.EqualityComparer<global::Qdrant.PayloadSchemaParams?>.Default.Equals(Params, other.Params) 
+                global::System.Collections.Generic.EqualityComparer<global::Qdrant.PayloadSchemaParams?>.Default.Equals(Params, other.Params)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(PayloadFieldSchema obj1, PayloadFieldSchema obj2)
         {
@@ -277,7 +277,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(PayloadFieldSchema obj1, PayloadFieldSchema obj2)
         {
@@ -285,7 +285,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

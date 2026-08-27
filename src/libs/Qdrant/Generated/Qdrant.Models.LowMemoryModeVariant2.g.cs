@@ -10,7 +10,7 @@ namespace Qdrant
     public enum LowMemoryModeVariant2
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         NoResident,
     }

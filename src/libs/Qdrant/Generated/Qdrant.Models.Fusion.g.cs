@@ -11,11 +11,11 @@ namespace Qdrant
     public enum Fusion
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Dbsf,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Rrf,
     }

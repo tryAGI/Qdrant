@@ -4,31 +4,31 @@
 namespace Qdrant
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class CollectionsTelemetry
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("number_of_collections")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int NumberOfCollections { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_collections")]
         public int? MaxCollections { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("collections")]
         public global::System.Collections.Generic.IList<global::Qdrant.CollectionTelemetryEnum>? Collections { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("snapshots")]
         public global::System.Collections.Generic.IList<global::Qdrant.CollectionSnapshotTelemetry>? Snapshots { get; set; }

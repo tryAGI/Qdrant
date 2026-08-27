@@ -5,12 +5,12 @@
 namespace Qdrant
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct Query : global::System.IEquatable<Query>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.NearestQuery? Nearest { get; init; }
@@ -19,7 +19,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Nearest))]
@@ -27,7 +27,7 @@ namespace Qdrant
         public bool IsNearest => Nearest != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickNearest(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Qdrant.NearestQuery PickNearest() => IsNearest
             ? Nearest!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Nearest' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.RecommendQuery? Recommend { get; init; }
@@ -56,7 +56,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Recommend))]
@@ -64,7 +64,7 @@ namespace Qdrant
         public bool IsRecommend => Recommend != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickRecommend(
 #if NET6_0_OR_GREATER
@@ -77,14 +77,14 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Qdrant.RecommendQuery PickRecommend() => IsRecommend
             ? Recommend!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Recommend' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.DiscoverQuery? Discover { get; init; }
@@ -93,7 +93,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Discover))]
@@ -101,7 +101,7 @@ namespace Qdrant
         public bool IsDiscover => Discover != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickDiscover(
 #if NET6_0_OR_GREATER
@@ -114,14 +114,14 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Qdrant.DiscoverQuery PickDiscover() => IsDiscover
             ? Discover!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Discover' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.ContextQuery? Context { get; init; }
@@ -130,7 +130,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Context))]
@@ -138,7 +138,7 @@ namespace Qdrant
         public bool IsContext => Context != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickContext(
 #if NET6_0_OR_GREATER
@@ -151,14 +151,14 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Qdrant.ContextQuery PickContext() => IsContext
             ? Context!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Context' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.OrderByQuery? OrderBy { get; init; }
@@ -167,7 +167,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OrderBy))]
@@ -175,7 +175,7 @@ namespace Qdrant
         public bool IsOrderBy => OrderBy != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickOrderBy(
 #if NET6_0_OR_GREATER
@@ -188,14 +188,14 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Qdrant.OrderByQuery PickOrderBy() => IsOrderBy
             ? OrderBy!
             : throw new global::System.InvalidOperationException($"Expected union variant 'OrderBy' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.FusionQuery? Fusion { get; init; }
@@ -204,7 +204,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Fusion))]
@@ -212,7 +212,7 @@ namespace Qdrant
         public bool IsFusion => Fusion != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickFusion(
 #if NET6_0_OR_GREATER
@@ -225,14 +225,14 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Qdrant.FusionQuery PickFusion() => IsFusion
             ? Fusion!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Fusion' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.RrfQuery? Rrf { get; init; }
@@ -241,7 +241,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Rrf))]
@@ -249,7 +249,7 @@ namespace Qdrant
         public bool IsRrf => Rrf != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickRrf(
 #if NET6_0_OR_GREATER
@@ -262,14 +262,14 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Qdrant.RrfQuery PickRrf() => IsRrf
             ? Rrf!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Rrf' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.FormulaQuery? Formula { get; init; }
@@ -278,7 +278,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Formula))]
@@ -286,7 +286,7 @@ namespace Qdrant
         public bool IsFormula => Formula != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickFormula(
 #if NET6_0_OR_GREATER
@@ -299,14 +299,14 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Qdrant.FormulaQuery PickFormula() => IsFormula
             ? Formula!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Formula' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.SampleQuery? Sample { get; init; }
@@ -315,7 +315,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Sample))]
@@ -323,7 +323,7 @@ namespace Qdrant
         public bool IsSample => Sample != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSample(
 #if NET6_0_OR_GREATER
@@ -336,14 +336,14 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Qdrant.SampleQuery PickSample() => IsSample
             ? Sample!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Sample' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.RelevanceFeedbackQuery? RelevanceFeedback { get; init; }
@@ -352,7 +352,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RelevanceFeedback))]
@@ -360,7 +360,7 @@ namespace Qdrant
         public bool IsRelevanceFeedback => RelevanceFeedback != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickRelevanceFeedback(
 #if NET6_0_OR_GREATER
@@ -373,23 +373,23 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Qdrant.RelevanceFeedbackQuery PickRelevanceFeedback() => IsRelevanceFeedback
             ? RelevanceFeedback!
             : throw new global::System.InvalidOperationException($"Expected union variant 'RelevanceFeedback' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Query(global::Qdrant.NearestQuery value) => new Query((global::Qdrant.NearestQuery?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Qdrant.NearestQuery?(Query @this) => @this.Nearest;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Query(global::Qdrant.NearestQuery? value)
         {
@@ -397,22 +397,22 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Query FromNearest(global::Qdrant.NearestQuery? value) => new Query(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Query(global::Qdrant.RecommendQuery value) => new Query((global::Qdrant.RecommendQuery?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Qdrant.RecommendQuery?(Query @this) => @this.Recommend;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Query(global::Qdrant.RecommendQuery? value)
         {
@@ -420,22 +420,22 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Query FromRecommend(global::Qdrant.RecommendQuery? value) => new Query(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Query(global::Qdrant.DiscoverQuery value) => new Query((global::Qdrant.DiscoverQuery?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Qdrant.DiscoverQuery?(Query @this) => @this.Discover;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Query(global::Qdrant.DiscoverQuery? value)
         {
@@ -443,22 +443,22 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Query FromDiscover(global::Qdrant.DiscoverQuery? value) => new Query(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Query(global::Qdrant.ContextQuery value) => new Query((global::Qdrant.ContextQuery?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Qdrant.ContextQuery?(Query @this) => @this.Context;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Query(global::Qdrant.ContextQuery? value)
         {
@@ -466,22 +466,22 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Query FromContext(global::Qdrant.ContextQuery? value) => new Query(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Query(global::Qdrant.OrderByQuery value) => new Query((global::Qdrant.OrderByQuery?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Qdrant.OrderByQuery?(Query @this) => @this.OrderBy;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Query(global::Qdrant.OrderByQuery? value)
         {
@@ -489,22 +489,22 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Query FromOrderBy(global::Qdrant.OrderByQuery? value) => new Query(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Query(global::Qdrant.FusionQuery value) => new Query((global::Qdrant.FusionQuery?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Qdrant.FusionQuery?(Query @this) => @this.Fusion;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Query(global::Qdrant.FusionQuery? value)
         {
@@ -512,22 +512,22 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Query FromFusion(global::Qdrant.FusionQuery? value) => new Query(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Query(global::Qdrant.RrfQuery value) => new Query((global::Qdrant.RrfQuery?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Qdrant.RrfQuery?(Query @this) => @this.Rrf;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Query(global::Qdrant.RrfQuery? value)
         {
@@ -535,22 +535,22 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Query FromRrf(global::Qdrant.RrfQuery? value) => new Query(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Query(global::Qdrant.FormulaQuery value) => new Query((global::Qdrant.FormulaQuery?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Qdrant.FormulaQuery?(Query @this) => @this.Formula;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Query(global::Qdrant.FormulaQuery? value)
         {
@@ -558,22 +558,22 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Query FromFormula(global::Qdrant.FormulaQuery? value) => new Query(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Query(global::Qdrant.SampleQuery value) => new Query((global::Qdrant.SampleQuery?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Qdrant.SampleQuery?(Query @this) => @this.Sample;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Query(global::Qdrant.SampleQuery? value)
         {
@@ -581,22 +581,22 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Query FromSample(global::Qdrant.SampleQuery? value) => new Query(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Query(global::Qdrant.RelevanceFeedbackQuery value) => new Query((global::Qdrant.RelevanceFeedbackQuery?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Qdrant.RelevanceFeedbackQuery?(Query @this) => @this.RelevanceFeedback;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Query(global::Qdrant.RelevanceFeedbackQuery? value)
         {
@@ -604,12 +604,12 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Query FromRelevanceFeedback(global::Qdrant.RelevanceFeedbackQuery? value) => new Query(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Query(
             global::Qdrant.NearestQuery? nearest,
@@ -637,7 +637,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             RelevanceFeedback as object ??
@@ -649,11 +649,11 @@ namespace Qdrant
             Context as object ??
             Discover as object ??
             Recommend as object ??
-            Nearest as object 
+            Nearest as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Nearest?.ToString() ??
@@ -665,11 +665,11 @@ namespace Qdrant
             Rrf?.ToString() ??
             Formula?.ToString() ??
             Sample?.ToString() ??
-            RelevanceFeedback?.ToString() 
+            RelevanceFeedback?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -677,7 +677,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Qdrant.NearestQuery, TResult>? nearest = null,
@@ -742,7 +742,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Qdrant.NearestQuery>? nearest = null,
@@ -814,7 +814,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Qdrant.NearestQuery>? nearest = null,
@@ -877,7 +877,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -914,7 +914,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(Query other)
         {
@@ -928,12 +928,12 @@ namespace Qdrant
                 global::System.Collections.Generic.EqualityComparer<global::Qdrant.RrfQuery?>.Default.Equals(Rrf, other.Rrf) &&
                 global::System.Collections.Generic.EqualityComparer<global::Qdrant.FormulaQuery?>.Default.Equals(Formula, other.Formula) &&
                 global::System.Collections.Generic.EqualityComparer<global::Qdrant.SampleQuery?>.Default.Equals(Sample, other.Sample) &&
-                global::System.Collections.Generic.EqualityComparer<global::Qdrant.RelevanceFeedbackQuery?>.Default.Equals(RelevanceFeedback, other.RelevanceFeedback) 
+                global::System.Collections.Generic.EqualityComparer<global::Qdrant.RelevanceFeedbackQuery?>.Default.Equals(RelevanceFeedback, other.RelevanceFeedback)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(Query obj1, Query obj2)
         {
@@ -941,7 +941,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(Query obj1, Query obj2)
         {
@@ -949,7 +949,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

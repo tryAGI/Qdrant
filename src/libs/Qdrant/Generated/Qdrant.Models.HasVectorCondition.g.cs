@@ -9,7 +9,7 @@ namespace Qdrant
     public sealed partial class HasVectorCondition
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("has_vector")]
         [global::System.Text.Json.Serialization.JsonRequired]

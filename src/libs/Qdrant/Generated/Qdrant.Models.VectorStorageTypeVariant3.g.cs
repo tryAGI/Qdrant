@@ -10,7 +10,7 @@ namespace Qdrant
     public enum VectorStorageTypeVariant3
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ChunkedMmap,
     }

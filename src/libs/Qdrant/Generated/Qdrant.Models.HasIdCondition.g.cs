@@ -9,7 +9,7 @@ namespace Qdrant
     public sealed partial class HasIdCondition
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("has_id")]
         [global::System.Text.Json.Serialization.JsonRequired]

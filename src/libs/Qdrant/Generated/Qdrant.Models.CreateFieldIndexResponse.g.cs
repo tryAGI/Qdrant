@@ -4,7 +4,7 @@
 namespace Qdrant
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class CreateFieldIndexResponse
     {
@@ -30,7 +30,7 @@ namespace Qdrant
         public string? Status { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("result")]
         public global::Qdrant.UpdateResult? Result { get; set; }

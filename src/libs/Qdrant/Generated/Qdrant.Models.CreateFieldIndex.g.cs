@@ -4,19 +4,19 @@
 namespace Qdrant
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class CreateFieldIndex
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("field_name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string FieldName { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("field_schema")]
         public global::Qdrant.PayloadFieldSchema? FieldSchema { get; set; }

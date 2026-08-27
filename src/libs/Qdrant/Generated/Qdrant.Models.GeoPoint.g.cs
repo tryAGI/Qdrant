@@ -9,14 +9,14 @@ namespace Qdrant
     public sealed partial class GeoPoint
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("lon")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required double Lon { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("lat")]
         [global::System.Text.Json.Serialization.JsonRequired]

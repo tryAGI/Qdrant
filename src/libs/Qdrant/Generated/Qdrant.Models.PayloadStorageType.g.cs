@@ -10,7 +10,7 @@ namespace Qdrant
     public readonly partial struct PayloadStorageType : global::System.IEquatable<PayloadStorageType>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.PayloadStorageTypeVariant1? PayloadStorageTypeVariant1 { get; init; }
@@ -19,7 +19,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(PayloadStorageTypeVariant1))]
@@ -27,7 +27,7 @@ namespace Qdrant
         public bool IsPayloadStorageTypeVariant1 => PayloadStorageTypeVariant1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickPayloadStorageTypeVariant1(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Qdrant.PayloadStorageTypeVariant1 PickPayloadStorageTypeVariant1() => IsPayloadStorageTypeVariant1
             ? PayloadStorageTypeVariant1!
             : throw new global::System.InvalidOperationException($"Expected union variant 'PayloadStorageTypeVariant1' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.PayloadStorageTypeVariant2? PayloadStorageTypeVariant2 { get; init; }
@@ -56,7 +56,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(PayloadStorageTypeVariant2))]
@@ -64,7 +64,7 @@ namespace Qdrant
         public bool IsPayloadStorageTypeVariant2 => PayloadStorageTypeVariant2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickPayloadStorageTypeVariant2(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Qdrant.PayloadStorageTypeVariant2 PickPayloadStorageTypeVariant2() => IsPayloadStorageTypeVariant2
             ? PayloadStorageTypeVariant2!
             : throw new global::System.InvalidOperationException($"Expected union variant 'PayloadStorageTypeVariant2' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator PayloadStorageType(global::Qdrant.PayloadStorageTypeVariant1 value) => new PayloadStorageType((global::Qdrant.PayloadStorageTypeVariant1?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Qdrant.PayloadStorageTypeVariant1?(PayloadStorageType @this) => @this.PayloadStorageTypeVariant1;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public PayloadStorageType(global::Qdrant.PayloadStorageTypeVariant1? value)
         {
@@ -101,22 +101,22 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static PayloadStorageType FromPayloadStorageTypeVariant1(global::Qdrant.PayloadStorageTypeVariant1? value) => new PayloadStorageType(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator PayloadStorageType(global::Qdrant.PayloadStorageTypeVariant2 value) => new PayloadStorageType((global::Qdrant.PayloadStorageTypeVariant2?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Qdrant.PayloadStorageTypeVariant2?(PayloadStorageType @this) => @this.PayloadStorageTypeVariant2;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public PayloadStorageType(global::Qdrant.PayloadStorageTypeVariant2? value)
         {
@@ -124,12 +124,12 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static PayloadStorageType FromPayloadStorageTypeVariant2(global::Qdrant.PayloadStorageTypeVariant2? value) => new PayloadStorageType(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public PayloadStorageType(
             global::Qdrant.PayloadStorageTypeVariant1? payloadStorageTypeVariant1,
@@ -141,23 +141,23 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             PayloadStorageTypeVariant2 as object ??
-            PayloadStorageTypeVariant1 as object 
+            PayloadStorageTypeVariant1 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             PayloadStorageTypeVariant1?.ToString() ??
-            PayloadStorageTypeVariant2?.ToString() 
+            PayloadStorageTypeVariant2?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Qdrant.PayloadStorageTypeVariant1, TResult>? payloadStorageTypeVariant1 = null,
@@ -190,7 +190,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Qdrant.PayloadStorageTypeVariant1>? payloadStorageTypeVariant1 = null,
@@ -214,7 +214,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Qdrant.PayloadStorageTypeVariant1>? payloadStorageTypeVariant1 = null,
@@ -237,7 +237,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(PayloadStorageType other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Qdrant.PayloadStorageTypeVariant1?>.Default.Equals(PayloadStorageTypeVariant1, other.PayloadStorageTypeVariant1) &&
-                global::System.Collections.Generic.EqualityComparer<global::Qdrant.PayloadStorageTypeVariant2?>.Default.Equals(PayloadStorageTypeVariant2, other.PayloadStorageTypeVariant2) 
+                global::System.Collections.Generic.EqualityComparer<global::Qdrant.PayloadStorageTypeVariant2?>.Default.Equals(PayloadStorageTypeVariant2, other.PayloadStorageTypeVariant2)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(PayloadStorageType obj1, PayloadStorageType obj2)
         {
@@ -277,7 +277,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(PayloadStorageType obj1, PayloadStorageType obj2)
         {
@@ -285,7 +285,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

@@ -5,12 +5,12 @@
 namespace Qdrant
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct WithLookupInterface : global::System.IEquatable<WithLookupInterface>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public string? WithLookupInterfaceVariant1 { get; init; }
@@ -19,7 +19,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WithLookupInterfaceVariant1))]
@@ -27,7 +27,7 @@ namespace Qdrant
         public bool IsWithLookupInterfaceVariant1 => WithLookupInterfaceVariant1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickWithLookupInterfaceVariant1(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string PickWithLookupInterfaceVariant1() => IsWithLookupInterfaceVariant1
             ? WithLookupInterfaceVariant1!
             : throw new global::System.InvalidOperationException($"Expected union variant 'WithLookupInterfaceVariant1' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.WithLookup? WithLookup { get; init; }
@@ -56,7 +56,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WithLookup))]
@@ -64,7 +64,7 @@ namespace Qdrant
         public bool IsWithLookup => WithLookup != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickWithLookup(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Qdrant.WithLookup PickWithLookup() => IsWithLookup
             ? WithLookup!
             : throw new global::System.InvalidOperationException($"Expected union variant 'WithLookup' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator WithLookupInterface(string value) => new WithLookupInterface((string?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator string?(WithLookupInterface @this) => @this.WithLookupInterfaceVariant1;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public WithLookupInterface(string? value)
         {
@@ -101,22 +101,22 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static WithLookupInterface FromWithLookupInterfaceVariant1(string? value) => new WithLookupInterface(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator WithLookupInterface(global::Qdrant.WithLookup value) => new WithLookupInterface((global::Qdrant.WithLookup?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Qdrant.WithLookup?(WithLookupInterface @this) => @this.WithLookup;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public WithLookupInterface(global::Qdrant.WithLookup? value)
         {
@@ -124,12 +124,12 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static WithLookupInterface FromWithLookup(global::Qdrant.WithLookup? value) => new WithLookupInterface(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public WithLookupInterface(
             string? withLookupInterfaceVariant1,
@@ -141,23 +141,23 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             WithLookup as object ??
-            WithLookupInterfaceVariant1 as object 
+            WithLookupInterfaceVariant1 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             WithLookupInterfaceVariant1?.ToString() ??
-            WithLookup?.ToString() 
+            WithLookup?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<string, TResult>? withLookupInterfaceVariant1 = null,
@@ -190,7 +190,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<string>? withLookupInterfaceVariant1 = null,
@@ -214,7 +214,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<string>? withLookupInterfaceVariant1 = null,
@@ -237,7 +237,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(WithLookupInterface other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(WithLookupInterfaceVariant1, other.WithLookupInterfaceVariant1) &&
-                global::System.Collections.Generic.EqualityComparer<global::Qdrant.WithLookup?>.Default.Equals(WithLookup, other.WithLookup) 
+                global::System.Collections.Generic.EqualityComparer<global::Qdrant.WithLookup?>.Default.Equals(WithLookup, other.WithLookup)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(WithLookupInterface obj1, WithLookupInterface obj2)
         {
@@ -277,7 +277,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(WithLookupInterface obj1, WithLookupInterface obj2)
         {
@@ -285,7 +285,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

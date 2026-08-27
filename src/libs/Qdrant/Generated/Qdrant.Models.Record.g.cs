@@ -35,7 +35,7 @@ namespace Qdrant
         public global::Qdrant.ShardKey? ShardKey { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("order_value")]
         public global::Qdrant.OrderValue? OrderValue { get; set; }

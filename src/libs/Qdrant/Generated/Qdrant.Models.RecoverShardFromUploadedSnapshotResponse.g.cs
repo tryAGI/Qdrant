@@ -4,7 +4,7 @@
 namespace Qdrant
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class RecoverShardFromUploadedSnapshotResponse
     {
@@ -24,7 +24,7 @@ namespace Qdrant
         public string? Status { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("result")]
         public bool? Result { get; set; }

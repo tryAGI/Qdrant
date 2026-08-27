@@ -9,7 +9,7 @@ namespace Qdrant
     public sealed partial class SegmentInfo
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("uuid")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -24,40 +24,40 @@ namespace Qdrant
         public required global::Qdrant.SegmentType SegmentType { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("num_vectors")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int NumVectors { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("num_points")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int NumPoints { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("num_deferred_points")]
         public int? NumDeferredPoints { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("num_deleted_deferred_points")]
         public int? NumDeletedDeferredPoints { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("num_indexed_vectors")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int NumIndexedVectors { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("num_deleted_vectors")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -78,35 +78,35 @@ namespace Qdrant
         public required int PayloadsSizeBytes { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("ram_usage_bytes")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int RamUsageBytes { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("disk_usage_bytes")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int DiskUsageBytes { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("is_appendable")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool IsAppendable { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("index_schema")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Collections.Generic.Dictionary<string, global::Qdrant.PayloadIndexInfo> IndexSchema { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("vector_data")]
         [global::System.Text.Json.Serialization.JsonRequired]

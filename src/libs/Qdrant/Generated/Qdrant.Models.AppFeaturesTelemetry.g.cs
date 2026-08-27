@@ -4,47 +4,47 @@
 namespace Qdrant
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class AppFeaturesTelemetry
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("debug")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool Debug { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("service_debug_feature")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool ServiceDebugFeature { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("recovery_mode")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool RecoveryMode { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("gpu")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool Gpu { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("rocksdb")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool Rocksdb { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("staging")]
         [global::System.Text.Json.Serialization.JsonRequired]

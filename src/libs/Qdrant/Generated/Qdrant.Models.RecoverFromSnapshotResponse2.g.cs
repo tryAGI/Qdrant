@@ -4,7 +4,7 @@
 namespace Qdrant
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class RecoverFromSnapshotResponse2
     {
@@ -15,7 +15,7 @@ namespace Qdrant
         public float? Time { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         public string? Status { get; set; }

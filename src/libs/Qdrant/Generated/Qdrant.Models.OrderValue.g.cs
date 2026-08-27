@@ -5,7 +5,7 @@
 namespace Qdrant
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct OrderValue : global::System.IEquatable<OrderValue>
     {
@@ -19,7 +19,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OrderValueVariant1))]
@@ -27,7 +27,7 @@ namespace Qdrant
         public bool IsOrderValueVariant1 => OrderValueVariant1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickOrderValueVariant1(
 #if NET6_0_OR_GREATER
@@ -40,7 +40,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public long PickOrderValueVariant1() => IsOrderValueVariant1
             ? OrderValueVariant1!.Value
@@ -56,7 +56,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OrderValueVariant2))]
@@ -64,7 +64,7 @@ namespace Qdrant
         public bool IsOrderValueVariant2 => OrderValueVariant2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickOrderValueVariant2(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public double PickOrderValueVariant2() => IsOrderValueVariant2
             ? OrderValueVariant2!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OrderValueVariant2' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator OrderValue(long value) => new OrderValue((long?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator long?(OrderValue @this) => @this.OrderValueVariant1;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public OrderValue(long? value)
         {
@@ -101,22 +101,22 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static OrderValue FromOrderValueVariant1(long? value) => new OrderValue(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator OrderValue(double value) => new OrderValue((double?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator double?(OrderValue @this) => @this.OrderValueVariant2;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public OrderValue(double? value)
         {
@@ -124,12 +124,12 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static OrderValue FromOrderValueVariant2(double? value) => new OrderValue(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public OrderValue(
             long? orderValueVariant1,
@@ -141,23 +141,23 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             OrderValueVariant2 as object ??
-            OrderValueVariant1 as object 
+            OrderValueVariant1 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             OrderValueVariant1?.ToString() ??
-            OrderValueVariant2?.ToString() 
+            OrderValueVariant2?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<long?, TResult>? orderValueVariant1 = null,
@@ -190,7 +190,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<long?>? orderValueVariant1 = null,
@@ -214,7 +214,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<long?>? orderValueVariant1 = null,
@@ -237,7 +237,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(OrderValue other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<long?>.Default.Equals(OrderValueVariant1, other.OrderValueVariant1) &&
-                global::System.Collections.Generic.EqualityComparer<double?>.Default.Equals(OrderValueVariant2, other.OrderValueVariant2) 
+                global::System.Collections.Generic.EqualityComparer<double?>.Default.Equals(OrderValueVariant2, other.OrderValueVariant2)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(OrderValue obj1, OrderValue obj2)
         {
@@ -277,7 +277,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(OrderValue obj1, OrderValue obj2)
         {
@@ -285,7 +285,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

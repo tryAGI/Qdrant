@@ -19,7 +19,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value))]
@@ -27,7 +27,7 @@ namespace Qdrant
         public bool IsValue => Value != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickValue(
 #if NET6_0_OR_GREATER
@@ -40,7 +40,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Qdrant.MatchValue PickValue() => IsValue
             ? Value!
@@ -56,7 +56,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Text))]
@@ -64,7 +64,7 @@ namespace Qdrant
         public bool IsText => Text != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickText(
 #if NET6_0_OR_GREATER
@@ -77,7 +77,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Qdrant.MatchText PickText() => IsText
             ? Text!
@@ -93,7 +93,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TextAny))]
@@ -101,7 +101,7 @@ namespace Qdrant
         public bool IsTextAny => TextAny != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickTextAny(
 #if NET6_0_OR_GREATER
@@ -114,7 +114,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Qdrant.MatchTextAny PickTextAny() => IsTextAny
             ? TextAny!
@@ -130,7 +130,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Phrase))]
@@ -138,7 +138,7 @@ namespace Qdrant
         public bool IsPhrase => Phrase != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickPhrase(
 #if NET6_0_OR_GREATER
@@ -151,7 +151,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Qdrant.MatchPhrase PickPhrase() => IsPhrase
             ? Phrase!
@@ -168,7 +168,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Prefix))]
@@ -176,7 +176,7 @@ namespace Qdrant
         public bool IsPrefix => Prefix != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickPrefix(
 #if NET6_0_OR_GREATER
@@ -189,7 +189,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Qdrant.MatchPrefix PickPrefix() => IsPrefix
             ? Prefix!
@@ -205,7 +205,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Any))]
@@ -213,7 +213,7 @@ namespace Qdrant
         public bool IsAny => Any != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickAny(
 #if NET6_0_OR_GREATER
@@ -226,7 +226,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Qdrant.MatchAny PickAny() => IsAny
             ? Any!
@@ -242,7 +242,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Except))]
@@ -250,7 +250,7 @@ namespace Qdrant
         public bool IsExcept => Except != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickExcept(
 #if NET6_0_OR_GREATER
@@ -263,23 +263,23 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Qdrant.MatchExcept PickExcept() => IsExcept
             ? Except!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Except' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator MatchCondition(global::Qdrant.MatchValue value) => new MatchCondition((global::Qdrant.MatchValue?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Qdrant.MatchValue?(MatchCondition @this) => @this.Value;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public MatchCondition(global::Qdrant.MatchValue? value)
         {
@@ -287,22 +287,22 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static MatchCondition FromValue(global::Qdrant.MatchValue? value) => new MatchCondition(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator MatchCondition(global::Qdrant.MatchText value) => new MatchCondition((global::Qdrant.MatchText?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Qdrant.MatchText?(MatchCondition @this) => @this.Text;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public MatchCondition(global::Qdrant.MatchText? value)
         {
@@ -310,22 +310,22 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static MatchCondition FromText(global::Qdrant.MatchText? value) => new MatchCondition(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator MatchCondition(global::Qdrant.MatchTextAny value) => new MatchCondition((global::Qdrant.MatchTextAny?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Qdrant.MatchTextAny?(MatchCondition @this) => @this.TextAny;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public MatchCondition(global::Qdrant.MatchTextAny? value)
         {
@@ -333,22 +333,22 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static MatchCondition FromTextAny(global::Qdrant.MatchTextAny? value) => new MatchCondition(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator MatchCondition(global::Qdrant.MatchPhrase value) => new MatchCondition((global::Qdrant.MatchPhrase?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Qdrant.MatchPhrase?(MatchCondition @this) => @this.Phrase;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public MatchCondition(global::Qdrant.MatchPhrase? value)
         {
@@ -356,22 +356,22 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static MatchCondition FromPhrase(global::Qdrant.MatchPhrase? value) => new MatchCondition(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator MatchCondition(global::Qdrant.MatchPrefix value) => new MatchCondition((global::Qdrant.MatchPrefix?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Qdrant.MatchPrefix?(MatchCondition @this) => @this.Prefix;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public MatchCondition(global::Qdrant.MatchPrefix? value)
         {
@@ -379,22 +379,22 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static MatchCondition FromPrefix(global::Qdrant.MatchPrefix? value) => new MatchCondition(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator MatchCondition(global::Qdrant.MatchAny value) => new MatchCondition((global::Qdrant.MatchAny?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Qdrant.MatchAny?(MatchCondition @this) => @this.Any;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public MatchCondition(global::Qdrant.MatchAny? value)
         {
@@ -402,22 +402,22 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static MatchCondition FromAny(global::Qdrant.MatchAny? value) => new MatchCondition(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator MatchCondition(global::Qdrant.MatchExcept value) => new MatchCondition((global::Qdrant.MatchExcept?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Qdrant.MatchExcept?(MatchCondition @this) => @this.Except;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public MatchCondition(global::Qdrant.MatchExcept? value)
         {
@@ -425,12 +425,12 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static MatchCondition FromExcept(global::Qdrant.MatchExcept? value) => new MatchCondition(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public MatchCondition(
             global::Qdrant.MatchValue? value,
@@ -452,7 +452,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Except as object ??
@@ -461,11 +461,11 @@ namespace Qdrant
             Phrase as object ??
             TextAny as object ??
             Text as object ??
-            Value as object 
+            Value as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Value?.ToString() ??
@@ -474,11 +474,11 @@ namespace Qdrant
             Phrase?.ToString() ??
             Prefix?.ToString() ??
             Any?.ToString() ??
-            Except?.ToString() 
+            Except?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -486,7 +486,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Qdrant.MatchValue, TResult>? value = null,
@@ -536,7 +536,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Qdrant.MatchValue>? value = null,
@@ -590,7 +590,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Qdrant.MatchValue>? value = null,
@@ -638,7 +638,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -669,7 +669,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(MatchCondition other)
         {
@@ -680,12 +680,12 @@ namespace Qdrant
                 global::System.Collections.Generic.EqualityComparer<global::Qdrant.MatchPhrase?>.Default.Equals(Phrase, other.Phrase) &&
                 global::System.Collections.Generic.EqualityComparer<global::Qdrant.MatchPrefix?>.Default.Equals(Prefix, other.Prefix) &&
                 global::System.Collections.Generic.EqualityComparer<global::Qdrant.MatchAny?>.Default.Equals(Any, other.Any) &&
-                global::System.Collections.Generic.EqualityComparer<global::Qdrant.MatchExcept?>.Default.Equals(Except, other.Except) 
+                global::System.Collections.Generic.EqualityComparer<global::Qdrant.MatchExcept?>.Default.Equals(Except, other.Except)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(MatchCondition obj1, MatchCondition obj2)
         {
@@ -693,7 +693,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(MatchCondition obj1, MatchCondition obj2)
         {
@@ -701,7 +701,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

@@ -10,7 +10,7 @@ namespace Qdrant
     public sealed partial class MatchPrefix
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prefix")]
         [global::System.Text.Json.Serialization.JsonRequired]

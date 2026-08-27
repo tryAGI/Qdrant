@@ -10,7 +10,7 @@ namespace Qdrant
     public enum VectorStorageTypeVariant1
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Memory,
     }

@@ -5,12 +5,12 @@
 namespace Qdrant
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct ClusterOperations : global::System.IEquatable<ClusterOperations>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.MoveShardOperation? MoveShardOperation { get; init; }
@@ -19,7 +19,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MoveShardOperation))]
@@ -27,7 +27,7 @@ namespace Qdrant
         public bool IsMoveShardOperation => MoveShardOperation != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMoveShardOperation(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Qdrant.MoveShardOperation PickMoveShardOperation() => IsMoveShardOperation
             ? MoveShardOperation!
             : throw new global::System.InvalidOperationException($"Expected union variant 'MoveShardOperation' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.ReplicateShardOperation? ReplicateShardOperation { get; init; }
@@ -56,7 +56,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ReplicateShardOperation))]
@@ -64,7 +64,7 @@ namespace Qdrant
         public bool IsReplicateShardOperation => ReplicateShardOperation != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickReplicateShardOperation(
 #if NET6_0_OR_GREATER
@@ -77,14 +77,14 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Qdrant.ReplicateShardOperation PickReplicateShardOperation() => IsReplicateShardOperation
             ? ReplicateShardOperation!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ReplicateShardOperation' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.AbortTransferOperation? AbortTransferOperation { get; init; }
@@ -93,7 +93,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AbortTransferOperation))]
@@ -101,7 +101,7 @@ namespace Qdrant
         public bool IsAbortTransferOperation => AbortTransferOperation != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickAbortTransferOperation(
 #if NET6_0_OR_GREATER
@@ -114,14 +114,14 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Qdrant.AbortTransferOperation PickAbortTransferOperation() => IsAbortTransferOperation
             ? AbortTransferOperation!
             : throw new global::System.InvalidOperationException($"Expected union variant 'AbortTransferOperation' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.DropReplicaOperation? DropReplicaOperation { get; init; }
@@ -130,7 +130,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(DropReplicaOperation))]
@@ -138,7 +138,7 @@ namespace Qdrant
         public bool IsDropReplicaOperation => DropReplicaOperation != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickDropReplicaOperation(
 #if NET6_0_OR_GREATER
@@ -151,14 +151,14 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Qdrant.DropReplicaOperation PickDropReplicaOperation() => IsDropReplicaOperation
             ? DropReplicaOperation!
             : throw new global::System.InvalidOperationException($"Expected union variant 'DropReplicaOperation' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.CreateShardingKeyOperation? CreateShardingKeyOperation { get; init; }
@@ -167,7 +167,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CreateShardingKeyOperation))]
@@ -175,7 +175,7 @@ namespace Qdrant
         public bool IsCreateShardingKeyOperation => CreateShardingKeyOperation != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickCreateShardingKeyOperation(
 #if NET6_0_OR_GREATER
@@ -188,14 +188,14 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Qdrant.CreateShardingKeyOperation PickCreateShardingKeyOperation() => IsCreateShardingKeyOperation
             ? CreateShardingKeyOperation!
             : throw new global::System.InvalidOperationException($"Expected union variant 'CreateShardingKeyOperation' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.DropShardingKeyOperation? DropShardingKeyOperation { get; init; }
@@ -204,7 +204,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(DropShardingKeyOperation))]
@@ -212,7 +212,7 @@ namespace Qdrant
         public bool IsDropShardingKeyOperation => DropShardingKeyOperation != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickDropShardingKeyOperation(
 #if NET6_0_OR_GREATER
@@ -225,14 +225,14 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Qdrant.DropShardingKeyOperation PickDropShardingKeyOperation() => IsDropShardingKeyOperation
             ? DropShardingKeyOperation!
             : throw new global::System.InvalidOperationException($"Expected union variant 'DropShardingKeyOperation' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.RestartTransferOperation? RestartTransferOperation { get; init; }
@@ -241,7 +241,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RestartTransferOperation))]
@@ -249,7 +249,7 @@ namespace Qdrant
         public bool IsRestartTransferOperation => RestartTransferOperation != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickRestartTransferOperation(
 #if NET6_0_OR_GREATER
@@ -262,14 +262,14 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Qdrant.RestartTransferOperation PickRestartTransferOperation() => IsRestartTransferOperation
             ? RestartTransferOperation!
             : throw new global::System.InvalidOperationException($"Expected union variant 'RestartTransferOperation' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.StartReshardingOperation? StartReshardingOperation { get; init; }
@@ -278,7 +278,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(StartReshardingOperation))]
@@ -286,7 +286,7 @@ namespace Qdrant
         public bool IsStartReshardingOperation => StartReshardingOperation != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickStartReshardingOperation(
 #if NET6_0_OR_GREATER
@@ -299,14 +299,14 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Qdrant.StartReshardingOperation PickStartReshardingOperation() => IsStartReshardingOperation
             ? StartReshardingOperation!
             : throw new global::System.InvalidOperationException($"Expected union variant 'StartReshardingOperation' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.AbortReshardingOperation? AbortReshardingOperation { get; init; }
@@ -315,7 +315,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AbortReshardingOperation))]
@@ -323,7 +323,7 @@ namespace Qdrant
         public bool IsAbortReshardingOperation => AbortReshardingOperation != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickAbortReshardingOperation(
 #if NET6_0_OR_GREATER
@@ -336,14 +336,14 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Qdrant.AbortReshardingOperation PickAbortReshardingOperation() => IsAbortReshardingOperation
             ? AbortReshardingOperation!
             : throw new global::System.InvalidOperationException($"Expected union variant 'AbortReshardingOperation' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.ReplicatePointsOperation? ReplicatePointsOperation { get; init; }
@@ -352,7 +352,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ReplicatePointsOperation))]
@@ -360,7 +360,7 @@ namespace Qdrant
         public bool IsReplicatePointsOperation => ReplicatePointsOperation != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickReplicatePointsOperation(
 #if NET6_0_OR_GREATER
@@ -373,23 +373,23 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Qdrant.ReplicatePointsOperation PickReplicatePointsOperation() => IsReplicatePointsOperation
             ? ReplicatePointsOperation!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ReplicatePointsOperation' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ClusterOperations(global::Qdrant.MoveShardOperation value) => new ClusterOperations((global::Qdrant.MoveShardOperation?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Qdrant.MoveShardOperation?(ClusterOperations @this) => @this.MoveShardOperation;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ClusterOperations(global::Qdrant.MoveShardOperation? value)
         {
@@ -397,22 +397,22 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ClusterOperations FromMoveShardOperation(global::Qdrant.MoveShardOperation? value) => new ClusterOperations(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ClusterOperations(global::Qdrant.ReplicateShardOperation value) => new ClusterOperations((global::Qdrant.ReplicateShardOperation?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Qdrant.ReplicateShardOperation?(ClusterOperations @this) => @this.ReplicateShardOperation;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ClusterOperations(global::Qdrant.ReplicateShardOperation? value)
         {
@@ -420,22 +420,22 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ClusterOperations FromReplicateShardOperation(global::Qdrant.ReplicateShardOperation? value) => new ClusterOperations(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ClusterOperations(global::Qdrant.AbortTransferOperation value) => new ClusterOperations((global::Qdrant.AbortTransferOperation?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Qdrant.AbortTransferOperation?(ClusterOperations @this) => @this.AbortTransferOperation;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ClusterOperations(global::Qdrant.AbortTransferOperation? value)
         {
@@ -443,22 +443,22 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ClusterOperations FromAbortTransferOperation(global::Qdrant.AbortTransferOperation? value) => new ClusterOperations(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ClusterOperations(global::Qdrant.DropReplicaOperation value) => new ClusterOperations((global::Qdrant.DropReplicaOperation?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Qdrant.DropReplicaOperation?(ClusterOperations @this) => @this.DropReplicaOperation;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ClusterOperations(global::Qdrant.DropReplicaOperation? value)
         {
@@ -466,22 +466,22 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ClusterOperations FromDropReplicaOperation(global::Qdrant.DropReplicaOperation? value) => new ClusterOperations(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ClusterOperations(global::Qdrant.CreateShardingKeyOperation value) => new ClusterOperations((global::Qdrant.CreateShardingKeyOperation?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Qdrant.CreateShardingKeyOperation?(ClusterOperations @this) => @this.CreateShardingKeyOperation;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ClusterOperations(global::Qdrant.CreateShardingKeyOperation? value)
         {
@@ -489,22 +489,22 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ClusterOperations FromCreateShardingKeyOperation(global::Qdrant.CreateShardingKeyOperation? value) => new ClusterOperations(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ClusterOperations(global::Qdrant.DropShardingKeyOperation value) => new ClusterOperations((global::Qdrant.DropShardingKeyOperation?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Qdrant.DropShardingKeyOperation?(ClusterOperations @this) => @this.DropShardingKeyOperation;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ClusterOperations(global::Qdrant.DropShardingKeyOperation? value)
         {
@@ -512,22 +512,22 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ClusterOperations FromDropShardingKeyOperation(global::Qdrant.DropShardingKeyOperation? value) => new ClusterOperations(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ClusterOperations(global::Qdrant.RestartTransferOperation value) => new ClusterOperations((global::Qdrant.RestartTransferOperation?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Qdrant.RestartTransferOperation?(ClusterOperations @this) => @this.RestartTransferOperation;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ClusterOperations(global::Qdrant.RestartTransferOperation? value)
         {
@@ -535,22 +535,22 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ClusterOperations FromRestartTransferOperation(global::Qdrant.RestartTransferOperation? value) => new ClusterOperations(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ClusterOperations(global::Qdrant.StartReshardingOperation value) => new ClusterOperations((global::Qdrant.StartReshardingOperation?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Qdrant.StartReshardingOperation?(ClusterOperations @this) => @this.StartReshardingOperation;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ClusterOperations(global::Qdrant.StartReshardingOperation? value)
         {
@@ -558,22 +558,22 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ClusterOperations FromStartReshardingOperation(global::Qdrant.StartReshardingOperation? value) => new ClusterOperations(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ClusterOperations(global::Qdrant.AbortReshardingOperation value) => new ClusterOperations((global::Qdrant.AbortReshardingOperation?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Qdrant.AbortReshardingOperation?(ClusterOperations @this) => @this.AbortReshardingOperation;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ClusterOperations(global::Qdrant.AbortReshardingOperation? value)
         {
@@ -581,22 +581,22 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ClusterOperations FromAbortReshardingOperation(global::Qdrant.AbortReshardingOperation? value) => new ClusterOperations(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ClusterOperations(global::Qdrant.ReplicatePointsOperation value) => new ClusterOperations((global::Qdrant.ReplicatePointsOperation?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Qdrant.ReplicatePointsOperation?(ClusterOperations @this) => @this.ReplicatePointsOperation;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ClusterOperations(global::Qdrant.ReplicatePointsOperation? value)
         {
@@ -604,12 +604,12 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ClusterOperations FromReplicatePointsOperation(global::Qdrant.ReplicatePointsOperation? value) => new ClusterOperations(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ClusterOperations(
             global::Qdrant.MoveShardOperation? moveShardOperation,
@@ -637,7 +637,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             ReplicatePointsOperation as object ??
@@ -649,11 +649,11 @@ namespace Qdrant
             DropReplicaOperation as object ??
             AbortTransferOperation as object ??
             ReplicateShardOperation as object ??
-            MoveShardOperation as object 
+            MoveShardOperation as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             MoveShardOperation?.ToString() ??
@@ -665,11 +665,11 @@ namespace Qdrant
             RestartTransferOperation?.ToString() ??
             StartReshardingOperation?.ToString() ??
             AbortReshardingOperation?.ToString() ??
-            ReplicatePointsOperation?.ToString() 
+            ReplicatePointsOperation?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -677,7 +677,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Qdrant.MoveShardOperation, TResult>? moveShardOperation = null,
@@ -742,7 +742,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Qdrant.MoveShardOperation>? moveShardOperation = null,
@@ -814,7 +814,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Qdrant.MoveShardOperation>? moveShardOperation = null,
@@ -877,7 +877,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -914,7 +914,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(ClusterOperations other)
         {
@@ -928,12 +928,12 @@ namespace Qdrant
                 global::System.Collections.Generic.EqualityComparer<global::Qdrant.RestartTransferOperation?>.Default.Equals(RestartTransferOperation, other.RestartTransferOperation) &&
                 global::System.Collections.Generic.EqualityComparer<global::Qdrant.StartReshardingOperation?>.Default.Equals(StartReshardingOperation, other.StartReshardingOperation) &&
                 global::System.Collections.Generic.EqualityComparer<global::Qdrant.AbortReshardingOperation?>.Default.Equals(AbortReshardingOperation, other.AbortReshardingOperation) &&
-                global::System.Collections.Generic.EqualityComparer<global::Qdrant.ReplicatePointsOperation?>.Default.Equals(ReplicatePointsOperation, other.ReplicatePointsOperation) 
+                global::System.Collections.Generic.EqualityComparer<global::Qdrant.ReplicatePointsOperation?>.Default.Equals(ReplicatePointsOperation, other.ReplicatePointsOperation)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(ClusterOperations obj1, ClusterOperations obj2)
         {
@@ -941,7 +941,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(ClusterOperations obj1, ClusterOperations obj2)
         {
@@ -949,7 +949,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

@@ -5,12 +5,12 @@
 namespace Qdrant
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct ShardSnapshotLocation : global::System.IEquatable<ShardSnapshotLocation>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public string? ShardSnapshotLocationVariant1 { get; init; }
@@ -19,7 +19,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ShardSnapshotLocationVariant1))]
@@ -27,7 +27,7 @@ namespace Qdrant
         public bool IsShardSnapshotLocationVariant1 => ShardSnapshotLocationVariant1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickShardSnapshotLocationVariant1(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string PickShardSnapshotLocationVariant1() => IsShardSnapshotLocationVariant1
             ? ShardSnapshotLocationVariant1!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ShardSnapshotLocationVariant1' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public string? ShardSnapshotLocationVariant2 { get; init; }
@@ -56,7 +56,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ShardSnapshotLocationVariant2))]
@@ -64,7 +64,7 @@ namespace Qdrant
         public bool IsShardSnapshotLocationVariant2 => ShardSnapshotLocationVariant2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickShardSnapshotLocationVariant2(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string PickShardSnapshotLocationVariant2() => IsShardSnapshotLocationVariant2
             ? ShardSnapshotLocationVariant2!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ShardSnapshotLocationVariant2' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ShardSnapshotLocation(string value) => new ShardSnapshotLocation((string?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator string?(ShardSnapshotLocation @this) => @this.ShardSnapshotLocationVariant1;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ShardSnapshotLocation(string? value)
         {
@@ -101,12 +101,12 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ShardSnapshotLocation FromShardSnapshotLocationVariant1(string? value) => new ShardSnapshotLocation(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ShardSnapshotLocation(
             string? shardSnapshotLocationVariant1,
@@ -118,23 +118,23 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             ShardSnapshotLocationVariant2 as object ??
-            ShardSnapshotLocationVariant1 as object 
+            ShardSnapshotLocationVariant1 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             ShardSnapshotLocationVariant1?.ToString() ??
-            ShardSnapshotLocationVariant2?.ToString() 
+            ShardSnapshotLocationVariant2?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -142,7 +142,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<string, TResult>? shardSnapshotLocationVariant1 = null,
@@ -167,7 +167,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<string>? shardSnapshotLocationVariant1 = null,
@@ -191,7 +191,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<string>? shardSnapshotLocationVariant1 = null,
@@ -214,7 +214,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -235,18 +235,18 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(ShardSnapshotLocation other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(ShardSnapshotLocationVariant1, other.ShardSnapshotLocationVariant1) &&
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(ShardSnapshotLocationVariant2, other.ShardSnapshotLocationVariant2) 
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(ShardSnapshotLocationVariant2, other.ShardSnapshotLocationVariant2)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(ShardSnapshotLocation obj1, ShardSnapshotLocation obj2)
         {
@@ -254,7 +254,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(ShardSnapshotLocation obj1, ShardSnapshotLocation obj2)
         {
@@ -262,7 +262,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

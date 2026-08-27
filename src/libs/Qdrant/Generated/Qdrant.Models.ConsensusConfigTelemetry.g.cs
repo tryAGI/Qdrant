@@ -4,26 +4,26 @@
 namespace Qdrant
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class ConsensusConfigTelemetry
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_message_queue_size")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int MaxMessageQueueSize { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tick_period_ms")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int TickPeriodMs { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("bootstrap_timeout_sec")]
         [global::System.Text.Json.Serialization.JsonRequired]

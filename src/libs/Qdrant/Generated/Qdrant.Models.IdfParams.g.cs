@@ -20,7 +20,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Scope))]
@@ -28,7 +28,7 @@ namespace Qdrant
         public bool IsScope => Scope != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickScope(
 #if NET6_0_OR_GREATER
@@ -41,7 +41,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Qdrant.IdfScope PickScope() => IsScope
             ? Scope!.Value
@@ -57,7 +57,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Corpus))]
@@ -65,7 +65,7 @@ namespace Qdrant
         public bool IsCorpus => Corpus != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickCorpus(
 #if NET6_0_OR_GREATER
@@ -78,23 +78,23 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Qdrant.IdfCorpusParams PickCorpus() => IsCorpus
             ? Corpus!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Corpus' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator IdfParams(global::Qdrant.IdfScope value) => new IdfParams((global::Qdrant.IdfScope?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Qdrant.IdfScope?(IdfParams @this) => @this.Scope;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public IdfParams(global::Qdrant.IdfScope? value)
         {
@@ -102,22 +102,22 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static IdfParams FromScope(global::Qdrant.IdfScope? value) => new IdfParams(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator IdfParams(global::Qdrant.IdfCorpusParams value) => new IdfParams((global::Qdrant.IdfCorpusParams?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Qdrant.IdfCorpusParams?(IdfParams @this) => @this.Corpus;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public IdfParams(global::Qdrant.IdfCorpusParams? value)
         {
@@ -125,12 +125,12 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static IdfParams FromCorpus(global::Qdrant.IdfCorpusParams? value) => new IdfParams(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public IdfParams(
             global::Qdrant.IdfScope? scope,
@@ -142,23 +142,23 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Corpus as object ??
-            Scope as object 
+            Scope as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Scope?.ToValueString() ??
-            Corpus?.ToString() 
+            Corpus?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -166,7 +166,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Qdrant.IdfScope?, TResult>? scope = null,
@@ -191,7 +191,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Qdrant.IdfScope?>? scope = null,
@@ -215,7 +215,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Qdrant.IdfScope?>? scope = null,
@@ -238,7 +238,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -259,18 +259,18 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(IdfParams other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Qdrant.IdfScope?>.Default.Equals(Scope, other.Scope) &&
-                global::System.Collections.Generic.EqualityComparer<global::Qdrant.IdfCorpusParams?>.Default.Equals(Corpus, other.Corpus) 
+                global::System.Collections.Generic.EqualityComparer<global::Qdrant.IdfCorpusParams?>.Default.Equals(Corpus, other.Corpus)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(IdfParams obj1, IdfParams obj2)
         {
@@ -278,7 +278,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(IdfParams obj1, IdfParams obj2)
         {
@@ -286,7 +286,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

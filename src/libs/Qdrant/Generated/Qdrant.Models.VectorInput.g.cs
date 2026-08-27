@@ -5,12 +5,12 @@
 namespace Qdrant
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct VectorInput : global::System.IEquatable<VectorInput>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<float>? VectorInputVariant1 { get; init; }
@@ -19,7 +19,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(VectorInputVariant1))]
@@ -27,7 +27,7 @@ namespace Qdrant
         public bool IsVectorInputVariant1 => VectorInputVariant1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickVectorInputVariant1(
 #if NET6_0_OR_GREATER
@@ -40,7 +40,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::System.Collections.Generic.IList<float> PickVectorInputVariant1() => IsVectorInputVariant1
             ? VectorInputVariant1!
@@ -56,7 +56,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Sparse))]
@@ -64,7 +64,7 @@ namespace Qdrant
         public bool IsSparse => Sparse != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSparse(
 #if NET6_0_OR_GREATER
@@ -77,14 +77,14 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Qdrant.SparseVector PickSparse() => IsSparse
             ? Sparse!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Sparse' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>? VectorInputVariant3 { get; init; }
@@ -93,7 +93,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(VectorInputVariant3))]
@@ -101,7 +101,7 @@ namespace Qdrant
         public bool IsVectorInputVariant3 => VectorInputVariant3 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickVectorInputVariant3(
 #if NET6_0_OR_GREATER
@@ -114,7 +114,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>> PickVectorInputVariant3() => IsVectorInputVariant3
             ? VectorInputVariant3!
@@ -130,7 +130,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ExtendedPointId))]
@@ -138,7 +138,7 @@ namespace Qdrant
         public bool IsExtendedPointId => ExtendedPointId != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickExtendedPointId(
 #if NET6_0_OR_GREATER
@@ -151,7 +151,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Qdrant.ExtendedPointId PickExtendedPointId() => IsExtendedPointId
             ? ExtendedPointId!.Value
@@ -168,7 +168,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Document))]
@@ -176,7 +176,7 @@ namespace Qdrant
         public bool IsDocument => Document != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickDocument(
 #if NET6_0_OR_GREATER
@@ -189,7 +189,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Qdrant.Document PickDocument() => IsDocument
             ? Document!
@@ -206,7 +206,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Image))]
@@ -214,7 +214,7 @@ namespace Qdrant
         public bool IsImage => Image != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickImage(
 #if NET6_0_OR_GREATER
@@ -227,7 +227,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Qdrant.Image PickImage() => IsImage
             ? Image!
@@ -244,7 +244,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InferenceObject))]
@@ -252,7 +252,7 @@ namespace Qdrant
         public bool IsInferenceObject => InferenceObject != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickInferenceObject(
 #if NET6_0_OR_GREATER
@@ -265,23 +265,23 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Qdrant.InferenceObject PickInferenceObject() => IsInferenceObject
             ? InferenceObject!
             : throw new global::System.InvalidOperationException($"Expected union variant 'InferenceObject' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator VectorInput(global::Qdrant.SparseVector value) => new VectorInput((global::Qdrant.SparseVector?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Qdrant.SparseVector?(VectorInput @this) => @this.Sparse;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public VectorInput(global::Qdrant.SparseVector? value)
         {
@@ -289,22 +289,22 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static VectorInput FromSparse(global::Qdrant.SparseVector? value) => new VectorInput(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator VectorInput(global::Qdrant.ExtendedPointId value) => new VectorInput((global::Qdrant.ExtendedPointId?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Qdrant.ExtendedPointId?(VectorInput @this) => @this.ExtendedPointId;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public VectorInput(global::Qdrant.ExtendedPointId? value)
         {
@@ -312,22 +312,22 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static VectorInput FromExtendedPointId(global::Qdrant.ExtendedPointId? value) => new VectorInput(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator VectorInput(global::Qdrant.Document value) => new VectorInput((global::Qdrant.Document?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Qdrant.Document?(VectorInput @this) => @this.Document;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public VectorInput(global::Qdrant.Document? value)
         {
@@ -335,22 +335,22 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static VectorInput FromDocument(global::Qdrant.Document? value) => new VectorInput(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator VectorInput(global::Qdrant.Image value) => new VectorInput((global::Qdrant.Image?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Qdrant.Image?(VectorInput @this) => @this.Image;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public VectorInput(global::Qdrant.Image? value)
         {
@@ -358,22 +358,22 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static VectorInput FromImage(global::Qdrant.Image? value) => new VectorInput(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator VectorInput(global::Qdrant.InferenceObject value) => new VectorInput((global::Qdrant.InferenceObject?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Qdrant.InferenceObject?(VectorInput @this) => @this.InferenceObject;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public VectorInput(global::Qdrant.InferenceObject? value)
         {
@@ -381,12 +381,12 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static VectorInput FromInferenceObject(global::Qdrant.InferenceObject? value) => new VectorInput(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public VectorInput(
             global::System.Collections.Generic.IList<float>? vectorInputVariant1,
@@ -408,7 +408,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             InferenceObject as object ??
@@ -417,11 +417,11 @@ namespace Qdrant
             ExtendedPointId as object ??
             VectorInputVariant3 as object ??
             Sparse as object ??
-            VectorInputVariant1 as object 
+            VectorInputVariant1 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             VectorInputVariant1?.ToString() ??
@@ -430,11 +430,11 @@ namespace Qdrant
             ExtendedPointId?.ToString() ??
             Document?.ToString() ??
             Image?.ToString() ??
-            InferenceObject?.ToString() 
+            InferenceObject?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -442,7 +442,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::System.Collections.Generic.IList<float>, TResult>? vectorInputVariant1 = null,
@@ -492,7 +492,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::System.Collections.Generic.IList<float>>? vectorInputVariant1 = null,
@@ -546,7 +546,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::System.Collections.Generic.IList<float>>? vectorInputVariant1 = null,
@@ -594,7 +594,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -625,7 +625,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(VectorInput other)
         {
@@ -636,12 +636,12 @@ namespace Qdrant
                 global::System.Collections.Generic.EqualityComparer<global::Qdrant.ExtendedPointId?>.Default.Equals(ExtendedPointId, other.ExtendedPointId) &&
                 global::System.Collections.Generic.EqualityComparer<global::Qdrant.Document?>.Default.Equals(Document, other.Document) &&
                 global::System.Collections.Generic.EqualityComparer<global::Qdrant.Image?>.Default.Equals(Image, other.Image) &&
-                global::System.Collections.Generic.EqualityComparer<global::Qdrant.InferenceObject?>.Default.Equals(InferenceObject, other.InferenceObject) 
+                global::System.Collections.Generic.EqualityComparer<global::Qdrant.InferenceObject?>.Default.Equals(InferenceObject, other.InferenceObject)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(VectorInput obj1, VectorInput obj2)
         {
@@ -649,7 +649,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(VectorInput obj1, VectorInput obj2)
         {
@@ -657,7 +657,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

@@ -4,74 +4,74 @@
 namespace Qdrant
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class VectorIndexSearchesTelemetry
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("index_name")]
         public string? IndexName { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("unfiltered_plain")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::Qdrant.OperationDurationStatistics UnfilteredPlain { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("unfiltered_hnsw")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::Qdrant.OperationDurationStatistics UnfilteredHnsw { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("unfiltered_sparse")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::Qdrant.OperationDurationStatistics UnfilteredSparse { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("filtered_plain")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::Qdrant.OperationDurationStatistics FilteredPlain { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("filtered_small_cardinality")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::Qdrant.OperationDurationStatistics FilteredSmallCardinality { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("filtered_large_cardinality")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::Qdrant.OperationDurationStatistics FilteredLargeCardinality { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("filtered_exact")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::Qdrant.OperationDurationStatistics FilteredExact { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("filtered_sparse")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::Qdrant.OperationDurationStatistics FilteredSparse { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("unfiltered_exact")]
         [global::System.Text.Json.Serialization.JsonRequired]

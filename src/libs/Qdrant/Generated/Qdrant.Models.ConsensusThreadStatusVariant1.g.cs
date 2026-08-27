@@ -4,19 +4,19 @@
 namespace Qdrant
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class ConsensusThreadStatusVariant1
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("consensus_thread_status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Qdrant.JsonConverters.ConsensusThreadStatusVariant1ConsensusThreadStatusJsonConverter))]
         public global::Qdrant.ConsensusThreadStatusVariant1ConsensusThreadStatus ConsensusThreadStatus { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("last_update")]
         [global::System.Text.Json.Serialization.JsonRequired]

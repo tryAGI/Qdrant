@@ -9,7 +9,7 @@ namespace Qdrant
     public sealed partial class IdfCorpusParams
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("corpus")]
         [global::System.Text.Json.Serialization.JsonRequired]

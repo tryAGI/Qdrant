@@ -10,7 +10,7 @@ namespace Qdrant
     public enum VectorStorageTypeVariant4
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InRamChunkedMmap,
     }

@@ -10,7 +10,7 @@ namespace Qdrant
     public readonly partial struct DocumentOptions2 : global::System.IEquatable<DocumentOptions2>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public object? OptionsVariant1 { get; init; }
@@ -19,7 +19,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OptionsVariant1))]
@@ -27,7 +27,7 @@ namespace Qdrant
         public bool IsOptionsVariant1 => OptionsVariant1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickOptionsVariant1(
 #if NET6_0_OR_GREATER
@@ -40,7 +40,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object PickOptionsVariant1() => IsOptionsVariant1
             ? OptionsVariant1!
@@ -56,7 +56,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Bm25Config))]
@@ -64,7 +64,7 @@ namespace Qdrant
         public bool IsBm25Config => Bm25Config != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickBm25Config(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Qdrant.Bm25Config PickBm25Config() => IsBm25Config
             ? Bm25Config!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Bm25Config' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator DocumentOptions2(global::Qdrant.Bm25Config value) => new DocumentOptions2((global::Qdrant.Bm25Config?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Qdrant.Bm25Config?(DocumentOptions2 @this) => @this.Bm25Config;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public DocumentOptions2(global::Qdrant.Bm25Config? value)
         {
@@ -101,12 +101,12 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static DocumentOptions2 FromBm25Config(global::Qdrant.Bm25Config? value) => new DocumentOptions2(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public DocumentOptions2(
             object? optionsVariant1,
@@ -118,23 +118,23 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Bm25Config as object ??
-            OptionsVariant1 as object 
+            OptionsVariant1 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             OptionsVariant1?.ToString() ??
-            Bm25Config?.ToString() 
+            Bm25Config?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -142,7 +142,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<object, TResult>? optionsVariant1 = null,
@@ -167,7 +167,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<object>? optionsVariant1 = null,
@@ -191,7 +191,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<object>? optionsVariant1 = null,
@@ -214,7 +214,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -235,18 +235,18 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(DocumentOptions2 other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(OptionsVariant1, other.OptionsVariant1) &&
-                global::System.Collections.Generic.EqualityComparer<global::Qdrant.Bm25Config?>.Default.Equals(Bm25Config, other.Bm25Config) 
+                global::System.Collections.Generic.EqualityComparer<global::Qdrant.Bm25Config?>.Default.Equals(Bm25Config, other.Bm25Config)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(DocumentOptions2 obj1, DocumentOptions2 obj2)
         {
@@ -254,7 +254,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(DocumentOptions2 obj1, DocumentOptions2 obj2)
         {
@@ -262,7 +262,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

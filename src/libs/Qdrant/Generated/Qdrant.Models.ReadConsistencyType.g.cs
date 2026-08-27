@@ -11,15 +11,15 @@ namespace Qdrant
     public enum ReadConsistencyType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         All,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Majority,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Quorum,
     }

@@ -4,31 +4,31 @@
 namespace Qdrant
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class RunningEnvironmentTelemetry
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("distribution")]
         public string? Distribution { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("distribution_version")]
         public string? DistributionVersion { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("is_docker")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool IsDocker { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cores")]
         public int? Cores { get; set; }
@@ -52,20 +52,20 @@ namespace Qdrant
         public int? DiskSize { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cpu_flags")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string CpuFlags { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cpu_endian")]
         public global::Qdrant.CpuEndian? CpuEndian { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("gpu_devices")]
         public global::System.Collections.Generic.IList<global::Qdrant.GpuDeviceTelemetry>? GpuDevices { get; set; }

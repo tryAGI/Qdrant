@@ -9,11 +9,11 @@ namespace Qdrant
     public enum Modifier
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Idf,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         None,
     }

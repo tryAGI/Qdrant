@@ -4,128 +4,128 @@
 namespace Qdrant
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum Language
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Arabic,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Azerbaijani,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Basque,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Bengali,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Catalan,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Chinese,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Danish,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Dutch,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         English,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Finnish,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         French,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         German,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Greek,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Hebrew,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Hinglish,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Hungarian,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Indonesian,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Italian,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Japanese,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Kazakh,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Nepali,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Norwegian,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Portuguese,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Romanian,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Russian,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Slovene,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Spanish,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Swedish,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Tajik,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Turkish,
     }

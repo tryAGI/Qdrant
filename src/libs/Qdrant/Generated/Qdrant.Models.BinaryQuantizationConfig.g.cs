@@ -6,7 +6,7 @@
 namespace Qdrant
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class BinaryQuantizationConfig
     {
@@ -24,7 +24,7 @@ namespace Qdrant
         public global::Qdrant.Memory? Memory { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("encoding")]
         public global::Qdrant.BinaryQuantizationEncoding? Encoding { get; set; }

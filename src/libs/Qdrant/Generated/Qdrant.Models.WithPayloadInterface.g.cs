@@ -19,7 +19,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WithPayloadInterfaceVariant1))]
@@ -27,7 +27,7 @@ namespace Qdrant
         public bool IsWithPayloadInterfaceVariant1 => WithPayloadInterfaceVariant1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickWithPayloadInterfaceVariant1(
 #if NET6_0_OR_GREATER
@@ -40,7 +40,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool PickWithPayloadInterfaceVariant1() => IsWithPayloadInterfaceVariant1
             ? WithPayloadInterfaceVariant1!.Value
@@ -56,7 +56,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WithPayloadInterfaceVariant2))]
@@ -64,7 +64,7 @@ namespace Qdrant
         public bool IsWithPayloadInterfaceVariant2 => WithPayloadInterfaceVariant2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickWithPayloadInterfaceVariant2(
 #if NET6_0_OR_GREATER
@@ -77,7 +77,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::System.Collections.Generic.IList<string> PickWithPayloadInterfaceVariant2() => IsWithPayloadInterfaceVariant2
             ? WithPayloadInterfaceVariant2!
@@ -93,7 +93,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Selector))]
@@ -101,7 +101,7 @@ namespace Qdrant
         public bool IsSelector => Selector != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSelector(
 #if NET6_0_OR_GREATER
@@ -114,23 +114,23 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Qdrant.PayloadSelector PickSelector() => IsSelector
             ? Selector!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Selector' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator WithPayloadInterface(bool value) => new WithPayloadInterface((bool?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator bool?(WithPayloadInterface @this) => @this.WithPayloadInterfaceVariant1;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public WithPayloadInterface(bool? value)
         {
@@ -138,22 +138,22 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static WithPayloadInterface FromWithPayloadInterfaceVariant1(bool? value) => new WithPayloadInterface(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator WithPayloadInterface(global::Qdrant.PayloadSelector value) => new WithPayloadInterface((global::Qdrant.PayloadSelector?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Qdrant.PayloadSelector?(WithPayloadInterface @this) => @this.Selector;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public WithPayloadInterface(global::Qdrant.PayloadSelector? value)
         {
@@ -161,12 +161,12 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static WithPayloadInterface FromSelector(global::Qdrant.PayloadSelector? value) => new WithPayloadInterface(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public WithPayloadInterface(
             bool? withPayloadInterfaceVariant1,
@@ -180,25 +180,25 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Selector as object ??
             WithPayloadInterfaceVariant2 as object ??
-            WithPayloadInterfaceVariant1 as object 
+            WithPayloadInterfaceVariant1 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             WithPayloadInterfaceVariant1?.ToString().ToLowerInvariant() ??
             WithPayloadInterfaceVariant2?.ToString() ??
-            Selector?.ToString() 
+            Selector?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -206,7 +206,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<bool?, TResult>? withPayloadInterfaceVariant1 = null,
@@ -236,7 +236,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<bool?>? withPayloadInterfaceVariant1 = null,
@@ -266,7 +266,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<bool?>? withPayloadInterfaceVariant1 = null,
@@ -294,7 +294,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -317,19 +317,19 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(WithPayloadInterface other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<bool?>.Default.Equals(WithPayloadInterfaceVariant1, other.WithPayloadInterfaceVariant1) &&
                 global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<string>?>.Default.Equals(WithPayloadInterfaceVariant2, other.WithPayloadInterfaceVariant2) &&
-                global::System.Collections.Generic.EqualityComparer<global::Qdrant.PayloadSelector?>.Default.Equals(Selector, other.Selector) 
+                global::System.Collections.Generic.EqualityComparer<global::Qdrant.PayloadSelector?>.Default.Equals(Selector, other.Selector)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(WithPayloadInterface obj1, WithPayloadInterface obj2)
         {
@@ -337,7 +337,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(WithPayloadInterface obj1, WithPayloadInterface obj2)
         {
@@ -345,7 +345,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

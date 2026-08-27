@@ -9,7 +9,7 @@ namespace Qdrant
     public sealed partial class MatchTextAny
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("text_any")]
         [global::System.Text.Json.Serialization.JsonRequired]

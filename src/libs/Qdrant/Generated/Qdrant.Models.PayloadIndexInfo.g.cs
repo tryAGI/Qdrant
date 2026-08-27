@@ -17,7 +17,7 @@ namespace Qdrant
         public required global::Qdrant.PayloadSchemaType DataType { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("params")]
         public global::Qdrant.PayloadSchemaParams? Params { get; set; }

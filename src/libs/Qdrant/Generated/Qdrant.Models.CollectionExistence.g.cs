@@ -9,7 +9,7 @@ namespace Qdrant
     public sealed partial class CollectionExistence
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("exists")]
         [global::System.Text.Json.Serialization.JsonRequired]

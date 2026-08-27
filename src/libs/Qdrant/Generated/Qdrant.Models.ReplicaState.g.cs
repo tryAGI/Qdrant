@@ -9,47 +9,47 @@ namespace Qdrant
     public enum ReplicaState
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Active,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ActiveRead,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Dead,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Initializing,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Listener,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ManualRecovery,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Partial,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PartialSnapshot,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Recovery,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Resharding,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ReshardingScaleDown,
     }

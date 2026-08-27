@@ -17,7 +17,7 @@ namespace Qdrant
         /// </summary>
         ReshardingStreamRecords,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Snapshot,
         /// <summary>
@@ -25,7 +25,7 @@ namespace Qdrant
         /// </summary>
         StreamRecords,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         WalDelta,
     }

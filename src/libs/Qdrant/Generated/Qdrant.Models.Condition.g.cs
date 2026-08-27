@@ -5,7 +5,7 @@
 namespace Qdrant
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct Condition : global::System.IEquatable<Condition>
     {
@@ -19,7 +19,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Field))]
@@ -27,7 +27,7 @@ namespace Qdrant
         public bool IsField => Field != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickField(
 #if NET6_0_OR_GREATER
@@ -40,7 +40,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Qdrant.FieldCondition PickField() => IsField
             ? Field!
@@ -56,7 +56,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(IsEmpty))]
@@ -64,7 +64,7 @@ namespace Qdrant
         public bool IsIsEmpty => IsEmpty != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickIsEmpty(
 #if NET6_0_OR_GREATER
@@ -77,7 +77,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Qdrant.IsEmptyCondition PickIsEmpty() => IsIsEmpty
             ? IsEmpty!
@@ -93,7 +93,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(IsNull))]
@@ -101,7 +101,7 @@ namespace Qdrant
         public bool IsIsNull => IsNull != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickIsNull(
 #if NET6_0_OR_GREATER
@@ -114,7 +114,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Qdrant.IsNullCondition PickIsNull() => IsIsNull
             ? IsNull!
@@ -130,7 +130,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(HasId))]
@@ -138,7 +138,7 @@ namespace Qdrant
         public bool IsHasId => HasId != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickHasId(
 #if NET6_0_OR_GREATER
@@ -151,7 +151,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Qdrant.HasIdCondition PickHasId() => IsHasId
             ? HasId!
@@ -167,7 +167,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(HasVector))]
@@ -175,7 +175,7 @@ namespace Qdrant
         public bool IsHasVector => HasVector != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickHasVector(
 #if NET6_0_OR_GREATER
@@ -188,7 +188,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Qdrant.HasVectorCondition PickHasVector() => IsHasVector
             ? HasVector!
@@ -204,7 +204,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Slice))]
@@ -212,7 +212,7 @@ namespace Qdrant
         public bool IsSlice => Slice != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSlice(
 #if NET6_0_OR_GREATER
@@ -225,14 +225,14 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Qdrant.SliceCondition PickSlice() => IsSlice
             ? Slice!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Slice' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.NestedCondition? Nested { get; init; }
@@ -241,7 +241,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Nested))]
@@ -249,7 +249,7 @@ namespace Qdrant
         public bool IsNested => Nested != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickNested(
 #if NET6_0_OR_GREATER
@@ -262,14 +262,14 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Qdrant.NestedCondition PickNested() => IsNested
             ? Nested!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Nested' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.Filter? Filter { get; init; }
@@ -278,7 +278,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Filter))]
@@ -286,7 +286,7 @@ namespace Qdrant
         public bool IsFilter => Filter != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickFilter(
 #if NET6_0_OR_GREATER
@@ -299,23 +299,23 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Qdrant.Filter PickFilter() => IsFilter
             ? Filter!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Filter' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Condition(global::Qdrant.FieldCondition value) => new Condition((global::Qdrant.FieldCondition?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Qdrant.FieldCondition?(Condition @this) => @this.Field;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Condition(global::Qdrant.FieldCondition? value)
         {
@@ -323,22 +323,22 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Condition FromField(global::Qdrant.FieldCondition? value) => new Condition(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Condition(global::Qdrant.IsEmptyCondition value) => new Condition((global::Qdrant.IsEmptyCondition?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Qdrant.IsEmptyCondition?(Condition @this) => @this.IsEmpty;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Condition(global::Qdrant.IsEmptyCondition? value)
         {
@@ -346,22 +346,22 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Condition FromIsEmpty(global::Qdrant.IsEmptyCondition? value) => new Condition(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Condition(global::Qdrant.IsNullCondition value) => new Condition((global::Qdrant.IsNullCondition?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Qdrant.IsNullCondition?(Condition @this) => @this.IsNull;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Condition(global::Qdrant.IsNullCondition? value)
         {
@@ -369,22 +369,22 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Condition FromIsNull(global::Qdrant.IsNullCondition? value) => new Condition(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Condition(global::Qdrant.HasIdCondition value) => new Condition((global::Qdrant.HasIdCondition?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Qdrant.HasIdCondition?(Condition @this) => @this.HasId;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Condition(global::Qdrant.HasIdCondition? value)
         {
@@ -392,22 +392,22 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Condition FromHasId(global::Qdrant.HasIdCondition? value) => new Condition(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Condition(global::Qdrant.HasVectorCondition value) => new Condition((global::Qdrant.HasVectorCondition?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Qdrant.HasVectorCondition?(Condition @this) => @this.HasVector;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Condition(global::Qdrant.HasVectorCondition? value)
         {
@@ -415,22 +415,22 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Condition FromHasVector(global::Qdrant.HasVectorCondition? value) => new Condition(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Condition(global::Qdrant.SliceCondition value) => new Condition((global::Qdrant.SliceCondition?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Qdrant.SliceCondition?(Condition @this) => @this.Slice;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Condition(global::Qdrant.SliceCondition? value)
         {
@@ -438,22 +438,22 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Condition FromSlice(global::Qdrant.SliceCondition? value) => new Condition(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Condition(global::Qdrant.NestedCondition value) => new Condition((global::Qdrant.NestedCondition?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Qdrant.NestedCondition?(Condition @this) => @this.Nested;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Condition(global::Qdrant.NestedCondition? value)
         {
@@ -461,22 +461,22 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Condition FromNested(global::Qdrant.NestedCondition? value) => new Condition(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Condition(global::Qdrant.Filter value) => new Condition((global::Qdrant.Filter?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Qdrant.Filter?(Condition @this) => @this.Filter;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Condition(global::Qdrant.Filter? value)
         {
@@ -484,12 +484,12 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Condition FromFilter(global::Qdrant.Filter? value) => new Condition(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Condition(
             global::Qdrant.FieldCondition? field,
@@ -513,7 +513,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Filter as object ??
@@ -523,11 +523,11 @@ namespace Qdrant
             HasId as object ??
             IsNull as object ??
             IsEmpty as object ??
-            Field as object 
+            Field as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Field?.ToString() ??
@@ -537,11 +537,11 @@ namespace Qdrant
             HasVector?.ToString() ??
             Slice?.ToString() ??
             Nested?.ToString() ??
-            Filter?.ToString() 
+            Filter?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -549,7 +549,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Qdrant.FieldCondition, TResult>? field = null,
@@ -604,7 +604,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Qdrant.FieldCondition>? field = null,
@@ -664,7 +664,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Qdrant.FieldCondition>? field = null,
@@ -717,7 +717,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -750,7 +750,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(Condition other)
         {
@@ -762,12 +762,12 @@ namespace Qdrant
                 global::System.Collections.Generic.EqualityComparer<global::Qdrant.HasVectorCondition?>.Default.Equals(HasVector, other.HasVector) &&
                 global::System.Collections.Generic.EqualityComparer<global::Qdrant.SliceCondition?>.Default.Equals(Slice, other.Slice) &&
                 global::System.Collections.Generic.EqualityComparer<global::Qdrant.NestedCondition?>.Default.Equals(Nested, other.Nested) &&
-                global::System.Collections.Generic.EqualityComparer<global::Qdrant.Filter?>.Default.Equals(Filter, other.Filter) 
+                global::System.Collections.Generic.EqualityComparer<global::Qdrant.Filter?>.Default.Equals(Filter, other.Filter)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(Condition obj1, Condition obj2)
         {
@@ -775,7 +775,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(Condition obj1, Condition obj2)
         {
@@ -783,7 +783,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

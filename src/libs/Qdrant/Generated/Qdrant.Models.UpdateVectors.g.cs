@@ -4,7 +4,7 @@
 namespace Qdrant
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class UpdateVectors
     {
@@ -16,13 +16,13 @@ namespace Qdrant
         public required global::System.Collections.Generic.IList<global::Qdrant.PointVectors> Points { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("shard_key")]
         public global::Qdrant.ShardKeySelector? ShardKey { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("update_filter")]
         public global::Qdrant.Filter? UpdateFilter { get; set; }

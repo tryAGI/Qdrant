@@ -10,15 +10,15 @@ namespace Qdrant
     public enum SnapshotPriority
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         NoSync,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Replica,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Snapshot,
     }

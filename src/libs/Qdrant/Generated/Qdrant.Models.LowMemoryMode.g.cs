@@ -21,7 +21,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(LowMemoryModeVariant1))]
@@ -29,7 +29,7 @@ namespace Qdrant
         public bool IsLowMemoryModeVariant1 => LowMemoryModeVariant1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickLowMemoryModeVariant1(
 #if NET6_0_OR_GREATER
@@ -42,7 +42,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Qdrant.LowMemoryModeVariant1 PickLowMemoryModeVariant1() => IsLowMemoryModeVariant1
             ? LowMemoryModeVariant1!.Value
@@ -59,7 +59,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(LowMemoryModeVariant2))]
@@ -67,7 +67,7 @@ namespace Qdrant
         public bool IsLowMemoryModeVariant2 => LowMemoryModeVariant2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickLowMemoryModeVariant2(
 #if NET6_0_OR_GREATER
@@ -80,7 +80,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Qdrant.LowMemoryModeVariant2 PickLowMemoryModeVariant2() => IsLowMemoryModeVariant2
             ? LowMemoryModeVariant2!.Value
@@ -96,7 +96,7 @@ namespace Qdrant
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(LowMemoryModeVariant3))]
@@ -104,7 +104,7 @@ namespace Qdrant
         public bool IsLowMemoryModeVariant3 => LowMemoryModeVariant3 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickLowMemoryModeVariant3(
 #if NET6_0_OR_GREATER
@@ -117,23 +117,23 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::Qdrant.LowMemoryModeVariant3 PickLowMemoryModeVariant3() => IsLowMemoryModeVariant3
             ? LowMemoryModeVariant3!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'LowMemoryModeVariant3' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator LowMemoryMode(global::Qdrant.LowMemoryModeVariant1 value) => new LowMemoryMode((global::Qdrant.LowMemoryModeVariant1?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Qdrant.LowMemoryModeVariant1?(LowMemoryMode @this) => @this.LowMemoryModeVariant1;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public LowMemoryMode(global::Qdrant.LowMemoryModeVariant1? value)
         {
@@ -141,22 +141,22 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static LowMemoryMode FromLowMemoryModeVariant1(global::Qdrant.LowMemoryModeVariant1? value) => new LowMemoryMode(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator LowMemoryMode(global::Qdrant.LowMemoryModeVariant2 value) => new LowMemoryMode((global::Qdrant.LowMemoryModeVariant2?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Qdrant.LowMemoryModeVariant2?(LowMemoryMode @this) => @this.LowMemoryModeVariant2;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public LowMemoryMode(global::Qdrant.LowMemoryModeVariant2? value)
         {
@@ -164,22 +164,22 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static LowMemoryMode FromLowMemoryModeVariant2(global::Qdrant.LowMemoryModeVariant2? value) => new LowMemoryMode(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator LowMemoryMode(global::Qdrant.LowMemoryModeVariant3 value) => new LowMemoryMode((global::Qdrant.LowMemoryModeVariant3?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::Qdrant.LowMemoryModeVariant3?(LowMemoryMode @this) => @this.LowMemoryModeVariant3;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public LowMemoryMode(global::Qdrant.LowMemoryModeVariant3? value)
         {
@@ -187,12 +187,12 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static LowMemoryMode FromLowMemoryModeVariant3(global::Qdrant.LowMemoryModeVariant3? value) => new LowMemoryMode(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public LowMemoryMode(
             global::Qdrant.LowMemoryModeVariant1? lowMemoryModeVariant1,
@@ -206,25 +206,25 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             LowMemoryModeVariant3 as object ??
             LowMemoryModeVariant2 as object ??
-            LowMemoryModeVariant1 as object 
+            LowMemoryModeVariant1 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             LowMemoryModeVariant1?.ToValueString() ??
             LowMemoryModeVariant2?.ToValueString() ??
-            LowMemoryModeVariant3?.ToValueString() 
+            LowMemoryModeVariant3?.ToValueString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -232,7 +232,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::Qdrant.LowMemoryModeVariant1?, TResult>? lowMemoryModeVariant1 = null,
@@ -262,7 +262,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::Qdrant.LowMemoryModeVariant1?>? lowMemoryModeVariant1 = null,
@@ -292,7 +292,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::Qdrant.LowMemoryModeVariant1?>? lowMemoryModeVariant1 = null,
@@ -320,7 +320,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -343,19 +343,19 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(LowMemoryMode other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::Qdrant.LowMemoryModeVariant1?>.Default.Equals(LowMemoryModeVariant1, other.LowMemoryModeVariant1) &&
                 global::System.Collections.Generic.EqualityComparer<global::Qdrant.LowMemoryModeVariant2?>.Default.Equals(LowMemoryModeVariant2, other.LowMemoryModeVariant2) &&
-                global::System.Collections.Generic.EqualityComparer<global::Qdrant.LowMemoryModeVariant3?>.Default.Equals(LowMemoryModeVariant3, other.LowMemoryModeVariant3) 
+                global::System.Collections.Generic.EqualityComparer<global::Qdrant.LowMemoryModeVariant3?>.Default.Equals(LowMemoryModeVariant3, other.LowMemoryModeVariant3)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(LowMemoryMode obj1, LowMemoryMode obj2)
         {
@@ -363,7 +363,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(LowMemoryMode obj1, LowMemoryMode obj2)
         {
@@ -371,7 +371,7 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

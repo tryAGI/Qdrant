@@ -4,28 +4,28 @@
 namespace Qdrant
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum CompressionRatio
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         X16,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         X32,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         X4,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         X64,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         X8,
     }

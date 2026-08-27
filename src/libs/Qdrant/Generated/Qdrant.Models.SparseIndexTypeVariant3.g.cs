@@ -9,7 +9,7 @@ namespace Qdrant
     public enum SparseIndexTypeVariant3
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Mmap,
     }
