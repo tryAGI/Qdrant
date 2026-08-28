@@ -31,7 +31,7 @@ namespace Qdrant
         /// Additional options for the model, will be passed to the inference service as-is. See model cards for available options.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("options")]
-        public global::Qdrant.DocumentOptions2? Options { get; set; }
+        public global::Qdrant.DocumentOptions? Options { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -59,7 +59,7 @@ namespace Qdrant
         public Document(
             string text,
             string model,
-            global::Qdrant.DocumentOptions2? options)
+            global::Qdrant.DocumentOptions? options)
         {
             this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));

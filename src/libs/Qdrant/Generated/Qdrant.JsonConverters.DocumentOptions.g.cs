@@ -4,10 +4,10 @@
 namespace Qdrant.JsonConverters
 {
     /// <inheritdoc />
-    public class DocumentOptions2JsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::Qdrant.DocumentOptions2>
+    public class DocumentOptionsJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::Qdrant.DocumentOptions>
     {
         /// <inheritdoc />
-        public override global::Qdrant.DocumentOptions2 Read(
+        public override global::Qdrant.DocumentOptions Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -45,7 +45,7 @@ namespace Qdrant.JsonConverters
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
             if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
 
-            object? optionsVariant1 = default;
+            object? documentOptionsVariant1 = default;
             global::Qdrant.Bm25Config? bm25Config = default;
             if (__bestIndex >= 0)
             {
@@ -55,7 +55,7 @@ namespace Qdrant.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                        optionsVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        documentOptionsVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -81,14 +81,14 @@ namespace Qdrant.JsonConverters
                 }
             }
 
-            if (optionsVariant1 == null && bm25Config == null)
+            if (documentOptionsVariant1 == null && bm25Config == null)
             {
                 try
                 {
 
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                    optionsVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    documentOptionsVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -98,7 +98,7 @@ namespace Qdrant.JsonConverters
                 }
             }
 
-            if (optionsVariant1 == null && bm25Config == null)
+            if (documentOptionsVariant1 == null && bm25Config == null)
             {
                 try
                 {
@@ -115,8 +115,8 @@ namespace Qdrant.JsonConverters
                 }
             }
 
-            var __value = new global::Qdrant.DocumentOptions2(
-                optionsVariant1,
+            var __value = new global::Qdrant.DocumentOptions(
+                documentOptionsVariant1,
 
                 bm25Config
                 );
@@ -127,17 +127,17 @@ namespace Qdrant.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::Qdrant.DocumentOptions2 value,
+            global::Qdrant.DocumentOptions value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsOptionsVariant1)
+            if (value.IsDocumentOptionsVariant1)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OptionsVariant1!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DocumentOptionsVariant1!, typeInfo);
             }
             else if (value.IsBm25Config)
             {

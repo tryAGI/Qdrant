@@ -864,7 +864,7 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.DocumentOptions2? Type209 { get; set; }
+        public global::Qdrant.DocumentOptions? Type209 { get; set; }
         /// <summary>
         ///
         /// </summary>

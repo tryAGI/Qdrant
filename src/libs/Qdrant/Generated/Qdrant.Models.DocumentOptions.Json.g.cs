@@ -2,7 +2,7 @@
 
 namespace Qdrant
 {
-    public sealed partial class DocumentOptions
+    public readonly partial struct DocumentOptions
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
@@ -54,7 +54,7 @@ namespace Qdrant
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
                 typeof(global::Qdrant.DocumentOptions),
-                jsonSerializerContext) as global::Qdrant.DocumentOptions;
+                jsonSerializerContext) as global::Qdrant.DocumentOptions?;
         }
 
         /// <summary>
@@ -101,7 +101,7 @@ namespace Qdrant
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
                 jsonStream,
                 typeof(global::Qdrant.DocumentOptions),
-                jsonSerializerContext).ConfigureAwait(false)) as global::Qdrant.DocumentOptions;
+                jsonSerializerContext).ConfigureAwait(false)) as global::Qdrant.DocumentOptions?;
         }
 
         /// <summary>
