@@ -285,6 +285,7 @@ namespace Qdrant
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.LowMemoryModeVariant1), TypeInfoPropertyName = "LowMemoryModeVariant12")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.LowMemoryModeVariant2), TypeInfoPropertyName = "LowMemoryModeVariant22")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.LowMemoryModeVariant3), TypeInfoPropertyName = "LowMemoryModeVariant32")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.ContainerRuntime), TypeInfoPropertyName = "ContainerRuntime2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.CpuEndian), TypeInfoPropertyName = "CpuEndian2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Qdrant.GpuDeviceTelemetry>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.GpuDeviceTelemetry))]
@@ -466,6 +467,8 @@ namespace Qdrant
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.DatetimeKeyExpression))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.MultExpression))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.SumExpression))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.MaxExpression))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.MinExpression))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.NegExpression))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.AbsExpression))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.DivExpression))]
@@ -474,6 +477,7 @@ namespace Qdrant
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.ExpExpression))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.Log10Expression))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.LnExpression))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.AcoshExpression))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.LinDecayExpression))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.ExpDecayExpression))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.GaussDecayExpression))]
@@ -510,10 +514,6 @@ namespace Qdrant
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Qdrant.FacetValueHit>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.FacetValueHit))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.FacetValue), TypeInfoPropertyName = "FacetValue2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.Usage))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.InferenceUsage))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, global::Qdrant.ModelUsage>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.ModelUsage))]
     internal sealed partial class SourceGenerationContextChunk0 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -526,6 +526,10 @@ namespace Qdrant
         Converters = new global::System.Type[]
         {
         })]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.Usage))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.InferenceUsage))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, global::Qdrant.ModelUsage>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.ModelUsage))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.ShardKeysResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Qdrant.ShardKeyDescription>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.ShardKeyDescription))]
@@ -704,6 +708,7 @@ namespace Qdrant
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.LowMemoryModeVariant1?), TypeInfoPropertyName = "NullableLowMemoryModeVariant12")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.LowMemoryModeVariant2?), TypeInfoPropertyName = "NullableLowMemoryModeVariant22")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.LowMemoryModeVariant3?), TypeInfoPropertyName = "NullableLowMemoryModeVariant32")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.ContainerRuntime?), TypeInfoPropertyName = "NullableContainerRuntime2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.CpuEndian?), TypeInfoPropertyName = "NullableCpuEndian2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.CollectionTelemetryEnum?), TypeInfoPropertyName = "NullableCollectionTelemetryEnum2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.ShardCleanStatusTelemetry?), TypeInfoPropertyName = "NullableShardCleanStatusTelemetry2")]
@@ -1101,6 +1106,10 @@ namespace Qdrant
                     || typeToConvert == typeof(global::Qdrant.LowMemoryModeVariant3)
 
                     || typeToConvert == typeof(global::Qdrant.LowMemoryModeVariant3?)
+
+                    || typeToConvert == typeof(global::Qdrant.ContainerRuntime)
+
+                    || typeToConvert == typeof(global::Qdrant.ContainerRuntime?)
 
                     || typeToConvert == typeof(global::Qdrant.CpuEndian)
 
@@ -1649,6 +1658,16 @@ namespace Qdrant
                 if (typeToConvert == typeof(global::Qdrant.LowMemoryModeVariant3?))
                 {
                     return new global::Qdrant.JsonConverters.LowMemoryModeVariant3NullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.ContainerRuntime))
+                {
+                    return new global::Qdrant.JsonConverters.ContainerRuntimeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.ContainerRuntime?))
+                {
+                    return new global::Qdrant.JsonConverters.ContainerRuntimeNullableJsonConverter();
                 }
 
                 if (typeToConvert == typeof(global::Qdrant.CpuEndian))
