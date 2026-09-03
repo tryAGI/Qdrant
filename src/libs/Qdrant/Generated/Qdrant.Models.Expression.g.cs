@@ -306,6 +306,80 @@ namespace Qdrant
             : throw new global::System.InvalidOperationException($"Expected union variant 'Sum' but the value was {ToString()}.");
 
         /// <summary>
+        /// Largest of the given expressions. Requires at least one operand.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Qdrant.MaxExpression? Max { get; init; }
+#else
+        public global::Qdrant.MaxExpression? Max { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Max))]
+#endif
+        public bool IsMax => Max != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickMax(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.MaxExpression? value)
+        {
+            value = Max;
+            return IsMax;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::Qdrant.MaxExpression PickMax() => IsMax
+            ? Max!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Max' but the value was {ToString()}.");
+
+        /// <summary>
+        /// Smallest of the given expressions. Requires at least one operand.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Qdrant.MinExpression? Min { get; init; }
+#else
+        public global::Qdrant.MinExpression? Min { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Min))]
+#endif
+        public bool IsMin => Min != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickMin(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.MinExpression? value)
+        {
+            value = Min;
+            return IsMin;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::Qdrant.MinExpression PickMin() => IsMin
+            ? Min!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Min' but the value was {ToString()}.");
+
+        /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -605,6 +679,43 @@ namespace Qdrant
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
+        public global::Qdrant.AcoshExpression? Acosh { get; init; }
+#else
+        public global::Qdrant.AcoshExpression? Acosh { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Acosh))]
+#endif
+        public bool IsAcosh => Acosh != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickAcosh(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.AcoshExpression? value)
+        {
+            value = Acosh;
+            return IsAcosh;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::Qdrant.AcoshExpression PickAcosh() => IsAcosh
+            ? Acosh!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Acosh' but the value was {ToString()}.");
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
         public global::Qdrant.LinDecayExpression? LinDecay { get; init; }
 #else
         public global::Qdrant.LinDecayExpression? LinDecay { get; }
@@ -898,6 +1009,52 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
+        public static implicit operator Expression(global::Qdrant.MaxExpression value) => new Expression((global::Qdrant.MaxExpression?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::Qdrant.MaxExpression?(Expression @this) => @this.Max;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public Expression(global::Qdrant.MaxExpression? value)
+        {
+            Max = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static Expression FromMax(global::Qdrant.MaxExpression? value) => new Expression(value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator Expression(global::Qdrant.MinExpression value) => new Expression((global::Qdrant.MinExpression?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::Qdrant.MinExpression?(Expression @this) => @this.Min;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public Expression(global::Qdrant.MinExpression? value)
+        {
+            Min = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static Expression FromMin(global::Qdrant.MinExpression? value) => new Expression(value);
+
+        /// <summary>
+        ///
+        /// </summary>
         public static implicit operator Expression(global::Qdrant.NegExpression value) => new Expression((global::Qdrant.NegExpression?)value);
 
         /// <summary>
@@ -1082,6 +1239,29 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
+        public static implicit operator Expression(global::Qdrant.AcoshExpression value) => new Expression((global::Qdrant.AcoshExpression?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::Qdrant.AcoshExpression?(Expression @this) => @this.Acosh;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public Expression(global::Qdrant.AcoshExpression? value)
+        {
+            Acosh = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static Expression FromAcosh(global::Qdrant.AcoshExpression? value) => new Expression(value);
+
+        /// <summary>
+        ///
+        /// </summary>
         public static implicit operator Expression(global::Qdrant.LinDecayExpression value) => new Expression((global::Qdrant.LinDecayExpression?)value);
 
         /// <summary>
@@ -1160,6 +1340,8 @@ namespace Qdrant
             global::Qdrant.DatetimeKeyExpression? datetimeKey,
             global::Qdrant.MultExpression? mult,
             global::Qdrant.SumExpression? sum,
+            global::Qdrant.MaxExpression? max,
+            global::Qdrant.MinExpression? min,
             global::Qdrant.NegExpression? neg,
             global::Qdrant.AbsExpression? abs,
             global::Qdrant.DivExpression? div,
@@ -1168,6 +1350,7 @@ namespace Qdrant
             global::Qdrant.ExpExpression? exp,
             global::Qdrant.Log10Expression? log10,
             global::Qdrant.LnExpression? ln,
+            global::Qdrant.AcoshExpression? acosh,
             global::Qdrant.LinDecayExpression? linDecay,
             global::Qdrant.ExpDecayExpression? expDecay,
             global::Qdrant.GaussDecayExpression? gaussDecay
@@ -1181,6 +1364,8 @@ namespace Qdrant
             DatetimeKey = datetimeKey;
             Mult = mult;
             Sum = sum;
+            Max = max;
+            Min = min;
             Neg = neg;
             Abs = abs;
             Div = div;
@@ -1189,6 +1374,7 @@ namespace Qdrant
             Exp = exp;
             Log10 = log10;
             Ln = ln;
+            Acosh = acosh;
             LinDecay = linDecay;
             ExpDecay = expDecay;
             GaussDecay = gaussDecay;
@@ -1201,6 +1387,7 @@ namespace Qdrant
             GaussDecay as object ??
             ExpDecay as object ??
             LinDecay as object ??
+            Acosh as object ??
             Ln as object ??
             Log10 as object ??
             Exp as object ??
@@ -1209,6 +1396,8 @@ namespace Qdrant
             Div as object ??
             Abs as object ??
             Neg as object ??
+            Min as object ??
+            Max as object ??
             Sum as object ??
             Mult as object ??
             DatetimeKey as object ??
@@ -1231,6 +1420,8 @@ namespace Qdrant
             DatetimeKey?.ToString() ??
             Mult?.ToString() ??
             Sum?.ToString() ??
+            Max?.ToString() ??
+            Min?.ToString() ??
             Neg?.ToString() ??
             Abs?.ToString() ??
             Div?.ToString() ??
@@ -1239,6 +1430,7 @@ namespace Qdrant
             Exp?.ToString() ??
             Log10?.ToString() ??
             Ln?.ToString() ??
+            Acosh?.ToString() ??
             LinDecay?.ToString() ??
             ExpDecay?.ToString() ??
             GaussDecay?.ToString()
@@ -1249,7 +1441,7 @@ namespace Qdrant
         /// </summary>
         public bool Validate()
         {
-            return IsExpressionVariant1 || IsExpressionVariant2 || IsCondition || IsGeoDistance || IsDatetime || IsDatetimeKey || IsMult || IsSum || IsNeg || IsAbs || IsDiv || IsSqrt || IsPow || IsExp || IsLog10 || IsLn || IsLinDecay || IsExpDecay || IsGaussDecay;
+            return IsExpressionVariant1 || IsExpressionVariant2 || IsCondition || IsGeoDistance || IsDatetime || IsDatetimeKey || IsMult || IsSum || IsMax || IsMin || IsNeg || IsAbs || IsDiv || IsSqrt || IsPow || IsExp || IsLog10 || IsLn || IsAcosh || IsLinDecay || IsExpDecay || IsGaussDecay;
         }
 
         /// <summary>
@@ -1264,6 +1456,8 @@ namespace Qdrant
             global::System.Func<global::Qdrant.DatetimeKeyExpression, TResult>? datetimeKey = null,
             global::System.Func<global::Qdrant.MultExpression, TResult>? mult = null,
             global::System.Func<global::Qdrant.SumExpression, TResult>? sum = null,
+            global::System.Func<global::Qdrant.MaxExpression, TResult>? max = null,
+            global::System.Func<global::Qdrant.MinExpression, TResult>? min = null,
             global::System.Func<global::Qdrant.NegExpression, TResult>? neg = null,
             global::System.Func<global::Qdrant.AbsExpression, TResult>? abs = null,
             global::System.Func<global::Qdrant.DivExpression, TResult>? div = null,
@@ -1272,6 +1466,7 @@ namespace Qdrant
             global::System.Func<global::Qdrant.ExpExpression, TResult>? exp = null,
             global::System.Func<global::Qdrant.Log10Expression, TResult>? log10 = null,
             global::System.Func<global::Qdrant.LnExpression, TResult>? ln = null,
+            global::System.Func<global::Qdrant.AcoshExpression, TResult>? acosh = null,
             global::System.Func<global::Qdrant.LinDecayExpression, TResult>? linDecay = null,
             global::System.Func<global::Qdrant.ExpDecayExpression, TResult>? expDecay = null,
             global::System.Func<global::Qdrant.GaussDecayExpression, TResult>? gaussDecay = null,
@@ -1314,6 +1509,14 @@ namespace Qdrant
             {
                 return sum(Sum!);
             }
+            else if (IsMax && max != null)
+            {
+                return max(Max!);
+            }
+            else if (IsMin && min != null)
+            {
+                return min(Min!);
+            }
             else if (IsNeg && neg != null)
             {
                 return neg(Neg!);
@@ -1345,6 +1548,10 @@ namespace Qdrant
             else if (IsLn && ln != null)
             {
                 return ln(Ln!);
+            }
+            else if (IsAcosh && acosh != null)
+            {
+                return acosh(Acosh!);
             }
             else if (IsLinDecay && linDecay != null)
             {
@@ -1382,6 +1589,10 @@ namespace Qdrant
 
             global::System.Action<global::Qdrant.SumExpression>? sum = null,
 
+            global::System.Action<global::Qdrant.MaxExpression>? max = null,
+
+            global::System.Action<global::Qdrant.MinExpression>? min = null,
+
             global::System.Action<global::Qdrant.NegExpression>? neg = null,
 
             global::System.Action<global::Qdrant.AbsExpression>? abs = null,
@@ -1397,6 +1608,8 @@ namespace Qdrant
             global::System.Action<global::Qdrant.Log10Expression>? log10 = null,
 
             global::System.Action<global::Qdrant.LnExpression>? ln = null,
+
+            global::System.Action<global::Qdrant.AcoshExpression>? acosh = null,
 
             global::System.Action<global::Qdrant.LinDecayExpression>? linDecay = null,
 
@@ -1442,6 +1655,14 @@ namespace Qdrant
             {
                 sum?.Invoke(Sum!);
             }
+            else if (IsMax)
+            {
+                max?.Invoke(Max!);
+            }
+            else if (IsMin)
+            {
+                min?.Invoke(Min!);
+            }
             else if (IsNeg)
             {
                 neg?.Invoke(Neg!);
@@ -1473,6 +1694,10 @@ namespace Qdrant
             else if (IsLn)
             {
                 ln?.Invoke(Ln!);
+            }
+            else if (IsAcosh)
+            {
+                acosh?.Invoke(Acosh!);
             }
             else if (IsLinDecay)
             {
@@ -1500,6 +1725,8 @@ namespace Qdrant
             global::System.Action<global::Qdrant.DatetimeKeyExpression>? datetimeKey = null,
             global::System.Action<global::Qdrant.MultExpression>? mult = null,
             global::System.Action<global::Qdrant.SumExpression>? sum = null,
+            global::System.Action<global::Qdrant.MaxExpression>? max = null,
+            global::System.Action<global::Qdrant.MinExpression>? min = null,
             global::System.Action<global::Qdrant.NegExpression>? neg = null,
             global::System.Action<global::Qdrant.AbsExpression>? abs = null,
             global::System.Action<global::Qdrant.DivExpression>? div = null,
@@ -1508,6 +1735,7 @@ namespace Qdrant
             global::System.Action<global::Qdrant.ExpExpression>? exp = null,
             global::System.Action<global::Qdrant.Log10Expression>? log10 = null,
             global::System.Action<global::Qdrant.LnExpression>? ln = null,
+            global::System.Action<global::Qdrant.AcoshExpression>? acosh = null,
             global::System.Action<global::Qdrant.LinDecayExpression>? linDecay = null,
             global::System.Action<global::Qdrant.ExpDecayExpression>? expDecay = null,
             global::System.Action<global::Qdrant.GaussDecayExpression>? gaussDecay = null,
@@ -1550,6 +1778,14 @@ namespace Qdrant
             {
                 sum?.Invoke(Sum!);
             }
+            else if (IsMax)
+            {
+                max?.Invoke(Max!);
+            }
+            else if (IsMin)
+            {
+                min?.Invoke(Min!);
+            }
             else if (IsNeg)
             {
                 neg?.Invoke(Neg!);
@@ -1581,6 +1817,10 @@ namespace Qdrant
             else if (IsLn)
             {
                 ln?.Invoke(Ln!);
+            }
+            else if (IsAcosh)
+            {
+                acosh?.Invoke(Acosh!);
             }
             else if (IsLinDecay)
             {
@@ -1619,6 +1859,10 @@ namespace Qdrant
                 typeof(global::Qdrant.MultExpression),
                 Sum,
                 typeof(global::Qdrant.SumExpression),
+                Max,
+                typeof(global::Qdrant.MaxExpression),
+                Min,
+                typeof(global::Qdrant.MinExpression),
                 Neg,
                 typeof(global::Qdrant.NegExpression),
                 Abs,
@@ -1635,6 +1879,8 @@ namespace Qdrant
                 typeof(global::Qdrant.Log10Expression),
                 Ln,
                 typeof(global::Qdrant.LnExpression),
+                Acosh,
+                typeof(global::Qdrant.AcoshExpression),
                 LinDecay,
                 typeof(global::Qdrant.LinDecayExpression),
                 ExpDecay,
@@ -1665,6 +1911,8 @@ namespace Qdrant
                 global::System.Collections.Generic.EqualityComparer<global::Qdrant.DatetimeKeyExpression?>.Default.Equals(DatetimeKey, other.DatetimeKey) &&
                 global::System.Collections.Generic.EqualityComparer<global::Qdrant.MultExpression?>.Default.Equals(Mult, other.Mult) &&
                 global::System.Collections.Generic.EqualityComparer<global::Qdrant.SumExpression?>.Default.Equals(Sum, other.Sum) &&
+                global::System.Collections.Generic.EqualityComparer<global::Qdrant.MaxExpression?>.Default.Equals(Max, other.Max) &&
+                global::System.Collections.Generic.EqualityComparer<global::Qdrant.MinExpression?>.Default.Equals(Min, other.Min) &&
                 global::System.Collections.Generic.EqualityComparer<global::Qdrant.NegExpression?>.Default.Equals(Neg, other.Neg) &&
                 global::System.Collections.Generic.EqualityComparer<global::Qdrant.AbsExpression?>.Default.Equals(Abs, other.Abs) &&
                 global::System.Collections.Generic.EqualityComparer<global::Qdrant.DivExpression?>.Default.Equals(Div, other.Div) &&
@@ -1673,6 +1921,7 @@ namespace Qdrant
                 global::System.Collections.Generic.EqualityComparer<global::Qdrant.ExpExpression?>.Default.Equals(Exp, other.Exp) &&
                 global::System.Collections.Generic.EqualityComparer<global::Qdrant.Log10Expression?>.Default.Equals(Log10, other.Log10) &&
                 global::System.Collections.Generic.EqualityComparer<global::Qdrant.LnExpression?>.Default.Equals(Ln, other.Ln) &&
+                global::System.Collections.Generic.EqualityComparer<global::Qdrant.AcoshExpression?>.Default.Equals(Acosh, other.Acosh) &&
                 global::System.Collections.Generic.EqualityComparer<global::Qdrant.LinDecayExpression?>.Default.Equals(LinDecay, other.LinDecay) &&
                 global::System.Collections.Generic.EqualityComparer<global::Qdrant.ExpDecayExpression?>.Default.Equals(ExpDecay, other.ExpDecay) &&
                 global::System.Collections.Generic.EqualityComparer<global::Qdrant.GaussDecayExpression?>.Default.Equals(GaussDecay, other.GaussDecay)

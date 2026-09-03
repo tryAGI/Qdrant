@@ -50,44 +50,50 @@ namespace Qdrant.JsonConverters
             var __score7 = 0;
             if (__jsonProps.Contains("sum")) __score7++;
             var __score8 = 0;
-            if (__jsonProps.Contains("neg")) __score8++;
+            if (__jsonProps.Contains("max")) __score8++;
             var __score9 = 0;
-            if (__jsonProps.Contains("abs")) __score9++;
+            if (__jsonProps.Contains("min")) __score9++;
             var __score10 = 0;
-            if (__jsonProps.Contains("div")) __score10++;
-            if (__jsonProps.Contains("div.by_zero_default")) __score10++;
-            if (__jsonProps.Contains("div.left")) __score10++;
-            if (__jsonProps.Contains("div.right")) __score10++;
+            if (__jsonProps.Contains("neg")) __score10++;
             var __score11 = 0;
-            if (__jsonProps.Contains("sqrt")) __score11++;
+            if (__jsonProps.Contains("abs")) __score11++;
             var __score12 = 0;
-            if (__jsonProps.Contains("pow")) __score12++;
-            if (__jsonProps.Contains("pow.base")) __score12++;
-            if (__jsonProps.Contains("pow.exponent")) __score12++;
+            if (__jsonProps.Contains("div")) __score12++;
+            if (__jsonProps.Contains("div.by_zero_default")) __score12++;
+            if (__jsonProps.Contains("div.left")) __score12++;
+            if (__jsonProps.Contains("div.right")) __score12++;
             var __score13 = 0;
-            if (__jsonProps.Contains("exp")) __score13++;
+            if (__jsonProps.Contains("sqrt")) __score13++;
             var __score14 = 0;
-            if (__jsonProps.Contains("log10")) __score14++;
+            if (__jsonProps.Contains("pow")) __score14++;
+            if (__jsonProps.Contains("pow.base")) __score14++;
+            if (__jsonProps.Contains("pow.exponent")) __score14++;
             var __score15 = 0;
-            if (__jsonProps.Contains("ln")) __score15++;
+            if (__jsonProps.Contains("exp")) __score15++;
             var __score16 = 0;
-            if (__jsonProps.Contains("lin_decay")) __score16++;
-            if (__jsonProps.Contains("lin_decay.midpoint")) __score16++;
-            if (__jsonProps.Contains("lin_decay.scale")) __score16++;
-            if (__jsonProps.Contains("lin_decay.target")) __score16++;
-            if (__jsonProps.Contains("lin_decay.x")) __score16++;
+            if (__jsonProps.Contains("log10")) __score16++;
             var __score17 = 0;
-            if (__jsonProps.Contains("exp_decay")) __score17++;
-            if (__jsonProps.Contains("exp_decay.midpoint")) __score17++;
-            if (__jsonProps.Contains("exp_decay.scale")) __score17++;
-            if (__jsonProps.Contains("exp_decay.target")) __score17++;
-            if (__jsonProps.Contains("exp_decay.x")) __score17++;
+            if (__jsonProps.Contains("ln")) __score17++;
             var __score18 = 0;
-            if (__jsonProps.Contains("gauss_decay")) __score18++;
-            if (__jsonProps.Contains("gauss_decay.midpoint")) __score18++;
-            if (__jsonProps.Contains("gauss_decay.scale")) __score18++;
-            if (__jsonProps.Contains("gauss_decay.target")) __score18++;
-            if (__jsonProps.Contains("gauss_decay.x")) __score18++;
+            if (__jsonProps.Contains("acosh")) __score18++;
+            var __score19 = 0;
+            if (__jsonProps.Contains("lin_decay")) __score19++;
+            if (__jsonProps.Contains("lin_decay.midpoint")) __score19++;
+            if (__jsonProps.Contains("lin_decay.scale")) __score19++;
+            if (__jsonProps.Contains("lin_decay.target")) __score19++;
+            if (__jsonProps.Contains("lin_decay.x")) __score19++;
+            var __score20 = 0;
+            if (__jsonProps.Contains("exp_decay")) __score20++;
+            if (__jsonProps.Contains("exp_decay.midpoint")) __score20++;
+            if (__jsonProps.Contains("exp_decay.scale")) __score20++;
+            if (__jsonProps.Contains("exp_decay.target")) __score20++;
+            if (__jsonProps.Contains("exp_decay.x")) __score20++;
+            var __score21 = 0;
+            if (__jsonProps.Contains("gauss_decay")) __score21++;
+            if (__jsonProps.Contains("gauss_decay.midpoint")) __score21++;
+            if (__jsonProps.Contains("gauss_decay.scale")) __score21++;
+            if (__jsonProps.Contains("gauss_decay.target")) __score21++;
+            if (__jsonProps.Contains("gauss_decay.x")) __score21++;
             var __bestScore = 0;
             var __bestIndex = -1;
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
@@ -109,6 +115,9 @@ namespace Qdrant.JsonConverters
             if (__score16 > __bestScore) { __bestScore = __score16; __bestIndex = 16; }
             if (__score17 > __bestScore) { __bestScore = __score17; __bestIndex = 17; }
             if (__score18 > __bestScore) { __bestScore = __score18; __bestIndex = 18; }
+            if (__score19 > __bestScore) { __bestScore = __score19; __bestIndex = 19; }
+            if (__score20 > __bestScore) { __bestScore = __score20; __bestIndex = 20; }
+            if (__score21 > __bestScore) { __bestScore = __score21; __bestIndex = 21; }
 
             float? expressionVariant1 = default;
             string? expressionVariant2 = default;
@@ -118,6 +127,8 @@ namespace Qdrant.JsonConverters
             global::Qdrant.DatetimeKeyExpression? datetimeKey = default;
             global::Qdrant.MultExpression? mult = default;
             global::Qdrant.SumExpression? sum = default;
+            global::Qdrant.MaxExpression? max = default;
+            global::Qdrant.MinExpression? min = default;
             global::Qdrant.NegExpression? neg = default;
             global::Qdrant.AbsExpression? abs = default;
             global::Qdrant.DivExpression? div = default;
@@ -126,6 +137,7 @@ namespace Qdrant.JsonConverters
             global::Qdrant.ExpExpression? exp = default;
             global::Qdrant.Log10Expression? log10 = default;
             global::Qdrant.LnExpression? ln = default;
+            global::Qdrant.AcoshExpression? acosh = default;
             global::Qdrant.LinDecayExpression? linDecay = default;
             global::Qdrant.ExpDecayExpression? expDecay = default;
             global::Qdrant.GaussDecayExpression? gaussDecay = default;
@@ -255,6 +267,36 @@ namespace Qdrant.JsonConverters
                 {
                     try
                     {
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.MaxExpression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.MaxExpression> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.MaxExpression).Name}");
+                        max = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    }
+                    catch (global::System.Text.Json.JsonException)
+                    {
+                    }
+                    catch (global::System.InvalidOperationException)
+                    {
+                    }
+                }
+                else if (__bestIndex == 9)
+                {
+                    try
+                    {
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.MinExpression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.MinExpression> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.MinExpression).Name}");
+                        min = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    }
+                    catch (global::System.Text.Json.JsonException)
+                    {
+                    }
+                    catch (global::System.InvalidOperationException)
+                    {
+                    }
+                }
+                else if (__bestIndex == 10)
+                {
+                    try
+                    {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.NegExpression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.NegExpression> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.NegExpression).Name}");
                         neg = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -266,7 +308,7 @@ namespace Qdrant.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 9)
+                else if (__bestIndex == 11)
                 {
                     try
                     {
@@ -281,7 +323,7 @@ namespace Qdrant.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 10)
+                else if (__bestIndex == 12)
                 {
                     try
                     {
@@ -296,7 +338,7 @@ namespace Qdrant.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 11)
+                else if (__bestIndex == 13)
                 {
                     try
                     {
@@ -311,7 +353,7 @@ namespace Qdrant.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 12)
+                else if (__bestIndex == 14)
                 {
                     try
                     {
@@ -326,7 +368,7 @@ namespace Qdrant.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 13)
+                else if (__bestIndex == 15)
                 {
                     try
                     {
@@ -341,7 +383,7 @@ namespace Qdrant.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 14)
+                else if (__bestIndex == 16)
                 {
                     try
                     {
@@ -356,7 +398,7 @@ namespace Qdrant.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 15)
+                else if (__bestIndex == 17)
                 {
                     try
                     {
@@ -371,7 +413,22 @@ namespace Qdrant.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 16)
+                else if (__bestIndex == 18)
+                {
+                    try
+                    {
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.AcoshExpression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.AcoshExpression> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.AcoshExpression).Name}");
+                        acosh = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    }
+                    catch (global::System.Text.Json.JsonException)
+                    {
+                    }
+                    catch (global::System.InvalidOperationException)
+                    {
+                    }
+                }
+                else if (__bestIndex == 19)
                 {
                     try
                     {
@@ -386,7 +443,7 @@ namespace Qdrant.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 17)
+                else if (__bestIndex == 20)
                 {
                     try
                     {
@@ -401,7 +458,7 @@ namespace Qdrant.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 18)
+                else if (__bestIndex == 21)
                 {
                     try
                     {
@@ -418,7 +475,7 @@ namespace Qdrant.JsonConverters
                 }
             }
 
-            if (expressionVariant1 == null && expressionVariant2 == null && condition == null && geoDistance == null && datetime == null && datetimeKey == null && mult == null && sum == null && neg == null && abs == null && div == null && sqrt == null && pow == null && exp == null && log10 == null && ln == null && linDecay == null && expDecay == null && gaussDecay == null)
+            if (expressionVariant1 == null && expressionVariant2 == null && condition == null && geoDistance == null && datetime == null && datetimeKey == null && mult == null && sum == null && max == null && min == null && neg == null && abs == null && div == null && sqrt == null && pow == null && exp == null && log10 == null && ln == null && acosh == null && linDecay == null && expDecay == null && gaussDecay == null)
             {
                 try
                 {
@@ -435,7 +492,7 @@ namespace Qdrant.JsonConverters
                 }
             }
 
-            if (expressionVariant1 == null && expressionVariant2 == null && condition == null && geoDistance == null && datetime == null && datetimeKey == null && mult == null && sum == null && neg == null && abs == null && div == null && sqrt == null && pow == null && exp == null && log10 == null && ln == null && linDecay == null && expDecay == null && gaussDecay == null)
+            if (expressionVariant1 == null && expressionVariant2 == null && condition == null && geoDistance == null && datetime == null && datetimeKey == null && mult == null && sum == null && max == null && min == null && neg == null && abs == null && div == null && sqrt == null && pow == null && exp == null && log10 == null && ln == null && acosh == null && linDecay == null && expDecay == null && gaussDecay == null)
             {
                 try
                 {
@@ -452,7 +509,7 @@ namespace Qdrant.JsonConverters
                 }
             }
 
-            if (expressionVariant1 == null && expressionVariant2 == null && condition == null && geoDistance == null && datetime == null && datetimeKey == null && mult == null && sum == null && neg == null && abs == null && div == null && sqrt == null && pow == null && exp == null && log10 == null && ln == null && linDecay == null && expDecay == null && gaussDecay == null)
+            if (expressionVariant1 == null && expressionVariant2 == null && condition == null && geoDistance == null && datetime == null && datetimeKey == null && mult == null && sum == null && max == null && min == null && neg == null && abs == null && div == null && sqrt == null && pow == null && exp == null && log10 == null && ln == null && acosh == null && linDecay == null && expDecay == null && gaussDecay == null)
             {
                 try
                 {
@@ -469,7 +526,7 @@ namespace Qdrant.JsonConverters
                 }
             }
 
-            if (expressionVariant1 == null && expressionVariant2 == null && condition == null && geoDistance == null && datetime == null && datetimeKey == null && mult == null && sum == null && neg == null && abs == null && div == null && sqrt == null && pow == null && exp == null && log10 == null && ln == null && linDecay == null && expDecay == null && gaussDecay == null)
+            if (expressionVariant1 == null && expressionVariant2 == null && condition == null && geoDistance == null && datetime == null && datetimeKey == null && mult == null && sum == null && max == null && min == null && neg == null && abs == null && div == null && sqrt == null && pow == null && exp == null && log10 == null && ln == null && acosh == null && linDecay == null && expDecay == null && gaussDecay == null)
             {
                 try
                 {
@@ -486,7 +543,7 @@ namespace Qdrant.JsonConverters
                 }
             }
 
-            if (expressionVariant1 == null && expressionVariant2 == null && condition == null && geoDistance == null && datetime == null && datetimeKey == null && mult == null && sum == null && neg == null && abs == null && div == null && sqrt == null && pow == null && exp == null && log10 == null && ln == null && linDecay == null && expDecay == null && gaussDecay == null)
+            if (expressionVariant1 == null && expressionVariant2 == null && condition == null && geoDistance == null && datetime == null && datetimeKey == null && mult == null && sum == null && max == null && min == null && neg == null && abs == null && div == null && sqrt == null && pow == null && exp == null && log10 == null && ln == null && acosh == null && linDecay == null && expDecay == null && gaussDecay == null)
             {
                 try
                 {
@@ -503,7 +560,7 @@ namespace Qdrant.JsonConverters
                 }
             }
 
-            if (expressionVariant1 == null && expressionVariant2 == null && condition == null && geoDistance == null && datetime == null && datetimeKey == null && mult == null && sum == null && neg == null && abs == null && div == null && sqrt == null && pow == null && exp == null && log10 == null && ln == null && linDecay == null && expDecay == null && gaussDecay == null)
+            if (expressionVariant1 == null && expressionVariant2 == null && condition == null && geoDistance == null && datetime == null && datetimeKey == null && mult == null && sum == null && max == null && min == null && neg == null && abs == null && div == null && sqrt == null && pow == null && exp == null && log10 == null && ln == null && acosh == null && linDecay == null && expDecay == null && gaussDecay == null)
             {
                 try
                 {
@@ -520,7 +577,7 @@ namespace Qdrant.JsonConverters
                 }
             }
 
-            if (expressionVariant1 == null && expressionVariant2 == null && condition == null && geoDistance == null && datetime == null && datetimeKey == null && mult == null && sum == null && neg == null && abs == null && div == null && sqrt == null && pow == null && exp == null && log10 == null && ln == null && linDecay == null && expDecay == null && gaussDecay == null)
+            if (expressionVariant1 == null && expressionVariant2 == null && condition == null && geoDistance == null && datetime == null && datetimeKey == null && mult == null && sum == null && max == null && min == null && neg == null && abs == null && div == null && sqrt == null && pow == null && exp == null && log10 == null && ln == null && acosh == null && linDecay == null && expDecay == null && gaussDecay == null)
             {
                 try
                 {
@@ -537,7 +594,7 @@ namespace Qdrant.JsonConverters
                 }
             }
 
-            if (expressionVariant1 == null && expressionVariant2 == null && condition == null && geoDistance == null && datetime == null && datetimeKey == null && mult == null && sum == null && neg == null && abs == null && div == null && sqrt == null && pow == null && exp == null && log10 == null && ln == null && linDecay == null && expDecay == null && gaussDecay == null)
+            if (expressionVariant1 == null && expressionVariant2 == null && condition == null && geoDistance == null && datetime == null && datetimeKey == null && mult == null && sum == null && max == null && min == null && neg == null && abs == null && div == null && sqrt == null && pow == null && exp == null && log10 == null && ln == null && acosh == null && linDecay == null && expDecay == null && gaussDecay == null)
             {
                 try
                 {
@@ -554,7 +611,41 @@ namespace Qdrant.JsonConverters
                 }
             }
 
-            if (expressionVariant1 == null && expressionVariant2 == null && condition == null && geoDistance == null && datetime == null && datetimeKey == null && mult == null && sum == null && neg == null && abs == null && div == null && sqrt == null && pow == null && exp == null && log10 == null && ln == null && linDecay == null && expDecay == null && gaussDecay == null)
+            if (expressionVariant1 == null && expressionVariant2 == null && condition == null && geoDistance == null && datetime == null && datetimeKey == null && mult == null && sum == null && max == null && min == null && neg == null && abs == null && div == null && sqrt == null && pow == null && exp == null && log10 == null && ln == null && acosh == null && linDecay == null && expDecay == null && gaussDecay == null)
+            {
+                try
+                {
+
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.MaxExpression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.MaxExpression> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.MaxExpression).Name}");
+                    max = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+            }
+
+            if (expressionVariant1 == null && expressionVariant2 == null && condition == null && geoDistance == null && datetime == null && datetimeKey == null && mult == null && sum == null && max == null && min == null && neg == null && abs == null && div == null && sqrt == null && pow == null && exp == null && log10 == null && ln == null && acosh == null && linDecay == null && expDecay == null && gaussDecay == null)
+            {
+                try
+                {
+
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.MinExpression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.MinExpression> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.MinExpression).Name}");
+                    min = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+            }
+
+            if (expressionVariant1 == null && expressionVariant2 == null && condition == null && geoDistance == null && datetime == null && datetimeKey == null && mult == null && sum == null && max == null && min == null && neg == null && abs == null && div == null && sqrt == null && pow == null && exp == null && log10 == null && ln == null && acosh == null && linDecay == null && expDecay == null && gaussDecay == null)
             {
                 try
                 {
@@ -571,7 +662,7 @@ namespace Qdrant.JsonConverters
                 }
             }
 
-            if (expressionVariant1 == null && expressionVariant2 == null && condition == null && geoDistance == null && datetime == null && datetimeKey == null && mult == null && sum == null && neg == null && abs == null && div == null && sqrt == null && pow == null && exp == null && log10 == null && ln == null && linDecay == null && expDecay == null && gaussDecay == null)
+            if (expressionVariant1 == null && expressionVariant2 == null && condition == null && geoDistance == null && datetime == null && datetimeKey == null && mult == null && sum == null && max == null && min == null && neg == null && abs == null && div == null && sqrt == null && pow == null && exp == null && log10 == null && ln == null && acosh == null && linDecay == null && expDecay == null && gaussDecay == null)
             {
                 try
                 {
@@ -588,7 +679,7 @@ namespace Qdrant.JsonConverters
                 }
             }
 
-            if (expressionVariant1 == null && expressionVariant2 == null && condition == null && geoDistance == null && datetime == null && datetimeKey == null && mult == null && sum == null && neg == null && abs == null && div == null && sqrt == null && pow == null && exp == null && log10 == null && ln == null && linDecay == null && expDecay == null && gaussDecay == null)
+            if (expressionVariant1 == null && expressionVariant2 == null && condition == null && geoDistance == null && datetime == null && datetimeKey == null && mult == null && sum == null && max == null && min == null && neg == null && abs == null && div == null && sqrt == null && pow == null && exp == null && log10 == null && ln == null && acosh == null && linDecay == null && expDecay == null && gaussDecay == null)
             {
                 try
                 {
@@ -605,7 +696,7 @@ namespace Qdrant.JsonConverters
                 }
             }
 
-            if (expressionVariant1 == null && expressionVariant2 == null && condition == null && geoDistance == null && datetime == null && datetimeKey == null && mult == null && sum == null && neg == null && abs == null && div == null && sqrt == null && pow == null && exp == null && log10 == null && ln == null && linDecay == null && expDecay == null && gaussDecay == null)
+            if (expressionVariant1 == null && expressionVariant2 == null && condition == null && geoDistance == null && datetime == null && datetimeKey == null && mult == null && sum == null && max == null && min == null && neg == null && abs == null && div == null && sqrt == null && pow == null && exp == null && log10 == null && ln == null && acosh == null && linDecay == null && expDecay == null && gaussDecay == null)
             {
                 try
                 {
@@ -622,7 +713,7 @@ namespace Qdrant.JsonConverters
                 }
             }
 
-            if (expressionVariant1 == null && expressionVariant2 == null && condition == null && geoDistance == null && datetime == null && datetimeKey == null && mult == null && sum == null && neg == null && abs == null && div == null && sqrt == null && pow == null && exp == null && log10 == null && ln == null && linDecay == null && expDecay == null && gaussDecay == null)
+            if (expressionVariant1 == null && expressionVariant2 == null && condition == null && geoDistance == null && datetime == null && datetimeKey == null && mult == null && sum == null && max == null && min == null && neg == null && abs == null && div == null && sqrt == null && pow == null && exp == null && log10 == null && ln == null && acosh == null && linDecay == null && expDecay == null && gaussDecay == null)
             {
                 try
                 {
@@ -639,7 +730,7 @@ namespace Qdrant.JsonConverters
                 }
             }
 
-            if (expressionVariant1 == null && expressionVariant2 == null && condition == null && geoDistance == null && datetime == null && datetimeKey == null && mult == null && sum == null && neg == null && abs == null && div == null && sqrt == null && pow == null && exp == null && log10 == null && ln == null && linDecay == null && expDecay == null && gaussDecay == null)
+            if (expressionVariant1 == null && expressionVariant2 == null && condition == null && geoDistance == null && datetime == null && datetimeKey == null && mult == null && sum == null && max == null && min == null && neg == null && abs == null && div == null && sqrt == null && pow == null && exp == null && log10 == null && ln == null && acosh == null && linDecay == null && expDecay == null && gaussDecay == null)
             {
                 try
                 {
@@ -656,7 +747,7 @@ namespace Qdrant.JsonConverters
                 }
             }
 
-            if (expressionVariant1 == null && expressionVariant2 == null && condition == null && geoDistance == null && datetime == null && datetimeKey == null && mult == null && sum == null && neg == null && abs == null && div == null && sqrt == null && pow == null && exp == null && log10 == null && ln == null && linDecay == null && expDecay == null && gaussDecay == null)
+            if (expressionVariant1 == null && expressionVariant2 == null && condition == null && geoDistance == null && datetime == null && datetimeKey == null && mult == null && sum == null && max == null && min == null && neg == null && abs == null && div == null && sqrt == null && pow == null && exp == null && log10 == null && ln == null && acosh == null && linDecay == null && expDecay == null && gaussDecay == null)
             {
                 try
                 {
@@ -673,7 +764,7 @@ namespace Qdrant.JsonConverters
                 }
             }
 
-            if (expressionVariant1 == null && expressionVariant2 == null && condition == null && geoDistance == null && datetime == null && datetimeKey == null && mult == null && sum == null && neg == null && abs == null && div == null && sqrt == null && pow == null && exp == null && log10 == null && ln == null && linDecay == null && expDecay == null && gaussDecay == null)
+            if (expressionVariant1 == null && expressionVariant2 == null && condition == null && geoDistance == null && datetime == null && datetimeKey == null && mult == null && sum == null && max == null && min == null && neg == null && abs == null && div == null && sqrt == null && pow == null && exp == null && log10 == null && ln == null && acosh == null && linDecay == null && expDecay == null && gaussDecay == null)
             {
                 try
                 {
@@ -690,7 +781,24 @@ namespace Qdrant.JsonConverters
                 }
             }
 
-            if (expressionVariant1 == null && expressionVariant2 == null && condition == null && geoDistance == null && datetime == null && datetimeKey == null && mult == null && sum == null && neg == null && abs == null && div == null && sqrt == null && pow == null && exp == null && log10 == null && ln == null && linDecay == null && expDecay == null && gaussDecay == null)
+            if (expressionVariant1 == null && expressionVariant2 == null && condition == null && geoDistance == null && datetime == null && datetimeKey == null && mult == null && sum == null && max == null && min == null && neg == null && abs == null && div == null && sqrt == null && pow == null && exp == null && log10 == null && ln == null && acosh == null && linDecay == null && expDecay == null && gaussDecay == null)
+            {
+                try
+                {
+
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.AcoshExpression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.AcoshExpression> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.AcoshExpression).Name}");
+                    acosh = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+            }
+
+            if (expressionVariant1 == null && expressionVariant2 == null && condition == null && geoDistance == null && datetime == null && datetimeKey == null && mult == null && sum == null && max == null && min == null && neg == null && abs == null && div == null && sqrt == null && pow == null && exp == null && log10 == null && ln == null && acosh == null && linDecay == null && expDecay == null && gaussDecay == null)
             {
                 try
                 {
@@ -707,7 +815,7 @@ namespace Qdrant.JsonConverters
                 }
             }
 
-            if (expressionVariant1 == null && expressionVariant2 == null && condition == null && geoDistance == null && datetime == null && datetimeKey == null && mult == null && sum == null && neg == null && abs == null && div == null && sqrt == null && pow == null && exp == null && log10 == null && ln == null && linDecay == null && expDecay == null && gaussDecay == null)
+            if (expressionVariant1 == null && expressionVariant2 == null && condition == null && geoDistance == null && datetime == null && datetimeKey == null && mult == null && sum == null && max == null && min == null && neg == null && abs == null && div == null && sqrt == null && pow == null && exp == null && log10 == null && ln == null && acosh == null && linDecay == null && expDecay == null && gaussDecay == null)
             {
                 try
                 {
@@ -724,7 +832,7 @@ namespace Qdrant.JsonConverters
                 }
             }
 
-            if (expressionVariant1 == null && expressionVariant2 == null && condition == null && geoDistance == null && datetime == null && datetimeKey == null && mult == null && sum == null && neg == null && abs == null && div == null && sqrt == null && pow == null && exp == null && log10 == null && ln == null && linDecay == null && expDecay == null && gaussDecay == null)
+            if (expressionVariant1 == null && expressionVariant2 == null && condition == null && geoDistance == null && datetime == null && datetimeKey == null && mult == null && sum == null && max == null && min == null && neg == null && abs == null && div == null && sqrt == null && pow == null && exp == null && log10 == null && ln == null && acosh == null && linDecay == null && expDecay == null && gaussDecay == null)
             {
                 try
                 {
@@ -758,6 +866,10 @@ namespace Qdrant.JsonConverters
 
                 sum,
 
+                max,
+
+                min,
+
                 neg,
 
                 abs,
@@ -773,6 +885,8 @@ namespace Qdrant.JsonConverters
                 log10,
 
                 ln,
+
+                acosh,
 
                 linDecay,
 
@@ -841,6 +955,18 @@ namespace Qdrant.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.SumExpression).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Sum!, typeInfo);
             }
+            else if (value.IsMax)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.MaxExpression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.MaxExpression?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.MaxExpression).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Max!, typeInfo);
+            }
+            else if (value.IsMin)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.MinExpression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.MinExpression?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.MinExpression).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Min!, typeInfo);
+            }
             else if (value.IsNeg)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.NegExpression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.NegExpression?> ??
@@ -888,6 +1014,12 @@ namespace Qdrant.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.LnExpression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.LnExpression?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.LnExpression).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Ln!, typeInfo);
+            }
+            else if (value.IsAcosh)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.AcoshExpression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.AcoshExpression?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.AcoshExpression).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Acosh!, typeInfo);
             }
             else if (value.IsLinDecay)
             {

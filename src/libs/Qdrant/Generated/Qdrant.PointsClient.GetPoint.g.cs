@@ -29,13 +29,15 @@ namespace Qdrant
             global::System.Net.Http.HttpClient httpClient,
             ref string collectionName,
             ref global::Qdrant.ExtendedPointId id,
-            ref global::Qdrant.ReadConsistency? consistency);
+            ref global::Qdrant.ReadConsistency? consistency,
+            ref int? timeout);
         partial void PrepareGetPointRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string collectionName,
             global::Qdrant.ExtendedPointId id,
-            global::Qdrant.ReadConsistency? consistency);
+            global::Qdrant.ReadConsistency? consistency,
+            int? timeout);
         partial void ProcessGetPointResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -62,6 +64,7 @@ namespace Qdrant
         /// * `all` - send requests to all nodes and return points which present on all of them<br/>
         /// Default value is `Factor(1)`
         /// </param>
+        /// <param name="timeout"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Qdrant.ApiException"></exception>
@@ -69,6 +72,7 @@ namespace Qdrant
             string collectionName,
             global::Qdrant.ExtendedPointId id,
             global::Qdrant.ReadConsistency? consistency = default,
+            int? timeout = default,
             global::Qdrant.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -76,6 +80,7 @@ namespace Qdrant
                 collectionName: collectionName,
                 id: id,
                 consistency: consistency,
+                timeout: timeout,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -99,6 +104,7 @@ namespace Qdrant
         /// * `all` - send requests to all nodes and return points which present on all of them<br/>
         /// Default value is `Factor(1)`
         /// </param>
+        /// <param name="timeout"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Qdrant.ApiException"></exception>
@@ -106,6 +112,7 @@ namespace Qdrant
             string collectionName,
             global::Qdrant.ExtendedPointId id,
             global::Qdrant.ReadConsistency? consistency = default,
+            int? timeout = default,
             global::Qdrant.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -115,7 +122,8 @@ namespace Qdrant
                 httpClient: HttpClient,
                 collectionName: ref collectionName,
                 id: ref id,
-                consistency: ref consistency);
+                consistency: ref consistency,
+                timeout: ref timeout);
 
 
             var __authorizations = global::Qdrant.EndPointSecurityResolver.ResolveAuthorizations(
@@ -145,6 +153,7 @@ namespace Qdrant
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
                                 .AddOptionalParameter("consistency", consistency?.ToString())
+                                .AddOptionalParameter("timeout", timeout?.ToString())
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::Qdrant.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -188,7 +197,8 @@ namespace Qdrant
                     httpRequestMessage: __httpRequest,
                     collectionName: collectionName!,
                     id: id!,
-                    consistency: consistency);
+                    consistency: consistency,
+                    timeout: timeout);
 
                 return __httpRequest;
             }

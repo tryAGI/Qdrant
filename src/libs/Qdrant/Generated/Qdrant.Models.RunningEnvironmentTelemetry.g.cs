@@ -28,6 +28,14 @@ namespace Qdrant
         public required bool IsDocker { get; set; }
 
         /// <summary>
+        /// Container runtime Qdrant is running under (`none` if bare metal).
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("container_runtime")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Qdrant.JsonConverters.ContainerRuntimeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::Qdrant.ContainerRuntime ContainerRuntime { get; set; }
+
+        /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cores")]
@@ -80,6 +88,9 @@ namespace Qdrant
         /// Initializes a new instance of the <see cref="RunningEnvironmentTelemetry" /> class.
         /// </summary>
         /// <param name="isDocker"></param>
+        /// <param name="containerRuntime">
+        /// Container runtime Qdrant is running under (`none` if bare metal).
+        /// </param>
         /// <param name="cpuFlags"></param>
         /// <param name="distribution"></param>
         /// <param name="distributionVersion"></param>
@@ -100,6 +111,7 @@ namespace Qdrant
 #endif
         public RunningEnvironmentTelemetry(
             bool isDocker,
+            global::Qdrant.ContainerRuntime containerRuntime,
             string cpuFlags,
             string? distribution,
             string? distributionVersion,
@@ -113,6 +125,7 @@ namespace Qdrant
             this.Distribution = distribution;
             this.DistributionVersion = distributionVersion;
             this.IsDocker = isDocker;
+            this.ContainerRuntime = containerRuntime;
             this.Cores = cores;
             this.CpuCoresUsed = cpuCoresUsed;
             this.RamSize = ramSize;
