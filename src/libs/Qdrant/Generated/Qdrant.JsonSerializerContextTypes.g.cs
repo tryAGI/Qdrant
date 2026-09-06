@@ -825,7 +825,7 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Qdrant.Payload>? Type198 { get; set; }
+        public global::System.Collections.Generic.IList<global::Qdrant.Payload?>? Type198 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -2530,7 +2530,7 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.List<global::Qdrant.Payload>? ListType16 { get; set; }
+        public global::System.Collections.Generic.List<global::Qdrant.Payload?>? ListType16 { get; set; }
         /// <summary>
         ///
         /// </summary>
