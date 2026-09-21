@@ -53,7 +53,7 @@ namespace Qdrant.JsonConverters
 
             global::System.Collections.Generic.IList<float>? vectorStructVariant1 = default;
             global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>? vectorStructVariant2 = default;
-            object? vectorStructVariant3 = default;
+            global::System.Collections.Generic.Dictionary<string, global::Qdrant.Vector>? vectorStructVariant3 = default;
             global::Qdrant.Document? document = default;
             global::Qdrant.Image? image = default;
             global::Qdrant.InferenceObject? inferenceObject = default;
@@ -93,8 +93,8 @@ namespace Qdrant.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.Dictionary<string, global::Qdrant.Vector>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.Dictionary<string, global::Qdrant.Vector>> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.Dictionary<string, global::Qdrant.Vector>).Name}");
                         vectorStructVariant3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
@@ -190,8 +190,8 @@ namespace Qdrant.JsonConverters
                 try
                 {
 
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.Dictionary<string, global::Qdrant.Vector>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.Dictionary<string, global::Qdrant.Vector>> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.Dictionary<string, global::Qdrant.Vector>).Name}");
                     vectorStructVariant3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
@@ -293,8 +293,8 @@ namespace Qdrant.JsonConverters
             }
             else if (value.IsVectorStructVariant3)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.Dictionary<string, global::Qdrant.Vector>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.Dictionary<string, global::Qdrant.Vector>?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.Dictionary<string, global::Qdrant.Vector>).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.VectorStructVariant3!, typeInfo);
             }
             else if (value.IsDocument)

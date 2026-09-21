@@ -56,6 +56,7 @@ namespace Qdrant
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.OrderValue))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<float>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, global::Qdrant.VectorOutput>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.VectorOutput), TypeInfoPropertyName = "VectorOutput2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.SparseVector))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<int>))]

@@ -49,7 +49,7 @@ namespace Qdrant
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("shard_clean_tasks")]
-        public object? ShardCleanTasks { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, global::Qdrant.ShardCleanStatusTelemetry>? ShardCleanTasks { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -77,7 +77,7 @@ namespace Qdrant
             global::System.Collections.Generic.IList<global::Qdrant.ReplicaSetTelemetry>? shards,
             global::System.Collections.Generic.IList<global::Qdrant.ShardTransferInfo>? transfers,
             global::System.Collections.Generic.IList<global::Qdrant.ReshardingInfo>? resharding,
-            object? shardCleanTasks)
+            global::System.Collections.Generic.Dictionary<string, global::Qdrant.ShardCleanStatusTelemetry>? shardCleanTasks)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.InitTimeMs = initTimeMs;

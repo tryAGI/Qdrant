@@ -87,9 +87,9 @@ namespace Qdrant
         /// Example: {"image-embeddings":[0.8730000257492065,0.140625,0.897599995136261]}
         /// </summary>
 #if NET6_0_OR_GREATER
-        public object? VectorStructOutputVariant3 { get; init; }
+        public global::System.Collections.Generic.Dictionary<string, global::Qdrant.VectorOutput>? VectorStructOutputVariant3 { get; init; }
 #else
-        public object? VectorStructOutputVariant3 { get; }
+        public global::System.Collections.Generic.Dictionary<string, global::Qdrant.VectorOutput>? VectorStructOutputVariant3 { get; }
 #endif
 
         /// <summary>
@@ -107,7 +107,7 @@ namespace Qdrant
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out object? value)
+            out global::System.Collections.Generic.Dictionary<string, global::Qdrant.VectorOutput>? value)
         {
             value = VectorStructOutputVariant3;
             return IsVectorStructOutputVariant3;
@@ -116,9 +116,31 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public object PickVectorStructOutputVariant3() => IsVectorStructOutputVariant3
+        public global::System.Collections.Generic.Dictionary<string, global::Qdrant.VectorOutput> PickVectorStructOutputVariant3() => IsVectorStructOutputVariant3
             ? VectorStructOutputVariant3!
             : throw new global::System.InvalidOperationException($"Expected union variant 'VectorStructOutputVariant3' but the value was {ToString()}.");
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator VectorStructOutput(global::System.Collections.Generic.Dictionary<string, global::Qdrant.VectorOutput> value) => new VectorStructOutput((global::System.Collections.Generic.Dictionary<string, global::Qdrant.VectorOutput>?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::System.Collections.Generic.Dictionary<string, global::Qdrant.VectorOutput>?(VectorStructOutput @this) => @this.VectorStructOutputVariant3;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public VectorStructOutput(global::System.Collections.Generic.Dictionary<string, global::Qdrant.VectorOutput>? value)
+        {
+            VectorStructOutputVariant3 = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static VectorStructOutput FromVectorStructOutputVariant3(global::System.Collections.Generic.Dictionary<string, global::Qdrant.VectorOutput>? value) => new VectorStructOutput(value);
 
         /// <summary>
         ///
@@ -126,7 +148,7 @@ namespace Qdrant
         public VectorStructOutput(
             global::System.Collections.Generic.IList<float>? vectorStructOutputVariant1,
             global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>? vectorStructOutputVariant2,
-            object? vectorStructOutputVariant3
+            global::System.Collections.Generic.Dictionary<string, global::Qdrant.VectorOutput>? vectorStructOutputVariant3
             )
         {
             VectorStructOutputVariant1 = vectorStructOutputVariant1;
@@ -166,7 +188,7 @@ namespace Qdrant
         public TResult? Match<TResult>(
             global::System.Func<global::System.Collections.Generic.IList<float>, TResult>? vectorStructOutputVariant1 = null,
             global::System.Func<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>, TResult>? vectorStructOutputVariant2 = null,
-            global::System.Func<object, TResult>? vectorStructOutputVariant3 = null,
+            global::System.Func<global::System.Collections.Generic.Dictionary<string, global::Qdrant.VectorOutput>, TResult>? vectorStructOutputVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -198,7 +220,7 @@ namespace Qdrant
 
             global::System.Action<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>>? vectorStructOutputVariant2 = null,
 
-            global::System.Action<object>? vectorStructOutputVariant3 = null,
+            global::System.Action<global::System.Collections.Generic.Dictionary<string, global::Qdrant.VectorOutput>>? vectorStructOutputVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -226,7 +248,7 @@ namespace Qdrant
         public void Switch(
             global::System.Action<global::System.Collections.Generic.IList<float>>? vectorStructOutputVariant1 = null,
             global::System.Action<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>>? vectorStructOutputVariant2 = null,
-            global::System.Action<object>? vectorStructOutputVariant3 = null,
+            global::System.Action<global::System.Collections.Generic.Dictionary<string, global::Qdrant.VectorOutput>>? vectorStructOutputVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -260,7 +282,7 @@ namespace Qdrant
                 VectorStructOutputVariant2,
                 typeof(global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>),
                 VectorStructOutputVariant3,
-                typeof(object),
+                typeof(global::System.Collections.Generic.Dictionary<string, global::Qdrant.VectorOutput>),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -279,7 +301,7 @@ namespace Qdrant
             return
                 global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<float>?>.Default.Equals(VectorStructOutputVariant1, other.VectorStructOutputVariant1) &&
                 global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>?>.Default.Equals(VectorStructOutputVariant2, other.VectorStructOutputVariant2) &&
-                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(VectorStructOutputVariant3, other.VectorStructOutputVariant3)
+                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.Dictionary<string, global::Qdrant.VectorOutput>?>.Default.Equals(VectorStructOutputVariant3, other.VectorStructOutputVariant3)
                 ;
         }
 
