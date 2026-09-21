@@ -128,6 +128,7 @@ namespace Qdrant
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.OrderValue))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<float>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, global::Qdrant.VectorOutput>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.VectorOutput), TypeInfoPropertyName = "VectorOutput2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.SparseVector))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<int>))]
@@ -232,6 +233,7 @@ namespace Qdrant
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Qdrant.PointStruct>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.PointStruct))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.VectorStruct), TypeInfoPropertyName = "VectorStruct2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, global::Qdrant.Vector>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.SetPayload))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.DeletePayload))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.ClusterStatus), TypeInfoPropertyName = "ClusterStatus2")]
@@ -298,6 +300,7 @@ namespace Qdrant
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.CollectionConfigTelemetry))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Qdrant.ReplicaSetTelemetry>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.ReplicaSetTelemetry))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, global::Qdrant.ShardCleanStatusTelemetry>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.ShardCleanStatusTelemetry), TypeInfoPropertyName = "ShardCleanStatusTelemetry2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.LocalShardTelemetry))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Qdrant.RemoteShardTelemetry>))]
@@ -511,9 +514,6 @@ namespace Qdrant
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.SearchMatrixPair))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.FacetRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.FacetResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Qdrant.FacetValueHit>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.FacetValueHit))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.FacetValue), TypeInfoPropertyName = "FacetValue2")]
     internal sealed partial class SourceGenerationContextChunk0 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -526,6 +526,9 @@ namespace Qdrant
         Converters = new global::System.Type[]
         {
         })]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Qdrant.FacetValueHit>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.FacetValueHit))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.FacetValue), TypeInfoPropertyName = "FacetValue2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.Usage))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.InferenceUsage))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, global::Qdrant.ModelUsage>))]
