@@ -165,19 +165,19 @@ namespace Qdrant.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.ContextPair), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.ContextPair?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.ContextPair).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Pair!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickPair(), typeInfo);
             }
             else if (value.IsContextInputVariant2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.IList<global::Qdrant.ContextPair>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.IList<global::Qdrant.ContextPair>?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.IList<global::Qdrant.ContextPair>).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ContextInputVariant2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickContextInputVariant2(), typeInfo);
             }
             else if (value.IsContextInputVariant3)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ContextInputVariant3!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickContextInputVariant3(), typeInfo);
             }
         }
     }

@@ -43,8 +43,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.IdfScope PickScope() => IsScope
-            ? Scope!.Value
+        public global::Qdrant.IdfScope PickScope() => Scope is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Scope' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.IdfCorpusParams PickCorpus() => IsCorpus
-            ? Corpus!
+        public global::Qdrant.IdfCorpusParams PickCorpus() => Corpus is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Corpus' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -178,13 +178,13 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsScope && scope != null)
+            if (Scope is { } __value0 && scope != null)
             {
-                return scope(Scope!);
+                return scope(__value0);
             }
-            else if (IsCorpus && corpus != null)
+            else if (Corpus is { } __value1 && corpus != null)
             {
-                return corpus(Corpus!);
+                return corpus(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsScope)
+            if (Scope is { } __value0)
             {
-                scope?.Invoke(Scope!);
+                scope?.Invoke(__value0);
             }
-            else if (IsCorpus)
+            else if (Corpus is { } __value1)
             {
-                corpus?.Invoke(Corpus!);
+                corpus?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsScope)
+            if (Scope is { } __value0)
             {
-                scope?.Invoke(Scope!);
+                scope?.Invoke(__value0);
             }
-            else if (IsCorpus)
+            else if (Corpus is { } __value1)
             {
-                corpus?.Invoke(Corpus!);
+                corpus?.Invoke(__value1);
             }
         }
 

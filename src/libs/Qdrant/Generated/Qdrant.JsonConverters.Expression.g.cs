@@ -911,133 +911,133 @@ namespace Qdrant.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(float), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<float> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(float).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ExpressionVariant1!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickExpressionVariant1(), typeInfo);
             }
             else if (value.IsExpressionVariant2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ExpressionVariant2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickExpressionVariant2(), typeInfo);
             }
             else if (value.IsCondition)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.Condition), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.Condition> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.Condition).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Condition!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickCondition(), typeInfo);
             }
             else if (value.IsGeoDistance)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.GeoDistance), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.GeoDistance?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.GeoDistance).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.GeoDistance!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickGeoDistance(), typeInfo);
             }
             else if (value.IsDatetime)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.DatetimeExpression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.DatetimeExpression?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.DatetimeExpression).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Datetime!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickDatetime(), typeInfo);
             }
             else if (value.IsDatetimeKey)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.DatetimeKeyExpression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.DatetimeKeyExpression?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.DatetimeKeyExpression).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DatetimeKey!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickDatetimeKey(), typeInfo);
             }
             else if (value.IsMult)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.MultExpression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.MultExpression?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.MultExpression).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Mult!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickMult(), typeInfo);
             }
             else if (value.IsSum)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.SumExpression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.SumExpression?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.SumExpression).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Sum!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSum(), typeInfo);
             }
             else if (value.IsMax)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.MaxExpression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.MaxExpression?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.MaxExpression).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Max!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickMax(), typeInfo);
             }
             else if (value.IsMin)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.MinExpression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.MinExpression?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.MinExpression).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Min!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickMin(), typeInfo);
             }
             else if (value.IsNeg)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.NegExpression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.NegExpression?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.NegExpression).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Neg!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickNeg(), typeInfo);
             }
             else if (value.IsAbs)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.AbsExpression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.AbsExpression?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.AbsExpression).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Abs!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAbs(), typeInfo);
             }
             else if (value.IsDiv)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.DivExpression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.DivExpression?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.DivExpression).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Div!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickDiv(), typeInfo);
             }
             else if (value.IsSqrt)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.SqrtExpression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.SqrtExpression?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.SqrtExpression).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Sqrt!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSqrt(), typeInfo);
             }
             else if (value.IsPow)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.PowExpression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.PowExpression?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.PowExpression).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Pow!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickPow(), typeInfo);
             }
             else if (value.IsExp)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.ExpExpression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.ExpExpression?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.ExpExpression).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Exp!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickExp(), typeInfo);
             }
             else if (value.IsLog10)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.Log10Expression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.Log10Expression?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.Log10Expression).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Log10!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickLog10(), typeInfo);
             }
             else if (value.IsLn)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.LnExpression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.LnExpression?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.LnExpression).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Ln!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickLn(), typeInfo);
             }
             else if (value.IsAcosh)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.AcoshExpression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.AcoshExpression?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.AcoshExpression).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Acosh!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAcosh(), typeInfo);
             }
             else if (value.IsLinDecay)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.LinDecayExpression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.LinDecayExpression?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.LinDecayExpression).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.LinDecay!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickLinDecay(), typeInfo);
             }
             else if (value.IsExpDecay)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.ExpDecayExpression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.ExpDecayExpression?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.ExpDecayExpression).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ExpDecay!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickExpDecay(), typeInfo);
             }
             else if (value.IsGaussDecay)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.GaussDecayExpression), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.GaussDecayExpression?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.GaussDecayExpression).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.GaussDecay!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickGaussDecay(), typeInfo);
             }
         }
     }

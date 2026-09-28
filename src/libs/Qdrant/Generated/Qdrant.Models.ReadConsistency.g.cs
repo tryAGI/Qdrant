@@ -48,8 +48,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public int PickReadConsistencyVariant1() => IsReadConsistencyVariant1
-            ? ReadConsistencyVariant1!.Value
+        public int PickReadConsistencyVariant1() => ReadConsistencyVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ReadConsistencyVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -87,8 +87,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.ReadConsistencyType PickType() => IsType
-            ? Type!.Value
+        public global::Qdrant.ReadConsistencyType PickType() => Type is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Type' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -185,13 +185,13 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsReadConsistencyVariant1 && readConsistencyVariant1 != null)
+            if (ReadConsistencyVariant1 is { } __value0 && readConsistencyVariant1 != null)
             {
-                return readConsistencyVariant1(ReadConsistencyVariant1!);
+                return readConsistencyVariant1(__value0);
             }
-            else if (IsType && type != null)
+            else if (Type is { } __value1 && type != null)
             {
-                return type(Type!);
+                return type(__value1);
             }
 
             return default(TResult);
@@ -211,13 +211,13 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsReadConsistencyVariant1)
+            if (ReadConsistencyVariant1 is { } __value0)
             {
-                readConsistencyVariant1?.Invoke(ReadConsistencyVariant1!);
+                readConsistencyVariant1?.Invoke(__value0);
             }
-            else if (IsType)
+            else if (Type is { } __value1)
             {
-                type?.Invoke(Type!);
+                type?.Invoke(__value1);
             }
         }
 
@@ -234,13 +234,13 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsReadConsistencyVariant1)
+            if (ReadConsistencyVariant1 is { } __value0)
             {
-                readConsistencyVariant1?.Invoke(ReadConsistencyVariant1!);
+                readConsistencyVariant1?.Invoke(__value0);
             }
-            else if (IsType)
+            else if (Type is { } __value1)
             {
-                type?.Invoke(Type!);
+                type?.Invoke(__value1);
             }
         }
 

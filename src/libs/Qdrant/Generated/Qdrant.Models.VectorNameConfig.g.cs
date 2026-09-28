@@ -45,8 +45,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.DenseVectorNameConfig PickDense() => IsDense
-            ? Dense!
+        public global::Qdrant.DenseVectorNameConfig PickDense() => Dense is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Dense' but the value was {ToString()}.");
 
         /// <summary>
@@ -82,8 +82,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.SparseVectorNameConfig PickSparse() => IsSparse
-            ? Sparse!
+        public global::Qdrant.SparseVectorNameConfig PickSparse() => Sparse is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Sparse' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -180,13 +180,13 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsDense && dense != null)
+            if (Dense is { } __value0 && dense != null)
             {
-                return dense(Dense!);
+                return dense(__value0);
             }
-            else if (IsSparse && sparse != null)
+            else if (Sparse is { } __value1 && sparse != null)
             {
-                return sparse(Sparse!);
+                return sparse(__value1);
             }
 
             return default(TResult);
@@ -206,13 +206,13 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsDense)
+            if (Dense is { } __value0)
             {
-                dense?.Invoke(Dense!);
+                dense?.Invoke(__value0);
             }
-            else if (IsSparse)
+            else if (Sparse is { } __value1)
             {
-                sparse?.Invoke(Sparse!);
+                sparse?.Invoke(__value1);
             }
         }
 
@@ -229,13 +229,13 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsDense)
+            if (Dense is { } __value0)
             {
-                dense?.Invoke(Dense!);
+                dense?.Invoke(__value0);
             }
-            else if (IsSparse)
+            else if (Sparse is { } __value1)
             {
-                sparse?.Invoke(Sparse!);
+                sparse?.Invoke(__value1);
             }
         }
 

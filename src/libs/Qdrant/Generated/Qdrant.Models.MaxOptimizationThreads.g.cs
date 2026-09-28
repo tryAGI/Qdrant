@@ -42,8 +42,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.MaxOptimizationThreadsSetting PickSetting() => IsSetting
-            ? Setting!.Value
+        public global::Qdrant.MaxOptimizationThreadsSetting PickSetting() => Setting is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Setting' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public int PickMaxOptimizationThreadsVariant2() => IsMaxOptimizationThreadsVariant2
-            ? MaxOptimizationThreadsVariant2!.Value
+        public int PickMaxOptimizationThreadsVariant2() => MaxOptimizationThreadsVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MaxOptimizationThreadsVariant2' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsSetting && setting != null)
+            if (Setting is { } __value0 && setting != null)
             {
-                return setting(Setting!);
+                return setting(__value0);
             }
-            else if (IsMaxOptimizationThreadsVariant2 && maxOptimizationThreadsVariant2 != null)
+            else if (MaxOptimizationThreadsVariant2 is { } __value1 && maxOptimizationThreadsVariant2 != null)
             {
-                return maxOptimizationThreadsVariant2(MaxOptimizationThreadsVariant2!);
+                return maxOptimizationThreadsVariant2(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsSetting)
+            if (Setting is { } __value0)
             {
-                setting?.Invoke(Setting!);
+                setting?.Invoke(__value0);
             }
-            else if (IsMaxOptimizationThreadsVariant2)
+            else if (MaxOptimizationThreadsVariant2 is { } __value1)
             {
-                maxOptimizationThreadsVariant2?.Invoke(MaxOptimizationThreadsVariant2!);
+                maxOptimizationThreadsVariant2?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsSetting)
+            if (Setting is { } __value0)
             {
-                setting?.Invoke(Setting!);
+                setting?.Invoke(__value0);
             }
-            else if (IsMaxOptimizationThreadsVariant2)
+            else if (MaxOptimizationThreadsVariant2 is { } __value1)
             {
-                maxOptimizationThreadsVariant2?.Invoke(MaxOptimizationThreadsVariant2!);
+                maxOptimizationThreadsVariant2?.Invoke(__value1);
             }
         }
 

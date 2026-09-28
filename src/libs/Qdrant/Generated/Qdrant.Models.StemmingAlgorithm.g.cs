@@ -42,8 +42,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.SnowballParams PickSnowballParams() => IsSnowballParams
-            ? SnowballParams!
+        public global::Qdrant.SnowballParams PickSnowballParams() => SnowballParams is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SnowballParams' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.DisabledStemmerParams PickDisabledStemmerParams() => IsDisabledStemmerParams
-            ? DisabledStemmerParams!
+        public global::Qdrant.DisabledStemmerParams PickDisabledStemmerParams() => DisabledStemmerParams is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'DisabledStemmerParams' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsSnowballParams && snowballParams != null)
+            if (SnowballParams is { } __value0 && snowballParams != null)
             {
-                return snowballParams(SnowballParams!);
+                return snowballParams(__value0);
             }
-            else if (IsDisabledStemmerParams && disabledStemmerParams != null)
+            else if (DisabledStemmerParams is { } __value1 && disabledStemmerParams != null)
             {
-                return disabledStemmerParams(DisabledStemmerParams!);
+                return disabledStemmerParams(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsSnowballParams)
+            if (SnowballParams is { } __value0)
             {
-                snowballParams?.Invoke(SnowballParams!);
+                snowballParams?.Invoke(__value0);
             }
-            else if (IsDisabledStemmerParams)
+            else if (DisabledStemmerParams is { } __value1)
             {
-                disabledStemmerParams?.Invoke(DisabledStemmerParams!);
+                disabledStemmerParams?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsSnowballParams)
+            if (SnowballParams is { } __value0)
             {
-                snowballParams?.Invoke(SnowballParams!);
+                snowballParams?.Invoke(__value0);
             }
-            else if (IsDisabledStemmerParams)
+            else if (DisabledStemmerParams is { } __value1)
             {
-                disabledStemmerParams?.Invoke(DisabledStemmerParams!);
+                disabledStemmerParams?.Invoke(__value1);
             }
         }
 

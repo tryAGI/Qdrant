@@ -149,13 +149,13 @@ namespace Qdrant.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(int), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<int> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(int).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ReadConsistencyVariant1!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickReadConsistencyVariant1(), typeInfo);
             }
             else if (value.IsType)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.ReadConsistencyType), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.ReadConsistencyType> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.ReadConsistencyType).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Type!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickType(), typeInfo);
             }
         }
     }

@@ -42,8 +42,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.PayloadSchemaType PickType() => IsType
-            ? Type!.Value
+        public global::Qdrant.PayloadSchemaType PickType() => Type is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Type' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.PayloadSchemaParams PickParams() => IsParams
-            ? Params!.Value
+        public global::Qdrant.PayloadSchemaParams PickParams() => Params is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Params' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsType && type != null)
+            if (Type is { } __value0 && type != null)
             {
-                return type(Type!);
+                return type(__value0);
             }
-            else if (IsParams && @params != null)
+            else if (Params is { } __value1 && @params != null)
             {
-                return @params(Params!);
+                return @params(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsType)
+            if (Type is { } __value0)
             {
-                type?.Invoke(Type!);
+                type?.Invoke(__value0);
             }
-            else if (IsParams)
+            else if (Params is { } __value1)
             {
-                @params?.Invoke(Params!);
+                @params?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsType)
+            if (Type is { } __value0)
             {
-                type?.Invoke(Type!);
+                type?.Invoke(__value0);
             }
-            else if (IsParams)
+            else if (Params is { } __value1)
             {
-                @params?.Invoke(Params!);
+                @params?.Invoke(__value1);
             }
         }
 

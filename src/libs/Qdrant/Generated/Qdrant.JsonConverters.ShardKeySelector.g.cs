@@ -165,19 +165,19 @@ namespace Qdrant.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.ShardKey), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.ShardKey> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.ShardKey).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ShardKey!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickShardKey(), typeInfo);
             }
             else if (value.IsShardKeySelectorVariant2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.IList<global::Qdrant.ShardKey>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.IList<global::Qdrant.ShardKey>?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.IList<global::Qdrant.ShardKey>).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ShardKeySelectorVariant2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickShardKeySelectorVariant2(), typeInfo);
             }
             else if (value.IsWithFallback)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.ShardKeyWithFallback), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.ShardKeyWithFallback?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.ShardKeyWithFallback).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.WithFallback!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickWithFallback(), typeInfo);
             }
         }
     }

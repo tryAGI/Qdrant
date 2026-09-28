@@ -42,8 +42,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public float PickExpressionVariant1() => IsExpressionVariant1
-            ? ExpressionVariant1!.Value
+        public float PickExpressionVariant1() => ExpressionVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ExpressionVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public string PickExpressionVariant2() => IsExpressionVariant2
-            ? ExpressionVariant2!
+        public string PickExpressionVariant2() => ExpressionVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ExpressionVariant2' but the value was {ToString()}.");
 
         /// <summary>
@@ -116,8 +116,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.Condition PickCondition() => IsCondition
-            ? Condition!.Value
+        public global::Qdrant.Condition PickCondition() => Condition is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Condition' but the value was {ToString()}.");
 
         /// <summary>
@@ -153,8 +153,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.GeoDistance PickGeoDistance() => IsGeoDistance
-            ? GeoDistance!
+        public global::Qdrant.GeoDistance PickGeoDistance() => GeoDistance is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'GeoDistance' but the value was {ToString()}.");
 
         /// <summary>
@@ -190,8 +190,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.DatetimeExpression PickDatetime() => IsDatetime
-            ? Datetime!
+        public global::Qdrant.DatetimeExpression PickDatetime() => Datetime is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Datetime' but the value was {ToString()}.");
 
         /// <summary>
@@ -227,8 +227,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.DatetimeKeyExpression PickDatetimeKey() => IsDatetimeKey
-            ? DatetimeKey!
+        public global::Qdrant.DatetimeKeyExpression PickDatetimeKey() => DatetimeKey is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'DatetimeKey' but the value was {ToString()}.");
 
         /// <summary>
@@ -264,8 +264,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.MultExpression PickMult() => IsMult
-            ? Mult!
+        public global::Qdrant.MultExpression PickMult() => Mult is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Mult' but the value was {ToString()}.");
 
         /// <summary>
@@ -301,8 +301,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.SumExpression PickSum() => IsSum
-            ? Sum!
+        public global::Qdrant.SumExpression PickSum() => Sum is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Sum' but the value was {ToString()}.");
 
         /// <summary>
@@ -338,8 +338,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.MaxExpression PickMax() => IsMax
-            ? Max!
+        public global::Qdrant.MaxExpression PickMax() => Max is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Max' but the value was {ToString()}.");
 
         /// <summary>
@@ -375,8 +375,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.MinExpression PickMin() => IsMin
-            ? Min!
+        public global::Qdrant.MinExpression PickMin() => Min is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Min' but the value was {ToString()}.");
 
         /// <summary>
@@ -412,8 +412,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.NegExpression PickNeg() => IsNeg
-            ? Neg!
+        public global::Qdrant.NegExpression PickNeg() => Neg is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Neg' but the value was {ToString()}.");
 
         /// <summary>
@@ -449,8 +449,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.AbsExpression PickAbs() => IsAbs
-            ? Abs!
+        public global::Qdrant.AbsExpression PickAbs() => Abs is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Abs' but the value was {ToString()}.");
 
         /// <summary>
@@ -486,8 +486,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.DivExpression PickDiv() => IsDiv
-            ? Div!
+        public global::Qdrant.DivExpression PickDiv() => Div is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Div' but the value was {ToString()}.");
 
         /// <summary>
@@ -523,8 +523,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.SqrtExpression PickSqrt() => IsSqrt
-            ? Sqrt!
+        public global::Qdrant.SqrtExpression PickSqrt() => Sqrt is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Sqrt' but the value was {ToString()}.");
 
         /// <summary>
@@ -560,8 +560,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.PowExpression PickPow() => IsPow
-            ? Pow!
+        public global::Qdrant.PowExpression PickPow() => Pow is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Pow' but the value was {ToString()}.");
 
         /// <summary>
@@ -597,8 +597,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.ExpExpression PickExp() => IsExp
-            ? Exp!
+        public global::Qdrant.ExpExpression PickExp() => Exp is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Exp' but the value was {ToString()}.");
 
         /// <summary>
@@ -634,8 +634,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.Log10Expression PickLog10() => IsLog10
-            ? Log10!
+        public global::Qdrant.Log10Expression PickLog10() => Log10 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Log10' but the value was {ToString()}.");
 
         /// <summary>
@@ -671,8 +671,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.LnExpression PickLn() => IsLn
-            ? Ln!
+        public global::Qdrant.LnExpression PickLn() => Ln is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Ln' but the value was {ToString()}.");
 
         /// <summary>
@@ -708,8 +708,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.AcoshExpression PickAcosh() => IsAcosh
-            ? Acosh!
+        public global::Qdrant.AcoshExpression PickAcosh() => Acosh is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Acosh' but the value was {ToString()}.");
 
         /// <summary>
@@ -745,8 +745,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.LinDecayExpression PickLinDecay() => IsLinDecay
-            ? LinDecay!
+        public global::Qdrant.LinDecayExpression PickLinDecay() => LinDecay is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'LinDecay' but the value was {ToString()}.");
 
         /// <summary>
@@ -782,8 +782,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.ExpDecayExpression PickExpDecay() => IsExpDecay
-            ? ExpDecay!
+        public global::Qdrant.ExpDecayExpression PickExpDecay() => ExpDecay is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ExpDecay' but the value was {ToString()}.");
 
         /// <summary>
@@ -819,8 +819,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.GaussDecayExpression PickGaussDecay() => IsGaussDecay
-            ? GaussDecay!
+        public global::Qdrant.GaussDecayExpression PickGaussDecay() => GaussDecay is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'GaussDecay' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -1477,93 +1477,93 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsExpressionVariant1 && expressionVariant1 != null)
+            if (ExpressionVariant1 is { } __value0 && expressionVariant1 != null)
             {
-                return expressionVariant1(ExpressionVariant1!);
+                return expressionVariant1(__value0);
             }
-            else if (IsExpressionVariant2 && expressionVariant2 != null)
+            else if (ExpressionVariant2 is { } __value1 && expressionVariant2 != null)
             {
-                return expressionVariant2(ExpressionVariant2!);
+                return expressionVariant2(__value1);
             }
-            else if (IsCondition && condition != null)
+            else if (Condition is { } __value2 && condition != null)
             {
-                return condition(Condition!);
+                return condition(__value2);
             }
-            else if (IsGeoDistance && geoDistance != null)
+            else if (GeoDistance is { } __value3 && geoDistance != null)
             {
-                return geoDistance(GeoDistance!);
+                return geoDistance(__value3);
             }
-            else if (IsDatetime && datetime != null)
+            else if (Datetime is { } __value4 && datetime != null)
             {
-                return datetime(Datetime!);
+                return datetime(__value4);
             }
-            else if (IsDatetimeKey && datetimeKey != null)
+            else if (DatetimeKey is { } __value5 && datetimeKey != null)
             {
-                return datetimeKey(DatetimeKey!);
+                return datetimeKey(__value5);
             }
-            else if (IsMult && mult != null)
+            else if (Mult is { } __value6 && mult != null)
             {
-                return mult(Mult!);
+                return mult(__value6);
             }
-            else if (IsSum && sum != null)
+            else if (Sum is { } __value7 && sum != null)
             {
-                return sum(Sum!);
+                return sum(__value7);
             }
-            else if (IsMax && max != null)
+            else if (Max is { } __value8 && max != null)
             {
-                return max(Max!);
+                return max(__value8);
             }
-            else if (IsMin && min != null)
+            else if (Min is { } __value9 && min != null)
             {
-                return min(Min!);
+                return min(__value9);
             }
-            else if (IsNeg && neg != null)
+            else if (Neg is { } __value10 && neg != null)
             {
-                return neg(Neg!);
+                return neg(__value10);
             }
-            else if (IsAbs && abs != null)
+            else if (Abs is { } __value11 && abs != null)
             {
-                return abs(Abs!);
+                return abs(__value11);
             }
-            else if (IsDiv && div != null)
+            else if (Div is { } __value12 && div != null)
             {
-                return div(Div!);
+                return div(__value12);
             }
-            else if (IsSqrt && sqrt != null)
+            else if (Sqrt is { } __value13 && sqrt != null)
             {
-                return sqrt(Sqrt!);
+                return sqrt(__value13);
             }
-            else if (IsPow && pow != null)
+            else if (Pow is { } __value14 && pow != null)
             {
-                return pow(Pow!);
+                return pow(__value14);
             }
-            else if (IsExp && exp != null)
+            else if (Exp is { } __value15 && exp != null)
             {
-                return exp(Exp!);
+                return exp(__value15);
             }
-            else if (IsLog10 && log10 != null)
+            else if (Log10 is { } __value16 && log10 != null)
             {
-                return log10(Log10!);
+                return log10(__value16);
             }
-            else if (IsLn && ln != null)
+            else if (Ln is { } __value17 && ln != null)
             {
-                return ln(Ln!);
+                return ln(__value17);
             }
-            else if (IsAcosh && acosh != null)
+            else if (Acosh is { } __value18 && acosh != null)
             {
-                return acosh(Acosh!);
+                return acosh(__value18);
             }
-            else if (IsLinDecay && linDecay != null)
+            else if (LinDecay is { } __value19 && linDecay != null)
             {
-                return linDecay(LinDecay!);
+                return linDecay(__value19);
             }
-            else if (IsExpDecay && expDecay != null)
+            else if (ExpDecay is { } __value20 && expDecay != null)
             {
-                return expDecay(ExpDecay!);
+                return expDecay(__value20);
             }
-            else if (IsGaussDecay && gaussDecay != null)
+            else if (GaussDecay is { } __value21 && gaussDecay != null)
             {
-                return gaussDecay(GaussDecay!);
+                return gaussDecay(__value21);
             }
 
             return default(TResult);
@@ -1623,93 +1623,93 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsExpressionVariant1)
+            if (ExpressionVariant1 is { } __value0)
             {
-                expressionVariant1?.Invoke(ExpressionVariant1!);
+                expressionVariant1?.Invoke(__value0);
             }
-            else if (IsExpressionVariant2)
+            else if (ExpressionVariant2 is { } __value1)
             {
-                expressionVariant2?.Invoke(ExpressionVariant2!);
+                expressionVariant2?.Invoke(__value1);
             }
-            else if (IsCondition)
+            else if (Condition is { } __value2)
             {
-                condition?.Invoke(Condition!);
+                condition?.Invoke(__value2);
             }
-            else if (IsGeoDistance)
+            else if (GeoDistance is { } __value3)
             {
-                geoDistance?.Invoke(GeoDistance!);
+                geoDistance?.Invoke(__value3);
             }
-            else if (IsDatetime)
+            else if (Datetime is { } __value4)
             {
-                datetime?.Invoke(Datetime!);
+                datetime?.Invoke(__value4);
             }
-            else if (IsDatetimeKey)
+            else if (DatetimeKey is { } __value5)
             {
-                datetimeKey?.Invoke(DatetimeKey!);
+                datetimeKey?.Invoke(__value5);
             }
-            else if (IsMult)
+            else if (Mult is { } __value6)
             {
-                mult?.Invoke(Mult!);
+                mult?.Invoke(__value6);
             }
-            else if (IsSum)
+            else if (Sum is { } __value7)
             {
-                sum?.Invoke(Sum!);
+                sum?.Invoke(__value7);
             }
-            else if (IsMax)
+            else if (Max is { } __value8)
             {
-                max?.Invoke(Max!);
+                max?.Invoke(__value8);
             }
-            else if (IsMin)
+            else if (Min is { } __value9)
             {
-                min?.Invoke(Min!);
+                min?.Invoke(__value9);
             }
-            else if (IsNeg)
+            else if (Neg is { } __value10)
             {
-                neg?.Invoke(Neg!);
+                neg?.Invoke(__value10);
             }
-            else if (IsAbs)
+            else if (Abs is { } __value11)
             {
-                abs?.Invoke(Abs!);
+                abs?.Invoke(__value11);
             }
-            else if (IsDiv)
+            else if (Div is { } __value12)
             {
-                div?.Invoke(Div!);
+                div?.Invoke(__value12);
             }
-            else if (IsSqrt)
+            else if (Sqrt is { } __value13)
             {
-                sqrt?.Invoke(Sqrt!);
+                sqrt?.Invoke(__value13);
             }
-            else if (IsPow)
+            else if (Pow is { } __value14)
             {
-                pow?.Invoke(Pow!);
+                pow?.Invoke(__value14);
             }
-            else if (IsExp)
+            else if (Exp is { } __value15)
             {
-                exp?.Invoke(Exp!);
+                exp?.Invoke(__value15);
             }
-            else if (IsLog10)
+            else if (Log10 is { } __value16)
             {
-                log10?.Invoke(Log10!);
+                log10?.Invoke(__value16);
             }
-            else if (IsLn)
+            else if (Ln is { } __value17)
             {
-                ln?.Invoke(Ln!);
+                ln?.Invoke(__value17);
             }
-            else if (IsAcosh)
+            else if (Acosh is { } __value18)
             {
-                acosh?.Invoke(Acosh!);
+                acosh?.Invoke(__value18);
             }
-            else if (IsLinDecay)
+            else if (LinDecay is { } __value19)
             {
-                linDecay?.Invoke(LinDecay!);
+                linDecay?.Invoke(__value19);
             }
-            else if (IsExpDecay)
+            else if (ExpDecay is { } __value20)
             {
-                expDecay?.Invoke(ExpDecay!);
+                expDecay?.Invoke(__value20);
             }
-            else if (IsGaussDecay)
+            else if (GaussDecay is { } __value21)
             {
-                gaussDecay?.Invoke(GaussDecay!);
+                gaussDecay?.Invoke(__value21);
             }
         }
 
@@ -1746,93 +1746,93 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsExpressionVariant1)
+            if (ExpressionVariant1 is { } __value0)
             {
-                expressionVariant1?.Invoke(ExpressionVariant1!);
+                expressionVariant1?.Invoke(__value0);
             }
-            else if (IsExpressionVariant2)
+            else if (ExpressionVariant2 is { } __value1)
             {
-                expressionVariant2?.Invoke(ExpressionVariant2!);
+                expressionVariant2?.Invoke(__value1);
             }
-            else if (IsCondition)
+            else if (Condition is { } __value2)
             {
-                condition?.Invoke(Condition!);
+                condition?.Invoke(__value2);
             }
-            else if (IsGeoDistance)
+            else if (GeoDistance is { } __value3)
             {
-                geoDistance?.Invoke(GeoDistance!);
+                geoDistance?.Invoke(__value3);
             }
-            else if (IsDatetime)
+            else if (Datetime is { } __value4)
             {
-                datetime?.Invoke(Datetime!);
+                datetime?.Invoke(__value4);
             }
-            else if (IsDatetimeKey)
+            else if (DatetimeKey is { } __value5)
             {
-                datetimeKey?.Invoke(DatetimeKey!);
+                datetimeKey?.Invoke(__value5);
             }
-            else if (IsMult)
+            else if (Mult is { } __value6)
             {
-                mult?.Invoke(Mult!);
+                mult?.Invoke(__value6);
             }
-            else if (IsSum)
+            else if (Sum is { } __value7)
             {
-                sum?.Invoke(Sum!);
+                sum?.Invoke(__value7);
             }
-            else if (IsMax)
+            else if (Max is { } __value8)
             {
-                max?.Invoke(Max!);
+                max?.Invoke(__value8);
             }
-            else if (IsMin)
+            else if (Min is { } __value9)
             {
-                min?.Invoke(Min!);
+                min?.Invoke(__value9);
             }
-            else if (IsNeg)
+            else if (Neg is { } __value10)
             {
-                neg?.Invoke(Neg!);
+                neg?.Invoke(__value10);
             }
-            else if (IsAbs)
+            else if (Abs is { } __value11)
             {
-                abs?.Invoke(Abs!);
+                abs?.Invoke(__value11);
             }
-            else if (IsDiv)
+            else if (Div is { } __value12)
             {
-                div?.Invoke(Div!);
+                div?.Invoke(__value12);
             }
-            else if (IsSqrt)
+            else if (Sqrt is { } __value13)
             {
-                sqrt?.Invoke(Sqrt!);
+                sqrt?.Invoke(__value13);
             }
-            else if (IsPow)
+            else if (Pow is { } __value14)
             {
-                pow?.Invoke(Pow!);
+                pow?.Invoke(__value14);
             }
-            else if (IsExp)
+            else if (Exp is { } __value15)
             {
-                exp?.Invoke(Exp!);
+                exp?.Invoke(__value15);
             }
-            else if (IsLog10)
+            else if (Log10 is { } __value16)
             {
-                log10?.Invoke(Log10!);
+                log10?.Invoke(__value16);
             }
-            else if (IsLn)
+            else if (Ln is { } __value17)
             {
-                ln?.Invoke(Ln!);
+                ln?.Invoke(__value17);
             }
-            else if (IsAcosh)
+            else if (Acosh is { } __value18)
             {
-                acosh?.Invoke(Acosh!);
+                acosh?.Invoke(__value18);
             }
-            else if (IsLinDecay)
+            else if (LinDecay is { } __value19)
             {
-                linDecay?.Invoke(LinDecay!);
+                linDecay?.Invoke(__value19);
             }
-            else if (IsExpDecay)
+            else if (ExpDecay is { } __value20)
             {
-                expDecay?.Invoke(ExpDecay!);
+                expDecay?.Invoke(__value20);
             }
-            else if (IsGaussDecay)
+            else if (GaussDecay is { } __value21)
             {
-                gaussDecay?.Invoke(GaussDecay!);
+                gaussDecay?.Invoke(__value21);
             }
         }
 

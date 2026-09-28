@@ -42,8 +42,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.ConsensusThreadStatusVariant1 PickConsensusThreadStatusVariant1() => IsConsensusThreadStatusVariant1
-            ? ConsensusThreadStatusVariant1!
+        public global::Qdrant.ConsensusThreadStatusVariant1 PickConsensusThreadStatusVariant1() => ConsensusThreadStatusVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ConsensusThreadStatusVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.ConsensusThreadStatusVariant2 PickConsensusThreadStatusVariant2() => IsConsensusThreadStatusVariant2
-            ? ConsensusThreadStatusVariant2!
+        public global::Qdrant.ConsensusThreadStatusVariant2 PickConsensusThreadStatusVariant2() => ConsensusThreadStatusVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ConsensusThreadStatusVariant2' but the value was {ToString()}.");
 
         /// <summary>
@@ -116,8 +116,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.ConsensusThreadStatusVariant3 PickConsensusThreadStatusVariant3() => IsConsensusThreadStatusVariant3
-            ? ConsensusThreadStatusVariant3!
+        public global::Qdrant.ConsensusThreadStatusVariant3 PickConsensusThreadStatusVariant3() => ConsensusThreadStatusVariant3 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ConsensusThreadStatusVariant3' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -242,17 +242,17 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsConsensusThreadStatusVariant1 && consensusThreadStatusVariant1 != null)
+            if (ConsensusThreadStatusVariant1 is { } __value0 && consensusThreadStatusVariant1 != null)
             {
-                return consensusThreadStatusVariant1(ConsensusThreadStatusVariant1!);
+                return consensusThreadStatusVariant1(__value0);
             }
-            else if (IsConsensusThreadStatusVariant2 && consensusThreadStatusVariant2 != null)
+            else if (ConsensusThreadStatusVariant2 is { } __value1 && consensusThreadStatusVariant2 != null)
             {
-                return consensusThreadStatusVariant2(ConsensusThreadStatusVariant2!);
+                return consensusThreadStatusVariant2(__value1);
             }
-            else if (IsConsensusThreadStatusVariant3 && consensusThreadStatusVariant3 != null)
+            else if (ConsensusThreadStatusVariant3 is { } __value2 && consensusThreadStatusVariant3 != null)
             {
-                return consensusThreadStatusVariant3(ConsensusThreadStatusVariant3!);
+                return consensusThreadStatusVariant3(__value2);
             }
 
             return default(TResult);
@@ -274,17 +274,17 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsConsensusThreadStatusVariant1)
+            if (ConsensusThreadStatusVariant1 is { } __value0)
             {
-                consensusThreadStatusVariant1?.Invoke(ConsensusThreadStatusVariant1!);
+                consensusThreadStatusVariant1?.Invoke(__value0);
             }
-            else if (IsConsensusThreadStatusVariant2)
+            else if (ConsensusThreadStatusVariant2 is { } __value1)
             {
-                consensusThreadStatusVariant2?.Invoke(ConsensusThreadStatusVariant2!);
+                consensusThreadStatusVariant2?.Invoke(__value1);
             }
-            else if (IsConsensusThreadStatusVariant3)
+            else if (ConsensusThreadStatusVariant3 is { } __value2)
             {
-                consensusThreadStatusVariant3?.Invoke(ConsensusThreadStatusVariant3!);
+                consensusThreadStatusVariant3?.Invoke(__value2);
             }
         }
 
@@ -302,17 +302,17 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsConsensusThreadStatusVariant1)
+            if (ConsensusThreadStatusVariant1 is { } __value0)
             {
-                consensusThreadStatusVariant1?.Invoke(ConsensusThreadStatusVariant1!);
+                consensusThreadStatusVariant1?.Invoke(__value0);
             }
-            else if (IsConsensusThreadStatusVariant2)
+            else if (ConsensusThreadStatusVariant2 is { } __value1)
             {
-                consensusThreadStatusVariant2?.Invoke(ConsensusThreadStatusVariant2!);
+                consensusThreadStatusVariant2?.Invoke(__value1);
             }
-            else if (IsConsensusThreadStatusVariant3)
+            else if (ConsensusThreadStatusVariant3 is { } __value2)
             {
-                consensusThreadStatusVariant3?.Invoke(ConsensusThreadStatusVariant3!);
+                consensusThreadStatusVariant3?.Invoke(__value2);
             }
         }
 

@@ -42,8 +42,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.SparseVectorStorageTypeVariant1 PickSparseVectorStorageTypeVariant1() => IsSparseVectorStorageTypeVariant1
-            ? SparseVectorStorageTypeVariant1!.Value
+        public global::Qdrant.SparseVectorStorageTypeVariant1 PickSparseVectorStorageTypeVariant1() => SparseVectorStorageTypeVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SparseVectorStorageTypeVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.SparseVectorStorageTypeVariant2 PickSparseVectorStorageTypeVariant2() => IsSparseVectorStorageTypeVariant2
-            ? SparseVectorStorageTypeVariant2!.Value
+        public global::Qdrant.SparseVectorStorageTypeVariant2 PickSparseVectorStorageTypeVariant2() => SparseVectorStorageTypeVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SparseVectorStorageTypeVariant2' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsSparseVectorStorageTypeVariant1 && sparseVectorStorageTypeVariant1 != null)
+            if (SparseVectorStorageTypeVariant1 is { } __value0 && sparseVectorStorageTypeVariant1 != null)
             {
-                return sparseVectorStorageTypeVariant1(SparseVectorStorageTypeVariant1!);
+                return sparseVectorStorageTypeVariant1(__value0);
             }
-            else if (IsSparseVectorStorageTypeVariant2 && sparseVectorStorageTypeVariant2 != null)
+            else if (SparseVectorStorageTypeVariant2 is { } __value1 && sparseVectorStorageTypeVariant2 != null)
             {
-                return sparseVectorStorageTypeVariant2(SparseVectorStorageTypeVariant2!);
+                return sparseVectorStorageTypeVariant2(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsSparseVectorStorageTypeVariant1)
+            if (SparseVectorStorageTypeVariant1 is { } __value0)
             {
-                sparseVectorStorageTypeVariant1?.Invoke(SparseVectorStorageTypeVariant1!);
+                sparseVectorStorageTypeVariant1?.Invoke(__value0);
             }
-            else if (IsSparseVectorStorageTypeVariant2)
+            else if (SparseVectorStorageTypeVariant2 is { } __value1)
             {
-                sparseVectorStorageTypeVariant2?.Invoke(SparseVectorStorageTypeVariant2!);
+                sparseVectorStorageTypeVariant2?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsSparseVectorStorageTypeVariant1)
+            if (SparseVectorStorageTypeVariant1 is { } __value0)
             {
-                sparseVectorStorageTypeVariant1?.Invoke(SparseVectorStorageTypeVariant1!);
+                sparseVectorStorageTypeVariant1?.Invoke(__value0);
             }
-            else if (IsSparseVectorStorageTypeVariant2)
+            else if (SparseVectorStorageTypeVariant2 is { } __value1)
             {
-                sparseVectorStorageTypeVariant2?.Invoke(SparseVectorStorageTypeVariant2!);
+                sparseVectorStorageTypeVariant2?.Invoke(__value1);
             }
         }
 

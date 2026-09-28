@@ -42,8 +42,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<string> PickAnyVariantsVariant1() => IsAnyVariantsVariant1
-            ? AnyVariantsVariant1!
+        public global::System.Collections.Generic.IList<string> PickAnyVariantsVariant1() => AnyVariantsVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AnyVariantsVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<long> PickAnyVariantsVariant2() => IsAnyVariantsVariant2
-            ? AnyVariantsVariant2!
+        public global::System.Collections.Generic.IList<long> PickAnyVariantsVariant2() => AnyVariantsVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AnyVariantsVariant2' but the value was {ToString()}.");
 
         /// <summary>
@@ -132,13 +132,13 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsAnyVariantsVariant1 && anyVariantsVariant1 != null)
+            if (AnyVariantsVariant1 is { } __value0 && anyVariantsVariant1 != null)
             {
-                return anyVariantsVariant1(AnyVariantsVariant1!);
+                return anyVariantsVariant1(__value0);
             }
-            else if (IsAnyVariantsVariant2 && anyVariantsVariant2 != null)
+            else if (AnyVariantsVariant2 is { } __value1 && anyVariantsVariant2 != null)
             {
-                return anyVariantsVariant2(AnyVariantsVariant2!);
+                return anyVariantsVariant2(__value1);
             }
 
             return default(TResult);
@@ -158,13 +158,13 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsAnyVariantsVariant1)
+            if (AnyVariantsVariant1 is { } __value0)
             {
-                anyVariantsVariant1?.Invoke(AnyVariantsVariant1!);
+                anyVariantsVariant1?.Invoke(__value0);
             }
-            else if (IsAnyVariantsVariant2)
+            else if (AnyVariantsVariant2 is { } __value1)
             {
-                anyVariantsVariant2?.Invoke(AnyVariantsVariant2!);
+                anyVariantsVariant2?.Invoke(__value1);
             }
         }
 
@@ -181,13 +181,13 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsAnyVariantsVariant1)
+            if (AnyVariantsVariant1 is { } __value0)
             {
-                anyVariantsVariant1?.Invoke(AnyVariantsVariant1!);
+                anyVariantsVariant1?.Invoke(__value0);
             }
-            else if (IsAnyVariantsVariant2)
+            else if (AnyVariantsVariant2 is { } __value1)
             {
-                anyVariantsVariant2?.Invoke(AnyVariantsVariant2!);
+                anyVariantsVariant2?.Invoke(__value1);
             }
         }
 

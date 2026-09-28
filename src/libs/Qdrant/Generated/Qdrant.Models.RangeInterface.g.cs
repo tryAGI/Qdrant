@@ -42,8 +42,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.Range PickRange() => IsRange
-            ? Range!
+        public global::Qdrant.Range PickRange() => Range is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Range' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.DatetimeRange PickDatetime() => IsDatetime
-            ? Datetime!
+        public global::Qdrant.DatetimeRange PickDatetime() => Datetime is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Datetime' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsRange && range != null)
+            if (Range is { } __value0 && range != null)
             {
-                return range(Range!);
+                return range(__value0);
             }
-            else if (IsDatetime && datetime != null)
+            else if (Datetime is { } __value1 && datetime != null)
             {
-                return datetime(Datetime!);
+                return datetime(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsRange)
+            if (Range is { } __value0)
             {
-                range?.Invoke(Range!);
+                range?.Invoke(__value0);
             }
-            else if (IsDatetime)
+            else if (Datetime is { } __value1)
             {
-                datetime?.Invoke(Datetime!);
+                datetime?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsRange)
+            if (Range is { } __value0)
             {
-                range?.Invoke(Range!);
+                range?.Invoke(__value0);
             }
-            else if (IsDatetime)
+            else if (Datetime is { } __value1)
             {
-                datetime?.Invoke(Datetime!);
+                datetime?.Invoke(__value1);
             }
         }
 

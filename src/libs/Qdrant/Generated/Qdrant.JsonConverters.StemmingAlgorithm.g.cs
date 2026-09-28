@@ -129,13 +129,13 @@ namespace Qdrant.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.SnowballParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.SnowballParams?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.SnowballParams).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SnowballParams!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSnowballParams(), typeInfo);
             }
             else if (value.IsDisabledStemmerParams)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.DisabledStemmerParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.DisabledStemmerParams?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.DisabledStemmerParams).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DisabledStemmerParams!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickDisabledStemmerParams(), typeInfo);
             }
         }
     }

@@ -42,8 +42,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.CollectionTelemetry PickCollectionTelemetry() => IsCollectionTelemetry
-            ? CollectionTelemetry!
+        public global::Qdrant.CollectionTelemetry PickCollectionTelemetry() => CollectionTelemetry is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CollectionTelemetry' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.CollectionsAggregatedTelemetry PickCollectionsAggregated() => IsCollectionsAggregated
-            ? CollectionsAggregated!
+        public global::Qdrant.CollectionsAggregatedTelemetry PickCollectionsAggregated() => CollectionsAggregated is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CollectionsAggregated' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsCollectionTelemetry && collectionTelemetry != null)
+            if (CollectionTelemetry is { } __value0 && collectionTelemetry != null)
             {
-                return collectionTelemetry(CollectionTelemetry!);
+                return collectionTelemetry(__value0);
             }
-            else if (IsCollectionsAggregated && collectionsAggregated != null)
+            else if (CollectionsAggregated is { } __value1 && collectionsAggregated != null)
             {
-                return collectionsAggregated(CollectionsAggregated!);
+                return collectionsAggregated(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsCollectionTelemetry)
+            if (CollectionTelemetry is { } __value0)
             {
-                collectionTelemetry?.Invoke(CollectionTelemetry!);
+                collectionTelemetry?.Invoke(__value0);
             }
-            else if (IsCollectionsAggregated)
+            else if (CollectionsAggregated is { } __value1)
             {
-                collectionsAggregated?.Invoke(CollectionsAggregated!);
+                collectionsAggregated?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsCollectionTelemetry)
+            if (CollectionTelemetry is { } __value0)
             {
-                collectionTelemetry?.Invoke(CollectionTelemetry!);
+                collectionTelemetry?.Invoke(__value0);
             }
-            else if (IsCollectionsAggregated)
+            else if (CollectionsAggregated is { } __value1)
             {
-                collectionsAggregated?.Invoke(CollectionsAggregated!);
+                collectionsAggregated?.Invoke(__value1);
             }
         }
 

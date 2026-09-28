@@ -318,43 +318,43 @@ namespace Qdrant.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.MatchValue), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.MatchValue?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.MatchValue).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickValue(), typeInfo);
             }
             else if (value.IsText)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.MatchText), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.MatchText?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.MatchText).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Text!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickText(), typeInfo);
             }
             else if (value.IsTextAny)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.MatchTextAny), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.MatchTextAny?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.MatchTextAny).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TextAny!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickTextAny(), typeInfo);
             }
             else if (value.IsPhrase)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.MatchPhrase), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.MatchPhrase?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.MatchPhrase).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Phrase!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickPhrase(), typeInfo);
             }
             else if (value.IsPrefix)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.MatchPrefix), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.MatchPrefix?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.MatchPrefix).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Prefix!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickPrefix(), typeInfo);
             }
             else if (value.IsAny)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.MatchAny), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.MatchAny?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.MatchAny).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Any!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAny(), typeInfo);
             }
             else if (value.IsExcept)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.MatchExcept), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.MatchExcept?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.MatchExcept).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Except!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickExcept(), typeInfo);
             }
         }
     }

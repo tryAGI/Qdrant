@@ -42,8 +42,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.MatchValue PickValue() => IsValue
-            ? Value!
+        public global::Qdrant.MatchValue PickValue() => Value is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Value' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.MatchText PickText() => IsText
-            ? Text!
+        public global::Qdrant.MatchText PickText() => Text is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
 
         /// <summary>
@@ -116,8 +116,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.MatchTextAny PickTextAny() => IsTextAny
-            ? TextAny!
+        public global::Qdrant.MatchTextAny PickTextAny() => TextAny is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TextAny' but the value was {ToString()}.");
 
         /// <summary>
@@ -153,8 +153,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.MatchPhrase PickPhrase() => IsPhrase
-            ? Phrase!
+        public global::Qdrant.MatchPhrase PickPhrase() => Phrase is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Phrase' but the value was {ToString()}.");
 
         /// <summary>
@@ -191,8 +191,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.MatchPrefix PickPrefix() => IsPrefix
-            ? Prefix!
+        public global::Qdrant.MatchPrefix PickPrefix() => Prefix is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Prefix' but the value was {ToString()}.");
 
         /// <summary>
@@ -228,8 +228,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.MatchAny PickAny() => IsAny
-            ? Any!
+        public global::Qdrant.MatchAny PickAny() => Any is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Any' but the value was {ToString()}.");
 
         /// <summary>
@@ -265,8 +265,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.MatchExcept PickExcept() => IsExcept
-            ? Except!
+        public global::Qdrant.MatchExcept PickExcept() => Except is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Except' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -503,33 +503,33 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsValue && value != null)
+            if (Value is { } __value0 && value != null)
             {
-                return value(Value!);
+                return value(__value0);
             }
-            else if (IsText && text != null)
+            else if (Text is { } __value1 && text != null)
             {
-                return text(Text!);
+                return text(__value1);
             }
-            else if (IsTextAny && textAny != null)
+            else if (TextAny is { } __value2 && textAny != null)
             {
-                return textAny(TextAny!);
+                return textAny(__value2);
             }
-            else if (IsPhrase && phrase != null)
+            else if (Phrase is { } __value3 && phrase != null)
             {
-                return phrase(Phrase!);
+                return phrase(__value3);
             }
-            else if (IsPrefix && prefix != null)
+            else if (Prefix is { } __value4 && prefix != null)
             {
-                return prefix(Prefix!);
+                return prefix(__value4);
             }
-            else if (IsAny && any != null)
+            else if (Any is { } __value5 && any != null)
             {
-                return any(Any!);
+                return any(__value5);
             }
-            else if (IsExcept && except != null)
+            else if (Except is { } __value6 && except != null)
             {
-                return except(Except!);
+                return except(__value6);
             }
 
             return default(TResult);
@@ -559,33 +559,33 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsValue)
+            if (Value is { } __value0)
             {
-                value?.Invoke(Value!);
+                value?.Invoke(__value0);
             }
-            else if (IsText)
+            else if (Text is { } __value1)
             {
-                text?.Invoke(Text!);
+                text?.Invoke(__value1);
             }
-            else if (IsTextAny)
+            else if (TextAny is { } __value2)
             {
-                textAny?.Invoke(TextAny!);
+                textAny?.Invoke(__value2);
             }
-            else if (IsPhrase)
+            else if (Phrase is { } __value3)
             {
-                phrase?.Invoke(Phrase!);
+                phrase?.Invoke(__value3);
             }
-            else if (IsPrefix)
+            else if (Prefix is { } __value4)
             {
-                prefix?.Invoke(Prefix!);
+                prefix?.Invoke(__value4);
             }
-            else if (IsAny)
+            else if (Any is { } __value5)
             {
-                any?.Invoke(Any!);
+                any?.Invoke(__value5);
             }
-            else if (IsExcept)
+            else if (Except is { } __value6)
             {
-                except?.Invoke(Except!);
+                except?.Invoke(__value6);
             }
         }
 
@@ -607,33 +607,33 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsValue)
+            if (Value is { } __value0)
             {
-                value?.Invoke(Value!);
+                value?.Invoke(__value0);
             }
-            else if (IsText)
+            else if (Text is { } __value1)
             {
-                text?.Invoke(Text!);
+                text?.Invoke(__value1);
             }
-            else if (IsTextAny)
+            else if (TextAny is { } __value2)
             {
-                textAny?.Invoke(TextAny!);
+                textAny?.Invoke(__value2);
             }
-            else if (IsPhrase)
+            else if (Phrase is { } __value3)
             {
-                phrase?.Invoke(Phrase!);
+                phrase?.Invoke(__value3);
             }
-            else if (IsPrefix)
+            else if (Prefix is { } __value4)
             {
-                prefix?.Invoke(Prefix!);
+                prefix?.Invoke(__value4);
             }
-            else if (IsAny)
+            else if (Any is { } __value5)
             {
-                any?.Invoke(Any!);
+                any?.Invoke(__value5);
             }
-            else if (IsExcept)
+            else if (Except is { } __value6)
             {
-                except?.Invoke(Except!);
+                except?.Invoke(__value6);
             }
         }
 

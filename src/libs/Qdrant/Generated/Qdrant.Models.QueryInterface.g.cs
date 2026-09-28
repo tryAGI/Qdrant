@@ -42,8 +42,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.VectorInput PickVectorInput() => IsVectorInput
-            ? VectorInput!.Value
+        public global::Qdrant.VectorInput PickVectorInput() => VectorInput is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'VectorInput' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.Query PickQuery() => IsQuery
-            ? Query!.Value
+        public global::Qdrant.Query PickQuery() => Query is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Query' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsVectorInput && vectorInput != null)
+            if (VectorInput is { } __value0 && vectorInput != null)
             {
-                return vectorInput(VectorInput!);
+                return vectorInput(__value0);
             }
-            else if (IsQuery && query != null)
+            else if (Query is { } __value1 && query != null)
             {
-                return query(Query!);
+                return query(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsVectorInput)
+            if (VectorInput is { } __value0)
             {
-                vectorInput?.Invoke(VectorInput!);
+                vectorInput?.Invoke(__value0);
             }
-            else if (IsQuery)
+            else if (Query is { } __value1)
             {
-                query?.Invoke(Query!);
+                query?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsVectorInput)
+            if (VectorInput is { } __value0)
             {
-                vectorInput?.Invoke(VectorInput!);
+                vectorInput?.Invoke(__value0);
             }
-            else if (IsQuery)
+            else if (Query is { } __value1)
             {
-                query?.Invoke(Query!);
+                query?.Invoke(__value1);
             }
         }
 

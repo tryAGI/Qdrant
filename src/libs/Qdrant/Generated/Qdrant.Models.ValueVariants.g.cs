@@ -42,8 +42,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public string PickValueVariantsVariant1() => IsValueVariantsVariant1
-            ? ValueVariantsVariant1!
+        public string PickValueVariantsVariant1() => ValueVariantsVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ValueVariantsVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public long PickValueVariantsVariant2() => IsValueVariantsVariant2
-            ? ValueVariantsVariant2!.Value
+        public long PickValueVariantsVariant2() => ValueVariantsVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ValueVariantsVariant2' but the value was {ToString()}.");
 
         /// <summary>
@@ -116,8 +116,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public bool PickValueVariantsVariant3() => IsValueVariantsVariant3
-            ? ValueVariantsVariant3!.Value
+        public bool PickValueVariantsVariant3() => ValueVariantsVariant3 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ValueVariantsVariant3' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -242,17 +242,17 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsValueVariantsVariant1 && valueVariantsVariant1 != null)
+            if (ValueVariantsVariant1 is { } __value0 && valueVariantsVariant1 != null)
             {
-                return valueVariantsVariant1(ValueVariantsVariant1!);
+                return valueVariantsVariant1(__value0);
             }
-            else if (IsValueVariantsVariant2 && valueVariantsVariant2 != null)
+            else if (ValueVariantsVariant2 is { } __value1 && valueVariantsVariant2 != null)
             {
-                return valueVariantsVariant2(ValueVariantsVariant2!);
+                return valueVariantsVariant2(__value1);
             }
-            else if (IsValueVariantsVariant3 && valueVariantsVariant3 != null)
+            else if (ValueVariantsVariant3 is { } __value2 && valueVariantsVariant3 != null)
             {
-                return valueVariantsVariant3(ValueVariantsVariant3!);
+                return valueVariantsVariant3(__value2);
             }
 
             return default(TResult);
@@ -274,17 +274,17 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsValueVariantsVariant1)
+            if (ValueVariantsVariant1 is { } __value0)
             {
-                valueVariantsVariant1?.Invoke(ValueVariantsVariant1!);
+                valueVariantsVariant1?.Invoke(__value0);
             }
-            else if (IsValueVariantsVariant2)
+            else if (ValueVariantsVariant2 is { } __value1)
             {
-                valueVariantsVariant2?.Invoke(ValueVariantsVariant2!);
+                valueVariantsVariant2?.Invoke(__value1);
             }
-            else if (IsValueVariantsVariant3)
+            else if (ValueVariantsVariant3 is { } __value2)
             {
-                valueVariantsVariant3?.Invoke(ValueVariantsVariant3!);
+                valueVariantsVariant3?.Invoke(__value2);
             }
         }
 
@@ -302,17 +302,17 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsValueVariantsVariant1)
+            if (ValueVariantsVariant1 is { } __value0)
             {
-                valueVariantsVariant1?.Invoke(ValueVariantsVariant1!);
+                valueVariantsVariant1?.Invoke(__value0);
             }
-            else if (IsValueVariantsVariant2)
+            else if (ValueVariantsVariant2 is { } __value1)
             {
-                valueVariantsVariant2?.Invoke(ValueVariantsVariant2!);
+                valueVariantsVariant2?.Invoke(__value1);
             }
-            else if (IsValueVariantsVariant3)
+            else if (ValueVariantsVariant3 is { } __value2)
             {
-                valueVariantsVariant3?.Invoke(ValueVariantsVariant3!);
+                valueVariantsVariant3?.Invoke(__value2);
             }
         }
 

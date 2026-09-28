@@ -42,8 +42,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.ScalarQuantization PickScalar() => IsScalar
-            ? Scalar!
+        public global::Qdrant.ScalarQuantization PickScalar() => Scalar is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Scalar' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.ProductQuantization PickProduct() => IsProduct
-            ? Product!
+        public global::Qdrant.ProductQuantization PickProduct() => Product is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Product' but the value was {ToString()}.");
 
         /// <summary>
@@ -116,8 +116,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.BinaryQuantization PickBinary() => IsBinary
-            ? Binary!
+        public global::Qdrant.BinaryQuantization PickBinary() => Binary is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Binary' but the value was {ToString()}.");
 
         /// <summary>
@@ -153,8 +153,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.TurboQuantization PickTurbo() => IsTurbo
-            ? Turbo!
+        public global::Qdrant.TurboQuantization PickTurbo() => Turbo is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Turbo' but the value was {ToString()}.");
 
         /// <summary>
@@ -190,8 +190,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.DisabledType PickDisabledType() => IsDisabledType
-            ? DisabledType!.Value
+        public global::Qdrant.DisabledType PickDisabledType() => DisabledType is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'DisabledType' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -372,25 +372,25 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsScalar && scalar != null)
+            if (Scalar is { } __value0 && scalar != null)
             {
-                return scalar(Scalar!);
+                return scalar(__value0);
             }
-            else if (IsProduct && product != null)
+            else if (Product is { } __value1 && product != null)
             {
-                return product(Product!);
+                return product(__value1);
             }
-            else if (IsBinary && binary != null)
+            else if (Binary is { } __value2 && binary != null)
             {
-                return binary(Binary!);
+                return binary(__value2);
             }
-            else if (IsTurbo && turbo != null)
+            else if (Turbo is { } __value3 && turbo != null)
             {
-                return turbo(Turbo!);
+                return turbo(__value3);
             }
-            else if (IsDisabledType && disabledType != null)
+            else if (DisabledType is { } __value4 && disabledType != null)
             {
-                return disabledType(DisabledType!);
+                return disabledType(__value4);
             }
 
             return default(TResult);
@@ -416,25 +416,25 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsScalar)
+            if (Scalar is { } __value0)
             {
-                scalar?.Invoke(Scalar!);
+                scalar?.Invoke(__value0);
             }
-            else if (IsProduct)
+            else if (Product is { } __value1)
             {
-                product?.Invoke(Product!);
+                product?.Invoke(__value1);
             }
-            else if (IsBinary)
+            else if (Binary is { } __value2)
             {
-                binary?.Invoke(Binary!);
+                binary?.Invoke(__value2);
             }
-            else if (IsTurbo)
+            else if (Turbo is { } __value3)
             {
-                turbo?.Invoke(Turbo!);
+                turbo?.Invoke(__value3);
             }
-            else if (IsDisabledType)
+            else if (DisabledType is { } __value4)
             {
-                disabledType?.Invoke(DisabledType!);
+                disabledType?.Invoke(__value4);
             }
         }
 
@@ -454,25 +454,25 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsScalar)
+            if (Scalar is { } __value0)
             {
-                scalar?.Invoke(Scalar!);
+                scalar?.Invoke(__value0);
             }
-            else if (IsProduct)
+            else if (Product is { } __value1)
             {
-                product?.Invoke(Product!);
+                product?.Invoke(__value1);
             }
-            else if (IsBinary)
+            else if (Binary is { } __value2)
             {
-                binary?.Invoke(Binary!);
+                binary?.Invoke(__value2);
             }
-            else if (IsTurbo)
+            else if (Turbo is { } __value3)
             {
-                turbo?.Invoke(Turbo!);
+                turbo?.Invoke(__value3);
             }
-            else if (IsDisabledType)
+            else if (DisabledType is { } __value4)
             {
-                disabledType?.Invoke(DisabledType!);
+                disabledType?.Invoke(__value4);
             }
         }
 
