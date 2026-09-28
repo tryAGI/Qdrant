@@ -42,8 +42,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public bool PickWithPayloadInterfaceVariant1() => IsWithPayloadInterfaceVariant1
-            ? WithPayloadInterfaceVariant1!.Value
+        public bool PickWithPayloadInterfaceVariant1() => WithPayloadInterfaceVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'WithPayloadInterfaceVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<string> PickWithPayloadInterfaceVariant2() => IsWithPayloadInterfaceVariant2
-            ? WithPayloadInterfaceVariant2!
+        public global::System.Collections.Generic.IList<string> PickWithPayloadInterfaceVariant2() => WithPayloadInterfaceVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'WithPayloadInterfaceVariant2' but the value was {ToString()}.");
 
         /// <summary>
@@ -116,8 +116,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.PayloadSelector PickSelector() => IsSelector
-            ? Selector!.Value
+        public global::Qdrant.PayloadSelector PickSelector() => Selector is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Selector' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -219,17 +219,17 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsWithPayloadInterfaceVariant1 && withPayloadInterfaceVariant1 != null)
+            if (WithPayloadInterfaceVariant1 is { } __value0 && withPayloadInterfaceVariant1 != null)
             {
-                return withPayloadInterfaceVariant1(WithPayloadInterfaceVariant1!);
+                return withPayloadInterfaceVariant1(__value0);
             }
-            else if (IsWithPayloadInterfaceVariant2 && withPayloadInterfaceVariant2 != null)
+            else if (WithPayloadInterfaceVariant2 is { } __value1 && withPayloadInterfaceVariant2 != null)
             {
-                return withPayloadInterfaceVariant2(WithPayloadInterfaceVariant2!);
+                return withPayloadInterfaceVariant2(__value1);
             }
-            else if (IsSelector && selector != null)
+            else if (Selector is { } __value2 && selector != null)
             {
-                return selector(Selector!);
+                return selector(__value2);
             }
 
             return default(TResult);
@@ -251,17 +251,17 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsWithPayloadInterfaceVariant1)
+            if (WithPayloadInterfaceVariant1 is { } __value0)
             {
-                withPayloadInterfaceVariant1?.Invoke(WithPayloadInterfaceVariant1!);
+                withPayloadInterfaceVariant1?.Invoke(__value0);
             }
-            else if (IsWithPayloadInterfaceVariant2)
+            else if (WithPayloadInterfaceVariant2 is { } __value1)
             {
-                withPayloadInterfaceVariant2?.Invoke(WithPayloadInterfaceVariant2!);
+                withPayloadInterfaceVariant2?.Invoke(__value1);
             }
-            else if (IsSelector)
+            else if (Selector is { } __value2)
             {
-                selector?.Invoke(Selector!);
+                selector?.Invoke(__value2);
             }
         }
 
@@ -279,17 +279,17 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsWithPayloadInterfaceVariant1)
+            if (WithPayloadInterfaceVariant1 is { } __value0)
             {
-                withPayloadInterfaceVariant1?.Invoke(WithPayloadInterfaceVariant1!);
+                withPayloadInterfaceVariant1?.Invoke(__value0);
             }
-            else if (IsWithPayloadInterfaceVariant2)
+            else if (WithPayloadInterfaceVariant2 is { } __value1)
             {
-                withPayloadInterfaceVariant2?.Invoke(WithPayloadInterfaceVariant2!);
+                withPayloadInterfaceVariant2?.Invoke(__value1);
             }
-            else if (IsSelector)
+            else if (Selector is { } __value2)
             {
-                selector?.Invoke(Selector!);
+                selector?.Invoke(__value2);
             }
         }
 

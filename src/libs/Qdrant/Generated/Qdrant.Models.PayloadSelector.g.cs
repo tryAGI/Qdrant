@@ -42,8 +42,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.PayloadSelectorInclude PickInclude() => IsInclude
-            ? Include!
+        public global::Qdrant.PayloadSelectorInclude PickInclude() => Include is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Include' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.PayloadSelectorExclude PickExclude() => IsExclude
-            ? Exclude!
+        public global::Qdrant.PayloadSelectorExclude PickExclude() => Exclude is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Exclude' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsInclude && include != null)
+            if (Include is { } __value0 && include != null)
             {
-                return include(Include!);
+                return include(__value0);
             }
-            else if (IsExclude && exclude != null)
+            else if (Exclude is { } __value1 && exclude != null)
             {
-                return exclude(Exclude!);
+                return exclude(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsInclude)
+            if (Include is { } __value0)
             {
-                include?.Invoke(Include!);
+                include?.Invoke(__value0);
             }
-            else if (IsExclude)
+            else if (Exclude is { } __value1)
             {
-                exclude?.Invoke(Exclude!);
+                exclude?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsInclude)
+            if (Include is { } __value0)
             {
-                include?.Invoke(Include!);
+                include?.Invoke(__value0);
             }
-            else if (IsExclude)
+            else if (Exclude is { } __value1)
             {
-                exclude?.Invoke(Exclude!);
+                exclude?.Invoke(__value1);
             }
         }
 

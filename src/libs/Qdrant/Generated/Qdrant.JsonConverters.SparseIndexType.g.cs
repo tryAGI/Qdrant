@@ -198,19 +198,19 @@ namespace Qdrant.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.SparseIndexTypeVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.SparseIndexTypeVariant1> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.SparseIndexTypeVariant1).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SparseIndexTypeVariant1!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSparseIndexTypeVariant1(), typeInfo);
             }
             else if (value.IsSparseIndexTypeVariant2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.SparseIndexTypeVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.SparseIndexTypeVariant2> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.SparseIndexTypeVariant2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SparseIndexTypeVariant2!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSparseIndexTypeVariant2(), typeInfo);
             }
             else if (value.IsSparseIndexTypeVariant3)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.SparseIndexTypeVariant3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.SparseIndexTypeVariant3> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.SparseIndexTypeVariant3).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SparseIndexTypeVariant3!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSparseIndexTypeVariant3(), typeInfo);
             }
         }
     }

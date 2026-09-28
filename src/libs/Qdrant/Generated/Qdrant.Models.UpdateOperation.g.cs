@@ -42,8 +42,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.UpsertOperation PickUpsert() => IsUpsert
-            ? Upsert!
+        public global::Qdrant.UpsertOperation PickUpsert() => Upsert is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Upsert' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.DeleteOperation PickDelete() => IsDelete
-            ? Delete!
+        public global::Qdrant.DeleteOperation PickDelete() => Delete is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Delete' but the value was {ToString()}.");
 
         /// <summary>
@@ -116,8 +116,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.SetPayloadOperation PickSetPayload() => IsSetPayload
-            ? SetPayload!
+        public global::Qdrant.SetPayloadOperation PickSetPayload() => SetPayload is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SetPayload' but the value was {ToString()}.");
 
         /// <summary>
@@ -153,8 +153,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.OverwritePayloadOperation PickOverwritePayload() => IsOverwritePayload
-            ? OverwritePayload!
+        public global::Qdrant.OverwritePayloadOperation PickOverwritePayload() => OverwritePayload is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OverwritePayload' but the value was {ToString()}.");
 
         /// <summary>
@@ -190,8 +190,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.DeletePayloadOperation PickDeletePayload() => IsDeletePayload
-            ? DeletePayload!
+        public global::Qdrant.DeletePayloadOperation PickDeletePayload() => DeletePayload is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'DeletePayload' but the value was {ToString()}.");
 
         /// <summary>
@@ -227,8 +227,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.ClearPayloadOperation PickClearPayload() => IsClearPayload
-            ? ClearPayload!
+        public global::Qdrant.ClearPayloadOperation PickClearPayload() => ClearPayload is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ClearPayload' but the value was {ToString()}.");
 
         /// <summary>
@@ -264,8 +264,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.UpdateVectorsOperation PickVectors() => IsVectors
-            ? Vectors!
+        public global::Qdrant.UpdateVectorsOperation PickVectors() => Vectors is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Vectors' but the value was {ToString()}.");
 
         /// <summary>
@@ -301,8 +301,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.DeleteVectorsOperation PickDeleteVectors() => IsDeleteVectors
-            ? DeleteVectors!
+        public global::Qdrant.DeleteVectorsOperation PickDeleteVectors() => DeleteVectors is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'DeleteVectors' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -567,37 +567,37 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsUpsert && upsert != null)
+            if (Upsert is { } __value0 && upsert != null)
             {
-                return upsert(Upsert!);
+                return upsert(__value0);
             }
-            else if (IsDelete && delete != null)
+            else if (Delete is { } __value1 && delete != null)
             {
-                return delete(Delete!);
+                return delete(__value1);
             }
-            else if (IsSetPayload && setPayload != null)
+            else if (SetPayload is { } __value2 && setPayload != null)
             {
-                return setPayload(SetPayload!);
+                return setPayload(__value2);
             }
-            else if (IsOverwritePayload && overwritePayload != null)
+            else if (OverwritePayload is { } __value3 && overwritePayload != null)
             {
-                return overwritePayload(OverwritePayload!);
+                return overwritePayload(__value3);
             }
-            else if (IsDeletePayload && deletePayload != null)
+            else if (DeletePayload is { } __value4 && deletePayload != null)
             {
-                return deletePayload(DeletePayload!);
+                return deletePayload(__value4);
             }
-            else if (IsClearPayload && clearPayload != null)
+            else if (ClearPayload is { } __value5 && clearPayload != null)
             {
-                return clearPayload(ClearPayload!);
+                return clearPayload(__value5);
             }
-            else if (IsVectors && vectors != null)
+            else if (Vectors is { } __value6 && vectors != null)
             {
-                return vectors(Vectors!);
+                return vectors(__value6);
             }
-            else if (IsDeleteVectors && deleteVectors != null)
+            else if (DeleteVectors is { } __value7 && deleteVectors != null)
             {
-                return deleteVectors(DeleteVectors!);
+                return deleteVectors(__value7);
             }
 
             return default(TResult);
@@ -629,37 +629,37 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsUpsert)
+            if (Upsert is { } __value0)
             {
-                upsert?.Invoke(Upsert!);
+                upsert?.Invoke(__value0);
             }
-            else if (IsDelete)
+            else if (Delete is { } __value1)
             {
-                delete?.Invoke(Delete!);
+                delete?.Invoke(__value1);
             }
-            else if (IsSetPayload)
+            else if (SetPayload is { } __value2)
             {
-                setPayload?.Invoke(SetPayload!);
+                setPayload?.Invoke(__value2);
             }
-            else if (IsOverwritePayload)
+            else if (OverwritePayload is { } __value3)
             {
-                overwritePayload?.Invoke(OverwritePayload!);
+                overwritePayload?.Invoke(__value3);
             }
-            else if (IsDeletePayload)
+            else if (DeletePayload is { } __value4)
             {
-                deletePayload?.Invoke(DeletePayload!);
+                deletePayload?.Invoke(__value4);
             }
-            else if (IsClearPayload)
+            else if (ClearPayload is { } __value5)
             {
-                clearPayload?.Invoke(ClearPayload!);
+                clearPayload?.Invoke(__value5);
             }
-            else if (IsVectors)
+            else if (Vectors is { } __value6)
             {
-                vectors?.Invoke(Vectors!);
+                vectors?.Invoke(__value6);
             }
-            else if (IsDeleteVectors)
+            else if (DeleteVectors is { } __value7)
             {
-                deleteVectors?.Invoke(DeleteVectors!);
+                deleteVectors?.Invoke(__value7);
             }
         }
 
@@ -682,37 +682,37 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsUpsert)
+            if (Upsert is { } __value0)
             {
-                upsert?.Invoke(Upsert!);
+                upsert?.Invoke(__value0);
             }
-            else if (IsDelete)
+            else if (Delete is { } __value1)
             {
-                delete?.Invoke(Delete!);
+                delete?.Invoke(__value1);
             }
-            else if (IsSetPayload)
+            else if (SetPayload is { } __value2)
             {
-                setPayload?.Invoke(SetPayload!);
+                setPayload?.Invoke(__value2);
             }
-            else if (IsOverwritePayload)
+            else if (OverwritePayload is { } __value3)
             {
-                overwritePayload?.Invoke(OverwritePayload!);
+                overwritePayload?.Invoke(__value3);
             }
-            else if (IsDeletePayload)
+            else if (DeletePayload is { } __value4)
             {
-                deletePayload?.Invoke(DeletePayload!);
+                deletePayload?.Invoke(__value4);
             }
-            else if (IsClearPayload)
+            else if (ClearPayload is { } __value5)
             {
-                clearPayload?.Invoke(ClearPayload!);
+                clearPayload?.Invoke(__value5);
             }
-            else if (IsVectors)
+            else if (Vectors is { } __value6)
             {
-                vectors?.Invoke(Vectors!);
+                vectors?.Invoke(__value6);
             }
-            else if (IsDeleteVectors)
+            else if (DeleteVectors is { } __value7)
             {
-                deleteVectors?.Invoke(DeleteVectors!);
+                deleteVectors?.Invoke(__value7);
             }
         }
 

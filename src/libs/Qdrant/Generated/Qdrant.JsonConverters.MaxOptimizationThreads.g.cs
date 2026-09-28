@@ -149,13 +149,13 @@ namespace Qdrant.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.MaxOptimizationThreadsSetting), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.MaxOptimizationThreadsSetting> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.MaxOptimizationThreadsSetting).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Setting!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSetting(), typeInfo);
             }
             else if (value.IsMaxOptimizationThreadsVariant2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(int), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<int> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(int).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MaxOptimizationThreadsVariant2!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickMaxOptimizationThreadsVariant2(), typeInfo);
             }
         }
     }

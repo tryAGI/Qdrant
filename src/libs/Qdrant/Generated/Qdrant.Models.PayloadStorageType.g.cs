@@ -42,8 +42,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.PayloadStorageTypeVariant1 PickPayloadStorageTypeVariant1() => IsPayloadStorageTypeVariant1
-            ? PayloadStorageTypeVariant1!
+        public global::Qdrant.PayloadStorageTypeVariant1 PickPayloadStorageTypeVariant1() => PayloadStorageTypeVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'PayloadStorageTypeVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.PayloadStorageTypeVariant2 PickPayloadStorageTypeVariant2() => IsPayloadStorageTypeVariant2
-            ? PayloadStorageTypeVariant2!
+        public global::Qdrant.PayloadStorageTypeVariant2 PickPayloadStorageTypeVariant2() => PayloadStorageTypeVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'PayloadStorageTypeVariant2' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsPayloadStorageTypeVariant1 && payloadStorageTypeVariant1 != null)
+            if (PayloadStorageTypeVariant1 is { } __value0 && payloadStorageTypeVariant1 != null)
             {
-                return payloadStorageTypeVariant1(PayloadStorageTypeVariant1!);
+                return payloadStorageTypeVariant1(__value0);
             }
-            else if (IsPayloadStorageTypeVariant2 && payloadStorageTypeVariant2 != null)
+            else if (PayloadStorageTypeVariant2 is { } __value1 && payloadStorageTypeVariant2 != null)
             {
-                return payloadStorageTypeVariant2(PayloadStorageTypeVariant2!);
+                return payloadStorageTypeVariant2(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsPayloadStorageTypeVariant1)
+            if (PayloadStorageTypeVariant1 is { } __value0)
             {
-                payloadStorageTypeVariant1?.Invoke(PayloadStorageTypeVariant1!);
+                payloadStorageTypeVariant1?.Invoke(__value0);
             }
-            else if (IsPayloadStorageTypeVariant2)
+            else if (PayloadStorageTypeVariant2 is { } __value1)
             {
-                payloadStorageTypeVariant2?.Invoke(PayloadStorageTypeVariant2!);
+                payloadStorageTypeVariant2?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsPayloadStorageTypeVariant1)
+            if (PayloadStorageTypeVariant1 is { } __value0)
             {
-                payloadStorageTypeVariant1?.Invoke(PayloadStorageTypeVariant1!);
+                payloadStorageTypeVariant1?.Invoke(__value0);
             }
-            else if (IsPayloadStorageTypeVariant2)
+            else if (PayloadStorageTypeVariant2 is { } __value1)
             {
-                payloadStorageTypeVariant2?.Invoke(PayloadStorageTypeVariant2!);
+                payloadStorageTypeVariant2?.Invoke(__value1);
             }
         }
 

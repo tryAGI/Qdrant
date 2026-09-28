@@ -42,8 +42,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.PointIdsList PickPointIdsList() => IsPointIdsList
-            ? PointIdsList!
+        public global::Qdrant.PointIdsList PickPointIdsList() => PointIdsList is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'PointIdsList' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.FilterSelector PickFilter() => IsFilter
-            ? Filter!
+        public global::Qdrant.FilterSelector PickFilter() => Filter is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Filter' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsPointIdsList && pointIdsList != null)
+            if (PointIdsList is { } __value0 && pointIdsList != null)
             {
-                return pointIdsList(PointIdsList!);
+                return pointIdsList(__value0);
             }
-            else if (IsFilter && filter != null)
+            else if (Filter is { } __value1 && filter != null)
             {
-                return filter(Filter!);
+                return filter(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsPointIdsList)
+            if (PointIdsList is { } __value0)
             {
-                pointIdsList?.Invoke(PointIdsList!);
+                pointIdsList?.Invoke(__value0);
             }
-            else if (IsFilter)
+            else if (Filter is { } __value1)
             {
-                filter?.Invoke(Filter!);
+                filter?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsPointIdsList)
+            if (PointIdsList is { } __value0)
             {
-                pointIdsList?.Invoke(PointIdsList!);
+                pointIdsList?.Invoke(__value0);
             }
-            else if (IsFilter)
+            else if (Filter is { } __value1)
             {
-                filter?.Invoke(Filter!);
+                filter?.Invoke(__value1);
             }
         }
 

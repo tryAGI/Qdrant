@@ -42,8 +42,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<float> PickVectorOutputVariant1() => IsVectorOutputVariant1
-            ? VectorOutputVariant1!
+        public global::System.Collections.Generic.IList<float> PickVectorOutputVariant1() => VectorOutputVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'VectorOutputVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.SparseVector PickSparse() => IsSparse
-            ? Sparse!
+        public global::Qdrant.SparseVector PickSparse() => Sparse is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Sparse' but the value was {ToString()}.");
 
         /// <summary>
@@ -116,8 +116,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>> PickVectorOutputVariant3() => IsVectorOutputVariant3
-            ? VectorOutputVariant3!
+        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>> PickVectorOutputVariant3() => VectorOutputVariant3 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'VectorOutputVariant3' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -196,17 +196,17 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsVectorOutputVariant1 && vectorOutputVariant1 != null)
+            if (VectorOutputVariant1 is { } __value0 && vectorOutputVariant1 != null)
             {
-                return vectorOutputVariant1(VectorOutputVariant1!);
+                return vectorOutputVariant1(__value0);
             }
-            else if (IsSparse && sparse != null)
+            else if (Sparse is { } __value1 && sparse != null)
             {
-                return sparse(Sparse!);
+                return sparse(__value1);
             }
-            else if (IsVectorOutputVariant3 && vectorOutputVariant3 != null)
+            else if (VectorOutputVariant3 is { } __value2 && vectorOutputVariant3 != null)
             {
-                return vectorOutputVariant3(VectorOutputVariant3!);
+                return vectorOutputVariant3(__value2);
             }
 
             return default(TResult);
@@ -228,17 +228,17 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsVectorOutputVariant1)
+            if (VectorOutputVariant1 is { } __value0)
             {
-                vectorOutputVariant1?.Invoke(VectorOutputVariant1!);
+                vectorOutputVariant1?.Invoke(__value0);
             }
-            else if (IsSparse)
+            else if (Sparse is { } __value1)
             {
-                sparse?.Invoke(Sparse!);
+                sparse?.Invoke(__value1);
             }
-            else if (IsVectorOutputVariant3)
+            else if (VectorOutputVariant3 is { } __value2)
             {
-                vectorOutputVariant3?.Invoke(VectorOutputVariant3!);
+                vectorOutputVariant3?.Invoke(__value2);
             }
         }
 
@@ -256,17 +256,17 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsVectorOutputVariant1)
+            if (VectorOutputVariant1 is { } __value0)
             {
-                vectorOutputVariant1?.Invoke(VectorOutputVariant1!);
+                vectorOutputVariant1?.Invoke(__value0);
             }
-            else if (IsSparse)
+            else if (Sparse is { } __value1)
             {
-                sparse?.Invoke(Sparse!);
+                sparse?.Invoke(__value1);
             }
-            else if (IsVectorOutputVariant3)
+            else if (VectorOutputVariant3 is { } __value2)
             {
-                vectorOutputVariant3?.Invoke(VectorOutputVariant3!);
+                vectorOutputVariant3?.Invoke(__value2);
             }
         }
 

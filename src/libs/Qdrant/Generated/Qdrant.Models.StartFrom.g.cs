@@ -42,8 +42,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public long PickStartFromVariant1() => IsStartFromVariant1
-            ? StartFromVariant1!.Value
+        public long PickStartFromVariant1() => StartFromVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'StartFromVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public double PickStartFromVariant2() => IsStartFromVariant2
-            ? StartFromVariant2!.Value
+        public double PickStartFromVariant2() => StartFromVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'StartFromVariant2' but the value was {ToString()}.");
 
         /// <summary>
@@ -116,8 +116,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::System.DateTime PickDateTime() => IsDateTime
-            ? DateTime!.Value
+        public global::System.DateTime PickDateTime() => DateTime is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'DateTime' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -242,17 +242,17 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsStartFromVariant1 && startFromVariant1 != null)
+            if (StartFromVariant1 is { } __value0 && startFromVariant1 != null)
             {
-                return startFromVariant1(StartFromVariant1!);
+                return startFromVariant1(__value0);
             }
-            else if (IsStartFromVariant2 && startFromVariant2 != null)
+            else if (StartFromVariant2 is { } __value1 && startFromVariant2 != null)
             {
-                return startFromVariant2(StartFromVariant2!);
+                return startFromVariant2(__value1);
             }
-            else if (IsDateTime && dateTime != null)
+            else if (DateTime is { } __value2 && dateTime != null)
             {
-                return dateTime(DateTime!);
+                return dateTime(__value2);
             }
 
             return default(TResult);
@@ -274,17 +274,17 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsStartFromVariant1)
+            if (StartFromVariant1 is { } __value0)
             {
-                startFromVariant1?.Invoke(StartFromVariant1!);
+                startFromVariant1?.Invoke(__value0);
             }
-            else if (IsStartFromVariant2)
+            else if (StartFromVariant2 is { } __value1)
             {
-                startFromVariant2?.Invoke(StartFromVariant2!);
+                startFromVariant2?.Invoke(__value1);
             }
-            else if (IsDateTime)
+            else if (DateTime is { } __value2)
             {
-                dateTime?.Invoke(DateTime!);
+                dateTime?.Invoke(__value2);
             }
         }
 
@@ -302,17 +302,17 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsStartFromVariant1)
+            if (StartFromVariant1 is { } __value0)
             {
-                startFromVariant1?.Invoke(StartFromVariant1!);
+                startFromVariant1?.Invoke(__value0);
             }
-            else if (IsStartFromVariant2)
+            else if (StartFromVariant2 is { } __value1)
             {
-                startFromVariant2?.Invoke(StartFromVariant2!);
+                startFromVariant2?.Invoke(__value1);
             }
-            else if (IsDateTime)
+            else if (DateTime is { } __value2)
             {
-                dateTime?.Invoke(DateTime!);
+                dateTime?.Invoke(__value2);
             }
         }
 

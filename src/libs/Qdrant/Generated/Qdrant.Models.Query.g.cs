@@ -42,8 +42,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.NearestQuery PickNearest() => IsNearest
-            ? Nearest!
+        public global::Qdrant.NearestQuery PickNearest() => Nearest is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Nearest' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.RecommendQuery PickRecommend() => IsRecommend
-            ? Recommend!
+        public global::Qdrant.RecommendQuery PickRecommend() => Recommend is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Recommend' but the value was {ToString()}.");
 
         /// <summary>
@@ -116,8 +116,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.DiscoverQuery PickDiscover() => IsDiscover
-            ? Discover!
+        public global::Qdrant.DiscoverQuery PickDiscover() => Discover is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Discover' but the value was {ToString()}.");
 
         /// <summary>
@@ -153,8 +153,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.ContextQuery PickContext() => IsContext
-            ? Context!
+        public global::Qdrant.ContextQuery PickContext() => Context is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Context' but the value was {ToString()}.");
 
         /// <summary>
@@ -190,8 +190,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.OrderByQuery PickOrderBy() => IsOrderBy
-            ? OrderBy!
+        public global::Qdrant.OrderByQuery PickOrderBy() => OrderBy is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OrderBy' but the value was {ToString()}.");
 
         /// <summary>
@@ -227,8 +227,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.FusionQuery PickFusion() => IsFusion
-            ? Fusion!
+        public global::Qdrant.FusionQuery PickFusion() => Fusion is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Fusion' but the value was {ToString()}.");
 
         /// <summary>
@@ -264,8 +264,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.RrfQuery PickRrf() => IsRrf
-            ? Rrf!
+        public global::Qdrant.RrfQuery PickRrf() => Rrf is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Rrf' but the value was {ToString()}.");
 
         /// <summary>
@@ -301,8 +301,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.FormulaQuery PickFormula() => IsFormula
-            ? Formula!
+        public global::Qdrant.FormulaQuery PickFormula() => Formula is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Formula' but the value was {ToString()}.");
 
         /// <summary>
@@ -338,8 +338,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.SampleQuery PickSample() => IsSample
-            ? Sample!
+        public global::Qdrant.SampleQuery PickSample() => Sample is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Sample' but the value was {ToString()}.");
 
         /// <summary>
@@ -375,8 +375,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.RelevanceFeedbackQuery PickRelevanceFeedback() => IsRelevanceFeedback
-            ? RelevanceFeedback!
+        public global::Qdrant.RelevanceFeedbackQuery PickRelevanceFeedback() => RelevanceFeedback is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RelevanceFeedback' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -697,45 +697,45 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsNearest && nearest != null)
+            if (Nearest is { } __value0 && nearest != null)
             {
-                return nearest(Nearest!);
+                return nearest(__value0);
             }
-            else if (IsRecommend && recommend != null)
+            else if (Recommend is { } __value1 && recommend != null)
             {
-                return recommend(Recommend!);
+                return recommend(__value1);
             }
-            else if (IsDiscover && discover != null)
+            else if (Discover is { } __value2 && discover != null)
             {
-                return discover(Discover!);
+                return discover(__value2);
             }
-            else if (IsContext && context != null)
+            else if (Context is { } __value3 && context != null)
             {
-                return context(Context!);
+                return context(__value3);
             }
-            else if (IsOrderBy && orderBy != null)
+            else if (OrderBy is { } __value4 && orderBy != null)
             {
-                return orderBy(OrderBy!);
+                return orderBy(__value4);
             }
-            else if (IsFusion && fusion != null)
+            else if (Fusion is { } __value5 && fusion != null)
             {
-                return fusion(Fusion!);
+                return fusion(__value5);
             }
-            else if (IsRrf && rrf != null)
+            else if (Rrf is { } __value6 && rrf != null)
             {
-                return rrf(Rrf!);
+                return rrf(__value6);
             }
-            else if (IsFormula && formula != null)
+            else if (Formula is { } __value7 && formula != null)
             {
-                return formula(Formula!);
+                return formula(__value7);
             }
-            else if (IsSample && sample != null)
+            else if (Sample is { } __value8 && sample != null)
             {
-                return sample(Sample!);
+                return sample(__value8);
             }
-            else if (IsRelevanceFeedback && relevanceFeedback != null)
+            else if (RelevanceFeedback is { } __value9 && relevanceFeedback != null)
             {
-                return relevanceFeedback(RelevanceFeedback!);
+                return relevanceFeedback(__value9);
             }
 
             return default(TResult);
@@ -771,45 +771,45 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsNearest)
+            if (Nearest is { } __value0)
             {
-                nearest?.Invoke(Nearest!);
+                nearest?.Invoke(__value0);
             }
-            else if (IsRecommend)
+            else if (Recommend is { } __value1)
             {
-                recommend?.Invoke(Recommend!);
+                recommend?.Invoke(__value1);
             }
-            else if (IsDiscover)
+            else if (Discover is { } __value2)
             {
-                discover?.Invoke(Discover!);
+                discover?.Invoke(__value2);
             }
-            else if (IsContext)
+            else if (Context is { } __value3)
             {
-                context?.Invoke(Context!);
+                context?.Invoke(__value3);
             }
-            else if (IsOrderBy)
+            else if (OrderBy is { } __value4)
             {
-                orderBy?.Invoke(OrderBy!);
+                orderBy?.Invoke(__value4);
             }
-            else if (IsFusion)
+            else if (Fusion is { } __value5)
             {
-                fusion?.Invoke(Fusion!);
+                fusion?.Invoke(__value5);
             }
-            else if (IsRrf)
+            else if (Rrf is { } __value6)
             {
-                rrf?.Invoke(Rrf!);
+                rrf?.Invoke(__value6);
             }
-            else if (IsFormula)
+            else if (Formula is { } __value7)
             {
-                formula?.Invoke(Formula!);
+                formula?.Invoke(__value7);
             }
-            else if (IsSample)
+            else if (Sample is { } __value8)
             {
-                sample?.Invoke(Sample!);
+                sample?.Invoke(__value8);
             }
-            else if (IsRelevanceFeedback)
+            else if (RelevanceFeedback is { } __value9)
             {
-                relevanceFeedback?.Invoke(RelevanceFeedback!);
+                relevanceFeedback?.Invoke(__value9);
             }
         }
 
@@ -834,45 +834,45 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsNearest)
+            if (Nearest is { } __value0)
             {
-                nearest?.Invoke(Nearest!);
+                nearest?.Invoke(__value0);
             }
-            else if (IsRecommend)
+            else if (Recommend is { } __value1)
             {
-                recommend?.Invoke(Recommend!);
+                recommend?.Invoke(__value1);
             }
-            else if (IsDiscover)
+            else if (Discover is { } __value2)
             {
-                discover?.Invoke(Discover!);
+                discover?.Invoke(__value2);
             }
-            else if (IsContext)
+            else if (Context is { } __value3)
             {
-                context?.Invoke(Context!);
+                context?.Invoke(__value3);
             }
-            else if (IsOrderBy)
+            else if (OrderBy is { } __value4)
             {
-                orderBy?.Invoke(OrderBy!);
+                orderBy?.Invoke(__value4);
             }
-            else if (IsFusion)
+            else if (Fusion is { } __value5)
             {
-                fusion?.Invoke(Fusion!);
+                fusion?.Invoke(__value5);
             }
-            else if (IsRrf)
+            else if (Rrf is { } __value6)
             {
-                rrf?.Invoke(Rrf!);
+                rrf?.Invoke(__value6);
             }
-            else if (IsFormula)
+            else if (Formula is { } __value7)
             {
-                formula?.Invoke(Formula!);
+                formula?.Invoke(__value7);
             }
-            else if (IsSample)
+            else if (Sample is { } __value8)
             {
-                sample?.Invoke(Sample!);
+                sample?.Invoke(__value8);
             }
-            else if (IsRelevanceFeedback)
+            else if (RelevanceFeedback is { } __value9)
             {
-                relevanceFeedback?.Invoke(RelevanceFeedback!);
+                relevanceFeedback?.Invoke(__value9);
             }
         }
 

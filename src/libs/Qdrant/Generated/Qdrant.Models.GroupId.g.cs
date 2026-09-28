@@ -42,8 +42,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public string PickGroupIdVariant1() => IsGroupIdVariant1
-            ? GroupIdVariant1!
+        public string PickGroupIdVariant1() => GroupIdVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'GroupIdVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public int PickGroupIdVariant2() => IsGroupIdVariant2
-            ? GroupIdVariant2!.Value
+        public int PickGroupIdVariant2() => GroupIdVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'GroupIdVariant2' but the value was {ToString()}.");
 
         /// <summary>
@@ -116,8 +116,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public long PickGroupIdVariant3() => IsGroupIdVariant3
-            ? GroupIdVariant3!.Value
+        public long PickGroupIdVariant3() => GroupIdVariant3 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'GroupIdVariant3' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -242,17 +242,17 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsGroupIdVariant1 && groupIdVariant1 != null)
+            if (GroupIdVariant1 is { } __value0 && groupIdVariant1 != null)
             {
-                return groupIdVariant1(GroupIdVariant1!);
+                return groupIdVariant1(__value0);
             }
-            else if (IsGroupIdVariant2 && groupIdVariant2 != null)
+            else if (GroupIdVariant2 is { } __value1 && groupIdVariant2 != null)
             {
-                return groupIdVariant2(GroupIdVariant2!);
+                return groupIdVariant2(__value1);
             }
-            else if (IsGroupIdVariant3 && groupIdVariant3 != null)
+            else if (GroupIdVariant3 is { } __value2 && groupIdVariant3 != null)
             {
-                return groupIdVariant3(GroupIdVariant3!);
+                return groupIdVariant3(__value2);
             }
 
             return default(TResult);
@@ -274,17 +274,17 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsGroupIdVariant1)
+            if (GroupIdVariant1 is { } __value0)
             {
-                groupIdVariant1?.Invoke(GroupIdVariant1!);
+                groupIdVariant1?.Invoke(__value0);
             }
-            else if (IsGroupIdVariant2)
+            else if (GroupIdVariant2 is { } __value1)
             {
-                groupIdVariant2?.Invoke(GroupIdVariant2!);
+                groupIdVariant2?.Invoke(__value1);
             }
-            else if (IsGroupIdVariant3)
+            else if (GroupIdVariant3 is { } __value2)
             {
-                groupIdVariant3?.Invoke(GroupIdVariant3!);
+                groupIdVariant3?.Invoke(__value2);
             }
         }
 
@@ -302,17 +302,17 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsGroupIdVariant1)
+            if (GroupIdVariant1 is { } __value0)
             {
-                groupIdVariant1?.Invoke(GroupIdVariant1!);
+                groupIdVariant1?.Invoke(__value0);
             }
-            else if (IsGroupIdVariant2)
+            else if (GroupIdVariant2 is { } __value1)
             {
-                groupIdVariant2?.Invoke(GroupIdVariant2!);
+                groupIdVariant2?.Invoke(__value1);
             }
-            else if (IsGroupIdVariant3)
+            else if (GroupIdVariant3 is { } __value2)
             {
-                groupIdVariant3?.Invoke(GroupIdVariant3!);
+                groupIdVariant3?.Invoke(__value2);
             }
         }
 

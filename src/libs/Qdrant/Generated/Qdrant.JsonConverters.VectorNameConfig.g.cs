@@ -141,13 +141,13 @@ namespace Qdrant.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.DenseVectorNameConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.DenseVectorNameConfig?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.DenseVectorNameConfig).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Dense!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickDense(), typeInfo);
             }
             else if (value.IsSparse)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.SparseVectorNameConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.SparseVectorNameConfig?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.SparseVectorNameConfig).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Sparse!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSparse(), typeInfo);
             }
         }
     }

@@ -42,8 +42,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.CreateAliasOperation PickCreateOperation() => IsCreateOperation
-            ? CreateOperation!
+        public global::Qdrant.CreateAliasOperation PickCreateOperation() => CreateOperation is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CreateOperation' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.DeleteAliasOperation PickDeleteOperation() => IsDeleteOperation
-            ? DeleteOperation!
+        public global::Qdrant.DeleteAliasOperation PickDeleteOperation() => DeleteOperation is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'DeleteOperation' but the value was {ToString()}.");
 
         /// <summary>
@@ -116,8 +116,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.RenameAliasOperation PickRenameOperation() => IsRenameOperation
-            ? RenameOperation!
+        public global::Qdrant.RenameAliasOperation PickRenameOperation() => RenameOperation is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RenameOperation' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -242,17 +242,17 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsCreateOperation && createOperation != null)
+            if (CreateOperation is { } __value0 && createOperation != null)
             {
-                return createOperation(CreateOperation!);
+                return createOperation(__value0);
             }
-            else if (IsDeleteOperation && deleteOperation != null)
+            else if (DeleteOperation is { } __value1 && deleteOperation != null)
             {
-                return deleteOperation(DeleteOperation!);
+                return deleteOperation(__value1);
             }
-            else if (IsRenameOperation && renameOperation != null)
+            else if (RenameOperation is { } __value2 && renameOperation != null)
             {
-                return renameOperation(RenameOperation!);
+                return renameOperation(__value2);
             }
 
             return default(TResult);
@@ -274,17 +274,17 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsCreateOperation)
+            if (CreateOperation is { } __value0)
             {
-                createOperation?.Invoke(CreateOperation!);
+                createOperation?.Invoke(__value0);
             }
-            else if (IsDeleteOperation)
+            else if (DeleteOperation is { } __value1)
             {
-                deleteOperation?.Invoke(DeleteOperation!);
+                deleteOperation?.Invoke(__value1);
             }
-            else if (IsRenameOperation)
+            else if (RenameOperation is { } __value2)
             {
-                renameOperation?.Invoke(RenameOperation!);
+                renameOperation?.Invoke(__value2);
             }
         }
 
@@ -302,17 +302,17 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsCreateOperation)
+            if (CreateOperation is { } __value0)
             {
-                createOperation?.Invoke(CreateOperation!);
+                createOperation?.Invoke(__value0);
             }
-            else if (IsDeleteOperation)
+            else if (DeleteOperation is { } __value1)
             {
-                deleteOperation?.Invoke(DeleteOperation!);
+                deleteOperation?.Invoke(__value1);
             }
-            else if (IsRenameOperation)
+            else if (RenameOperation is { } __value2)
             {
-                renameOperation?.Invoke(RenameOperation!);
+                renameOperation?.Invoke(__value2);
             }
         }
 

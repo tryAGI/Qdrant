@@ -149,13 +149,13 @@ namespace Qdrant.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(int), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<int> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(int).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ExtendedPointIdVariant1!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickExtendedPointIdVariant1(), typeInfo);
             }
             else if (value.IsGuid)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Guid), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Guid> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Guid).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Guid!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickGuid(), typeInfo);
             }
         }
     }

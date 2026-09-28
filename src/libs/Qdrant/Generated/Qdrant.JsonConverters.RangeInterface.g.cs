@@ -134,13 +134,13 @@ namespace Qdrant.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.Range), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.Range?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.Range).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Range!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickRange(), typeInfo);
             }
             else if (value.IsDatetime)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.DatetimeRange), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.DatetimeRange?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.DatetimeRange).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Datetime!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickDatetime(), typeInfo);
             }
         }
     }

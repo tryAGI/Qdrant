@@ -42,8 +42,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public long PickOrderValueVariant1() => IsOrderValueVariant1
-            ? OrderValueVariant1!.Value
+        public long PickOrderValueVariant1() => OrderValueVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OrderValueVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public double PickOrderValueVariant2() => IsOrderValueVariant2
-            ? OrderValueVariant2!.Value
+        public double PickOrderValueVariant2() => OrderValueVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OrderValueVariant2' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsOrderValueVariant1 && orderValueVariant1 != null)
+            if (OrderValueVariant1 is { } __value0 && orderValueVariant1 != null)
             {
-                return orderValueVariant1(OrderValueVariant1!);
+                return orderValueVariant1(__value0);
             }
-            else if (IsOrderValueVariant2 && orderValueVariant2 != null)
+            else if (OrderValueVariant2 is { } __value1 && orderValueVariant2 != null)
             {
-                return orderValueVariant2(OrderValueVariant2!);
+                return orderValueVariant2(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsOrderValueVariant1)
+            if (OrderValueVariant1 is { } __value0)
             {
-                orderValueVariant1?.Invoke(OrderValueVariant1!);
+                orderValueVariant1?.Invoke(__value0);
             }
-            else if (IsOrderValueVariant2)
+            else if (OrderValueVariant2 is { } __value1)
             {
-                orderValueVariant2?.Invoke(OrderValueVariant2!);
+                orderValueVariant2?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsOrderValueVariant1)
+            if (OrderValueVariant1 is { } __value0)
             {
-                orderValueVariant1?.Invoke(OrderValueVariant1!);
+                orderValueVariant1?.Invoke(__value0);
             }
-            else if (IsOrderValueVariant2)
+            else if (OrderValueVariant2 is { } __value1)
             {
-                orderValueVariant2?.Invoke(OrderValueVariant2!);
+                orderValueVariant2?.Invoke(__value1);
             }
         }
 

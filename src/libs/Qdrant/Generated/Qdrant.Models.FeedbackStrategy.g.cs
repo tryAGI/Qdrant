@@ -42,8 +42,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.NaiveFeedbackStrategy PickNaive() => IsNaive
-            ? Naive!
+        public global::Qdrant.NaiveFeedbackStrategy PickNaive() => Naive is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Naive' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -102,9 +102,9 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsNaive && naive != null)
+            if (Naive is { } __value0 && naive != null)
             {
-                return naive(Naive!);
+                return naive(__value0);
             }
 
             return default(TResult);
@@ -122,9 +122,9 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsNaive)
+            if (Naive is { } __value0)
             {
-                naive?.Invoke(Naive!);
+                naive?.Invoke(__value0);
             }
         }
 
@@ -140,9 +140,9 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsNaive)
+            if (Naive is { } __value0)
             {
-                naive?.Invoke(Naive!);
+                naive?.Invoke(__value0);
             }
         }
 

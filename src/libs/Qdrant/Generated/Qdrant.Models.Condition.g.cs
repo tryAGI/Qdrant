@@ -42,8 +42,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.FieldCondition PickField() => IsField
-            ? Field!
+        public global::Qdrant.FieldCondition PickField() => Field is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Field' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.IsEmptyCondition PickIsEmpty() => IsIsEmpty
-            ? IsEmpty!
+        public global::Qdrant.IsEmptyCondition PickIsEmpty() => IsEmpty is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'IsEmpty' but the value was {ToString()}.");
 
         /// <summary>
@@ -116,8 +116,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.IsNullCondition PickIsNull() => IsIsNull
-            ? IsNull!
+        public global::Qdrant.IsNullCondition PickIsNull() => IsNull is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'IsNull' but the value was {ToString()}.");
 
         /// <summary>
@@ -153,8 +153,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.HasIdCondition PickHasId() => IsHasId
-            ? HasId!
+        public global::Qdrant.HasIdCondition PickHasId() => HasId is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'HasId' but the value was {ToString()}.");
 
         /// <summary>
@@ -190,8 +190,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.HasVectorCondition PickHasVector() => IsHasVector
-            ? HasVector!
+        public global::Qdrant.HasVectorCondition PickHasVector() => HasVector is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'HasVector' but the value was {ToString()}.");
 
         /// <summary>
@@ -227,8 +227,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.SliceCondition PickSlice() => IsSlice
-            ? Slice!
+        public global::Qdrant.SliceCondition PickSlice() => Slice is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Slice' but the value was {ToString()}.");
 
         /// <summary>
@@ -264,8 +264,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.NestedCondition PickNested() => IsNested
-            ? Nested!
+        public global::Qdrant.NestedCondition PickNested() => Nested is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Nested' but the value was {ToString()}.");
 
         /// <summary>
@@ -301,8 +301,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.Filter PickFilter() => IsFilter
-            ? Filter!
+        public global::Qdrant.Filter PickFilter() => Filter is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Filter' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -567,37 +567,37 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsField && field != null)
+            if (Field is { } __value0 && field != null)
             {
-                return field(Field!);
+                return field(__value0);
             }
-            else if (IsIsEmpty && isEmpty != null)
+            else if (IsEmpty is { } __value1 && isEmpty != null)
             {
-                return isEmpty(IsEmpty!);
+                return isEmpty(__value1);
             }
-            else if (IsIsNull && isNull != null)
+            else if (IsNull is { } __value2 && isNull != null)
             {
-                return isNull(IsNull!);
+                return isNull(__value2);
             }
-            else if (IsHasId && hasId != null)
+            else if (HasId is { } __value3 && hasId != null)
             {
-                return hasId(HasId!);
+                return hasId(__value3);
             }
-            else if (IsHasVector && hasVector != null)
+            else if (HasVector is { } __value4 && hasVector != null)
             {
-                return hasVector(HasVector!);
+                return hasVector(__value4);
             }
-            else if (IsSlice && slice != null)
+            else if (Slice is { } __value5 && slice != null)
             {
-                return slice(Slice!);
+                return slice(__value5);
             }
-            else if (IsNested && nested != null)
+            else if (Nested is { } __value6 && nested != null)
             {
-                return nested(Nested!);
+                return nested(__value6);
             }
-            else if (IsFilter && filter != null)
+            else if (Filter is { } __value7 && filter != null)
             {
-                return filter(Filter!);
+                return filter(__value7);
             }
 
             return default(TResult);
@@ -629,37 +629,37 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsField)
+            if (Field is { } __value0)
             {
-                field?.Invoke(Field!);
+                field?.Invoke(__value0);
             }
-            else if (IsIsEmpty)
+            else if (IsEmpty is { } __value1)
             {
-                isEmpty?.Invoke(IsEmpty!);
+                isEmpty?.Invoke(__value1);
             }
-            else if (IsIsNull)
+            else if (IsNull is { } __value2)
             {
-                isNull?.Invoke(IsNull!);
+                isNull?.Invoke(__value2);
             }
-            else if (IsHasId)
+            else if (HasId is { } __value3)
             {
-                hasId?.Invoke(HasId!);
+                hasId?.Invoke(__value3);
             }
-            else if (IsHasVector)
+            else if (HasVector is { } __value4)
             {
-                hasVector?.Invoke(HasVector!);
+                hasVector?.Invoke(__value4);
             }
-            else if (IsSlice)
+            else if (Slice is { } __value5)
             {
-                slice?.Invoke(Slice!);
+                slice?.Invoke(__value5);
             }
-            else if (IsNested)
+            else if (Nested is { } __value6)
             {
-                nested?.Invoke(Nested!);
+                nested?.Invoke(__value6);
             }
-            else if (IsFilter)
+            else if (Filter is { } __value7)
             {
-                filter?.Invoke(Filter!);
+                filter?.Invoke(__value7);
             }
         }
 
@@ -682,37 +682,37 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsField)
+            if (Field is { } __value0)
             {
-                field?.Invoke(Field!);
+                field?.Invoke(__value0);
             }
-            else if (IsIsEmpty)
+            else if (IsEmpty is { } __value1)
             {
-                isEmpty?.Invoke(IsEmpty!);
+                isEmpty?.Invoke(__value1);
             }
-            else if (IsIsNull)
+            else if (IsNull is { } __value2)
             {
-                isNull?.Invoke(IsNull!);
+                isNull?.Invoke(__value2);
             }
-            else if (IsHasId)
+            else if (HasId is { } __value3)
             {
-                hasId?.Invoke(HasId!);
+                hasId?.Invoke(__value3);
             }
-            else if (IsHasVector)
+            else if (HasVector is { } __value4)
             {
-                hasVector?.Invoke(HasVector!);
+                hasVector?.Invoke(__value4);
             }
-            else if (IsSlice)
+            else if (Slice is { } __value5)
             {
-                slice?.Invoke(Slice!);
+                slice?.Invoke(__value5);
             }
-            else if (IsNested)
+            else if (Nested is { } __value6)
             {
-                nested?.Invoke(Nested!);
+                nested?.Invoke(__value6);
             }
-            else if (IsFilter)
+            else if (Filter is { } __value7)
             {
-                filter?.Invoke(Filter!);
+                filter?.Invoke(__value7);
             }
         }
 

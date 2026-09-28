@@ -42,8 +42,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public string PickShardSnapshotLocationVariant1() => IsShardSnapshotLocationVariant1
-            ? ShardSnapshotLocationVariant1!
+        public string PickShardSnapshotLocationVariant1() => ShardSnapshotLocationVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ShardSnapshotLocationVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public string PickShardSnapshotLocationVariant2() => IsShardSnapshotLocationVariant2
-            ? ShardSnapshotLocationVariant2!
+        public string PickShardSnapshotLocationVariant2() => ShardSnapshotLocationVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ShardSnapshotLocationVariant2' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -154,13 +154,13 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsShardSnapshotLocationVariant1 && shardSnapshotLocationVariant1 != null)
+            if (ShardSnapshotLocationVariant1 is { } __value0 && shardSnapshotLocationVariant1 != null)
             {
-                return shardSnapshotLocationVariant1(ShardSnapshotLocationVariant1!);
+                return shardSnapshotLocationVariant1(__value0);
             }
-            else if (IsShardSnapshotLocationVariant2 && shardSnapshotLocationVariant2 != null)
+            else if (ShardSnapshotLocationVariant2 is { } __value1 && shardSnapshotLocationVariant2 != null)
             {
-                return shardSnapshotLocationVariant2(ShardSnapshotLocationVariant2!);
+                return shardSnapshotLocationVariant2(__value1);
             }
 
             return default(TResult);
@@ -180,13 +180,13 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsShardSnapshotLocationVariant1)
+            if (ShardSnapshotLocationVariant1 is { } __value0)
             {
-                shardSnapshotLocationVariant1?.Invoke(ShardSnapshotLocationVariant1!);
+                shardSnapshotLocationVariant1?.Invoke(__value0);
             }
-            else if (IsShardSnapshotLocationVariant2)
+            else if (ShardSnapshotLocationVariant2 is { } __value1)
             {
-                shardSnapshotLocationVariant2?.Invoke(ShardSnapshotLocationVariant2!);
+                shardSnapshotLocationVariant2?.Invoke(__value1);
             }
         }
 
@@ -203,13 +203,13 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsShardSnapshotLocationVariant1)
+            if (ShardSnapshotLocationVariant1 is { } __value0)
             {
-                shardSnapshotLocationVariant1?.Invoke(ShardSnapshotLocationVariant1!);
+                shardSnapshotLocationVariant1?.Invoke(__value0);
             }
-            else if (IsShardSnapshotLocationVariant2)
+            else if (ShardSnapshotLocationVariant2 is { } __value1)
             {
-                shardSnapshotLocationVariant2?.Invoke(ShardSnapshotLocationVariant2!);
+                shardSnapshotLocationVariant2?.Invoke(__value1);
             }
         }
 

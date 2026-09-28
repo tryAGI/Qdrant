@@ -138,13 +138,13 @@ namespace Qdrant.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.IdfScope), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.IdfScope> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.IdfScope).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Scope!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickScope(), typeInfo);
             }
             else if (value.IsCorpus)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.IdfCorpusParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.IdfCorpusParams?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.IdfCorpusParams).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Corpus!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickCorpus(), typeInfo);
             }
         }
     }

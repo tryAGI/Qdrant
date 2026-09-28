@@ -198,19 +198,19 @@ namespace Qdrant.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.LowMemoryModeVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.LowMemoryModeVariant1> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.LowMemoryModeVariant1).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.LowMemoryModeVariant1!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickLowMemoryModeVariant1(), typeInfo);
             }
             else if (value.IsLowMemoryModeVariant2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.LowMemoryModeVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.LowMemoryModeVariant2> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.LowMemoryModeVariant2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.LowMemoryModeVariant2!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickLowMemoryModeVariant2(), typeInfo);
             }
             else if (value.IsLowMemoryModeVariant3)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.LowMemoryModeVariant3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.LowMemoryModeVariant3> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.LowMemoryModeVariant3).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.LowMemoryModeVariant3!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickLowMemoryModeVariant3(), typeInfo);
             }
         }
     }

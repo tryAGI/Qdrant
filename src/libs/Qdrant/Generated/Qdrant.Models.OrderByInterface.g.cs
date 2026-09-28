@@ -42,8 +42,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public string PickOrderByInterfaceVariant1() => IsOrderByInterfaceVariant1
-            ? OrderByInterfaceVariant1!
+        public string PickOrderByInterfaceVariant1() => OrderByInterfaceVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OrderByInterfaceVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.OrderBy PickOrderBy() => IsOrderBy
-            ? OrderBy!
+        public global::Qdrant.OrderBy PickOrderBy() => OrderBy is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OrderBy' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsOrderByInterfaceVariant1 && orderByInterfaceVariant1 != null)
+            if (OrderByInterfaceVariant1 is { } __value0 && orderByInterfaceVariant1 != null)
             {
-                return orderByInterfaceVariant1(OrderByInterfaceVariant1!);
+                return orderByInterfaceVariant1(__value0);
             }
-            else if (IsOrderBy && orderBy != null)
+            else if (OrderBy is { } __value1 && orderBy != null)
             {
-                return orderBy(OrderBy!);
+                return orderBy(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsOrderByInterfaceVariant1)
+            if (OrderByInterfaceVariant1 is { } __value0)
             {
-                orderByInterfaceVariant1?.Invoke(OrderByInterfaceVariant1!);
+                orderByInterfaceVariant1?.Invoke(__value0);
             }
-            else if (IsOrderBy)
+            else if (OrderBy is { } __value1)
             {
-                orderBy?.Invoke(OrderBy!);
+                orderBy?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsOrderByInterfaceVariant1)
+            if (OrderByInterfaceVariant1 is { } __value0)
             {
-                orderByInterfaceVariant1?.Invoke(OrderByInterfaceVariant1!);
+                orderByInterfaceVariant1?.Invoke(__value0);
             }
-            else if (IsOrderBy)
+            else if (OrderBy is { } __value1)
             {
-                orderBy?.Invoke(OrderBy!);
+                orderBy?.Invoke(__value1);
             }
         }
 

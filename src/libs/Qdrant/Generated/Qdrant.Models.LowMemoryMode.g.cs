@@ -44,8 +44,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.LowMemoryModeVariant1 PickLowMemoryModeVariant1() => IsLowMemoryModeVariant1
-            ? LowMemoryModeVariant1!.Value
+        public global::Qdrant.LowMemoryModeVariant1 PickLowMemoryModeVariant1() => LowMemoryModeVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'LowMemoryModeVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -82,8 +82,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.LowMemoryModeVariant2 PickLowMemoryModeVariant2() => IsLowMemoryModeVariant2
-            ? LowMemoryModeVariant2!.Value
+        public global::Qdrant.LowMemoryModeVariant2 PickLowMemoryModeVariant2() => LowMemoryModeVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'LowMemoryModeVariant2' but the value was {ToString()}.");
 
         /// <summary>
@@ -119,8 +119,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.LowMemoryModeVariant3 PickLowMemoryModeVariant3() => IsLowMemoryModeVariant3
-            ? LowMemoryModeVariant3!.Value
+        public global::Qdrant.LowMemoryModeVariant3 PickLowMemoryModeVariant3() => LowMemoryModeVariant3 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'LowMemoryModeVariant3' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -245,17 +245,17 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsLowMemoryModeVariant1 && lowMemoryModeVariant1 != null)
+            if (LowMemoryModeVariant1 is { } __value0 && lowMemoryModeVariant1 != null)
             {
-                return lowMemoryModeVariant1(LowMemoryModeVariant1!);
+                return lowMemoryModeVariant1(__value0);
             }
-            else if (IsLowMemoryModeVariant2 && lowMemoryModeVariant2 != null)
+            else if (LowMemoryModeVariant2 is { } __value1 && lowMemoryModeVariant2 != null)
             {
-                return lowMemoryModeVariant2(LowMemoryModeVariant2!);
+                return lowMemoryModeVariant2(__value1);
             }
-            else if (IsLowMemoryModeVariant3 && lowMemoryModeVariant3 != null)
+            else if (LowMemoryModeVariant3 is { } __value2 && lowMemoryModeVariant3 != null)
             {
-                return lowMemoryModeVariant3(LowMemoryModeVariant3!);
+                return lowMemoryModeVariant3(__value2);
             }
 
             return default(TResult);
@@ -277,17 +277,17 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsLowMemoryModeVariant1)
+            if (LowMemoryModeVariant1 is { } __value0)
             {
-                lowMemoryModeVariant1?.Invoke(LowMemoryModeVariant1!);
+                lowMemoryModeVariant1?.Invoke(__value0);
             }
-            else if (IsLowMemoryModeVariant2)
+            else if (LowMemoryModeVariant2 is { } __value1)
             {
-                lowMemoryModeVariant2?.Invoke(LowMemoryModeVariant2!);
+                lowMemoryModeVariant2?.Invoke(__value1);
             }
-            else if (IsLowMemoryModeVariant3)
+            else if (LowMemoryModeVariant3 is { } __value2)
             {
-                lowMemoryModeVariant3?.Invoke(LowMemoryModeVariant3!);
+                lowMemoryModeVariant3?.Invoke(__value2);
             }
         }
 
@@ -305,17 +305,17 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsLowMemoryModeVariant1)
+            if (LowMemoryModeVariant1 is { } __value0)
             {
-                lowMemoryModeVariant1?.Invoke(LowMemoryModeVariant1!);
+                lowMemoryModeVariant1?.Invoke(__value0);
             }
-            else if (IsLowMemoryModeVariant2)
+            else if (LowMemoryModeVariant2 is { } __value1)
             {
-                lowMemoryModeVariant2?.Invoke(LowMemoryModeVariant2!);
+                lowMemoryModeVariant2?.Invoke(__value1);
             }
-            else if (IsLowMemoryModeVariant3)
+            else if (LowMemoryModeVariant3 is { } __value2)
             {
-                lowMemoryModeVariant3?.Invoke(LowMemoryModeVariant3!);
+                lowMemoryModeVariant3?.Invoke(__value2);
             }
         }
 

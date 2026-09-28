@@ -45,8 +45,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.VectorParams PickVectorParams() => IsVectorParams
-            ? VectorParams!
+        public global::Qdrant.VectorParams PickVectorParams() => VectorParams is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'VectorParams' but the value was {ToString()}.");
 
         /// <summary>
@@ -82,8 +82,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.Dictionary<string, global::Qdrant.VectorParams> PickVectorsConfigVariant2() => IsVectorsConfigVariant2
-            ? VectorsConfigVariant2!
+        public global::System.Collections.Generic.Dictionary<string, global::Qdrant.VectorParams> PickVectorsConfigVariant2() => VectorsConfigVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'VectorsConfigVariant2' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -180,13 +180,13 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsVectorParams && vectorParams != null)
+            if (VectorParams is { } __value0 && vectorParams != null)
             {
-                return vectorParams(VectorParams!);
+                return vectorParams(__value0);
             }
-            else if (IsVectorsConfigVariant2 && vectorsConfigVariant2 != null)
+            else if (VectorsConfigVariant2 is { } __value1 && vectorsConfigVariant2 != null)
             {
-                return vectorsConfigVariant2(VectorsConfigVariant2!);
+                return vectorsConfigVariant2(__value1);
             }
 
             return default(TResult);
@@ -206,13 +206,13 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsVectorParams)
+            if (VectorParams is { } __value0)
             {
-                vectorParams?.Invoke(VectorParams!);
+                vectorParams?.Invoke(__value0);
             }
-            else if (IsVectorsConfigVariant2)
+            else if (VectorsConfigVariant2 is { } __value1)
             {
-                vectorsConfigVariant2?.Invoke(VectorsConfigVariant2!);
+                vectorsConfigVariant2?.Invoke(__value1);
             }
         }
 
@@ -229,13 +229,13 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsVectorParams)
+            if (VectorParams is { } __value0)
             {
-                vectorParams?.Invoke(VectorParams!);
+                vectorParams?.Invoke(__value0);
             }
-            else if (IsVectorsConfigVariant2)
+            else if (VectorsConfigVariant2 is { } __value1)
             {
-                vectorsConfigVariant2?.Invoke(VectorsConfigVariant2!);
+                vectorsConfigVariant2?.Invoke(__value1);
             }
         }
 

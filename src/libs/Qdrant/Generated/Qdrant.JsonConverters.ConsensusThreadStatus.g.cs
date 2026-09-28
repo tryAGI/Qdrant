@@ -168,19 +168,19 @@ namespace Qdrant.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.ConsensusThreadStatusVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.ConsensusThreadStatusVariant1?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.ConsensusThreadStatusVariant1).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ConsensusThreadStatusVariant1!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickConsensusThreadStatusVariant1(), typeInfo);
             }
             else if (value.IsConsensusThreadStatusVariant2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.ConsensusThreadStatusVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.ConsensusThreadStatusVariant2?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.ConsensusThreadStatusVariant2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ConsensusThreadStatusVariant2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickConsensusThreadStatusVariant2(), typeInfo);
             }
             else if (value.IsConsensusThreadStatusVariant3)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.ConsensusThreadStatusVariant3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.ConsensusThreadStatusVariant3?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.ConsensusThreadStatusVariant3).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ConsensusThreadStatusVariant3!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickConsensusThreadStatusVariant3(), typeInfo);
             }
         }
     }

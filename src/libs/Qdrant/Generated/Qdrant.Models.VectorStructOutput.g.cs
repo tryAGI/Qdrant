@@ -42,8 +42,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<float> PickVectorStructOutputVariant1() => IsVectorStructOutputVariant1
-            ? VectorStructOutputVariant1!
+        public global::System.Collections.Generic.IList<float> PickVectorStructOutputVariant1() => VectorStructOutputVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'VectorStructOutputVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>> PickVectorStructOutputVariant2() => IsVectorStructOutputVariant2
-            ? VectorStructOutputVariant2!
+        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>> PickVectorStructOutputVariant2() => VectorStructOutputVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'VectorStructOutputVariant2' but the value was {ToString()}.");
 
         /// <summary>
@@ -116,8 +116,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.Dictionary<string, global::Qdrant.VectorOutput> PickVectorStructOutputVariant3() => IsVectorStructOutputVariant3
-            ? VectorStructOutputVariant3!
+        public global::System.Collections.Generic.Dictionary<string, global::Qdrant.VectorOutput> PickVectorStructOutputVariant3() => VectorStructOutputVariant3 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'VectorStructOutputVariant3' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -196,17 +196,17 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsVectorStructOutputVariant1 && vectorStructOutputVariant1 != null)
+            if (VectorStructOutputVariant1 is { } __value0 && vectorStructOutputVariant1 != null)
             {
-                return vectorStructOutputVariant1(VectorStructOutputVariant1!);
+                return vectorStructOutputVariant1(__value0);
             }
-            else if (IsVectorStructOutputVariant2 && vectorStructOutputVariant2 != null)
+            else if (VectorStructOutputVariant2 is { } __value1 && vectorStructOutputVariant2 != null)
             {
-                return vectorStructOutputVariant2(VectorStructOutputVariant2!);
+                return vectorStructOutputVariant2(__value1);
             }
-            else if (IsVectorStructOutputVariant3 && vectorStructOutputVariant3 != null)
+            else if (VectorStructOutputVariant3 is { } __value2 && vectorStructOutputVariant3 != null)
             {
-                return vectorStructOutputVariant3(VectorStructOutputVariant3!);
+                return vectorStructOutputVariant3(__value2);
             }
 
             return default(TResult);
@@ -228,17 +228,17 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsVectorStructOutputVariant1)
+            if (VectorStructOutputVariant1 is { } __value0)
             {
-                vectorStructOutputVariant1?.Invoke(VectorStructOutputVariant1!);
+                vectorStructOutputVariant1?.Invoke(__value0);
             }
-            else if (IsVectorStructOutputVariant2)
+            else if (VectorStructOutputVariant2 is { } __value1)
             {
-                vectorStructOutputVariant2?.Invoke(VectorStructOutputVariant2!);
+                vectorStructOutputVariant2?.Invoke(__value1);
             }
-            else if (IsVectorStructOutputVariant3)
+            else if (VectorStructOutputVariant3 is { } __value2)
             {
-                vectorStructOutputVariant3?.Invoke(VectorStructOutputVariant3!);
+                vectorStructOutputVariant3?.Invoke(__value2);
             }
         }
 
@@ -256,17 +256,17 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsVectorStructOutputVariant1)
+            if (VectorStructOutputVariant1 is { } __value0)
             {
-                vectorStructOutputVariant1?.Invoke(VectorStructOutputVariant1!);
+                vectorStructOutputVariant1?.Invoke(__value0);
             }
-            else if (IsVectorStructOutputVariant2)
+            else if (VectorStructOutputVariant2 is { } __value1)
             {
-                vectorStructOutputVariant2?.Invoke(VectorStructOutputVariant2!);
+                vectorStructOutputVariant2?.Invoke(__value1);
             }
-            else if (IsVectorStructOutputVariant3)
+            else if (VectorStructOutputVariant3 is { } __value2)
             {
-                vectorStructOutputVariant3?.Invoke(VectorStructOutputVariant3!);
+                vectorStructOutputVariant3?.Invoke(__value2);
             }
         }
 

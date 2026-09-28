@@ -42,8 +42,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.KeywordIndexParams PickKeywordIndex() => IsKeywordIndex
-            ? KeywordIndex!
+        public global::Qdrant.KeywordIndexParams PickKeywordIndex() => KeywordIndex is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'KeywordIndex' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.IntegerIndexParams PickIntegerIndex() => IsIntegerIndex
-            ? IntegerIndex!
+        public global::Qdrant.IntegerIndexParams PickIntegerIndex() => IntegerIndex is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'IntegerIndex' but the value was {ToString()}.");
 
         /// <summary>
@@ -116,8 +116,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.FloatIndexParams PickFloatIndex() => IsFloatIndex
-            ? FloatIndex!
+        public global::Qdrant.FloatIndexParams PickFloatIndex() => FloatIndex is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FloatIndex' but the value was {ToString()}.");
 
         /// <summary>
@@ -153,8 +153,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.GeoIndexParams PickGeoIndex() => IsGeoIndex
-            ? GeoIndex!
+        public global::Qdrant.GeoIndexParams PickGeoIndex() => GeoIndex is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'GeoIndex' but the value was {ToString()}.");
 
         /// <summary>
@@ -190,8 +190,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.TextIndexParams PickTextIndex() => IsTextIndex
-            ? TextIndex!
+        public global::Qdrant.TextIndexParams PickTextIndex() => TextIndex is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TextIndex' but the value was {ToString()}.");
 
         /// <summary>
@@ -227,8 +227,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.BoolIndexParams PickBoolIndex() => IsBoolIndex
-            ? BoolIndex!
+        public global::Qdrant.BoolIndexParams PickBoolIndex() => BoolIndex is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BoolIndex' but the value was {ToString()}.");
 
         /// <summary>
@@ -264,8 +264,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.DatetimeIndexParams PickDatetimeIndex() => IsDatetimeIndex
-            ? DatetimeIndex!
+        public global::Qdrant.DatetimeIndexParams PickDatetimeIndex() => DatetimeIndex is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'DatetimeIndex' but the value was {ToString()}.");
 
         /// <summary>
@@ -301,8 +301,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.UuidIndexParams PickUuidIndex() => IsUuidIndex
-            ? UuidIndex!
+        public global::Qdrant.UuidIndexParams PickUuidIndex() => UuidIndex is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'UuidIndex' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -567,37 +567,37 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsKeywordIndex && keywordIndex != null)
+            if (KeywordIndex is { } __value0 && keywordIndex != null)
             {
-                return keywordIndex(KeywordIndex!);
+                return keywordIndex(__value0);
             }
-            else if (IsIntegerIndex && integerIndex != null)
+            else if (IntegerIndex is { } __value1 && integerIndex != null)
             {
-                return integerIndex(IntegerIndex!);
+                return integerIndex(__value1);
             }
-            else if (IsFloatIndex && floatIndex != null)
+            else if (FloatIndex is { } __value2 && floatIndex != null)
             {
-                return floatIndex(FloatIndex!);
+                return floatIndex(__value2);
             }
-            else if (IsGeoIndex && geoIndex != null)
+            else if (GeoIndex is { } __value3 && geoIndex != null)
             {
-                return geoIndex(GeoIndex!);
+                return geoIndex(__value3);
             }
-            else if (IsTextIndex && textIndex != null)
+            else if (TextIndex is { } __value4 && textIndex != null)
             {
-                return textIndex(TextIndex!);
+                return textIndex(__value4);
             }
-            else if (IsBoolIndex && boolIndex != null)
+            else if (BoolIndex is { } __value5 && boolIndex != null)
             {
-                return boolIndex(BoolIndex!);
+                return boolIndex(__value5);
             }
-            else if (IsDatetimeIndex && datetimeIndex != null)
+            else if (DatetimeIndex is { } __value6 && datetimeIndex != null)
             {
-                return datetimeIndex(DatetimeIndex!);
+                return datetimeIndex(__value6);
             }
-            else if (IsUuidIndex && uuidIndex != null)
+            else if (UuidIndex is { } __value7 && uuidIndex != null)
             {
-                return uuidIndex(UuidIndex!);
+                return uuidIndex(__value7);
             }
 
             return default(TResult);
@@ -629,37 +629,37 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsKeywordIndex)
+            if (KeywordIndex is { } __value0)
             {
-                keywordIndex?.Invoke(KeywordIndex!);
+                keywordIndex?.Invoke(__value0);
             }
-            else if (IsIntegerIndex)
+            else if (IntegerIndex is { } __value1)
             {
-                integerIndex?.Invoke(IntegerIndex!);
+                integerIndex?.Invoke(__value1);
             }
-            else if (IsFloatIndex)
+            else if (FloatIndex is { } __value2)
             {
-                floatIndex?.Invoke(FloatIndex!);
+                floatIndex?.Invoke(__value2);
             }
-            else if (IsGeoIndex)
+            else if (GeoIndex is { } __value3)
             {
-                geoIndex?.Invoke(GeoIndex!);
+                geoIndex?.Invoke(__value3);
             }
-            else if (IsTextIndex)
+            else if (TextIndex is { } __value4)
             {
-                textIndex?.Invoke(TextIndex!);
+                textIndex?.Invoke(__value4);
             }
-            else if (IsBoolIndex)
+            else if (BoolIndex is { } __value5)
             {
-                boolIndex?.Invoke(BoolIndex!);
+                boolIndex?.Invoke(__value5);
             }
-            else if (IsDatetimeIndex)
+            else if (DatetimeIndex is { } __value6)
             {
-                datetimeIndex?.Invoke(DatetimeIndex!);
+                datetimeIndex?.Invoke(__value6);
             }
-            else if (IsUuidIndex)
+            else if (UuidIndex is { } __value7)
             {
-                uuidIndex?.Invoke(UuidIndex!);
+                uuidIndex?.Invoke(__value7);
             }
         }
 
@@ -682,37 +682,37 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsKeywordIndex)
+            if (KeywordIndex is { } __value0)
             {
-                keywordIndex?.Invoke(KeywordIndex!);
+                keywordIndex?.Invoke(__value0);
             }
-            else if (IsIntegerIndex)
+            else if (IntegerIndex is { } __value1)
             {
-                integerIndex?.Invoke(IntegerIndex!);
+                integerIndex?.Invoke(__value1);
             }
-            else if (IsFloatIndex)
+            else if (FloatIndex is { } __value2)
             {
-                floatIndex?.Invoke(FloatIndex!);
+                floatIndex?.Invoke(__value2);
             }
-            else if (IsGeoIndex)
+            else if (GeoIndex is { } __value3)
             {
-                geoIndex?.Invoke(GeoIndex!);
+                geoIndex?.Invoke(__value3);
             }
-            else if (IsTextIndex)
+            else if (TextIndex is { } __value4)
             {
-                textIndex?.Invoke(TextIndex!);
+                textIndex?.Invoke(__value4);
             }
-            else if (IsBoolIndex)
+            else if (BoolIndex is { } __value5)
             {
-                boolIndex?.Invoke(BoolIndex!);
+                boolIndex?.Invoke(__value5);
             }
-            else if (IsDatetimeIndex)
+            else if (DatetimeIndex is { } __value6)
             {
-                datetimeIndex?.Invoke(DatetimeIndex!);
+                datetimeIndex?.Invoke(__value6);
             }
-            else if (IsUuidIndex)
+            else if (UuidIndex is { } __value7)
             {
-                uuidIndex?.Invoke(UuidIndex!);
+                uuidIndex?.Invoke(__value7);
             }
         }
 

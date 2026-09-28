@@ -42,8 +42,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.IndexesVariant1 PickIndexesVariant1() => IsIndexesVariant1
-            ? IndexesVariant1!
+        public global::Qdrant.IndexesVariant1 PickIndexesVariant1() => IndexesVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'IndexesVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.IndexesVariant2 PickIndexesVariant2() => IsIndexesVariant2
-            ? IndexesVariant2!
+        public global::Qdrant.IndexesVariant2 PickIndexesVariant2() => IndexesVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'IndexesVariant2' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsIndexesVariant1 && indexesVariant1 != null)
+            if (IndexesVariant1 is { } __value0 && indexesVariant1 != null)
             {
-                return indexesVariant1(IndexesVariant1!);
+                return indexesVariant1(__value0);
             }
-            else if (IsIndexesVariant2 && indexesVariant2 != null)
+            else if (IndexesVariant2 is { } __value1 && indexesVariant2 != null)
             {
-                return indexesVariant2(IndexesVariant2!);
+                return indexesVariant2(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsIndexesVariant1)
+            if (IndexesVariant1 is { } __value0)
             {
-                indexesVariant1?.Invoke(IndexesVariant1!);
+                indexesVariant1?.Invoke(__value0);
             }
-            else if (IsIndexesVariant2)
+            else if (IndexesVariant2 is { } __value1)
             {
-                indexesVariant2?.Invoke(IndexesVariant2!);
+                indexesVariant2?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace Qdrant
                 Validate();
             }
 
-            if (IsIndexesVariant1)
+            if (IndexesVariant1 is { } __value0)
             {
-                indexesVariant1?.Invoke(IndexesVariant1!);
+                indexesVariant1?.Invoke(__value0);
             }
-            else if (IsIndexesVariant2)
+            else if (IndexesVariant2 is { } __value1)
             {
-                indexesVariant2?.Invoke(IndexesVariant2!);
+                indexesVariant2?.Invoke(__value1);
             }
         }
 
