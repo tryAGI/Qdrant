@@ -1,19 +1,14 @@
 
 #nullable enable
 
-#pragma warning disable CS0618 // Type or member is obsolete
-#pragma warning disable CS3016 // Arrays as attribute arguments is not CLS-compliant
-
 namespace Qdrant
 {
     /// <summary>
     ///
     /// </summary>
     [global::System.Text.Json.Serialization.JsonSourceGenerationOptions(
-        DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
-        Converters = new global::System.Type[]
-        {
-        })]
+        DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull
+    )]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, string>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, object>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<object>), TypeInfoPropertyName = "SystemCollectionsGeneric_ObjectList")]
@@ -47,7 +42,9 @@ namespace Qdrant
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.Payload))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.VectorsConfig), TypeInfoPropertyName = "VectorsConfig2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.ShardingMethod), TypeInfoPropertyName = "ShardingMethod2")]
+    #pragma warning disable CS0618 // This registration names a deprecated API model.
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(bool))]
+    #pragma warning restore CS0618
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.PayloadStorageParams))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, global::Qdrant.SparseVectorParams>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.SparseVectorParams))]
@@ -77,7 +74,9 @@ namespace Qdrant
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(double))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, global::Qdrant.StrictModeMultivectorOutput>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, global::Qdrant.StrictModeSparseOutput>))]
+    #pragma warning disable CS0618 // This registration names a deprecated API model.
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(byte))]
+    #pragma warning restore CS0618
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.StrictModeMultivectorOutput))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.StrictModeSparseOutput))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.PayloadSchemaType), TypeInfoPropertyName = "PayloadSchemaType2")]
@@ -522,10 +521,8 @@ namespace Qdrant
     ///
     /// </summary>
     [global::System.Text.Json.Serialization.JsonSourceGenerationOptions(
-        DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
-        Converters = new global::System.Type[]
-        {
-        })]
+        DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull
+    )]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Qdrant.FacetValueHit>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.FacetValueHit))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.FacetValue), TypeInfoPropertyName = "FacetValue2")]
@@ -567,7 +564,9 @@ namespace Qdrant
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, global::Qdrant.PeerQuotaUsage>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.PeerQuotaUsage))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.RecoverFromUploadedSnapshotRequest))]
+    #pragma warning disable CS0618 // This registration names a deprecated API model.
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(byte[]))]
+    #pragma warning restore CS0618
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.RecoverShardFromUploadedSnapshotRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.CreateShardKeyResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.ListShardKeysResponse))]
@@ -648,7 +647,9 @@ namespace Qdrant
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.OptimizersStatusEnum?), TypeInfoPropertyName = "NullableOptimizersStatusEnum2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.VectorsConfig?), TypeInfoPropertyName = "NullableVectorsConfig2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.ShardingMethod?), TypeInfoPropertyName = "NullableShardingMethod2")]
+    #pragma warning disable CS0618 // This registration names a deprecated API model.
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(bool?))]
+    #pragma warning restore CS0618
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.Distance?), TypeInfoPropertyName = "NullableDistance2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.Memory?), TypeInfoPropertyName = "NullableMemory2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.Datatype?), TypeInfoPropertyName = "NullableDatatype2")]
