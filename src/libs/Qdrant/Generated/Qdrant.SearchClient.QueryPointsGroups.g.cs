@@ -620,7 +620,7 @@ namespace Qdrant
             global::Qdrant.ReadConsistency? consistency = default,
             int? timeout = default,
             global::Qdrant.ShardKeySelector? shardKey = default,
-            global::Qdrant.AnyOf<global::Qdrant.Prefetch2, global::System.Collections.Generic.IList<global::Qdrant.Prefetch2>, object>? prefetch = default,
+            global::Qdrant.AnyOf<global::Qdrant.Prefetch2, global::System.Collections.Generic.IList<global::Qdrant.Prefetch2>>? prefetch = default,
             global::Qdrant.QueryInterface? query = default,
             string? @using = default,
             global::Qdrant.Filter? filter = default,

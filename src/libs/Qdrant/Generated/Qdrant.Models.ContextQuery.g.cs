@@ -13,8 +13,7 @@ namespace Qdrant
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("context")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Qdrant.JsonConverters.ContextInputJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Qdrant.ContextInput Context { get; set; }
+        public global::Qdrant.ContextInput? Context { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,7 +29,7 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ContextQuery(
-            global::Qdrant.ContextInput context)
+            global::Qdrant.ContextInput? context)
         {
             this.Context = context;
         }
