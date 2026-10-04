@@ -517,7 +517,7 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.AnyOf<global::Qdrant.Condition?, global::System.Collections.Generic.IList<global::Qdrant.Condition>, object>? Type121 { get; set; }
+        public global::Qdrant.AnyOf<global::Qdrant.Condition?, global::System.Collections.Generic.IList<global::Qdrant.Condition>>? Type121 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -1701,7 +1701,7 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.AnyOf<global::Qdrant.Prefetch2, global::System.Collections.Generic.IList<global::Qdrant.Prefetch2>, object>? Type417 { get; set; }
+        public global::Qdrant.AnyOf<global::Qdrant.Prefetch2, global::System.Collections.Generic.IList<global::Qdrant.Prefetch2>>? Type417 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -1793,7 +1793,7 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.AnyOf<global::Qdrant.ContextPair, global::System.Collections.Generic.IList<global::Qdrant.ContextPair>, object>? Type440 { get; set; }
+        public global::Qdrant.AnyOf<global::Qdrant.ContextPair, global::System.Collections.Generic.IList<global::Qdrant.ContextPair>>? Type440 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -2514,7 +2514,7 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.AnyOf<global::Qdrant.Condition?, global::System.Collections.Generic.List<global::Qdrant.Condition>, object>? ListType9 { get; set; }
+        public global::Qdrant.AnyOf<global::Qdrant.Condition?, global::System.Collections.Generic.List<global::Qdrant.Condition>>? ListType9 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -2650,7 +2650,7 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.AnyOf<global::Qdrant.Prefetch2, global::System.Collections.Generic.List<global::Qdrant.Prefetch2>, object>? ListType43 { get; set; }
+        public global::Qdrant.AnyOf<global::Qdrant.Prefetch2, global::System.Collections.Generic.List<global::Qdrant.Prefetch2>>? ListType43 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -2662,7 +2662,7 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.AnyOf<global::Qdrant.ContextPair, global::System.Collections.Generic.List<global::Qdrant.ContextPair>, object>? ListType46 { get; set; }
+        public global::Qdrant.AnyOf<global::Qdrant.ContextPair, global::System.Collections.Generic.List<global::Qdrant.ContextPair>>? ListType46 { get; set; }
         /// <summary>
         ///
         /// </summary>

@@ -12,8 +12,8 @@ namespace Qdrant
         /// At least one of those conditions should match
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("should")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Qdrant.JsonConverters.AnyOfJsonConverter<global::Qdrant.Condition?, global::System.Collections.Generic.IList<global::Qdrant.Condition>, object>))]
-        public global::Qdrant.AnyOf<global::Qdrant.Condition?, global::System.Collections.Generic.IList<global::Qdrant.Condition>, object>? Should { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Qdrant.JsonConverters.AnyOfJsonConverter<global::Qdrant.Condition?, global::System.Collections.Generic.IList<global::Qdrant.Condition>>))]
+        public global::Qdrant.AnyOf<global::Qdrant.Condition?, global::System.Collections.Generic.IList<global::Qdrant.Condition>>? Should { get; set; }
 
         /// <summary>
         /// At least minimum amount of given conditions should match
@@ -25,15 +25,15 @@ namespace Qdrant
         /// All conditions must match
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("must")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Qdrant.JsonConverters.AnyOfJsonConverter<global::Qdrant.Condition?, global::System.Collections.Generic.IList<global::Qdrant.Condition>, object>))]
-        public global::Qdrant.AnyOf<global::Qdrant.Condition?, global::System.Collections.Generic.IList<global::Qdrant.Condition>, object>? Must { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Qdrant.JsonConverters.AnyOfJsonConverter<global::Qdrant.Condition?, global::System.Collections.Generic.IList<global::Qdrant.Condition>>))]
+        public global::Qdrant.AnyOf<global::Qdrant.Condition?, global::System.Collections.Generic.IList<global::Qdrant.Condition>>? Must { get; set; }
 
         /// <summary>
         /// All conditions must NOT match
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("must_not")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Qdrant.JsonConverters.AnyOfJsonConverter<global::Qdrant.Condition?, global::System.Collections.Generic.IList<global::Qdrant.Condition>, object>))]
-        public global::Qdrant.AnyOf<global::Qdrant.Condition?, global::System.Collections.Generic.IList<global::Qdrant.Condition>, object>? MustNot { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Qdrant.JsonConverters.AnyOfJsonConverter<global::Qdrant.Condition?, global::System.Collections.Generic.IList<global::Qdrant.Condition>>))]
+        public global::Qdrant.AnyOf<global::Qdrant.Condition?, global::System.Collections.Generic.IList<global::Qdrant.Condition>>? MustNot { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -60,10 +60,10 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public Filter(
-            global::Qdrant.AnyOf<global::Qdrant.Condition?, global::System.Collections.Generic.IList<global::Qdrant.Condition>, object>? should,
+            global::Qdrant.AnyOf<global::Qdrant.Condition?, global::System.Collections.Generic.IList<global::Qdrant.Condition>>? should,
             global::Qdrant.MinShould? minShould,
-            global::Qdrant.AnyOf<global::Qdrant.Condition?, global::System.Collections.Generic.IList<global::Qdrant.Condition>, object>? must,
-            global::Qdrant.AnyOf<global::Qdrant.Condition?, global::System.Collections.Generic.IList<global::Qdrant.Condition>, object>? mustNot)
+            global::Qdrant.AnyOf<global::Qdrant.Condition?, global::System.Collections.Generic.IList<global::Qdrant.Condition>>? must,
+            global::Qdrant.AnyOf<global::Qdrant.Condition?, global::System.Collections.Generic.IList<global::Qdrant.Condition>>? mustNot)
         {
             this.Should = should;
             this.MinShould = minShould;

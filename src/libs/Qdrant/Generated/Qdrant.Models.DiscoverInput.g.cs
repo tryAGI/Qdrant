@@ -20,9 +20,8 @@ namespace Qdrant
         /// Search space will be constrained by these pairs of vectors
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("context")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Qdrant.JsonConverters.AnyOfJsonConverter<global::Qdrant.ContextPair, global::System.Collections.Generic.IList<global::Qdrant.ContextPair>, object>))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::Qdrant.AnyOf<global::Qdrant.ContextPair, global::System.Collections.Generic.IList<global::Qdrant.ContextPair>, object> Context { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Qdrant.JsonConverters.AnyOfJsonConverter<global::Qdrant.ContextPair, global::System.Collections.Generic.IList<global::Qdrant.ContextPair>>))]
+        public global::Qdrant.AnyOf<global::Qdrant.ContextPair, global::System.Collections.Generic.IList<global::Qdrant.ContextPair>>? Context { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -42,7 +41,7 @@ namespace Qdrant
 #endif
         public DiscoverInput(
             global::Qdrant.VectorInput target,
-            global::Qdrant.AnyOf<global::Qdrant.ContextPair, global::System.Collections.Generic.IList<global::Qdrant.ContextPair>, object> context)
+            global::Qdrant.AnyOf<global::Qdrant.ContextPair, global::System.Collections.Generic.IList<global::Qdrant.ContextPair>>? context)
         {
             this.Target = target;
             this.Context = context;

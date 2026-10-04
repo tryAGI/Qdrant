@@ -19,8 +19,8 @@ namespace Qdrant
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prefetch")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Qdrant.JsonConverters.AnyOfJsonConverter<global::Qdrant.Prefetch2, global::System.Collections.Generic.IList<global::Qdrant.Prefetch2>, object>))]
-        public global::Qdrant.AnyOf<global::Qdrant.Prefetch2, global::System.Collections.Generic.IList<global::Qdrant.Prefetch2>, object>? Prefetch { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Qdrant.JsonConverters.AnyOfJsonConverter<global::Qdrant.Prefetch2, global::System.Collections.Generic.IList<global::Qdrant.Prefetch2>>))]
+        public global::Qdrant.AnyOf<global::Qdrant.Prefetch2, global::System.Collections.Generic.IList<global::Qdrant.Prefetch2>>? Prefetch { get; set; }
 
         /// <summary>
         /// Query to perform. If missing without prefetches, returns points ordered by their IDs.
@@ -153,7 +153,7 @@ namespace Qdrant
         public QueryGroupsRequest(
             string groupBy,
             global::Qdrant.ShardKeySelector? shardKey,
-            global::Qdrant.AnyOf<global::Qdrant.Prefetch2, global::System.Collections.Generic.IList<global::Qdrant.Prefetch2>, object>? prefetch,
+            global::Qdrant.AnyOf<global::Qdrant.Prefetch2, global::System.Collections.Generic.IList<global::Qdrant.Prefetch2>>? prefetch,
             global::Qdrant.QueryInterface? query,
             string? @using,
             global::Qdrant.Filter? filter,
