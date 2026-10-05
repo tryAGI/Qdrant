@@ -13,147 +13,73 @@ namespace Qdrant
         /// Storage in memory maps (gridstore storage)
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::Qdrant.SparseVectorStorageTypeVariant1? SparseVectorStorageTypeVariant1 { get; init; }
+        public global::Qdrant.SparseVectorStorageTypeEnum? Enum { get; init; }
 #else
-        public global::Qdrant.SparseVectorStorageTypeVariant1? SparseVectorStorageTypeVariant1 { get; }
+        public global::Qdrant.SparseVectorStorageTypeEnum? Enum { get; }
 #endif
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SparseVectorStorageTypeVariant1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Enum))]
 #endif
-        public bool IsSparseVectorStorageTypeVariant1 => SparseVectorStorageTypeVariant1 != null;
+        public bool IsEnum => Enum != null;
 
         /// <summary>
         ///
         /// </summary>
-        public bool TryPickSparseVectorStorageTypeVariant1(
+        public bool TryPickEnum(
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::Qdrant.SparseVectorStorageTypeVariant1? value)
+            out global::Qdrant.SparseVectorStorageTypeEnum? value)
         {
-            value = SparseVectorStorageTypeVariant1;
-            return IsSparseVectorStorageTypeVariant1;
+            value = Enum;
+            return IsEnum;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.SparseVectorStorageTypeVariant1 PickSparseVectorStorageTypeVariant1() => SparseVectorStorageTypeVariant1 is { } value
+        public global::Qdrant.SparseVectorStorageTypeEnum PickEnum() => Enum is { } value
             ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'SparseVectorStorageTypeVariant1' but the value was {ToString()}.");
-
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Enum' but the value was {ToString()}.");
         /// <summary>
-        /// Placeholder storage: contains no data, all vectors reported as deleted. Used for newly created sparse named vectors on immutable segments.
+        ///
         /// </summary>
-#if NET6_0_OR_GREATER
-        public global::Qdrant.SparseVectorStorageTypeVariant2? SparseVectorStorageTypeVariant2 { get; init; }
-#else
-        public global::Qdrant.SparseVectorStorageTypeVariant2? SparseVectorStorageTypeVariant2 { get; }
-#endif
+        public static implicit operator SparseVectorStorageType(global::Qdrant.SparseVectorStorageTypeEnum value) => new SparseVectorStorageType((global::Qdrant.SparseVectorStorageTypeEnum?)value);
 
         /// <summary>
         ///
         /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SparseVectorStorageTypeVariant2))]
-#endif
-        public bool IsSparseVectorStorageTypeVariant2 => SparseVectorStorageTypeVariant2 != null;
+        public static implicit operator global::Qdrant.SparseVectorStorageTypeEnum?(SparseVectorStorageType @this) => @this.Enum;
 
         /// <summary>
         ///
         /// </summary>
-        public bool TryPickSparseVectorStorageTypeVariant2(
-#if NET6_0_OR_GREATER
-            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
-#endif
-            out global::Qdrant.SparseVectorStorageTypeVariant2? value)
+        public SparseVectorStorageType(global::Qdrant.SparseVectorStorageTypeEnum? value)
         {
-            value = SparseVectorStorageTypeVariant2;
-            return IsSparseVectorStorageTypeVariant2;
+            Enum = value;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.SparseVectorStorageTypeVariant2 PickSparseVectorStorageTypeVariant2() => SparseVectorStorageTypeVariant2 is { } value
-            ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'SparseVectorStorageTypeVariant2' but the value was {ToString()}.");
-        /// <summary>
-        ///
-        /// </summary>
-        public static implicit operator SparseVectorStorageType(global::Qdrant.SparseVectorStorageTypeVariant1 value) => new SparseVectorStorageType((global::Qdrant.SparseVectorStorageTypeVariant1?)value);
-
-        /// <summary>
-        ///
-        /// </summary>
-        public static implicit operator global::Qdrant.SparseVectorStorageTypeVariant1?(SparseVectorStorageType @this) => @this.SparseVectorStorageTypeVariant1;
-
-        /// <summary>
-        ///
-        /// </summary>
-        public SparseVectorStorageType(global::Qdrant.SparseVectorStorageTypeVariant1? value)
-        {
-            SparseVectorStorageTypeVariant1 = value;
-        }
-
-        /// <summary>
-        ///
-        /// </summary>
-        public static SparseVectorStorageType FromSparseVectorStorageTypeVariant1(global::Qdrant.SparseVectorStorageTypeVariant1? value) => new SparseVectorStorageType(value);
-
-        /// <summary>
-        ///
-        /// </summary>
-        public static implicit operator SparseVectorStorageType(global::Qdrant.SparseVectorStorageTypeVariant2 value) => new SparseVectorStorageType((global::Qdrant.SparseVectorStorageTypeVariant2?)value);
-
-        /// <summary>
-        ///
-        /// </summary>
-        public static implicit operator global::Qdrant.SparseVectorStorageTypeVariant2?(SparseVectorStorageType @this) => @this.SparseVectorStorageTypeVariant2;
-
-        /// <summary>
-        ///
-        /// </summary>
-        public SparseVectorStorageType(global::Qdrant.SparseVectorStorageTypeVariant2? value)
-        {
-            SparseVectorStorageTypeVariant2 = value;
-        }
-
-        /// <summary>
-        ///
-        /// </summary>
-        public static SparseVectorStorageType FromSparseVectorStorageTypeVariant2(global::Qdrant.SparseVectorStorageTypeVariant2? value) => new SparseVectorStorageType(value);
-
-        /// <summary>
-        ///
-        /// </summary>
-        public SparseVectorStorageType(
-            global::Qdrant.SparseVectorStorageTypeVariant1? sparseVectorStorageTypeVariant1,
-            global::Qdrant.SparseVectorStorageTypeVariant2? sparseVectorStorageTypeVariant2
-            )
-        {
-            SparseVectorStorageTypeVariant1 = sparseVectorStorageTypeVariant1;
-            SparseVectorStorageTypeVariant2 = sparseVectorStorageTypeVariant2;
-        }
+        public static SparseVectorStorageType FromEnum(global::Qdrant.SparseVectorStorageTypeEnum? value) => new SparseVectorStorageType(value);
 
         /// <summary>
         ///
         /// </summary>
         public object? Object =>
-            SparseVectorStorageTypeVariant2 as object ??
-            SparseVectorStorageTypeVariant1 as object
+            Enum as object
             ;
 
         /// <summary>
         ///
         /// </summary>
         public override string? ToString() =>
-            SparseVectorStorageTypeVariant1?.ToValueString() ??
-            SparseVectorStorageTypeVariant2?.ToValueString()
+            Enum?.ToValueString()
             ;
 
         /// <summary>
@@ -161,15 +87,14 @@ namespace Qdrant
         /// </summary>
         public bool Validate()
         {
-            return IsSparseVectorStorageTypeVariant1 && !IsSparseVectorStorageTypeVariant2 || !IsSparseVectorStorageTypeVariant1 && IsSparseVectorStorageTypeVariant2;
+            return IsEnum;
         }
 
         /// <summary>
         ///
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::Qdrant.SparseVectorStorageTypeVariant1?, TResult>? sparseVectorStorageTypeVariant1 = null,
-            global::System.Func<global::Qdrant.SparseVectorStorageTypeVariant2?, TResult>? sparseVectorStorageTypeVariant2 = null,
+            global::System.Func<global::Qdrant.SparseVectorStorageTypeEnum?, TResult>? @enum = null,
             bool validate = true)
         {
             if (validate)
@@ -177,13 +102,9 @@ namespace Qdrant
                 Validate();
             }
 
-            if (SparseVectorStorageTypeVariant1 is { } __value0 && sparseVectorStorageTypeVariant1 != null)
+            if (Enum is { } __value0 && @enum != null)
             {
-                return sparseVectorStorageTypeVariant1(__value0);
-            }
-            else if (SparseVectorStorageTypeVariant2 is { } __value1 && sparseVectorStorageTypeVariant2 != null)
-            {
-                return sparseVectorStorageTypeVariant2(__value1);
+                return @enum(__value0);
             }
 
             return default(TResult);
@@ -193,9 +114,7 @@ namespace Qdrant
         ///
         /// </summary>
         public void Match(
-            global::System.Action<global::Qdrant.SparseVectorStorageTypeVariant1?>? sparseVectorStorageTypeVariant1 = null,
-
-            global::System.Action<global::Qdrant.SparseVectorStorageTypeVariant2?>? sparseVectorStorageTypeVariant2 = null,
+            global::System.Action<global::Qdrant.SparseVectorStorageTypeEnum?>? @enum = null,
             bool validate = true)
         {
             if (validate)
@@ -203,13 +122,9 @@ namespace Qdrant
                 Validate();
             }
 
-            if (SparseVectorStorageTypeVariant1 is { } __value0)
+            if (Enum is { } __value0)
             {
-                sparseVectorStorageTypeVariant1?.Invoke(__value0);
-            }
-            else if (SparseVectorStorageTypeVariant2 is { } __value1)
-            {
-                sparseVectorStorageTypeVariant2?.Invoke(__value1);
+                @enum?.Invoke(__value0);
             }
         }
 
@@ -217,8 +132,7 @@ namespace Qdrant
         ///
         /// </summary>
         public void Switch(
-            global::System.Action<global::Qdrant.SparseVectorStorageTypeVariant1?>? sparseVectorStorageTypeVariant1 = null,
-            global::System.Action<global::Qdrant.SparseVectorStorageTypeVariant2?>? sparseVectorStorageTypeVariant2 = null,
+            global::System.Action<global::Qdrant.SparseVectorStorageTypeEnum?>? @enum = null,
             bool validate = true)
         {
             if (validate)
@@ -226,13 +140,9 @@ namespace Qdrant
                 Validate();
             }
 
-            if (SparseVectorStorageTypeVariant1 is { } __value0)
+            if (Enum is { } __value0)
             {
-                sparseVectorStorageTypeVariant1?.Invoke(__value0);
-            }
-            else if (SparseVectorStorageTypeVariant2 is { } __value1)
-            {
-                sparseVectorStorageTypeVariant2?.Invoke(__value1);
+                @enum?.Invoke(__value0);
             }
         }
 
@@ -243,10 +153,8 @@ namespace Qdrant
         {
             var fields = new object?[]
             {
-                SparseVectorStorageTypeVariant1,
-                typeof(global::Qdrant.SparseVectorStorageTypeVariant1),
-                SparseVectorStorageTypeVariant2,
-                typeof(global::Qdrant.SparseVectorStorageTypeVariant2),
+                Enum,
+                typeof(global::Qdrant.SparseVectorStorageTypeEnum),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -263,8 +171,7 @@ namespace Qdrant
         public bool Equals(SparseVectorStorageType other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::Qdrant.SparseVectorStorageTypeVariant1?>.Default.Equals(SparseVectorStorageTypeVariant1, other.SparseVectorStorageTypeVariant1) &&
-                global::System.Collections.Generic.EqualityComparer<global::Qdrant.SparseVectorStorageTypeVariant2?>.Default.Equals(SparseVectorStorageTypeVariant2, other.SparseVectorStorageTypeVariant2)
+                global::System.Collections.Generic.EqualityComparer<global::Qdrant.SparseVectorStorageTypeEnum?>.Default.Equals(Enum, other.Enum)
                 ;
         }
 

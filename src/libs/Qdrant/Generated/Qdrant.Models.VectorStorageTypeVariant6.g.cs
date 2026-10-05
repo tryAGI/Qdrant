@@ -4,14 +4,14 @@
 namespace Qdrant
 {
     /// <summary>
-    /// Placeholder storage: contains no data, all vectors reported as deleted. Used for newly created named vectors on immutable segments. No files on disk, reconstructed from config on load.
+    /// Vectors are inlined in the HNSW links file, not in a dedicated storage. Not appendable.
     /// </summary>
     public enum VectorStorageTypeVariant6
     {
         /// <summary>
         ///
         /// </summary>
-        Empty,
+        GraphInline,
     }
 
     /// <summary>
@@ -26,7 +26,7 @@ namespace Qdrant
         {
             return value switch
             {
-                VectorStorageTypeVariant6.Empty => "Empty",
+                VectorStorageTypeVariant6.GraphInline => "GraphInline",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -37,7 +37,7 @@ namespace Qdrant
         {
             return value switch
             {
-                "Empty" => VectorStorageTypeVariant6.Empty,
+                "GraphInline" => VectorStorageTypeVariant6.GraphInline,
                 _ => null,
             };
         }

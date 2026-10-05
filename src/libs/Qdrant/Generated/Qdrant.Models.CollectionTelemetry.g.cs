@@ -43,7 +43,7 @@ namespace Qdrant
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("resharding")]
-        public global::System.Collections.Generic.IList<global::Qdrant.ReshardingInfo>? Resharding { get; set; }
+        public global::System.Collections.Generic.IList<global::Qdrant.ReshardingTelemetry>? Resharding { get; set; }
 
         /// <summary>
         ///
@@ -76,7 +76,7 @@ namespace Qdrant
             global::Qdrant.CollectionConfigTelemetry? config,
             global::System.Collections.Generic.IList<global::Qdrant.ReplicaSetTelemetry>? shards,
             global::System.Collections.Generic.IList<global::Qdrant.ShardTransferInfo>? transfers,
-            global::System.Collections.Generic.IList<global::Qdrant.ReshardingInfo>? resharding,
+            global::System.Collections.Generic.IList<global::Qdrant.ReshardingTelemetry>? resharding,
             global::System.Collections.Generic.Dictionary<string, global::Qdrant.ShardCleanStatusTelemetry>? shardCleanTasks)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

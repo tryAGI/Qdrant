@@ -50,7 +50,7 @@ namespace Qdrant
         public global::Qdrant.ShardTransferMethod? Method { get; set; }
 
         /// <summary>
-        /// A human-readable report of the transfer progress. Available only on the source peer.
+        /// A human-readable report of the transfer progress. Available only on the source peer, and on the target peer during snapshot recovery.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("comment")]
         public string? Comment { get; set; }
@@ -80,7 +80,7 @@ namespace Qdrant
         /// </param>
         /// <param name="method"></param>
         /// <param name="comment">
-        /// A human-readable report of the transfer progress. Available only on the source peer.
+        /// A human-readable report of the transfer progress. Available only on the source peer, and on the target peer during snapshot recovery.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

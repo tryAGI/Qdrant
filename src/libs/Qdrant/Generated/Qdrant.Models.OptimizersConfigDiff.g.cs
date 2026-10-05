@@ -30,7 +30,7 @@ namespace Qdrant
         public int? DefaultSegmentNumber { get; set; }
 
         /// <summary>
-        /// Do not create segments larger this size (in kilobytes). Large segments might require disproportionately long indexation times, therefore it makes sense to limit the size of segments.<br/>
+        /// Do not create segments larger than this size (in kilobytes). Large segments might require disproportionately long indexation times, therefore it makes sense to limit the size of segments.<br/>
         /// If indexation speed have more priority for your - make this parameter lower. If search speed is more important - make this parameter higher. Note: 1Kb = 1 vector of size 256
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_segment_size")]
@@ -95,7 +95,7 @@ namespace Qdrant
         /// It is recommended to select default number of segments as a factor of the number of search threads, so that each segment would be handled evenly by one of the threads If `default_segment_number = 0`, will be automatically selected by the number of available CPUs
         /// </param>
         /// <param name="maxSegmentSize">
-        /// Do not create segments larger this size (in kilobytes). Large segments might require disproportionately long indexation times, therefore it makes sense to limit the size of segments.<br/>
+        /// Do not create segments larger than this size (in kilobytes). Large segments might require disproportionately long indexation times, therefore it makes sense to limit the size of segments.<br/>
         /// If indexation speed have more priority for your - make this parameter lower. If search speed is more important - make this parameter higher. Note: 1Kb = 1 vector of size 256
         /// </param>
         /// <param name="indexingThreshold">

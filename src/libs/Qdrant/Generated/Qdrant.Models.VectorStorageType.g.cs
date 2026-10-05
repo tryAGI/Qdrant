@@ -124,8 +124,7 @@ namespace Qdrant
             : throw new global::System.InvalidOperationException($"Expected union variant 'VectorStorageTypeVariant3' but the value was {ToString()}.");
 
         /// <summary>
-        /// Same as `ChunkedMmap`, but vectors are forced to be locked in RAM In this way we avoid cold requests to disk, but risk to run out of memory<br/>
-        /// Designed as a replacement for `Memory`, which doesn't depend on RocksDB
+        /// Same as `ChunkedMmap`, but vectors are forced to be locked in RAM In this way we avoid cold requests to disk, but risk to run out of memory
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.VectorStorageTypeVariant4? VectorStorageTypeVariant4 { get; init; }
@@ -199,7 +198,7 @@ namespace Qdrant
             : throw new global::System.InvalidOperationException($"Expected union variant 'VectorStorageTypeVariant5' but the value was {ToString()}.");
 
         /// <summary>
-        /// Placeholder storage: contains no data, all vectors reported as deleted. Used for newly created named vectors on immutable segments. No files on disk, reconstructed from config on load.
+        /// Vectors are inlined in the HNSW links file, not in a dedicated storage. Not appendable.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::Qdrant.VectorStorageTypeVariant6? VectorStorageTypeVariant6 { get; init; }

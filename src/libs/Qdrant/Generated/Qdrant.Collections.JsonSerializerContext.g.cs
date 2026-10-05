@@ -46,6 +46,7 @@ namespace Qdrant
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(bool))]
     #pragma warning restore CS0618
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.PayloadStorageParams))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.IdTrackerParams))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, global::Qdrant.SparseVectorParams>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.SparseVectorParams))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.VectorParams))]

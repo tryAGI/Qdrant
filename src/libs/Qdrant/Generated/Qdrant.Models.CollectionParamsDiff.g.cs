@@ -49,6 +49,12 @@ namespace Qdrant
         public global::Qdrant.PayloadStorageParams? Payload { get; set; }
 
         /// <summary>
+        /// Update params of the point id tracker. If none - it is left unchanged.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("id_tracker")]
+        public global::Qdrant.IdTrackerParams? IdTracker { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -72,6 +78,9 @@ namespace Qdrant
         /// <param name="payload">
         /// Update params of the payload storage. If none - it is left unchanged.
         /// </param>
+        /// <param name="idTracker">
+        /// Update params of the point id tracker. If none - it is left unchanged.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -80,13 +89,15 @@ namespace Qdrant
             int? writeConsistencyFactor,
             int? readFanOutFactor,
             int? readFanOutDelayMs,
-            global::Qdrant.PayloadStorageParams? payload)
+            global::Qdrant.PayloadStorageParams? payload,
+            global::Qdrant.IdTrackerParams? idTracker)
         {
             this.ReplicationFactor = replicationFactor;
             this.WriteConsistencyFactor = writeConsistencyFactor;
             this.ReadFanOutFactor = readFanOutFactor;
             this.ReadFanOutDelayMs = readFanOutDelayMs;
             this.Payload = payload;
+            this.IdTracker = idTracker;
         }
 
         /// <summary>

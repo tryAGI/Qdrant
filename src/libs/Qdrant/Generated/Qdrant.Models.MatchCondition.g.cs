@@ -196,6 +196,44 @@ namespace Qdrant
             : throw new global::System.InvalidOperationException($"Expected union variant 'Prefix' but the value was {ToString()}.");
 
         /// <summary>
+        /// Match keyword values that contain the given string.<br/>
+        /// Byte-wise (hence, for valid UTF-8, character-wise) and case-sensitive, consistent with exact keyword and prefix matching. Served by a keyword index with the `prefix` option, through a scan of its key dictionary; without one, falls back to reading the payload.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Qdrant.MatchSubstring? Substring { get; init; }
+#else
+        public global::Qdrant.MatchSubstring? Substring { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Substring))]
+#endif
+        public bool IsSubstring => Substring != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickSubstring(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.MatchSubstring? value)
+        {
+            value = Substring;
+            return IsSubstring;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::Qdrant.MatchSubstring PickSubstring() => Substring is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Substring' but the value was {ToString()}.");
+
+        /// <summary>
         /// Exact match on any of the given values
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -386,6 +424,29 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
+        public static implicit operator MatchCondition(global::Qdrant.MatchSubstring value) => new MatchCondition((global::Qdrant.MatchSubstring?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::Qdrant.MatchSubstring?(MatchCondition @this) => @this.Substring;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public MatchCondition(global::Qdrant.MatchSubstring? value)
+        {
+            Substring = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static MatchCondition FromSubstring(global::Qdrant.MatchSubstring? value) => new MatchCondition(value);
+
+        /// <summary>
+        ///
+        /// </summary>
         public static implicit operator MatchCondition(global::Qdrant.MatchAny value) => new MatchCondition((global::Qdrant.MatchAny?)value);
 
         /// <summary>
@@ -438,6 +499,7 @@ namespace Qdrant
             global::Qdrant.MatchTextAny? textAny,
             global::Qdrant.MatchPhrase? phrase,
             global::Qdrant.MatchPrefix? prefix,
+            global::Qdrant.MatchSubstring? substring,
             global::Qdrant.MatchAny? any,
             global::Qdrant.MatchExcept? except
             )
@@ -447,6 +509,7 @@ namespace Qdrant
             TextAny = textAny;
             Phrase = phrase;
             Prefix = prefix;
+            Substring = substring;
             Any = any;
             Except = except;
         }
@@ -457,6 +520,7 @@ namespace Qdrant
         public object? Object =>
             Except as object ??
             Any as object ??
+            Substring as object ??
             Prefix as object ??
             Phrase as object ??
             TextAny as object ??
@@ -473,6 +537,7 @@ namespace Qdrant
             TextAny?.ToString() ??
             Phrase?.ToString() ??
             Prefix?.ToString() ??
+            Substring?.ToString() ??
             Any?.ToString() ??
             Except?.ToString()
             ;
@@ -482,7 +547,7 @@ namespace Qdrant
         /// </summary>
         public bool Validate()
         {
-            return IsValue || IsText || IsTextAny || IsPhrase || IsPrefix || IsAny || IsExcept;
+            return IsValue || IsText || IsTextAny || IsPhrase || IsPrefix || IsSubstring || IsAny || IsExcept;
         }
 
         /// <summary>
@@ -494,6 +559,7 @@ namespace Qdrant
             global::System.Func<global::Qdrant.MatchTextAny, TResult>? textAny = null,
             global::System.Func<global::Qdrant.MatchPhrase, TResult>? phrase = null,
             global::System.Func<global::Qdrant.MatchPrefix, TResult>? prefix = null,
+            global::System.Func<global::Qdrant.MatchSubstring, TResult>? substring = null,
             global::System.Func<global::Qdrant.MatchAny, TResult>? any = null,
             global::System.Func<global::Qdrant.MatchExcept, TResult>? except = null,
             bool validate = true)
@@ -523,13 +589,17 @@ namespace Qdrant
             {
                 return prefix(__value4);
             }
-            else if (Any is { } __value5 && any != null)
+            else if (Substring is { } __value5 && substring != null)
             {
-                return any(__value5);
+                return substring(__value5);
             }
-            else if (Except is { } __value6 && except != null)
+            else if (Any is { } __value6 && any != null)
             {
-                return except(__value6);
+                return any(__value6);
+            }
+            else if (Except is { } __value7 && except != null)
+            {
+                return except(__value7);
             }
 
             return default(TResult);
@@ -549,6 +619,8 @@ namespace Qdrant
 
             global::System.Action<global::Qdrant.MatchPrefix>? prefix = null,
 
+            global::System.Action<global::Qdrant.MatchSubstring>? substring = null,
+
             global::System.Action<global::Qdrant.MatchAny>? any = null,
 
             global::System.Action<global::Qdrant.MatchExcept>? except = null,
@@ -579,13 +651,17 @@ namespace Qdrant
             {
                 prefix?.Invoke(__value4);
             }
-            else if (Any is { } __value5)
+            else if (Substring is { } __value5)
             {
-                any?.Invoke(__value5);
+                substring?.Invoke(__value5);
             }
-            else if (Except is { } __value6)
+            else if (Any is { } __value6)
             {
-                except?.Invoke(__value6);
+                any?.Invoke(__value6);
+            }
+            else if (Except is { } __value7)
+            {
+                except?.Invoke(__value7);
             }
         }
 
@@ -598,6 +674,7 @@ namespace Qdrant
             global::System.Action<global::Qdrant.MatchTextAny>? textAny = null,
             global::System.Action<global::Qdrant.MatchPhrase>? phrase = null,
             global::System.Action<global::Qdrant.MatchPrefix>? prefix = null,
+            global::System.Action<global::Qdrant.MatchSubstring>? substring = null,
             global::System.Action<global::Qdrant.MatchAny>? any = null,
             global::System.Action<global::Qdrant.MatchExcept>? except = null,
             bool validate = true)
@@ -627,13 +704,17 @@ namespace Qdrant
             {
                 prefix?.Invoke(__value4);
             }
-            else if (Any is { } __value5)
+            else if (Substring is { } __value5)
             {
-                any?.Invoke(__value5);
+                substring?.Invoke(__value5);
             }
-            else if (Except is { } __value6)
+            else if (Any is { } __value6)
             {
-                except?.Invoke(__value6);
+                any?.Invoke(__value6);
+            }
+            else if (Except is { } __value7)
+            {
+                except?.Invoke(__value7);
             }
         }
 
@@ -654,6 +735,8 @@ namespace Qdrant
                 typeof(global::Qdrant.MatchPhrase),
                 Prefix,
                 typeof(global::Qdrant.MatchPrefix),
+                Substring,
+                typeof(global::Qdrant.MatchSubstring),
                 Any,
                 typeof(global::Qdrant.MatchAny),
                 Except,
@@ -679,6 +762,7 @@ namespace Qdrant
                 global::System.Collections.Generic.EqualityComparer<global::Qdrant.MatchTextAny?>.Default.Equals(TextAny, other.TextAny) &&
                 global::System.Collections.Generic.EqualityComparer<global::Qdrant.MatchPhrase?>.Default.Equals(Phrase, other.Phrase) &&
                 global::System.Collections.Generic.EqualityComparer<global::Qdrant.MatchPrefix?>.Default.Equals(Prefix, other.Prefix) &&
+                global::System.Collections.Generic.EqualityComparer<global::Qdrant.MatchSubstring?>.Default.Equals(Substring, other.Substring) &&
                 global::System.Collections.Generic.EqualityComparer<global::Qdrant.MatchAny?>.Default.Equals(Any, other.Any) &&
                 global::System.Collections.Generic.EqualityComparer<global::Qdrant.MatchExcept?>.Default.Equals(Except, other.Except)
                 ;

@@ -73,6 +73,10 @@ namespace Qdrant
         /// Configuration of the payload storage<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
+        /// <param name="idTracker">
+        /// Configuration of the point id tracker<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
         /// <param name="hnswConfig">
         /// Custom params for HNSW index. If none - values from service configuration file are used.
         /// </param>
@@ -107,6 +111,7 @@ namespace Qdrant
             int? replicationFactor = default,
             int? writeConsistencyFactor = default,
             global::Qdrant.PayloadStorageParams? payload = default,
+            global::Qdrant.IdTrackerParams? idTracker = default,
             global::Qdrant.HnswConfigDiff? hnswConfig = default,
             global::Qdrant.WalConfigDiff? walConfig = default,
             global::Qdrant.OptimizersConfigDiff? optimizersConfig = default,

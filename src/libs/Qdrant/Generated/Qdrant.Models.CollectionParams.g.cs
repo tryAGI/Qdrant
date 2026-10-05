@@ -75,6 +75,12 @@ namespace Qdrant
         public global::Qdrant.PayloadStorageParams? Payload { get; set; }
 
         /// <summary>
+        /// Configuration of the point id tracker
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("id_tracker")]
+        public global::Qdrant.IdTrackerParams? IdTracker { get; set; }
+
+        /// <summary>
         /// Configuration of the sparse vector storage
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sparse_vectors")]
@@ -119,6 +125,9 @@ namespace Qdrant
         /// <param name="payload">
         /// Configuration of the payload storage
         /// </param>
+        /// <param name="idTracker">
+        /// Configuration of the point id tracker
+        /// </param>
         /// <param name="sparseVectors">
         /// Configuration of the sparse vector storage
         /// </param>
@@ -134,6 +143,7 @@ namespace Qdrant
             int? readFanOutFactor,
             int? readFanOutDelayMs,
             global::Qdrant.PayloadStorageParams? payload,
+            global::Qdrant.IdTrackerParams? idTracker,
             global::System.Collections.Generic.Dictionary<string, global::Qdrant.SparseVectorParams>? sparseVectors)
         {
             this.Vectors = vectors;
@@ -144,6 +154,7 @@ namespace Qdrant
             this.ReadFanOutFactor = readFanOutFactor;
             this.ReadFanOutDelayMs = readFanOutDelayMs;
             this.Payload = payload;
+            this.IdTracker = idTracker;
             this.SparseVectors = sparseVectors;
         }
 

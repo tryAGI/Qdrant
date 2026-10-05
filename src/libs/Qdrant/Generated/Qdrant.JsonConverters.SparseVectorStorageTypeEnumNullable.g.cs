@@ -3,10 +3,10 @@
 namespace Qdrant.JsonConverters
 {
     /// <inheritdoc />
-    public sealed class SparseVectorStorageTypeVariant1JsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::Qdrant.SparseVectorStorageTypeVariant1>
+    public sealed class SparseVectorStorageTypeEnumNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::Qdrant.SparseVectorStorageTypeEnum?>
     {
         /// <inheritdoc />
-        public override global::Qdrant.SparseVectorStorageTypeVariant1 Read(
+        public override global::Qdrant.SparseVectorStorageTypeEnum? Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -18,7 +18,7 @@ namespace Qdrant.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::Qdrant.SparseVectorStorageTypeVariant1Extensions.ToEnum(stringValue) ?? default;
+                        return global::Qdrant.SparseVectorStorageTypeEnumExtensions.ToEnum(stringValue);
                     }
 
                     break;
@@ -26,11 +26,11 @@ namespace Qdrant.JsonConverters
                 case global::System.Text.Json.JsonTokenType.Number:
                 {
                     var numValue = reader.GetInt32();
-                    return (global::Qdrant.SparseVectorStorageTypeVariant1)numValue;
+                    return (global::Qdrant.SparseVectorStorageTypeEnum)numValue;
                 }
                 case global::System.Text.Json.JsonTokenType.Null:
                 {
-                    return default(global::Qdrant.SparseVectorStorageTypeVariant1);
+                    return default(global::Qdrant.SparseVectorStorageTypeEnum?);
                 }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
@@ -42,12 +42,19 @@ namespace Qdrant.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::Qdrant.SparseVectorStorageTypeVariant1 value,
+            global::Qdrant.SparseVectorStorageTypeEnum? value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
 
-            writer.WriteStringValue(global::Qdrant.SparseVectorStorageTypeVariant1Extensions.ToValueString(value));
+            if (value == null)
+            {
+                writer.WriteNullValue();
+            }
+            else
+            {
+                writer.WriteStringValue(global::Qdrant.SparseVectorStorageTypeEnumExtensions.ToValueString(value.Value));
+            }
         }
     }
 }
