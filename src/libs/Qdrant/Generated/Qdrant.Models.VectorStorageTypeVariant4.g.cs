@@ -4,8 +4,7 @@
 namespace Qdrant
 {
     /// <summary>
-    /// Same as `ChunkedMmap`, but vectors are forced to be locked in RAM In this way we avoid cold requests to disk, but risk to run out of memory<br/>
-    /// Designed as a replacement for `Memory`, which doesn't depend on RocksDB
+    /// Same as `ChunkedMmap`, but vectors are forced to be locked in RAM In this way we avoid cold requests to disk, but risk to run out of memory
     /// </summary>
     public enum VectorStorageTypeVariant4
     {

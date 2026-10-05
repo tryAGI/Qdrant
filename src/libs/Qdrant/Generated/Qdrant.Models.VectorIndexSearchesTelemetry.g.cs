@@ -59,6 +59,12 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("filtered_acorn")]
+        public global::Qdrant.OperationDurationStatistics? FilteredAcorn { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("filtered_exact")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::Qdrant.OperationDurationStatistics FilteredExact { get; set; }
@@ -96,6 +102,7 @@ namespace Qdrant
         /// <param name="filteredSparse"></param>
         /// <param name="unfilteredExact"></param>
         /// <param name="indexName"></param>
+        /// <param name="filteredAcorn"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -109,7 +116,8 @@ namespace Qdrant
             global::Qdrant.OperationDurationStatistics filteredExact,
             global::Qdrant.OperationDurationStatistics filteredSparse,
             global::Qdrant.OperationDurationStatistics unfilteredExact,
-            string? indexName)
+            string? indexName,
+            global::Qdrant.OperationDurationStatistics? filteredAcorn)
         {
             this.IndexName = indexName;
             this.UnfilteredPlain = unfilteredPlain ?? throw new global::System.ArgumentNullException(nameof(unfilteredPlain));
@@ -118,6 +126,7 @@ namespace Qdrant
             this.FilteredPlain = filteredPlain ?? throw new global::System.ArgumentNullException(nameof(filteredPlain));
             this.FilteredSmallCardinality = filteredSmallCardinality ?? throw new global::System.ArgumentNullException(nameof(filteredSmallCardinality));
             this.FilteredLargeCardinality = filteredLargeCardinality ?? throw new global::System.ArgumentNullException(nameof(filteredLargeCardinality));
+            this.FilteredAcorn = filteredAcorn;
             this.FilteredExact = filteredExact ?? throw new global::System.ArgumentNullException(nameof(filteredExact));
             this.FilteredSparse = filteredSparse ?? throw new global::System.ArgumentNullException(nameof(filteredSparse));
             this.UnfilteredExact = unfilteredExact ?? throw new global::System.ArgumentNullException(nameof(unfilteredExact));

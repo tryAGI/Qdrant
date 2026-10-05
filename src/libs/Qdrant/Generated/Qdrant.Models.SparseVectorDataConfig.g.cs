@@ -19,8 +19,8 @@ namespace Qdrant
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("storage_type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Qdrant.JsonConverters.SparseVectorStorageTypeJsonConverter))]
-        public global::Qdrant.SparseVectorStorageType? StorageType { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Qdrant.JsonConverters.SparseVectorStorageTypeEnumJsonConverter))]
+        public global::Qdrant.SparseVectorStorageTypeEnum? StorageType { get; set; }
 
         /// <summary>
         /// Configures addition value modifications for sparse vectors. Default: none
@@ -49,7 +49,7 @@ namespace Qdrant
 #endif
         public SparseVectorDataConfig(
             global::Qdrant.SparseIndexConfig index,
-            global::Qdrant.SparseVectorStorageType? storageType,
+            global::Qdrant.SparseVectorStorageTypeEnum? storageType,
             global::Qdrant.Modifier? modifier)
         {
             this.Index = index ?? throw new global::System.ArgumentNullException(nameof(index));

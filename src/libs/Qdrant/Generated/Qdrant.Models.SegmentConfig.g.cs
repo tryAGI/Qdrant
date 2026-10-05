@@ -29,6 +29,12 @@ namespace Qdrant
         public required global::Qdrant.PayloadStorageType PayloadStorageType { get; set; }
 
         /// <summary>
+        /// Memory placement of the id tracker in non-appendable segments. Unset means the deployment default: `cold` in serverless-compatible mode, `pinned` otherwise.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("id_tracker_memory")]
+        public global::Qdrant.Memory? IdTrackerMemory { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -44,17 +50,22 @@ namespace Qdrant
         /// Default Value: {}
         /// </param>
         /// <param name="sparseVectorData"></param>
+        /// <param name="idTrackerMemory">
+        /// Memory placement of the id tracker in non-appendable segments. Unset means the deployment default: `cold` in serverless-compatible mode, `pinned` otherwise.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public SegmentConfig(
             global::Qdrant.PayloadStorageType payloadStorageType,
             global::System.Collections.Generic.Dictionary<string, global::Qdrant.VectorDataConfig>? vectorData,
-            global::System.Collections.Generic.Dictionary<string, global::Qdrant.SparseVectorDataConfig>? sparseVectorData)
+            global::System.Collections.Generic.Dictionary<string, global::Qdrant.SparseVectorDataConfig>? sparseVectorData,
+            global::Qdrant.Memory? idTrackerMemory)
         {
             this.VectorData = vectorData;
             this.SparseVectorData = sparseVectorData;
             this.PayloadStorageType = payloadStorageType;
+            this.IdTrackerMemory = idTrackerMemory;
         }
 
         /// <summary>

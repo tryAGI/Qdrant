@@ -46,6 +46,7 @@ namespace Qdrant
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(bool))]
     #pragma warning restore CS0618
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.PayloadStorageParams))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.IdTrackerParams))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, global::Qdrant.SparseVectorParams>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.SparseVectorParams))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.VectorParams))]
@@ -161,6 +162,7 @@ namespace Qdrant
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.MatchTextAny))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.MatchPhrase))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.MatchPrefix))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.MatchSubstring))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.MatchAny))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.AnyVariants), TypeInfoPropertyName = "AnyVariants2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<long>))]
@@ -299,6 +301,8 @@ namespace Qdrant
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.CollectionConfigTelemetry))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Qdrant.ReplicaSetTelemetry>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.ReplicaSetTelemetry))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Qdrant.ReshardingTelemetry>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.ReshardingTelemetry))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, global::Qdrant.ShardCleanStatusTelemetry>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.ShardCleanStatusTelemetry), TypeInfoPropertyName = "ShardCleanStatusTelemetry2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.LocalShardTelemetry))]
@@ -341,13 +345,12 @@ namespace Qdrant
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.IndexesVariant2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.IndexesVariant2Type), TypeInfoPropertyName = "IndexesVariant2Type2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.SparseIndexConfig))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.SparseVectorStorageType), TypeInfoPropertyName = "SparseVectorStorageType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.SparseIndexType), TypeInfoPropertyName = "SparseIndexType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.SparseIndexTypeVariant1), TypeInfoPropertyName = "SparseIndexTypeVariant12")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.SparseIndexTypeVariant2), TypeInfoPropertyName = "SparseIndexTypeVariant22")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.SparseIndexTypeVariant3), TypeInfoPropertyName = "SparseIndexTypeVariant32")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.SparseVectorStorageTypeVariant1), TypeInfoPropertyName = "SparseVectorStorageTypeVariant12")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.SparseVectorStorageTypeVariant2), TypeInfoPropertyName = "SparseVectorStorageTypeVariant22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.SparseVectorStorageType), TypeInfoPropertyName = "SparseVectorStorageType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.SparseVectorStorageTypeEnum), TypeInfoPropertyName = "SparseVectorStorageTypeEnum2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.PayloadStorageTypeVariant1))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.PayloadStorageTypeVariant1Type), TypeInfoPropertyName = "PayloadStorageTypeVariant1Type2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.PayloadStorageTypeVariant2))]
@@ -360,6 +363,7 @@ namespace Qdrant
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.TrackerStatusEnum), TypeInfoPropertyName = "TrackerStatusEnum2_3")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.TrackerStatusEnum2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.TrackerStatusEnum3))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.ReshardingStage), TypeInfoPropertyName = "ReshardingStage2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.ShardCleanStatusTelemetryEnum), TypeInfoPropertyName = "ShardCleanStatusTelemetryEnum2_3")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.ShardCleanStatusTelemetryEnum2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.ShardCleanStatusProgressTelemetry))]
@@ -509,10 +513,6 @@ namespace Qdrant
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.SearchMatrixRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.SearchMatrixOffsetsResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.SearchMatrixPairsResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Qdrant.SearchMatrixPair>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.SearchMatrixPair))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.FacetRequest))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.FacetResponse))]
     internal sealed partial class SourceGenerationContextChunk0 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -523,6 +523,10 @@ namespace Qdrant
     [global::System.Text.Json.Serialization.JsonSourceGenerationOptions(
         DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull
     )]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Qdrant.SearchMatrixPair>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.SearchMatrixPair))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.FacetRequest))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.FacetResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Qdrant.FacetValueHit>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.FacetValueHit))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.FacetValue), TypeInfoPropertyName = "FacetValue2")]
@@ -731,17 +735,17 @@ namespace Qdrant
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.VectorStorageTypeVariant6?), TypeInfoPropertyName = "NullableVectorStorageTypeVariant62")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.IndexesVariant1Type?), TypeInfoPropertyName = "NullableIndexesVariant1Type2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.IndexesVariant2Type?), TypeInfoPropertyName = "NullableIndexesVariant2Type2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.SparseVectorStorageType?), TypeInfoPropertyName = "NullableSparseVectorStorageType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.SparseIndexType?), TypeInfoPropertyName = "NullableSparseIndexType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.SparseIndexTypeVariant1?), TypeInfoPropertyName = "NullableSparseIndexTypeVariant12")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.SparseIndexTypeVariant2?), TypeInfoPropertyName = "NullableSparseIndexTypeVariant22")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.SparseIndexTypeVariant3?), TypeInfoPropertyName = "NullableSparseIndexTypeVariant32")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.SparseVectorStorageTypeVariant1?), TypeInfoPropertyName = "NullableSparseVectorStorageTypeVariant12")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.SparseVectorStorageTypeVariant2?), TypeInfoPropertyName = "NullableSparseVectorStorageTypeVariant22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.SparseVectorStorageType?), TypeInfoPropertyName = "NullableSparseVectorStorageType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.SparseVectorStorageTypeEnum?), TypeInfoPropertyName = "NullableSparseVectorStorageTypeEnum2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.PayloadStorageTypeVariant1Type?), TypeInfoPropertyName = "NullablePayloadStorageTypeVariant1Type2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.PayloadStorageTypeVariant2Type?), TypeInfoPropertyName = "NullablePayloadStorageTypeVariant2Type2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.TrackerStatus?), TypeInfoPropertyName = "NullableTrackerStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.TrackerStatusEnum?), TypeInfoPropertyName = "NullableTrackerStatusEnum2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.ReshardingStage?), TypeInfoPropertyName = "NullableReshardingStage2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.ShardCleanStatusTelemetryEnum?), TypeInfoPropertyName = "NullableShardCleanStatusTelemetryEnum2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.ClusterOperations?), TypeInfoPropertyName = "NullableClusterOperations2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.SnapshotPriority?), TypeInfoPropertyName = "NullableSnapshotPriority2")]
@@ -796,6 +800,7 @@ namespace Qdrant
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Qdrant.CollectionTelemetryEnum>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Qdrant.CollectionSnapshotTelemetry>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Qdrant.ReplicaSetTelemetry>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Qdrant.ReshardingTelemetry>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Qdrant.RemoteShardTelemetry>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Qdrant.SegmentTelemetry>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Qdrant.VectorIndexSearchesTelemetry>))]
@@ -1187,13 +1192,9 @@ namespace Qdrant
 
                     || typeToConvert == typeof(global::Qdrant.SparseIndexTypeVariant3?)
 
-                    || typeToConvert == typeof(global::Qdrant.SparseVectorStorageTypeVariant1)
+                    || typeToConvert == typeof(global::Qdrant.SparseVectorStorageTypeEnum)
 
-                    || typeToConvert == typeof(global::Qdrant.SparseVectorStorageTypeVariant1?)
-
-                    || typeToConvert == typeof(global::Qdrant.SparseVectorStorageTypeVariant2)
-
-                    || typeToConvert == typeof(global::Qdrant.SparseVectorStorageTypeVariant2?)
+                    || typeToConvert == typeof(global::Qdrant.SparseVectorStorageTypeEnum?)
 
                     || typeToConvert == typeof(global::Qdrant.PayloadStorageTypeVariant1Type)
 
@@ -1206,6 +1207,10 @@ namespace Qdrant
                     || typeToConvert == typeof(global::Qdrant.TrackerStatusEnum)
 
                     || typeToConvert == typeof(global::Qdrant.TrackerStatusEnum?)
+
+                    || typeToConvert == typeof(global::Qdrant.ReshardingStage)
+
+                    || typeToConvert == typeof(global::Qdrant.ReshardingStage?)
 
                     || typeToConvert == typeof(global::Qdrant.ShardCleanStatusTelemetryEnum)
 
@@ -1842,24 +1847,14 @@ namespace Qdrant
                     return new global::Qdrant.JsonConverters.SparseIndexTypeVariant3NullableJsonConverter();
                 }
 
-                if (typeToConvert == typeof(global::Qdrant.SparseVectorStorageTypeVariant1))
+                if (typeToConvert == typeof(global::Qdrant.SparseVectorStorageTypeEnum))
                 {
-                    return new global::Qdrant.JsonConverters.SparseVectorStorageTypeVariant1JsonConverter();
+                    return new global::Qdrant.JsonConverters.SparseVectorStorageTypeEnumJsonConverter();
                 }
 
-                if (typeToConvert == typeof(global::Qdrant.SparseVectorStorageTypeVariant1?))
+                if (typeToConvert == typeof(global::Qdrant.SparseVectorStorageTypeEnum?))
                 {
-                    return new global::Qdrant.JsonConverters.SparseVectorStorageTypeVariant1NullableJsonConverter();
-                }
-
-                if (typeToConvert == typeof(global::Qdrant.SparseVectorStorageTypeVariant2))
-                {
-                    return new global::Qdrant.JsonConverters.SparseVectorStorageTypeVariant2JsonConverter();
-                }
-
-                if (typeToConvert == typeof(global::Qdrant.SparseVectorStorageTypeVariant2?))
-                {
-                    return new global::Qdrant.JsonConverters.SparseVectorStorageTypeVariant2NullableJsonConverter();
+                    return new global::Qdrant.JsonConverters.SparseVectorStorageTypeEnumNullableJsonConverter();
                 }
 
                 if (typeToConvert == typeof(global::Qdrant.PayloadStorageTypeVariant1Type))
@@ -1890,6 +1885,16 @@ namespace Qdrant
                 if (typeToConvert == typeof(global::Qdrant.TrackerStatusEnum?))
                 {
                     return new global::Qdrant.JsonConverters.TrackerStatusEnumNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.ReshardingStage))
+                {
+                    return new global::Qdrant.JsonConverters.ReshardingStageJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.ReshardingStage?))
+                {
+                    return new global::Qdrant.JsonConverters.ReshardingStageNullableJsonConverter();
                 }
 
                 if (typeToConvert == typeof(global::Qdrant.ShardCleanStatusTelemetryEnum))

@@ -6725,6 +6725,17 @@
               }
             ]
           },
+          "id_tracker": {
+            "description": "Configuration of the point id tracker",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/IdTrackerParams"
+              },
+              {
+                "nullable": true
+              }
+            ]
+          },
           "sparse_vectors": {
             "description": "Configuration of the sparse vector storage",
             "type": "object",
@@ -7201,6 +7212,23 @@
           }
         }
       },
+      "IdTrackerParams": {
+        "description": "Params of the point id tracker",
+        "type": "object",
+        "properties": {
+          "memory": {
+            "description": "Memory placement of the point id mapping in indexed segments: `cold` keeps it on disk and reads it on demand, `cached` keeps it on disk but primes the page cache with it on load, `pinned` keeps it in RAM. Default: `pinned`.",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Memory"
+              },
+              {
+                "nullable": true
+              }
+            ]
+          }
+        }
+      },
       "SparseVectorParams": {
         "description": "Params of single sparse vector data storage",
         "type": "object",
@@ -7372,7 +7400,7 @@
             "minimum": 0
           },
           "max_segment_size": {
-            "description": "Do not create segments larger this size (in kilobytes). Large segments might require disproportionately long indexation times, therefore it makes sense to limit the size of segments.\n\nIf indexing speed is more important - make this parameter lower. If search speed is more important - make this parameter higher. Note: 1Kb = 1 vector of size 256 If not set, will be automatically selected considering the number of available CPUs.",
+            "description": "Do not create segments larger than this size (in kilobytes). Large segments might require disproportionately long indexation times, therefore it makes sense to limit the size of segments.\n\nIf indexing speed is more important - make this parameter lower. If search speed is more important - make this parameter higher. Note: 1Kb = 1 vector of size 256 If not set, will be automatically selected considering the number of available CPUs.",
             "default": null,
             "type": "integer",
             "format": "uint",
@@ -9072,6 +9100,18 @@
           }
         }
       },
+      "MatchSubstring": {
+        "description": "Match keyword values that contain the given string.\n\nByte-wise (hence, for valid UTF-8, character-wise) and case-sensitive, consistent with exact keyword and prefix matching. Served by a keyword index with the `prefix` option, through a scan of its key dictionary; without one, falls back to reading the payload.",
+        "type": "object",
+        "required": [
+          "substring"
+        ],
+        "properties": {
+          "substring": {
+            "type": "string"
+          }
+        }
+      },
       "MatchAny": {
         "description": "Exact match on any of the given values",
         "type": "object",
@@ -9636,6 +9676,18 @@
               }
             ]
           },
+          "id_tracker": {
+            "description": "Configuration of the point id tracker",
+            "default": null,
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/IdTrackerParams"
+              },
+              {
+                "nullable": true
+              }
+            ]
+          },
           "hnsw_config": {
             "description": "Custom params for HNSW index. If none - values from service configuration file are used.",
             "anyOf": [
@@ -9765,7 +9817,7 @@
             "nullable": true
           },
           "max_segment_size": {
-            "description": "Do not create segments larger this size (in kilobytes). Large segments might require disproportionately long indexation times, therefore it makes sense to limit the size of segments.\n\nIf indexation speed have more priority for your - make this parameter lower. If search speed is more important - make this parameter higher. Note: 1Kb = 1 vector of size 256",
+            "description": "Do not create segments larger than this size (in kilobytes). Large segments might require disproportionately long indexation times, therefore it makes sense to limit the size of segments.\n\nIf indexation speed have more priority for your - make this parameter lower. If search speed is more important - make this parameter higher. Note: 1Kb = 1 vector of size 256",
             "type": "integer",
             "format": "uint",
             "minimum": 1,
@@ -10226,6 +10278,17 @@
             "anyOf": [
               {
                 "$ref": "#/components/schemas/PayloadStorageParams"
+              },
+              {
+                "nullable": true
+              }
+            ]
+          },
+          "id_tracker": {
+            "description": "Update params of the point id tracker. If none - it is left unchanged.",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/IdTrackerParams"
               },
               {
                 "nullable": true
@@ -11507,7 +11570,7 @@
             ]
           },
           "comment": {
-            "description": "A human-readable report of the transfer progress. Available only on the source peer.",
+            "description": "A human-readable report of the transfer progress. Available only on the source peer, and on the target peer during snapshot recovery.",
             "type": "string",
             "nullable": true
           }
@@ -11822,6 +11885,11 @@
             "default": false,
             "type": "boolean"
           },
+          "compact_logstore_tracker": {
+            "description": "In non-appendable segments built by the optimizer, store the tracker of an append-only payload storage in the compacted format: read into RAM whole on open instead of one lookup per value. Only has an effect together with [`Self::append_only_storages`]. Gates creation only: both formats are always readable.",
+            "default": false,
+            "type": "boolean"
+          },
           "transfer_raw_points": {
             "description": "Transfer points as storage-native bytes (raw points), for every collection rather than only those whose vector storage would lose precision in a decode-encode round-trip (TurboQuant).\n\nRead on the sending side only, where the transfer batch is prepared: nodes accept raw points regardless.",
             "default": false,
@@ -11832,8 +11900,18 @@
             "default": false,
             "type": "boolean"
           },
+          "persist_proxy_segments": {
+            "description": "Persist proxy segment changes on disk. Prevents pinning the WAL while proxy segments are open. Replays the persisted changes on startup to guarantee data consistency. Required for serverless deployments where storage and compute is separated.",
+            "default": false,
+            "type": "boolean"
+          },
+          "combined_vector_storage": {
+            "description": "When `hnsw_config.inline_storage` enabled, use the `GraphInline` vector storage (aka inline-storage without standalone vector storage) for new segments.\n\nExisting `GraphInline` segments are always readable, regardless of this flag.",
+            "default": true,
+            "type": "boolean"
+          },
           "serverless_compatible": {
-            "description": "Serverless-compatible deployment mode. Automatically enables [`Self::write_segment_manifest`], [`Self::append_only_mutations`], [`Self::compact_bitmask`] and [`Self::append_only_storages`].\n\nNote that this will only be applied when passed into [`init_feature_flags`].",
+            "description": "Serverless-compatible deployment mode. Implies [`Self::write_segment_manifest`], [`Self::append_only_mutations`], [`Self::compact_bitmask`], [`Self::append_only_storages`], [`Self::compact_logstore_tracker`] and [`Self::persist_proxy_segments`].\n\nNote that this will only be applied when passed into [`init_feature_flags`].",
             "default": false,
             "type": "boolean"
           }
@@ -12097,7 +12175,7 @@
           "resharding": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/ReshardingInfo"
+              "$ref": "#/components/schemas/ReshardingTelemetry"
             },
             "nullable": true
           },
@@ -12563,6 +12641,17 @@
           },
           "payload_storage_type": {
             "$ref": "#/components/schemas/PayloadStorageType"
+          },
+          "id_tracker_memory": {
+            "description": "Memory placement of the id tracker in non-appendable segments. Unset means the deployment default: `cold` in serverless-compatible mode, `pinned` otherwise.",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Memory"
+              },
+              {
+                "nullable": true
+              }
+            ]
           }
         }
       },
@@ -12651,7 +12740,7 @@
             ]
           },
           {
-            "description": "Same as `ChunkedMmap`, but vectors are forced to be locked in RAM In this way we avoid cold requests to disk, but risk to run out of memory\n\nDesigned as a replacement for `Memory`, which doesn't depend on RocksDB",
+            "description": "Same as `ChunkedMmap`, but vectors are forced to be locked in RAM In this way we avoid cold requests to disk, but risk to run out of memory",
             "type": "string",
             "enum": [
               "InRamChunkedMmap"
@@ -12665,10 +12754,10 @@
             ]
           },
           {
-            "description": "Placeholder storage: contains no data, all vectors reported as deleted. Used for newly created named vectors on immutable segments. No files on disk, reconstructed from config on load.",
+            "description": "Vectors are inlined in the HNSW links file, not in a dedicated storage. Not appendable.",
             "type": "string",
             "enum": [
-              "Empty"
+              "GraphInline"
             ]
           }
         ]
@@ -12827,13 +12916,6 @@
             "enum": [
               "mmap"
             ]
-          },
-          {
-            "description": "Placeholder storage: contains no data, all vectors reported as deleted. Used for newly created sparse named vectors on immutable segments.",
-            "type": "string",
-            "enum": [
-              "empty"
-            ]
           }
         ]
       },
@@ -12904,6 +12986,9 @@
             "$ref": "#/components/schemas/OperationDurationStatistics"
           },
           "filtered_large_cardinality": {
+            "$ref": "#/components/schemas/OperationDurationStatistics"
+          },
+          "filtered_acorn": {
             "$ref": "#/components/schemas/OperationDurationStatistics"
           },
           "filtered_exact": {
@@ -13202,6 +13287,57 @@
             "minimum": 0
           }
         }
+      },
+      "ReshardingTelemetry": {
+        "type": "object",
+        "required": [
+          "direction",
+          "peer_id",
+          "shard_id",
+          "stage",
+          "uuid"
+        ],
+        "properties": {
+          "stage": {
+            "$ref": "#/components/schemas/ReshardingStage"
+          },
+          "direction": {
+            "$ref": "#/components/schemas/ReshardingDirection"
+          },
+          "shard_id": {
+            "type": "integer",
+            "format": "uint32",
+            "minimum": 0
+          },
+          "peer_id": {
+            "type": "integer",
+            "format": "uint64",
+            "minimum": 0
+          },
+          "shard_key": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ShardKey"
+              },
+              {
+                "nullable": true
+              }
+            ]
+          },
+          "uuid": {
+            "type": "string",
+            "format": "uuid"
+          }
+        }
+      },
+      "ReshardingStage": {
+        "description": "Resharding stages",
+        "type": "string",
+        "enum": [
+          "migrating_points",
+          "read_hash_ring_committed",
+          "write_hash_ring_committed"
+        ]
       },
       "ShardCleanStatusTelemetry": {
         "oneOf": [
@@ -17049,6 +17185,9 @@
           },
           {
             "$ref": "#/components/schemas/MatchPrefix"
+          },
+          {
+            "$ref": "#/components/schemas/MatchSubstring"
           },
           {
             "$ref": "#/components/schemas/MatchAny"

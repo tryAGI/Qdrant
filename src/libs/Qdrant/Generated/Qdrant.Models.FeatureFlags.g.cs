@@ -84,6 +84,13 @@ namespace Qdrant
         public bool? AppendOnlyStorages { get; set; }
 
         /// <summary>
+        /// In non-appendable segments built by the optimizer, store the tracker of an append-only payload storage in the compacted format: read into RAM whole on open instead of one lookup per value. Only has an effect together with [`Self::append_only_storages`]. Gates creation only: both formats are always readable.<br/>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("compact_logstore_tracker")]
+        public bool? CompactLogstoreTracker { get; set; }
+
+        /// <summary>
         /// Transfer points as storage-native bytes (raw points), for every collection rather than only those whose vector storage would lose precision in a decode-encode round-trip (TurboQuant).<br/>
         /// Read on the sending side only, where the transfer batch is prepared: nodes accept raw points regardless.<br/>
         /// Default Value: false
@@ -100,7 +107,22 @@ namespace Qdrant
         public bool? TransferRawPayloads { get; set; }
 
         /// <summary>
-        /// Serverless-compatible deployment mode. Automatically enables [`Self::write_segment_manifest`], [`Self::append_only_mutations`], [`Self::compact_bitmask`] and [`Self::append_only_storages`].<br/>
+        /// Persist proxy segment changes on disk. Prevents pinning the WAL while proxy segments are open. Replays the persisted changes on startup to guarantee data consistency. Required for serverless deployments where storage and compute is separated.<br/>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("persist_proxy_segments")]
+        public bool? PersistProxySegments { get; set; }
+
+        /// <summary>
+        /// When `hnsw_config.inline_storage` enabled, use the `GraphInline` vector storage (aka inline-storage without standalone vector storage) for new segments.<br/>
+        /// Existing `GraphInline` segments are always readable, regardless of this flag.<br/>
+        /// Default Value: true
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("combined_vector_storage")]
+        public bool? CombinedVectorStorage { get; set; }
+
+        /// <summary>
+        /// Serverless-compatible deployment mode. Implies [`Self::write_segment_manifest`], [`Self::append_only_mutations`], [`Self::compact_bitmask`], [`Self::append_only_storages`], [`Self::compact_logstore_tracker`] and [`Self::persist_proxy_segments`].<br/>
         /// Note that this will only be applied when passed into [`init_feature_flags`].<br/>
         /// Default Value: false
         /// </summary>
@@ -161,6 +183,10 @@ namespace Qdrant
         /// Implies [`Self::append_only_mutations`], enforced by [`init_feature_flags`].<br/>
         /// Default Value: false
         /// </param>
+        /// <param name="compactLogstoreTracker">
+        /// In non-appendable segments built by the optimizer, store the tracker of an append-only payload storage in the compacted format: read into RAM whole on open instead of one lookup per value. Only has an effect together with [`Self::append_only_storages`]. Gates creation only: both formats are always readable.<br/>
+        /// Default Value: false
+        /// </param>
         /// <param name="transferRawPoints">
         /// Transfer points as storage-native bytes (raw points), for every collection rather than only those whose vector storage would lose precision in a decode-encode round-trip (TurboQuant).<br/>
         /// Read on the sending side only, where the transfer batch is prepared: nodes accept raw points regardless.<br/>
@@ -171,8 +197,17 @@ namespace Qdrant
         /// Read on the sending side only: nodes accept raw payloads regardless.<br/>
         /// Default Value: false
         /// </param>
+        /// <param name="persistProxySegments">
+        /// Persist proxy segment changes on disk. Prevents pinning the WAL while proxy segments are open. Replays the persisted changes on startup to guarantee data consistency. Required for serverless deployments where storage and compute is separated.<br/>
+        /// Default Value: false
+        /// </param>
+        /// <param name="combinedVectorStorage">
+        /// When `hnsw_config.inline_storage` enabled, use the `GraphInline` vector storage (aka inline-storage without standalone vector storage) for new segments.<br/>
+        /// Existing `GraphInline` segments are always readable, regardless of this flag.<br/>
+        /// Default Value: true
+        /// </param>
         /// <param name="serverlessCompatible">
-        /// Serverless-compatible deployment mode. Automatically enables [`Self::write_segment_manifest`], [`Self::append_only_mutations`], [`Self::compact_bitmask`] and [`Self::append_only_storages`].<br/>
+        /// Serverless-compatible deployment mode. Implies [`Self::write_segment_manifest`], [`Self::append_only_mutations`], [`Self::compact_bitmask`], [`Self::append_only_storages`], [`Self::compact_logstore_tracker`] and [`Self::persist_proxy_segments`].<br/>
         /// Note that this will only be applied when passed into [`init_feature_flags`].<br/>
         /// Default Value: false
         /// </param>
@@ -190,8 +225,11 @@ namespace Qdrant
             bool? appendOnlyMutations,
             bool? compactBitmask,
             bool? appendOnlyStorages,
+            bool? compactLogstoreTracker,
             bool? transferRawPoints,
             bool? transferRawPayloads,
+            bool? persistProxySegments,
+            bool? combinedVectorStorage,
             bool? serverlessCompatible)
         {
             this.All = all;
@@ -204,8 +242,11 @@ namespace Qdrant
             this.AppendOnlyMutations = appendOnlyMutations;
             this.CompactBitmask = compactBitmask;
             this.AppendOnlyStorages = appendOnlyStorages;
+            this.CompactLogstoreTracker = compactLogstoreTracker;
             this.TransferRawPoints = transferRawPoints;
             this.TransferRawPayloads = transferRawPayloads;
+            this.PersistProxySegments = persistProxySegments;
+            this.CombinedVectorStorage = combinedVectorStorage;
             this.ServerlessCompatible = serverlessCompatible;
         }
 

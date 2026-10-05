@@ -66,6 +66,13 @@ namespace Qdrant
         public global::Qdrant.PayloadStorageParams? Payload { get; set; }
 
         /// <summary>
+        /// Configuration of the point id tracker<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("id_tracker")]
+        public global::Qdrant.IdTrackerParams? IdTracker { get; set; }
+
+        /// <summary>
         /// Custom params for HNSW index. If none - values from service configuration file are used.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("hnsw_config")]
@@ -144,6 +151,10 @@ namespace Qdrant
         /// Configuration of the payload storage<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
+        /// <param name="idTracker">
+        /// Configuration of the point id tracker<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
         /// <param name="hnswConfig">
         /// Custom params for HNSW index. If none - values from service configuration file are used.
         /// </param>
@@ -176,6 +187,7 @@ namespace Qdrant
             int? replicationFactor,
             int? writeConsistencyFactor,
             global::Qdrant.PayloadStorageParams? payload,
+            global::Qdrant.IdTrackerParams? idTracker,
             global::Qdrant.HnswConfigDiff? hnswConfig,
             global::Qdrant.WalConfigDiff? walConfig,
             global::Qdrant.OptimizersConfigDiff? optimizersConfig,
@@ -190,6 +202,7 @@ namespace Qdrant
             this.ReplicationFactor = replicationFactor;
             this.WriteConsistencyFactor = writeConsistencyFactor;
             this.Payload = payload;
+            this.IdTracker = idTracker;
             this.HnswConfig = hnswConfig;
             this.WalConfig = walConfig;
             this.OptimizersConfig = optimizersConfig;

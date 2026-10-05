@@ -29,7 +29,7 @@ namespace Qdrant.JsonConverters
 
             var __score0 = 0;
             {
-                var __ti = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.SparseVectorStorageTypeVariant1), options);
+                var __ti = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.SparseVectorStorageTypeEnum), options);
                 if (__ti != null && __ti.Kind == global::System.Text.Json.Serialization.Metadata.JsonTypeInfoKind.Object)
                 {
                     foreach (var __prop in __ti.Properties)
@@ -38,24 +38,11 @@ namespace Qdrant.JsonConverters
                     }
                 }
             }
-            var __score1 = 0;
-            {
-                var __ti = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.SparseVectorStorageTypeVariant2), options);
-                if (__ti != null && __ti.Kind == global::System.Text.Json.Serialization.Metadata.JsonTypeInfoKind.Object)
-                {
-                    foreach (var __prop in __ti.Properties)
-                    {
-                        if (__jsonProps.Contains(__prop.Name)) __score1++;
-                    }
-                }
-            }
             var __bestScore = 0;
             var __bestIndex = -1;
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
-            if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
 
-            global::Qdrant.SparseVectorStorageTypeVariant1? sparseVectorStorageTypeVariant1 = default;
-            global::Qdrant.SparseVectorStorageTypeVariant2? sparseVectorStorageTypeVariant2 = default;
+            global::Qdrant.SparseVectorStorageTypeEnum? @enum = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -63,26 +50,9 @@ namespace Qdrant.JsonConverters
                     try
                     {
 
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.SparseVectorStorageTypeVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.SparseVectorStorageTypeVariant1> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.SparseVectorStorageTypeVariant1).Name}");
-                        sparseVectorStorageTypeVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
-                    }
-                    catch (global::System.Text.Json.JsonException)
-                    {
-                    }
-                    catch (global::System.InvalidOperationException)
-                    {
-                    }
-                }
-
-                else if (__bestIndex == 1)
-                {
-                    try
-                    {
-
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.SparseVectorStorageTypeVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.SparseVectorStorageTypeVariant2> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.SparseVectorStorageTypeVariant2).Name}");
-                        sparseVectorStorageTypeVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.SparseVectorStorageTypeEnum), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.SparseVectorStorageTypeEnum> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.SparseVectorStorageTypeEnum).Name}");
+                        @enum = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -93,31 +63,14 @@ namespace Qdrant.JsonConverters
                 }
             }
 
-            if (sparseVectorStorageTypeVariant1 == null && sparseVectorStorageTypeVariant2 == null)
+            if (@enum == null)
             {
                 try
                 {
 
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.SparseVectorStorageTypeVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.SparseVectorStorageTypeVariant1> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.SparseVectorStorageTypeVariant1).Name}");
-                    sparseVectorStorageTypeVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
-                }
-                catch (global::System.Text.Json.JsonException)
-                {
-                }
-                catch (global::System.InvalidOperationException)
-                {
-                }
-            }
-
-            if (sparseVectorStorageTypeVariant1 == null && sparseVectorStorageTypeVariant2 == null)
-            {
-                try
-                {
-
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.SparseVectorStorageTypeVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.SparseVectorStorageTypeVariant2> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.SparseVectorStorageTypeVariant2).Name}");
-                    sparseVectorStorageTypeVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.SparseVectorStorageTypeEnum), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.SparseVectorStorageTypeEnum> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.SparseVectorStorageTypeEnum).Name}");
+                    @enum = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -128,9 +81,7 @@ namespace Qdrant.JsonConverters
             }
 
             var __value = new global::Qdrant.SparseVectorStorageType(
-                sparseVectorStorageTypeVariant1,
-
-                sparseVectorStorageTypeVariant2
+                @enum
                 );
 
             return __value;
@@ -145,17 +96,11 @@ namespace Qdrant.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsSparseVectorStorageTypeVariant1)
+            if (value.IsEnum)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.SparseVectorStorageTypeVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.SparseVectorStorageTypeVariant1> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.SparseVectorStorageTypeVariant1).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSparseVectorStorageTypeVariant1(), typeInfo);
-            }
-            else if (value.IsSparseVectorStorageTypeVariant2)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.SparseVectorStorageTypeVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.SparseVectorStorageTypeVariant2> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.SparseVectorStorageTypeVariant2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSparseVectorStorageTypeVariant2(), typeInfo);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.SparseVectorStorageTypeEnum), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.SparseVectorStorageTypeEnum> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.SparseVectorStorageTypeEnum).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickEnum(), typeInfo);
             }
         }
     }

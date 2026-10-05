@@ -4,40 +4,40 @@
 namespace Qdrant
 {
     /// <summary>
-    /// Placeholder storage: contains no data, all vectors reported as deleted. Used for newly created sparse named vectors on immutable segments.
+    /// Storage in memory maps (gridstore storage)
     /// </summary>
-    public enum SparseVectorStorageTypeVariant2
+    public enum SparseVectorStorageTypeEnum
     {
         /// <summary>
         ///
         /// </summary>
-        Empty,
+        Mmap,
     }
 
     /// <summary>
     /// Enum extensions to do fast conversions without the reflection.
     /// </summary>
-    public static class SparseVectorStorageTypeVariant2Extensions
+    public static class SparseVectorStorageTypeEnumExtensions
     {
         /// <summary>
         /// Converts an enum to a string.
         /// </summary>
-        public static string ToValueString(this SparseVectorStorageTypeVariant2 value)
+        public static string ToValueString(this SparseVectorStorageTypeEnum value)
         {
             return value switch
             {
-                SparseVectorStorageTypeVariant2.Empty => "empty",
+                SparseVectorStorageTypeEnum.Mmap => "mmap",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static SparseVectorStorageTypeVariant2? ToEnum(string value)
+        public static SparseVectorStorageTypeEnum? ToEnum(string value)
         {
             return value switch
             {
-                "empty" => SparseVectorStorageTypeVariant2.Empty,
+                "mmap" => SparseVectorStorageTypeEnum.Mmap,
                 _ => null,
             };
         }
