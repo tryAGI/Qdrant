@@ -53,7 +53,7 @@ namespace Qdrant
         /// { "default": { "size": 128, "distance": "Cosine" } }
         /// </param>
         /// <param name="shardNumber">
-        /// For auto sharding: Number of shards in collection. - Default is 1 for standalone, otherwise equal to the number of nodes - Minimum is 1<br/>
+        /// For auto sharding: Number of shards in collection. - If not specified, selected automatically - Minimum is 1<br/>
         /// For custom sharding: Number of shards in collection per shard group. - Default is 1, meaning that each shard key will be mapped to a single shard - Minimum is 1<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>

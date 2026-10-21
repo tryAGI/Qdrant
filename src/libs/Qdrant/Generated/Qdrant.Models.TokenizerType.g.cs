@@ -11,6 +11,10 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
+        Code,
+        /// <summary>
+        ///
+        /// </summary>
         Multilingual,
         /// <summary>
         ///
@@ -38,6 +42,7 @@ namespace Qdrant
         {
             return value switch
             {
+                TokenizerType.Code => "code",
                 TokenizerType.Multilingual => "multilingual",
                 TokenizerType.Prefix => "prefix",
                 TokenizerType.Whitespace => "whitespace",
@@ -52,6 +57,7 @@ namespace Qdrant
         {
             return value switch
             {
+                "code" => TokenizerType.Code,
                 "multilingual" => TokenizerType.Multilingual,
                 "prefix" => TokenizerType.Prefix,
                 "whitespace" => TokenizerType.Whitespace,

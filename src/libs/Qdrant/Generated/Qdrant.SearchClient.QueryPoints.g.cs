@@ -578,7 +578,7 @@ namespace Qdrant
         /// Query to perform. If missing without prefetches, returns points ordered by their IDs.
         /// </param>
         /// <param name="using">
-        /// Define which vector name to use for querying. If missing, the default vector is used.
+        /// Define which vector name to use for querying. If missing, the default vector is used. For a `text` query, the payload field whose text index to search.
         /// </param>
         /// <param name="filter">
         /// Filter conditions - return only those points that satisfy the specified conditions.

@@ -93,7 +93,7 @@ namespace Qdrant
         /// <summary>
         /// Transfer points as storage-native bytes (raw points), for every collection rather than only those whose vector storage would lose precision in a decode-encode round-trip (TurboQuant).<br/>
         /// Read on the sending side only, where the transfer batch is prepared: nodes accept raw points regardless.<br/>
-        /// Default Value: false
+        /// Default Value: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("transfer_raw_points")]
         public bool? TransferRawPoints { get; set; }
@@ -101,7 +101,7 @@ namespace Qdrant
         /// <summary>
         /// Send the payload of a raw point as the byte blob it is stored as, so the sending node does not parse it and neither node builds a protobuf value tree for it. The receiving node still parses the blob, once, when the operation is applied. Only has an effect on points transferred raw, see [`Self::transfer_raw_points`].<br/>
         /// Read on the sending side only: nodes accept raw payloads regardless.<br/>
-        /// Default Value: false
+        /// Default Value: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("transfer_raw_payloads")]
         public bool? TransferRawPayloads { get; set; }
@@ -190,12 +190,12 @@ namespace Qdrant
         /// <param name="transferRawPoints">
         /// Transfer points as storage-native bytes (raw points), for every collection rather than only those whose vector storage would lose precision in a decode-encode round-trip (TurboQuant).<br/>
         /// Read on the sending side only, where the transfer batch is prepared: nodes accept raw points regardless.<br/>
-        /// Default Value: false
+        /// Default Value: true
         /// </param>
         /// <param name="transferRawPayloads">
         /// Send the payload of a raw point as the byte blob it is stored as, so the sending node does not parse it and neither node builds a protobuf value tree for it. The receiving node still parses the blob, once, when the operation is applied. Only has an effect on points transferred raw, see [`Self::transfer_raw_points`].<br/>
         /// Read on the sending side only: nodes accept raw payloads regardless.<br/>
-        /// Default Value: false
+        /// Default Value: true
         /// </param>
         /// <param name="persistProxySegments">
         /// Persist proxy segment changes on disk. Prevents pinning the WAL while proxy segments are open. Replays the persisted changes on startup to guarantee data consistency. Required for serverless deployments where storage and compute is separated.<br/>

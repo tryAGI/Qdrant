@@ -41,6 +41,7 @@ namespace Qdrant
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.TokenizerType), TypeInfoPropertyName = "TokenizerType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.StopwordsInterface))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.StemmingAlgorithm))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.TextScoringInterface))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.Language), TypeInfoPropertyName = "Language2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.StopwordsSet))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Qdrant.Language>))]
@@ -50,6 +51,8 @@ namespace Qdrant
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.SnowballType), TypeInfoPropertyName = "SnowballType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.SnowballLanguage), TypeInfoPropertyName = "SnowballLanguage2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.NoStemmer), TypeInfoPropertyName = "NoStemmer2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.TextScoringParams))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.TextScoringType), TypeInfoPropertyName = "TextScoringType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.BoolIndexType), TypeInfoPropertyName = "BoolIndexType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.DatetimeIndexType), TypeInfoPropertyName = "DatetimeIndexType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.UuidIndexType), TypeInfoPropertyName = "UuidIndexType2")]
@@ -82,6 +85,7 @@ namespace Qdrant
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.SnowballType?), TypeInfoPropertyName = "NullableSnowballType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.SnowballLanguage?), TypeInfoPropertyName = "NullableSnowballLanguage2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.NoStemmer?), TypeInfoPropertyName = "NullableNoStemmer2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.TextScoringType?), TypeInfoPropertyName = "NullableTextScoringType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.BoolIndexType?), TypeInfoPropertyName = "NullableBoolIndexType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.DatetimeIndexType?), TypeInfoPropertyName = "NullableDatetimeIndexType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.UuidIndexType?), TypeInfoPropertyName = "NullableUuidIndexType2")]
@@ -139,6 +143,7 @@ namespace Qdrant
             options.Converters.Add(new global::Qdrant.JsonConverters.PayloadSchemaParamsJsonConverter());
             options.Converters.Add(new global::Qdrant.JsonConverters.StopwordsInterfaceJsonConverter());
             options.Converters.Add(new global::Qdrant.JsonConverters.StemmingAlgorithmJsonConverter());
+            options.Converters.Add(new global::Qdrant.JsonConverters.TextScoringInterfaceJsonConverter());
             options.Converters.Add(new global::Qdrant.JsonConverters.PayloadFieldSchemaJsonConverter());
             options.Converters.Add(new global::Qdrant.JsonConverters.UnixTimestampJsonConverter());
             options.Converters.Add(new LazyEnumJsonConverterFactory());
@@ -205,6 +210,10 @@ namespace Qdrant
                     || typeToConvert == typeof(global::Qdrant.NoStemmer)
 
                     || typeToConvert == typeof(global::Qdrant.NoStemmer?)
+
+                    || typeToConvert == typeof(global::Qdrant.TextScoringType)
+
+                    || typeToConvert == typeof(global::Qdrant.TextScoringType?)
 
                     || typeToConvert == typeof(global::Qdrant.BoolIndexType)
 
@@ -343,6 +352,16 @@ namespace Qdrant
                 if (typeToConvert == typeof(global::Qdrant.NoStemmer?))
                 {
                     return new global::Qdrant.JsonConverters.NoStemmerNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.TextScoringType))
+                {
+                    return new global::Qdrant.JsonConverters.TextScoringTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::Qdrant.TextScoringType?))
+                {
+                    return new global::Qdrant.JsonConverters.TextScoringTypeNullableJsonConverter();
                 }
 
                 if (typeToConvert == typeof(global::Qdrant.BoolIndexType))

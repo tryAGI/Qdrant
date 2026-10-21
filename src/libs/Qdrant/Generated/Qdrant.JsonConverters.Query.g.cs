@@ -66,6 +66,8 @@ namespace Qdrant.JsonConverters
             if (__jsonProps.Contains("relevance_feedback.feedback")) __score9++;
             if (__jsonProps.Contains("relevance_feedback.strategy")) __score9++;
             if (__jsonProps.Contains("relevance_feedback.target")) __score9++;
+            var __score10 = 0;
+            if (__jsonProps.Contains("text")) __score10++;
             var __bestScore = 0;
             var __bestIndex = -1;
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
@@ -78,6 +80,7 @@ namespace Qdrant.JsonConverters
             if (__score7 > __bestScore) { __bestScore = __score7; __bestIndex = 7; }
             if (__score8 > __bestScore) { __bestScore = __score8; __bestIndex = 8; }
             if (__score9 > __bestScore) { __bestScore = __score9; __bestIndex = 9; }
+            if (__score10 > __bestScore) { __bestScore = __score10; __bestIndex = 10; }
 
             global::Qdrant.NearestQuery? nearest = default;
             global::Qdrant.RecommendQuery? recommend = default;
@@ -89,6 +92,7 @@ namespace Qdrant.JsonConverters
             global::Qdrant.FormulaQuery? formula = default;
             global::Qdrant.SampleQuery? sample = default;
             global::Qdrant.RelevanceFeedbackQuery? relevanceFeedback = default;
+            global::Qdrant.TextQuery? text = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -281,9 +285,28 @@ namespace Qdrant.JsonConverters
                         // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
+                else if (__bestIndex == 10)
+                {
+                    try
+                    {
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.TextQuery), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.TextQuery> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.TextQuery).Name}");
+                        text = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    }
+                    catch (global::System.Text.Json.JsonException)
+                    {
+                    }
+                    catch (global::System.InvalidOperationException)
+                    {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
+                }
             }
 
-            if (nearest == null && recommend == null && discover == null && context == null && orderBy == null && fusion == null && rrf == null && formula == null && sample == null && relevanceFeedback == null)
+            if (nearest == null && recommend == null && discover == null && context == null && orderBy == null && fusion == null && rrf == null && formula == null && sample == null && relevanceFeedback == null && text == null)
             {
                 try
                 {
@@ -304,7 +327,7 @@ namespace Qdrant.JsonConverters
                 }
             }
 
-            if (nearest == null && recommend == null && discover == null && context == null && orderBy == null && fusion == null && rrf == null && formula == null && sample == null && relevanceFeedback == null)
+            if (nearest == null && recommend == null && discover == null && context == null && orderBy == null && fusion == null && rrf == null && formula == null && sample == null && relevanceFeedback == null && text == null)
             {
                 try
                 {
@@ -325,7 +348,7 @@ namespace Qdrant.JsonConverters
                 }
             }
 
-            if (nearest == null && recommend == null && discover == null && context == null && orderBy == null && fusion == null && rrf == null && formula == null && sample == null && relevanceFeedback == null)
+            if (nearest == null && recommend == null && discover == null && context == null && orderBy == null && fusion == null && rrf == null && formula == null && sample == null && relevanceFeedback == null && text == null)
             {
                 try
                 {
@@ -346,7 +369,7 @@ namespace Qdrant.JsonConverters
                 }
             }
 
-            if (nearest == null && recommend == null && discover == null && context == null && orderBy == null && fusion == null && rrf == null && formula == null && sample == null && relevanceFeedback == null)
+            if (nearest == null && recommend == null && discover == null && context == null && orderBy == null && fusion == null && rrf == null && formula == null && sample == null && relevanceFeedback == null && text == null)
             {
                 try
                 {
@@ -367,7 +390,7 @@ namespace Qdrant.JsonConverters
                 }
             }
 
-            if (nearest == null && recommend == null && discover == null && context == null && orderBy == null && fusion == null && rrf == null && formula == null && sample == null && relevanceFeedback == null)
+            if (nearest == null && recommend == null && discover == null && context == null && orderBy == null && fusion == null && rrf == null && formula == null && sample == null && relevanceFeedback == null && text == null)
             {
                 try
                 {
@@ -388,7 +411,7 @@ namespace Qdrant.JsonConverters
                 }
             }
 
-            if (nearest == null && recommend == null && discover == null && context == null && orderBy == null && fusion == null && rrf == null && formula == null && sample == null && relevanceFeedback == null)
+            if (nearest == null && recommend == null && discover == null && context == null && orderBy == null && fusion == null && rrf == null && formula == null && sample == null && relevanceFeedback == null && text == null)
             {
                 try
                 {
@@ -409,7 +432,7 @@ namespace Qdrant.JsonConverters
                 }
             }
 
-            if (nearest == null && recommend == null && discover == null && context == null && orderBy == null && fusion == null && rrf == null && formula == null && sample == null && relevanceFeedback == null)
+            if (nearest == null && recommend == null && discover == null && context == null && orderBy == null && fusion == null && rrf == null && formula == null && sample == null && relevanceFeedback == null && text == null)
             {
                 try
                 {
@@ -430,7 +453,7 @@ namespace Qdrant.JsonConverters
                 }
             }
 
-            if (nearest == null && recommend == null && discover == null && context == null && orderBy == null && fusion == null && rrf == null && formula == null && sample == null && relevanceFeedback == null)
+            if (nearest == null && recommend == null && discover == null && context == null && orderBy == null && fusion == null && rrf == null && formula == null && sample == null && relevanceFeedback == null && text == null)
             {
                 try
                 {
@@ -451,7 +474,7 @@ namespace Qdrant.JsonConverters
                 }
             }
 
-            if (nearest == null && recommend == null && discover == null && context == null && orderBy == null && fusion == null && rrf == null && formula == null && sample == null && relevanceFeedback == null)
+            if (nearest == null && recommend == null && discover == null && context == null && orderBy == null && fusion == null && rrf == null && formula == null && sample == null && relevanceFeedback == null && text == null)
             {
                 try
                 {
@@ -472,7 +495,7 @@ namespace Qdrant.JsonConverters
                 }
             }
 
-            if (nearest == null && recommend == null && discover == null && context == null && orderBy == null && fusion == null && rrf == null && formula == null && sample == null && relevanceFeedback == null)
+            if (nearest == null && recommend == null && discover == null && context == null && orderBy == null && fusion == null && rrf == null && formula == null && sample == null && relevanceFeedback == null && text == null)
             {
                 try
                 {
@@ -480,6 +503,27 @@ namespace Qdrant.JsonConverters
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.RelevanceFeedbackQuery), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.RelevanceFeedbackQuery> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.RelevanceFeedbackQuery).Name}");
                     relevanceFeedback = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
+            }
+
+            if (nearest == null && recommend == null && discover == null && context == null && orderBy == null && fusion == null && rrf == null && formula == null && sample == null && relevanceFeedback == null && text == null)
+            {
+                try
+                {
+
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.TextQuery), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.TextQuery> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.TextQuery).Name}");
+                    text = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -512,7 +556,9 @@ namespace Qdrant.JsonConverters
 
                 sample,
 
-                relevanceFeedback
+                relevanceFeedback,
+
+                text
                 );
 
             return __value;
@@ -586,6 +632,12 @@ namespace Qdrant.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.RelevanceFeedbackQuery), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.RelevanceFeedbackQuery?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.RelevanceFeedbackQuery).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickRelevanceFeedback(), typeInfo);
+            }
+            else if (value.IsText)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::Qdrant.TextQuery), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::Qdrant.TextQuery?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::Qdrant.TextQuery).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickText(), typeInfo);
             }
         }
     }

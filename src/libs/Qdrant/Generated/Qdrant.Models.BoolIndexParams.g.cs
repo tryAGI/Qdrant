@@ -37,6 +37,12 @@ namespace Qdrant
         public bool? EnableHnsw { get; set; }
 
         /// <summary>
+        /// Index every object of this array as a separate entry, e.g. `offers` for the field `offers[].price`. The field must be inside the array's elements. `is_empty` on the field matches a point when one of its elements lacks the field, and never a point without elements. Default: disabled.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("nested")]
+        public string? Nested { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -52,17 +58,22 @@ namespace Qdrant
         /// <param name="enableHnsw">
         /// Enable HNSW graph building for this payload field. If true, builds additional HNSW links (Need payload_m &gt; 0). Default: true.
         /// </param>
+        /// <param name="nested">
+        /// Index every object of this array as a separate entry, e.g. `offers` for the field `offers[].price`. The field must be inside the array's elements. `is_empty` on the field matches a point when one of its elements lacks the field, and never a point without elements. Default: disabled.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BoolIndexParams(
             global::Qdrant.BoolIndexType type,
             global::Qdrant.Memory? memory,
-            bool? enableHnsw)
+            bool? enableHnsw,
+            string? nested)
         {
             this.Type = type;
             this.Memory = memory;
             this.EnableHnsw = enableHnsw;
+            this.Nested = nested;
         }
 
         /// <summary>

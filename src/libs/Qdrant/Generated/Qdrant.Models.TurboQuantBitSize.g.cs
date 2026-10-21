@@ -24,6 +24,10 @@ namespace Qdrant
         ///
         /// </summary>
         Bits4,
+        /// <summary>
+        ///
+        /// </summary>
+        Bits8,
     }
 
     /// <summary>
@@ -42,6 +46,7 @@ namespace Qdrant
                 TurboQuantBitSize.Bits15 => "bits1_5",
                 TurboQuantBitSize.Bits2 => "bits2",
                 TurboQuantBitSize.Bits4 => "bits4",
+                TurboQuantBitSize.Bits8 => "bits8",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -56,6 +61,7 @@ namespace Qdrant
                 "bits1_5" => TurboQuantBitSize.Bits15,
                 "bits2" => TurboQuantBitSize.Bits2,
                 "bits4" => TurboQuantBitSize.Bits4,
+                "bits8" => TurboQuantBitSize.Bits8,
                 _ => null,
             };
         }

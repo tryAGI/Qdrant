@@ -19,7 +19,15 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
+        Turbo16,
+        /// <summary>
+        ///
+        /// </summary>
         Turbo4,
+        /// <summary>
+        ///
+        /// </summary>
+        Turbo8,
         /// <summary>
         ///
         /// </summary>
@@ -40,7 +48,9 @@ namespace Qdrant
             {
                 Datatype.Float16 => "float16",
                 Datatype.Float32 => "float32",
+                Datatype.Turbo16 => "turbo16",
                 Datatype.Turbo4 => "turbo4",
+                Datatype.Turbo8 => "turbo8",
                 Datatype.Uint8 => "uint8",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -54,7 +64,9 @@ namespace Qdrant
             {
                 "float16" => Datatype.Float16,
                 "float32" => Datatype.Float32,
+                "turbo16" => Datatype.Turbo16,
                 "turbo4" => Datatype.Turbo4,
+                "turbo8" => Datatype.Turbo8,
                 "uint8" => Datatype.Uint8,
                 _ => null,
             };

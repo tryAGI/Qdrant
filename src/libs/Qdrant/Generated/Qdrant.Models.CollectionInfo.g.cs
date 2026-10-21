@@ -70,6 +70,12 @@ namespace Qdrant
         public global::Qdrant.UpdateQueueInfo? UpdateQueue { get; set; }
 
         /// <summary>
+        /// Time of the collection creation. Absent for collections created before Qdrant started recording it.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
+        public global::System.DateTime? CreatedAt { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -105,6 +111,9 @@ namespace Qdrant
         /// <param name="updateQueue">
         /// Update queue info
         /// </param>
+        /// <param name="createdAt">
+        /// Time of the collection creation. Absent for collections created before Qdrant started recording it.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -117,7 +126,8 @@ namespace Qdrant
             global::System.Collections.Generic.IList<global::Qdrant.CollectionWarning>? warnings,
             int? indexedVectorsCount,
             int? pointsCount,
-            global::Qdrant.UpdateQueueInfo? updateQueue)
+            global::Qdrant.UpdateQueueInfo? updateQueue,
+            global::System.DateTime? createdAt)
         {
             this.Status = status;
             this.OptimizerStatus = optimizerStatus;
@@ -128,6 +138,7 @@ namespace Qdrant
             this.Config = config ?? throw new global::System.ArgumentNullException(nameof(config));
             this.PayloadSchema = payloadSchema ?? throw new global::System.ArgumentNullException(nameof(payloadSchema));
             this.UpdateQueue = updateQueue;
+            this.CreatedAt = createdAt;
         }
 
         /// <summary>

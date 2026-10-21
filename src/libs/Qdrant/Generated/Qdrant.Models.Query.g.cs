@@ -378,6 +378,43 @@ namespace Qdrant
         public global::Qdrant.RelevanceFeedbackQuery PickRelevanceFeedback() => RelevanceFeedback is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RelevanceFeedback' but the value was {ToString()}.");
+
+        /// <summary>
+        /// Rank by BM25 over the text index of the payload field named by `using`, which must have `scoring` set. A point scores when it holds any of the query's terms: required or excluded terms belong in the request's `filter`.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::Qdrant.TextQuery? Text { get; init; }
+#else
+        public global::Qdrant.TextQuery? Text { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Text))]
+#endif
+        public bool IsText => Text != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickText(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::Qdrant.TextQuery? value)
+        {
+            value = Text;
+            return IsText;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::Qdrant.TextQuery PickText() => Text is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
         /// <summary>
         ///
         /// </summary>
@@ -611,6 +648,29 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
+        public static implicit operator Query(global::Qdrant.TextQuery value) => new Query((global::Qdrant.TextQuery?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::Qdrant.TextQuery?(Query @this) => @this.Text;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public Query(global::Qdrant.TextQuery? value)
+        {
+            Text = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static Query FromText(global::Qdrant.TextQuery? value) => new Query(value);
+
+        /// <summary>
+        ///
+        /// </summary>
         public Query(
             global::Qdrant.NearestQuery? nearest,
             global::Qdrant.RecommendQuery? recommend,
@@ -621,7 +681,8 @@ namespace Qdrant
             global::Qdrant.RrfQuery? rrf,
             global::Qdrant.FormulaQuery? formula,
             global::Qdrant.SampleQuery? sample,
-            global::Qdrant.RelevanceFeedbackQuery? relevanceFeedback
+            global::Qdrant.RelevanceFeedbackQuery? relevanceFeedback,
+            global::Qdrant.TextQuery? text
             )
         {
             Nearest = nearest;
@@ -634,12 +695,14 @@ namespace Qdrant
             Formula = formula;
             Sample = sample;
             RelevanceFeedback = relevanceFeedback;
+            Text = text;
         }
 
         /// <summary>
         ///
         /// </summary>
         public object? Object =>
+            Text as object ??
             RelevanceFeedback as object ??
             Sample as object ??
             Formula as object ??
@@ -665,7 +728,8 @@ namespace Qdrant
             Rrf?.ToString() ??
             Formula?.ToString() ??
             Sample?.ToString() ??
-            RelevanceFeedback?.ToString()
+            RelevanceFeedback?.ToString() ??
+            Text?.ToString()
             ;
 
         /// <summary>
@@ -673,7 +737,7 @@ namespace Qdrant
         /// </summary>
         public bool Validate()
         {
-            return IsNearest || IsRecommend || IsDiscover || IsContext || IsOrderBy || IsFusion || IsRrf || IsFormula || IsSample || IsRelevanceFeedback;
+            return IsNearest || IsRecommend || IsDiscover || IsContext || IsOrderBy || IsFusion || IsRrf || IsFormula || IsSample || IsRelevanceFeedback || IsText;
         }
 
         /// <summary>
@@ -690,6 +754,7 @@ namespace Qdrant
             global::System.Func<global::Qdrant.FormulaQuery, TResult>? formula = null,
             global::System.Func<global::Qdrant.SampleQuery, TResult>? sample = null,
             global::System.Func<global::Qdrant.RelevanceFeedbackQuery, TResult>? relevanceFeedback = null,
+            global::System.Func<global::Qdrant.TextQuery, TResult>? text = null,
             bool validate = true)
         {
             if (validate)
@@ -737,6 +802,10 @@ namespace Qdrant
             {
                 return relevanceFeedback(__value9);
             }
+            else if (Text is { } __value10 && text != null)
+            {
+                return text(__value10);
+            }
 
             return default(TResult);
         }
@@ -764,6 +833,8 @@ namespace Qdrant
             global::System.Action<global::Qdrant.SampleQuery>? sample = null,
 
             global::System.Action<global::Qdrant.RelevanceFeedbackQuery>? relevanceFeedback = null,
+
+            global::System.Action<global::Qdrant.TextQuery>? text = null,
             bool validate = true)
         {
             if (validate)
@@ -810,6 +881,10 @@ namespace Qdrant
             else if (RelevanceFeedback is { } __value9)
             {
                 relevanceFeedback?.Invoke(__value9);
+            }
+            else if (Text is { } __value10)
+            {
+                text?.Invoke(__value10);
             }
         }
 
@@ -827,6 +902,7 @@ namespace Qdrant
             global::System.Action<global::Qdrant.FormulaQuery>? formula = null,
             global::System.Action<global::Qdrant.SampleQuery>? sample = null,
             global::System.Action<global::Qdrant.RelevanceFeedbackQuery>? relevanceFeedback = null,
+            global::System.Action<global::Qdrant.TextQuery>? text = null,
             bool validate = true)
         {
             if (validate)
@@ -873,6 +949,10 @@ namespace Qdrant
             else if (RelevanceFeedback is { } __value9)
             {
                 relevanceFeedback?.Invoke(__value9);
+            }
+            else if (Text is { } __value10)
+            {
+                text?.Invoke(__value10);
             }
         }
 
@@ -903,6 +983,8 @@ namespace Qdrant
                 typeof(global::Qdrant.SampleQuery),
                 RelevanceFeedback,
                 typeof(global::Qdrant.RelevanceFeedbackQuery),
+                Text,
+                typeof(global::Qdrant.TextQuery),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -928,7 +1010,8 @@ namespace Qdrant
                 global::System.Collections.Generic.EqualityComparer<global::Qdrant.RrfQuery?>.Default.Equals(Rrf, other.Rrf) &&
                 global::System.Collections.Generic.EqualityComparer<global::Qdrant.FormulaQuery?>.Default.Equals(Formula, other.Formula) &&
                 global::System.Collections.Generic.EqualityComparer<global::Qdrant.SampleQuery?>.Default.Equals(Sample, other.Sample) &&
-                global::System.Collections.Generic.EqualityComparer<global::Qdrant.RelevanceFeedbackQuery?>.Default.Equals(RelevanceFeedback, other.RelevanceFeedback)
+                global::System.Collections.Generic.EqualityComparer<global::Qdrant.RelevanceFeedbackQuery?>.Default.Equals(RelevanceFeedback, other.RelevanceFeedback) &&
+                global::System.Collections.Generic.EqualityComparer<global::Qdrant.TextQuery?>.Default.Equals(Text, other.Text)
                 ;
         }
 
