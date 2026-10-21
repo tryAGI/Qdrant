@@ -49,6 +49,12 @@ namespace Qdrant
         public bool? Prefix { get; set; }
 
         /// <summary>
+        /// Index every object of this array as a separate entry, e.g. `offers` for the field `offers[].price`. The field must be inside the array's elements. `is_empty` on the field matches a point when one of its elements lacks the field, and never a point without elements. Default: disabled.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("nested")]
+        public string? Nested { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -70,6 +76,9 @@ namespace Qdrant
         /// <param name="prefix">
         /// If true, enable prefix matching (`match: { "prefix": ... }`) on this field. Default: false.
         /// </param>
+        /// <param name="nested">
+        /// Index every object of this array as a separate entry, e.g. `offers` for the field `offers[].price`. The field must be inside the array's elements. `is_empty` on the field matches a point when one of its elements lacks the field, and never a point without elements. Default: disabled.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -78,13 +87,15 @@ namespace Qdrant
             bool? isTenant,
             global::Qdrant.Memory? memory,
             bool? enableHnsw,
-            bool? prefix)
+            bool? prefix,
+            string? nested)
         {
             this.Type = type;
             this.IsTenant = isTenant;
             this.Memory = memory;
             this.EnableHnsw = enableHnsw;
             this.Prefix = prefix;
+            this.Nested = nested;
         }
 
         /// <summary>

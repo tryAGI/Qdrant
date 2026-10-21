@@ -11,7 +11,7 @@ namespace Qdrant
     public sealed partial class HnswConfig
     {
         /// <summary>
-        /// Number of edges per node in the index graph. Larger the value - more accurate the search, more space required.
+        /// Number of edges per node in the index graph. Larger the value - more accurate the search, more space required. Set to 0 to disable the main HNSW graph. Additional payload-aware links may still be built when the effective payload M is positive (see payload_m). This setting alone does not guarantee exact search.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("m")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -52,7 +52,7 @@ namespace Qdrant
         public global::Qdrant.Memory? Memory { get; set; }
 
         /// <summary>
-        /// Custom M param for hnsw graph built for payload index. If not set, default M will be used.
+        /// Number of additional payload-aware links per node. If unset, the value of m is used. An effective value of 0 disables these additional links. A positive value allows them for indexed payload fields with HNSW enabled, even when m is 0.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("payload_m")]
         public int? PayloadM { get; set; }
@@ -73,7 +73,7 @@ namespace Qdrant
         /// Initializes a new instance of the <see cref="HnswConfig" /> class.
         /// </summary>
         /// <param name="m">
-        /// Number of edges per node in the index graph. Larger the value - more accurate the search, more space required.
+        /// Number of edges per node in the index graph. Larger the value - more accurate the search, more space required. Set to 0 to disable the main HNSW graph. Additional payload-aware links may still be built when the effective payload M is positive (see payload_m). This setting alone does not guarantee exact search.
         /// </param>
         /// <param name="efConstruct">
         /// Number of neighbours to consider during the index building. Larger the value - more accurate the search, more time required to build index.
@@ -89,7 +89,7 @@ namespace Qdrant
         /// Memory placement of the HNSW graph. Overrides the deprecated `on_disk` flag if both are set. Default: `cached` (`cold` if `on_disk` is set to true).
         /// </param>
         /// <param name="payloadM">
-        /// Custom M param for hnsw graph built for payload index. If not set, default M will be used.
+        /// Number of additional payload-aware links per node. If unset, the value of m is used. An effective value of 0 disables these additional links. A positive value allows them for indexed payload fields with HNSW enabled, even when m is 0.
         /// </param>
         /// <param name="inlineStorage">
         /// Store copies of original and quantized vectors within the HNSW index file. Default: false. Enabling this option will trade the search speed for disk usage by reducing amount of random seeks during the search. Requires quantized vectors to be enabled. Multi-vectors are not supported.

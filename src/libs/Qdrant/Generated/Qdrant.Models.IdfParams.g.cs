@@ -5,8 +5,8 @@
 namespace Qdrant
 {
     /// <summary>
-    /// Population over which sparse vector IDF statistics are computed for scoring — the *IDF corpus*.<br/>
-    /// - `"global"` — collection-wide statistics, same as omitting the parameter. - `{ "corpus": &lt;filter&gt; }` — document count and per-term document frequencies are computed over the points matching the corpus filter only. The corpus is independent of the retrieval filter and is usually broader than it.
+    /// Population over which IDF statistics are computed for scoring — the *IDF corpus*.<br/>
+    /// - `"global"` — collection-wide statistics, same as omitting the parameter. - `{ "corpus": &lt;filter&gt; }` — document count and per-term document frequencies (and, for BM25 over a text index, the average document length) are computed over the points matching the corpus filter only. The corpus is independent of the retrieval filter and is usually broader than it.
     /// </summary>
     public readonly partial struct IdfParams : global::System.IEquatable<IdfParams>
     {

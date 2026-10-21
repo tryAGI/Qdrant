@@ -46,6 +46,13 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("output")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Output { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dir_size_bytes")]
         public int? DirSizeBytes { get; set; }
 
@@ -63,6 +70,7 @@ namespace Qdrant
         /// <param name="maxLogFiles"></param>
         /// <param name="trustForwardedHeaders"></param>
         /// <param name="logApi"></param>
+        /// <param name="output"></param>
         /// <param name="dirSizeBytes"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -73,6 +81,7 @@ namespace Qdrant
             int maxLogFiles,
             bool trustForwardedHeaders,
             bool logApi,
+            string output,
             int? dirSizeBytes)
         {
             this.Dir = dir ?? throw new global::System.ArgumentNullException(nameof(dir));
@@ -80,6 +89,7 @@ namespace Qdrant
             this.MaxLogFiles = maxLogFiles;
             this.TrustForwardedHeaders = trustForwardedHeaders;
             this.LogApi = logApi;
+            this.Output = output ?? throw new global::System.ArgumentNullException(nameof(output));
             this.DirSizeBytes = dirSizeBytes;
         }
 

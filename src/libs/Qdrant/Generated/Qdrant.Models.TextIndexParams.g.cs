@@ -86,6 +86,18 @@ namespace Qdrant
         public bool? EnableHnsw { get; set; }
 
         /// <summary>
+        /// Enable ranking points by BM25 over this field; `true` for the defaults. Changing it rebuilds the index. Default: disabled.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("scoring")]
+        public global::Qdrant.TextScoringInterface? Scoring { get; set; }
+
+        /// <summary>
+        /// Index every object of this array as a separate entry, e.g. `offers` for the field `offers[].title`. The field must be inside the array's elements. Every query on the field, not only nested filters, treats each element as its own document: a condition matches a point when a single element matches it, and BM25 scores elements separately. `is_empty` on the field matches a point when one of its elements lacks the field, and never a point without elements. Default: disabled.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("nested")]
+        public string? Nested { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -123,6 +135,12 @@ namespace Qdrant
         /// <param name="enableHnsw">
         /// Enable HNSW graph building for this payload field. If true, builds additional HNSW links (Need payload_m &gt; 0). Default: true.
         /// </param>
+        /// <param name="scoring">
+        /// Enable ranking points by BM25 over this field; `true` for the defaults. Changing it rebuilds the index. Default: disabled.
+        /// </param>
+        /// <param name="nested">
+        /// Index every object of this array as a separate entry, e.g. `offers` for the field `offers[].title`. The field must be inside the array's elements. Every query on the field, not only nested filters, treats each element as its own document: a condition matches a point when a single element matches it, and BM25 scores elements separately. `is_empty` on the field matches a point when one of its elements lacks the field, and never a point without elements. Default: disabled.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -137,7 +155,9 @@ namespace Qdrant
             global::Qdrant.StopwordsInterface? stopwords,
             global::Qdrant.Memory? memory,
             global::Qdrant.StemmingAlgorithm? stemmer,
-            bool? enableHnsw)
+            bool? enableHnsw,
+            global::Qdrant.TextScoringInterface? scoring,
+            string? nested)
         {
             this.Type = type;
             this.Tokenizer = tokenizer;
@@ -150,6 +170,8 @@ namespace Qdrant
             this.Memory = memory;
             this.Stemmer = stemmer;
             this.EnableHnsw = enableHnsw;
+            this.Scoring = scoring;
+            this.Nested = nested;
         }
 
         /// <summary>
