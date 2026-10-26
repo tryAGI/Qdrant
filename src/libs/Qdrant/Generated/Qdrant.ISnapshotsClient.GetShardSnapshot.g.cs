@@ -43,6 +43,23 @@ namespace Qdrant
         /// <param name="collectionName"></param>
         /// <param name="shardId"></param>
         /// <param name="snapshotName"></param>
+        /// <returns>The response metadata and an unbuffered body stream. The caller must dispose Body to release the HTTP response.</returns>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Qdrant.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Qdrant.AutoSDKHttpResponse<global::System.IO.Stream>> GetShardSnapshotAsStreamAsResponseAsync(
+            string collectionName,
+            int shardId,
+            string snapshotName,
+            global::Qdrant.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Download collection snapshot<br/>
+        /// Download specified snapshot of a shard from a collection as a file
+        /// </summary>
+        /// <param name="collectionName"></param>
+        /// <param name="shardId"></param>
+        /// <param name="snapshotName"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Qdrant.ApiException"></exception>
