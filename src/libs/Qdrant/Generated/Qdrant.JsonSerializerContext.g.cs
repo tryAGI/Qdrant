@@ -12,6 +12,7 @@ namespace Qdrant
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, string>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, object>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<object>), TypeInfoPropertyName = "SystemCollectionsGeneric_ObjectList")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(string[]))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Text.Json.JsonElement?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.ErrorResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(float))]
@@ -512,7 +513,6 @@ namespace Qdrant
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.AcornSearchParams))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.IdfParams))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.IdfScope), TypeInfoPropertyName = "IdfScope2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.IdfCorpusParams))]
     internal sealed partial class SourceGenerationContextChunk0 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -523,6 +523,7 @@ namespace Qdrant
     [global::System.Text.Json.Serialization.JsonSourceGenerationOptions(
         DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull
     )]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.IdfCorpusParams))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.QueryRequestBatch))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Qdrant.QueryRequest>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.QueryResponse))]
@@ -675,6 +676,9 @@ namespace Qdrant
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.MultiVectorComparator?), TypeInfoPropertyName = "NullableMultiVectorComparator2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.Modifier?), TypeInfoPropertyName = "NullableModifier2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(double?))]
+    #pragma warning disable CS0618 // This registration names a deprecated API model.
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(byte?))]
+    #pragma warning restore CS0618
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.PayloadSchemaType?), TypeInfoPropertyName = "NullablePayloadSchemaType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.KeywordIndexType?), TypeInfoPropertyName = "NullableKeywordIndexType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.IntegerIndexType?), TypeInfoPropertyName = "NullableIntegerIndexType2")]
