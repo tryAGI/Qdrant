@@ -12,6 +12,7 @@ namespace Qdrant
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, string>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, object>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<object>), TypeInfoPropertyName = "SystemCollectionsGeneric_ObjectList")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(string[]))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Text.Json.JsonElement?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.ErrorResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(float))]
@@ -68,6 +69,9 @@ namespace Qdrant
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(int?))]
     #pragma warning disable CS0618 // This registration names a deprecated API model.
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(bool?))]
+    #pragma warning restore CS0618
+    #pragma warning disable CS0618 // This registration names a deprecated API model.
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(byte?))]
     #pragma warning restore CS0618
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.SnapshotPriority?), TypeInfoPropertyName = "NullableSnapshotPriority2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.ShardSnapshotLocation?), TypeInfoPropertyName = "NullableShardSnapshotLocation2")]
