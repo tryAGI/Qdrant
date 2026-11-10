@@ -36,9 +36,20 @@ jq '
   del(.components.schemas.Match) |
 
   # Fix 3: update $ref pointers
-  walk(if type == "object" and .["$ref"] == "#/components/schemas/Disabled" then .["$ref"] = "#/components/schemas/DisabledType" elif type == "object" and .["$ref"] == "#/components/schemas/Snowball" then .["$ref"] = "#/components/schemas/SnowballType" elif type == "object" and .["$ref"] == "#/components/schemas/Match" then .["$ref"] = "#/components/schemas/MatchCondition" else . end)
+  walk(if type == "object" and .["$ref"] == "#/components/schemas/Disabled" then .["$ref"] = "#/components/schemas/DisabledType" elif type == "object" and .["$ref"] == "#/components/schemas/Snowball" then .["$ref"] = "#/components/schemas/SnowballType" elif type == "object" and .["$ref"] == "#/components/schemas/Match" then .["$ref"] = "#/components/schemas/MatchCondition" else . end) |
+
+  # Fix 4: `GET /telemetry` declares container_runtime required, and a running server does not
+  # send it - found against the Testcontainers instance, where the whole telemetry tree failed to
+  # deserialize a successful HTTP 200.
+  .components.schemas.RunningEnvironmentTelemetry.required |= map(select(. != "container_runtime"))
 ' openapi.json > openapi.fixed.json
 mv openapi.fixed.json openapi.json
+
+# jq is not in-place and a failed filter would leave the spec untouched, so verify the effect.
+if jq -e '.components.schemas.RunningEnvironmentTelemetry.required | index("container_runtime")' openapi.json >/dev/null 2>&1; then
+  echo "error: the response-shape patch did not apply to openapi.json." >&2
+  exit 1
+fi
 
 # Auth: --security-scheme sends the API key directly as api-key header
 #       (no jq auth conversion or PrepareRequest hook needed).

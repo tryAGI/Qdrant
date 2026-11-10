@@ -13,13 +13,13 @@ namespace Qdrant
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("number_of_collections")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int NumberOfCollections { get; set; }
+        public required long NumberOfCollections { get; set; }
 
         /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_collections")]
-        public int? MaxCollections { get; set; }
+        public long? MaxCollections { get; set; }
 
         /// <summary>
         ///
@@ -50,8 +50,8 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CollectionsTelemetry(
-            int numberOfCollections,
-            int? maxCollections,
+            long numberOfCollections,
+            long? maxCollections,
             global::System.Collections.Generic.IList<global::Qdrant.CollectionTelemetryEnum>? collections,
             global::System.Collections.Generic.IList<global::Qdrant.CollectionSnapshotTelemetry>? snapshots)
         {

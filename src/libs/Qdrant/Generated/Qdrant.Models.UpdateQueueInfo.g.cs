@@ -13,13 +13,13 @@ namespace Qdrant
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("length")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Length { get; set; }
+        public required long Length { get; set; }
 
         /// <summary>
         /// Number of points that are deferred (i.e hidden from search as they're not yet optimized).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("deferred_points")]
-        public int? DeferredPoints { get; set; }
+        public long? DeferredPoints { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -40,8 +40,8 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public UpdateQueueInfo(
-            int length,
-            int? deferredPoints)
+            long length,
+            long? deferredPoints)
         {
             this.Length = length;
             this.DeferredPoints = deferredPoints;

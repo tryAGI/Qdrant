@@ -19,7 +19,7 @@ namespace Qdrant
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.ErrorResponseStatus))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(string))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(object))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(int))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(long))]
     #pragma warning disable CS0618 // This registration names a deprecated API model.
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(bool))]
     #pragma warning restore CS0618
@@ -41,6 +41,7 @@ namespace Qdrant
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(byte[]))]
     #pragma warning restore CS0618
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.RecoverShardFromUploadedSnapshotRequest))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(int))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.RecoverFromUploadedSnapshotResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.RecoverFromUploadedSnapshotResponse2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.RecoverFromSnapshotResponse))]
@@ -66,7 +67,7 @@ namespace Qdrant
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.DeleteShardSnapshotResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.DeleteShardSnapshotResponse2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(float?))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(int?))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(long?))]
     #pragma warning disable CS0618 // This registration names a deprecated API model.
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(bool?))]
     #pragma warning restore CS0618
@@ -75,6 +76,7 @@ namespace Qdrant
     #pragma warning restore CS0618
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.SnapshotPriority?), TypeInfoPropertyName = "NullableSnapshotPriority2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.ShardSnapshotLocation?), TypeInfoPropertyName = "NullableShardSnapshotLocation2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(int?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Qdrant.SnapshotDescription>))]
     internal sealed partial class SnapshotsSourceGenerationContextChunk0 : global::System.Text.Json.Serialization.JsonSerializerContext
     {

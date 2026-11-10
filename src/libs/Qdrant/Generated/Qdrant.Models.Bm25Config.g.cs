@@ -70,13 +70,13 @@ namespace Qdrant
         /// Minimum token length to keep. If token is shorter than this, it will be discarded. Default is `None`, which means no minimum length.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("min_token_len")]
-        public int? MinTokenLen { get; set; }
+        public long? MinTokenLen { get; set; }
 
         /// <summary>
         /// Maximum token length to keep. If token is longer than this, it will be discarded. Default is `None`, which means no maximum length.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_token_len")]
-        public int? MaxTokenLen { get; set; }
+        public long? MaxTokenLen { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -134,8 +134,8 @@ namespace Qdrant
             bool? asciiFolding,
             global::Qdrant.StopwordsInterface? stopwords,
             global::Qdrant.StemmingAlgorithm? stemmer,
-            int? minTokenLen,
-            int? maxTokenLen)
+            long? minTokenLen,
+            long? maxTokenLen)
         {
             this.K = k;
             this.B = b;

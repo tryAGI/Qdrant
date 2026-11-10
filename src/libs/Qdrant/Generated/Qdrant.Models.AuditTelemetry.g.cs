@@ -27,7 +27,7 @@ namespace Qdrant
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_log_files")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int MaxLogFiles { get; set; }
+        public required long MaxLogFiles { get; set; }
 
         /// <summary>
         ///
@@ -54,7 +54,7 @@ namespace Qdrant
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dir_size_bytes")]
-        public int? DirSizeBytes { get; set; }
+        public long? DirSizeBytes { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -78,11 +78,11 @@ namespace Qdrant
         public AuditTelemetry(
             string dir,
             string rotation,
-            int maxLogFiles,
+            long maxLogFiles,
             bool trustForwardedHeaders,
             bool logApi,
             string output,
-            int? dirSizeBytes)
+            long? dirSizeBytes)
         {
             this.Dir = dir ?? throw new global::System.ArgumentNullException(nameof(dir));
             this.Rotation = rotation ?? throw new global::System.ArgumentNullException(nameof(rotation));

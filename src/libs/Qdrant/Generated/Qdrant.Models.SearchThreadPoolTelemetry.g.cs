@@ -21,14 +21,14 @@ namespace Qdrant
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("high_cpu_threads")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int HighCpuThreads { get; set; }
+        public required long HighCpuThreads { get; set; }
 
         /// <summary>
         /// Blocking-thread count of the high-IO runtime.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("high_io_threads")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int HighIoThreads { get; set; }
+        public required long HighIoThreads { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -53,8 +53,8 @@ namespace Qdrant
 #endif
         public SearchThreadPoolTelemetry(
             string mode,
-            int highCpuThreads,
-            int highIoThreads)
+            long highCpuThreads,
+            long highIoThreads)
         {
             this.Mode = mode ?? throw new global::System.ArgumentNullException(nameof(mode));
             this.HighCpuThreads = highCpuThreads;

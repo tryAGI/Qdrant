@@ -13,35 +13,35 @@ namespace Qdrant
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("active_bytes")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int ActiveBytes { get; set; }
+        public required long ActiveBytes { get; set; }
 
         /// <summary>
         /// Total number of bytes allocated by the application
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("allocated_bytes")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int AllocatedBytes { get; set; }
+        public required long AllocatedBytes { get; set; }
 
         /// <summary>
         /// Total number of bytes dedicated to metadata
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata_bytes")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int MetadataBytes { get; set; }
+        public required long MetadataBytes { get; set; }
 
         /// <summary>
         /// Maximum number of bytes in physically resident data pages mapped
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("resident_bytes")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int ResidentBytes { get; set; }
+        public required long ResidentBytes { get; set; }
 
         /// <summary>
         /// Total number of bytes in virtual memory mappings
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("retained_bytes")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int RetainedBytes { get; set; }
+        public required long RetainedBytes { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -71,11 +71,11 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public MemoryTelemetry(
-            int activeBytes,
-            int allocatedBytes,
-            int metadataBytes,
-            int residentBytes,
-            int retainedBytes)
+            long activeBytes,
+            long allocatedBytes,
+            long metadataBytes,
+            long residentBytes,
+            long retainedBytes)
         {
             this.ActiveBytes = activeBytes;
             this.AllocatedBytes = allocatedBytes;

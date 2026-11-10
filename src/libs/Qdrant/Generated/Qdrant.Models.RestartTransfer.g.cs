@@ -13,21 +13,21 @@ namespace Qdrant
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("shard_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int ShardId { get; set; }
+        public required long ShardId { get; set; }
 
         /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("from_peer_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int FromPeerId { get; set; }
+        public required long FromPeerId { get; set; }
 
         /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("to_peer_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int ToPeerId { get; set; }
+        public required long ToPeerId { get; set; }
 
         /// <summary>
         /// Methods for transferring a shard from one node to another.<br/>
@@ -64,9 +64,9 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RestartTransfer(
-            int shardId,
-            int fromPeerId,
-            int toPeerId,
+            long shardId,
+            long fromPeerId,
+            long toPeerId,
             global::Qdrant.ShardTransferMethod method)
         {
             this.ShardId = shardId;

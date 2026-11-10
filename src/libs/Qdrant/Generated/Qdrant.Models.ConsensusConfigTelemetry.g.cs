@@ -13,21 +13,21 @@ namespace Qdrant
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_message_queue_size")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int MaxMessageQueueSize { get; set; }
+        public required long MaxMessageQueueSize { get; set; }
 
         /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tick_period_ms")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int TickPeriodMs { get; set; }
+        public required long TickPeriodMs { get; set; }
 
         /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("bootstrap_timeout_sec")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int BootstrapTimeoutSec { get; set; }
+        public required long BootstrapTimeoutSec { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -45,9 +45,9 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ConsensusConfigTelemetry(
-            int maxMessageQueueSize,
-            int tickPeriodMs,
-            int bootstrapTimeoutSec)
+            long maxMessageQueueSize,
+            long tickPeriodMs,
+            long bootstrapTimeoutSec)
         {
             this.MaxMessageQueueSize = maxMessageQueueSize;
             this.TickPeriodMs = tickPeriodMs;

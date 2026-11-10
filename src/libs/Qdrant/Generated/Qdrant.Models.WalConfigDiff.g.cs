@@ -12,19 +12,19 @@ namespace Qdrant
         /// Size of a single WAL segment in MB
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("wal_capacity_mb")]
-        public int? WalCapacityMb { get; set; }
+        public long? WalCapacityMb { get; set; }
 
         /// <summary>
         /// Number of WAL segments to create ahead of actually used ones
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("wal_segments_ahead")]
-        public int? WalSegmentsAhead { get; set; }
+        public long? WalSegmentsAhead { get; set; }
 
         /// <summary>
         /// Number of closed WAL segments to retain
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("wal_retain_closed")]
-        public int? WalRetainClosed { get; set; }
+        public long? WalRetainClosed { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -48,9 +48,9 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public WalConfigDiff(
-            int? walCapacityMb,
-            int? walSegmentsAhead,
-            int? walRetainClosed)
+            long? walCapacityMb,
+            long? walSegmentsAhead,
+            long? walRetainClosed)
         {
             this.WalCapacityMb = walCapacityMb;
             this.WalSegmentsAhead = walSegmentsAhead;

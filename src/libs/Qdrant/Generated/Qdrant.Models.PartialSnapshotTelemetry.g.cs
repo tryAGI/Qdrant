@@ -13,7 +13,7 @@ namespace Qdrant
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("ongoing_create_snapshot_requests")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int OngoingCreateSnapshotRequests { get; set; }
+        public required long OngoingCreateSnapshotRequests { get; set; }
 
         /// <summary>
         ///
@@ -27,7 +27,7 @@ namespace Qdrant
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("recovery_timestamp")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int RecoveryTimestamp { get; set; }
+        public required long RecoveryTimestamp { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -45,9 +45,9 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public PartialSnapshotTelemetry(
-            int ongoingCreateSnapshotRequests,
+            long ongoingCreateSnapshotRequests,
             bool isRecovering,
-            int recoveryTimestamp)
+            long recoveryTimestamp)
         {
             this.OngoingCreateSnapshotRequests = ongoingCreateSnapshotRequests;
             this.IsRecovering = isRecovering;

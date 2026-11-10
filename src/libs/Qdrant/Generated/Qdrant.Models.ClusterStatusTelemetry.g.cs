@@ -13,28 +13,28 @@ namespace Qdrant
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("number_of_peers")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int NumberOfPeers { get; set; }
+        public required long NumberOfPeers { get; set; }
 
         /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("term")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Term { get; set; }
+        public required long Term { get; set; }
 
         /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("commit")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Commit { get; set; }
+        public required long Commit { get; set; }
 
         /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pending_operations")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int PendingOperations { get; set; }
+        public required long PendingOperations { get; set; }
 
         /// <summary>
         ///
@@ -53,7 +53,7 @@ namespace Qdrant
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("peer_id")]
-        public int? PeerId { get; set; }
+        public long? PeerId { get; set; }
 
         /// <summary>
         /// Information about current consensus thread status
@@ -86,14 +86,14 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ClusterStatusTelemetry(
-            int numberOfPeers,
-            int term,
-            int commit,
-            int pendingOperations,
+            long numberOfPeers,
+            long term,
+            long commit,
+            long pendingOperations,
             bool isVoter,
             global::Qdrant.ConsensusThreadStatus consensusThreadStatus,
             global::Qdrant.StateRole? role,
-            int? peerId)
+            long? peerId)
         {
             this.NumberOfPeers = numberOfPeers;
             this.Term = term;

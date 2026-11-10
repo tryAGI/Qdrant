@@ -24,7 +24,7 @@ namespace Qdrant
         /// Page size. Default: 10
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("limit")]
-        public int? Limit { get; set; }
+        public long? Limit { get; set; }
 
         /// <summary>
         /// Look only for points which satisfies this conditions. If not provided - all points.
@@ -87,7 +87,7 @@ namespace Qdrant
         public ScrollRequest(
             global::Qdrant.ShardKeySelector? shardKey,
             global::Qdrant.ExtendedPointId? offset,
-            int? limit,
+            long? limit,
             global::Qdrant.Filter? filter,
             global::Qdrant.WithPayloadInterface? withPayload,
             global::Qdrant.WithVector? withVector,

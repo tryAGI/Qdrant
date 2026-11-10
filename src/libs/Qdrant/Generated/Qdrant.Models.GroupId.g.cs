@@ -50,9 +50,9 @@ namespace Qdrant
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        public int? GroupIdVariant2 { get; init; }
+        public long? GroupIdVariant2 { get; init; }
 #else
-        public int? GroupIdVariant2 { get; }
+        public long? GroupIdVariant2 { get; }
 #endif
 
         /// <summary>
@@ -70,7 +70,7 @@ namespace Qdrant
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out int? value)
+            out long? value)
         {
             value = GroupIdVariant2;
             return IsGroupIdVariant2;
@@ -79,7 +79,7 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public int PickGroupIdVariant2() => GroupIdVariant2 is { } value
+        public long PickGroupIdVariant2() => GroupIdVariant2 is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'GroupIdVariant2' but the value was {ToString()}.");
 
@@ -145,17 +145,17 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator GroupId(int value) => new GroupId((int?)value);
+        public static implicit operator GroupId(long value) => new GroupId((long?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator int?(GroupId @this) => @this.GroupIdVariant2;
+        public static implicit operator long?(GroupId @this) => @this.GroupIdVariant2;
 
         /// <summary>
         ///
         /// </summary>
-        public GroupId(int? value)
+        public GroupId(long? value)
         {
             GroupIdVariant2 = value;
         }
@@ -163,37 +163,14 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public static GroupId FromGroupIdVariant2(int? value) => new GroupId(value);
-
-        /// <summary>
-        ///
-        /// </summary>
-        public static implicit operator GroupId(long value) => new GroupId((long?)value);
-
-        /// <summary>
-        ///
-        /// </summary>
-        public static implicit operator long?(GroupId @this) => @this.GroupIdVariant3;
-
-        /// <summary>
-        ///
-        /// </summary>
-        public GroupId(long? value)
-        {
-            GroupIdVariant3 = value;
-        }
-
-        /// <summary>
-        ///
-        /// </summary>
-        public static GroupId FromGroupIdVariant3(long? value) => new GroupId(value);
+        public static GroupId FromGroupIdVariant2(long? value) => new GroupId(value);
 
         /// <summary>
         ///
         /// </summary>
         public GroupId(
             string? groupIdVariant1,
-            int? groupIdVariant2,
+            long? groupIdVariant2,
             long? groupIdVariant3
             )
         {
@@ -233,7 +210,7 @@ namespace Qdrant
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<string, TResult>? groupIdVariant1 = null,
-            global::System.Func<int?, TResult>? groupIdVariant2 = null,
+            global::System.Func<long?, TResult>? groupIdVariant2 = null,
             global::System.Func<long?, TResult>? groupIdVariant3 = null,
             bool validate = true)
         {
@@ -264,7 +241,7 @@ namespace Qdrant
         public void Match(
             global::System.Action<string>? groupIdVariant1 = null,
 
-            global::System.Action<int?>? groupIdVariant2 = null,
+            global::System.Action<long?>? groupIdVariant2 = null,
 
             global::System.Action<long?>? groupIdVariant3 = null,
             bool validate = true)
@@ -293,7 +270,7 @@ namespace Qdrant
         /// </summary>
         public void Switch(
             global::System.Action<string>? groupIdVariant1 = null,
-            global::System.Action<int?>? groupIdVariant2 = null,
+            global::System.Action<long?>? groupIdVariant2 = null,
             global::System.Action<long?>? groupIdVariant3 = null,
             bool validate = true)
         {
@@ -326,7 +303,7 @@ namespace Qdrant
                 GroupIdVariant1,
                 typeof(string),
                 GroupIdVariant2,
-                typeof(int),
+                typeof(long),
                 GroupIdVariant3,
                 typeof(long),
             };
@@ -346,7 +323,7 @@ namespace Qdrant
         {
             return
                 global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(GroupIdVariant1, other.GroupIdVariant1) &&
-                global::System.Collections.Generic.EqualityComparer<int?>.Default.Equals(GroupIdVariant2, other.GroupIdVariant2) &&
+                global::System.Collections.Generic.EqualityComparer<long?>.Default.Equals(GroupIdVariant2, other.GroupIdVariant2) &&
                 global::System.Collections.Generic.EqualityComparer<long?>.Default.Equals(GroupIdVariant3, other.GroupIdVariant3)
                 ;
         }

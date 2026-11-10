@@ -22,7 +22,7 @@ namespace Qdrant
         /// Peer to create the new shard on, or to migrate points away from when scaling down. If not specified, the least loaded peer is picked when scaling up, a peer holding the removed shard when scaling down.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("peer_id")]
-        public int? PeerId { get; set; }
+        public long? PeerId { get; set; }
 
         /// <summary>
         /// Custom shard key to reshard, must already exist. If not specified, shards without a shard key are resharded.
@@ -55,7 +55,7 @@ namespace Qdrant
 #endif
         public StartResharding(
             global::Qdrant.ReshardingDirection direction,
-            int? peerId,
+            long? peerId,
             global::Qdrant.ShardKey? shardKey)
         {
             this.Direction = direction;

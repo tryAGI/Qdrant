@@ -26,7 +26,7 @@ namespace Qdrant
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("shard_number")]
-        public int? ShardNumber { get; set; }
+        public long? ShardNumber { get; set; }
 
         /// <summary>
         /// Sharding method Default is Auto - points are distributed across all available shards Custom - points are distributed across shards according to shard key<br/>
@@ -40,14 +40,14 @@ namespace Qdrant
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("replication_factor")]
-        public int? ReplicationFactor { get; set; }
+        public long? ReplicationFactor { get; set; }
 
         /// <summary>
         /// Defines how many replicas should apply the operation for us to consider it successful. Increasing this number will make the collection more resilient to inconsistencies, but will also make it fail if not enough replicas are available. Does not have any performance impact.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("write_consistency_factor")]
-        public int? WriteConsistencyFactor { get; set; }
+        public long? WriteConsistencyFactor { get; set; }
 
         /// <summary>
         /// Deprecated: use `payload.memory` instead. If true - point's payload will not be stored in memory. It will be read from the disk every time it is requested. This setting saves RAM by (slightly) increasing the response time. Note: those payload values that are involved in filtering and are indexed - remain in RAM.<br/>
@@ -182,10 +182,10 @@ namespace Qdrant
 #endif
         public CreateCollection(
             global::Qdrant.VectorsConfig? vectors,
-            int? shardNumber,
+            long? shardNumber,
             global::Qdrant.ShardingMethod? shardingMethod,
-            int? replicationFactor,
-            int? writeConsistencyFactor,
+            long? replicationFactor,
+            long? writeConsistencyFactor,
             global::Qdrant.PayloadStorageParams? payload,
             global::Qdrant.IdTrackerParams? idTracker,
             global::Qdrant.HnswConfigDiff? hnswConfig,

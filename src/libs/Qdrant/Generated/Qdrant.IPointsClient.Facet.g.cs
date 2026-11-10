@@ -95,7 +95,7 @@ namespace Qdrant
             global::Qdrant.ReadConsistency? consistency = default,
             int? timeout = default,
             global::Qdrant.ShardKeySelector? shardKey = default,
-            int? limit = default,
+            long? limit = default,
             global::Qdrant.Filter? filter = default,
             bool? exact = default,
             global::Qdrant.AutoSDKRequestOptions? requestOptions = default,

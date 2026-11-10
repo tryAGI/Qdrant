@@ -28,13 +28,13 @@ namespace Qdrant
         /// Minimum characters to be tokenized.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("min_token_len")]
-        public int? MinTokenLen { get; set; }
+        public long? MinTokenLen { get; set; }
 
         /// <summary>
         /// Maximum characters to be tokenized.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_token_len")]
-        public int? MaxTokenLen { get; set; }
+        public long? MaxTokenLen { get; set; }
 
         /// <summary>
         /// If true, lowercase all tokens. Default: true.
@@ -147,8 +147,8 @@ namespace Qdrant
         public TextIndexParams(
             global::Qdrant.TextIndexType type,
             global::Qdrant.TokenizerType? tokenizer,
-            int? minTokenLen,
-            int? maxTokenLen,
+            long? minTokenLen,
+            long? maxTokenLen,
             bool? lowercase,
             bool? asciiFolding,
             bool? phraseMatching,

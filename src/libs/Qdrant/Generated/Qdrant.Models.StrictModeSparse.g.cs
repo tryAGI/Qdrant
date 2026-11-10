@@ -12,7 +12,7 @@ namespace Qdrant
         /// Max length of sparse vector
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_length")]
-        public int? MaxLength { get; set; }
+        public long? MaxLength { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,7 +30,7 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public StrictModeSparse(
-            int? maxLength)
+            long? maxLength)
         {
             this.MaxLength = maxLength;
         }

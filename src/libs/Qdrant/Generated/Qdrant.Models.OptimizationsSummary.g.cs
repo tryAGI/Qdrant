@@ -13,28 +13,28 @@ namespace Qdrant
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("queued_optimizations")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int QueuedOptimizations { get; set; }
+        public required long QueuedOptimizations { get; set; }
 
         /// <summary>
         /// Number of unoptimized segments in the queue.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("queued_segments")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int QueuedSegments { get; set; }
+        public required long QueuedSegments { get; set; }
 
         /// <summary>
         /// Number of points in unoptimized segments in the queue.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("queued_points")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int QueuedPoints { get; set; }
+        public required long QueuedPoints { get; set; }
 
         /// <summary>
         /// Number of segments that don't require optimization.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("idle_segments")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int IdleSegments { get; set; }
+        public required long IdleSegments { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -61,10 +61,10 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public OptimizationsSummary(
-            int queuedOptimizations,
-            int queuedSegments,
-            int queuedPoints,
-            int idleSegments)
+            long queuedOptimizations,
+            long queuedSegments,
+            long queuedPoints,
+            long idleSegments)
         {
             this.QueuedOptimizations = queuedOptimizations;
             this.QueuedSegments = queuedSegments;

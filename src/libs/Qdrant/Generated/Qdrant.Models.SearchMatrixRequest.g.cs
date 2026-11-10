@@ -24,13 +24,13 @@ namespace Qdrant
         /// How many points to select and search within. Default is 10.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sample")]
-        public int? Sample { get; set; }
+        public long? Sample { get; set; }
 
         /// <summary>
         /// How many neighbours per sample to find. Default is 3.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("limit")]
-        public int? Limit { get; set; }
+        public long? Limit { get; set; }
 
         /// <summary>
         /// Define which vector name to use for querying. If missing, the default vector is used.
@@ -68,8 +68,8 @@ namespace Qdrant
         public SearchMatrixRequest(
             global::Qdrant.ShardKeySelector? shardKey,
             global::Qdrant.Filter? filter,
-            int? sample,
-            int? limit,
+            long? sample,
+            long? limit,
             string? @using)
         {
             this.ShardKey = shardKey;

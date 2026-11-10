@@ -23,7 +23,7 @@ namespace Qdrant
         /// <example>3</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("version")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Version { get; set; }
+        public required long Version { get; set; }
 
         /// <summary>
         /// Points vector distance to the query vector<br/>
@@ -95,7 +95,7 @@ namespace Qdrant
 #endif
         public ScoredPoint(
             global::Qdrant.ExtendedPointId id,
-            int version,
+            long version,
             float score,
             global::Qdrant.Payload? payload,
             global::Qdrant.VectorStructOutput? vector,

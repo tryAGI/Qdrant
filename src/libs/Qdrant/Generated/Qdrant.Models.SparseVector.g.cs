@@ -13,7 +13,7 @@ namespace Qdrant
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("indices")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<int> Indices { get; set; }
+        public required global::System.Collections.Generic.IList<long> Indices { get; set; }
 
         /// <summary>
         /// Values and indices must be the same length
@@ -41,7 +41,7 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public SparseVector(
-            global::System.Collections.Generic.IList<int> indices,
+            global::System.Collections.Generic.IList<long> indices,
             global::System.Collections.Generic.IList<float> values)
         {
             this.Indices = indices ?? throw new global::System.ArgumentNullException(nameof(indices));

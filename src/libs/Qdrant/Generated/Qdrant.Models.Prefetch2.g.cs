@@ -50,7 +50,7 @@ namespace Qdrant
         /// Max number of points to return. Default is 10.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("limit")]
-        public int? Limit { get; set; }
+        public long? Limit { get; set; }
 
         /// <summary>
         /// The location to use for IDs lookup, if not specified - use the current collection and the 'using' vector Note: the other collection vectors should have the same vector size as the 'using' vector in the current collection<br/>
@@ -104,7 +104,7 @@ namespace Qdrant
             global::Qdrant.Filter? filter,
             global::Qdrant.SearchParams? @params,
             float? scoreThreshold,
-            int? limit,
+            long? limit,
             global::Qdrant.LookupLocation? lookupFrom)
         {
             this.Prefetch = prefetch;

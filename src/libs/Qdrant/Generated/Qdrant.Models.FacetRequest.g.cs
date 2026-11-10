@@ -25,7 +25,7 @@ namespace Qdrant
         /// Max number of hits to return. Default is 10.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("limit")]
-        public int? Limit { get; set; }
+        public long? Limit { get; set; }
 
         /// <summary>
         /// Filter conditions - only consider points that satisfy these conditions.
@@ -67,7 +67,7 @@ namespace Qdrant
         public FacetRequest(
             string key,
             global::Qdrant.ShardKeySelector? shardKey,
-            int? limit,
+            long? limit,
             global::Qdrant.Filter? filter,
             bool? exact)
         {

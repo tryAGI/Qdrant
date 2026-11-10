@@ -26,20 +26,20 @@ namespace Qdrant
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("points_values_count")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int PointsValuesCount { get; set; }
+        public required long PointsValuesCount { get; set; }
 
         /// <summary>
         /// The amount of points that have at least one value indexed.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("points_count")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int PointsCount { get; set; }
+        public required long PointsCount { get; set; }
 
         /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("histogram_bucket_size")]
-        public int? HistogramBucketSize { get; set; }
+        public long? HistogramBucketSize { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -64,10 +64,10 @@ namespace Qdrant
 #endif
         public PayloadIndexTelemetry(
             string indexType,
-            int pointsValuesCount,
-            int pointsCount,
+            long pointsValuesCount,
+            long pointsCount,
             string? fieldName,
-            int? histogramBucketSize)
+            long? histogramBucketSize)
         {
             this.FieldName = fieldName;
             this.IndexType = indexType ?? throw new global::System.ArgumentNullException(nameof(indexType));

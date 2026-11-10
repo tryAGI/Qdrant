@@ -82,13 +82,13 @@ namespace Qdrant
         /// Maximum amount of points to return per group. Default is 3.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("group_size")]
-        public int? GroupSize { get; set; }
+        public long? GroupSize { get; set; }
 
         /// <summary>
         /// Maximum amount of groups to return. Default is 10.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("limit")]
-        public int? Limit { get; set; }
+        public long? Limit { get; set; }
 
         /// <summary>
         /// Look for points in another collection using the group ids
@@ -162,8 +162,8 @@ namespace Qdrant
             global::Qdrant.WithVector? withVector,
             global::Qdrant.WithPayloadInterface? withPayload,
             global::Qdrant.LookupLocation? lookupFrom,
-            int? groupSize,
-            int? limit,
+            long? groupSize,
+            long? limit,
             global::Qdrant.WithLookupInterface? withLookup)
         {
             this.ShardKey = shardKey;

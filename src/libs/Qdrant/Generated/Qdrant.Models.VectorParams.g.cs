@@ -15,7 +15,7 @@ namespace Qdrant
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("size")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Size { get; set; }
+        public required long Size { get; set; }
 
         /// <summary>
         /// Type of internal tags, build from payload Distance function types used to compare vectors
@@ -96,7 +96,7 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public VectorParams(
-            int size,
+            long size,
             global::Qdrant.Distance distance,
             global::Qdrant.HnswConfigDiff? hnswConfig,
             global::Qdrant.QuantizationConfig? quantizationConfig,

@@ -20,7 +20,7 @@ namespace Qdrant
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("peer_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int PeerId { get; set; }
+        public required long PeerId { get; set; }
 
         /// <summary>
         /// Peers composition of the cluster with main information
@@ -80,7 +80,7 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ClusterStatusVariant2(
-            int peerId,
+            long peerId,
             global::System.Collections.Generic.Dictionary<string, global::Qdrant.PeerInfo> peers,
             global::Qdrant.RaftInfo raftInfo,
             global::Qdrant.ConsensusThreadStatus consensusThreadStatus,

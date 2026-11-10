@@ -27,7 +27,7 @@ namespace Qdrant
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("points")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Points { get; set; }
+        public required long Points { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -50,7 +50,7 @@ namespace Qdrant
 #endif
         public PayloadIndexInfo(
             global::Qdrant.PayloadSchemaType dataType,
-            int points,
+            long points,
             global::Qdrant.PayloadSchemaParams? @params)
         {
             this.DataType = dataType;

@@ -13,7 +13,7 @@ namespace Qdrant
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Id { get; set; }
+        public required long Id { get; set; }
 
         /// <summary>
         /// Optional shard key
@@ -50,7 +50,7 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public DistributedShardTelemetry(
-            int id,
+            long id,
             global::System.Collections.Generic.IList<global::Qdrant.DistributedReplicaTelemetry> replicas,
             global::Qdrant.ShardKey? key)
         {

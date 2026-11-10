@@ -13,7 +13,7 @@ namespace Qdrant
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("peer_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int PeerId { get; set; }
+        public required long PeerId { get; set; }
 
         /// <summary>
         /// State of the single shard within a replica set.
@@ -33,37 +33,37 @@ namespace Qdrant
         /// Total optimized points
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("total_optimized_points")]
-        public int? TotalOptimizedPoints { get; set; }
+        public long? TotalOptimizedPoints { get; set; }
 
         /// <summary>
         /// Estimated vectors size in bytes
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("vectors_size_bytes")]
-        public int? VectorsSizeBytes { get; set; }
+        public long? VectorsSizeBytes { get; set; }
 
         /// <summary>
         /// Estimated payloads size in bytes
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("payloads_size_bytes")]
-        public int? PayloadsSizeBytes { get; set; }
+        public long? PayloadsSizeBytes { get; set; }
 
         /// <summary>
         /// Approximate number of points
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("num_points")]
-        public int? NumPoints { get; set; }
+        public long? NumPoints { get; set; }
 
         /// <summary>
         /// Approximate number of vectors
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("num_vectors")]
-        public int? NumVectors { get; set; }
+        public long? NumVectors { get; set; }
 
         /// <summary>
         /// Approximate number of vectors by name
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("num_vectors_by_name")]
-        public global::System.Collections.Generic.Dictionary<string, int>? NumVectorsByName { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, long>? NumVectorsByName { get; set; }
 
         /// <summary>
         /// Shard cleaning task status. After a resharding, a cleanup task is performed to remove outdated points from this shard.
@@ -123,15 +123,15 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public DistributedReplicaTelemetry(
-            int peerId,
+            long peerId,
             global::Qdrant.ReplicaState state,
             global::Qdrant.ShardStatus? status,
-            int? totalOptimizedPoints,
-            int? vectorsSizeBytes,
-            int? payloadsSizeBytes,
-            int? numPoints,
-            int? numVectors,
-            global::System.Collections.Generic.Dictionary<string, int>? numVectorsByName,
+            long? totalOptimizedPoints,
+            long? vectorsSizeBytes,
+            long? payloadsSizeBytes,
+            long? numPoints,
+            long? numVectors,
+            global::System.Collections.Generic.Dictionary<string, long>? numVectorsByName,
             global::Qdrant.ShardCleanStatusTelemetry? shardCleaningStatus,
             global::Qdrant.PartialSnapshotTelemetry? partialSnapshot)
         {

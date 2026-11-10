@@ -19,9 +19,9 @@ namespace Qdrant
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        public int? ReadConsistencyVariant1 { get; init; }
+        public long? ReadConsistencyVariant1 { get; init; }
 #else
-        public int? ReadConsistencyVariant1 { get; }
+        public long? ReadConsistencyVariant1 { get; }
 #endif
 
         /// <summary>
@@ -39,7 +39,7 @@ namespace Qdrant
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out int? value)
+            out long? value)
         {
             value = ReadConsistencyVariant1;
             return IsReadConsistencyVariant1;
@@ -48,7 +48,7 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public int PickReadConsistencyVariant1() => ReadConsistencyVariant1 is { } value
+        public long PickReadConsistencyVariant1() => ReadConsistencyVariant1 is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ReadConsistencyVariant1' but the value was {ToString()}.");
 
@@ -93,17 +93,17 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator ReadConsistency(int value) => new ReadConsistency((int?)value);
+        public static implicit operator ReadConsistency(long value) => new ReadConsistency((long?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator int?(ReadConsistency @this) => @this.ReadConsistencyVariant1;
+        public static implicit operator long?(ReadConsistency @this) => @this.ReadConsistencyVariant1;
 
         /// <summary>
         ///
         /// </summary>
-        public ReadConsistency(int? value)
+        public ReadConsistency(long? value)
         {
             ReadConsistencyVariant1 = value;
         }
@@ -111,7 +111,7 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public static ReadConsistency FromReadConsistencyVariant1(int? value) => new ReadConsistency(value);
+        public static ReadConsistency FromReadConsistencyVariant1(long? value) => new ReadConsistency(value);
 
         /// <summary>
         ///
@@ -140,7 +140,7 @@ namespace Qdrant
         ///
         /// </summary>
         public ReadConsistency(
-            int? readConsistencyVariant1,
+            long? readConsistencyVariant1,
             global::Qdrant.ReadConsistencyType? type
             )
         {
@@ -176,7 +176,7 @@ namespace Qdrant
         ///
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<int?, TResult>? readConsistencyVariant1 = null,
+            global::System.Func<long?, TResult>? readConsistencyVariant1 = null,
             global::System.Func<global::Qdrant.ReadConsistencyType?, TResult>? type = null,
             bool validate = true)
         {
@@ -201,7 +201,7 @@ namespace Qdrant
         ///
         /// </summary>
         public void Match(
-            global::System.Action<int?>? readConsistencyVariant1 = null,
+            global::System.Action<long?>? readConsistencyVariant1 = null,
 
             global::System.Action<global::Qdrant.ReadConsistencyType?>? type = null,
             bool validate = true)
@@ -225,7 +225,7 @@ namespace Qdrant
         ///
         /// </summary>
         public void Switch(
-            global::System.Action<int?>? readConsistencyVariant1 = null,
+            global::System.Action<long?>? readConsistencyVariant1 = null,
             global::System.Action<global::Qdrant.ReadConsistencyType?>? type = null,
             bool validate = true)
         {
@@ -252,7 +252,7 @@ namespace Qdrant
             var fields = new object?[]
             {
                 ReadConsistencyVariant1,
-                typeof(int),
+                typeof(long),
                 Type,
                 typeof(global::Qdrant.ReadConsistencyType),
             };
@@ -271,7 +271,7 @@ namespace Qdrant
         public bool Equals(ReadConsistency other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<int?>.Default.Equals(ReadConsistencyVariant1, other.ReadConsistencyVariant1) &&
+                global::System.Collections.Generic.EqualityComparer<long?>.Default.Equals(ReadConsistencyVariant1, other.ReadConsistencyVariant1) &&
                 global::System.Collections.Generic.EqualityComparer<global::Qdrant.ReadConsistencyType?>.Default.Equals(Type, other.Type)
                 ;
         }

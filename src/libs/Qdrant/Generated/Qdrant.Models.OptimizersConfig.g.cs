@@ -22,7 +22,7 @@ namespace Qdrant
         /// Default Value: 1000
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("vacuum_min_vector_number")]
-        public int? VacuumMinVectorNumber { get; set; }
+        public long? VacuumMinVectorNumber { get; set; }
 
         /// <summary>
         /// Target amount of segments optimizer will try to keep. Real amount of segments may vary depending on multiple parameters: - Amount of stored points - Current write RPS<br/>
@@ -30,7 +30,7 @@ namespace Qdrant
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("default_segment_number")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int DefaultSegmentNumber { get; set; }
+        public required long DefaultSegmentNumber { get; set; }
 
         /// <summary>
         /// Do not create segments larger than this size (in kilobytes). Large segments might require disproportionately long indexation times, therefore it makes sense to limit the size of segments.<br/>
@@ -38,7 +38,7 @@ namespace Qdrant
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_segment_size")]
-        public int? MaxSegmentSize { get; set; }
+        public long? MaxSegmentSize { get; set; }
 
         /// <summary>
         /// Maximum size (in kilobytes) of vectors to store in-memory per segment. Segments larger than this threshold will be stored as read-only memmapped file.<br/>
@@ -49,7 +49,7 @@ namespace Qdrant
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("memmap_threshold")]
         [global::System.Obsolete("This property marked as deprecated.")]
-        public int? MemmapThreshold { get; set; }
+        public long? MemmapThreshold { get; set; }
 
         /// <summary>
         /// Maximum size (in kilobytes) of vectors allowed for plain index, exceeding this threshold will enable vector indexing<br/>
@@ -59,21 +59,21 @@ namespace Qdrant
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("indexing_threshold")]
-        public int? IndexingThreshold { get; set; }
+        public long? IndexingThreshold { get; set; }
 
         /// <summary>
         /// Minimum interval between forced flushes.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("flush_interval_sec")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int FlushIntervalSec { get; set; }
+        public required long FlushIntervalSec { get; set; }
 
         /// <summary>
         /// Max number of threads (jobs) for running optimizations per shard. Note: each optimization job will also use `max_indexing_threads` threads by itself for index building. If null - have no limit and choose dynamically to saturate CPU. If 0 - no optimization threads, optimizations will be disabled.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_optimization_threads")]
-        public int? MaxOptimizationThreads { get; set; }
+        public long? MaxOptimizationThreads { get; set; }
 
         /// <summary>
         /// If enabled, the service will try to prevent the creation of large unoptimized segments. When enabled, new points written to segments larger than the indexing threshold are stored as "deferred points": they are persisted in the WAL and segments, but excluded from read/search results until the corresponding segments are optimized (e.g. indexed, quantized, or moved to mmap storage). Update requests with `wait=true` will only return after the deferred points become visible, which may significantly increase the perceived latency between submitting an update and its completion. Update requests with `wait=false` are not affected. Default is disabled.<br/>
@@ -130,13 +130,13 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public OptimizersConfig(
-            int defaultSegmentNumber,
-            int flushIntervalSec,
+            long defaultSegmentNumber,
+            long flushIntervalSec,
             double? deletedThreshold,
-            int? vacuumMinVectorNumber,
-            int? maxSegmentSize,
-            int? indexingThreshold,
-            int? maxOptimizationThreads,
+            long? vacuumMinVectorNumber,
+            long? maxSegmentSize,
+            long? indexingThreshold,
+            long? maxOptimizationThreads,
             bool? preventUnoptimized)
         {
             this.DeletedThreshold = deletedThreshold;

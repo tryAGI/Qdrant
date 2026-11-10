@@ -13,7 +13,7 @@ namespace Qdrant
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("connection_pool_size")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int ConnectionPoolSize { get; set; }
+        public required long ConnectionPoolSize { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -29,7 +29,7 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public P2pConfigTelemetry(
-            int connectionPoolSize)
+            long connectionPoolSize)
         {
             this.ConnectionPoolSize = connectionPoolSize;
         }

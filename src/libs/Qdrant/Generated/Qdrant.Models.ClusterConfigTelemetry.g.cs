@@ -13,7 +13,7 @@ namespace Qdrant
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("grpc_timeout_ms")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int GrpcTimeoutMs { get; set; }
+        public required long GrpcTimeoutMs { get; set; }
 
         /// <summary>
         ///
@@ -45,7 +45,7 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ClusterConfigTelemetry(
-            int grpcTimeoutMs,
+            long grpcTimeoutMs,
             global::Qdrant.P2pConfigTelemetry p2p,
             global::Qdrant.ConsensusConfigTelemetry consensus)
         {

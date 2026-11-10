@@ -50,9 +50,9 @@ namespace Qdrant
         /// Example: 12
         /// </summary>
 #if NET6_0_OR_GREATER
-        public int? ShardKeyVariant2 { get; init; }
+        public long? ShardKeyVariant2 { get; init; }
 #else
-        public int? ShardKeyVariant2 { get; }
+        public long? ShardKeyVariant2 { get; }
 #endif
 
         /// <summary>
@@ -70,7 +70,7 @@ namespace Qdrant
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out int? value)
+            out long? value)
         {
             value = ShardKeyVariant2;
             return IsShardKeyVariant2;
@@ -79,7 +79,7 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public int PickShardKeyVariant2() => ShardKeyVariant2 is { } value
+        public long PickShardKeyVariant2() => ShardKeyVariant2 is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ShardKeyVariant2' but the value was {ToString()}.");
         /// <summary>
@@ -108,17 +108,17 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator ShardKey(int value) => new ShardKey((int?)value);
+        public static implicit operator ShardKey(long value) => new ShardKey((long?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator int?(ShardKey @this) => @this.ShardKeyVariant2;
+        public static implicit operator long?(ShardKey @this) => @this.ShardKeyVariant2;
 
         /// <summary>
         ///
         /// </summary>
-        public ShardKey(int? value)
+        public ShardKey(long? value)
         {
             ShardKeyVariant2 = value;
         }
@@ -126,14 +126,14 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public static ShardKey FromShardKeyVariant2(int? value) => new ShardKey(value);
+        public static ShardKey FromShardKeyVariant2(long? value) => new ShardKey(value);
 
         /// <summary>
         ///
         /// </summary>
         public ShardKey(
             string? shardKeyVariant1,
-            int? shardKeyVariant2
+            long? shardKeyVariant2
             )
         {
             ShardKeyVariant1 = shardKeyVariant1;
@@ -169,7 +169,7 @@ namespace Qdrant
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<string, TResult>? shardKeyVariant1 = null,
-            global::System.Func<int?, TResult>? shardKeyVariant2 = null,
+            global::System.Func<long?, TResult>? shardKeyVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -195,7 +195,7 @@ namespace Qdrant
         public void Match(
             global::System.Action<string>? shardKeyVariant1 = null,
 
-            global::System.Action<int?>? shardKeyVariant2 = null,
+            global::System.Action<long?>? shardKeyVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -218,7 +218,7 @@ namespace Qdrant
         /// </summary>
         public void Switch(
             global::System.Action<string>? shardKeyVariant1 = null,
-            global::System.Action<int?>? shardKeyVariant2 = null,
+            global::System.Action<long?>? shardKeyVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -246,7 +246,7 @@ namespace Qdrant
                 ShardKeyVariant1,
                 typeof(string),
                 ShardKeyVariant2,
-                typeof(int),
+                typeof(long),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -264,7 +264,7 @@ namespace Qdrant
         {
             return
                 global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(ShardKeyVariant1, other.ShardKeyVariant1) &&
-                global::System.Collections.Generic.EqualityComparer<int?>.Default.Equals(ShardKeyVariant2, other.ShardKeyVariant2)
+                global::System.Collections.Generic.EqualityComparer<long?>.Default.Equals(ShardKeyVariant2, other.ShardKeyVariant2)
                 ;
         }
 

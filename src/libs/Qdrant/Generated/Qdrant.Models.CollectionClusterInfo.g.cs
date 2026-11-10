@@ -13,14 +13,14 @@ namespace Qdrant
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("peer_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int PeerId { get; set; }
+        public required long PeerId { get; set; }
 
         /// <summary>
         /// Total number of shards
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("shard_count")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int ShardCount { get; set; }
+        public required long ShardCount { get; set; }
 
         /// <summary>
         /// Local shards
@@ -80,8 +80,8 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CollectionClusterInfo(
-            int peerId,
-            int shardCount,
+            long peerId,
+            long shardCount,
             global::System.Collections.Generic.IList<global::Qdrant.LocalShardInfo> localShards,
             global::System.Collections.Generic.IList<global::Qdrant.RemoteShardInfo> remoteShards,
             global::System.Collections.Generic.IList<global::Qdrant.ShardTransferInfo> shardTransfers,

@@ -629,8 +629,8 @@ namespace Qdrant
             global::Qdrant.WithVector? withVector = default,
             global::Qdrant.WithPayloadInterface? withPayload = default,
             global::Qdrant.LookupLocation? lookupFrom = default,
-            int? groupSize = default,
-            int? limit = default,
+            long? groupSize = default,
+            long? limit = default,
             global::Qdrant.WithLookupInterface? withLookup = default,
             global::Qdrant.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)

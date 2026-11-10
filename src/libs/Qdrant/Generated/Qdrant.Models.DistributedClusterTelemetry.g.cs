@@ -19,7 +19,7 @@ namespace Qdrant
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("number_of_peers")]
-        public int? NumberOfPeers { get; set; }
+        public long? NumberOfPeers { get; set; }
 
         /// <summary>
         ///
@@ -46,7 +46,7 @@ namespace Qdrant
         public DistributedClusterTelemetry(
             bool enabled,
             global::System.Collections.Generic.Dictionary<string, global::Qdrant.DistributedPeerInfo> peers,
-            int? numberOfPeers)
+            long? numberOfPeers)
         {
             this.Enabled = enabled;
             this.NumberOfPeers = numberOfPeers;

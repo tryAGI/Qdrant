@@ -19,7 +19,7 @@ namespace Qdrant
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.ErrorResponseStatus))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(string))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(object))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(int))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(long))]
     #pragma warning disable CS0618 // This registration names a deprecated API model.
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(bool))]
     #pragma warning restore CS0618
@@ -40,15 +40,17 @@ namespace Qdrant
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.InferenceUsage))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, global::Qdrant.ModelUsage>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.ModelUsage))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(int))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.UpdateAliasesResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.GetCollectionAliasesResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.GetCollectionsAliasesResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(float?))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(int?))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(long?))]
     #pragma warning disable CS0618 // This registration names a deprecated API model.
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(bool?))]
     #pragma warning restore CS0618
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.AliasOperations?), TypeInfoPropertyName = "NullableAliasOperations2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(int?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Qdrant.AliasOperations>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Qdrant.AliasDescription>))]
     internal sealed partial class AliasesSourceGenerationContextChunk0 : global::System.Text.Json.Serialization.JsonSerializerContext

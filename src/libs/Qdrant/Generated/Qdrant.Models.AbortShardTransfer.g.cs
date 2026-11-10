@@ -13,21 +13,21 @@ namespace Qdrant
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("shard_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int ShardId { get; set; }
+        public required long ShardId { get; set; }
 
         /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("to_peer_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int ToPeerId { get; set; }
+        public required long ToPeerId { get; set; }
 
         /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("from_peer_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int FromPeerId { get; set; }
+        public required long FromPeerId { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -45,9 +45,9 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public AbortShardTransfer(
-            int shardId,
-            int toPeerId,
-            int fromPeerId)
+            long shardId,
+            long toPeerId,
+            long fromPeerId)
         {
             this.ShardId = shardId;
             this.ToPeerId = toPeerId;

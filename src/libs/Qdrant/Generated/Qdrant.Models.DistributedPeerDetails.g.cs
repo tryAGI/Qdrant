@@ -33,21 +33,21 @@ namespace Qdrant
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("term")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Term { get; set; }
+        public required long Term { get; set; }
 
         /// <summary>
         /// Latest accepted commit
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("commit")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Commit { get; set; }
+        public required long Commit { get; set; }
 
         /// <summary>
         /// Number of operations pending for being applied
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("num_pending_operations")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int NumPendingOperations { get; set; }
+        public required long NumPendingOperations { get; set; }
 
         /// <summary>
         /// Information about current consensus thread status
@@ -93,9 +93,9 @@ namespace Qdrant
         public DistributedPeerDetails(
             string version,
             bool isVoter,
-            int term,
-            int commit,
-            int numPendingOperations,
+            long term,
+            long commit,
+            long numPendingOperations,
             global::Qdrant.ConsensusThreadStatus consensusThreadStatus,
             global::Qdrant.StateRole? role)
         {

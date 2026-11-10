@@ -12050,7 +12050,6 @@
       "RunningEnvironmentTelemetry": {
         "type": "object",
         "required": [
-          "container_runtime",
           "cpu_flags",
           "is_docker"
         ],

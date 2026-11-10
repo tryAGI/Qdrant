@@ -13,7 +13,7 @@ namespace Qdrant
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("k")]
-        public int? K { get; set; }
+        public long? K { get; set; }
 
         /// <summary>
         /// Weights for each prefetch source. Higher weight gives more influence on the final ranking. If not specified, all prefetches are weighted equally. The number of weights should match the number of prefetches.
@@ -41,7 +41,7 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public Rrf(
-            int? k,
+            long? k,
             global::System.Collections.Generic.IList<float>? weights)
         {
             this.K = k;

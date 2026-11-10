@@ -13,7 +13,7 @@ namespace Qdrant
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Id { get; set; }
+        public required long Id { get; set; }
 
         /// <summary>
         ///
@@ -66,7 +66,7 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ReplicaSetTelemetry(
-            int id,
+            long id,
             global::System.Collections.Generic.IList<global::Qdrant.RemoteShardTelemetry> remote,
             global::System.Collections.Generic.Dictionary<string, global::Qdrant.ReplicaState> replicateStates,
             global::Qdrant.ShardKey? key,

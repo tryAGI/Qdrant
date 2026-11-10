@@ -13,28 +13,28 @@ namespace Qdrant
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("shard_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int ShardId { get; set; }
+        public required long ShardId { get; set; }
 
         /// <summary>
         /// Target shard ID if different than source shard ID<br/>
         /// Used exclusively with `ReshardingStreamRecords` transfer method.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("to_shard_id")]
-        public int? ToShardId { get; set; }
+        public long? ToShardId { get; set; }
 
         /// <summary>
         /// Source peer id
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("from")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int From { get; set; }
+        public required long From { get; set; }
 
         /// <summary>
         /// Destination peer id
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("to")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int To { get; set; }
+        public required long To { get; set; }
 
         /// <summary>
         /// If `true` transfer is a synchronization of a replicas If `false` transfer is a moving of a shard from one peer to another
@@ -86,11 +86,11 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ShardTransferInfo(
-            int shardId,
-            int from,
-            int to,
+            long shardId,
+            long from,
+            long to,
             bool sync,
-            int? toShardId,
+            long? toShardId,
             global::Qdrant.ShardTransferMethod? method,
             string? comment)
         {

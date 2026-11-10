@@ -13,7 +13,7 @@ namespace Qdrant
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("vectors")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Vectors { get; set; }
+        public required long Vectors { get; set; }
 
         /// <summary>
         /// Current state of the collection
@@ -48,7 +48,7 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CollectionsAggregatedTelemetry(
-            int vectors,
+            long vectors,
             global::Qdrant.OptimizersStatus optimizersStatus,
             global::Qdrant.CollectionParams @params)
         {

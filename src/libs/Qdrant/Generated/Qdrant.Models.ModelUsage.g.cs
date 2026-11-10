@@ -13,7 +13,7 @@ namespace Qdrant
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Tokens { get; set; }
+        public required long Tokens { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -29,7 +29,7 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ModelUsage(
-            int tokens)
+            long tokens)
         {
             this.Tokens = tokens;
         }

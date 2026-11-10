@@ -19,7 +19,7 @@ namespace Qdrant
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("init_time_ms")]
-        public int? InitTimeMs { get; set; }
+        public long? InitTimeMs { get; set; }
 
         /// <summary>
         ///
@@ -72,7 +72,7 @@ namespace Qdrant
 #endif
         public CollectionTelemetry(
             string id,
-            int? initTimeMs,
+            long? initTimeMs,
             global::Qdrant.CollectionConfigTelemetry? config,
             global::System.Collections.Generic.IList<global::Qdrant.ReplicaSetTelemetry>? shards,
             global::System.Collections.Generic.IList<global::Qdrant.ShardTransferInfo>? transfers,

@@ -34,20 +34,20 @@ namespace Qdrant
         /// Approximate number of indexed vectors in the collection. Indexed vectors in large segments are faster to query, as it is stored in a specialized vector index.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("indexed_vectors_count")]
-        public int? IndexedVectorsCount { get; set; }
+        public long? IndexedVectorsCount { get; set; }
 
         /// <summary>
         /// Approximate number of points (vectors + payloads) in collection. Each point could be accessed by unique id.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("points_count")]
-        public int? PointsCount { get; set; }
+        public long? PointsCount { get; set; }
 
         /// <summary>
         /// Number of segments in collection. Each segment has independent vector as payload indexes
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("segments_count")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int SegmentsCount { get; set; }
+        public required long SegmentsCount { get; set; }
 
         /// <summary>
         /// Information about the collection configuration
@@ -120,12 +120,12 @@ namespace Qdrant
         public CollectionInfo(
             global::Qdrant.CollectionStatus status,
             global::Qdrant.OptimizersStatus optimizerStatus,
-            int segmentsCount,
+            long segmentsCount,
             global::Qdrant.CollectionConfig config,
             global::System.Collections.Generic.Dictionary<string, global::Qdrant.PayloadIndexInfo> payloadSchema,
             global::System.Collections.Generic.IList<global::Qdrant.CollectionWarning>? warnings,
-            int? indexedVectorsCount,
-            int? pointsCount,
+            long? indexedVectorsCount,
+            long? pointsCount,
             global::Qdrant.UpdateQueueInfo? updateQueue,
             global::System.DateTime? createdAt)
         {

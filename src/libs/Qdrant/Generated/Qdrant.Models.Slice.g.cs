@@ -15,14 +15,14 @@ namespace Qdrant
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("total")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Total { get; set; }
+        public required long Total { get; set; }
 
         /// <summary>
         /// Which slice to select, must be in `0..total`
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("index")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Index { get; set; }
+        public required long Index { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -43,8 +43,8 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public Slice(
-            int total,
-            int index)
+            long total,
+            long index)
         {
             this.Total = total;
             this.Index = index;

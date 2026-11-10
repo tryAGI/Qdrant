@@ -599,7 +599,7 @@ namespace Qdrant
             int? timeout = default,
             global::Qdrant.ShardKeySelector? shardKey = default,
             global::Qdrant.ExtendedPointId? offset = default,
-            int? limit = default,
+            long? limit = default,
             global::Qdrant.Filter? filter = default,
             global::Qdrant.WithPayloadInterface? withPayload = default,
             global::Qdrant.WithVector? withVector = default,

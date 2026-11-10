@@ -19,7 +19,7 @@ namespace Qdrant
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.ErrorResponseStatus))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(string))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(object))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(int))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(long))]
     #pragma warning disable CS0618 // This registration names a deprecated API model.
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(bool))]
     #pragma warning restore CS0618
@@ -67,10 +67,11 @@ namespace Qdrant
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.InferenceUsage))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, global::Qdrant.ModelUsage>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.ModelUsage))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(int))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.CreateFieldIndexResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.DeleteFieldIndexResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(float?))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(int?))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(long?))]
     #pragma warning disable CS0618 // This registration names a deprecated API model.
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(bool?))]
     #pragma warning restore CS0618
@@ -92,6 +93,7 @@ namespace Qdrant
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.UuidIndexType?), TypeInfoPropertyName = "NullableUuidIndexType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.UpdateStatus?), TypeInfoPropertyName = "NullableUpdateStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.WriteOrdering?), TypeInfoPropertyName = "NullableWriteOrdering2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(int?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Qdrant.Language>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<string>))]
     internal sealed partial class IndexesSourceGenerationContextChunk0 : global::System.Text.Json.Serialization.JsonSerializerContext

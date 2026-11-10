@@ -56,13 +56,13 @@ namespace Qdrant
         /// Max number of points to return. Default is 10.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("limit")]
-        public int? Limit { get; set; }
+        public long? Limit { get; set; }
 
         /// <summary>
         /// Offset of the result. Skip this many points. Default is 0
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("offset")]
-        public int? Offset { get; set; }
+        public long? Offset { get; set; }
 
         /// <summary>
         /// Options for specifying which vectors to include into the response. Default is false.
@@ -139,8 +139,8 @@ namespace Qdrant
             global::Qdrant.Filter? filter,
             global::Qdrant.SearchParams? @params,
             float? scoreThreshold,
-            int? limit,
-            int? offset,
+            long? limit,
+            long? offset,
             global::Qdrant.WithVector? withVector,
             global::Qdrant.WithPayloadInterface? withPayload,
             global::Qdrant.LookupLocation? lookupFrom)

@@ -12,7 +12,7 @@ namespace Qdrant
         /// Max number of vectors in a multivector
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_vectors")]
-        public int? MaxVectors { get; set; }
+        public long? MaxVectors { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,7 +30,7 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public StrictModeMultivector(
-            int? maxVectors)
+            long? maxVectors)
         {
             this.MaxVectors = maxVectors;
         }

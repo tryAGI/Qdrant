@@ -15,7 +15,7 @@ namespace Qdrant
         /// Note: this is number of vectors, not KiloBytes.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("full_scan_threshold")]
-        public int? FullScanThreshold { get; set; }
+        public long? FullScanThreshold { get; set; }
 
         /// <summary>
         /// Deprecated: use `memory` instead. Store index on disk. If set to false, the index will be stored in RAM. Default: false
@@ -61,7 +61,7 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public SparseIndexParams(
-            int? fullScanThreshold,
+            long? fullScanThreshold,
             global::Qdrant.Memory? memory,
             global::Qdrant.Datatype? datatype)
         {

@@ -21,7 +21,7 @@ namespace Qdrant
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("count")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Count { get; set; }
+        public required long Count { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -39,7 +39,7 @@ namespace Qdrant
 #endif
         public FacetValueHit(
             global::Qdrant.FacetValue value,
-            int count)
+            long count)
         {
             this.Value = value;
             this.Count = count;

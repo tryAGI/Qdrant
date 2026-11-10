@@ -14,25 +14,25 @@ namespace Qdrant
         /// Number of edges per node in the index graph. Larger the value - more accurate the search, more space required. Set to 0 to disable the main HNSW graph. Additional payload-aware links may still be built when the effective payload M is positive (see payload_m). This setting alone does not guarantee exact search.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("m")]
-        public int? M { get; set; }
+        public long? M { get; set; }
 
         /// <summary>
         /// Number of neighbours to consider during the index building. Larger the value - more accurate the search, more time required to build the index.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("ef_construct")]
-        public int? EfConstruct { get; set; }
+        public long? EfConstruct { get; set; }
 
         /// <summary>
         /// Minimal size threshold (in KiloBytes) below which full-scan is preferred over HNSW search. This measures the total size of vectors being queried against. When the maximum estimated amount of points that a condition satisfies is smaller than `full_scan_threshold_kb`, the query planner will use full-scan search instead of HNSW index traversal for better performance. Note: 1Kb = 1 vector of size 256
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("full_scan_threshold")]
-        public int? FullScanThreshold { get; set; }
+        public long? FullScanThreshold { get; set; }
 
         /// <summary>
         /// Number of parallel threads used for background index building. If 0 - automatically select from 8 to 16. Best to keep between 8 and 16 to prevent likelihood of building broken/inefficient HNSW graphs. On small CPUs, less threads are used.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_indexing_threads")]
-        public int? MaxIndexingThreads { get; set; }
+        public long? MaxIndexingThreads { get; set; }
 
         /// <summary>
         /// Deprecated: use `memory` instead. Store HNSW index on disk. If set to false, the index will be stored in RAM. Default: false
@@ -51,7 +51,7 @@ namespace Qdrant
         /// Number of additional payload-aware links per node. If unset, the value of m is used. An effective value of 0 disables these additional links. A positive value allows them for indexed payload fields with HNSW enabled, even when m is 0.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("payload_m")]
-        public int? PayloadM { get; set; }
+        public long? PayloadM { get; set; }
 
         /// <summary>
         /// Store copies of original and quantized vectors within the HNSW index file. Default: false. Enabling this option will trade the search speed for disk usage by reducing amount of random seeks during the search. Requires quantized vectors to be enabled. Multi-vectors are not supported.
@@ -93,12 +93,12 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public HnswConfigDiff(
-            int? m,
-            int? efConstruct,
-            int? fullScanThreshold,
-            int? maxIndexingThreads,
+            long? m,
+            long? efConstruct,
+            long? fullScanThreshold,
+            long? maxIndexingThreads,
             global::Qdrant.Memory? memory,
-            int? payloadM,
+            long? payloadM,
             bool? inlineStorage)
         {
             this.M = m;

@@ -13,7 +13,7 @@ namespace Qdrant
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("shard_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int ShardId { get; set; }
+        public required long ShardId { get; set; }
 
         /// <summary>
         /// User-defined sharding key
@@ -26,7 +26,7 @@ namespace Qdrant
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("points_count")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int PointsCount { get; set; }
+        public required long PointsCount { get; set; }
 
         /// <summary>
         /// State of the single shard within a replica set.
@@ -61,8 +61,8 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public LocalShardInfo(
-            int shardId,
-            int pointsCount,
+            long shardId,
+            long pointsCount,
             global::Qdrant.ReplicaState state,
             global::Qdrant.ShardKey? shardKey)
         {

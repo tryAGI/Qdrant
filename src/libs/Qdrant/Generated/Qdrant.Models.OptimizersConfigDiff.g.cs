@@ -20,21 +20,21 @@ namespace Qdrant
         /// The minimal number of vectors in a segment, required to perform segment optimization
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("vacuum_min_vector_number")]
-        public int? VacuumMinVectorNumber { get; set; }
+        public long? VacuumMinVectorNumber { get; set; }
 
         /// <summary>
         /// Target amount of segments optimizer will try to keep. Real amount of segments may vary depending on multiple parameters: - Amount of stored points - Current write RPS<br/>
         /// It is recommended to select default number of segments as a factor of the number of search threads, so that each segment would be handled evenly by one of the threads If `default_segment_number = 0`, will be automatically selected by the number of available CPUs
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("default_segment_number")]
-        public int? DefaultSegmentNumber { get; set; }
+        public long? DefaultSegmentNumber { get; set; }
 
         /// <summary>
         /// Do not create segments larger than this size (in kilobytes). Large segments might require disproportionately long indexation times, therefore it makes sense to limit the size of segments.<br/>
         /// If indexation speed have more priority for your - make this parameter lower. If search speed is more important - make this parameter higher. Note: 1Kb = 1 vector of size 256
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_segment_size")]
-        public int? MaxSegmentSize { get; set; }
+        public long? MaxSegmentSize { get; set; }
 
         /// <summary>
         /// Maximum size (in kilobytes) of vectors to store in-memory per segment. Segments larger than this threshold will be stored as read-only memmapped file.<br/>
@@ -45,7 +45,7 @@ namespace Qdrant
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("memmap_threshold")]
         [global::System.Obsolete("This property marked as deprecated.")]
-        public int? MemmapThreshold { get; set; }
+        public long? MemmapThreshold { get; set; }
 
         /// <summary>
         /// Maximum size (in kilobytes) of vectors allowed for plain index, exceeding this threshold will enable vector indexing<br/>
@@ -54,13 +54,13 @@ namespace Qdrant
         /// Note: 1kB = 1 vector of size 256.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("indexing_threshold")]
-        public int? IndexingThreshold { get; set; }
+        public long? IndexingThreshold { get; set; }
 
         /// <summary>
         /// Minimum interval between forced flushes.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("flush_interval_sec")]
-        public int? FlushIntervalSec { get; set; }
+        public long? FlushIntervalSec { get; set; }
 
         /// <summary>
         /// Max number of threads (jobs) for running optimizations per shard. Note: each optimization job will also use `max_indexing_threads` threads by itself for index building. If "auto" - have no limit and choose dynamically to saturate CPU. If 0 - no optimization threads, optimizations will be disabled.
@@ -119,11 +119,11 @@ namespace Qdrant
 #endif
         public OptimizersConfigDiff(
             double? deletedThreshold,
-            int? vacuumMinVectorNumber,
-            int? defaultSegmentNumber,
-            int? maxSegmentSize,
-            int? indexingThreshold,
-            int? flushIntervalSec,
+            long? vacuumMinVectorNumber,
+            long? defaultSegmentNumber,
+            long? maxSegmentSize,
+            long? indexingThreshold,
+            long? flushIntervalSec,
             global::Qdrant.MaxOptimizationThreads? maxOptimizationThreads,
             bool? preventUnoptimized)
         {

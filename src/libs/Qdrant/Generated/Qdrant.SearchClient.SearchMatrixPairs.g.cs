@@ -593,8 +593,8 @@ namespace Qdrant
             int? timeout = default,
             global::Qdrant.ShardKeySelector? shardKey = default,
             global::Qdrant.Filter? filter = default,
-            int? sample = default,
-            int? limit = default,
+            long? sample = default,
+            long? limit = default,
             string? @using = default,
             global::Qdrant.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)

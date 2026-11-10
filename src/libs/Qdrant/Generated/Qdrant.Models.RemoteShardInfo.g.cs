@@ -13,7 +13,7 @@ namespace Qdrant
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("shard_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int ShardId { get; set; }
+        public required long ShardId { get; set; }
 
         /// <summary>
         /// User-defined sharding key
@@ -26,7 +26,7 @@ namespace Qdrant
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("peer_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int PeerId { get; set; }
+        public required long PeerId { get; set; }
 
         /// <summary>
         /// State of the single shard within a replica set.
@@ -61,8 +61,8 @@ namespace Qdrant
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RemoteShardInfo(
-            int shardId,
-            int peerId,
+            long shardId,
+            long peerId,
             global::Qdrant.ReplicaState state,
             global::Qdrant.ShardKey? shardKey)
         {
