@@ -122,7 +122,22 @@ namespace Qdrant
         public bool? CombinedVectorStorage { get; set; }
 
         /// <summary>
-        /// Serverless-compatible deployment mode. Implies [`Self::write_segment_manifest`], [`Self::append_only_mutations`], [`Self::compact_bitmask`], [`Self::append_only_storages`], [`Self::compact_logstore_tracker`] and [`Self::persist_proxy_segments`].<br/>
+        /// Record the version of every delete, in formats older readers cannot parse: versioned delete entries in appendable mappings logs, and a delete log next to the deleted mask of immutable segments, which takes their deletes in place of the mask. Followers use the versions to never apply the delete of a moved point before they see its new copy. Gates writing only: both formats are always read, and the deletes of an immutable segment are the union of its mask and its log.<br/>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("versioned_deletes")]
+        public bool? VersionedDeletes { get; set; }
+
+        /// <summary>
+        /// Build the main HNSW graph of large segments with PiPNN instead of inserting point by point. When disabled, PiPNN is *never* used and graphs are built with HNSW. When enabled, PiPNN is used where it applies: segments that are large enough, have no older graph to build from, and whose vectors support it. Only changes how graphs are built: the resulting graph has the same format either way.<br/>
+        /// Enabled by default.<br/>
+        /// Default Value: true
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("pipnn_graph_building")]
+        public bool? PipnnGraphBuilding { get; set; }
+
+        /// <summary>
+        /// Serverless-compatible deployment mode. Implies [`Self::write_segment_manifest`], [`Self::append_only_mutations`], [`Self::compact_bitmask`], [`Self::append_only_storages`], [`Self::compact_logstore_tracker`], [`Self::persist_proxy_segments`] and [`Self::versioned_deletes`].<br/>
         /// Note that this will only be applied when passed into [`init_feature_flags`].<br/>
         /// Default Value: false
         /// </summary>
@@ -206,8 +221,17 @@ namespace Qdrant
         /// Existing `GraphInline` segments are always readable, regardless of this flag.<br/>
         /// Default Value: true
         /// </param>
+        /// <param name="versionedDeletes">
+        /// Record the version of every delete, in formats older readers cannot parse: versioned delete entries in appendable mappings logs, and a delete log next to the deleted mask of immutable segments, which takes their deletes in place of the mask. Followers use the versions to never apply the delete of a moved point before they see its new copy. Gates writing only: both formats are always read, and the deletes of an immutable segment are the union of its mask and its log.<br/>
+        /// Default Value: false
+        /// </param>
+        /// <param name="pipnnGraphBuilding">
+        /// Build the main HNSW graph of large segments with PiPNN instead of inserting point by point. When disabled, PiPNN is *never* used and graphs are built with HNSW. When enabled, PiPNN is used where it applies: segments that are large enough, have no older graph to build from, and whose vectors support it. Only changes how graphs are built: the resulting graph has the same format either way.<br/>
+        /// Enabled by default.<br/>
+        /// Default Value: true
+        /// </param>
         /// <param name="serverlessCompatible">
-        /// Serverless-compatible deployment mode. Implies [`Self::write_segment_manifest`], [`Self::append_only_mutations`], [`Self::compact_bitmask`], [`Self::append_only_storages`], [`Self::compact_logstore_tracker`] and [`Self::persist_proxy_segments`].<br/>
+        /// Serverless-compatible deployment mode. Implies [`Self::write_segment_manifest`], [`Self::append_only_mutations`], [`Self::compact_bitmask`], [`Self::append_only_storages`], [`Self::compact_logstore_tracker`], [`Self::persist_proxy_segments`] and [`Self::versioned_deletes`].<br/>
         /// Note that this will only be applied when passed into [`init_feature_flags`].<br/>
         /// Default Value: false
         /// </param>
@@ -230,6 +254,8 @@ namespace Qdrant
             bool? transferRawPayloads,
             bool? persistProxySegments,
             bool? combinedVectorStorage,
+            bool? versionedDeletes,
+            bool? pipnnGraphBuilding,
             bool? serverlessCompatible)
         {
             this.All = all;
@@ -247,6 +273,8 @@ namespace Qdrant
             this.TransferRawPayloads = transferRawPayloads;
             this.PersistProxySegments = persistProxySegments;
             this.CombinedVectorStorage = combinedVectorStorage;
+            this.VersionedDeletes = versionedDeletes;
+            this.PipnnGraphBuilding = pipnnGraphBuilding;
             this.ServerlessCompatible = serverlessCompatible;
         }
 

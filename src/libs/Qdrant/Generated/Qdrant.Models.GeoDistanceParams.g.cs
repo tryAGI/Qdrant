@@ -16,7 +16,7 @@ namespace Qdrant
         public required global::Qdrant.GeoPoint Origin { get; set; }
 
         /// <summary>
-        /// Payload field with the destination geo point
+        /// Payload field with the destination geo point. If the field holds several geo points, the distance to the nearest one is used
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("to")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -35,7 +35,7 @@ namespace Qdrant
         /// Geo point payload schema
         /// </param>
         /// <param name="to">
-        /// Payload field with the destination geo point
+        /// Payload field with the destination geo point. If the field holds several geo points, the distance to the nearest one is used
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
