@@ -41,6 +41,12 @@ namespace Qdrant
         public bool? UnindexedFilteringUpdate { get; set; }
 
         /// <summary>
+        /// Require filter-based reads (e.g. search, scroll, count, facet) to restrict results to tenants. Applies only when the collection has a payload index with `is_tenant: true`: the top-level `must` of the request filter must then contain a `match` (`value` or `any`) condition on one of the tenant keys. Reads by point id are not affected.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("require_tenant_filter")]
+        public bool? RequireTenantFilter { get; set; }
+
+        /// <summary>
         /// Max HNSW value allowed in search parameters.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("search_max_hnsw_ef")]
@@ -161,6 +167,9 @@ namespace Qdrant
         /// <param name="unindexedFilteringUpdate">
         /// Allow usage of unindexed fields in filtered updates (e.g. delete by payload).
         /// </param>
+        /// <param name="requireTenantFilter">
+        /// Require filter-based reads (e.g. search, scroll, count, facet) to restrict results to tenants. Applies only when the collection has a payload index with `is_tenant: true`: the top-level `must` of the request filter must then contain a `match` (`value` or `any`) condition on one of the tenant keys. Reads by point id are not affected.
+        /// </param>
         /// <param name="searchMaxHnswEf">
         /// Max HNSW value allowed in search parameters.
         /// </param>
@@ -215,6 +224,7 @@ namespace Qdrant
             long? maxTimeout,
             bool? unindexedFilteringRetrieve,
             bool? unindexedFilteringUpdate,
+            bool? requireTenantFilter,
             long? searchMaxHnswEf,
             bool? searchAllowExact,
             double? searchMaxOversampling,
@@ -236,6 +246,7 @@ namespace Qdrant
             this.MaxTimeout = maxTimeout;
             this.UnindexedFilteringRetrieve = unindexedFilteringRetrieve;
             this.UnindexedFilteringUpdate = unindexedFilteringUpdate;
+            this.RequireTenantFilter = requireTenantFilter;
             this.SearchMaxHnswEf = searchMaxHnswEf;
             this.SearchAllowExact = searchAllowExact;
             this.SearchMaxOversampling = searchMaxOversampling;
