@@ -1726,15 +1726,15 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.AnyOf<global::Qdrant.Prefetch2, global::System.Collections.Generic.IList<global::Qdrant.Prefetch2>>? Type422 { get; set; }
+        public global::Qdrant.AnyOf<global::Qdrant.Prefetch, global::System.Collections.Generic.IList<global::Qdrant.Prefetch>>? Type422 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.Prefetch2? Type423 { get; set; }
+        public global::Qdrant.Prefetch? Type423 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Qdrant.Prefetch2>? Type424 { get; set; }
+        public global::System.Collections.Generic.IList<global::Qdrant.Prefetch>? Type424 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -2703,11 +2703,11 @@ namespace Qdrant
         /// <summary>
         ///
         /// </summary>
-        public global::Qdrant.AnyOf<global::Qdrant.Prefetch2, global::System.Collections.Generic.List<global::Qdrant.Prefetch2>>? ListType43 { get; set; }
+        public global::Qdrant.AnyOf<global::Qdrant.Prefetch, global::System.Collections.Generic.List<global::Qdrant.Prefetch>>? ListType43 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.List<global::Qdrant.Prefetch2>? ListType44 { get; set; }
+        public global::System.Collections.Generic.List<global::Qdrant.Prefetch>? ListType44 { get; set; }
         /// <summary>
         ///
         /// </summary>
