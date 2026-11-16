@@ -6,15 +6,15 @@ namespace Qdrant
     /// <summary>
     ///
     /// </summary>
-    public sealed partial class Prefetch2
+    public sealed partial class Prefetch
     {
         /// <summary>
         /// Sub-requests to perform first. If present, the query will be performed on the results of the prefetches.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prefetch")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Qdrant.JsonConverters.AnyOfJsonConverter<global::Qdrant.Prefetch2, global::System.Collections.Generic.IList<global::Qdrant.Prefetch2>>))]
-        public global::Qdrant.AnyOf<global::Qdrant.Prefetch2, global::System.Collections.Generic.IList<global::Qdrant.Prefetch2>>? Prefetch { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Qdrant.JsonConverters.AnyOfJsonConverter<global::Qdrant.Prefetch, global::System.Collections.Generic.IList<global::Qdrant.Prefetch>>))]
+        public global::Qdrant.AnyOf<global::Qdrant.Prefetch, global::System.Collections.Generic.IList<global::Qdrant.Prefetch>>? Prefetch1 { get; set; }
 
         /// <summary>
         /// Query to perform. If missing without prefetches, returns points ordered by their IDs.
@@ -66,9 +66,9 @@ namespace Qdrant
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Prefetch2" /> class.
+        /// Initializes a new instance of the <see cref="Prefetch" /> class.
         /// </summary>
-        /// <param name="prefetch">
+        /// <param name="prefetch1">
         /// Sub-requests to perform first. If present, the query will be performed on the results of the prefetches.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
@@ -97,8 +97,8 @@ namespace Qdrant
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public Prefetch2(
-            global::Qdrant.AnyOf<global::Qdrant.Prefetch2, global::System.Collections.Generic.IList<global::Qdrant.Prefetch2>>? prefetch,
+        public Prefetch(
+            global::Qdrant.AnyOf<global::Qdrant.Prefetch, global::System.Collections.Generic.IList<global::Qdrant.Prefetch>>? prefetch1,
             global::Qdrant.QueryInterface? query,
             string? @using,
             global::Qdrant.Filter? filter,
@@ -107,7 +107,7 @@ namespace Qdrant
             long? limit,
             global::Qdrant.LookupLocation? lookupFrom)
         {
-            this.Prefetch = prefetch;
+            this.Prefetch1 = prefetch1;
             this.Query = query;
             this.Using = @using;
             this.Filter = filter;
@@ -118,9 +118,9 @@ namespace Qdrant
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Prefetch2" /> class.
+        /// Initializes a new instance of the <see cref="Prefetch" /> class.
         /// </summary>
-        public Prefetch2()
+        public Prefetch()
         {
         }
 

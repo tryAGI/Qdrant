@@ -440,9 +440,9 @@ namespace Qdrant
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.VersionInfo))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.CollectionExistence))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.QueryRequest))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.AnyOf<global::Qdrant.Prefetch2, global::System.Collections.Generic.IList<global::Qdrant.Prefetch2>>), TypeInfoPropertyName = "AnyOfPrefetch2IListPrefetch22")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.Prefetch2))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Qdrant.Prefetch2>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.AnyOf<global::Qdrant.Prefetch, global::System.Collections.Generic.IList<global::Qdrant.Prefetch>>), TypeInfoPropertyName = "AnyOfPrefetchIListPrefetch2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.Prefetch))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Qdrant.Prefetch>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.QueryInterface))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.SearchParams))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.LookupLocation))]
@@ -767,7 +767,7 @@ namespace Qdrant
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.GroupId?), TypeInfoPropertyName = "NullableGroupId2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.UpdateOperation?), TypeInfoPropertyName = "NullableUpdateOperation2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.ShardSnapshotLocation?), TypeInfoPropertyName = "NullableShardSnapshotLocation2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.AnyOf<global::Qdrant.Prefetch2, global::System.Collections.Generic.IList<global::Qdrant.Prefetch2>>?), TypeInfoPropertyName = "NullableAnyOfPrefetch2IListPrefetch22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.AnyOf<global::Qdrant.Prefetch, global::System.Collections.Generic.IList<global::Qdrant.Prefetch>>?), TypeInfoPropertyName = "NullableAnyOfPrefetchIListPrefetch2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.VectorInput?), TypeInfoPropertyName = "NullableVectorInput2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.Query?), TypeInfoPropertyName = "NullableQuery2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.RecommendStrategy?), TypeInfoPropertyName = "NullableRecommendStrategy2")]
@@ -825,8 +825,8 @@ namespace Qdrant
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Qdrant.ScoredPoint>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Qdrant.PointGroup>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Qdrant.UpdateOperation>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.AnyOf<global::Qdrant.Prefetch2, global::System.Collections.Generic.List<global::Qdrant.Prefetch2>>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Qdrant.Prefetch2>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.AnyOf<global::Qdrant.Prefetch, global::System.Collections.Generic.List<global::Qdrant.Prefetch>>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Qdrant.Prefetch>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Qdrant.VectorInput>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Qdrant.AnyOf<global::Qdrant.ContextPair, global::System.Collections.Generic.List<global::Qdrant.ContextPair>>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Qdrant.ContextPair>))]
@@ -946,10 +946,10 @@ namespace Qdrant
             options.Converters.Add(new global::Qdrant.JsonConverters.AnyOfJsonConverter<global::Qdrant.Condition?, global::System.Collections.Generic.IList<global::Qdrant.Condition>>());
             options.Converters.Add(new global::Qdrant.JsonConverters.AnyOfJsonConverter<global::Qdrant.Condition?, global::System.Collections.Generic.IList<global::Qdrant.Condition>>());
             options.Converters.Add(new global::Qdrant.JsonConverters.AnyOfJsonConverter<global::Qdrant.Condition?, global::System.Collections.Generic.IList<global::Qdrant.Condition>>());
-            options.Converters.Add(new global::Qdrant.JsonConverters.AnyOfJsonConverter<global::Qdrant.Prefetch2, global::System.Collections.Generic.IList<global::Qdrant.Prefetch2>>());
-            options.Converters.Add(new global::Qdrant.JsonConverters.AnyOfJsonConverter<global::Qdrant.Prefetch2, global::System.Collections.Generic.IList<global::Qdrant.Prefetch2>>());
+            options.Converters.Add(new global::Qdrant.JsonConverters.AnyOfJsonConverter<global::Qdrant.Prefetch, global::System.Collections.Generic.IList<global::Qdrant.Prefetch>>());
+            options.Converters.Add(new global::Qdrant.JsonConverters.AnyOfJsonConverter<global::Qdrant.Prefetch, global::System.Collections.Generic.IList<global::Qdrant.Prefetch>>());
             options.Converters.Add(new global::Qdrant.JsonConverters.AnyOfJsonConverter<global::Qdrant.ContextPair, global::System.Collections.Generic.IList<global::Qdrant.ContextPair>>());
-            options.Converters.Add(new global::Qdrant.JsonConverters.AnyOfJsonConverter<global::Qdrant.Prefetch2, global::System.Collections.Generic.IList<global::Qdrant.Prefetch2>>());
+            options.Converters.Add(new global::Qdrant.JsonConverters.AnyOfJsonConverter<global::Qdrant.Prefetch, global::System.Collections.Generic.IList<global::Qdrant.Prefetch>>());
             options.Converters.Add(new global::Qdrant.JsonConverters.UnixTimestampJsonConverter());
             options.Converters.Add(new LazyEnumJsonConverterFactory());
         }
