@@ -12,50 +12,67 @@ namespace Qdrant
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cpu")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required long Cpu { get; set; }
+        public long? Cpu { get; set; }
 
         /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("payload_io_read")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required long PayloadIoRead { get; set; }
+        public long? PayloadIoRead { get; set; }
 
         /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("payload_io_write")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required long PayloadIoWrite { get; set; }
+        public long? PayloadIoWrite { get; set; }
 
         /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("payload_index_io_read")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required long PayloadIndexIoRead { get; set; }
+        public long? PayloadIndexIoRead { get; set; }
 
         /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("payload_index_io_write")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required long PayloadIndexIoWrite { get; set; }
+        public long? PayloadIndexIoWrite { get; set; }
 
         /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("vector_io_read")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required long VectorIoRead { get; set; }
+        public long? VectorIoRead { get; set; }
 
         /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("vector_io_write")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required long VectorIoWrite { get; set; }
+        public long? VectorIoWrite { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("remote_io_cached_read")]
+        public long? RemoteIoCachedRead { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("remote_io_non_cached_read")]
+        public long? RemoteIoNonCachedRead { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("updated_bytes")]
+        public long? UpdatedBytes { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("updated_indexed_bytes")]
+        public long? UpdatedIndexedBytes { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -73,17 +90,25 @@ namespace Qdrant
         /// <param name="payloadIndexIoWrite"></param>
         /// <param name="vectorIoRead"></param>
         /// <param name="vectorIoWrite"></param>
+        /// <param name="remoteIoCachedRead"></param>
+        /// <param name="remoteIoNonCachedRead"></param>
+        /// <param name="updatedBytes"></param>
+        /// <param name="updatedIndexedBytes"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public HardwareUsage(
-            long cpu,
-            long payloadIoRead,
-            long payloadIoWrite,
-            long payloadIndexIoRead,
-            long payloadIndexIoWrite,
-            long vectorIoRead,
-            long vectorIoWrite)
+            long? cpu,
+            long? payloadIoRead,
+            long? payloadIoWrite,
+            long? payloadIndexIoRead,
+            long? payloadIndexIoWrite,
+            long? vectorIoRead,
+            long? vectorIoWrite,
+            long? remoteIoCachedRead,
+            long? remoteIoNonCachedRead,
+            long? updatedBytes,
+            long? updatedIndexedBytes)
         {
             this.Cpu = cpu;
             this.PayloadIoRead = payloadIoRead;
@@ -92,6 +117,10 @@ namespace Qdrant
             this.PayloadIndexIoWrite = payloadIndexIoWrite;
             this.VectorIoRead = vectorIoRead;
             this.VectorIoWrite = vectorIoWrite;
+            this.RemoteIoCachedRead = remoteIoCachedRead;
+            this.RemoteIoNonCachedRead = remoteIoNonCachedRead;
+            this.UpdatedBytes = updatedBytes;
+            this.UpdatedIndexedBytes = updatedIndexedBytes;
         }
 
         /// <summary>
