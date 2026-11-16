@@ -130,8 +130,8 @@ namespace Qdrant
 
         /// <summary>
         /// Build the main HNSW graph of large segments with PiPNN instead of inserting point by point. When disabled, PiPNN is *never* used and graphs are built with HNSW. When enabled, PiPNN is used where it applies: segments that are large enough, have no older graph to build from, and whose vectors support it. Only changes how graphs are built: the resulting graph has the same format either way.<br/>
-        /// Enabled by default.<br/>
-        /// Default Value: true
+        /// Disabled by default: PiPNN ignores `ef_construct`, so with it the graph quality of large segments can only be tuned through `m`.<br/>
+        /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pipnn_graph_building")]
         public bool? PipnnGraphBuilding { get; set; }
@@ -227,8 +227,8 @@ namespace Qdrant
         /// </param>
         /// <param name="pipnnGraphBuilding">
         /// Build the main HNSW graph of large segments with PiPNN instead of inserting point by point. When disabled, PiPNN is *never* used and graphs are built with HNSW. When enabled, PiPNN is used where it applies: segments that are large enough, have no older graph to build from, and whose vectors support it. Only changes how graphs are built: the resulting graph has the same format either way.<br/>
-        /// Enabled by default.<br/>
-        /// Default Value: true
+        /// Disabled by default: PiPNN ignores `ef_construct`, so with it the graph quality of large segments can only be tuned through `m`.<br/>
+        /// Default Value: false
         /// </param>
         /// <param name="serverlessCompatible">
         /// Serverless-compatible deployment mode. Implies [`Self::write_segment_manifest`], [`Self::append_only_mutations`], [`Self::compact_bitmask`], [`Self::append_only_storages`], [`Self::compact_logstore_tracker`], [`Self::persist_proxy_segments`] and [`Self::versioned_deletes`].<br/>
